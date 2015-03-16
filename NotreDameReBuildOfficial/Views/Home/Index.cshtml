@@ -1,63 +1,63 @@
-﻿    @{
-        ViewBag.Title = "Index";
-    }
+﻿@{
+    ViewBag.Title = "Index";
+}
 
-    @* NEWS *@
-    <div id="news">
-         
+@* NEWS *@
+<div id="news">        
 
-        <h3>What's New</h3>
+    <h3>What's New</h3>
 
-        @* Display news feed images from database *@
+    @* Display news feed images from database *@
 
-        <div id="main_articles">
-          @model IEnumerable<NotreDameReBuildOfficial.Models.news_article>
-            @foreach (var article in Model)
-            {
-                <div class="news_image">
-                    <a href="@Url.Action("Article_Details", new { id = article.Id })"><img src="~/Images/News_Feed/@Url.Content(article.image)" alt="@article.title" /></a>
-                    <a href="@Url.Action("Article_Details", new { id = article.Id })"><span class="news_image_header">@article.title</span></a>
-                </div>
-            }
-        </div>
-
+    <div id="main_articles">
+        @model IEnumerable<NotreDameReBuildOfficial.Models.news_article>
+        @foreach (var article in Model)
+        {
+            <div class="news_image">
+                <a href="@Url.Action("Article_Details", new { id = article.Id })"><img src="~/Images/News_Feed/@Url.Content(article.image)" alt="@article.title" /></a>
+                <a href="@Url.Action("Article_Details", new { id = article.Id })"><span class="news_image_header">@article.title</span></a>
+            </div>
+        }
     </div>
 
-    @* ONLINE SERVICE BUTTONS *@
-    <div id="left-col">
+</div>
 
-        <h3 id="online-services">Online Services</h3>
+@* ONLINE SERVICE BUTTONS *@
+<div id="left-col">
 
-        <div class="service-btn">
-            <p><i class="fa fa-shopping-cart fa-lg"></i><strong>Gift Shop</strong></p>
-            <p class="service-desc">Send well wishes</p>
-        </div>
+    <h3 id="online-services">Online Services</h3>
 
-        <div class="service-btn">
-            <p><i class="fa fa-user-md fa-lg"></i><strong>Book an Appointment</strong></p>
-            <p class="service-desc">Easy, fast, and secure</p>
-        </div>
-        <div class="service-btn">
-            <p><i class="fa fa-comment fa-lg"></i><strong>Send Feedback</strong></p>
-            <p class="service-desc">Tell us how we're doing</p>
-        </div>
-
+    <div class="service-btn">
+        <div class="icon icon1"><i class="fa fa-shopping-cart"></i></div>
+        <div class="btn-text btn-text1">Gift Shop</div>
     </div>
 
-    @* EVENTS LISTING *@
-    <div id="center-col">
-
-        <h3>Upcoming Events</h3>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
-
+    <div class="service-btn">
+        <div class="icon icon2"><i class="fa fa-user-md"></i></div>
+        <div class="btn-text btn-text2">Book an Appointment</div>
     </div>
 
-    @* WEEKLY POLL *@
-    <div id="right-col">
-
-        <h3>Weekly Poll</h3>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
-
+    <div class="service-btn">
+        <div class="icon icon3"><i class="fa fa-comment"></i></div>
+        <div class="btn-text btn-text3">Send Feedback</div>
     </div>
+
+</div>
+
+@* EVENTS LISTING *@
+<div id="center-col">
+
+    <h3>Upcoming Events</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
+
+</div>
+
+@* WEEKLY POLL *@
+<div id="right-col">
+
+    <h3>Weekly Poll</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
+
+</div>

@@ -95,7 +95,7 @@ h3 {
 .buttonstyle {
     border: 2px solid #fff;
     color: #fff;
-    background-color: #f7900f;
+    background-color: #fd8411;
     cursor: pointer;
     padding: 5px 10px;
     font-family: 'Roboto', serif;
@@ -107,19 +107,11 @@ h3 {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
-    /*Gradient*/
-    background: rgba(255,175,77,1);
-    background: -moz-linear-gradient(top, rgba(255,175,77,1) 0%, rgba(248,142,13,1) 75%, rgba(248,142,13,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,77,1)), color-stop(75%, rgba(248,142,13,1)), color-stop(100%, rgba(248,142,13,1)));
-    background: -webkit-linear-gradient(top, rgba(255,175,77,1) 0%, rgba(248,142,13,1) 75%, rgba(248,142,13,1) 100%);
-    background: -o-linear-gradient(top, rgba(255,175,77,1) 0%, rgba(248,142,13,1) 75%, rgba(248,142,13,1) 100%);
-    background: -ms-linear-gradient(top, rgba(255,175,77,1) 0%, rgba(248,142,13,1) 75%, rgba(248,142,13,1) 100%);
-    background: linear-gradient(to bottom, rgba(255,175,77,1) 0%, rgba(248,142,13,1) 75%, rgba(248,142,13,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4d', endColorstr='#f88e0d', GradientType=0 );
+   
 }
 
 .buttonstyle:hover {
-    border: 2px solid #f7900f;
+    border: 2px solid #fd8411;
 }
 
 .textbox {
@@ -127,6 +119,13 @@ h3 {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     color: #808080;
+    padding: 5px;
+    height: 1em;
+}
+
+.dropdown {
+    border: 1px solid #cacaca!important;
+    height: 2em;
     padding: 5px;
 }
 
@@ -199,6 +198,7 @@ h3 {
     text-align: center;
     background-color: #019ab8;
     padding: 20px;
+    
 }
 
 #navigation ul li {
@@ -208,11 +208,16 @@ h3 {
     display: inline;
 	cursor: pointer;
     padding: 20px 0 20px 0;
+    border-right: 1px solid #fff;
+}
+
+#navigation ul li:first-child {
+    border-left: 1px solid #fff;
 }
 
 #navigation ul li a{
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 38px;
     color: #fff;
     font-size: 0.875em; 
 }
@@ -347,20 +352,49 @@ h3 {
   	transition:.5s;
 }
 
+
 /*Online service buttons in left 3 columns on homepage*/
 .service-btn {
-    width: 84%;
-    padding: 4%;
-    margin: 4% auto;
-    background: #f7900f;
+    width: 100%;
     color: #fff;
-    text-align: center;
-    border-radius: 10px;
+    margin-top: 3%;
 }
+
+.icon {
+    float: left;
+    width: 10%;
+    text-align:center;
+    padding: 4%;
+    border-radius: 5px 0px 0px 5px;
+    /*background-color: #f67000;*/
+}
+
+.btn-text {
+    width: 74%;
+    float: left;
+    padding: 4%;
+    text-align: center;
+    margin-bottom: 5%;
+    border-radius: 0px 5px 5px 0px;
+    /*background-color: #fe890a;*/
+}
+
+/* First Button */
+.icon1 { background-color: #d12b3b; }
+.btn-text1 { background-color: #f86262; }
+
+/* Second Button */
+.icon2 { background-color: #94b113; }
+.btn-text2 { background-color: #accf13; }
+
+/* Third Button */
+.icon3 { background-color: #f67000; }
+.btn-text3 { background-color: #fe890a; }
 
 .service-desc {
     font-size: 0.875em;
 }
+
 
 /* --- PUBLIC FOOTER --- */
 
@@ -469,9 +503,38 @@ h3 {
     font-size: 10px;
 }
 
-/******************************/
-/*********** MOBILE ***********/
-/******************************/
+/* --- DONATION FORM --- */
+
+#donation {
+    padding: 20px;
+    width: 100%;
+}
+
+label.amount {
+    display: inline-block;
+}
+
+input#amount.textbox {
+    width: 5%;
+}
+
+input#amount.textbox {
+    width: 10%;
+}
+
+input#in_memory.textbox,
+input#first_name.textbox,
+input#last_name.textbox,
+input#organization.textbox,
+input#address.textbox,
+input#email.textbox {
+    width: 40%;
+}
+
+
+/*********************************/
+/*********** RESONSIVE ***********/
+/*********************************/
 
 /* --- MOBILE NAVIGATION --- */
 
@@ -485,9 +548,25 @@ h3 {
 
 /* --- MOBILE QUERIES --- */
 
+@media only screen and (max-width: 1070px) {
+
+   #navigation ul li a {
+        padding: 2.5%;
+    }
+  
+}
+
 @media only screen and (max-width: 1024px) {
     #main {
         width: 100%;
+    }
+
+     #navigation ul li:first-child {
+        border-left: 0px;
+    }
+
+    #navigation ul li:last-child {
+        border-right: 0px;
     }
 }
 
@@ -499,6 +578,10 @@ h3 {
 
     #logo img{
         width: 75%;
+    }
+
+    #navigation ul li {
+        border: 0px;
     }
 
     #mobilenav {
@@ -660,6 +743,10 @@ h3 {
 
 @media only screen and (max-width: 640px) {
      
+    .service-btn {
+        width: 100%;
+    }
+
     #left-col,
     #center-col,
     #right-col {
