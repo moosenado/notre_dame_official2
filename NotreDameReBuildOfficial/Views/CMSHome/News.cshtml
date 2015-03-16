@@ -16,7 +16,7 @@
 @* List Articles *@
 <br />
 <ul>
-@foreach (var article in Model)
+@foreach (var article in Model.OrderByDescending(x => x.Id))
 {
     <li>@Html.ActionLink(article.title, "News_Details", new {id = article.Id})</li>   
 }
