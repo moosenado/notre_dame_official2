@@ -1,5 +1,5 @@
-Hey everyone,
+Welcome To OFFICIAL #2!
 
-I merged the old repository with a new Internet Application Project. So now we will have all the necessary files for roles, permissions etc.
+Make sure when beginning to work on this repository that you pull the most recent master, merge it with your branch, and then continue to make your changes. Once you are done, merge your branch with the changes you made back to master.
 
-Go ahead and clone this repository in Visual Studio. Once you have it cloned and have the files pulled go ahead and make a branch for yourself. This should help clean things up as well!
+Please do not make any changes to the DBML file until further notice!
