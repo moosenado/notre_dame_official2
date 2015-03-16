@@ -1,5 +1,18 @@
-Hey everyone,
+Welcome To Notre Dame OFFICIAL #2!
 
-I merged the old repository with a new Internet Application Project. So now we will have all the necessary files for roles, permissions etc.
+Make sure when beginning to work on this repository that you:
 
-Go ahead and clone this repository in Visual Studio. Once you have it cloned and have the files pulled go ahead and make a branch for yourself. This should help clean things up as well!
+1) Pull the most recent master
+<br />
+2) Merge it with your branch
+<br />
+3) Add/Edit code on your branch
+<br />
+4) Merge your branch (with code edits/additions) back to master
+<br />
+5) If there are merge conflicts, pull the incoming commits and merge accordingly
+<br />
+6) If you are unsure what to do at this point, please contact the person who commit last
+<br />
+
+Also, please do not make any changes to the DBML file until further notice!
