@@ -1,0 +1,75 @@
+﻿@model NotreDameReBuildOfficial.Models.Donation
+
+@{
+    ViewBag.Title = "Donate";
+}
+
+<h2>Make a Donation</h2>
+
+
+@using (Html.BeginForm())
+{
+    <h3>Donation Information</h3>
+
+    @Html.LabelFor(model => model.amount)
+    @Html.TextBoxFor(model => model.amount)
+
+    @Html.LabelFor(model => model.in_memory)
+    @Html.TextBoxFor(model => model.in_memory)
+
+    <h3>Contact Information</h3>
+
+    @Html.LabelFor(model => model.first_name)
+    @Html.TextBoxFor(model => model.first_name)
+
+    @Html.LabelFor(model => model.last_name)
+    @Html.TextBoxFor(model => model.last_name)
+
+    @Html.LabelFor(model => model.organization)
+    @Html.TextBoxFor(model => model.organization)
+
+    <p>@Html.LabelFor(model => model.address)</p>
+    @Html.TextBoxFor(model => model.address)
+
+    @Html.LabelFor(model => model.city)
+    @Html.TextBoxFor(model => model.city)
+
+    @Html.LabelFor(model => model.province)
+    @Html.DropDownListFor(model => model.province, new[] {
+            new SelectListItem() {Text = "ON"},
+            new SelectListItem() {Text = "AB"},
+            new SelectListItem() {Text = "BC"},
+            new SelectListItem() {Text = "MB"},
+            new SelectListItem() {Text = "NB"},
+            new SelectListItem() {Text = "NL"},
+            new SelectListItem() {Text = "NS"},
+            new SelectListItem() {Text = "NT"},
+            new SelectListItem() {Text = "NU"},
+            new SelectListItem() {Text = "PE"},
+            new SelectListItem() {Text = "QC"},
+            new SelectListItem() {Text = "SK"},
+            new SelectListItem() {Text = "YT"}
+        })
+
+    @Html.LabelFor(model => model.postal)
+    @Html.TextBoxFor(model => model.postal)
+
+    @Html.LabelFor(model => model.country)
+    @Html.TextBoxFor(model => model.country)
+
+    @Html.LabelFor(model => model.phone)
+    @Html.TextBoxFor(model => model.phone)
+
+    @Html.LabelFor(model => model.email)
+    @Html.TextBoxFor(model => model.email)
+
+    //Sbbmit button that will trigger insertDonation Action
+    <input type="submit" value="Submit" />
+
+}
+
+@section Scripts {
+
+    @*@Scripts.Render("~bundles/jquery.validate.js")*@
+
+}

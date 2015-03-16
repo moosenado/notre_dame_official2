@@ -1,0 +1,44 @@
+﻿@model NotreDameReBuildOfficial.Models.news_article
+@{
+    ViewBag.Title = "News_Insert";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+<h2>Add News Article</h2>
+
+@using (Html.BeginForm("News_Insert", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(model => model.title)
+    <br />
+    @Html.TextBoxFor(model => model.title)
+    <br />
+    @Html.LabelFor(model => model.date)
+    <br />
+    @Html.TextBoxFor(model => model.date, new { style = "width:150px" })
+    <br />
+    @Html.LabelFor(model => model.author)
+    <br />
+    @Html.TextBoxFor(model => model.author)
+    <br />
+    @Html.LabelFor(model => model.article)
+    <br />
+    @Html.TextBoxFor(model => model.article)
+    <br />
+    
+    <br />
+    <input type="file" name="file" id="file" /><br><br>
+    <br />
+    <br />
+
+    <input type="submit" value="Add Article" />
+    
+    <br><br>
+    @ViewBag.Message
+}
+
+<div>
+    @Html.ActionLink("Back", "News")
+</div>

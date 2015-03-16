@@ -1,0 +1,23 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.news_article>
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+<h2>News</h2>
+
+<p>
+    @Html.ActionLink("Add News Article", "News_Insert")
+</p>
+
+@* List Articles *@
+<br />
+<ul>
+@foreach (var article in Model)
+{
+    <li>@Html.ActionLink(article.title, "News_Details", new {id = article.Id})</li>   
+}
+</ul>

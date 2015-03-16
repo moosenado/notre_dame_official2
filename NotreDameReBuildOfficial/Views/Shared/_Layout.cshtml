@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
+    <script src="/Scripts/mobile-menu.js" type="text/javascript"></script>
+    @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <div id="container">
+
+@* ----- HEADER -----*@
+
+    <div id="header_container">
+
+        <header id="header">
+
+            <div id="logo">
+                <a href="Index"><img src="~/Content/images/logo.png" title="Notre Dame" alt="Notre Dame Logo" /></a>
+            </div>
+
+            @* ----- Appears only for mobile -----*@
+
+            <div id="hamburger">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            @* ----- end -----*@
+
+            <div id="searchfield">
+                <form id="headerbuttons">
+                    <input type="button" name="login" value="Login" class="buttonstyle"/>
+                    <input type="button" name="donate" value="Donate" class="buttonstyle" />
+                </form>
+                <div id="magnifylogo"><i class="fa fa-search"></i></div>
+                <form id="headersearch">
+                    <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
+                </form>
+            </div>
+
+        </header>
+
+    </div>
+
+@* ----- MOBILE NAVIGATION -----*@
+
+    <nav id="mobilenav">
+        <div id="phoneicon">
+            <i class="fa fa-phone"></i>
+        </div>
+
+        <div id="mapicon">
+            <i class="fa fa-map-marker"></i>
+        </div>
+
+        <div id="mobilesearch">
+            <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
+        </div>
+
+    </nav>
+
+@* ----- NAVIGATION -----*@
+
+    <nav id="navigation">
+        <ul>
+            <li>
+                <a href="#">About Notre-Dame</a>
+                <ul>
+                    <li><a href="#">Mission, Vision, Values</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">News and Events</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Patients and Visitors</a>
+                <ul>
+                    <li><a href="#">Visiting Hours</a></li>
+                    <li><a href="#">Parking and Directions</a></li>
+                    <li><a href="#">Patient Information</a></li>
+                    <li><a href="#">Schedule Appointment</a></li>
+                    <li><a href="#">Gift Shop</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Departments and Services</a>
+                <ul>
+                    <li><a href="#">Emergency Department</a></li>
+                    <li><a href="#">Pharmacy and Laboratory</a></li>
+                    <li><a href="#">Nutrition and Food</a></li>
+                    <li><a href="#">Long Term Care</a></li>
+                    <li><a href="#">Acute Care</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Join Our Team</a>
+                <ul>
+                    <li><a href="#">Job Opportunities</a></li>
+                    <li><a href="#">Volunteer Opportunities</a></li>
+                    <li><a href="#">Internships and Placements</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+                <ul>
+                    <li><a href="#">Staff Directory</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+@* ----- BODY -----*@
+
+    <section id="main">
+
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+        <div class="push">
+            @*For Sticky Footer*@
+        </div>
+
+    </section>
+
+@* ----- FOOTER -----*@
+
+    <div id="footer_container">
+
+        <footer id="footer">
+
+            <div id="building"><img src="~/Content/images/hospitalimgnew.png" title="Notre-Dame Hospital" alt="Notre-Dame Hospital Image" id="footerbg" /></div>
+
+            <div id="partners">
+
+                @* Town of Hearst *@
+                <div class="partner">
+                    <a href="http://www.hearst.ca/en/index.aspx" target="_blank"><img src="~/Content/images/town-of-hearst.png" title="Town of Hearst" alt="Town of Hearst Logo" /></a>
+                </div>
+
+                @* College Boreal *@
+                <div class="partner">
+                    <a href="http://www.collegeboreal.ca/accueil" target="_blank"><img src="~/Content/images/college-boreal.png" title="Colleg Boreal" alt="College Boreal Logo" /></a>
+                </div>
+
+                <div class="clear"></div>
+
+                @* Northern Ontario Schoo of Medicine *@                           
+                <div class="partner">
+                    <a href="http://www.nosm.ca/" target="_blank"><img src="~/Content/images/nosm.png" title="Northern Ontario School of Medicine" alt="Northern Ontario School of Medicine Logo" /></a>
+                </div>
+
+                @* University of Hearst *@
+                <div class="partner">
+                    <a href="http://www.uhearst.ca/english" target="_blank"><img src="~/Content/images/uhearst.png" title="University of Hearst" alt="University of Hearst Logo" /></a>
+                </div>
+                             
+            </div>
+            
+            <div id="footer_links">
+
+                <ul>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+                <ul id="footer_social">
+                    <li><a href="#"><img src="~/Content/images/facebook.png" title="Facebook" alt="Facebook link" /></a></li>
+                    <li><a href="#"><img src="~/Content/images/twitter.png" title="Twitter" alt="Twitter Link" /></a></li>
+                    <li><a href="#"><img src="~/Content/images/youtube.png" title="Youtube" alt="Youtube Link" /></a></li>
+                </ul>
+
+                
+                <p>1405 Edward Street, Hearst, Ontario</p>
+                <p>Ph: (705) 362-4291</p>
+                
+                <div id="copyright"><p>&copy2015 Notre Dame Hospital</p></div>
+                
+
+            </div>
+
+        </footer>
+
+        
+
+    </div>
+
+    </div> <!-- end container div -->
+
+</body>
+</html>

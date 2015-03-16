@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")  
+    @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
+  
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+    @* ----- HEADER ----- *@
+
+    <div id="cms-head-container">
+
+        <div id="date">
+            <p>Wednesday, February 18, 2015</p>
+        </div>
+
+        <ul id="cms-top-nav">
+            <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+            <li><a href=""><i class="fa fa-external-link"></i>Visit Site</a></li>
+            <li><a href=""><i class="fa fa-plus"></i>New</a></li>
+        </ul>
+
+
+        <div id="sign-out">
+            <a href="">Sign Out</a>
+        </div>
+
+        <div id="user">
+            <p>Welcome, Jane Doe</p>
+        </div>
+
+    </div>
+
+    @* ----- LEFT MENU -----*@
+
+    <div class="left-menu">
+
+        <div id="cms-logo">
+            <img src="~/Content/images/logo.png" title="Notre Dame" alt="Notre Dame Logo" />
+        </div>
+
+        <div id="cms-left-nav">
+
+            @* About NDH *@
+            <div class="dropdown">
+                <a class="left-mnu-itm" href="">
+                    <i class="fa fa-sort-desc fa-lg"></i>About NDH
+                </a>
+                <div class="secondary">
+                    <a class="secondary-pages" href="">Mission, Vision, Values</a>
+                    <a class="secondary-pages" href="">History</a>
+                    <a class="secondary-pages" href="">News</a>
+                </div>
+            </div>
+
+            @* Patients & Visitors *@
+            <div class="dropdown">
+                <a class="left-mnu-itm" href="">
+                    <i class="fa fa-sort-desc fa-lg"></i>Patients & Visitors
+                </a>
+                <div class="secondary">
+                    <a class="secondary-pages" href="">Visiting Hours</a>
+                    <a class="secondary-pages" href="">Parking & Directions</a>
+                    <a class="secondary-pages" href="">Patient Information</a>
+                    <a class="secondary-pages" href="">Schedule an Appointment</a>
+                </div>
+            </div>
+
+            @* Departments & Services *@
+            <div class="dropdown">
+                <a class="left-mnu-itm" href="">
+                    <i class="fa fa-sort-desc fa-lg"></i>Departments & Services
+                </a>
+                <div class="secondary">
+                    <a class="secondary-pages" href="">Emergency Department</a>
+                    <a class="secondary-pages" href="">Pharmacy & Lab</a>
+                    <a class="secondary-pages" href="">Nutrition & Food</a>
+                    <a class="secondary-pages" href="">Long Term Care</a>
+                    <a class="secondary-pages" href="">Acute Care</a>
+                </div>
+            </div>
+
+            @* Join Our Team *@
+            <div class="dropdown">
+                <a class="left-mnu-itm" href="">
+                    <i class="fa fa-sort-desc fa-lg"></i>Join Our Team
+                </a>
+                <div class="secondary">
+                    <a class="secondary-pages" href="">Job Opportunities</a>
+                    <a class="secondary-pages" href="">Volunteer Opportunites</a>
+                    <a class="secondary-pages" href="">Internships & Placements</a>
+                </div>
+            </div>
+
+            @* Contact *@
+            <div class="dropdown">
+                <a class="left-mnu-itm" href="">
+                    <i class="fa fa-sort-desc fa-lg"></i>Contact
+                </a>
+                <div class="secondary">
+                    <a class="secondary-pages" href="">Staff Directory</a>
+                </div>
+           </div>
+
+           @* Users *@
+           <a class="left-mnu-itm" href="">
+           <i class="fa fa-users fa-lg"></i>Users
+           </a>
+
+           @* Weekly Poll *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-bar-chart fa-lg"></i>Weekly Poll
+           </a>
+
+           @* News *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-newspaper-o fa-lg"></i>News
+           </a>
+
+           @* Events *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-calendar fa-lg"></i>Events
+           </a>
+
+           @* Donations *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-money fa-lg"></i>Donations
+           </a>
+
+           @* ER Wait Time *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-heartbeat fa-lg"></i>ER Wait Time
+           </a>
+
+           @* Search *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-search fa-lg"></i>Search
+           </a>
+
+           @* Feedback *@
+           <a class="left-mnu-itm" href="">
+               <i class="fa fa-comment-o fa-lg"></i>Feedback
+           </a>
+            
+        </div>@* -- end cms-left-mnu  *@
+
+    </div>@* -- end left-nav -- *@
+
+        @* ----- BODY -----*@
+
+        <div id="cms-main">
+            @RenderBody()
+        </div>
+
+        @* ----- FOOTER -----*@
+
+        <div id="cms-footer">
+            <p>&copy; 2015 Notre-Dame Hospital</p>
+        </div>
+
+</body>
+</html>
