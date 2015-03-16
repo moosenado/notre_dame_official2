@@ -62,5 +62,60 @@ namespace notre_dame_rebuild.Controllers
             return View();
         }
 
+        public ActionResult News_Details(int id)
+        {
+            var news_article_id = objNews.getArticlesByID(id);
+
+            if (news_article_id == null)
+            {
+                return View("Not Found"); // go to Not Found Page
+            }
+            else
+            {
+                return View(news_article_id); // go to index
+            }
+        }
+
+        public ActionResult News_Update(int id, newsfeedClass nfc)
+        {
+            var news_article_id = objNews.getArticlesByID(id);
+            news_article_id.image = nfc.file_update;
+
+            if (news_article_id == null)
+            {
+                return View("Not Found");
+            }
+            else
+            {
+                return View(news_article_id);
+            }
+        }
+        [HttpPost]
+        public ActionResult News_Update(int id, newsfeedClass img_update, news_article newsarticle, HttpPostedFileBase file_update)
+        {
+            if (ModelState.IsValid) // Check if model is valid
+            {
+                try
+                {
+                    string path = Path.Combine(Server.MapPath("~/Images/News_Feed"), Path.GetFileName(file_update.FileName));
+                    file_update.SaveAs(path);
+
+                    img_update.file = file_update.FileName;
+
+                    newsarticle.image = img_update.file;
+
+                    objNews.articleUpdate(id, newsarticle.title, newsarticle.date, newsarticle.author, newsarticle.image, newsarticle.article);
+
+                    return RedirectToAction("News_Details/" + id);
+                }
+                catch
+                {
+                    return View(); // return original view if there is an error
+                }
+            }
+
+            return View(); // return view if model is not valid
+        }
+
     }
 }

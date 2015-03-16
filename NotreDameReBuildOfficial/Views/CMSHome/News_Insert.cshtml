@@ -17,7 +17,7 @@
     <br />
     @Html.LabelFor(model => model.date)
     <br />
-    @Html.TextBoxFor(model => model.date, new { style = "width:150px" })
+    @Html.TextBoxFor(model => model.date)
     <br />
     @Html.LabelFor(model => model.author)
     <br />
@@ -33,7 +33,7 @@
     <br />
     <br />
 
-    <input type="submit" value="Add Article" />
+    <input type="submit" value="Add Article" class="buttonstyle"/>
     
     <br><br>
     @ViewBag.Message

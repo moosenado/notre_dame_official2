@@ -8,16 +8,16 @@
 <br />
 <br />
 <h2>News</h2>
-
+<br />
 <p>
     @Html.ActionLink("Add News Article", "News_Insert", "CMSHome", new { @class = "buttonstyle" })
 </p>
-
-@* List Articles *@
 <br />
+@* List Articles *@
+<h3>Current News Articles</h3>
 <ul>
 @foreach (var article in Model.OrderByDescending(x => x.Id))
 {
-    <li>@Html.ActionLink(article.title, "News_Details", new {id = article.Id})</li>   
+    <li>@Html.ActionLink(article.title, "News_Details", new { id = article.Id }, new { @class = "link" })</li>   
 }
 </ul>

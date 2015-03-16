@@ -567,7 +567,7 @@ input#email.textbox {
 
     #navigation ul li:last-child {
         border-right: 0px;
-    }
+}
 }
 
 @media only screen and (max-width: 919px) {
@@ -902,6 +902,16 @@ input#email.textbox {
     min-height: 100%;
     position: relative;
     float: left;
+}
+
+.link{
+    color: #808080;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #019AB8;
+    text-decoration: none;
 }
 
 /* --- CMS LEFT MENU --- */
