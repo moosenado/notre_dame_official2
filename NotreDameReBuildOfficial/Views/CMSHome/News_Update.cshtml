@@ -1,0 +1,54 @@
+﻿@model NotreDameReBuildOfficial.Models.news_article
+@{
+    ViewBag.Title = "News_Update";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<br />
+<br />
+<h2>Update Article</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+
+    @Html.LabelFor(model => model.title)
+    <br />
+    @Html.TextBoxFor(model => model.title)
+    @Html.ValidationMessageFor(model => model.title, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.date)
+    <br />
+    @Html.TextBoxFor(model => model.date)
+    @Html.ValidationMessageFor(model => model.date, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.author)
+    <br />
+    @Html.TextBoxFor(model => model.author)
+    @Html.ValidationMessageFor(model => model.author, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.image)
+    <br />
+    @Html.TextBoxFor(model => model.image)
+    @Html.ValidationMessageFor(model => model.image, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.article)
+    <br />
+    @Html.TextBoxFor(model => model.article)
+    @Html.ValidationMessageFor(model => model.article, "*")
+
+    <br /><br />
+
+    <input type="submit" value="Update Article" />
+}
+
+<p>@Html.ActionLink("Back", "News_Details/" + Model.Id)</p>

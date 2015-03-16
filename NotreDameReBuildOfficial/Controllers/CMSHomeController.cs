@@ -76,5 +76,37 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
+        public ActionResult News_Update(int id)
+        {
+            var news_article_id = objNews.getArticlesByID(id);
+
+            if (news_article_id == null)
+            {
+                return View("Not Found");
+            }
+            else
+            {
+                return View(news_article_id);
+            }
+        }
+        [HttpPost]
+        public ActionResult News_Update(int id, news_article newsarticle)
+        {
+            if (ModelState.IsValid) // Check if model is valid
+            {
+                try
+                {
+                    objNews.articleUpdate(id, newsarticle.title, newsarticle.date, newsarticle.author, newsarticle.image, newsarticle.article);
+                    return RedirectToAction("News_Details/" + id);
+                }
+                catch
+                {
+                    return View(); // return original view if there is an error
+                }
+            }
+
+            return View(); // return view if model is not valid
+        }
+
     }
 }
