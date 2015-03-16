@@ -95,6 +95,7 @@ h3 {
 .buttonstyle {
     border: 2px solid #fff;
     color: #fff;
+    text-decoration: none;
     background-color: #f7900f;
     cursor: pointer;
     padding: 5px 10px;
@@ -120,6 +121,7 @@ h3 {
 
 .buttonstyle:hover {
     border: 2px solid #f7900f;
+    color: #fff;
 }
 
 .textbox {
@@ -815,6 +817,16 @@ h3 {
     min-height: 100%;
     position: relative;
     float: left;
+}
+
+.link{
+    color: #808080;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #019AB8;
+    text-decoration: none;
 }
 
 /* --- CMS LEFT MENU --- */

@@ -62,5 +62,19 @@ namespace notre_dame_rebuild.Controllers
             return View();
         }
 
+        public ActionResult News_Details(int id)
+        {
+            var news_article_id = objNews.getArticlesByID(id);
+
+            if (news_article_id == null)
+            {
+                return View("Not Found"); // go to Not Found Page
+            }
+            else
+            {
+                return View(news_article_id); // go to index
+            }
+        }
+
     }
 }
