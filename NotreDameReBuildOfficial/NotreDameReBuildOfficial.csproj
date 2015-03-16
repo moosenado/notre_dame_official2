@@ -207,6 +207,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-NotreDameReBuildOfficial-20150306083225.mdf" />
+    <Content Include="App_Data\aspnet-NotreDameReBuildOfficial-20150306083225_log.ldf">
+      <DependentUpon>aspnet-NotreDameReBuildOfficial-20150306083225.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\de\Microsoft.Data.Edm.resources.dll" />
     <Content Include="bin\de\Microsoft.Data.OData.resources.dll" />
@@ -459,7 +463,6 @@
     <Content Include="Views\CMSHome\News_Insert.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
