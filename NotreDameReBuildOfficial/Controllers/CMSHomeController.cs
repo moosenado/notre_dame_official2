@@ -76,9 +76,10 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
-        public ActionResult News_Update(int id)
+        public ActionResult News_Update(int id, newsfeedClass nfc)
         {
             var news_article_id = objNews.getArticlesByID(id);
+            news_article_id.image = nfc.file_update;
 
             if (news_article_id == null)
             {
