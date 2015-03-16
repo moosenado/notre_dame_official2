@@ -9,7 +9,7 @@
 <br />
 <h2>Update Article</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("News_Update", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary()
 
@@ -36,10 +36,9 @@
 
     @Html.LabelFor(model => model.image)
     <br />
-    @Html.TextBoxFor(model => model.image)
-    @Html.ValidationMessageFor(model => model.image, "*")
-
-    <br /><br />
+    <input type="file" name="file_update" id="file_update" />
+    <br />
+    <br />
 
     @Html.LabelFor(model => model.article)
     <br />

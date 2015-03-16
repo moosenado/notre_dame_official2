@@ -34,10 +34,6 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Please Enter An Author")]
         public string author { get; set; }
 
-        [DisplayName("Image")]
-        [Required(ErrorMessage = "Please Enter An Image")]
-        public string image { get; set; }
-
         [DisplayName("Article")]
         [Required(ErrorMessage = "Please Enter An Article")]
         public string article { get; set; }

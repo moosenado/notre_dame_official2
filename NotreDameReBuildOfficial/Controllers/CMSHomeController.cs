@@ -90,13 +90,21 @@ namespace notre_dame_rebuild.Controllers
             }
         }
         [HttpPost]
-        public ActionResult News_Update(int id, news_article newsarticle)
+        public ActionResult News_Update(int id, newsfeedClass img_update, news_article newsarticle, HttpPostedFileBase file_update)
         {
             if (ModelState.IsValid) // Check if model is valid
             {
                 try
                 {
+                    string path = Path.Combine(Server.MapPath("~/Images/News_Feed"), Path.GetFileName(file_update.FileName));
+                    file_update.SaveAs(path);
+
+                    img_update.file = file_update.FileName;
+
+                    newsarticle.image = img_update.file;
+
                     objNews.articleUpdate(id, newsarticle.title, newsarticle.date, newsarticle.author, newsarticle.image, newsarticle.article);
+
                     return RedirectToAction("News_Details/" + id);
                 }
                 catch
