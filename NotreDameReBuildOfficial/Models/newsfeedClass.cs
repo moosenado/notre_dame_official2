@@ -12,7 +12,7 @@ namespace NotreDameReBuildOfficial.Models
         ndLinqClassDataContext objNews = new ndLinqClassDataContext(); //link file to the designer.cs file
         public IQueryable<news_article> getArticles() //Query directly from the database
         {
-            var allArticles = objNews.news_articles.Select(x => x); //using METHOD syntax
+            var allArticles = objNews.news_articles.OrderByDescending(x => x.Id).Take(3); //only take the three most recent articles from the database
             return allArticles;
         }
         public news_article getArticlesByID(int _id) //pass chosen id to this function which matches id to id in the table
