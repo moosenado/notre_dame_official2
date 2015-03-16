@@ -18,7 +18,7 @@ namespace notre_dame_rebuild.Controllers
         newsfeedClass objNews = new newsfeedClass();
         public ActionResult Index()
         {
-            var articles = objNews.getArticles();
+            var articles = objNews.getTopArticles();
             return View(articles);
         }
 
