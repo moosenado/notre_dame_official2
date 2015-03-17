@@ -36,6 +36,7 @@
 
     @Html.LabelFor(model => model.image)
     @Html.HiddenFor(model => model.image)
+    <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" />
     <br />
     <input type="file" name="file_update" id="file_update" />
     <br />
