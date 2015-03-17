@@ -1,0 +1,20 @@
+﻿@model NotreDameReBuildOfficial.Models.Job_category
+@{
+    ViewBag.Title = "Delete_JobCategory";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+
+<h2>Are you sure you want to delete @Model.title?</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" />
+        <br /><br />
+        @Html.ActionLink("back", "JobCategory", new { id = Model.id })
+    </div>
+}

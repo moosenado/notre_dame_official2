@@ -1,0 +1,31 @@
+﻿@model NotreDameReBuildOfficial.Models.Job_category
+@{
+    ViewBag.Title = "Update_JobCategory";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2>you are Editing: @Model.title</h2>
+
+@using (Html.BeginForm()) // create a form by HtmlHelper
+{
+    @Html.HiddenFor(x => x.id) 
+    // create Labels and textboxs to insert a new value for each fields
+    <div>
+        @Html.LabelFor(x => x.title)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.title)
+    </div>
+    @Html.ValidationMessageFor(x => x.title) // create validation message for all textBoxes
+    <div>
+         <input type="submit" value="Update" />
+    </div>
+}
+<!--Return an anchor element-->
+<p>
+    @Html.ActionLink("Back", "JobCategory_Details", new { id = Model.id })
+</p>

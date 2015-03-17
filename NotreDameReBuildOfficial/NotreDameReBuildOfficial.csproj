@@ -197,6 +197,8 @@
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
+    <Compile Include="Models\jobPosting.cs" />
+    <Compile Include="Models\jobPostingValidation.cs" />
     <Compile Include="Models\ndLinqClass.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -457,6 +459,11 @@
     <Content Include="Views\Home\Article_Details.cshtml" />
     <Content Include="Views\CMSHome\News.cshtml" />
     <Content Include="Views\CMSHome\News_Insert.cshtml" />
+    <Content Include="Views\CMSHome\JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\JobCategory_Details.cshtml" />
+    <Content Include="Views\CMSHome\Insert_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\Update_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\Delete_JobCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
