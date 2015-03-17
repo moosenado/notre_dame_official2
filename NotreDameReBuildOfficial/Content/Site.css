@@ -107,11 +107,13 @@ h3 {
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
+    text-decoration: none;
    
 }
 
 .buttonstyle:hover {
     border: 2px solid #fd8411;
+    color: #fff;
 }
 
 .textbox {

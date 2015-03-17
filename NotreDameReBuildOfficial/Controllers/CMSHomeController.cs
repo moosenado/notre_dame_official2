@@ -76,10 +76,9 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
-        public ActionResult News_Update(int id, newsfeedClass nfc)
+        public ActionResult News_Update(int id)
         {
             var news_article_id = objNews.getArticlesByID(id);
-            news_article_id.image = nfc.file_update;
 
             if (news_article_id == null)
             {
@@ -97,12 +96,17 @@ namespace notre_dame_rebuild.Controllers
             {
                 try
                 {
-                    string path = Path.Combine(Server.MapPath("~/Images/News_Feed"), Path.GetFileName(file_update.FileName));
-                    file_update.SaveAs(path);
+                    if (file_update != null) //if user uploads a new image
+                    {
+                        string path = Path.Combine(Server.MapPath("~/Images/News_Feed"), Path.GetFileName(file_update.FileName));
+                        file_update.SaveAs(path);
 
-                    img_update.file = file_update.FileName;
+                        img_update.file = file_update.FileName;
 
-                    newsarticle.image = img_update.file;
+                        newsarticle.image = img_update.file;
+                    }
+
+                    //if the user does not upload a new image, this will execute using the hidden value on the page
 
                     objNews.articleUpdate(id, newsarticle.title, newsarticle.date, newsarticle.author, newsarticle.image, newsarticle.article);
 
