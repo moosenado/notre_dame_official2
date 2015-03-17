@@ -1,0 +1,14 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.news_article>
+@{
+    ViewBag.Title = "Article_List";
+}
+
+<h2>All Articles</h2>
+
+@foreach (var article in Model)
+{
+    <div class="news_image">
+        <a href="@Url.Action("Article_Details", new { id = article.Id })"><img src="~/Images/News_Feed/@Url.Content(article.image)" alt="@article.title" /></a>
+        <a href="@Url.Action("Article_Details", new { id = article.Id })"><span class="news_image_header">@article.title</span></a>
+    </div>
+}

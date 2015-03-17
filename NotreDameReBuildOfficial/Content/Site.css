@@ -78,7 +78,7 @@ h2 {
     font-family: 'Roboto Slab', serif;
     color: #f7900f;
     font-size: 1.5em;
-    margin: 20px 20px 10px 20px;
+    margin: 20px 20px 10px 0px;
 }
 
 h3 {
@@ -407,6 +407,30 @@ label.label {
 
 .service-desc {
     font-size: 0.875em;
+}
+
+#main_articles{
+    position: relative;
+}
+
+#seemore{
+    float: right;
+    clear: both;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#article_image{
+    float: left;
+}
+
+#article_info{
+    float:right;
+}
+
+#articlebody{
+    width: 55%;
 }
 
 

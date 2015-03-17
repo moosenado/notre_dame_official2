@@ -26,9 +26,28 @@ namespace notre_dame_rebuild.Controllers
         // ----- ARTICLE DETAILS by ELLIOT ----- //
         // ------------------------------------- //
 
-        public ActionResult Article_Details()
+        public ActionResult Article_Details(int id)
         {
-            return View();
+            var news_article_id = objNews.getArticlesByID(id);
+
+            if (news_article_id == null)
+            {
+                return View("Index"); // go to index
+            }
+            else
+            {
+                return View(news_article_id); // go to page
+            }
+        }
+
+        // ------------------------------------- //
+        // ------- ARTICLE LIST by ELLIOT ------ //
+        // ------------------------------------- //
+
+        public ActionResult Article_List()
+        {
+            var all_articles = objNews.getArticles();
+            return View(all_articles);
         }
 
 

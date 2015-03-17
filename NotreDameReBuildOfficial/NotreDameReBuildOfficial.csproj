@@ -465,6 +465,7 @@
     <Content Include="Views\CMSHome\News_Details.cshtml" />
     <Content Include="Views\CMSHome\News_Update.cshtml" />
     <Content Include="Views\CMSHome\News_Delete.cshtml" />
+    <Content Include="Views\Home\Article_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
