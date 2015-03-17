@@ -195,6 +195,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\donationClass.cs" />
+    <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\ndLinqClass.designer.cs">
