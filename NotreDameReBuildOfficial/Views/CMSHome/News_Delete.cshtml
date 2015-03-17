@@ -1,0 +1,19 @@
+﻿@model NotreDameReBuildOfficial.Models.news_article
+@{
+    ViewBag.Title = "News_Delete";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<h2>Delete Article</h2>
+
+@using (Html.BeginForm())
+{
+    <h2>Are you sure you want to delete @Html.DisplayFor(x => x.title)?</h2>
+
+    <br /><br />
+
+    <input type="submit" value="Delete" />
+
+}
