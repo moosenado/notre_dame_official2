@@ -121,5 +121,34 @@ namespace notre_dame_rebuild.Controllers
             return View(); // return view if model is not valid
         }
 
+        public ActionResult News_Delete(int id)
+        {
+            // Check to see if user id exists and handle it
+            var article_delete = objNews.getArticlesByID(id);
+
+            if (article_delete == null)
+            {
+                return View("Not Found");
+            }
+            else
+            {
+                return View(article_delete);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult News_Delete(int id, news_article newsarticle)
+        {
+            try
+            {
+                objNews.articleDelete(id); // commit delete to the database
+                return RedirectToAction("News"); //redirect to Index
+            }
+            catch
+            {
+                return View(); //return to original view if an error occurs
+            }
+        }
+
     }
 }
