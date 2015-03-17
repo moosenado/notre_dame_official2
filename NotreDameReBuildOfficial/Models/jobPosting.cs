@@ -30,7 +30,6 @@ namespace NotreDameReBuildOfficial.Models
             //to ensure all data will be disposed of when finished
             using (jobObj)
             {
-
                 jobObj.Job_postings.InsertOnSubmit(jobPo); //using our model to set tabale columns to new values being passed and providing it to the insert command
                 jobObj.SubmitChanges();//commit insert to database
                 return true;

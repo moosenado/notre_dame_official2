@@ -815,6 +815,7 @@ h3 {
     min-height: 100%;
     position: relative;
     float: left;
+    margin-left:50px;
 }
 
 /* --- CMS LEFT MENU --- */
@@ -894,3 +895,106 @@ h3 {
     position: relative;
     width: 100%;
 }
+
+/*---Job Opprtunity---*/
+
+.btn{
+    border:1px solid #333;
+    padding:5px;
+    /*text-decoration:none;*/
+    background-color:#34b6cf;
+    margin-top:40px;
+    margin-bottom:40px;
+    margin-left:10px;
+    border-radius: 5px;
+    float:left;
+    width:150px;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.btn-add{
+  border:1px solid #333;
+  padding:5px;
+  border-radius: 5px;
+  float:none;
+  margin:25px 0 0 0;
+  width:150px;
+  background-color:#34b6cf;
+}
+
+.category{
+    border:1px solid #019ab8;
+}
+
+.list-links ul li{
+    border-bottom:1px dashed rgba(255,175,77,1);
+}
+
+.lbl{
+    color:#646060;
+    margin:10px;
+}
+
+.Title{
+    margin-bottom:40px;
+}
+.field-validation-error {
+    color: #f00;
+    padding:5px;
+}
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+#careers{
+    margin-top:20px;
+    float:left;
+}
+
+#careers th {
+    border: 1px solid #34b6cf;
+    padding: 3px 7px 2px 7px;
+    background-color:rgba(255,175,77,1);
+}
+
+#careers td{
+    border: 1px solid #34b6cf;
+    padding: 3px 7px 2px 7px;
+    background-color:#fff;
+}
+
+.description{
+    width: 100%;
+    height:20em;
+    border: 1px solid #d8d8d8;
+    border-radius: 0.3em;
+    padding: 0.4em 0.7em;
+}
+
+.details_Op{
+    border:1px solid #34b6cf;
+    padding:1em;
+    width:50em;
+}
+.details_lbl{
+    margin-top:1em;
+}
+
+.frm{
+    border: 1px solid #d8d8d8;
+    border-radius: 0.3em;
+    padding: 0.4em 0.7em 0.4em ;
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+

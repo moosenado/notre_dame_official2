@@ -464,6 +464,11 @@
     <Content Include="Views\CMSHome\Insert_JobCategory.cshtml" />
     <Content Include="Views\CMSHome\Update_JobCategory.cshtml" />
     <Content Include="Views\CMSHome\Delete_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\JobPosting_Details.cshtml" />
+    <Content Include="Views\CMSHome\Update_JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\Insert_JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\Delete_JobPosting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
