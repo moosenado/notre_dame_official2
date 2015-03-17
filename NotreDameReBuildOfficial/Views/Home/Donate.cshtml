@@ -6,67 +6,107 @@
 
 <h2>Make a Donation</h2>
 
+<div class="hr"></div>
 
-@using (Html.BeginForm())
-{
-    <h3>Donation Information</h3>
+<div id="donation">
 
-    @Html.LabelFor(model => model.amount)
-    @Html.TextBoxFor(model => model.amount)
+    @using (Html.BeginForm())
+    {
 
-    @Html.LabelFor(model => model.in_memory)
-    @Html.TextBoxFor(model => model.in_memory)
+        <h3>Donation Information</h3>
 
-    <h3>Contact Information</h3>
+        @Html.LabelFor(model => model.amount, new { @class = "label amount" })
+        <span>$ </span>
+        @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
+        <span style="color:red">*</span>
 
-    @Html.LabelFor(model => model.first_name)
-    @Html.TextBoxFor(model => model.first_name)
+        <div class="clear"></div>
 
-    @Html.LabelFor(model => model.last_name)
-    @Html.TextBoxFor(model => model.last_name)
+        @Html.LabelFor(model => model.in_memory, new { @class = "label" })
+        @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
-    @Html.LabelFor(model => model.organization)
-    @Html.TextBoxFor(model => model.organization)
+        <br /><br />
 
-    <p>@Html.LabelFor(model => model.address)</p>
-    @Html.TextBoxFor(model => model.address)
+        <h3>Contact Information</h3>
 
-    @Html.LabelFor(model => model.city)
-    @Html.TextBoxFor(model => model.city)
+        @Html.LabelFor(model => model.first_name, new { @class = "label" })
+        @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
+        <span style="color:red">*</span>
 
-    @Html.LabelFor(model => model.province)
-    @Html.DropDownListFor(model => model.province, new[] {
-            new SelectListItem() {Text = "ON"},
-            new SelectListItem() {Text = "AB"},
-            new SelectListItem() {Text = "BC"},
-            new SelectListItem() {Text = "MB"},
-            new SelectListItem() {Text = "NB"},
-            new SelectListItem() {Text = "NL"},
-            new SelectListItem() {Text = "NS"},
-            new SelectListItem() {Text = "NT"},
-            new SelectListItem() {Text = "NU"},
-            new SelectListItem() {Text = "PE"},
-            new SelectListItem() {Text = "QC"},
-            new SelectListItem() {Text = "SK"},
-            new SelectListItem() {Text = "YT"}
-        })
+        <div class="clear"></div>
 
-    @Html.LabelFor(model => model.postal)
-    @Html.TextBoxFor(model => model.postal)
+        @Html.LabelFor(model => model.last_name, new { @class = "label" })
+        @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
+        <span style="color:red">*</span>
 
-    @Html.LabelFor(model => model.country)
-    @Html.TextBoxFor(model => model.country)
+        <div class="clear"></div>
 
-    @Html.LabelFor(model => model.phone)
-    @Html.TextBoxFor(model => model.phone)
+        @Html.LabelFor(model => model.organization, new { @class = "label" })
+        @Html.TextBoxFor(model => model.organization, new { @class = "textbox" })
 
-    @Html.LabelFor(model => model.email)
-    @Html.TextBoxFor(model => model.email)
+        <div class="clear"></div>
 
-    //Sbbmit button that will trigger insertDonation Action
-    <input type="submit" value="Submit" />
+        @Html.LabelFor(model => model.address, new { @class = "label" })
+        @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
+        <span style="color:red">*</span>
 
-}
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.city, new { @class = "label" })
+        @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
+        <span style="color:red">*</span>
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.province, new { @class = "label" })
+        @Html.DropDownListFor(model => model.province, new[] {
+                new SelectListItem() {Text = "ON"},
+                new SelectListItem() {Text = "AB"},
+                new SelectListItem() {Text = "BC"},
+                new SelectListItem() {Text = "MB"},
+                new SelectListItem() {Text = "NB"},
+                new SelectListItem() {Text = "NL"},
+                new SelectListItem() {Text = "NS"},
+                new SelectListItem() {Text = "NT"},
+                new SelectListItem() {Text = "NU"},
+                new SelectListItem() {Text = "PE"},
+                new SelectListItem() {Text = "QC"},
+                new SelectListItem() {Text = "SK"},
+                new SelectListItem() {Text = "YT"}
+            }, "--", new { @class = "dropdown-list" })
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.country, new { @class = "label" })
+        @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
+        <span style="color:red">*</span>
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.postal, new { @class = "label" })
+        @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
+        <span style="color:red">*</span>
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.phone, new { @class = "label" })
+        @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
+        <span style="color:red">*</span>
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.email, new { @class = "label" })
+        @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
+        <span style="color:red">*</span>
+
+        <div class="clear"></div>
+
+        //Submit button that will trigger insertDonation Action
+        <input type="submit" value="Submit" class="buttonstyle submit" />
+
+    }
+
+</div>
 
 @section Scripts {
 
