@@ -18,7 +18,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Amount: ")]
         [Required(ErrorMessage = "Please enter an amount")]
-        public string amount { get; set; }
+        public decimal amount { get; set; }
 
         [DisplayName("In Memory of: ")]
         public string in_memory { get; set; }
