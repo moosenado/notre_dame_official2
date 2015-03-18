@@ -204,8 +204,8 @@ namespace notre_dame_rebuild.Controllers
 
         public ActionResult Insert_JobPosting()
         {
-            //ViewBag.Categories = new jobCategory().getJobCategory();
-            ViewData["Categories"] = new jobCategory().getJobCategory();
+            ViewBag.Categories = new jobCategory().getJobCategory();
+           
             return View();
         }
         [HttpPost]// restirict an action method by only post requests 
