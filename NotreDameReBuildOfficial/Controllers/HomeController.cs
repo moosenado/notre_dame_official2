@@ -36,7 +36,7 @@ namespace notre_dame_rebuild.Controllers
             }
             else
             {
-                return View(news_article_id); // go to page
+                return View(news_article_id);
             }
         }
 
