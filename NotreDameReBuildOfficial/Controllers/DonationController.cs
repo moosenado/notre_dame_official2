@@ -15,17 +15,9 @@ namespace NotreDameReBuildOfficial.Controllers
         donationClass objDonation = new donationClass();
 
         //Donation Form Page Method
-        public ActionResult Index()
-        {
-            var donate = objDonation.getDonations();
-            return View(donate);
-        }
-
-        //Donation Form Page Method
         public ActionResult Donate()
         {
-            var donate = objDonation.getDonations();
-            return View(donate);
+            return View();
         }
 
         //Inserts donation into db

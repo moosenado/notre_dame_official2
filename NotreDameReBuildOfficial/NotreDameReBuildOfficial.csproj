@@ -737,7 +737,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\CMSHome\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutCMS.cshtml" />
-    <Content Include="Views\Home\Donate.cshtml" />
     <Content Include="Views\Home\Article_Details.cshtml" />
     <Content Include="Views\CMSHome\News.cshtml" />
     <Content Include="Views\CMSHome\News_Insert.cshtml" />
@@ -756,7 +755,6 @@
     <Content Include="Views\CMSHome\News_Delete.cshtml" />
     <Content Include="Views\Home\Article_List.cshtml" />
     <Content Include="Views\Donation\Donate.cshtml" />
-    <Content Include="Views\Donation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
