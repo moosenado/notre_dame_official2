@@ -1906,7 +1906,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _donation_id;
+		private int _donation_id = default(int);
 		
 		private System.Nullable<decimal> _amount;
 		
@@ -1940,8 +1940,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Ondonation_idChanging(int value);
-    partial void Ondonation_idChanged();
     partial void OnamountChanging(System.Nullable<decimal> value);
     partial void OnamountChanged();
     partial void Onin_memoryChanging(string value);
@@ -1975,23 +1973,12 @@ namespace NotreDameReBuildOfficial.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donation_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donation_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
 		public int donation_id
 		{
 			get
 			{
 				return this._donation_id;
-			}
-			set
-			{
-				if ((this._donation_id != value))
-				{
-					this.Ondonation_idChanging(value);
-					this.SendPropertyChanging();
-					this._donation_id = value;
-					this.SendPropertyChanged("donation_id");
-					this.Ondonation_idChanged();
-				}
 			}
 		}
 		

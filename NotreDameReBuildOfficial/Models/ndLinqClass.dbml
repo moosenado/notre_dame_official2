@@ -90,7 +90,7 @@
   </Table>
   <Table Name="gen.Donations" Member="Donations">
     <Type Name="Donation">
-      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,0) NULL" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="in_memory" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />

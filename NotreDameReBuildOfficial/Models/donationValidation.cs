@@ -16,7 +16,7 @@ namespace NotreDameReBuildOfficial.Models
     public class donationValidation
     {
 
-        [DisplayName("Amount: ")]
+        [DisplayName("Amount: (e.g. 50.00) ")]
         [Required(ErrorMessage = "Please enter an amount")]
         public decimal amount { get; set; }
 
@@ -55,6 +55,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Postal Code: ")]
         [Required(ErrorMessage = "Please enter your postal code")]
+        [StringLength(6, MinimumLength = 5, ErrorMessage = "Postal code must be 5 or 6 characters long")]
         public string postal { get; set; }
 
         [DisplayName("Phone Number: ")]

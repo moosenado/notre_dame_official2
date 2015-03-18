@@ -150,5 +150,45 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
+        // ---------------------------------- //
+        // ----- DONATIONS ADMIN by GEN ----- //
+        // ---------------------------------- //
+
+        donationClass objDonate = new donationClass();
+
+        public ActionResult Donate()
+        {
+            var Donate = objDonate.getDonations();
+            return View(Donate);
+        }
+
+
+        //Inserts donation into db
+        public ActionResult Donate_Insert()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Donate_Insert(Donation donation)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objDonate.insertDonation(donation);
+                    return RedirectToAction("Index"); //On sucessful insert, return to Donate page
+                }
+                catch
+                {
+                    //Error handling, return to Donation view if something goes wrong
+                    return View();
+                }
+            }
+
+            return View();
+        }
+
+
     }
 }
