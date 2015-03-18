@@ -18,8 +18,8 @@ namespace NotreDameReBuildOfficial.Models
     [Bind (Exclude = "id")]
     public partial class jobCategoryValidation
     {
-        [DisplayName("Category Name")]
-        [Required]
+        [DisplayName("Category Name:")]
+        [Required(ErrorMessage = "Please Enter Category Name")]
         public string title { get; set; }
     }
 }

@@ -7,7 +7,9 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class newsfeedClass
     {
-        public string file { get; set; } //get file name string
+        public string file { get; set; } //get insert file name string
+
+        public string current_image { get; set; } //get current image string
 
         ndLinqClassDataContext objNews = new ndLinqClassDataContext(); //link file to the designer.cs file
         public IQueryable<news_article> getArticles() //Query directly from the database

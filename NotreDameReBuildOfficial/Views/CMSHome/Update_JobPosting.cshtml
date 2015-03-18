@@ -1,0 +1,79 @@
+﻿@model NotreDameReBuildOfficial.Models.Job_posting
+@{
+    ViewBag.Title = "Update_JobPosting";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2>Update @Model.title</h2>
+@using (Html.BeginForm()) 
+{
+    @Html.HiddenFor(x => x.id)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.title)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.title, new { @class="frm"})
+    </div>
+    @Html.ValidationMessageFor(x => x.title)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.type)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.type, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.type)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.department)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.department, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.department)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.salary)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.salary, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.salary)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.posting_date)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.posting_date, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.posting_date)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.posting_date)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.posting_date, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.posting_date)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.description)
+    </div>
+    <div>
+        @Html.TextAreaFor(x => x.description, new { @class = "description" })
+    </div>
+    @Html.ValidationMessageFor(x => x.description)
+  
+     <div>
+       <input type="submit" value="Update"  class="btn-add"/>
+    </div>
+}
+<!--Return an anchor element-->
+<p>
+    @Html.ActionLink("Back", "JobPosting", new { id = Model.id })
+</p>
