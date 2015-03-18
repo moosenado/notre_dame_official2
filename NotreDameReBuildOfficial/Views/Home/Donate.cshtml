@@ -21,11 +21,17 @@
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.amount)
 
-        <div class="clear"></div>
-
         @Html.LabelFor(model => model.in_memory, new { @class = "label" })
         @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
+        <div class="clear"></div>
+        
+        @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
+        <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.type)<br />
+        @Html.RadioButtonFor(x => x.type, 0) @:Immediate Needs
+        @Html.RadioButtonFor(x => x.type, 1) @:The Foundation
+        
         <br /><br />
 
         <h3>Contact Information</h3>
@@ -119,6 +125,8 @@
 
 @section Scripts {
 
-    @Scripts.Render("~bundles/jquery.validate.unobstrusive.js")
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")*@
 
 }

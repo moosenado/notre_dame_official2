@@ -93,7 +93,7 @@
       <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="in_memory" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="type" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="TinyInt" CanBeNull="true" />
       <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="first_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="last_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />

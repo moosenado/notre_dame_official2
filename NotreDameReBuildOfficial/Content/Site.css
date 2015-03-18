@@ -153,6 +153,28 @@ label.label {
     padding: 1%;
 }
 
+/* Validation */
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+.validation-summary-errors {
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
 
 /*************************************/
 /*********** PUBLIC LAYOUT ***********/
@@ -553,11 +575,11 @@ label.amount {
 }
 
 input#amount.textbox {
-    width: 5%;
+    width: 10%;
 }
 
-input#amount.textbox {
-    width: 10%;
+label.donation-type {
+    display: inline-block;
 }
 
 input#in_memory.textbox,
