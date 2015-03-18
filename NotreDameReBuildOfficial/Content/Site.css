@@ -989,6 +989,13 @@ h3 {
     width: 100%;
 
 }
+.frm_insert{
+    border: 1px solid #d8d8d8;
+    border-radius: 0.3em;
+    padding: 0.4em 0.7em 0.4em ;
+    width: 50em;
+
+}
 
 
 

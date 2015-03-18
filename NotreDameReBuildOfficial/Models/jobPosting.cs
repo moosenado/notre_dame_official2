@@ -5,15 +5,27 @@ using System.Web;
 
 namespace NotreDameReBuildOfficial.Models
 {
-    public class jobPosting
+    public class jobPosting : Job_posting 
     {
         //creating an instance of Linq object
         ndLinqClassDataContext jobObj = new ndLinqClassDataContext();
 
-        public IQueryable<Job_posting> getJobs()
+        public string catTitle { get; set; }
+
+        public IQueryable<jobPosting> getJobs()
         {
             //Creating an anonymous variable with its value beging the instance of Linq object
-            var allJobs = jobObj.Job_postings.Select(x => x);
+            //var allJobs = jobObj.Job_postings.Select(x => x);
+            var allJobs = from jp in jobObj.Job_postings
+                          join cat in jobObj.Job_categories on jp.category_id equals cat.id
+                          select new jobPosting(){
+                              id = jp.id,
+                              title = jp.title,
+                              department = jp.department,
+                              posting_date = jp.posting_date,
+                              catTitle = cat.title 
+                          };
+
             //return IQueryable Jobposting for data bound control to bind
             return allJobs;
         }
