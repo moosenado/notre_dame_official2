@@ -7,5 +7,14 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class ApptSchedSysClass
     {
+        shdfjsdfsdfdg
+            sdg
+            sdg
+            s
+            dg
+            sdg
+            s
+            dg
+
     }
 }
