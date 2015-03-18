@@ -18,10 +18,14 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Amount: ")]
         [Required(ErrorMessage = "Please enter an amount")]
-        public string amount { get; set; }
+        public decimal amount { get; set; }
 
         [DisplayName("In Memory of: ")]
         public string in_memory { get; set; }
+
+        [DisplayName("Where would you like to direct your donation?: ")]
+        [Required(ErrorMessage = "Select one")]
+        public int type { get; set; }
 
         [DisplayName("First Name: ")]
         [Required(ErrorMessage = "Please enter your first name")]

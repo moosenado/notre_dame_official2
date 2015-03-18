@@ -19,12 +19,19 @@
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
         <span style="color:red">*</span>
-
-        <div class="clear"></div>
+        @Html.ValidationMessageFor(model => model.amount)
 
         @Html.LabelFor(model => model.in_memory, new { @class = "label" })
         @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
+        <div class="clear"></div>
+        
+        @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
+        <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.type)<br />
+        @Html.RadioButtonFor(x => x.type, 0) @:Immediate Needs
+        @Html.RadioButtonFor(x => x.type, 1) @:The Foundation
+        
         <br /><br />
 
         <h3>Contact Information</h3>
@@ -32,12 +39,14 @@
         @Html.LabelFor(model => model.first_name, new { @class = "label" })
         @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.first_name)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.last_name, new { @class = "label" })
         @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.last_name)
 
         <div class="clear"></div>
 
@@ -49,12 +58,14 @@
         @Html.LabelFor(model => model.address, new { @class = "label" })
         @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.address)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.city, new { @class = "label" })
         @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.city)
 
         <div class="clear"></div>
 
@@ -80,24 +91,28 @@
         @Html.LabelFor(model => model.country, new { @class = "label" })
         @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.country)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.postal, new { @class = "label" })
         @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.postal)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.phone, new { @class = "label" })
         @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.phone)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.email, new { @class = "label" })
         @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
         <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.email)
 
         <div class="clear"></div>
 
@@ -110,6 +125,8 @@
 
 @section Scripts {
 
-    @*@Scripts.Render("~bundles/jquery.validate.js")*@
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")*@
 
 }

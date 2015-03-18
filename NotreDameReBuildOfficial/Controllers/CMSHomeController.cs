@@ -293,11 +293,11 @@ namespace notre_dame_rebuild.Controllers
 
             if (news_article_id == null)
             {
-                return View("Not Found"); // go to Not Found Page
+                return View("News"); // go to news
             }
             else
             {
-                return View(news_article_id); // go to index
+                return View(news_article_id); // go to page
             }
         }
 
@@ -307,7 +307,7 @@ namespace notre_dame_rebuild.Controllers
 
             if (news_article_id == null)
             {
-                return View("Not Found");
+                return View("News");
             }
             else
             {
@@ -353,7 +353,7 @@ namespace notre_dame_rebuild.Controllers
 
             if (article_delete == null)
             {
-                return View("Not Found");
+                return View("News");
             }
             else
             {
