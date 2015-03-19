@@ -29,10 +29,9 @@ namespace NotreDameReBuildOfficial.Controllers
                 try
                 {
                     //if the form is submitted and the date is null, get the date as its value
-                    var date = donation.date;
-                    if (date == null)
+                    if (donation.date == null)
                     {
-                        date = DateTime.Now;
+                        donation.date = DateTime.Now;
                     } 
                     
                     objDonation.insertDonation(donation);
