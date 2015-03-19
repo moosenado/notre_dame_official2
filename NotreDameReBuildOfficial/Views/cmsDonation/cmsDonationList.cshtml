@@ -6,9 +6,27 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>cmsDonationList</h2>
+<h2>Donations</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Donor Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
 
-@foreach (var donor in Model)
-{
-    @donor.first_name
-}
+    @foreach (var donor in Model)
+    {
+        <tr>
+            <td>@donor.last_name, @donor.first_name</td>
+            <td>@donor.date.ToString("{0:dd-mmm-yyyy}")</td>
+            
+            <td>@donor.amount</td>
+            <td>View</td>
+            <td>Delete</td>
+       </tr>
+
+    }
+
+</table>
