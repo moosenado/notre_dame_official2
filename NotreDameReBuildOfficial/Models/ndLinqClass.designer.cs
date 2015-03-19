@@ -1914,7 +1914,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private System.Nullable<int> _type;
 		
-		private System.Nullable<System.DateTime> _date = default(System.Nullable<System.DateTime>);
+		private System.Nullable<System.DateTime> _date;
 		
 		private string _first_name;
 		
@@ -1948,6 +1948,8 @@ namespace NotreDameReBuildOfficial.Models
     partial void Onin_memoryChanged();
     partial void OntypeChanging(System.Nullable<int> value);
     partial void OntypeChanged();
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
+    partial void OndateChanged();
     partial void Onfirst_nameChanging(string value);
     partial void Onfirst_nameChanged();
     partial void Onlast_nameChanging(string value);
@@ -2061,6 +2063,17 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this.OndateChanging(value);
+					this.SendPropertyChanging();
+					this._date = value;
+					this.SendPropertyChanged("date");
+					this.OndateChanged();
+				}
 			}
 		}
 		
