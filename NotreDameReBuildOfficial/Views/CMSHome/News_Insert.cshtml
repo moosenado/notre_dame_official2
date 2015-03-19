@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 <h2>Add News Article</h2>
 
 @using (Html.BeginForm("News_Insert", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
