@@ -15,7 +15,8 @@
 
         <h3>Donation Information</h3>
       
-        @Html.LabelFor(model => model.amount, new { @class = "label amount" })
+        @Html.HiddenFor(model => model.date)
+        
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
         <span style="color:red">*</span>
