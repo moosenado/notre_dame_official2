@@ -27,7 +27,7 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Select one")]
         public int type { get; set; }
 
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode=true)]
         public DateTime date { get; set; }
 
         [DisplayName("First Name: ")]

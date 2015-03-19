@@ -936,8 +936,9 @@ label.label {
     min-height: 100%;
     position: relative;
     float: left;
-    margin-left:50px;
+    margin-left:40px;
     margin-top: 60px;
+    width: 70%;
 }
 
 .link{
