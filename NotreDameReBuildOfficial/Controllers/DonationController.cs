@@ -28,13 +28,14 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 try
                 {
-                    if (donation.date == null)
+                    //if the form is submitted and the date is null, get the date as its value
+                    var date = donation.date;
+                    if (date == null)
                     {
-                        donation.date = DateTime.Now;
+                        date = DateTime.Now;
                     } 
                     
                     objDonation.insertDonation(donation);
-
                     return RedirectToAction("Donate"); //On sucessful insert, return to Donate page
                 }
                 catch

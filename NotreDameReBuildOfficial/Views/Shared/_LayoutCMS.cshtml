@@ -19,7 +19,9 @@
     <div id="cms-head-container">
 
         <div id="date">
-            <p>Wednesday, February 18, 2015</p>
+            @DateTime.Now.DayOfWeek.ToString(),
+            @DateTime.Now.ToString("MMMM dd, yyyy")
+            
         </div>
 
         <ul id="cms-top-nav">

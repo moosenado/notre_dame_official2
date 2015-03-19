@@ -1,0 +1,14 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Donation>
+
+@{
+    ViewBag.Title = "cmsDonationList";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>cmsDonationList</h2>
+
+@foreach (var donor in Model)
+{
+    @donor.first_name
+}
