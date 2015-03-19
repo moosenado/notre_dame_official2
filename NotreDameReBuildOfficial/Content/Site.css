@@ -54,7 +54,6 @@ html, body{
     height: 100%; /*For Sticky Footer*/
     font-family: 'Roboto', serif;
     text-shadow: 0px 0px 1px rgba(128,128,128,0.01); /*for sharper font on windows machines*/
-    /*letter-spacing: 0.0175em;*/
     color: #444;
 }
 
@@ -330,6 +329,7 @@ label.label {
 /* --- PUBLIC BODY --- */
 
 /*For Sticky Footer*/
+
 #main {
     width: 1024px;
     min-height: 100%;
@@ -416,16 +416,22 @@ label.label {
 }
 
 /* First Button */
-.icon1 { background-color: #0f7daa; }
-.btn-text1 { background-color: #019ab8; }
+.icon1 { 
+    background-color: #0f7daa; }
+.btn-text1 { 
+    background-color: #019ab8; }
 
 /* Second Button */
-.icon2 { background-color: #94b113; }
-.btn-text2 { background-color: #accf13; }
+.icon2 { 
+    background-color: #94b113; }
+.btn-text2 { 
+    background-color: #accf13; }
 
 /* Third Button */
-.icon3 { background-color: #f67000; }
-.btn-text3 { background-color: #fe890a; }
+.icon3 { 
+    background-color: #f67000; }
+.btn-text3 { 
+    background-color: #fe890a; }
 
 .service-desc {
     font-size: 0.875em;
@@ -454,7 +460,6 @@ label.label {
 #articlebody{
     width: 55%;
 }
-
 
 /* --- PUBLIC FOOTER --- */
 
@@ -563,37 +568,9 @@ label.label {
     font-size: 10px;
 }
 
-/* --- DONATION FORM --- */
-
-#donation {
-    padding: 20px;
-    width: 100%;
-}
-
-label.amount {
-    display: inline-block;
-}
-
-input#amount.textbox {
-    width: 10%;
-}
-
-label.donation-type {
-    display: inline-block;
-}
-
-input#in_memory.textbox,
-input#first_name.textbox,
-input#last_name.textbox,
-input#organization.textbox,
-input#address.textbox,
-input#email.textbox {
-    width: 40%;
-}
-
 
 /*********************************/
-/*********** RESONSIVE ***********/
+/*********** RESPONSIVE ***********/
 /*********************************/
 
 /* --- MOBILE NAVIGATION --- */
@@ -914,10 +891,10 @@ input#email.textbox {
 
 #date {
 	color: #fff;
-	padding: 11px 24px;
+	padding: 14px 24px;
 	margin: 0px 20px;
 	float: left;
-	font-size: 0.75em;
+	font-size: 0.875em;
 }
 
 #cms-top-nav li a {
@@ -960,6 +937,7 @@ input#email.textbox {
     position: relative;
     float: left;
     margin-left:50px;
+    margin-top: 60px;
 }
 
 .link{
@@ -1050,7 +1028,11 @@ input#email.textbox {
     width: 100%;
 }
 
-/*---Job Opprtunity---*/
+/********************************/
+/*********** FEATURES ***********/
+/********************************/
+
+/* --- Job Opprtunity --- */
 
 .btn{
     border:1px solid #333;
@@ -1093,10 +1075,12 @@ input#email.textbox {
 .Title{
     margin-bottom:40px;
 }
+
 .field-validation-error {
     color: #f00;
     padding:5px;
 }
+
 .input-validation-error {
     border: 1px solid #f00;
     background-color: #fee;
@@ -1132,6 +1116,7 @@ input#email.textbox {
     padding:1em;
     width:50em;
 }
+
 .details_lbl{
     margin-top:1em;
 }
@@ -1143,6 +1128,7 @@ input#email.textbox {
     width: 100%;
 
 }
+
 .frm_insert{
     border: 1px solid #d8d8d8;
     border-radius: 0.3em;
@@ -1152,10 +1138,30 @@ input#email.textbox {
 }
 
 
+/* --- DONATION FORM --- */
 
+#donation {
+    padding: 20px;
+    width: 100%;
+}
 
+label.amount {
+    display: inline-block;
+}
 
+input#amount.textbox {
+    width: 10%;
+}
 
+label.donation-type {
+    display: inline-block;
+}
 
-
-
+input#in_memory.textbox,
+input#first_name.textbox,
+input#last_name.textbox,
+input#organization.textbox,
+input#address.textbox,
+input#email.textbox {
+    width: 40%;
+}

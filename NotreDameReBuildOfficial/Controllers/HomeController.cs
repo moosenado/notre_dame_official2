@@ -49,41 +49,6 @@ namespace notre_dame_rebuild.Controllers
             var all_articles = objNews.getArticles();
             return View(all_articles);
         }
-
-
-        // ---------------------------- //
-        // ----- DONATIONS by GEN ----- //
-        // ---------------------------- //
-
-        ////Instantiates an object of the donationClass
-        //donationClass objDonate = new donationClass();
-
-        ////Donation Form Page Method
-        //public ActionResult Donate()
-        //{
-        //    return View();
-        //}
-
-        ////Inserts donation into db
-        //[HttpPost]
-        //public ActionResult Donate(Donation donation)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            objDonate.insertDonation(donation);
-        //            return RedirectToAction("Index"); //On sucessful insert, return to Donate page
-        //        }
-        //        catch
-        //        {
-        //            //Error handling, return to Donation view if something goes wrong
-        //            return View();
-        //        }
-        //    }
-
-        //    return View();
-        //}
      
     
     }
