@@ -27,6 +27,9 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Select one")]
         public int type { get; set; }
 
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd/MM/yyyy}")]
+        public DateTime date { get; set; }
+
         [DisplayName("First Name: ")]
         [Required(ErrorMessage = "Please enter your first name")]
         public string first_name { get; set; }
