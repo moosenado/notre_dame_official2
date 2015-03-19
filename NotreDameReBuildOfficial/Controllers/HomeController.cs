@@ -65,10 +65,33 @@ namespace notre_dame_rebuild.Controllers
 
             return View();
         }
-    
-    
-    
-    
+
+        // ---------------------------- //
+        // ----- JobPosting by Mina ----- //
+        // ---------------------------- //
+
+        jobPosting JobPosObj = new jobPosting(); // creating an instance of jobPosting class
+
+        //Get all Jobs
+        public ActionResult JobPosting()
+        {
+            var JobPost = JobPosObj.getJobs();
+            return View(JobPost);
+        }
+
+        //Get Job by id
+        public ActionResult JobPosting_Details(int id)
+        {
+            var JobPost = JobPosObj.getJobByID(id);
+            if (JobPost == null)
+            {
+                return View("Not Found");
+            }
+            else
+            {
+                return View(JobPost);
+            }
+        }
     
     
     

@@ -87,12 +87,12 @@
 <p>@Html.ActionLink("Back", "JobPosting")</p>
 <script>
     $(function () {
-        $('#description').ckeditor({
-            uiColor: '#9AB8F3'
-        });
+      
         $("#ddl-cat").change(function () {
             var item = $("#ddl-cat option:selected");
             $("#category_id").val(item.data("id"));
         });
     });
+
+    CKEDITOR.replace('description');
 </script>
