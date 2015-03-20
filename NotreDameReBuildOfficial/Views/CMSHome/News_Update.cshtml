@@ -34,6 +34,7 @@
     <br /><br />
 
     @Html.LabelFor(model => model.image)
+    <br />
     @Html.HiddenFor(model => model.image)
     <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" />
     <br />
@@ -48,7 +49,7 @@
 
     <br /><br />
 
-    <input type="submit" value="Update Article" />
+    <input type="submit" value="Update Article" class="buttonstyle"/>
 }
 
-<p>@Html.ActionLink("Back", "News_Details/" + Model.Id)</p>
+<p>@Html.ActionLink("Back", "News_Details/" + Model.Id, "CMSHome", new { @class = "link" })</p>
