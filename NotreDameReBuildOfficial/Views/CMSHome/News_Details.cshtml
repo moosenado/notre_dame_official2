@@ -21,9 +21,13 @@
 
 <h3>@Html.Label("Article")</h3>
 <p>@Html.DisplayFor(x => x.article)</p>
-
+<br />
 <p>
-    @Html.ActionLink("Back", "News", "CMSHome")
-    @Html.ActionLink("Update", "News_Update", new { id = Model.Id })
-    @Html.ActionLink("Delete", "News_Delete", new { id = Model.Id })
+    @Html.ActionLink("Update", "News_Update", new { id = Model.Id }, new { @class = "buttonstyle" })
+    @Html.ActionLink("Delete", "News_Delete", new { id = Model.Id }, new { @class = "buttonstyle" })
+    <br />
+    <br />
+    @Html.ActionLink("Back", "News", "CMSHome", new { @class = "link" })
+    
+    
 </p>

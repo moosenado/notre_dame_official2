@@ -24,19 +24,16 @@
     @Html.LabelFor(model => model.article)
     <br />
     @Html.TextBoxFor(model => model.article)
+    <br />   
     <br />
-    
+    <input type="file" name="file" id="file" />
     <br />
-    <input type="file" name="file" id="file" /><br><br>
+    <input type="submit" value="Add Article" class="buttonstyle"/> 
     <br />
     <br />
-
-    <input type="submit" value="Add Article" class="buttonstyle"/>
-    
-    <br><br>
     @ViewBag.Message
 }
 
 <div>
-    @Html.ActionLink("Back", "News")
+    @Html.ActionLink("Back", "News", "CMSHome", new { @class = "link" })
 </div>
