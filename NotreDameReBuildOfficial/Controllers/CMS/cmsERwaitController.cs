@@ -18,15 +18,10 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
-        public ActionResult ERwait_AddPatient()
+        public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult ERwait_AddPatient(ER_patient_info patientinfo, ER_wait_list waitlist)
-        {
-            if (ModelState.IsValid)
+            if (form_command == "waitlist_add")
+            {
                 try
                 {
                     //match field entries going into patient info table to waitlist table
@@ -38,17 +33,35 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     //insert data into both patientinfo and waitlist tables
                     objER.insertPatient(patientinfo);
                     objER.insertPatient_Wait(waitlist);
+
+                    //output message
+                    ViewBag.Message = "Patient Added to ER Wait Room";
                 }
                 catch (Exception ex)
                 {
                     ViewBag.Message = "Error:" + ex.Message.ToString();
                 }
+            }
+            else if (form_command == "patient_add")
+            {
+                try
+                {
+                    //insert data into patientinfo table only
+                    objER.insertPatient(patientinfo);
+
+                    ViewBag.Message = "Patient Added To ER";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "Error:" + ex.Message.ToString();
+                }
+            }
             else
             {
-                ViewBag.Message = "Please Select a File";
+                return View();
             }
+
             return View();
         }
-
     }
 }

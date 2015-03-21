@@ -21,7 +21,7 @@
 
 <h3>Add Patient</h3>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("ERwait_AddPatient", "cmsERwait", FormMethod.Post, new { id = "submitPatient" }))
 {
     @Html.LabelFor(model => model.fname)
     <br />
@@ -39,6 +39,20 @@
     <br />
     @Html.TextBoxFor(model => model.er_reason)
     <br />
-    <input type="submit" value="Add Patient" class="buttonstyle" />
+    @Html.HiddenFor(model => model.arrivaltime)
     <br />
+    <button type="submit" id="btnAddPatient" value="patient_add" class="buttonstyle" name="form_command">Add Patient to ER</button>
+    <button type="submit" id="btnAddWaitList" value="waitlist_add" class="buttonstyle" name="form_command">Add Patient to ER Wait Room</button>
+    <br />
+    @ViewBag.Message
+}
+
+@{
+    DateTime endTime = new DateTime(2015, 3, 21, 13, 40, 52);
+    DateTime startTime = new DateTime(2015, 3, 21, 12, 38, 52);
+    TimeSpan span = endTime.Subtract(startTime);
+    Response.Write("Time Difference (seconds): " + span.Seconds);
+    Response.Write("Time Difference (minutes): " + span.Minutes);
+    Response.Write("Time Difference (hours): " + span.Hours);
+    Response.Write("Time Difference (days): " + span.Days);   
 }
