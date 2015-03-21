@@ -32,10 +32,20 @@ namespace NotreDameReBuildOfficial.Controllers
                     if (donation.date == null)
                     {
                         donation.date = DateTime.Now;
-                    } 
-                    
+                    }
+
+                    string url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+                    string cmd = "?cmd=";
+                    string value = "_donations";
+                    string business = "&business=admin@notredame.com";
+                    string itm = "&item_name=Donation";
+                    string currency = "&currency_code=CAD";
+                    string amt = "&amount=" + donation.amount.Value.ToString();
+
+                    string path = url + cmd + value + business + itm + currency + amt;
+
                     objDonation.insertDonation(donation);
-                    return RedirectToAction("Donate"); //On sucessful insert, return to Donate page
+                    return Redirect(path); //On sucessful insert, return to PayPal page
                 }
                 catch
                 {
@@ -49,3 +59,4 @@ namespace NotreDameReBuildOfficial.Controllers
 
     }
 }
+
