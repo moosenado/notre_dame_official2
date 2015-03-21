@@ -31,7 +31,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
-        public bool updateAppt(int _id, string _First_Name, string _Last_Name, string _Email, string _Health_Num, //////)
+        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _bookTime, DateTime _AdditionalInfo, DateTime _Tstamp, string _Speciality)
 
     }
 }
