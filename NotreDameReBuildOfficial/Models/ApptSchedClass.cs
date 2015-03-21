@@ -21,9 +21,9 @@ namespace NotreDameReBuildOfficial.Models
             return allAppt;
         }
 
-        public bool insertAppt(Appt_Book appt)
+        public bool insertAppt(Appt_Book appt) //created instance of appt_book table 
         {
-            using (objApptSched)
+            using (objApptSched) //using makes sure data disposed after its used
             {
                 objApptSched.Appt_Books.InsertAllOnSubmit(appt);
                 objApptSched.SubmitChanges();
@@ -31,7 +31,35 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
-        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _bookTime, DateTime _AdditionalInfo, DateTime _Tstamp, string _Speciality)
+        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _BookTime, string _AdditionalInfo, DateTime _Tstamp, string _Speciality, string _Phone)
+        {
+            using (objApptSched)
+            {
+                var apptUpd = objApptSched.Appt_Books.Single(x => x.id == _id);
+                //passing new values into each table column
+                apptUpd.Fname = _Fname;
+                apptUpd.Lname = _Lname;
+                apptUpd.Email = _Email;
+                apptUpd.HealthNum = _HealthNum;
+                apptUpd.BookDate = _BookDate;
+                apptUpd.BookTime = _BookTime;
+                apptUpd.AdditionalInfo = _AdditionalInfo;
+                apptUpd.Tstamp = _Tstamp;
+                apptUpd.Speciality = _Speciality;
+                apptUpd.Phone = _Phone;
+                return true;
+            }
+        }
+        public bool apptDelete(int _id)
+        {
+            using (objApptSched)
+            {
+                var apptDel = objApptSched.Appt_Books.Single(x => x.id == _id);
+                objApptSched.Appt_Books.DeleteOnSubmit(apptDel);
+                objApptSched.SubmitChanges();
+                return true;
+            }
+        }
 
     }
 }
