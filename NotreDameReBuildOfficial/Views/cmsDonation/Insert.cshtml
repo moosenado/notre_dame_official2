@@ -1,12 +1,12 @@
 ﻿@model NotreDameReBuildOfficial.Models.Donation
 
 @{
-    ViewBag.Title = "Donate";
+    ViewBag.Title = "Insert";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Make a Donation</h2>
-
-<div class="hr"></div>
+<h2>Insert a New Donation</h2>
 
 <div id="donation">
 
@@ -14,9 +14,9 @@
     {
 
         <h3>Donation Information</h3>
-      
+
         @Html.HiddenFor(model => model.date)
-        
+
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
         <span style="color:red">*</span>
@@ -26,7 +26,6 @@
         @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
         <div class="clear"></div>
-        
 
         @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
         <span style="color:red">*</span>
@@ -115,20 +114,6 @@
         @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.email)
-
-        <br /><br />
-        
-    //PayPal button
-    <form action="~/Home/Donate" method="post">
-        <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="business" value="admin@notredame.com">
-        <input type="hidden" name="item_name" value="Donation">
-        <input type="hidden" name="currency_code" value="CAD">
-        <input type="hidden" name="amount">
-        <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-        
     }
 
 </div>
