@@ -34,6 +34,7 @@ namespace NotreDameReBuildOfficial.Controllers
                         donation.date = DateTime.Now;
                     }
 
+                    //these strings make up t
                     string url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
                     string cmd = "?cmd=";
                     string value = "_donations";
@@ -49,14 +50,16 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 catch
                 {
+
                     //Error handling, return to Donation view if something goes wrong
                     return View();
+
                 }
             }
 
             return View();
-        }
 
+        }
     }
 }
 

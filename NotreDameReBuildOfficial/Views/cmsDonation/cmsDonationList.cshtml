@@ -7,26 +7,38 @@
 }
 
 <h2>Donations</h2>
-<table>
+<table id="donation-list">
     <thead>
         <tr>
+            <th>Record No.</th>
             <th>Donor Name</th>
             <th>Date</th>
             <th>Amount</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
 
     @foreach (var donor in Model)
     {
         <tr>
+            <td>@donor.donation_id</td>
             <td>@donor.last_name, @donor.first_name</td>
-            @*<td>@donor.date.ToString("{0:dd-mmm-yyyy}")</td>*@
-            
+            <td>@donor.date.Value.ToString("MM/dd/yyyy")</td>
             <td>@donor.amount</td>
-            <td>View</td>
-            <td>Delete</td>
+            <td>@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id }) / @Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id }) / @Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })</td>           
        </tr>
-
     }
 
 </table>
+
+@Html.ActionLink("Add a New Donation", "Insert", new { @class = "yes-no-btn" })
+
+
+@*@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id })  |
+@Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id })  |
+@Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })*@
+
+@*<td>
+    <a href="@Url.Action("Update", "cmsDonation", new { donation_id = donor.donation_id })" title="Edit Donation"><i class="fa fa-pencil-square-o fa-lg"></i></a>
+    <a href="@Url.Action("Delete", "cmsDonation", new { donation_id = donor.donation_id })" title="Delete Donation"><i class="fa fa-times fa-lg"></i></a>
+</td>*@

@@ -1,0 +1,20 @@
+﻿@model NotreDameReBuildOfficial.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h3>Donation Record No. @Html.DisplayFor(x => x.donation_id)</h3>
+
+
+<p>@Html.DisplayFor(x => x.first_name)</p>
+
+<p>@Html.DisplayFor(x => x.last_name)</p>
+
+<p>
+    @Html.ActionLink("Back", "cmsDonationList", "cmsDonation") |
+    @Html.ActionLink("Edit", "Update", new { donation_id = Model.donation_id }) |
+    @Html.ActionLink("Delete", "Delete", new { donation_id = Model.donation_id })
+</p>
