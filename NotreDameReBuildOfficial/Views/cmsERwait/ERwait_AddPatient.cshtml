@@ -1,0 +1,44 @@
+﻿@model NotreDameReBuildOfficial.Models.ER_patient_info
+@{
+    ViewBag.Title = "ERwait_AddPatient";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>ER Wait Time</h2>
+
+<br />
+
+<div id="erlinks">
+    <ul>
+        <li>@Html.ActionLink("Waiting Patients", "ERwait_Patients", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Add Patient", "ERwait_AddPatient", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Patient History Data", "ERwait_PatientHistory", "cmsERwait", new { @class = "buttonstyle" })</li>
+    </ul>
+</div>
+
+<br />
+
+<h3>Add Patient</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.fname)
+    <br />
+    @Html.TextBoxFor(model => model.fname)
+    <br />
+    @Html.LabelFor(model => model.lname)
+    <br />
+    @Html.TextBoxFor(model => model.lname)
+    <br />
+    @Html.LabelFor(model => model.date)
+    <br />
+    @Html.TextBoxFor(model => model.date)
+    <br />
+    @Html.LabelFor(model => model.er_reason)
+    <br />
+    @Html.TextBoxFor(model => model.er_reason)
+    <br />
+    <input type="submit" value="Add Patient" class="buttonstyle" />
+    <br />
+}

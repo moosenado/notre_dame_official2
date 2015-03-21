@@ -196,7 +196,7 @@ label.label {
 
 #searchfield {
     float: right;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-right: 15px;
 }
 
@@ -220,6 +220,11 @@ label.label {
     padding: 4px;
 }
 
+#erwait{
+    text-align: right;
+    padding-top: 35px;
+}
+
 /* --- PUBLIC MAIN NAVIGATION --- */
 
 #navigation {
@@ -231,8 +236,7 @@ label.label {
 #navigation ul {
     text-align: center;
     background-color: #019ab8;
-    padding: 20px;
-    
+    padding: 20px;  
 }
 
 #navigation ul li {
@@ -949,6 +953,12 @@ label.label {
 .link:hover{
     color: #019AB8;
     text-decoration: none;
+}
+
+/* --- CMS ER WAIT --- */
+
+#erlinks ul li{
+    display: inline;
 }
 
 /* --- CMS LEFT MENU --- */
