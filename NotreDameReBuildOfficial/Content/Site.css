@@ -394,6 +394,7 @@ table tr:nth-child(odd) td {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -265px;
+    padding-top: 20px;
 }
 
 #news {
