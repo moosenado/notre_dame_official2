@@ -52,7 +52,7 @@ table {
 
 html, body{
     height: 100%; /*For Sticky Footer*/
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-shadow: 0px 0px 1px rgba(128,128,128,0.01); /*for sharper font on windows machines*/
     color: #444;
 }
@@ -73,12 +73,12 @@ a:hover {
 
 h1 {
     font-family: 'Lora', serif;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 h2 {
     font-family: 'Lora', serif;
-    font-weight: bold;
+    font-weight: 700;
     color: #f7900f;
     font-size: 1.5em;
     margin: 20px 20px 10px 20px;
@@ -86,10 +86,10 @@ h2 {
 
 h3 {
     font-family: 'Lora', serif;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.15em;
     padding-bottom: 7px;
-    margin: 15px 0px;
+    margin-top: 10px;
     color: #808080;
 }
 
@@ -103,7 +103,7 @@ h3 {
     background-color: #fd8411;
     cursor: pointer;
     padding: 5px 10px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-transition: 0.5s ease-out;
     -moz-transition: 0.5s ease-out;
     -o-transition: 0.5s ease-out;
@@ -126,7 +126,7 @@ h3 {
     background-color: #f7900f;
     cursor: pointer;
     padding: 10px 15px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     font-size: 1em;
     border: 0px;
@@ -293,7 +293,7 @@ table tr:nth-child(odd) td {
 }
 
 #navigation ul li {
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
     position: relative;
     list-style: none;
     display: inline;
@@ -308,9 +308,9 @@ table tr:nth-child(odd) td {
 
 #navigation ul li a{
     text-decoration: none;
-    padding: 20px 38px;
+    padding: 20px 35px;
     color: #fff;
-    font-size: 0.875em; 
+    font-size: 0.99em; 
 }
 
 #navigation ul li ul {
@@ -333,6 +333,11 @@ table tr:nth-child(odd) td {
 #navigation ul li ul li {
  	padding: 20px 0 20px 0;
     display: block;
+    border-right: 0px;
+}
+
+#navigation ul li ul li:first-child {
+    border-left: 0px;
 }
 
 #navigation ul li ul li a{
@@ -393,12 +398,11 @@ table tr:nth-child(odd) td {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -265px;
-    padding-top: 30px;
 }
 
 #news {
     width: 96%;
-    margin: 2%;
+    margin: 0% 2%;
     padding: 1%;
 }
 
