@@ -24,6 +24,10 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 try
                 {
+                    //grab current time
+                    DateTime time_now = DateTime.Now;
+                    patientinfo.arrivaltime = time_now;
+
                     //match field entries going into patient info table to waitlist table
                     waitlist.patientid = patientinfo.Id;
                     waitlist.arrivaltime = patientinfo.arrivaltime;
@@ -46,6 +50,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 try
                 {
+                    DateTime time_now = DateTime.Now;
+                    patientinfo.arrivaltime = time_now;
                     //insert data into patientinfo table only
                     objER.insertPatient(patientinfo);
 
