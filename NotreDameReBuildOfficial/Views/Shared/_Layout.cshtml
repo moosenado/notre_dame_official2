@@ -39,7 +39,9 @@
             <div id="searchfield">
                 <form id="headerbuttons">
                     <input type="button" name="login" value="Login" class="buttonstyle"/>
-                    <input type="button" name="donate" value="Donate" class="buttonstyle" />
+                    <a href='@Url.Action("Donate", "Donation")'>
+                        <input type='button' value="Donate" class="buttonstyle" />
+                    </a>
                 </form>
                 <div id="magnifylogo"><i class="fa fa-search"></i></div>
                 <form id="headersearch">
