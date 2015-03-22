@@ -7,6 +7,7 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class erwaitClass
     {
+        //get/set form_command
         public string form_command { get; set; } 
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 

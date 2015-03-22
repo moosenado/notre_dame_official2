@@ -28,17 +28,22 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     DateTime time_now = DateTime.Now;
                     patientinfo.arrivaltime = time_now;
 
-                    //insert data into patient info table
-                    objER.insertPatient(patientinfo);
+                    var wait_patientid = 1;
+                    var wait_fname = patientinfo.fname;
+                    var wait_lname = patientinfo.lname;
 
-                    //match field entries from patient info table to waitlist table
-                    waitlist.patientid = patientinfo.Id;
+                    waitlist.patientid = wait_patientid;
                     waitlist.arrivaltime = time_now;
-                    waitlist.fname = patientinfo.fname;
-                    waitlist.fname = patientinfo.lname;
+                    waitlist.fname = wait_fname;
+                    waitlist.lname = wait_lname;
 
-                    //insert data into wait list table        
-                    objER.insertPatient_Wait(waitlist);
+                    //add form data to both patient info and wait list tables
+                    using (ndLinqClassDataContext objER = new ndLinqClassDataContext())
+                    {
+                        objER.ER_patient_infos.InsertOnSubmit(patientinfo);
+                        objER.ER_wait_lists.InsertOnSubmit(waitlist);
+                        objER.SubmitChanges();
+                    }
 
                     //output message
                     ViewBag.Message = "Patient Added to ER Wait Room";
