@@ -1,0 +1,61 @@
+﻿@model NotreDameReBuildOfficial.Models.Appt_Book
+
+@{
+    ViewBag.Title = "createAppt";
+}
+
+<h2>createAppt</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    
+    @Html.LabelFor(model => model.Fname)
+    @Html.TextBoxFor(model => model.Fname)
+    @Html.ValidationMessageFor(model => model.Fname, "*")
+    
+    @Html.LabelFor(model => model.Lname)
+    @Html.TextBoxFor(model => model.Lname)
+    @Html.ValidationMessageFor(model => model.Lname, "*")
+    
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email, "*")
+    
+    @Html.LabelFor(model => model.HealthNum)
+    @Html.TextBoxFor(model => model.HealthNum)
+    @Html.ValidationMessageFor(model => model.HealthNum, "*")
+    
+    @Html.LabelFor(model => model.BookDate)
+    @Html.TextBoxFor(model => model.BookDate)
+    @Html.ValidationMessageFor(model => model.BookDate, "*")
+    
+    @Html.LabelFor(model => model.BookTime)
+    @Html.TextBoxFor(model => model.BookTime)
+    @Html.ValidationMessageFor(model => model.BookTime, "*")
+    
+    @Html.LabelFor(model => model.AdditionalInfo)
+    @Html.TextAreaFor(model => model.AdditionalInfo)
+    @Html.ValidationMessageFor(model => model.AdditionalInfo)
+
+    
+        @Html.LabelFor(model => model.Speciality)<br>
+        @Html.DropDownListFor(model => model.Speciality, new[] {
+        new SelectListItem() {Text = ""},
+        new SelectListItem() {Text = "Diagnostic Imaging"},
+        new SelectListItem() {Text = "Allergy"},
+        new SelectListItem() {Text = "Cardiology"},
+        new SelectListItem() {Text = "Physiotherapy"},
+        new SelectListItem() {Text = "ENT"},
+        new SelectListItem() {Text = "Gynecology"},
+        new SelectListItem() {Text = "Neurology"},
+        new SelectListItem() {Text = "Oncology"},
+        new SelectListItem() {Text = "Orthopedy"},})
+    
+
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)
+    @Html.ValidationMessageFor(model => model.Phone, "*")
+
+    <input type="submit" value="Insert" />
+
+}

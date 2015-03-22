@@ -760,6 +760,12 @@
     <Content Include="Views\Donation\Donate.cshtml" />
     <Content Include="Views\cmsDonation\cmsDonationList.cshtml" />
     <Content Include="Views\Donation\DonateAction.cshtml" />
+    <Content Include="Views\ApptSched\createAppt.cshtml" />
+    <Content Include="Views\ApptSched\Update.cshtml" />
+    <Content Include="Views\ApptSched\Delete.cshtml" />
+    <Content Include="Views\ApptSched\NotFound.cshtml" />
+    <Content Include="Views\ApptSched\Details.cshtml" />
+    <Content Include="Views\ApptSched\ApptSched.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

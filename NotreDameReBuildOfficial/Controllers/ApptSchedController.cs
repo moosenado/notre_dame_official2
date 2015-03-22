@@ -27,13 +27,12 @@ namespace NotreDameReBuildOfficial.Controllers
                 return View("NotFound");
             }
             else
-            {
-                {
-                    return View(appt);
-                }
+            {           
+                return View(appt); 
             }
+        }
 
-            Public ActionResult createAppt()
+            public ActionResult createAppt()
             {
                 return View();
             }
@@ -54,7 +53,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 return View();
             }
-        Public ActionResult Update(int id)
+        public ActionResult Update(int id)
             {
                 var appt = objApptSched.getApptBookByID(id);
                 if (appt == null)
@@ -84,10 +83,35 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 return View();
             }
-        Public ActionResult Delete(int id)
+        public ActionResult Delete(int id)
             {
+            var appt = objApptSched.getApptBookByID(id);
+            if (appt == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(appt);
+            }
                 
             }
+        [HttpPost]
+        public ActionResult Delete(int id, Appt_Book appt)
+        {
+            try
+            {
+                objApptSched.apptDelete(id);
+                return RedirectToAction("ApptSched");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult NotFound()
+        {
+            return View();
+        }
         }
     }
-}

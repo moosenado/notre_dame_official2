@@ -1,0 +1,17 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Appt_Book>
+
+@{
+    ViewBag.Title = "ApptSched";
+}
+
+<h2>ApptSched</h2>
+
+@*renders links to methods located on ApptSchedController*@
+<p>@Html.ActionLink("Insert New Record", "createAppt", "ApptSched")</p> 
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.Fname, "Details", new { id = x.id })</li>
+    }
+</ul>
