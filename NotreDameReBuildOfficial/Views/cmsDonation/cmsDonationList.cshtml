@@ -6,7 +6,7 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Donations</h2>
+<h2>Manage Donations</h2>
 <table id="donation-list">
     <thead>
         <tr>
@@ -31,14 +31,10 @@
 
 </table>
 
-@Html.ActionLink("Add a New Donation", "Insert", new { @class = "yes-no-btn" })
+<a href='@Url.Action("Insert", "cmsDonation")'>
+    <span class="buttonstyle"><i class="fa fa-plus"></i>New Donation</span>
+</a>
+<a href='https://www.sandbox.paypal.com/ca/webapps/mpp/merchant' target="_blank" class="buttonstyle"><i class="fa fa-external-link"></i>Manage PayPal Account
+</a>
 
 
-@*@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id })  |
-@Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id })  |
-@Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })*@
-
-@*<td>
-    <a href="@Url.Action("Update", "cmsDonation", new { donation_id = donor.donation_id })" title="Edit Donation"><i class="fa fa-pencil-square-o fa-lg"></i></a>
-    <a href="@Url.Action("Delete", "cmsDonation", new { donation_id = donor.donation_id })" title="Delete Donation"><i class="fa fa-times fa-lg"></i></a>
-</td>*@

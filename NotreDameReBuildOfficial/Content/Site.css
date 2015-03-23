@@ -53,8 +53,10 @@ table {
 html, body{
     height: 100%; /*For Sticky Footer*/
     font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
     text-shadow: 0px 0px 1px rgba(128,128,128,0.01); /*for sharper font on windows machines*/
     color: #444;
+    font-size: 1em;
 }
 
 p {
@@ -68,7 +70,6 @@ a {
 
 a:hover {
 	color: #019ab8;
-    text-decoration: underline;
 }
 
 h1 {
@@ -81,7 +82,7 @@ h2 {
     font-weight: 700;
     color: #f7900f;
     font-size: 1.5em;
-    margin: 20px 20px 10px 20px;
+    margin: 20px 20px 10px 0px;
 }
 
 h3 {
@@ -89,7 +90,7 @@ h3 {
     font-weight: 700;
     font-size: 1.15em;
     padding-bottom: 7px;
-    margin-top: 10px;
+    margin: 10px 0px;
     color: #808080;
 }
 
@@ -97,7 +98,7 @@ h3 {
     clear: both;
 }
 
-.buttonstyle {
+.homepage-btns {
     border: 2px solid #fff;
     color: #fff;
     background-color: #fd8411;
@@ -108,38 +109,37 @@ h3 {
     -moz-transition: 0.5s ease-out;
     -o-transition: 0.5s ease-out;
     transition: 0.5s ease-out;
-    /*Border Radius*/
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     text-decoration: none;
+    width: 30%;
    
 }
 
-.buttonstyle:hover {
+.homepage-btns:hover {
     border: 2px solid #fd8411;
     color: #fff;
 }
 
-.yes-no-btn {
+.buttonstyle {
+    border: 0px;
     color: #fff;
-    background-color: #f7900f;
+    background-color: #fd8411;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
     text-decoration: none;
     font-size: 1em;
-    border: 0px;
-    border-radius: 5px;
 }
 
-.yes-no-btn:hover {
+.buttonstyle:hover {
     color: #fff;
     text-decoration: none;
 }
 
-.yes-no {
-    margin-top: 80px;
+input[type=radio] {
+    height: 15px;
+    width: 15px;
 }
 
 .textbox {
@@ -149,6 +149,7 @@ h3 {
     color: #808080;
     padding: 5px;
     height: 1em;
+    margin-bottom: 5px;
 }
 
 input[type=submit] {
@@ -158,7 +159,7 @@ input[type=submit] {
 label.label {
     display: block;
     padding: 2px 0px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .dropdown-list {
@@ -183,8 +184,7 @@ label.label {
 table {
 	text-align: left;
 	border-collapse: collapse;
-    margin-left: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 th {
@@ -294,7 +294,7 @@ table tr:nth-child(odd) td {
     list-style: none;
     display: inline;
 	cursor: pointer;
-    padding: 20px 0 20px 0;
+    padding: 20px 0 21px 0;
     border-right: 1px solid #fff;
 }
 
@@ -643,7 +643,7 @@ table tr:nth-child(odd) td {
 
 /* --- MOBILE QUERIES --- */
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1090px) {
 
    #navigation ul li a {
         padding: 2.5%;
@@ -737,6 +737,8 @@ table tr:nth-child(odd) td {
     .textbox{
         padding: 8px;
         margin-top: 4px;
+        height: 1.25em;
+        width: 90%;
     }
 
     #hamburger{
@@ -953,7 +955,7 @@ table tr:nth-child(odd) td {
 
 #cross {
     float: left;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
 }
 
 #nd {
@@ -961,7 +963,7 @@ table tr:nth-child(odd) td {
     font-weight: 700;
     color: #fff;
     font-size: 2em;
-    padding: 5px;
+    padding: 5px 4px;
     float: left;
 }
 
@@ -1074,7 +1076,12 @@ table tr:nth-child(odd) td {
 .fa-bars,
 .fa-shopping-cart,
 .fa-user-md,
-.fa-comment {
+.fa-comment,
+.fa-arrow-left,
+.fa-pencil,
+.fa-times,
+.fa-trash-o,
+.fa-check {
 	padding-right: 5px;
 }
 
@@ -1233,4 +1240,8 @@ input#organization.textbox,
 input#address.textbox,
 input#email.textbox {
     width: 50%;
+}
+
+table#edit-donations {
+    width: 60%;
 }

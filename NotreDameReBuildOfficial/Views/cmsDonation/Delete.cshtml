@@ -13,10 +13,10 @@
     @using (Html.BeginForm())
 {
     //"Yes" button that will trigger delete ActionResult
-    <input type="submit" value="Yes" class="yes-no-btn" />
+    <input type="submit" value="Yes" class="buttonstyle" />
 
     //"No" button that will return users to Index page
-        @Html.ActionLink("No", "cmsDonationList", new { donation_id = Model.donation_id }, new { @class = "yes-no-btn" })
+        @Html.ActionLink("No", "cmsDonationList", new { donation_id = Model.donation_id }, new { @class = "buttonstyle" })
     }
 
 </div>

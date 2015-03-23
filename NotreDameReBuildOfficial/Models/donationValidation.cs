@@ -16,56 +16,61 @@ namespace NotreDameReBuildOfficial.Models
     public class donationValidation
     {
 
-        [DisplayName("Amount: ")]
+        [DisplayName("Amount: (e.g. 50.00):")]
+        [RegularExpression(@"^[\d]{1,}?\.[\d]{2}$", ErrorMessage = "Invalid amount")]
         [Required(ErrorMessage = "Please enter an amount")]
+
         public decimal amount { get; set; }
 
-        [DisplayName("In Memory of: ")]
+        [DisplayName("In Memory of:")]
         public string in_memory { get; set; }
 
         [DisplayName("Where would you like to direct your donation?: ")]
         [Required(ErrorMessage = "Select one")]
         public int type { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode=true)]
+        [DisplayName("Date of Donation:")]
         public DateTime date { get; set; }
 
-        [DisplayName("First Name: ")]
+        [DisplayName("First Name:")]
         [Required(ErrorMessage = "Please enter your first name")]
         public string first_name { get; set; }
 
-        [DisplayName("Last Name: ")]
+        [DisplayName("Last Name:")]
         [Required(ErrorMessage = "Please enter your last name")]
         public string last_name { get; set; }
 
-        [DisplayName("Organization: ")]
+        [DisplayName("Organization:")]
         public string organization { get; set; }
 
-        [DisplayName("Address: ")]
+        [DisplayName("Address:")]
         [Required(ErrorMessage = "Please enter your mailing address")]
         public string address { get; set; }
 
-        [DisplayName("City: ")]
+        [DisplayName("City:")]
         [Required(ErrorMessage = "Please enter your city")]
         public string city { get; set; }
 
-        [DisplayName("Province: ")]
+        [DisplayName("Province:")]
         public string province { get; set; }
 
-        [DisplayName("Country: ")]
+        [DisplayName("Country:")]
         [Required(ErrorMessage = "Please enter your country")]
         public string country { get; set; }
 
-        [DisplayName("Postal Code: ")]
+        [DisplayName("Postal Code (e.g. L3Y5Z1):")]
         [Required(ErrorMessage = "Please enter your postal code")]
+        [Range(5, 6, ErrorMessage = "Invalid postal code")]
         public string postal { get; set; }
 
-        [DisplayName("Phone Number: ")]
+        [DisplayName("Phone Number (e.g. 212-666-1234):")]
         [Required(ErrorMessage = "Please enter your phone number")]
+        [RegularExpression(@"^[\d]{1,}?\.[\d]{2}$", ErrorMessage = "Invalid amount")]
         public string phone { get; set; }
 
-        [DisplayName("Email: ")]
+        [DisplayName("Email:")]
         [Required(ErrorMessage = "Please enter your email")]
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Invalid email address")]
         public string email { get; set; }
 
     }

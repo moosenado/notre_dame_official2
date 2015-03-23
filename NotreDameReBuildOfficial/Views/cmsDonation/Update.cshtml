@@ -1,7 +1,153 @@
-﻿@{
+﻿@model NotreDameReBuildOfficial.Models.Donation
+
+@{
     ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
+    
 }
 
-<h2>Update</h2>
+<h2>Edit Record No. @Html.DisplayFor(x => x.donation_id)</h2>
+  
+@* DONATION AMOUNT *@
+<p>@Html.LabelFor(model => model.amount, new { @class = "label amount" }) $@Html.DisplayFor(x => x.amount)</p>
+
+@* DATE OF DONATION *@
+<p>Date of Donation: @Html.DisplayFor(x => x.date)</p>
+
+<br />
+    
+@using (Html.BeginForm())
+{
+    <table id="edit-donations">
+        <tr>
+            @Html.HiddenFor(model => model.donation_id)
+            @Html.HiddenFor(model => model.amount)
+
+            @* IN MEMORY OF *@
+            <td>@Html.LabelFor(model => model.in_memory, new { @class = "label" })</td>
+            <td>@Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })</td>
+        </tr>
+        <tr>
+            @* TYPE OF DONATION *@
+            <td>@Html.LabelFor(model => model.type, new { @class = "label donation-type" })</td>
+            <td>
+                @Html.RadioButtonFor(x => x.type, 0) Immediate Needs
+                @Html.RadioButtonFor(x => x.type, 1) The Foundation
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.type)
+            </td>
+        </tr>
+        <tr>
+            @* FIRST NAME *@
+            <td>@Html.LabelFor(model => model.first_name, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.first_name)
+            </td>
+        </tr>
+        <tr>
+            @* LAST NAME *@
+            <td>@Html.LabelFor(model => model.last_name, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.last_name)
+            </td>
+        </tr>
+        <tr>
+            @* ORGANIZATION *@
+            <td>@Html.LabelFor(model => model.organization, new { @class = "label" })</td>
+            <td>@Html.TextBoxFor(model => model.organization, new { @class = "textbox" })</td>
+        </tr>
+        <tr>
+                @* ADDRESS *@
+            <td>@Html.LabelFor(model => model.address, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.address)
+            </td>
+        </tr>
+        <tr>
+            @* CITY *@
+            <td>@Html.LabelFor(model => model.city, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.city)
+            </td>
+        </tr>
+        <tr>
+            @* PROVINCE *@
+            <td>@Html.LabelFor(model => model.province, new { @class = "label" })</td>
+            <td>
+                @Html.DropDownListFor(model => model.province, new[] {
+                        new SelectListItem() {Text = "ON"},
+                        new SelectListItem() {Text = "AB"},
+                        new SelectListItem() {Text = "BC"},
+                        new SelectListItem() {Text = "MB"},
+                        new SelectListItem() {Text = "NB"},
+                        new SelectListItem() {Text = "NL"},
+                        new SelectListItem() {Text = "NS"},
+                        new SelectListItem() {Text = "NT"},
+                        new SelectListItem() {Text = "NU"},
+                        new SelectListItem() {Text = "PE"},
+                        new SelectListItem() {Text = "QC"},
+                        new SelectListItem() {Text = "SK"},
+                        new SelectListItem() {Text = "YT"}
+                    }, "--", new { @class = "dropdown-list" })
+            </td>
+        </tr>
+        <tr>
+            @* COUNTRY *@
+            <td>@Html.LabelFor(model => model.country, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.country)
+            </td>
+        </tr>
+        <tr>
+            @* POSTAL CODE *@
+            <td>@Html.LabelFor(model => model.postal, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.postal)
+            </td>
+        </tr>
+        <tr>
+            @* PHONE *@
+            <td>@Html.LabelFor(model => model.phone, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.phone)
+            </td>
+        </tr>
+        <tr>
+            @* EMAIL *@
+            <td>@Html.LabelFor(model => model.email, new { @class = "label" })</td>
+            <td>
+                @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
+                <span style="color:red">*</span>
+                @Html.ValidationMessageFor(model => model.email)
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" name="submit" value="Update" class="buttonstyle" />
+
+    <a href='@Url.Action("Details", "cmsDonation", new { donation_id = Model.donation_id })'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+    
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
