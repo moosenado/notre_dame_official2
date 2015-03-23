@@ -44,7 +44,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         [HttpPost]
         public ActionResult Insert(Donation donation)
-        {
+        { 
+
             if (ModelState.IsValid)
             {
                 try
@@ -53,10 +54,10 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     if (donation.date == null)
                     {
                         donation.date = DateTime.Now;
-                    } 
-                    
+                    }
+
                     objDonation.insertDonation(donation);
-                    return RedirectToAction("Donate"); //On sucessful insert, return to Donate page
+                    return RedirectToAction("cmsDonationList"); //On sucessful insert, return to Donate page
                 }
                 catch
                 {
