@@ -4,17 +4,17 @@
     ViewBag.Title = "Donate";
 }
 
-<h2>Make a Donation</h2>
-
-<div class="hr"></div>
-
 <div id="donation">
+
+    <h2>Make a Donation</h2>
 
     @using (Html.BeginForm())
     {
 
         <h3>Donation Information</h3>
-
+      
+        @Html.HiddenFor(model => model.date)
+        
         @Html.LabelFor(model => model.amount, new { @class = "label amount" })
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
@@ -25,13 +25,13 @@
         @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
         <div class="clear"></div>
-        
+
         @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.type)<br />
         @Html.RadioButtonFor(x => x.type, 0) @:Immediate Needs
         @Html.RadioButtonFor(x => x.type, 1) @:The Foundation
-        
+
         <br /><br />
 
         <h3>Contact Information</h3>
@@ -114,19 +114,25 @@
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.email)
 
-        <div class="clear"></div>
-
-        //Submit button that will trigger insertDonation Action
-        <input type="submit" value="Submit" class="buttonstyle submit" />
-
+        <br /><br />
+        
+    //PayPal button
+    <form action="~/Home/Donate" method="post">
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="business" value="admin@notredame.com">
+        <input type="hidden" name="item_name" value="Donation">
+        <input type="hidden" name="currency_code" value="CAD">
+        <input type="hidden" name="amount">
+        <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+        
     }
 
 </div>
 
 @section Scripts {
 
-    @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
-    @Scripts.Render("~/Scripts/jquery.validate.min.js")*@
+    @Scripts.Render("~/bundles/jqueryval")
 
 }

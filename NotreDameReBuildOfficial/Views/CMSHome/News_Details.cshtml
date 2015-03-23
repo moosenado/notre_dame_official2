@@ -4,8 +4,7 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
+
 <h2>News Article Details</h2>
 
 <h3>@Html.Label("Title")</h3>
@@ -18,13 +17,17 @@
 <p>@Html.DisplayFor(x => x.author)</p>
 
 <h3>@Html.Label("Image")</h3>
-<img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" /></a>
+<img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" />
 
 <h3>@Html.Label("Article")</h3>
 <p>@Html.DisplayFor(x => x.article)</p>
-
+<br />
 <p>
-    @Html.ActionLink("Back", "News", "CMSHome")
-    @Html.ActionLink("Update", "News_Update", new { id = Model.Id })
-    @Html.ActionLink("Delete", "News_Delete", new { id = Model.Id })
+    @Html.ActionLink("Update", "News_Update", new { id = Model.Id }, new { @class = "buttonstyle" })
+    @Html.ActionLink("Delete", "News_Delete", new { id = Model.Id }, new { @class = "buttonstyle" })
+    <br />
+    <br />
+    @Html.ActionLink("Back", "News", "CMSHome", new { @class = "link" })
+    
+    
 </p>

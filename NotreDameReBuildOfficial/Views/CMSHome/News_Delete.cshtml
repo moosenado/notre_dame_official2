@@ -4,18 +4,15 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
+
 <h2>Delete Article</h2>
 
 @using (Html.BeginForm())
 {
     <h2>Are you sure you want to delete @Html.DisplayFor(x => x.title)?</h2>
 
-    <br /><br />
+    <input type="submit" value="Delete" class="buttonstyle" />
 
-    <input type="submit" value="Delete" />
-
-    <p>@Html.ActionLink("Back", "News_Details/" + Model.Id)</p>
+    <p>@Html.ActionLink("Back", "News_Details/" + Model.Id, "CMSHome", new { @class = "link" })</p>
 
 }

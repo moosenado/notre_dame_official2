@@ -1,0 +1,22 @@
+﻿@model NotreDameReBuildOfficial.Models.Donation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<div class="yes-no">
+
+    <h2>Are you sure you want to delete <strong>donation record no. @Model.donation_id</strong>?</h2>
+
+    @using (Html.BeginForm())
+{
+    //"Yes" button that will trigger delete ActionResult
+    <input type="submit" value="Yes" class="buttonstyle" />
+
+    //"No" button that will return users to Index page
+        @Html.ActionLink("No", "cmsDonationList", new { donation_id = Model.donation_id }, new { @class = "buttonstyle" })
+    }
+
+</div>

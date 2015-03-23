@@ -1,0 +1,22 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Donation>
+@{
+    ViewBag.Title = "ERwait_Patients";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>ER Wait Time</h2>
+
+<br />
+
+<div id="erlinks">
+    <ul>
+        <li>@Html.ActionLink("Waiting Patients", "ERwait_Patients", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Add Patient", "ERwait_AddPatient", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Patient History Data", "ERwait_PatientHistory", "cmsERwait", new { @class = "buttonstyle" })</li>
+    </ul>
+</div>
+
+<br />
+
+<h3>Waiting Patients</h3>

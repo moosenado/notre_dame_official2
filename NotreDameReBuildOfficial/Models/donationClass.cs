@@ -17,6 +17,7 @@ namespace NotreDameReBuildOfficial.Models
             return allDonations;
         }
 
+        //Get donation by its record number
         public Donation getDonationByID(int _donation_id)
         {
             //Anonymous variable getAllDonations will get donations where id of object equals the id in database 
@@ -24,7 +25,7 @@ namespace NotreDameReBuildOfficial.Models
             return getAllDonations;
         }
 
-        //Insert Logic
+        // --- INSERT LOGIC --- //
         public bool insertDonation(Donation donation)
         {
             //Ensures all data will be disposed of when finished
@@ -36,5 +37,39 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        // --- UPDATE LOGIC --- //
+        public bool updateDonation(Donation donation)
+        {
+            using (objLinq)
+            {
+                var objUpDelete = objLinq.Donations.Single(x => x.donation_id == donation.donation_id);
+                objUpDelete.in_memory = donation.in_memory;
+                objUpDelete.type = donation.type;
+                objUpDelete.first_name = donation.first_name;
+                objUpDelete.last_name = donation.last_name;
+                objUpDelete.organization = donation.organization;
+                objUpDelete.address = donation.address;
+                objUpDelete.city = donation.city;
+                objUpDelete.province = donation.province;
+                objUpDelete.country = donation.country;
+                objUpDelete.postal = donation.postal;
+                objUpDelete.phone = donation.phone;
+                objUpDelete.email = donation.email;
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
+
+        // --- DELETE LOGIC --- //
+        public bool deleteDonation(int _donation_id)
+        {
+            using (objLinq)
+            {
+                var objDelDonation = objLinq.Donations.Single(x => x.donation_id == _donation_id); //Delete table row where id of object equals id in database
+                objLinq.Donations.DeleteOnSubmit(objDelDonation);
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
     }
 }
