@@ -1081,7 +1081,8 @@ table tr:nth-child(odd) td {
 .fa-pencil,
 .fa-times,
 .fa-trash-o,
-.fa-check {
+.fa-check,
+.fa-list-ul {
 	padding-right: 5px;
 }
 

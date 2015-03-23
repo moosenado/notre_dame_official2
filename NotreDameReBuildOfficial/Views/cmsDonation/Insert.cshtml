@@ -6,13 +6,13 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Insert a New Donation</h2>
+<h2>Add a New Donation</h2>
 
 @using (Html.BeginForm())
 {
 
     <h3>Donation Information</h3>
-
+    
     @Html.HiddenFor(model => model.date)
 
     @Html.LabelFor(model => model.amount, new { @class = "label amount" })
@@ -113,4 +113,18 @@
     @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
     <span style="color:red">*</span>
     @Html.ValidationMessageFor(model => model.email)
+    
+    <br /><br />
+    
+    <input type="submit" name="submit" value="Add New" class="buttonstyle">
+    
+    <a href='@Url.Action("cmsDonationList", "cmsDonation")'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
 }
