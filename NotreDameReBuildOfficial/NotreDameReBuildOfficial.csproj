@@ -187,9 +187,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
+    <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -197,10 +197,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\ApptSchedClass.cs" />
-    <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\ApptSchedSysClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
+    <Compile Include="Models\erwaitClass.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
@@ -570,6 +570,7 @@
     <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\hospitalimg.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\ndh-cross.png" />
     <Content Include="Content\images\nosm.png" />
     <Content Include="Content\images\town-of-hearst.png" />
     <Content Include="Content\images\twitter.png" />
@@ -759,13 +760,13 @@
     <Content Include="Views\Home\Article_List.cshtml" />
     <Content Include="Views\Donation\Donate.cshtml" />
     <Content Include="Views\cmsDonation\cmsDonationList.cshtml" />
+    <Content Include="Views\cmsDonation\Insert.cshtml" />
+    <Content Include="Views\cmsDonation\Delete.cshtml" />
+    <Content Include="Views\cmsDonation\Update.cshtml" />
+    <Content Include="Views\cmsDonation\Details.cshtml" />
     <Content Include="Views\Donation\DonateAction.cshtml" />
-    <Content Include="Views\ApptSched\createAppt.cshtml" />
-    <Content Include="Views\ApptSched\Update.cshtml" />
-    <Content Include="Views\ApptSched\Delete.cshtml" />
-    <Content Include="Views\ApptSched\NotFound.cshtml" />
-    <Content Include="Views\ApptSched\Details.cshtml" />
-    <Content Include="Views\ApptSched\ApptSched.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

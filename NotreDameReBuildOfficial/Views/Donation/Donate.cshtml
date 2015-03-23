@@ -4,11 +4,9 @@
     ViewBag.Title = "Donate";
 }
 
-<h2>Make a Donation</h2>
-
-<div class="hr"></div>
-
 <div id="donation">
+
+    <h2>Make a Donation</h2>
 
     @using (Html.BeginForm())
     {
@@ -17,6 +15,7 @@
       
         @Html.HiddenFor(model => model.date)
         
+        @Html.LabelFor(model => model.amount, new { @class = "label amount" })
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
         <span style="color:red">*</span>
@@ -26,7 +25,6 @@
         @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
         <div class="clear"></div>
-        
 
         @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
         <span style="color:red">*</span>
@@ -118,6 +116,7 @@
 
         <br /><br />
         
+    //PayPal button
     <form action="~/Home/Donate" method="post">
         <input type="hidden" name="cmd" value="_donations">
         <input type="hidden" name="business" value="admin@notredame.com">
@@ -131,3 +130,9 @@
     }
 
 </div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

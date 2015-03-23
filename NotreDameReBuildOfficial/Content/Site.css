@@ -52,9 +52,11 @@ table {
 
 html, body{
     height: 100%; /*For Sticky Footer*/
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
     text-shadow: 0px 0px 1px rgba(128,128,128,0.01); /*for sharper font on windows machines*/
     color: #444;
+    font-size: 1em;
 }
 
 p {
@@ -63,6 +65,7 @@ p {
 
 a {
 	color: #1b5998;
+    text-decoration: none;
 }
 
 a:hover {
@@ -70,50 +73,76 @@ a:hover {
 }
 
 h1 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #f7900f;
+    font-size: 1.5em;
+    margin: 20px 0px;
 }
 
 h2 {
-    font-family: 'Roboto Slab', serif;
-    color: #f7900f;
-    font-size: 1.5em;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #808080;
+    font-size: 1.25em;
     margin: 20px 20px 10px 0px;
 }
 
 h3 {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Lora', serif;
+    font-weight: 700;
     font-size: 1.15em;
     padding-bottom: 7px;
-    margin: 15px 0px;
-    color: #808080;
+    margin: 10px 0px;
+    color: #a3a3a3;
 }
 
 .clear {
     clear: both;
 }
 
-.buttonstyle {
+.homepage-btns {
     border: 2px solid #fff;
     color: #fff;
     background-color: #fd8411;
     cursor: pointer;
     padding: 5px 10px;
-    font-family: 'Roboto', serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-transition: 0.5s ease-out;
     -moz-transition: 0.5s ease-out;
     -o-transition: 0.5s ease-out;
     transition: 0.5s ease-out;
-    /*Border Radius*/
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px;
     text-decoration: none;
+    width: 30%;
    
 }
 
-.buttonstyle:hover {
+.homepage-btns:hover {
     border: 2px solid #fd8411;
     color: #fff;
+}
+
+.buttonstyle {
+    border: 0px;
+    color: #fff;
+    background-color: #fd8411;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.buttonstyle:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+input[type=radio] {
+    height: 15px;
+    width: 15px;
 }
 
 .textbox {
@@ -123,6 +152,7 @@ h3 {
     color: #808080;
     padding: 5px;
     height: 1em;
+    margin-bottom: 5px;
 }
 
 input[type=submit] {
@@ -132,7 +162,7 @@ input[type=submit] {
 label.label {
     display: block;
     padding: 2px 0px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .dropdown-list {
@@ -151,6 +181,33 @@ label.label {
     margin: 1%;
     padding: 1%;
 }
+
+/* Table */
+
+table {
+	text-align: left;
+	border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th {
+	padding: 12px 15px;
+    font-weight: bold;
+    color: #808080;
+}
+
+tr {
+
+}
+
+td {
+    padding: 10px 15px;
+}
+
+table tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
 
 /* Validation */
 
@@ -196,7 +253,7 @@ label.label {
 
 #searchfield {
     float: right;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-right: 15px;
 }
 
@@ -220,6 +277,11 @@ label.label {
     padding: 4px;
 }
 
+#erwait{
+    text-align: right;
+    padding-top: 35px;
+}
+
 /* --- PUBLIC MAIN NAVIGATION --- */
 
 #navigation {
@@ -232,16 +294,15 @@ label.label {
     text-align: center;
     background-color: #019ab8;
     padding: 20px;
-    
 }
 
 #navigation ul li {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto', serif;
     position: relative;
     list-style: none;
     display: inline;
 	cursor: pointer;
-    padding: 20px 0 20px 0;
+    padding: 20px 0 21px 0;
     border-right: 1px solid #fff;
 }
 
@@ -251,9 +312,9 @@ label.label {
 
 #navigation ul li a{
     text-decoration: none;
-    padding: 20px 38px;
+    padding: 20px 35px;
     color: #fff;
-    font-size: 0.875em; 
+    font-size: 0.99em; 
 }
 
 #navigation ul li ul {
@@ -276,6 +337,11 @@ label.label {
 #navigation ul li ul li {
  	padding: 20px 0 20px 0;
     display: block;
+    border-right: 0px;
+}
+
+#navigation ul li ul li:first-child {
+    border-left: 0px;
 }
 
 #navigation ul li ul li a{
@@ -336,12 +402,12 @@ label.label {
 	height: auto !important;
 	height: 100%;
 	margin: 0 auto -265px;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 #news {
     width: 96%;
-    margin: 2%;
+    margin: 0% 2%;
     padding: 1%;
 }
 
@@ -585,7 +651,7 @@ label.label {
 
 /* --- MOBILE QUERIES --- */
 
-@media only screen and (max-width: 1070px) {
+@media only screen and (max-width: 1090px) {
 
    #navigation ul li a {
         padding: 2.5%;
@@ -679,6 +745,8 @@ label.label {
     .textbox{
         padding: 8px;
         margin-top: 4px;
+        height: 1.25em;
+        width: 90%;
     }
 
     #hamburger{
@@ -882,47 +950,63 @@ label.label {
 
 #cms-head-container {
 	background-color: #019ab8;
-	height: 44px;
+	height: 50px;
 	right: 0;
 	left: 0;
-	position: fixed;
-    z-index: 1;
 }
 
-#cms-date {
-	color: #fff;
-	padding: 14px 24px;
+#ndh-title {
+    float: left;
+    width: 250px;
+    margin-left: 20px;
+}
+
+#cross {
+    float: left;
+    padding: 5px 5px 5px 0px;
+}
+
+#nd {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 2em;
+    padding: 5px 4px;
+    float: left;
+}
+
+/*#cms-date {
+	color: #444;
 	margin: 0px 20px;
-	float: left;
 	font-size: 0.875em;
-}
+    width: 250px;
+    padding-top: 20px;
+    text-align: center;
+}*/
 
-#cms-top-nav li a {
+#cms-top-nav a {
 	float: left;
-	font-size: 0.85em;
-	list-style: none;
 	display: inline;
-	padding: 14px 0px 13px 20px;
-	margin-left: 5px;
+	padding: 16px 0px 0px 20px;
 	text-decoration: none;
 	color: #fff;
 }
 
-#cms-top-nav li a:hover {
+#cms-top-nav a:hover {
 
 }
 
 #user {
 	float: right;
 	color: #fff;
-	padding: 10px 20px;
-	font-size: 0.85em;
+	padding: 12px 20px;
+	
 }
 
 #sign-out {
 	float: right;
 	background-color: #fff;
-	padding: 11px 20px;
+	padding: 14px 20px;
 	border: 1px solid #019ab8;
 }
 
@@ -937,7 +1021,7 @@ label.label {
     position: relative;
     float: left;
     margin-left:40px;
-    margin-top: 60px;
+    margin-top: 20px;
     width: 70%;
 }
 
@@ -951,29 +1035,23 @@ label.label {
     text-decoration: none;
 }
 
+/* --- CMS ER WAIT --- */
+
+#erlinks ul li{
+    display: inline;
+}
+
 /* --- CMS LEFT MENU --- */
-
-#cms-logo {
-	float: left;
-	margin-top: 60px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#cms-logo img {
-	width: 100%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-}
 
 .left-menu {
 	float: left;
 	width: 250px;
 	border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    margin: 20px;
 }
 
 #cms-left-nav {
-	margin-top: 140px;
 	width: 100%;
 }
 
@@ -981,7 +1059,6 @@ label.label {
 	display: block;
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
-	font-size: 0.85em;
 	text-decoration: none;
 }
 
@@ -994,7 +1071,7 @@ label.label {
 	padding: 10px 20px;
 	font-size: 0.85em;
 	text-decoration: none;
-    font-size: .75em;
+    font-size: .875em;
 }
 
 .secondary a:last-child {
@@ -1013,7 +1090,13 @@ label.label {
 .fa-bars,
 .fa-shopping-cart,
 .fa-user-md,
-.fa-comment {
+.fa-comment,
+.fa-arrow-left,
+.fa-pencil,
+.fa-times,
+.fa-trash-o,
+.fa-check,
+.fa-list-ul {
 	padding-right: 5px;
 }
 
@@ -1022,11 +1105,14 @@ label.label {
 #cms-footer {
 	clear: both;
 	background-color: #ddd;
-	padding: 20px;
 	font-size: 0.75em;
     bottom: 0;
     position: relative;
     width: 100%;
+}
+
+#cms-copyright {
+   padding: 20px;
 }
 
 /********************************/
@@ -1141,8 +1227,12 @@ label.label {
 
 /* --- DONATION FORM --- */
 
+#donation-list {
+    width: 85%;
+}
+
 #donation {
-    padding: 20px;
+    padding: 0px 20px 40px 20px;
     width: 100%;
 }
 
@@ -1164,5 +1254,9 @@ input#last_name.textbox,
 input#organization.textbox,
 input#address.textbox,
 input#email.textbox {
-    width: 40%;
+    width: 50%;
+}
+
+table#edit-donations {
+    width: 60%;
 }

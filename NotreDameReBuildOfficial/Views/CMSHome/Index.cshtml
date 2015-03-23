@@ -4,4 +4,72 @@
     <script src="~/Scripts/cms-menu.js"></script>
 }
 
-<h1>Helllooooo</h1>
+<!-- Headings and Text -->
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p>paragraph text...</p>
+<a href="">This is a hyperlink</a>
+
+<!-- Clear class is good to use instead of <br /> tags -->
+<div class="clear"></div>
+
+<!-- Buttons -->
+<input type="submit" name="submit" value="Sample Button" class="buttonstyle" />
+
+<!-- This button doesn't work with submit buttons that are responsible for inserting or updating... best used if you're navigating to another page in the project. Use http://fontawesome.io/ for icons -->
+<a href='@Url.Action("Delete", "cmsDonation")'>
+    <span class="buttonstyle"><i class="fa fa-trash-o"></i>Sample Button with Icon</span>
+</a>
+
+<!-- Tables -->
+<table>
+    <thead>
+        <tr>
+            <th>table head 1</th>
+            <th>table head 2</th>
+            <th>table head 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>content 1</td>
+            <td>content 1</td>
+            <td>content 1</td>
+        </tr>
+        <tr>
+            <td>content 2</td>
+            <td>content 2</td>
+            <td>content 2</td>
+        </tr>
+        <tr>
+            <td>content 3</td>
+            <td>content 3</td>
+            <td>content 3</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 
+   
+     Forms
+    
+    - use the classes with HTML helpers
+    - you can specify the length with the ID asp.net automatically assigns to the textbox... find it by inspecting the element
+
+-->
+
+<label class="label">This is a label that appears on top of the textbox:</label>
+<input type="text" class="textbox" style="width: 50%" />
+<!-- if it's a required field, include this followed by HTML validation message helper -->
+<span style="color:red">*</span>
+
+<br />
+
+<select class="dropdown-list">
+    <option>-- Select --</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+</select>
+<span style="color:red">*</span>
