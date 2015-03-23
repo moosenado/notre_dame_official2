@@ -187,6 +187,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
@@ -197,7 +198,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\ApptSchedSysClass.cs" />
+    <Compile Include="Models\ApptSchedClass.cs" />
+    <Compile Include="Models\ApptSchedValidation.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
@@ -767,6 +769,12 @@
     <Content Include="Views\Donation\DonateAction.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
+    <Content Include="Views\ApptSched\ApptSched.cshtml" />
+    <Content Include="Views\ApptSched\createAppt.cshtml" />
+    <Content Include="Views\ApptSched\Delete.cshtml" />
+    <Content Include="Views\ApptSched\Details.cshtml" />
+    <Content Include="Views\ApptSched\NotFound.cshtml" />
+    <Content Include="Views\ApptSched\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
