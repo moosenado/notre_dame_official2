@@ -211,6 +211,8 @@ namespace notre_dame_rebuild.Controllers
         [HttpPost]// restirict an action method by only post requests 
         public ActionResult Insert_JobPosting(Job_posting jobPost)
         {
+            ViewBag.Categories = new jobCategory().getJobCategory();
+
             if (ModelState.IsValid)
             {
                 try
@@ -220,14 +222,15 @@ namespace notre_dame_rebuild.Controllers
                 }
                 catch
                 {
-                    return View();
+                    return View(jobPost);
                 }
             }
-            return View();
+            return View(jobPost);
         }
 
         public ActionResult Update_JobPosting(int id)
         {
+            ViewBag.Categories = new jobCategory().getJobCategory();
             var JobPost = JobPosObj.getJobByID(id);
             if (JobPost == null)
             {
@@ -243,6 +246,7 @@ namespace notre_dame_rebuild.Controllers
         [HttpPost]// restirict an action method by only post requests
         public ActionResult Update_JobPosting(int id, Job_posting JobPost)
         {
+            ViewBag.Categories = new jobCategory().getJobCategory();
             if (ModelState.IsValid)
             {
                 try
@@ -253,10 +257,10 @@ namespace notre_dame_rebuild.Controllers
                 }
                 catch
                 {
-                    return View();
+                    return View(JobPost);
                 }
             }
-            return View();
+            return View(JobPost);
         }
 
         public ActionResult Delete_JobPosting(int id)

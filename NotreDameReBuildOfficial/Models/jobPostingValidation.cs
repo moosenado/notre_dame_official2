@@ -20,23 +20,23 @@ namespace NotreDameReBuildOfficial.Models
         //creating fields and write validation for each field
 
         [DisplayName("Title")]
-        [Required]
+        [Required(ErrorMessage="title")]
         public string title { get; set; }
 
         [DisplayName("Type")]
-        [Required]
+        [Required(ErrorMessage = "type")]
         public string type { get; set; }
 
         [DisplayName("Department")]
-        [Required]
+        [Required(ErrorMessage = "dep")]
         public string department { get; set; }
 
         [DisplayName("Description")]
-        [Required]
+        [Required(ErrorMessage = "desc")]
         public string description { get; set; }
 
         [DisplayName("Salary")]
-        [Required]
+        [Required(ErrorMessage = "salary")]
         [RegularExpression("^\\$?\\d+(\\.(\\d{2}))?$")]
         public decimal salary { get; set; }
        
@@ -46,5 +46,7 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Please enter the date!")]
         public DateTime posting_date { get; set; }
 
+        [Required(ErrorMessage = "catid")]
+        public string category_id { get; set; }
     }
 }

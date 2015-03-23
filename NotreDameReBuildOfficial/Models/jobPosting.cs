@@ -30,10 +30,29 @@ namespace NotreDameReBuildOfficial.Models
             return allJobs;
         }
 
-        public Job_posting getJobByID(int _id)
+        public jobPosting getJobByID(int _id)
         {
-            var allJob = jobObj.Job_postings.SingleOrDefault(x => x.id == _id);
-            return allJob;
+
+            jobPosting objJob = (from jp in jobObj.Job_postings
+                     join cat in jobObj.Job_categories on jp.category_id equals cat.id
+                     where jp.id == _id
+                     select new jobPosting()
+                     {
+                         id = jp.id,
+                         title = jp.title,
+                         type = jp.type,
+                         description = jp.description,
+                         salary = jp.salary,
+                         department = jp.department,
+                         posting_date = jp.posting_date,
+                         category_id = jp.category_id,
+                         catTitle = cat.title
+
+                     }).SingleOrDefault();
+            
+
+            return objJob;
+          
         }
 
         //creating an instance of job_posting table as parameter

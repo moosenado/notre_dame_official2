@@ -81,7 +81,7 @@
         @Html.HiddenFor(model => model.category_id)
     </div>
     <div>
-        <input type="submit" value="Add" class="btn-add" />
+        <input id="btnAdd" type="submit" value="Add" class="btn-add" />
     </div>
 }
 <p>@Html.ActionLink("Back", "JobPosting")</p>
@@ -92,7 +92,17 @@
             var item = $("#ddl-cat option:selected");
             $("#category_id").val(item.data("id"));
         });
+
+        $("#btnAdd").click(function (e) {
+            var catid = $("#category_id").val();
+            if (catid == null || catid < 1) {
+                $("#ddl-cat").addClass("input-validation-error");
+                //e.preventDefault();
+                return;
+            }
+
+        });
     });
 
-    CKEDITOR.replace('description');
+    //CKEDITOR.replace('description');
 </script>

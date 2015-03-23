@@ -11,8 +11,23 @@
 <h2>Update @Model.title</h2>
 @using (Html.BeginForm()) 
 {
+    @Html.HiddenFor(x => x.category_id)
+    
     @Html.HiddenFor(x => x.id)
+    <div class="ddl-update">
+           <select id="ddl-cat">
+               @foreach (var x in ViewBag.Categories)
+               {
+                   if(x.id == Model.category_id){
+                       <option data-id="@x.id" selected>@x.title</option>
+                   }
+                   else{
+                       <option data-id="@x.id">@x.title</option>
+                   }
+               }
+           </select>
 
+    </div>
     <div class="details_lbl">
         @Html.LabelFor(x => x.title)
     </div>
@@ -77,3 +92,11 @@
 <p>
     @Html.ActionLink("Back", "JobPosting", new { id = Model.id })
 </p>
+<script>
+    $(function () {
+        $("#ddl-cat").change(function () {
+            var item = $("#ddl-cat option:selected");
+            $("#category_id").val(item.data("id"));
+        });
+    });
+</script>
