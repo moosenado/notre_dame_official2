@@ -24,7 +24,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         //Details view when admin wants to see the entire donation record
         public ActionResult Details(int donation_id)
         {
-
             var donate = objDonation.getDonationByID(donation_id);
             if (donate == null)
             {
@@ -36,7 +35,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(donate);
             }
         }
-        
 
         // --- INSERT ACTION --- //
         public ActionResult Insert()
@@ -52,10 +50,9 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 try
                 {
                     //if the form is submitted and the date is null, get the date as its value
-                    var date = donation.date;
-                    if (date == null)
+                    if (donation.date == null)
                     {
-                        date = DateTime.Now;
+                        donation.date = DateTime.Now;
                     } 
                     
                     objDonation.insertDonation(donation);
@@ -88,14 +85,15 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         //Executes the update when submit button is clicked
         [HttpPost]
-        public ActionResult Update(int donation_id, Donation donation)
+        public ActionResult Update(Donation donation)
         {
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    objDonation.updateDonation(donation_id, donation.amount, donation.in_memory, donation.type, donation.first_name, donation.last_name, donation.organization, donation.address, donation.city, donation.province, donation.country, donation.postal, donation.phone, donation.email);
-                    return RedirectToAction("Details"); //After successful update, return to index
+                    objDonation.updateDonation(donation);
+                    return RedirectToAction("Details", new { donation_id = donation.donation_id }); //After successful update, return to index
                 }
                 catch
                 {

@@ -19,7 +19,7 @@
 
         <div id="ndh-title">
             <img id="cross" src="~/Content/images/ndh-cross.png" />
-            <div id="nd">Notre Dame</div>
+            <div id="nd">Notre-Dame</div>
         </div>
 
         <div id="cms-top-nav">
@@ -57,7 +57,7 @@
             @* About NDH *@
             <div class="dropdown">
                 <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>About NDH
+                    <i class="fa fa-sort-desc fa-lg"></i>About Notre-Dame
                 </a>
                 <div class="secondary">
                     <a class="secondary-pages" href="">Mission, Vision, Values</a>
@@ -163,6 +163,8 @@
 
         <div id="cms-main">
             @RenderBody()
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
         </div>
 
         @* ----- FOOTER -----*@

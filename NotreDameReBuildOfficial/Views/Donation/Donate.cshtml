@@ -4,11 +4,9 @@
     ViewBag.Title = "Donate";
 }
 
-<h2>Make a Donation</h2>
-
-<div class="hr"></div>
-
 <div id="donation">
+
+    <h2>Make a Donation</h2>
 
     @using (Html.BeginForm())
     {
@@ -17,6 +15,7 @@
       
         @Html.HiddenFor(model => model.date)
         
+        @Html.LabelFor(model => model.amount, new { @class = "label amount" })
         <span>$ </span>
         @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
         <span style="color:red">*</span>
@@ -132,3 +131,9 @@
     }
 
 </div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

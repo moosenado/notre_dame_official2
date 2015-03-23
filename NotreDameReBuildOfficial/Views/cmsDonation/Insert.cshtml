@@ -8,112 +8,109 @@
 
 <h2>Insert a New Donation</h2>
 
-<div id="donation">
+@using (Html.BeginForm())
+{
 
-    @using (Html.BeginForm())
-    {
+    <h3>Donation Information</h3>
 
-        <h3>Donation Information</h3>
+    @Html.HiddenFor(model => model.date)
 
-        @Html.HiddenFor(model => model.date)
+    @Html.LabelFor(model => model.amount, new { @class = "label amount" })
+    <span>$ </span>
+    @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.amount)
 
-        <span>$ </span>
-        @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.amount)
+    @Html.LabelFor(model => model.in_memory, new { @class = "label" })
+    @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
 
-        @Html.LabelFor(model => model.in_memory, new { @class = "label" })
-        @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.type)<br />
+    @Html.RadioButtonFor(x => x.type, 0) @:Immediate Needs
+    @Html.RadioButtonFor(x => x.type, 1) @:The Foundation
 
-        @Html.LabelFor(model => model.type, new { @class = "label donation-type" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.type)<br />
-        @Html.RadioButtonFor(x => x.type, 0) @:Immediate Needs
-        @Html.RadioButtonFor(x => x.type, 1) @:The Foundation
+    <br /><br />
 
-        <br /><br />
+    <h3>Contact Information</h3>
 
-        <h3>Contact Information</h3>
+    @Html.LabelFor(model => model.first_name, new { @class = "label" })
+    @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.first_name)
 
-        @Html.LabelFor(model => model.first_name, new { @class = "label" })
-        @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.first_name)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.last_name, new { @class = "label" })
+    @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.last_name)
 
-        @Html.LabelFor(model => model.last_name, new { @class = "label" })
-        @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.last_name)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.organization, new { @class = "label" })
+    @Html.TextBoxFor(model => model.organization, new { @class = "textbox" })
 
-        @Html.LabelFor(model => model.organization, new { @class = "label" })
-        @Html.TextBoxFor(model => model.organization, new { @class = "textbox" })
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.address, new { @class = "label" })
+    @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.address)
 
-        @Html.LabelFor(model => model.address, new { @class = "label" })
-        @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.address)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.city, new { @class = "label" })
+    @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.city)
 
-        @Html.LabelFor(model => model.city, new { @class = "label" })
-        @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.city)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.province, new { @class = "label" })
+    @Html.DropDownListFor(model => model.province, new[] {
+            new SelectListItem() {Text = "ON"},
+            new SelectListItem() {Text = "AB"},
+            new SelectListItem() {Text = "BC"},
+            new SelectListItem() {Text = "MB"},
+            new SelectListItem() {Text = "NB"},
+            new SelectListItem() {Text = "NL"},
+            new SelectListItem() {Text = "NS"},
+            new SelectListItem() {Text = "NT"},
+            new SelectListItem() {Text = "NU"},
+            new SelectListItem() {Text = "PE"},
+            new SelectListItem() {Text = "QC"},
+            new SelectListItem() {Text = "SK"},
+            new SelectListItem() {Text = "YT"}
+        }, "--", new { @class = "dropdown-list" })
 
-        @Html.LabelFor(model => model.province, new { @class = "label" })
-        @Html.DropDownListFor(model => model.province, new[] {
-                new SelectListItem() {Text = "ON"},
-                new SelectListItem() {Text = "AB"},
-                new SelectListItem() {Text = "BC"},
-                new SelectListItem() {Text = "MB"},
-                new SelectListItem() {Text = "NB"},
-                new SelectListItem() {Text = "NL"},
-                new SelectListItem() {Text = "NS"},
-                new SelectListItem() {Text = "NT"},
-                new SelectListItem() {Text = "NU"},
-                new SelectListItem() {Text = "PE"},
-                new SelectListItem() {Text = "QC"},
-                new SelectListItem() {Text = "SK"},
-                new SelectListItem() {Text = "YT"}
-            }, "--", new { @class = "dropdown-list" })
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.country, new { @class = "label" })
+    @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.country)
 
-        @Html.LabelFor(model => model.country, new { @class = "label" })
-        @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.country)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.postal, new { @class = "label" })
+    @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.postal)
 
-        @Html.LabelFor(model => model.postal, new { @class = "label" })
-        @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.postal)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
+    @Html.LabelFor(model => model.phone, new { @class = "label" })
+    @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.phone)
 
-        @Html.LabelFor(model => model.phone, new { @class = "label" })
-        @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.phone)
+    <div class="clear"></div>
 
-        <div class="clear"></div>
-
-        @Html.LabelFor(model => model.email, new { @class = "label" })
-        @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
-        <span style="color:red">*</span>
-        @Html.ValidationMessageFor(model => model.email)
-    }
-
-</div>
+    @Html.LabelFor(model => model.email, new { @class = "label" })
+    @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
+    <span style="color:red">*</span>
+    @Html.ValidationMessageFor(model => model.email)
+}
