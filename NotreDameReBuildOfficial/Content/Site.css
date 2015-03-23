@@ -75,13 +75,16 @@ a:hover {
 h1 {
     font-family: 'Lora', serif;
     font-weight: 700;
+    color: #f7900f;
+    font-size: 1.5em;
+    margin: 20px 0px;
 }
 
 h2 {
     font-family: 'Lora', serif;
     font-weight: 700;
-    color: #f7900f;
-    font-size: 1.5em;
+    color: #808080;
+    font-size: 1.25em;
     margin: 20px 20px 10px 0px;
 }
 
@@ -91,7 +94,7 @@ h3 {
     font-size: 1.15em;
     padding-bottom: 7px;
     margin: 10px 0px;
-    color: #808080;
+    color: #a3a3a3;
 }
 
 .clear {
@@ -190,6 +193,7 @@ table {
 th {
 	padding: 12px 15px;
     font-weight: bold;
+    color: #808080;
 }
 
 tr {
