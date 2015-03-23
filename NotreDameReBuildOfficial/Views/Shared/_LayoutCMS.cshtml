@@ -8,6 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")  
     @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Roboto:400,500,700,400italic' rel='stylesheet' type='text/css'>
     
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
@@ -21,15 +22,16 @@
 
     <div id="cms-head-container">
 
-        <div id="date">
-            <p>Wednesday, February 18, 2015</p>
+        <div id="ndh-title">
+            <img id="cross" src="~/Content/images/ndh-cross.png" />
+            <div id="nd">Notre-Dame</div>
         </div>
 
-        <ul id="cms-top-nav">
-            <li><a href=""><i class="fa fa-home"></i>Home</a></li>
-            <li><a href=""><i class="fa fa-external-link"></i>Visit Site</a></li>
-            <li><a href=""><i class="fa fa-plus"></i>New</a></li>
-        </ul>
+        <div id="cms-top-nav">
+            @*<a href=""><i class="fa fa-home"></i>Home</a>*@
+            <a href=""><i class="fa fa-external-link"></i>Visit Site</a>
+            @*<li><a href=""><i class="fa fa-plus"></i>New</a></li>*@
+        </div>
 
 
         <div id="sign-out">
@@ -44,18 +46,23 @@
 
     @* ----- LEFT MENU -----*@
 
+    @*<div id="cms-date">
+        @DateTime.Now.DayOfWeek.ToString(),
+        @DateTime.Now.ToString("MMMM dd, yyyy")
+    </div>*@
+
     <div class="left-menu">
 
-        <div id="cms-logo">
+        @*<div id="cms-logo">
             <img src="~/Content/images/logo.png" title="Notre Dame" alt="Notre Dame Logo" />
-        </div>
+        </div>*@
 
         <div id="cms-left-nav">
 
             @* About NDH *@
             <div class="dropdown">
                 <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>About NDH
+                    <i class="fa fa-sort-desc fa-lg"></i>About Notre-Dame
                 </a>
                 <div class="secondary">
                     <a class="secondary-pages" href="">Mission, Vision, Values</a>
@@ -97,7 +104,7 @@
                     <i class="fa fa-sort-desc fa-lg"></i>Join Our Team
                 </a>
                 <div class="secondary">
-                    @Html.ActionLink("Job Opprtunity", "JobCategory", "CMSHome")
+                    <a class="secondary-pages" href="">Job Opportunities</a>
                     <a class="secondary-pages" href="">Volunteer Opportunites</a>
                     <a class="secondary-pages" href="">Internships & Placements</a>
                 </div>
@@ -161,12 +168,14 @@
 
         <div id="cms-main">
             @RenderBody()
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
         </div>
 
         @* ----- FOOTER -----*@
 
         <div id="cms-footer">
-            <p>&copy; 2015 Notre-Dame Hospital</p>
+            <p id="cms-copyright">&copy; 2015 Notre-Dame Hospital</p>
         </div>
 
 </body>

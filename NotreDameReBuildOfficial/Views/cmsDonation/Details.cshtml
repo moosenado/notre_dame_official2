@@ -1,0 +1,96 @@
+﻿@model NotreDameReBuildOfficial.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Donation Record No. @Html.DisplayFor(x => x.donation_id)</h1>
+
+<table>
+    <tr>
+        @* DONATION AMOUNT *@
+        <td>@Html.LabelFor(model => model.amount, new { @class = "label" })</td>
+        <td>$@Html.DisplayFor(x => x.amount)</td>
+    </tr>
+    <tr>
+        @* DATE OF DONATION *@
+        <td>@Html.LabelFor(model => model.date, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.date)</td>
+    </tr>
+    <tr>
+        @* TYPE OF DONATION *@
+        <td>@Html.LabelFor(model => model.type, new { @class = "label" })</td>
+        <td>
+            @if (@Model.type == 0)
+            {
+                @Html.Label("Immediate Needs");
+            }
+            else if (@Model.type == 1)
+            {
+                @Html.Label("The Foundation");
+            }
+        </td>
+    </tr>
+    @if (@Model.in_memory != null)
+    {
+        <tr>
+            @* ORGANIZATION *@
+            <td>@Html.LabelFor(model => model.in_memory, new { @class = "label" })</td>
+            <td>@Html.DisplayFor(x => x.in_memory)</td>
+        </tr>
+    }
+    <tr>
+        @* DONOR FIRST NAME *@
+        <td>@Html.LabelFor(model => model.first_name, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.first_name)</td>
+    </tr>
+    <tr>
+        @* DONOR LAST NAME *@
+        <td>@Html.LabelFor(model => model.last_name, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.last_name) </td>
+    </tr>
+    @if (@Model.organization != null)
+    {
+        <tr>
+            @* ORGANIZATION *@
+            <td>@Html.LabelFor(model => model.organization, new { @class = "label" })</td>
+            <td>@Html.DisplayFor(x => x.organization)</td>
+        </tr>
+    }
+    <tr>
+        @* MAILING ADDRESS *@
+        <td>@Html.LabelFor(model => model.address, new { @class = "label" })</td>
+        <td>
+            @Html.DisplayFor(x => x.address),
+            @Html.DisplayFor(x => x.city),
+            @if (@Model.province != null)
+            {
+                @Html.DisplayFor(x => x.province)
+            },
+            @Html.DisplayFor(x => x.country),
+            @Html.DisplayFor(x => x.postal)
+        </td>
+    </tr>
+    <tr>
+        @* PHONE NUMBER *@
+        <td>@Html.LabelFor(model => model.phone, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.phone)</td>
+    </tr>
+    <tr>
+        @* EMAIL *@
+        <td>@Html.LabelFor(model => model.email, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.email)</td>
+    </tr>
+</table>
+
+<a href='@Url.Action("Update", "cmsDonation", new { donation_id = Model.donation_id })'>
+    <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
+</a>
+<a href='@Url.Action("Delete", "cmsDonation", new { donation_id = Model.donation_id })'>
+    <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
+</a>
+<a href='@Url.Action("cmsDonationList", "cmsDonation")'>
+    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+</a>

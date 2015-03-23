@@ -4,20 +4,18 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 <h2>News</h2>
-
-<p>
-    @Html.ActionLink("Add News Article", "News_Insert")
-</p>
-
-@* List Articles *@
 <br />
+<p>
+    @Html.ActionLink("Add News Article", "News_Insert", "CMSHome", new { @class = "buttonstyle" })
+</p>
+<br />
+@* List Articles *@
+<h3>Current News Articles</h3>
 <ul>
-@foreach (var article in Model)
+@foreach (var article in Model.OrderByDescending(x => x.Id))
 {
-    <li>@Html.ActionLink(article.title, "News_Details", new {id = article.Id})</li>   
+    <li>@Html.ActionLink(article.title, "News_Details", new { id = article.Id }, new { @class = "link" })</li>   
 }
 </ul>

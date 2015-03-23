@@ -1,0 +1,14 @@
+﻿@model NotreDameReBuildOfficial.Models.Appt_Book
+
+@{
+    ViewBag.Title = "Delete Appointment";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+   <input type="submit" value="Delete"/>
+    
+    @Html.ActionLink("Back", "Details", new { id = Model.id }) 
+}

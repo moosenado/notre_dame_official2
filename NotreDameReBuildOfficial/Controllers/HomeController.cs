@@ -18,7 +18,7 @@ namespace notre_dame_rebuild.Controllers
         newsfeedClass objNews = new newsfeedClass();
         public ActionResult Index()
         {
-            var articles = objNews.getArticles();
+            var articles = objNews.getTopArticles();
             return View(articles);
         }
 
@@ -26,16 +26,33 @@ namespace notre_dame_rebuild.Controllers
         // ----- ARTICLE DETAILS by ELLIOT ----- //
         // ------------------------------------- //
 
-        public ActionResult Article_Details()
+        public ActionResult Article_Details(int id)
         {
-            return View();
+            var news_article_id = objNews.getArticlesByID(id);
+
+            if (news_article_id == null)
+            {
+                return View("Index"); // go to index
+            }
+            else
+            {
+                return View(news_article_id);
+            }
         }
 
+        // ------------------------------------- //
+        // ------- ARTICLE LIST by ELLIOT ------ //
+        // ------------------------------------- //
 
         
 
         
     
+        public ActionResult Article_List()
+        {
+            var all_articles = objNews.getArticles();
+            return View(all_articles);
+        }
     
     
     }

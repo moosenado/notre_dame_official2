@@ -1,0 +1,55 @@
+﻿@model NotreDameReBuildOfficial.Models.news_article
+@{
+    ViewBag.Title = "News_Update";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<h2>Update Article</h2>
+
+@using (Html.BeginForm("News_Update", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+
+    @Html.LabelFor(model => model.title)
+    <br />
+    @Html.TextBoxFor(model => model.title)
+    @Html.ValidationMessageFor(model => model.title, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.date)
+    <br />
+    @Html.TextBoxFor(model => model.date)
+    @Html.ValidationMessageFor(model => model.date, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.author)
+    <br />
+    @Html.TextBoxFor(model => model.author)
+    @Html.ValidationMessageFor(model => model.author, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.image)
+    <br />
+    @Html.HiddenFor(model => model.image)
+    <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" />
+    <br />
+    <input type="file" name="file_update" id="file_update" />
+    <br />
+    <br />
+
+    @Html.LabelFor(model => model.article)
+    <br />
+    @Html.TextBoxFor(model => model.article)
+    @Html.ValidationMessageFor(model => model.article, "*")
+
+    <br /><br />
+
+    <input type="submit" value="Update Article" class="buttonstyle"/>
+}
+
+<p>@Html.ActionLink("Back", "News_Details/" + Model.Id, "CMSHome", new { @class = "link" })</p>

@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 <h2>Add News Article</h2>
 
 @using (Html.BeginForm("News_Insert", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -17,7 +15,7 @@
     <br />
     @Html.LabelFor(model => model.date)
     <br />
-    @Html.TextBoxFor(model => model.date, new { style = "width:150px" })
+    @Html.TextBoxFor(model => model.date)
     <br />
     @Html.LabelFor(model => model.author)
     <br />
@@ -26,19 +24,16 @@
     @Html.LabelFor(model => model.article)
     <br />
     @Html.TextBoxFor(model => model.article)
+    <br />   
     <br />
-    
+    <input type="file" name="file" id="file" />
     <br />
-    <input type="file" name="file" id="file" /><br><br>
+    <input type="submit" value="Add Article" class="buttonstyle"/> 
     <br />
     <br />
-
-    <input type="submit" value="Add Article" />
-    
-    <br><br>
     @ViewBag.Message
 }
 
 <div>
-    @Html.ActionLink("Back", "News")
+    @Html.ActionLink("Back", "News", "CMSHome", new { @class = "link" })
 </div>

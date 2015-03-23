@@ -187,16 +187,24 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
     <Compile Include="Controllers\CMS\CMSJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\CMSJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\cmsDonationController.cs" />
+    <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
+    <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ApptSchedClass.cs" />
+    <Compile Include="Models\ApptSchedValidation.cs" />
     <Compile Include="Models\donationClass.cs" />
+    <Compile Include="Models\donationValidation.cs" />
+    <Compile Include="Models\erwaitClass.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
@@ -211,6 +219,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-NotreDameReBuildOfficial-20150306083225.mdf" />
+    <Content Include="App_Data\aspnet-NotreDameReBuildOfficial-20150306083225_log.ldf">
+      <DependentUpon>aspnet-NotreDameReBuildOfficial-20150306083225.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\de\Microsoft.Data.Edm.resources.dll" />
     <Content Include="bin\de\Microsoft.Data.OData.resources.dll" />
@@ -562,6 +574,7 @@
     <Content Include="Content\images\facebook.png" />
     <Content Include="Content\images\hospitalimg.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\ndh-cross.png" />
     <Content Include="Content\images\nosm.png" />
     <Content Include="Content\images\town-of-hearst.png" />
     <Content Include="Content\images\twitter.png" />
@@ -732,10 +745,38 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\CMSHome\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutCMS.cshtml" />
-    <Content Include="Views\Home\Donate.cshtml" />
     <Content Include="Views\Home\Article_Details.cshtml" />
     <Content Include="Views\CMSHome\News.cshtml" />
     <Content Include="Views\CMSHome\News_Insert.cshtml" />
+    <Content Include="Views\CMSHome\JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\JobCategory_Details.cshtml" />
+    <Content Include="Views\CMSHome\Insert_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\Update_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\Delete_JobCategory.cshtml" />
+    <Content Include="Views\CMSHome\JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\JobPosting_Details.cshtml" />
+    <Content Include="Views\CMSHome\Update_JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\Insert_JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\Delete_JobPosting.cshtml" />
+    <Content Include="Views\CMSHome\News_Details.cshtml" />
+    <Content Include="Views\CMSHome\News_Update.cshtml" />
+    <Content Include="Views\CMSHome\News_Delete.cshtml" />
+    <Content Include="Views\Home\Article_List.cshtml" />
+    <Content Include="Views\Donation\Donate.cshtml" />
+    <Content Include="Views\cmsDonation\cmsDonationList.cshtml" />
+    <Content Include="Views\cmsDonation\Insert.cshtml" />
+    <Content Include="Views\cmsDonation\Delete.cshtml" />
+    <Content Include="Views\cmsDonation\Update.cshtml" />
+    <Content Include="Views\cmsDonation\Details.cshtml" />
+    <Content Include="Views\Donation\DonateAction.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
+    <Content Include="Views\ApptSched\ApptSched.cshtml" />
+    <Content Include="Views\ApptSched\createAppt.cshtml" />
+    <Content Include="Views\ApptSched\Delete.cshtml" />
+    <Content Include="Views\ApptSched\Details.cshtml" />
+    <Content Include="Views\ApptSched\NotFound.cshtml" />
+    <Content Include="Views\ApptSched\Update.cshtml" />
     <Content Include="Views\Home\JobPosting.cshtml" />
     <Content Include="Views\CMSJobCategory\JobCategory.cshtml" />
     <Content Include="Views\CMSJobCategory\JobCategory_Details.cshtml" />
@@ -749,7 +790,6 @@
     <Content Include="Views\CMSJobPosting\JobPosting_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

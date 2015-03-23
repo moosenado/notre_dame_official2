@@ -1,5 +1,30 @@
-﻿@{
+﻿@model NotreDameReBuildOfficial.Models.news_article
+@{
     ViewBag.Title = "Article_Details";
 }
 
-<h2>Article_Details</h2>
+<div id="articlebody">
+
+<div id="article_image">
+
+    <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" /></a>
+
+</div>
+
+<div id="article_info">
+
+    <h2>@Html.DisplayFor(x => x.title)</h2>
+
+    <p>@Html.DisplayFor(x => x.date)</p>
+
+    <p>@Html.DisplayFor(x => x.author)</p>
+
+    <br />
+
+    <p>@Html.DisplayFor(x => x.article)</p>
+
+</div>
+
+</div>
+
+<div class="clear"></div>

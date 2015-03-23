@@ -1,0 +1,54 @@
+﻿@model NotreDameReBuildOfficial.Models.Appt_Book
+
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.id)
+    
+    @Html.LabelFor(x => x.Fname)
+    @Html.TextBoxFor(x => x.Fname)
+    @Html.ValidationMessageFor(x => x.Fname)
+
+    @Html.LabelFor(x => x.Lname)
+    @Html.TextBoxFor(x => x.Lname)
+    @Html.ValidationMessageFor(x => x.Lname)
+
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email)
+    @Html.ValidationMessageFor(x => x.Email)
+    
+    @Html.LabelFor(x => x.HealthNum)
+    @Html.TextBoxFor(x => x.HealthNum)
+    @Html.ValidationMessageFor(x => x.HealthNum)
+    
+    @Html.LabelFor(x => x.BookDate)
+    @Html.TextBoxFor(x => x.BookDate)
+    @Html.ValidationMessageFor(x => x.BookDate)
+    
+    @Html.LabelFor(x => x.BookTime)
+    @Html.TextBoxFor(x => x.BookTime)
+    @Html.ValidationMessageFor(x => x.BookTime)
+    
+    @Html.LabelFor(x => x.AdditionalInfo)
+    @Html.TextAreaFor(x => x.AdditionalInfo)
+    @Html.ValidationMessageFor(x => x.AdditionalInfo)
+    
+    @Html.LabelFor(x => x.Speciality)
+    @Html.TextBoxFor(x => x.Speciality)
+    @Html.ValidationMessageFor(x => x.Speciality)
+    
+    @Html.LabelFor(x => x.Phone)
+    @Html.TextBoxFor(x => x.Phone)
+    @Html.ValidationMessageFor(x => x.Phone)
+
+
+    <input type="submit" value="Update" />
+}
+
+<p>@Html.ActionLink("Back", "Details", new { id = Model.id })</p>

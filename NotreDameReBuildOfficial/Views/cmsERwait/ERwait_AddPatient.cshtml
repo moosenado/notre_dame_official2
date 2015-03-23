@@ -1,0 +1,60 @@
+﻿@model NotreDameReBuildOfficial.Models.ER_patient_info
+@{
+    ViewBag.Title = "ERwait_AddPatient";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>ER Wait Time</h2>
+
+<br />
+
+<div id="erlinks">
+    <ul>
+        <li>@Html.ActionLink("Waiting Patients", "ERwait_Patients", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Add Patient", "ERwait_AddPatient", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Patient History Data", "ERwait_PatientHistory", "cmsERwait", new { @class = "buttonstyle" })</li>
+    </ul>
+</div>
+
+<br />
+
+<h3>Add Patient</h3>
+
+@using (Html.BeginForm("ERwait_AddPatient", "cmsERwait", FormMethod.Post, new { id = "submitPatient" }))
+{
+    @Html.LabelFor(model => model.fname)
+    <br />
+    @Html.TextBoxFor(model => model.fname)
+    <br />
+    @Html.LabelFor(model => model.lname)
+    <br />
+    @Html.TextBoxFor(model => model.lname)
+    <br />
+    @Html.LabelFor(model => model.date)
+    <br />
+    @Html.TextBoxFor(model => model.date)
+    <br />
+    @Html.LabelFor(model => model.er_reason)
+    <br />
+    @Html.TextBoxFor(model => model.er_reason)
+    <br />
+    @Html.HiddenFor(model => model.arrivaltime)
+    <br />
+    <button type="submit" id="btnAddPatient" value="patient_add" class="buttonstyle" name="form_command">Add Patient to ER</button>
+    <button type="submit" id="btnAddWaitList" value="waitlist_add" class="buttonstyle" name="form_command">Add Patient to ER Wait Room</button>
+    <br />
+    @ViewBag.Message
+}
+
+@*TIME FUNCTIONS*@
+
+@*@{
+    DateTime endTime = new DateTime(2015, 3, 21, 13, 40, 52);
+    DateTime startTime = new DateTime(2015, 3, 21, 12, 38, 52);
+    TimeSpan span = endTime.Subtract(startTime);
+    Response.Write("Time Difference (seconds): " + span.Seconds);
+    Response.Write("Time Difference (minutes): " + span.Minutes);
+    Response.Write("Time Difference (hours): " + span.Hours);
+    Response.Write("Time Difference (days): " + span.Days);   
+}*@
