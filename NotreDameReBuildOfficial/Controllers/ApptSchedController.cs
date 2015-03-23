@@ -13,9 +13,9 @@ namespace NotreDameReBuildOfficial.Controllers
     {
         ApptSchedClass objApptSched = new ApptSchedClass(); //created instance
 
-        public ActionResult ApptSched()
+        public ActionResult ApptSched() //method gets all apointments using model and displays it on ApptSched view  
         {
-            var appt = objApptSched.getAppts();
+            var appt = objApptSched.getAppts(); //calls method getAppts from model
             return View(appt);
         }
 

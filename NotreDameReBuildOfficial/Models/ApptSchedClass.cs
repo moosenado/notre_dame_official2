@@ -17,15 +17,15 @@ namespace NotreDameReBuildOfficial.Models
         }
         public Appt_Book getApptBookByID(int _id)
         {
-            var allAppt = objApptSched.Appt_Books.SingleOrDefault(x => x.id == _id);
-            return allAppt;
+            var allAppt = objApptSched.Appt_Books.SingleOrDefault(x => x.id == _id); //gets all appts and stores it in allAppt variable
+            return allAppt; //returns the result set and allows it to be displayed
         }
 
         public bool insertAppt(Appt_Book appt) //created instance of appt_book table 
         {
             using (objApptSched) //using makes sure data disposed after its used
             {
-                objApptSched.Appt_Books.InsertAllOnSubmit(appt);
+                objApptSched.Appt_Books.InsertOnSubmit(appt);
                 objApptSched.SubmitChanges();
                 return true;
             }
