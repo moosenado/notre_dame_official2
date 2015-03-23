@@ -188,7 +188,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
-    <Compile Include="Controllers\CMSJobCategoryController.cs" />
+    <Compile Include="Controllers\CMS\CMSJobCategoryController.cs" />
+    <Compile Include="Controllers\CMS\CMSJobPostingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -735,20 +736,17 @@
     <Content Include="Views\Home\Article_Details.cshtml" />
     <Content Include="Views\CMSHome\News.cshtml" />
     <Content Include="Views\CMSHome\News_Insert.cshtml" />
-    <Content Include="Views\CMSHome\JobCategory.cshtml" />
-    <Content Include="Views\CMSHome\JobCategory_Details.cshtml" />
-    <Content Include="Views\CMSHome\Insert_JobCategory.cshtml" />
-    <Content Include="Views\CMSHome\Update_JobCategory.cshtml" />
-    <Content Include="Views\CMSHome\Delete_JobCategory.cshtml" />
-    <Content Include="Views\CMSHome\JobPosting.cshtml" />
-    <Content Include="Views\CMSHome\JobPosting_Details.cshtml" />
-    <Content Include="Views\CMSHome\Update_JobPosting.cshtml" />
-    <Content Include="Views\CMSHome\Insert_JobPosting.cshtml" />
-    <Content Include="Views\CMSHome\Delete_JobPosting.cshtml" />
     <Content Include="Views\Home\JobPosting.cshtml" />
     <Content Include="Views\CMSJobCategory\JobCategory.cshtml" />
     <Content Include="Views\CMSJobCategory\JobCategory_Details.cshtml" />
     <Content Include="Views\CMSJobCategory\Insert_JobCategory.cshtml" />
+    <Content Include="Views\CMSJobCategory\Update_JobCategory.cshtml" />
+    <Content Include="Views\CMSJobCategory\Delete_JobCategory.cshtml" />
+    <Content Include="Views\CMSJobPosting\JobPosting.cshtml" />
+    <Content Include="Views\CMSJobPosting\Insert_JobPosting.cshtml" />
+    <Content Include="Views\CMSJobPosting\Update_JobPosting.cshtml" />
+    <Content Include="Views\CMSJobPosting\Delete_JobPosting.cshtml" />
+    <Content Include="Views\CMSJobPosting\JobPosting_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

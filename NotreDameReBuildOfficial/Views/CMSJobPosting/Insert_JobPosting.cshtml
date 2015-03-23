@@ -14,7 +14,7 @@
 @using (Html.BeginForm())
 {
     <div class="job-cat">
-       <select id="ddl-cat" class="frm_insert">
+        <select id="ddl-cat" class="frm_insert">
             <option data-id="0">-- Select --</option>
             @foreach (var x in ViewBag.Categories)
             {
@@ -87,7 +87,7 @@
 <p>@Html.ActionLink("Back", "JobPosting")</p>
 <script>
     $(function () {
-      
+
         $("#ddl-cat").change(function () {
             var item = $("#ddl-cat option:selected");
             $("#category_id").val(item.data("id"));

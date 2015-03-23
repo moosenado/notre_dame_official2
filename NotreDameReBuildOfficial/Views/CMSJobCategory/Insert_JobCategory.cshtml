@@ -1,5 +1,19 @@
-﻿@{
-    ViewBag.Title = "Insert_JobCategory";
+﻿@model NotreDameReBuildOfficial.Models.Job_category
+@{
+    ViewBag.Title = "JobCategory_Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
+<br />
+<br />
+<br />
 
-<h2>Insert_JobCategory</h2>
+<h2>Manage Job categories</h2>
+
+<p><em>@Html.DisplayFor(x => x.title)</em></p>
+
+<p>
+    @Html.ActionLink("Back", "JobCategory") |
+    @Html.ActionLink("Update", "Update_JobCategory", new { id = Model.id }) |
+    @Html.ActionLink("Delete", "Delete_JobCategory", new { id = Model.id })
+</p>

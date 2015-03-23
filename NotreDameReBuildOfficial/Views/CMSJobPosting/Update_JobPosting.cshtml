@@ -9,30 +9,32 @@
 <br />
 
 <h2>Update @Model.title</h2>
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.HiddenFor(x => x.category_id)
-    
+
     @Html.HiddenFor(x => x.id)
     <div class="ddl-update">
-           <select id="ddl-cat">
-               @foreach (var x in ViewBag.Categories)
-               {
-                   if(x.id == Model.category_id){
-                       <option data-id="@x.id" selected>@x.title</option>
-                   }
-                   else{
-                       <option data-id="@x.id">@x.title</option>
-                   }
-               }
-           </select>
+        <select id="ddl-cat">
+            @foreach (var x in ViewBag.Categories)
+            {
+                if (x.id == Model.category_id)
+                {
+                    <option data-id="@x.id" selected>@x.title</option>
+                }
+                else
+                {
+                    <option data-id="@x.id">@x.title</option>
+                }
+            }
+        </select>
 
     </div>
     <div class="details_lbl">
         @Html.LabelFor(x => x.title)
     </div>
     <div>
-        @Html.TextBoxFor(x => x.title, new { @class="frm"})
+        @Html.TextBoxFor(x => x.title, new { @class = "frm" })
     </div>
     @Html.ValidationMessageFor(x => x.title)
 
@@ -83,9 +85,9 @@
         @Html.TextAreaFor(x => x.description, new { @class = "description" })
     </div>
     @Html.ValidationMessageFor(x => x.description)
-  
-     <div>
-       <input type="submit" value="Update"  class="btn-add"/>
+
+    <div>
+        <input type="submit" value="Update" class="btn-add" />
     </div>
 }
 <!--Return an anchor element-->

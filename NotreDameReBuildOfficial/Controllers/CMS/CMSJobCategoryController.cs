@@ -8,7 +8,7 @@ using System.IO; //for uploading file path
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
 
-namespace NotreDameReBuildOfficial.Controllers
+namespace NotreDameReBuildOfficial.Controllers.CMS
 {
     public class CMSJobCategoryController : Controller
     {
@@ -59,10 +59,10 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 catch
                 {
-                    return View();
+                    return View(jobCat);
                 }
             }
-            return View();
+            return View(jobCat);
         }
 
         public ActionResult Update_JobCategory(int id)
@@ -91,10 +91,10 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 catch
                 {
-                    return View();
+                    return View(JobCat);
                 }
             }
-            return View();
+            return View(JobCat);
         }
 
         public ActionResult Delete_JobCategory(int id)
@@ -128,7 +128,6 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             return View();
         }
-
 
     }
 }
