@@ -13,10 +13,10 @@ namespace NotreDameReBuildOfficial.Models
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
         //get all patient info
-        public IQueryable<ER_patient_info> getPatientInfo() 
+        public IQueryable<ER_wait_list> getWaitingPatientInfo() 
         {
-            var allPatients = objER.ER_patient_infos.Select(x => x); 
-            return allPatients;
+            var waitingPatients = objER.ER_wait_lists.Select(x => x); 
+            return waitingPatients;
         }
 
         //get specific patient info by ID
@@ -32,17 +32,6 @@ namespace NotreDameReBuildOfficial.Models
             using (objER) 
             {
                 objER.ER_patient_infos.InsertOnSubmit(patientinfo);
-                objER.SubmitChanges();
-                return true;
-            }
-        }
-
-        //insert into patient wait list table
-        public bool insertPatient_Wait(ER_wait_list waitlist)
-        {
-            using (objER)
-            {
-                objER.ER_wait_lists.InsertOnSubmit(waitlist);
                 objER.SubmitChanges();
                 return true;
             }

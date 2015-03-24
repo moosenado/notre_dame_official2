@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Donation>
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.ER_wait_list>
 @{
     ViewBag.Title = "ERwait_Patients";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
@@ -19,4 +19,32 @@
 
 <br />
 
-<h3>Waiting Patients</h3>
+@* List Articles *@
+<h3>Waiting Patients in ER</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Line Number</th>
+            <th>Arrival Time</th>
+            <th>Patient Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>  
+            
+        @*Output patients in line - if counter is 1, replace with the string "Next"*@
+
+        @{int counter = 1;
+          string next = "Next"; }                
+            @foreach (var patient in Model)
+            {
+                <tr>
+                    <td>@{ if (counter == 1) { @next }else{ @counter }} </td>
+                    <td>@Html.Raw(patient.arrivaltime)</td>
+                    <td>@Html.Raw(patient.fname) @Html.Raw(patient.lname)</td>
+                    <td>Remove</td>
+                </tr>
+                counter++;
+            }   
+    </tbody>
+</table>

@@ -15,7 +15,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         public ActionResult ERwait_Patients()
         {
-            return View();
+            var patients = objER.getWaitingPatientInfo();
+            return View(patients);
         }
 
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
