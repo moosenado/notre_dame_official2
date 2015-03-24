@@ -46,9 +46,10 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Please enter the date!")]
         public DateTime posting_date { get; set; }
 
-        [DisplayName("Category")]
-        [Required]
+        
+        [Required(ErrorMessage = "catid")]
         public string category_id { get; set; }
+
 
     }
 }
