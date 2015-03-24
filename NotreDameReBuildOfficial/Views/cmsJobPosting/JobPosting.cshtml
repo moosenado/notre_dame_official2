@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.jobPosting>
+@{
+    ViewBag.Title = "JobPosting";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+<h2>List Of Careers</h2>
+<div>
+    @Html.ActionLink("Add New Job", "Insert_JobPosting", "cmsJobPosting", new { @class = "btn" })
+    @Html.ActionLink("Job Categories", "JobCategory", "cmsJobCategory", new { @class = "btn" })
+</div>
+<table id="careers">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Department</th>
+            <th>Posting_Date</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(x.title, "JobPosting_Details", new { id = x.id })</td>
+                <td>@x.department</td>
+                <td>@x.posting_date.ToString()</td>
+                <td>@x.catTitle</td>
+            </tr>
+        }
+    </tbody>
+</table>
