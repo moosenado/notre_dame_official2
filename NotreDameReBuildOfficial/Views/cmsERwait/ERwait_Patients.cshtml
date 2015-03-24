@@ -42,7 +42,7 @@
                     <td>@{ if (counter == 1) { @next }else{ @counter }} </td>
                     <td>@Html.Raw(patient.arrivaltime)</td>
                     <td>@Html.Raw(patient.fname) @Html.Raw(patient.lname)</td>
-                    <td>@using (Html.BeginForm()){ @Html.HiddenFor(modelItem => patient.Id) <input type="submit" value="Delete" class="buttonstyle" /> }</td>
+                    <td>@using (Html.BeginForm()){ @Html.HiddenFor(model => patient.Id) <input type="submit" value="Remove" class="buttonstyle" /> }</td>
                 </tr>
                 counter++;
             }   

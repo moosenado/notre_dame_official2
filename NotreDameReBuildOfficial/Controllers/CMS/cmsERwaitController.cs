@@ -19,6 +19,20 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View(patients);
         }
 
+        [HttpPost]
+        public ActionResult ERwait_Patients(int id, ER_wait_list waitlist)
+        {
+            try
+            {
+                objER.patientDelete(id);
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
         {
             if (form_command == "waitlist_add")
