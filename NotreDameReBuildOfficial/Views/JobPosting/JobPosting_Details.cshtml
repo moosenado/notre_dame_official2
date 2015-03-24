@@ -1,11 +1,11 @@
-﻿@model NotreDameReBuildOfficial.Models.jobPosting
+﻿@model NotreDameReBuildOfficial.Models.Job_posting
 @{
     ViewBag.Title = "JobPosting_Details";
    
 }
 
 
-<h2>Manage Career</h2>
+<h2>@Model.title</h2>
 <div>
     <div class="details_Op">
         @Html.LabelFor(model => model.title, new { @class = "lbl" }):
@@ -31,19 +31,17 @@
         @Html.LabelFor(model => model.description, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.description)
     </div>
-    <div class="details_Op">
+    @*<div class="details_Op">
         @Html.LabelFor(model => model.catTitle, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.catTitle)
-    </div>
+    </div>*@
     
     <div>
         @Html.ActionLink("Apply", "JobApplying", new { @class = "btn" })
     </div>
 
     <p>
-        @Html.ActionLink("Back", "JobPosting") |
-        @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }) |
-        @Html.ActionLink("Delete", "Delete_JobPosting", new { id = Model.id })
+        @Html.ActionLink("Back", "JobPosting") 
     </p>
 
 </div>
