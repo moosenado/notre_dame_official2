@@ -192,6 +192,7 @@
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
+    <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -491,6 +492,7 @@
     <Content Include="Views\ApptSched\Details.cshtml" />
     <Content Include="Views\ApptSched\NotFound.cshtml" />
     <Content Include="Views\ApptSched\Update.cshtml" />
+    <Content Include="Views\CMSJobCategory\JobCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
