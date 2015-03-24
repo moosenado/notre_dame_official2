@@ -1,0 +1,33 @@
+﻿@model NotreDameReBuildOfficial.Models.Job_category
+@{
+    ViewBag.Title = "Insert_Jobcategory";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2 class="Title">Add New category </h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.title)
+    </div>
+    <br/>
+    <div>
+        @Html.TextBoxFor(model => model.title, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.title)
+    </div>
+    
+    <div>
+        <input id="btnAdd" type="submit" value="Add" class="btn-add" />
+    </div>
+}
+<p>@Html.ActionLink("Back", "JobCategory")</p>
+
+

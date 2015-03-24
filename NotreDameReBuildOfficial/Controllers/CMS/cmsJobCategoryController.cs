@@ -10,10 +10,10 @@ using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
-    public class CMSJobCategoryController : Controller
+    public class cmsJobCategoryController : Controller
     {
         //
-        // GET: /CMSJobCategory/
+        // GET: /cmsJobCategory/
 
         public ActionResult Index()
         {

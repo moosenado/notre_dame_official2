@@ -492,7 +492,11 @@
     <Content Include="Views\ApptSched\Details.cshtml" />
     <Content Include="Views\ApptSched\NotFound.cshtml" />
     <Content Include="Views\ApptSched\Update.cshtml" />
-    <Content Include="Views\CMSJobCategory\JobCategory.cshtml" />
+    <Content Include="Views\cmsJobCategory\JobCategory.cshtml" />
+    <Content Include="Views\cmsJobCategory\JobCategory_Details.cshtml" />
+    <Content Include="Views\cmsJobCategory\Insert_JobCategory.cshtml" />
+    <Content Include="Views\cmsJobCategory\Update_JobCategory.cshtml" />
+    <Content Include="Views\cmsJobCategory\Delete_JobCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
