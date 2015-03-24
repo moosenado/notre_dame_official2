@@ -1,0 +1,49 @@
+﻿@model NotreDameReBuildOfficial.Models.jobPosting
+@{
+    ViewBag.Title = "JobPosting_Details";
+   
+}
+
+
+<h2>Manage Career</h2>
+<div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.title, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.title)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.type, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.type)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.department, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.department)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.salary, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.salary, "$")
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.posting_date, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.posting_date)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.description, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.description)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.catTitle, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.catTitle)
+    </div>
+    
+    <div>
+        @Html.ActionLink("Apply", "JobApplying", new { @class = "btn" })
+    </div>
+
+    <p>
+        @Html.ActionLink("Back", "JobPosting") |
+        @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }) |
+        @Html.ActionLink("Delete", "Delete_JobPosting", new { id = Model.id })
+    </p>
+
+</div>

@@ -195,6 +195,7 @@
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -502,6 +503,8 @@
     <Content Include="Views\cmsJobPosting\Insert_JobPosting.cshtml" />
     <Content Include="Views\cmsJobPosting\Update_JobPosting.cshtml" />
     <Content Include="Views\cmsJobPosting\Delete_JobPosting.cshtml" />
+    <Content Include="Views\JobPosting\JobPosting.cshtml" />
+    <Content Include="Views\JobPosting\JobPosting_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
