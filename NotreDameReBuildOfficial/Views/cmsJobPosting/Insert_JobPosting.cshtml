@@ -1,0 +1,108 @@
+﻿@model NotreDameReBuildOfficial.Models.Job_posting
+@{
+    ViewBag.Title = "Insert_JobPosting";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2 class="Title">post New </h2>
+@*add dropdown list of job category*@
+
+@using (Html.BeginForm())
+{
+    <div class="job-cat">
+        <select id="ddl-cat" class="frm_insert">
+            <option data-id="0">-- Select --</option>
+            @foreach (var x in ViewBag.Categories)
+            {
+                <option data-id="@x.id">@x.title</option>
+            }
+        </select>
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.title)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.title, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.title)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.type)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.type, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.type)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.department)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.department, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.department)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.salary)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.salary, new { @class = "frm_insert" })
+        <span>$</span>
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.salary)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.posting_date)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.posting_date, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.posting_date)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.description)
+    </div>
+    <div>
+        @Html.TextAreaFor(model => model.description, new { @class = "description" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.description)
+    </div>
+    <div class="hidden">
+        @Html.HiddenFor(model => model.category_id)
+    </div>
+    <div>
+        <input id="btnAdd" type="submit" value="Add" class="btn-add" />
+    </div>
+}
+<p>@Html.ActionLink("Back", "JobPosting")</p>
+<script>
+    $(function () {
+
+        $("#ddl-cat").change(function () {
+            var item = $("#ddl-cat option:selected");
+            $("#category_id").val(item.data("id"));
+        });
+
+        $("#btnAdd").click(function (e) {
+            var catid = $("#category_id").val();
+            if (catid == null || catid < 1) {
+                $("#ddl-cat").addClass("input-validation-error");
+                //e.preventDefault();
+                return;
+            }
+
+        });
+    });
+
+    //CKEDITOR.replace('description');
+</script>
