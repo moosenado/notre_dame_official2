@@ -42,9 +42,10 @@
                     <td>@{ if (counter == 1) { @next }else{ @counter }} </td>
                     <td>@Html.Raw(patient.arrivaltime)</td>
                     <td>@Html.Raw(patient.fname) @Html.Raw(patient.lname)</td>
-                    <td><input type="submit" value="Remove" class="buttonstyle" id="wait_patient_id" name="@Html.Raw(patient.Id)"/></td>
+                    <td>@using (Html.BeginForm(FormMethod.Post)){<input type="submit" value="Remove" class="buttonstyle" name="remove_command"/><input type="hidden" value="@Html.Raw(patient.Id)" name="wait_patient_id" />}</td>
                 </tr>
                 counter++;
             }   
+        @ViewBag.Message
     </tbody>
 </table>

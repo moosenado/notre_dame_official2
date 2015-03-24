@@ -13,26 +13,28 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
     {
         erwaitClass objER = new erwaitClass();
 
-        public ActionResult ERwait_Patients()
+        public ActionResult ERwait_Patients(erwaitClass waitclass, string remove_command, string wait_patient_id, ER_wait_list waitlist)
         {
+            if (remove_command == "Remove")
+            {
+                try
+                {
+                    //grab id from hidden value on form - convert string to int and submit into delete function
+                    int id = Int32.Parse(waitclass.wait_patient_id);
+                    objER.patientDelete(id);
+                    ViewBag.Message = "Success";
+                    return RedirectToAction("ERwait_Patients");
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "Error:" + ex.Message.ToString();
+                }
+            }
+
             var patients = objER.getWaitingPatientInfo();
             return View(patients);
         }
-
-        [HttpPost]
-        public ActionResult ERwait_Patients(int id, ER_wait_list waitlist)
-        {
-            try
-            {
-                objER.patientDelete(id);
-                return View();
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
+        
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
         {
             if (form_command == "waitlist_add")
@@ -43,7 +45,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     DateTime time_now = DateTime.Now;
                     patientinfo.arrivaltime = time_now;
 
-                    var wait_patientid = 1;
+                    var wait_patientid = patientinfo.Id;
                     var wait_fname = patientinfo.fname;
                     var wait_lname = patientinfo.lname;
 
