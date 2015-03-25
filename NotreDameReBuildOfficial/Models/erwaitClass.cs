@@ -8,7 +8,11 @@ namespace NotreDameReBuildOfficial.Models
     public class erwaitClass
     {
         //get/set form_command
-        public string form_command { get; set; } 
+        public string form_command { get; set; }
+        //get/set remove_command
+        public string remove_command { get; set; }
+        //get/set wait_patient_id
+        public string wait_patient_id { get; set; } 
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
@@ -18,6 +22,13 @@ namespace NotreDameReBuildOfficial.Models
             var waitingPatients = objER.ER_wait_lists.Select(x => x); 
             return waitingPatients;
         }
+
+        //public IQueryable<ER_wait_list> getWaitingPatientInfoRefresh()
+        //{
+        //    var waitingPatients = objER.ER_wait_lists.Select(x => x);
+        //    objER.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, waitingPatients);
+        //    return waitingPatients;
+        //}
 
         //get specific patient info by ID
         public ER_patient_info getPatientsByID(int _id)
@@ -33,6 +44,17 @@ namespace NotreDameReBuildOfficial.Models
             {
                 objER.ER_patient_infos.InsertOnSubmit(patientinfo);
                 objER.SubmitChanges();
+                return true;
+            }
+        }
+        //delete patient from wait room
+        public bool patientDelete(int _id)
+        {
+            using (objER)
+            {
+                var delete_by_id = objER.ER_wait_lists.Single(x => x.Id == _id);
+                objER.ER_wait_lists.DeleteOnSubmit(delete_by_id);
+                objER.SubmitChanges(); 
                 return true;
             }
         }
