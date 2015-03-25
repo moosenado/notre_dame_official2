@@ -13,7 +13,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
     {
         erwaitClass objER = new erwaitClass();
 
-        public ActionResult ERwait_Patients(erwaitClass waitclass, string remove_command, string wait_patient_id, ER_wait_list waitlist)
+        public ActionResult ERwait_Patients(erwaitClass waitclass, string remove_command, string wait_patient_id, ER_wait_list waitlist, ER_wait_time waittime)
         {
             if (remove_command == "Remove")
             {
@@ -22,6 +22,24 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     //grab id from hidden value on form - convert string to int and submit into delete function
                     int id = Int32.Parse(waitclass.wait_patient_id);
                     objER.patientDelete(id);
+
+                    DateTime time_now_wait = DateTime.Now;
+
+                    //TimeSpan span = time_now_wait.Subtract(waitlist.arrivaltime);
+
+                    //span.Minutes = waittime.waittime;
+
+
+                    //waittime.patientid = "1";
+                    //waittime.waittime time_now_wait;
+
+                    using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
+                    {
+                        var delete_by_id = objDelete_Insert.ER_wait_lists.Single(x => x.Id == id);
+                        objDelete_Insert.ER_wait_lists.DeleteOnSubmit(delete_by_id);
+                        objDelete_Insert.ER_wait_times.InsertOnSubmit(waittime);
+                        objDelete_Insert.SubmitChanges(); 
+                    }
                     ViewBag.Message = "Success";
                     return RedirectToAction("ERwait_Patients");
                 }
