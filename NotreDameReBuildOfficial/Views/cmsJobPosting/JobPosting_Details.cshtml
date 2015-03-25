@@ -1,4 +1,4 @@
-﻿@model NotreDameReBuildOfficial.Models.Job_posting
+﻿@model NotreDameReBuildOfficial.Models.jobPosting
 @{
     ViewBag.Title = "JobPosting_Details";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
@@ -34,10 +34,10 @@
         @Html.LabelFor(model => model.description, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.description)
     </div>
-    @*<div class="details_Op">
+    <div class="details_Op">
         @Html.LabelFor(model => model.catTitle, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.catTitle)
-    </div>*@
+    </div>
 
     <p>
         @Html.ActionLink("Back", "JobPosting") |

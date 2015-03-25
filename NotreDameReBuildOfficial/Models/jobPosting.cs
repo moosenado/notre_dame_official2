@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using System.Web.Mvc;
+
 namespace NotreDameReBuildOfficial.Models
 {
     public class jobPosting : Job_posting 
@@ -10,6 +14,7 @@ namespace NotreDameReBuildOfficial.Models
         //creating an instance of Linq object
         ndLinqClassDataContext jobObj = new ndLinqClassDataContext();
 
+        [DisplayName ("Category")]
         public string catTitle { get; set; }
 
         public IQueryable<jobPosting> getJobs()
@@ -32,8 +37,25 @@ namespace NotreDameReBuildOfficial.Models
 
         public Job_posting getJobByID(int _id)
         {
-            var allJob = jobObj.Job_postings.SingleOrDefault(x => x.id == _id);
-            return allJob;
+            var allJobs = (from jp in jobObj.Job_postings
+                          join cat in jobObj.Job_categories on jp.category_id equals cat.id
+                           where jp.id == _id
+                          select new jobPosting()
+                          {
+                              id = jp.id,
+                              title = jp.title,
+                              type = jp.type,
+                              department = jp.department,
+                              posting_date = jp.posting_date,
+                              description = jp.description,
+                              catTitle = cat.title
+                          }).SingleOrDefault();
+
+            //return IQueryable Jobposting for data bound control to bind
+            return allJobs;
+
+            //var allJob = jobObj.Job_postings.SingleOrDefault(x => x.id == _id);
+            //return allJob;
         }
 
         //creating an instance of job_posting table as parameter
