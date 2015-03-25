@@ -52,13 +52,6 @@
       <Column Name="lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ER_wait_time" Member="ER_wait_times">
-    <Type Name="ER_wait_time">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patientid" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="waittime" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.news_article" Member="news_articles">
     <Type Name="news_article">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -314,6 +307,13 @@
       <Column Name="province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ER_wait_time" Member="ER_wait_times">
+    <Type Name="ER_wait_time">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patientid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="waittime" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

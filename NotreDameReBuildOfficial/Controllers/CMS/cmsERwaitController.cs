@@ -29,7 +29,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     TimeSpan span = time_now_wait.Subtract(dateValue);
 
                     //set waittime in wait time table equal to span (amount of time patient has been waiting)
-                    waittime.patientid = "1";
+                    waittime.patientid = 1;
                     //waittime.waittime = span;
 
                     //remove patient from waitlist table and add new values into wait time table

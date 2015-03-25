@@ -45,9 +45,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertER_wait_list(ER_wait_list instance);
     partial void UpdateER_wait_list(ER_wait_list instance);
     partial void DeleteER_wait_list(ER_wait_list instance);
-    partial void InsertER_wait_time(ER_wait_time instance);
-    partial void UpdateER_wait_time(ER_wait_time instance);
-    partial void DeleteER_wait_time(ER_wait_time instance);
     partial void Insertnews_article(news_article instance);
     partial void Updatenews_article(news_article instance);
     partial void Deletenews_article(news_article instance);
@@ -99,6 +96,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertSearch(Search instance);
     partial void UpdateSearch(Search instance);
     partial void DeleteSearch(Search instance);
+    partial void InsertER_wait_time(ER_wait_time instance);
+    partial void UpdateER_wait_time(ER_wait_time instance);
+    partial void DeleteER_wait_time(ER_wait_time instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -168,14 +168,6 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<ER_wait_list>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ER_wait_time> ER_wait_times
-		{
-			get
-			{
-				return this.GetTable<ER_wait_time>();
 			}
 		}
 		
@@ -344,6 +336,14 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<staff_info>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ER_wait_time> ER_wait_times
+		{
+			get
+			{
+				return this.GetTable<ER_wait_time>();
 			}
 		}
 	}
@@ -1281,116 +1281,6 @@ namespace NotreDameReBuildOfficial.Models
 					this._lname = value;
 					this.SendPropertyChanged("lname");
 					this.OnlnameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ER_wait_time")]
-	public partial class ER_wait_time : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _patientid;
-		
-		private System.Nullable<decimal> _waittime;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnpatientidChanging(string value);
-    partial void OnpatientidChanged();
-    partial void OnwaittimeChanging(System.Nullable<decimal> value);
-    partial void OnwaittimeChanged();
-    #endregion
-		
-		public ER_wait_time()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientid", DbType="NChar(10)")]
-		public string patientid
-		{
-			get
-			{
-				return this._patientid;
-			}
-			set
-			{
-				if ((this._patientid != value))
-				{
-					this.OnpatientidChanging(value);
-					this.SendPropertyChanging();
-					this._patientid = value;
-					this.SendPropertyChanged("patientid");
-					this.OnpatientidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waittime", DbType="Decimal(18,4)")]
-		public System.Nullable<decimal> waittime
-		{
-			get
-			{
-				return this._waittime;
-			}
-			set
-			{
-				if ((this._waittime != value))
-				{
-					this.OnwaittimeChanging(value);
-					this.SendPropertyChanging();
-					this._waittime = value;
-					this.SendPropertyChanged("waittime");
-					this.OnwaittimeChanged();
 				}
 			}
 		}
@@ -6000,6 +5890,116 @@ namespace NotreDameReBuildOfficial.Models
 				{
 					this._department = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ER_wait_time")]
+	public partial class ER_wait_time : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _patientid;
+		
+		private System.Nullable<long> _waittime;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnpatientidChanging(System.Nullable<int> value);
+    partial void OnpatientidChanged();
+    partial void OnwaittimeChanging(System.Nullable<long> value);
+    partial void OnwaittimeChanged();
+    #endregion
+		
+		public ER_wait_time()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientid", DbType="Int")]
+		public System.Nullable<int> patientid
+		{
+			get
+			{
+				return this._patientid;
+			}
+			set
+			{
+				if ((this._patientid != value))
+				{
+					this.OnpatientidChanging(value);
+					this.SendPropertyChanging();
+					this._patientid = value;
+					this.SendPropertyChanged("patientid");
+					this.OnpatientidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waittime", DbType="BigInt")]
+		public System.Nullable<long> waittime
+		{
+			get
+			{
+				return this._waittime;
+			}
+			set
+			{
+				if ((this._waittime != value))
+				{
+					this.OnwaittimeChanging(value);
+					this.SendPropertyChanging();
+					this._waittime = value;
+					this.SendPropertyChanged("waittime");
+					this.OnwaittimeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
