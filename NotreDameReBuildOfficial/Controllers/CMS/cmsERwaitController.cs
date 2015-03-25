@@ -19,30 +19,30 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 try
                 {
-                    //grab id from hidden value on form - convert string to int and submit into delete function
+                    //grab id from hidden value on form - convert string to int
                     int id = Int32.Parse(waitclass.wait_patient_id);
 
+                    //grab time from hidden value and subtract from current time
                     DateTime time_now_wait = DateTime.Now;
-
                     DateTime dateValue;
-
                     DateTime.TryParse(waitclass.current_time, out dateValue);
-
                     TimeSpan span = time_now_wait.Subtract(dateValue);
 
-                    //waittime.patientid = "1";
-                    //waittime.waittime time_now_wait;
+                    //set waittime in wait time table equal to span (amount of time patient has been waiting)
+                    waittime.patientid = "1";
+                    //waittime.waittime = span;
 
-                    //using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
-                    //{
-                    //    var delete_by_id = objDelete_Insert.ER_wait_lists.Single(x => x.Id == id);
-                    //    objDelete_Insert.ER_wait_lists.DeleteOnSubmit(delete_by_id);
-                    //    objDelete_Insert.ER_wait_times.InsertOnSubmit(waittime);
-                    //    objDelete_Insert.SubmitChanges(); 
-                    //}
+                    //remove patient from waitlist table and add new values into wait time table
+                    using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
+                    {
+                        var delete_by_id = objDelete_Insert.ER_wait_lists.Single(x => x.Id == id);
+                        objDelete_Insert.ER_wait_lists.DeleteOnSubmit(delete_by_id);
+                        objDelete_Insert.ER_wait_times.InsertOnSubmit(waittime);
+                        objDelete_Insert.SubmitChanges(); 
+                    }
 
                     ViewBag.Message = span.Minutes;
-                   // return RedirectToAction("ERwait_Patients");
+                    return RedirectToAction("ERwait_Patients");
                 }
                 catch (Exception ex)
                 {
