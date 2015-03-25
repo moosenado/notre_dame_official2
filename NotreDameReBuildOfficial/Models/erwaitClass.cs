@@ -12,7 +12,9 @@ namespace NotreDameReBuildOfficial.Models
         //get/set remove_command
         public string remove_command { get; set; }
         //get/set wait_patient_id
-        public string wait_patient_id { get; set; } 
+        public string wait_patient_id { get; set; }
+        //get/set current time
+        public string current_time { get; set; }
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
