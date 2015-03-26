@@ -20,19 +20,19 @@ namespace NotreDameReBuildOfficial.Models
     {
         [DisplayName("Staff ID")] // Display name for employee ID
         [Required] // required Specified 
-        public string sID { get; set; } // get set method for id
+        public string staff_id { get; set; } // get set method for id
 
         [DisplayName("First Name")] // Display name for employee First Name
         [Required] // required Specified 
-        public string fname { get; set; } // get set method for First Name
+        public string firstname { get; set; } // get set method for First Name
 
         [DisplayName("Last Name")] // Display name for employee Last Name
         [Required] // required Specified 
-        public string lname { get; set; } // get set method for Last Name
+        public string lastname { get; set; } // get set method for Last Name
 
         [DisplayName("Department")] // Display name for employee Department
         [Required] // required Specified 
-        public string depart { get; set; } // get set method for Department
+        public string department { get; set; } // get set method for Department
 
         [DisplayName("Role")] // Display name for employee ROle
         [Required] // required Specified 
@@ -40,7 +40,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Gender")] // Display name for employee ROle
         [Required] // required Specified 
-        public string gen { get; set; } // get set method for Role
+        public string gender { get; set; } // get set method for Role
 
         [DisplayName("City")] // Display name for employee ROle
         [Required] // required Specified 
@@ -52,7 +52,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Zip Code")] // Display name for employee ROle
         [Required] // required Specified 
-        public string zip { get; set; } // get set method for Role
+        public string zip_code { get; set; } // get set method for Role
 
     }
 }

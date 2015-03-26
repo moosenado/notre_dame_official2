@@ -66,12 +66,12 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     objDeleteWaitTime.SubmitChanges();
                 }
 
-                Response.Write("No One is In the ER - delete er wait time table");
+                Response.Write(objER.averageUpdate("Available"));
             }
             //if 1 patient is in the room, automatically add a value of 15 minutes to the average wait
             else if (waitlist_status == 1)
             {
-                Response.Write("15 mins");
+                Response.Write(objER.averageUpdate("Fifteen"));
             }
             //if more than 1 patient is in the room, calculate the actual average wait time
             else
@@ -82,11 +82,12 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 if (waittime_status >= 2)
                 {
                     var new_wait_time = objER.averageCalc();
-                    Response.Write(new_wait_time);
+                    string time_string = new_wait_time.ToString();
+                    Response.Write(objER.averageUpdate(time_string));
                 }
                 else
                 {
-                    Response.Write("Approximately 30 mins");
+                    Response.Write(objER.averageUpdate("Thirty"));
                 }
             }
 

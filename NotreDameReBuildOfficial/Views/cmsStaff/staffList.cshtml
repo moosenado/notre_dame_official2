@@ -1,7 +1,11 @@
 ﻿@{
     ViewBag.Title = "staffList";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h2>staffList</h2>
 
 
+<a href='@Url.Action("InsertStaff", "cmsStaff")'>
+    <span class="buttonstyle">+ Add Staff</span>

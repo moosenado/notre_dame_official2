@@ -71,6 +71,28 @@ namespace NotreDameReBuildOfficial.Models
 
             return new_wait_time;
         }
+        public string averageUpdate(string value)
+        {
+            var output = "";
+            if (value == "Available")
+            {
+                output = "0";
+            }
+            else if (value == "Fifteen")
+            {
+                output = "15";
+            }
+            else if (value == "Thirty")
+            {
+                output = "30";
+            }
+            else
+            {
+                output = value;
+            }
+
+            return output;
+        }
 
     }
 }
