@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Linq;
 
 namespace NotreDameReBuildOfficial.Models
 {
@@ -60,10 +61,15 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        public int getWaitListStatus() //Query directly from the database
+        public int getWaitListStatus()
         {
-            var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); //only take the three most recent articles from the database
+            var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); 
             return waitListStatus;
+        }
+        public int deleteWaitTimeEntries() 
+        {
+                var delete = objER.ExecuteCommand("DELETE FROM ER_wait_list");
+                return delete;
         }
     }
 }

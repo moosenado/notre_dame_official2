@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Linq;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -55,6 +56,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
             if (waitlist_status == 0)
             {
+                
+                using (ndLinqClassDataContext objDeleteWaitTime = new ndLinqClassDataContext())
+                {
+                    var delete_wait_time = objDeleteWaitTime.ER_wait_times.Select(x => x);
+                    objDeleteWaitTime.ER_wait_times.DeleteAllOnSubmit(delete_wait_time);
+                    objDeleteWaitTime.SubmitChanges();
+                }
+
                 Response.Write("No One is In the ER - delete er wait time table");
             }
             else if (waitlist_status == 1)
