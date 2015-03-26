@@ -44,17 +44,6 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        //delete patient from wait room
-        public bool patientDelete(int _id)
-        {
-            using (objER)
-            {
-                var delete_by_id = objER.ER_wait_lists.Single(x => x.Id == _id);
-                objER.ER_wait_lists.DeleteOnSubmit(delete_by_id);
-                objER.SubmitChanges(); 
-                return true;
-            }
-        }
         //get how many patients are in the waiting room
         public int getWaitListStatus()
         {

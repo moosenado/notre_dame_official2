@@ -29,7 +29,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     DateTime.TryParse(waitclass.current_time, out dateValue);
                     TimeSpan span = time_now_wait.Subtract(dateValue);
 
-                    //set waittime in wait time table equal to span (amount of time patient has been waiting)
+                    //set waittime in wait time table equal to span.ticks (amount of time patient has been waiting)
                     waittime.patientid = 1;
                     waittime.waittime = span.Ticks;
 
@@ -41,8 +41,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         objDelete_Insert.ER_wait_times.InsertOnSubmit(waittime);
                         objDelete_Insert.SubmitChanges(); 
                     }
-
-                    ViewBag.Message = span.Minutes;
                     return RedirectToAction("ERwait_Patients");
                 }
                 catch (Exception ex)
@@ -54,27 +52,27 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             //check how many rows (patients) exist in the wait list table
             var waitlist_status = objER.getWaitListStatus();
 
+            //if  0 patients are in the room, delete all rows in wait time table
             if (waitlist_status == 0)
-            {
-                
+            {       
                 using (ndLinqClassDataContext objDeleteWaitTime = new ndLinqClassDataContext())
                 {
                     var delete_wait_time = objDeleteWaitTime.ER_wait_times.Select(x => x);
                     objDeleteWaitTime.ER_wait_times.DeleteAllOnSubmit(delete_wait_time);
                     objDeleteWaitTime.SubmitChanges();
                 }
-
                 Response.Write("No One is In the ER - delete er wait time table");
             }
+            //if 1 patient is in the room, automatically add a value of 15 minutes to the average wait
             else if (waitlist_status == 1)
             {
                 Response.Write("15 mins");
             }
+            //if more than 1 patient is in the room, calculate the actual average wait time
             else
             {
                 Response.Write("make calculation here");
             }
-
             var patients = objER.getWaitingPatientInfo();
             return View(patients);
         }
@@ -105,7 +103,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         objER.ER_wait_lists.InsertOnSubmit(waitlist);
                         objER.SubmitChanges();
                     }
-
                     //output message
                     ViewBag.Message = "Patient Added to ER Wait Room";
                 }
@@ -136,7 +133,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 return View();
             }
-
             return View();
         }
     }
