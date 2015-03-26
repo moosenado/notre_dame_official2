@@ -780,6 +780,7 @@
     <Content Include="Views\cmsJobPosting\Delete_JobPosting.cshtml" />
     <Content Include="Views\JobPosting\JobPosting.cshtml" />
     <Content Include="Views\JobPosting\JobPosting_Details.cshtml" />
+    <Content Include="Views\cmsJobPosting\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
