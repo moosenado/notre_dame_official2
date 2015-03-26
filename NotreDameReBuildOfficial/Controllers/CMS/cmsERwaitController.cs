@@ -30,7 +30,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
                     //set waittime in wait time table equal to span (amount of time patient has been waiting)
                     waittime.patientid = 1;
-                    //waittime.waittime = span;
+                    waittime.waittime = span.Ticks;
 
                     //remove patient from waitlist table and add new values into wait time table
                     using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
@@ -48,6 +48,22 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 {
                     ViewBag.Message = "Error:" + ex.Message.ToString();
                 }
+            }
+
+            //check how many rows (patients) exist in the wait list table
+            var waitlist_status = objER.getWaitListStatus();
+
+            if (waitlist_status == 0)
+            {
+                Response.Write("No One is In the ER - delete er wait time table");
+            }
+            else if (waitlist_status == 1)
+            {
+                Response.Write("15 mins");
+            }
+            else
+            {
+                Response.Write("make calculation here");
             }
 
             var patients = objER.getWaitingPatientInfo();

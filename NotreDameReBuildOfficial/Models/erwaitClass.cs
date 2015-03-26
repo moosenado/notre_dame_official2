@@ -60,5 +60,10 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
+        public int getWaitListStatus() //Query directly from the database
+        {
+            var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); //only take the three most recent articles from the database
+            return waitListStatus;
+        }
     }
 }
