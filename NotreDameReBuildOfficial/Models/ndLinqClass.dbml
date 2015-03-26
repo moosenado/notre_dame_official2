@@ -295,25 +295,25 @@
       <Column Name="page_footer" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.ER_wait_time" Member="ER_wait_times">
+    <Type Name="ER_wait_time">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patientid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="waittime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="akshay.staff_info" Member="staff_infos">
     <Type Name="staff_info">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="staff_if" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="role" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FIrstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="gender" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="province" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="zip_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="department" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ER_wait_time" Member="ER_wait_times">
-    <Type Name="ER_wait_time">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patientid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="waittime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

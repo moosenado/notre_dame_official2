@@ -331,19 +331,19 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<staff_info> staff_infos
-		{
-			get
-			{
-				return this.GetTable<staff_info>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ER_wait_time> ER_wait_times
 		{
 			get
 			{
 				return this.GetTable<ER_wait_time>();
+			}
+		}
+		
+		public System.Data.Linq.Table<staff_info> staff_infos
+		{
+			get
+			{
+				return this.GetTable<staff_info>();
 			}
 		}
 	}
@@ -5705,195 +5705,6 @@ namespace NotreDameReBuildOfficial.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.staff_info")]
-	public partial class staff_info
-	{
-		
-		private int _id;
-		
-		private int _staff_if;
-		
-		private string _role;
-		
-		private string _FIrstname;
-		
-		private string _lastname;
-		
-		private string _gender;
-		
-		private string _city;
-		
-		private string _province;
-		
-		private string _zip_code;
-		
-		private string _department;
-		
-		public staff_info()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_if", DbType="Int NOT NULL")]
-		public int staff_if
-		{
-			get
-			{
-				return this._staff_if;
-			}
-			set
-			{
-				if ((this._staff_if != value))
-				{
-					this._staff_if = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string role
-		{
-			get
-			{
-				return this._role;
-			}
-			set
-			{
-				if ((this._role != value))
-				{
-					this._role = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FIrstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string FIrstname
-		{
-			get
-			{
-				return this._FIrstname;
-			}
-			set
-			{
-				if ((this._FIrstname != value))
-				{
-					this._FIrstname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string lastname
-		{
-			get
-			{
-				return this._lastname;
-			}
-			set
-			{
-				if ((this._lastname != value))
-				{
-					this._lastname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string gender
-		{
-			get
-			{
-				return this._gender;
-			}
-			set
-			{
-				if ((this._gender != value))
-				{
-					this._gender = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string city
-		{
-			get
-			{
-				return this._city;
-			}
-			set
-			{
-				if ((this._city != value))
-				{
-					this._city = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(50)")]
-		public string province
-		{
-			get
-			{
-				return this._province;
-			}
-			set
-			{
-				if ((this._province != value))
-				{
-					this._province = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zip_code", DbType="VarChar(50)")]
-		public string zip_code
-		{
-			get
-			{
-				return this._zip_code;
-			}
-			set
-			{
-				if ((this._zip_code != value))
-				{
-					this._zip_code = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_department", DbType="VarChar(50)")]
-		public string department
-		{
-			get
-			{
-				return this._department;
-			}
-			set
-			{
-				if ((this._department != value))
-				{
-					this._department = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ER_wait_time")]
 	public partial class ER_wait_time : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6000,6 +5811,195 @@ namespace NotreDameReBuildOfficial.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.staff_info")]
+	public partial class staff_info
+	{
+		
+		private int _id;
+		
+		private int _staff_id;
+		
+		private string _role;
+		
+		private string _firstname;
+		
+		private string _lastname;
+		
+		private string _gender;
+		
+		private string _city;
+		
+		private string _province;
+		
+		private string _zip_code;
+		
+		private string _department;
+		
+		public staff_info()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_id", DbType="Int NOT NULL")]
+		public int staff_id
+		{
+			get
+			{
+				return this._staff_id;
+			}
+			set
+			{
+				if ((this._staff_id != value))
+				{
+					this._staff_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string role
+		{
+			get
+			{
+				return this._role;
+			}
+			set
+			{
+				if ((this._role != value))
+				{
+					this._role = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string firstname
+		{
+			get
+			{
+				return this._firstname;
+			}
+			set
+			{
+				if ((this._firstname != value))
+				{
+					this._firstname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string lastname
+		{
+			get
+			{
+				return this._lastname;
+			}
+			set
+			{
+				if ((this._lastname != value))
+				{
+					this._lastname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string gender
+		{
+			get
+			{
+				return this._gender;
+			}
+			set
+			{
+				if ((this._gender != value))
+				{
+					this._gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string city
+		{
+			get
+			{
+				return this._city;
+			}
+			set
+			{
+				if ((this._city != value))
+				{
+					this._city = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(50)")]
+		public string province
+		{
+			get
+			{
+				return this._province;
+			}
+			set
+			{
+				if ((this._province != value))
+				{
+					this._province = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zip_code", DbType="VarChar(50)")]
+		public string zip_code
+		{
+			get
+			{
+				return this._zip_code;
+			}
+			set
+			{
+				if ((this._zip_code != value))
+				{
+					this._zip_code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_department", DbType="VarChar(50)")]
+		public string department
+		{
+			get
+			{
+				return this._department;
+			}
+			set
+			{
+				if ((this._department != value))
+				{
+					this._department = value;
+				}
 			}
 		}
 	}

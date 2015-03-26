@@ -193,6 +193,7 @@
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\cmsStaffController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
@@ -217,6 +218,8 @@
     </Compile>
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
+    <Compile Include="Models\staffDirectory.cs" />
+    <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -780,6 +783,8 @@
     <Content Include="Views\cmsJobPosting\Delete_JobPosting.cshtml" />
     <Content Include="Views\JobPosting\JobPosting.cshtml" />
     <Content Include="Views\JobPosting\JobPosting_Details.cshtml" />
+    <Content Include="Views\cmsStaff\staffList.cshtml" />
+    <Content Include="Views\cmsStaff\InsertStaff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
