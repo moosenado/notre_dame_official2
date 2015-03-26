@@ -71,8 +71,20 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             //if more than 1 patient is in the room, calculate the actual average wait time
             else
             {
-                Response.Write("make calculation here");
+                //get count of wait time table - if wait time count is greater than equal to 2, then do average calculation - if not, give an approximate wait of 30 minutes
+                var waittime_status = objER.getWaitTimeStatus();
+
+                if (waittime_status >= 2)
+                {
+                    Response.Write("make actual wait time average calculation here and output value");
+                    objER.averageCalc();
+                }
+                else
+                {
+                    Response.Write("Approximately 30 mins");
+                }
             }
+            //
             var patients = objER.getWaitingPatientInfo();
             return View(patients);
         }
