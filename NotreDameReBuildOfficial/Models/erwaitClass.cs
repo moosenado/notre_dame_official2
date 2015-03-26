@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Linq;
 
 namespace NotreDameReBuildOfficial.Models
 {
@@ -12,7 +13,10 @@ namespace NotreDameReBuildOfficial.Models
         //get/set remove_command
         public string remove_command { get; set; }
         //get/set wait_patient_id
-        public string wait_patient_id { get; set; } 
+        public string wait_patient_id { get; set; }
+        //get/set current time
+        public string current_time { get; set; }
+
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
@@ -22,13 +26,6 @@ namespace NotreDameReBuildOfficial.Models
             var waitingPatients = objER.ER_wait_lists.Select(x => x); 
             return waitingPatients;
         }
-
-        //public IQueryable<ER_wait_list> getWaitingPatientInfoRefresh()
-        //{
-        //    var waitingPatients = objER.ER_wait_lists.Select(x => x);
-        //    objER.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, waitingPatients);
-        //    return waitingPatients;
-        //}
 
         //get specific patient info by ID
         public ER_patient_info getPatientsByID(int _id)
@@ -47,16 +44,33 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        //delete patient from wait room
-        public bool patientDelete(int _id)
+        //get how many patients are in the waiting room
+        public int getWaitListStatus()
         {
-            using (objER)
-            {
-                var delete_by_id = objER.ER_wait_lists.Single(x => x.Id == _id);
-                objER.ER_wait_lists.DeleteOnSubmit(delete_by_id);
-                objER.SubmitChanges(); 
-                return true;
-            }
+            var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); 
+            return waitListStatus;
         }
+        //get number of rows in the wait time table
+        public int getWaitTimeStatus()
+        {
+            var waitTimeStatus = objER.ER_wait_times.Select(x => x).Count();
+            return waitTimeStatus;
+        }
+        //calculate average wait time
+        public int averageCalc()
+        {
+            var wait_time_count = objER.ER_wait_times.Select(x => x).Count();
+
+            int sum = 0;
+            foreach (var timeNum in objER.ER_wait_times.Select(x => x))
+            {
+                sum = sum + timeNum.waittime;
+            }
+
+            var new_wait_time = sum / wait_time_count;
+
+            return new_wait_time;
+        }
+
     }
 }
