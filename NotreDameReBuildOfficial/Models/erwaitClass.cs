@@ -50,23 +50,26 @@ namespace NotreDameReBuildOfficial.Models
             var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); 
             return waitListStatus;
         }
+        //get number of rows in the wait time table
         public int getWaitTimeStatus()
         {
             var waitTimeStatus = objER.ER_wait_times.Select(x => x).Count();
             return waitTimeStatus;
         }
+        //calculate average wait time
         public int averageCalc()
         {
-            var average = 1;
             var wait_time_count = objER.ER_wait_times.Select(x => x).Count();
-            //add all values in timespan and divide by row count
-            return average;
 
             int sum = 0;
             foreach (var timeNum in objER.ER_wait_times.Select(x => x))
             {
                 sum = sum + timeNum.waittime;
             }
+
+            var new_wait_time = sum / wait_time_count;
+
+            return new_wait_time;
         }
 
     }
