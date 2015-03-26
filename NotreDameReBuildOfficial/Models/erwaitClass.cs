@@ -58,8 +58,15 @@ namespace NotreDameReBuildOfficial.Models
         public int averageCalc()
         {
             var average = 1;
+            var wait_time_count = objER.ER_wait_times.Select(x => x).Count();
             //add all values in timespan and divide by row count
             return average;
+
+            int sum = 0;
+            foreach (var timeNum in objER.ER_wait_times.Select(x => x))
+            {
+                sum = sum + Convert.ToInt64((unchecked)timeNum.waittime.ToString());
+            }
         }
 
     }

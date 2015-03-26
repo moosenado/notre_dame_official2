@@ -31,7 +31,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
                     //set waittime in wait time table equal to span.ticks (amount of time patient has been waiting)
                     waittime.patientid = 1;
-                    waittime.waittime = span.Ticks;
+                    waittime.waittime = span.Seconds;
 
                     //remove patient from waitlist table and add new values into wait time table
                     using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
@@ -77,7 +77,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 if (waittime_status >= 2)
                 {
                     Response.Write("make actual wait time average calculation here and output value");
-                    objER.averageCalc();
+                    //objER.averageCalc();
                 }
                 else
                 {
