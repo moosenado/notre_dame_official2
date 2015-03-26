@@ -5904,7 +5904,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private System.Nullable<int> _patientid;
 		
-		private System.Nullable<int> _waittime;
+		private int _waittime;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5914,7 +5914,7 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnIdChanged();
     partial void OnpatientidChanging(System.Nullable<int> value);
     partial void OnpatientidChanged();
-    partial void OnwaittimeChanging(System.Nullable<int> value);
+    partial void OnwaittimeChanging(int value);
     partial void OnwaittimeChanged();
     #endregion
 		
@@ -5963,8 +5963,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waittime", DbType="Int")]
-		public System.Nullable<int> waittime
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_waittime", DbType="Int NOT NULL")]
+		public int waittime
 		{
 			get
 			{

@@ -77,7 +77,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 if (waittime_status >= 2)
                 {
                     Response.Write("make actual wait time average calculation here and output value");
-                    //objER.averageCalc();
+                    objER.averageCalc();
                 }
                 else
                 {
