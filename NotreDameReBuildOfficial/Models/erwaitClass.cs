@@ -16,6 +16,7 @@ namespace NotreDameReBuildOfficial.Models
         public string wait_patient_id { get; set; }
         //get/set current time
         public string current_time { get; set; }
+
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
@@ -25,13 +26,6 @@ namespace NotreDameReBuildOfficial.Models
             var waitingPatients = objER.ER_wait_lists.Select(x => x); 
             return waitingPatients;
         }
-
-        //public IQueryable<ER_wait_list> getWaitingPatientInfoRefresh()
-        //{
-        //    var waitingPatients = objER.ER_wait_lists.Select(x => x);
-        //    objER.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, waitingPatients);
-        //    return waitingPatients;
-        //}
 
         //get specific patient info by ID
         public ER_patient_info getPatientsByID(int _id)
@@ -61,15 +55,12 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
+        //get how many patients are in the waiting room
         public int getWaitListStatus()
         {
             var waitListStatus = objER.ER_wait_lists.Select(x => x).Count(); 
             return waitListStatus;
         }
-        public int deleteWaitTimeEntries() 
-        {
-                var delete = objER.ExecuteCommand("DELETE FROM ER_wait_list");
-                return delete;
-        }
+
     }
 }
