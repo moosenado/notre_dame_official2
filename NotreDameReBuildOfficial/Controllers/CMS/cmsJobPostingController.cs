@@ -34,7 +34,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             var JobPost = JobPosObj.getJobByID(id);
             if (JobPost == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
             else
             {
@@ -74,7 +74,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             var JobPost = JobPosObj.getJobByID(id);
             if (JobPost == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
             else
             {
@@ -108,7 +108,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             var JobPost = JobPosObj.getJobByID(id);
             if (JobPost == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
             else
             {
@@ -117,7 +117,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         [HttpPost] // restirict an action method by only post requests
-        public ActionResult Delete_JobCategory(int id, Job_posting Jobcat)
+        public ActionResult Delete_JobPosting(int id, Job_posting Jobcat)
         {
             try
             {
@@ -129,7 +129,10 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View();
             }
         }
-
+        public ActionResult NotFound()
+        {
+            return View();
+        }
 
     }
 }

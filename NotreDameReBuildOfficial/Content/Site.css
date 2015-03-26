@@ -1157,6 +1157,16 @@ table tr:nth-child(odd) td {
 .lbl{
     color:#646060;
     margin:10px;
+    margin-right:50px;
+}
+
+.details{
+    margin-bottom:30px;
+    margin-top:30px;
+}
+
+.details h2{
+    margin-bottom:30px;
 }
 
 .Title{
@@ -1181,14 +1191,20 @@ table tr:nth-child(odd) td {
 #careers th {
     border: 1px solid #34b6cf;
     padding: 3px 7px 2px 7px;
-    background-color:rgba(255,175,77,1);
+   background-color:rgba(255,175,77,1);
 }
-
+/*
 #careers td{
     border: 1px solid #34b6cf;
     padding: 3px 7px 2px 7px;
     background-color:#fff;
 }
+  */
+
+#careers tr:nth-child(odd) td{
+    background: #f5f5f5;
+}
+
 
 .description{
     width: 100%;
@@ -1200,9 +1216,11 @@ table tr:nth-child(odd) td {
 
 .details_Op{
     border:1px solid #34b6cf;
-    padding:1em;
+    padding:0.4em;
     width:50em;
 }
+
+
 
 .details_lbl{
     margin-top:1em;

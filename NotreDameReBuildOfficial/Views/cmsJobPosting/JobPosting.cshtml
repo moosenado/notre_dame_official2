@@ -4,13 +4,11 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 <h2>List Of Careers</h2>
 <div>
-    @Html.ActionLink("Add New Job", "Insert_JobPosting", "cmsJobPosting", new { @class = "btn" })
-    @Html.ActionLink("Job Categories", "JobCategory", "cmsJobCategory", new { @class = "btn" })
+    @Html.ActionLink("Add New Job", "Insert_JobPosting", null, new { @class = "btn" })
+    @Html.ActionLink("Job Categories", "JobCategory", "cmsJobCategory", null, new { @class = "btn" })
 </div>
 <table id="careers">
     <thead>

@@ -37,7 +37,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Salary")]
         [Required]
-        [RegularExpression("^\\$?\\d+(\\.(\\d{2}))?$")]
+       // [RegularExpression("^\\$?\\d+(\\.(\\d{2}))?$")]
         public decimal salary { get; set; }
        
         [DisplayName("Posting_date")]
