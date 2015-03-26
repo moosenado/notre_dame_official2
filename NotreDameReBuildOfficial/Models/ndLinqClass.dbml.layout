@@ -158,10 +158,10 @@
         <elementListCompartment Id="49419baf-1b6b-4062-896a-c50f919d78f4" absoluteBounds="15.765, 5.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="53a99ba0-ee20-498a-a37b-de93fbd7a359" absoluteBounds="7.125, 6.625, 2, 1.3862939453125">
+    <classShape Id="d95bc604-9953-479f-9e5a-f7e61dae2989" absoluteBounds="6.875, 6.625, 2, 1.3862939453125">
       <DataClassMoniker Name="/ndLinqClassDataContext/ER_wait_time" />
       <nestedChildShapes>
-        <elementListCompartment Id="9609987b-b547-4778-9435-934c0252a4a8" absoluteBounds="7.14, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0b4f63a3-ff64-4c11-bde7-cd9b64c423fc" absoluteBounds="6.89, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

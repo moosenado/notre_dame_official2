@@ -313,7 +313,7 @@
     <Type Name="ER_wait_time">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="patientid" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="waittime" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="waittime" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

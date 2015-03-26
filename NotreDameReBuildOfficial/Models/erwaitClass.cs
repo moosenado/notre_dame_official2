@@ -65,7 +65,7 @@ namespace NotreDameReBuildOfficial.Models
             int sum = 0;
             foreach (var timeNum in objER.ER_wait_times.Select(x => x))
             {
-                sum = sum + Convert.ToInt64((unchecked)timeNum.waittime.ToString());
+                //sum = sum + Convert.ToInt64((unchecked)timeNum.waittime.ToString());
             }
         }
 
