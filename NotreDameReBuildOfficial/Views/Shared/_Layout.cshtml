@@ -47,7 +47,15 @@
                 <form id="headersearch">
                     <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
                 </form>
-                <div id="erwait">ER wait time goes here</div>
+                <div id="erwait">@if (ViewBag.erTime != null)
+                {
+                    <p>@ViewBag.erTime</p>
+                }
+                else
+                {
+                    <p>Wait Time Updating</p>
+                }
+                </div>
             </div>
 
         </header>

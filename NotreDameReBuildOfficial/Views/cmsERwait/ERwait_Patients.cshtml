@@ -7,15 +7,6 @@
 
 <h2>ER Wait Time</h2>
 
-@if (ViewBag.erTimeAdmin != null)
-{
-    <p>@ViewBag.erTimeAdmin</p>
-}
-else
-{
-    <p>Wait Time Updating</p>
-}
-
 <br />
 
 <div id="erlinks">
@@ -27,6 +18,15 @@ else
 </div>
 
 <br />
+
+@if (ViewBag.erTimeAdmin != null)
+{
+    <p>@ViewBag.erTimeAdmin</p>
+}
+else
+{
+    <p>Wait Time Updating</p>
+}
 
 @* List Articles *@
 <h3>Waiting Patients in ER</h3>

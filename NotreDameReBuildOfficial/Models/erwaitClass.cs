@@ -69,7 +69,9 @@ namespace NotreDameReBuildOfficial.Models
 
             var new_wait_time = sum / wait_time_count;
 
-            return new_wait_time;
+            TimeSpan minute_time = TimeSpan.FromSeconds(new_wait_time);
+
+            return minute_time.Minutes;
         }
 
         public string getWaitTime()
@@ -89,12 +91,12 @@ namespace NotreDameReBuildOfficial.Models
                     objDeleteWaitTime.SubmitChanges();
                 }
 
-                averageUpdate = "Available";
+                averageUpdate = "0 people currently waiting";
             }
             //if 1 patient is in the room, automatically add a value of 15 minutes to the average wait
             else if (waitlist_status == 1)
             {
-                averageUpdate = "Fifteen";
+                averageUpdate = "15 Minutes";
             }
             //if more than 1 patient is in the room, calculate the actual average wait time
             else
@@ -107,11 +109,11 @@ namespace NotreDameReBuildOfficial.Models
                     //calculate average wait time and convert to string
                     var new_wait_time = averageCalc();
                     string time_string = new_wait_time.ToString();
-                    averageUpdate = time_string;
+                    averageUpdate = time_string + " Minutes";
                 }
                 else
                 {
-                    averageUpdate = "Thirty";
+                    averageUpdate = "30 Minutes";
                 }
             }
 
