@@ -34,6 +34,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        //update
         public bool commitUpdate(int _id, string _title)
         {
             using(jobCategoryObj)
@@ -46,6 +47,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        //Delete
         public bool commitDelete(int _id)
         {
             using(jobCategoryObj)

@@ -187,6 +187,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
@@ -201,11 +202,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
+    <Compile Include="Models\JobApplicants.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
@@ -781,6 +784,7 @@
     <Content Include="Views\JobPosting\JobPosting.cshtml" />
     <Content Include="Views\JobPosting\JobPosting_Details.cshtml" />
     <Content Include="Views\cmsJobPosting\NotFound.cshtml" />
+    <Content Include="Views\Applicant\Insert_Applicant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
