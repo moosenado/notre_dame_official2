@@ -104,6 +104,7 @@ namespace NotreDameReBuildOfficial.Models
 
                 if (waittime_status >= 2)
                 {
+                    //calculate average wait time and convert to string
                     var new_wait_time = averageCalc();
                     string time_string = new_wait_time.ToString();
                     averageUpdate = time_string;

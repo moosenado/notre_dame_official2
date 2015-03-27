@@ -19,7 +19,7 @@ namespace notre_dame_rebuild.Controllers
         erwaitClass objER = new erwaitClass();
         public ActionResult Index()
         {
-            //ViewBag.erTime = objER.averageUpdate();
+            ViewBag.erTime = objER.getWaitTime();
             var articles = objNews.getTopArticles();
             return View(articles);
         }

@@ -43,9 +43,9 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         objDelete_Insert.SubmitChanges(); 
                     }
 
-                    objER.getWaitTime();
-                    return RedirectToAction("ERwait_Patients");
-                    
+                    ViewBag.erTimeAdmin = objER.getWaitTime();
+
+                    return RedirectToAction("ERwait_Patients");                  
                 }
 
                 catch (Exception ex)
@@ -54,6 +54,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 }
 
             }
+
+            ViewBag.erTimeAdmin = objER.getWaitTime();
 
             //reload patient list to view
             var patients = objER.getWaitingPatientInfo();
