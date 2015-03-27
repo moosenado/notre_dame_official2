@@ -30,9 +30,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     DateTime.TryParse(waitclass.current_time, out dateValue);
                     TimeSpan span = time_now_wait.Subtract(dateValue);
 
-                    //set waittime in wait time table equal to span.ticks (amount of time patient has been waiting)
+                    //set waittime in wait time table equal to span.totalseconds (amount of time patient has been waiting)
                     waittime.patientid = 1;
-                    waittime.waittime = span.Seconds;
+                    var timeseconds = span.TotalSeconds;
+                    int timeseconds_int = Convert.ToInt32(timeseconds);
+                    waittime.waittime = timeseconds_int;
 
                     //remove patient from waitlist table and add new values into wait time table
                     using (ndLinqClassDataContext objDelete_Insert = new ndLinqClassDataContext())
