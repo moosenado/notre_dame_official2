@@ -16,15 +16,10 @@ namespace notre_dame_rebuild.Controllers
         // ------------------------------------- //
 
         newsfeedClass objNews = new newsfeedClass();
+        erwaitClass objER = new erwaitClass();
         public ActionResult Index()
         {
-            erwaitClass objER = new erwaitClass
-            {
-                //objER.av
-            };
-
-            ViewData["erwait"] = objER;
-
+            //ViewBag.erTime = objER.averageUpdate();
             var articles = objNews.getTopArticles();
             return View(articles);
         }

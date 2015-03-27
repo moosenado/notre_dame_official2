@@ -1,5 +1,4 @@
-﻿@using NotreDameReBuildOfficial.Models
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
@@ -7,6 +6,15 @@
 <div id="news">        
 
     <h2>What's New</h2>
+
+    @if (ViewBag.erTime != null)
+    {
+        <p>@ViewBag.erTime</p>
+    }
+    else
+    {
+        
+    }
 
     @* Display news feed images from database *@
 

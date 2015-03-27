@@ -43,7 +43,9 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         objDelete_Insert.SubmitChanges(); 
                     }
 
+                    objER.getWaitTime();
                     return RedirectToAction("ERwait_Patients");
+                    
                 }
 
                 catch (Exception ex)
@@ -51,44 +53,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     ViewBag.Message = "Error:" + ex.Message.ToString();
                 }
 
-            }
-
-            //check how many rows (patients) exist in the wait list table
-            var waitlist_status = objER.getWaitListStatus();
-
-            //if  0 patients are in the room, delete all rows in wait time table
-            if (waitlist_status == 0)
-            {       
-                using (ndLinqClassDataContext objDeleteWaitTime = new ndLinqClassDataContext())
-                {
-                    var delete_wait_time = objDeleteWaitTime.ER_wait_times.Select(x => x);
-                    objDeleteWaitTime.ER_wait_times.DeleteAllOnSubmit(delete_wait_time);
-                    objDeleteWaitTime.SubmitChanges();
-                }
-
-                Response.Write(objER.averageUpdate("Available"));
-            }
-            //if 1 patient is in the room, automatically add a value of 15 minutes to the average wait
-            else if (waitlist_status == 1)
-            {
-                Response.Write(objER.averageUpdate("Fifteen"));
-            }
-            //if more than 1 patient is in the room, calculate the actual average wait time
-            else
-            {
-                //get count of wait time table - if wait time count is greater than equal to 2, then do average calculation - if not, give an approximate wait of 30 minutes
-                var waittime_status = objER.getWaitTimeStatus();
-
-                if (waittime_status >= 2)
-                {
-                    var new_wait_time = objER.averageCalc();
-                    string time_string = new_wait_time.ToString();
-                    Response.Write(objER.averageUpdate(time_string));
-                }
-                else
-                {
-                    Response.Write(objER.averageUpdate("Thirty"));
-                }
             }
 
             //reload patient list to view
