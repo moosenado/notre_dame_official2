@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.staff_info>
+@{
     ViewBag.Title = "staffList";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
@@ -6,6 +7,18 @@
 
 <h2>staffList</h2>
 
-
+<ul>
+    @foreach (var x in Model) // Freach is used to retrieve all the data from the table
+    {
+        <li>
+            @Html.ActionLink(x.staff_id.ToString(), "staffInfo", new { id = x.id }) <!--Geiing Employee ID from database and shown-->
+            @Html.ActionLink(x.firstname, "staffInfo", new { id = x.id }) <!--Geiing Employee Name from database and shown-->
+            @Html.ActionLink(x.lastname, "staffInfo", new { id = x.id }) <!--Geiing Employee Name from database and shown-->
+        </li>
+    }
+</ul>
+<br/>
+<br/>
 <a href='@Url.Action("InsertStaff", "cmsStaff")'>
     <span class="buttonstyle">+ Add Staff</span>
+</a>

@@ -99,6 +99,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertER_wait_time(ER_wait_time instance);
     partial void UpdateER_wait_time(ER_wait_time instance);
     partial void DeleteER_wait_time(ER_wait_time instance);
+    partial void Insertstaff_info(staff_info instance);
+    partial void Updatestaff_info(staff_info instance);
+    partial void Deletestaff_info(staff_info instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -5816,8 +5819,10 @@ namespace NotreDameReBuildOfficial.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.staff_info")]
-	public partial class staff_info
+	public partial class staff_info : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
@@ -5839,11 +5844,38 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private string _department;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onstaff_idChanging(int value);
+    partial void Onstaff_idChanged();
+    partial void OnroleChanging(string value);
+    partial void OnroleChanged();
+    partial void OnfirstnameChanging(string value);
+    partial void OnfirstnameChanged();
+    partial void OnlastnameChanging(string value);
+    partial void OnlastnameChanged();
+    partial void OngenderChanging(string value);
+    partial void OngenderChanged();
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void OnprovinceChanging(string value);
+    partial void OnprovinceChanged();
+    partial void Onzip_codeChanging(string value);
+    partial void Onzip_codeChanged();
+    partial void OndepartmentChanging(string value);
+    partial void OndepartmentChanged();
+    #endregion
+		
 		public staff_info()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int id
 		{
 			get
@@ -5854,7 +5886,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -5870,7 +5906,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._staff_id != value))
 				{
+					this.Onstaff_idChanging(value);
+					this.SendPropertyChanging();
 					this._staff_id = value;
+					this.SendPropertyChanged("staff_id");
+					this.Onstaff_idChanged();
 				}
 			}
 		}
@@ -5886,7 +5926,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._role != value))
 				{
+					this.OnroleChanging(value);
+					this.SendPropertyChanging();
 					this._role = value;
+					this.SendPropertyChanged("role");
+					this.OnroleChanged();
 				}
 			}
 		}
@@ -5902,7 +5946,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._firstname != value))
 				{
+					this.OnfirstnameChanging(value);
+					this.SendPropertyChanging();
 					this._firstname = value;
+					this.SendPropertyChanged("firstname");
+					this.OnfirstnameChanged();
 				}
 			}
 		}
@@ -5918,7 +5966,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._lastname != value))
 				{
+					this.OnlastnameChanging(value);
+					this.SendPropertyChanging();
 					this._lastname = value;
+					this.SendPropertyChanged("lastname");
+					this.OnlastnameChanged();
 				}
 			}
 		}
@@ -5934,7 +5986,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._gender != value))
 				{
+					this.OngenderChanging(value);
+					this.SendPropertyChanging();
 					this._gender = value;
+					this.SendPropertyChanged("gender");
+					this.OngenderChanged();
 				}
 			}
 		}
@@ -5950,7 +6006,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._city != value))
 				{
+					this.OncityChanging(value);
+					this.SendPropertyChanging();
 					this._city = value;
+					this.SendPropertyChanged("city");
+					this.OncityChanged();
 				}
 			}
 		}
@@ -5966,7 +6026,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._province != value))
 				{
+					this.OnprovinceChanging(value);
+					this.SendPropertyChanging();
 					this._province = value;
+					this.SendPropertyChanged("province");
+					this.OnprovinceChanged();
 				}
 			}
 		}
@@ -5982,7 +6046,11 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._zip_code != value))
 				{
+					this.Onzip_codeChanging(value);
+					this.SendPropertyChanging();
 					this._zip_code = value;
+					this.SendPropertyChanged("zip_code");
+					this.Onzip_codeChanged();
 				}
 			}
 		}
@@ -5998,8 +6066,32 @@ namespace NotreDameReBuildOfficial.Models
 			{
 				if ((this._department != value))
 				{
+					this.OndepartmentChanging(value);
+					this.SendPropertyChanging();
 					this._department = value;
+					this.SendPropertyChanged("department");
+					this.OndepartmentChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

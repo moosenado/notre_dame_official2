@@ -10,7 +10,7 @@
 <h1>Staff Directory</h1>
 <h2>Add Staff Member to the Directory</h2>
 
-@using (Html.BeginForm(FormMethod.Post))
+@using (Html.BeginForm())
 {
     @Html.LabelFor(Model => Model.staff_id)
     @Html.TextBoxFor(Model => Model.staff_id)
@@ -22,6 +22,10 @@
 
     @Html.LabelFor(Model => Model.lastname)
     @Html.TextBoxFor(Model => Model.lastname)
+    <div class="clear"></div>
+
+    @Html.LabelFor(Model => Model.gender)
+    @Html.TextBoxFor(Model => Model.gender)
     <div class="clear"></div>
 
     @Html.LabelFor(Model => Model.department)

@@ -20,7 +20,7 @@ namespace NotreDameReBuildOfficial.Models
     {
         [DisplayName("Staff ID")] // Display name for employee ID
         [Required] // required Specified 
-        public string staff_id { get; set; } // get set method for id
+        public int staff_id { get; set; } // get set method for id
 
         [DisplayName("First Name")] // Display name for employee First Name
         [Required] // required Specified 
