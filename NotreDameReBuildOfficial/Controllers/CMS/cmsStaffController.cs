@@ -15,10 +15,15 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         // GET: /cmsStaff/
         staffDirectory objStaff = new staffDirectory();
 
-        
         public ActionResult staffList()
         {
             var staff = objStaff.getStaff();
+            return View(staff);
+        }
+
+        public ActionResult staffInfo(int id)
+        {
+            var staff = objStaff.getStaffByID(id);
             return View(staff);
         }
 

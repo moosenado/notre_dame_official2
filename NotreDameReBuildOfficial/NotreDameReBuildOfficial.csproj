@@ -786,6 +786,7 @@
     <Content Include="Views\cmsStaff\staffList.cshtml" />
     <Content Include="Views\cmsStaff\InsertStaff.cshtml" />
     <Content Include="Views\cmsJobPosting\NotFound.cshtml" />
+    <Content Include="Views\cmsStaff\staffInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
