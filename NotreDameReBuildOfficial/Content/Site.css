@@ -279,7 +279,9 @@ table tr:nth-child(odd) td {
 
 #erwait{
     text-align: right;
-    padding-top: 35px;
+    padding-top: 38px;
+    line-height: 1;
+    font-size: 13px;
 }
 
 /* --- PUBLIC MAIN NAVIGATION --- */

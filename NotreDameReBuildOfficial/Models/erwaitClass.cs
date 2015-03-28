@@ -91,7 +91,7 @@ namespace NotreDameReBuildOfficial.Models
                     objDeleteWaitTime.SubmitChanges();
                 }
 
-                averageUpdate = "0 people currently waiting";
+                averageUpdate = "0 Minutes";
             }
             //if 1 patient is in the room, automatically add a value of 15 minutes to the average wait
             else if (waitlist_status == 1)
@@ -113,7 +113,7 @@ namespace NotreDameReBuildOfficial.Models
                 }
                 else
                 {
-                    averageUpdate = "30 Minutes";
+                    averageUpdate = "25 Minutes";
                 }
             }
 
