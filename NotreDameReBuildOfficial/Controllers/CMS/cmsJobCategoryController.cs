@@ -35,7 +35,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             var JobCat = JobCatObj.getJobCategoryByID(id);
             if (JobCat == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
             else
             {

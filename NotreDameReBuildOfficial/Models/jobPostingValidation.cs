@@ -33,6 +33,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Description")]
         [Required]
+        [AllowHtml]
         public string description { get; set; }
 
         [DisplayName("Salary")]

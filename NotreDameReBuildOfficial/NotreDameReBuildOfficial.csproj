@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
+    <Compile Include="Controllers\CMS\cmsApplicantController.cs" />
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
@@ -785,6 +786,7 @@
     <Content Include="Views\JobPosting\JobPosting_Details.cshtml" />
     <Content Include="Views\cmsJobPosting\NotFound.cshtml" />
     <Content Include="Views\Applicant\Insert_Applicant.cshtml" />
+    <Content Include="Views\cmsApplicant\Applicants.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

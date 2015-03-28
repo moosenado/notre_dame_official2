@@ -49,11 +49,11 @@ namespace NotreDameReBuildOfficial.Models
         public string postal_code { get; set; }
 
         [DisplayName("Resume:")]
-        [Required(ErrorMessage = "Please Upload you resume")]
+        //[Required(ErrorMessage = "Please Upload you resume")]
         public string resume { get; set; }
 
         [DisplayName("Cover letter:")]
-        [Required(ErrorMessage = "Please Upload you Cover letter")]
+        //[Required(ErrorMessage = "Please Upload you Cover letter")]
         public string cover_letter { get; set; }
 
         

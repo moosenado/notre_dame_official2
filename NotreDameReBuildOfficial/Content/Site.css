@@ -1224,6 +1224,22 @@ table tr:nth-child(odd) td {
   padding-left: 5em;
   padding-right: 5em;
 }
+
+.btn_cancel{
+  border: 1px solid #333;
+  padding: 5px;
+  /* text-decoration: none; */
+  background-color: #ddd;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
+  float: left;
+  width: 50px;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
 /*
 #careers td{
     border: 1px solid #34b6cf;

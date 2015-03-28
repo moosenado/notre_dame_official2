@@ -1,0 +1,30 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.JobApplicants>
+@{
+    ViewBag.Title = "Applicants";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>Applicants</h2>
+@*<div>
+    @Html.ActionLink("Careers", "JobPosting", "cmsJobPosting", null, new { @class = "btn" })   
+</div>*@
+<table id="careers">
+    <thead>
+        <tr>
+            <th>Applicant Name</th>
+            <th>Email</th>
+            <th>Job Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(x.first_name +" "+x.last_name, "Applicant_Details", new { id = x.id })</td>
+                <td>@x.email</td>
+                <td>@x.jobTitle</td>
+            </tr>
+        }
+    </tbody>
+</table>
