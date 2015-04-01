@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 <div >
     <h2 class="details">Manage Careers</h2>
         <div class="details_Op">
@@ -23,7 +21,7 @@
         </div>
         <div class="details_Op">
             @Html.LabelFor(model => model.salary, new { @class = "lbl" }):
-            @Html.DisplayFor(x => x.salary, "$")
+            @Html.DisplayFor(x => x.salary)
         </div>
         <div class="details_Op">
             @Html.LabelFor(model => model.posting_date, new { @class = "lbl" }):

@@ -28,14 +28,14 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(App);
         }
 
-        public ActionResult Insert_Applicant()
+        public ActionResult Insert_Applicant(int jobID)
         {
-            ViewBag.JobPosting = new jobPosting().getJobs();
+            ViewBag.JobPostingTitle = new jobPosting().getJobByID(jobID).title;
 
             return View();
         }
         [HttpPost]// restirict an action method by only post requests 
-        public ActionResult Insert_Applicant(Applicant App)
+        public ActionResult Insert_Applicant(Applicant App, HttpPostedFileBase resume)
         {
             ViewBag.JobPosting = new jobPosting().getJobs();
 

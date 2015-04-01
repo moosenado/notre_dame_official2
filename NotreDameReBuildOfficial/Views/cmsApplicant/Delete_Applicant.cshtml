@@ -1,0 +1,19 @@
+﻿@model NotreDameReBuildOfficial.Models.Applicant
+@{
+    ViewBag.Title = "Delete_Applicant";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2>Are you sure you want to delete @Model.first_name?</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" />
+        <br /><br />
+        @Html.ActionLink("back", "Applicants", new { id = Model.id })
+    </div>
+}

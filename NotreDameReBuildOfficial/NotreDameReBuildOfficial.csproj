@@ -787,6 +787,8 @@
     <Content Include="Views\cmsJobPosting\NotFound.cshtml" />
     <Content Include="Views\Applicant\Insert_Applicant.cshtml" />
     <Content Include="Views\cmsApplicant\Applicants.cshtml" />
+    <Content Include="Views\cmsApplicant\Applicant_Details.cshtml" />
+    <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

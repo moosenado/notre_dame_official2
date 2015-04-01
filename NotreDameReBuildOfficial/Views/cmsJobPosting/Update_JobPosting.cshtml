@@ -11,8 +11,6 @@
 <h2>Update @Model.title</h2>
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(x => x.category_id)
-
     @Html.HiddenFor(x => x.id)
     <div class="ddl-update">
         <select id="ddl-cat">
@@ -81,6 +79,8 @@
     <div>
         <input type="submit" value="Update" class="btn-add" />
     </div>
+    
+    @Html.HiddenFor(x => x.category_id)
 }
 <!--Return an anchor element-->
 <p>

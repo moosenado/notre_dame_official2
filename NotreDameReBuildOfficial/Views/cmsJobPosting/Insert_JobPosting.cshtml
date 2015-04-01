@@ -4,9 +4,7 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
+
 
 <h2 class="Title">Add New Career </h2>
 @*add dropdown list of job category*@
@@ -54,7 +52,6 @@
     </div>
     <div>
         @Html.TextBoxFor(model => model.salary, new { @class = "frm_insert" })
-        <span>$</span>
     </div>
     <div>
         @Html.ValidationMessageFor(model => model.salary)

@@ -48,6 +48,8 @@ namespace NotreDameReBuildOfficial.Models
                               department = jp.department,
                               posting_date = jp.posting_date,
                               description = jp.description,
+                              salary = jp.salary,
+                              category_id =jp.category_id,
                               catTitle = cat.title
                           }).SingleOrDefault();
 

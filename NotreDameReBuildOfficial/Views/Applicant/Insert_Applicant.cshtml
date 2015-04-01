@@ -6,18 +6,13 @@
 
 <h2>Job Application</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Insert_Applicant", "Applicant", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     
     
     @Html.HiddenFor(x => x.id)
     <div class="job-app">
-        <select id="ddl-app" class="frm_insert">
-            @foreach (var x in ViewBag.JobPosting)
-            {
-               <option data-id="@x.id" selected>@x.title</option>  
-            }
-        </select>
+        <span>@ViewBag.JobPostingTitle</span>
     </div>
 
         <div class="details_lbl">
@@ -100,21 +95,13 @@
             @Html.ValidationMessageFor(model => model.resmue)
         </div>
 
-        <div class="details_lbl">
-            @Html.LabelFor(model => model.cover_letter)
-        </div>
-        <div>
-            <input type="file" id="file" name="upload" />
-        </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.resmue)
-        </div>
+        
          <div class="hidden">
-        @Html.HiddenFor(model => model.job_posting_id )
+        @Html.HiddenFor(model => model.job_posting_id)
          </div>
 
         <div>
             <input id="btnAdd" type="submit" value="Apply" class="btn-add" />
             @Html.ActionLink("Cancel", "JobPosting", "JobPosting", null, new { @class = "btn_cancel" }) 
         </div>
- }
+}
