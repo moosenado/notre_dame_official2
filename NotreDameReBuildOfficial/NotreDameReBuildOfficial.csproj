@@ -194,6 +194,7 @@
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\cmsPdfFilterController.cs" />
     <Compile Include="Controllers\CMS\cmsStaffController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -219,6 +220,8 @@
     </Compile>
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
+    <Compile Include="Models\PdfFilterClass.cs" />
+    <Compile Include="Models\PdfFilterValidation.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -791,10 +794,17 @@
     <Content Include="Views\cmsStaff\deleteStaff.cshtml" />
     <Content Include="Views\cmsStaff\updateStaff.cshtml" />
     <Content Include="Views\ApptSchedPublic\createAppt.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Pdf.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Details.cshtml" />
+    <Content Include="Views\cmsPdfFilter\createPdf.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Update.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Delete.cshtml" />
+    <Content Include="Views\cmsPdfFilter\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
