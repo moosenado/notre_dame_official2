@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 16.625" name="ndLinqClass">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 17" name="ndLinqClass">
   <DataContextMoniker Name="/ndLinqClassDataContext" />
   <nestedChildShapes>
     <classShape Id="f4127cc5-baba-4aea-b109-d2be656e6a11" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
@@ -158,10 +158,10 @@
         <elementListCompartment Id="dce452d2-b071-44c7-a5fc-aae0637ca2a8" absoluteBounds="14.765, 7.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="421fcc6b-a0f2-45de-8e51-877a47291f83" absoluteBounds="6.375, 12.375, 2, 3.8862125651041666">
+    <classShape Id="33e90aa7-e42d-4879-bc40-c49acd935bc4" absoluteBounds="6.375, 12.875, 2, 3.8862125651041666">
       <DataClassMoniker Name="/ndLinqClassDataContext/Event" />
       <nestedChildShapes>
-        <elementListCompartment Id="5525c5c4-01ff-4ac6-a2e0-047afbec7ca8" absoluteBounds="6.39, 12.835, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6b841174-11b5-4098-87d1-20f61f9fbfca" absoluteBounds="6.39, 13.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

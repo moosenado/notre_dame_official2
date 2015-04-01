@@ -301,7 +301,7 @@
       <Column Name="event_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="start_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="end_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="start_time" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="end_time" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="description" Type="System.String" DbType="VarChar(650)" CanBeNull="true" />
@@ -309,11 +309,11 @@
       <Column Name="address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="cost" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="contact_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="contact_phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="contact_phone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="contact_email" Type="System.String" DbType="VarChar(320) NOT NULL" CanBeNull="false" />
       <Column Name="url" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="approved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="image" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="display" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

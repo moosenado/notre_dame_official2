@@ -5686,7 +5686,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private System.DateTime _start_date;
 		
-		private System.DateTime _end_date;
+		private System.Nullable<System.DateTime> _end_date;
 		
 		private string _start_time;
 		
@@ -5710,7 +5710,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private int _approved;
 		
-		private string _image;
+		private System.Nullable<int> _display;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5722,7 +5722,7 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnnameChanged();
     partial void Onstart_dateChanging(System.DateTime value);
     partial void Onstart_dateChanged();
-    partial void Onend_dateChanging(System.DateTime value);
+    partial void Onend_dateChanging(System.Nullable<System.DateTime> value);
     partial void Onend_dateChanged();
     partial void Onstart_timeChanging(string value);
     partial void Onstart_timeChanged();
@@ -5746,8 +5746,8 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnurlChanged();
     partial void OnapprovedChanging(int value);
     partial void OnapprovedChanged();
-    partial void OnimageChanging(string value);
-    partial void OnimageChanged();
+    partial void OndisplayChanging(System.Nullable<int> value);
+    partial void OndisplayChanged();
     #endregion
 		
 		public Event()
@@ -5815,8 +5815,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_end_date", DbType="Date NOT NULL")]
-		public System.DateTime end_date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_end_date", DbType="Date")]
+		public System.Nullable<System.DateTime> end_date
 		{
 			get
 			{
@@ -5975,7 +5975,7 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact_phone", DbType="VarChar(11)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contact_phone", DbType="VarChar(15)")]
 		public string contact_phone
 		{
 			get
@@ -6055,22 +6055,22 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="VarChar(250)")]
-		public string image
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_display", DbType="Int")]
+		public System.Nullable<int> display
 		{
 			get
 			{
-				return this._image;
+				return this._display;
 			}
 			set
 			{
-				if ((this._image != value))
+				if ((this._display != value))
 				{
-					this.OnimageChanging(value);
+					this.OndisplayChanging(value);
 					this.SendPropertyChanging();
-					this._image = value;
-					this.SendPropertyChanged("image");
-					this.OnimageChanged();
+					this._display = value;
+					this.SendPropertyChanged("display");
+					this.OndisplayChanged();
 				}
 			}
 		}

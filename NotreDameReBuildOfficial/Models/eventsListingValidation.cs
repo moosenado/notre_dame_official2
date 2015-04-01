@@ -63,8 +63,7 @@ namespace NotreDameReBuildOfficial.Models
 
         public int approved { get; set; }
 
-        [DisplayName("Image:")]
-        public string image { get; set; }
+        public int display { get; set; }
 
     }
 }
