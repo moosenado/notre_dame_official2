@@ -1,0 +1,63 @@
+﻿@model NotreDameReBuildOfficial.Models.Event
+
+@{
+    ViewBag.Title = "Insert Event";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>Insert</h2>
+
+@using (Html.BeginForm())
+{
+
+    <h3>Events</h3>
+
+    @Html.LabelFor(model => model.name, new { @class = "label" })
+    @Html.TextBoxFor(model => model.name, new { @class = "textbox" }) 
+    @Html.ValidationMessageFor(model => model.name)
+    
+    <div class="clear"></div>
+
+    @Html.LabelFor(model => model.start_date, new { @class = "label" })
+    @Html.TextBoxFor(model => model.start_date, new { @class = "textbox" })
+
+    <div class="clear"></div>
+    
+    @Html.LabelFor(model => model.end_date, new { @class = "label" })
+    @Html.TextBoxFor(model => model.end_date, new { @class = "textbox" })
+
+    <div class="clear"></div>
+    
+    @Html.LabelFor(model => model.start_time, new { @class = "label" })
+    @Html.TextBoxFor(model => model.start_time, new { @class = "textbox" })
+
+    <div class="clear"></div>
+    
+    @Html.LabelFor(model => model.end_time, new { @class = "label" })
+    @Html.TextBoxFor(model => model.end_time, new { @class = "textbox" })
+
+    <div class="clear"></div>
+    
+    @Html.LabelFor(model => model.description, new { @class = "label" })
+    @Html.TextBoxFor(model => model.description, new { @class = "textbox" })
+
+    <div class="clear"></div>
+    
+    @Html.LabelFor(model => model.venue, new { @class = "label" })
+    @Html.TextBoxFor(model => model.venue, new { @class = "textbox" })
+
+    <div class="clear"></div>
+
+    <input type="submit" name="submit" value="Add New" class="buttonstyle">
+
+    <a href='@Url.Action("cmsDonationList", "cmsDonation")'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
