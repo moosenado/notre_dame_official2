@@ -10,7 +10,8 @@
 <h2>Update</h2>
 
 @using (Html.BeginForm())
-{
+{   
+    @Html.ValidationSummary()
     @Html.HiddenFor(x => x.id)
     
     @Html.LabelFor(x => x.Fname)

@@ -32,7 +32,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
-        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _BookTime, string _AdditionalInfo, DateTime _Tstamp, string _Speciality, string _Phone)
+        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _BookTime, string _AdditionalInfo, string _Speciality, string _Phone, DateTime _Tstamp)
         {
             using (objApptSched)
             {

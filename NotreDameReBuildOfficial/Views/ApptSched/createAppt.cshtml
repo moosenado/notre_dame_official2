@@ -28,11 +28,11 @@
     @Html.ValidationMessageFor(model => model.HealthNum, "*")
     
     @Html.LabelFor(model => model.BookDate, new { @class = "label" })
-    @Html.TextBoxFor(model => model.BookDate, new { @class = "textbox" })
+    @Html.EditorFor(model => model.BookDate, new { @class = "textbox" })
     @Html.ValidationMessageFor(model => model.BookDate, "*")
     
     @Html.LabelFor(model => model.BookTime, new { @class = "label" })
-    @Html.TextBoxFor(model => model.BookTime, new { @class = "textbox" })
+    @Html.EditorFor(model => model.BookTime, new { @class = "textbox" })
     @Html.ValidationMessageFor(model => model.BookTime, "*")
     
     @Html.LabelFor(model => model.AdditionalInfo, new { @class = "label" })
@@ -58,8 +58,8 @@
     @Html.TextBoxFor(model => model.Phone, new { @class = "textbox" })
     @Html.ValidationMessageFor(model => model.Phone, "*")
     
-    @Html.LabelFor(model => model.Tstamp, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Tstamp, new { @class = "textbox" })
+    @*@Html.LabelFor(model => model.Tstamp, new { @class = "label" })
+    @Html.TextBoxFor(model => model.Tstamp, new { @class = "textbox" })*@
    
 
     <input type="submit" value="Insert" />

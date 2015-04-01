@@ -45,13 +45,13 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("Preferred Appointment Date*")]
         [Required(ErrorMessage = "Please choose an date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime BookDate { get; set; }
 
         [DisplayName("Preferred Appointment Time*")]
         [Required(ErrorMessage = "Please choose a time")]
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")] 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")] 
         public DateTime BookTime { get; set; }
 
         [DisplayName("Speciality*")]
@@ -63,9 +63,9 @@ namespace NotreDameReBuildOfficial.Models
         [StringLength(300)]
         public string AdditionalInfo { get; set; }
 
-        [DisplayName("TSTAMP*")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")]
-        public DateTime Tstamp { get; set; }
+        //[DisplayName("TSTAMP*")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        //public DateTime Tstamp { get; set; }
     } 
 }
