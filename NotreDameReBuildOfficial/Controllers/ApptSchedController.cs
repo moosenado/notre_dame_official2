@@ -77,6 +77,7 @@ namespace NotreDameReBuildOfficial.Controllers
                     
                     try
                     {
+                        
                         appt.Tstamp = DateTime.Now;
                         objApptSched.updateAppt(id, appt.Fname, appt.Lname, appt.Email, appt.HealthNum, appt.BookDate,
                             appt.BookTime, appt.AdditionalInfo, appt.Speciality, appt.Phone, appt.Tstamp);
