@@ -41,8 +41,9 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 if (ModelState.IsValid)
                 {
+
                     try
-                    {
+                    {   
                         objApptSched.insertAppt(appt);
                         return RedirectToAction("ApptSched");
                     }
@@ -69,7 +70,8 @@ namespace NotreDameReBuildOfficial.Controllers
         public ActionResult Update(int id, Appt_Book appt)
             {
                 if (ModelState.IsValid)
-                {
+                { 
+                    
                     try
                     {
                         objApptSched.updateAppt(id, appt.Fname, appt.Lname, appt.Email, appt.HealthNum, appt.BookDate,

@@ -28,6 +28,7 @@ namespace NotreDameReBuildOfficial.Models
                 objApptSched.Appt_Books.InsertOnSubmit(appt);
                 objApptSched.SubmitChanges();
                 return true;
+                
             }
         }
 

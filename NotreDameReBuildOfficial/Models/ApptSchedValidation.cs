@@ -33,8 +33,8 @@ namespace NotreDameReBuildOfficial.Models
         public string Phone { get; set; }
 
         [DisplayName("Email*")]
-        [Required(ErrorMessage = "Please enter a valid email")]
-        [RegularExpression("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-][A-Za-z]{2,4}", ErrorMessage = "Please enter a valid email")]
+        //[Required(ErrorMessage = "Please enter a valid email")]
+        //[RegularExpression("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-][A-Za-z]{2,4}", ErrorMessage = "Please enter a valid email")]
         public string Email { get; set; }
 
         [DisplayName("Health Card#*")]
@@ -44,11 +44,14 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Preferred Appointment Date*")]
         [Required(ErrorMessage = "Please choose an date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")]
         public DateTime BookDate { get; set; }
 
         [DisplayName("Preferred Appointment Time*")]
         [Required(ErrorMessage = "Please choose a time")]
-        [StringLength(100)]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")] 
         public DateTime BookTime { get; set; }
 
         [DisplayName("Speciality*")]
@@ -59,5 +62,10 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("Additional Information*")]
         [StringLength(300)]
         public string AdditionalInfo { get; set; }
+
+        [DisplayName("TSTAMP*")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:D}")]
+        public DateTime Tstamp { get; set; }
     } 
 }
