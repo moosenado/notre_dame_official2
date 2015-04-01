@@ -1,0 +1,64 @@
+﻿@model NotreDameReBuildOfficial.Models.Applicant
+@{
+    ViewBag.Title = "Applicant_Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<div>
+    <h2 class="details">Manage Applicants</h2>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.first_name, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.first_name)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.last_name, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.last_name)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.email, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.email)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.phone, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.phone)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.city, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.city)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.province, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.province)
+
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.postal_code, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.postal_code)
+    </div>
+
+    <div class="details_Op">
+        @Html.LabelFor(model => model.resmue, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.resmue)
+    </div>
+
+    <div class="details_Op">
+        @Html.LabelFor(model => model.cover_letter, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.cover_letter)
+    </div>
+
+    <div class="details_Op">
+        @Html.LabelFor(model => model.cover_letter, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.cover_letter)
+    </div>
+</div>
+<br />
+<br />
+<br />
+<p>
+    @Html.ActionLink("Back", "JobPosting") |
+    @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }) |
+    @Html.ActionLink("Delete", "Delete_JobPosting", new { id = Model.id })
+</p>
+
+
