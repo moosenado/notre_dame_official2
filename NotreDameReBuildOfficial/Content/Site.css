@@ -155,6 +155,18 @@ input[type=radio] {
     margin-bottom: 5px;
 }
 
+.textarea {
+    border: 1px solid #d7d7d7;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: block;
+    width: 400px;
+    height: 90px;
+    padding: 8px;
+    line-height: 130%;
+
+}
+
 input[type=submit] {
     margin: 20px 0px;
 }
@@ -196,16 +208,22 @@ th {
     color: #808080;
 }
 
-tr {
-
-}
-
 td {
     padding: 10px 15px;
+    vertical-align: top;
+    text-align: left;
 }
 
 table tr:nth-child(odd) td {
     background: #f5f5f5;
+}
+
+.plain td {
+    padding: 5px;
+}
+
+.plain tr:nth-child(odd) td {
+    background: #fff;
 }
 
 
@@ -1302,7 +1320,6 @@ input#in_memory.textbox,
 input#first_name.textbox,
 input#last_name.textbox,
 input#organization.textbox,
-input#address.textbox,
 input#email.textbox {
     width: 50%;
 }
@@ -1310,3 +1327,5 @@ input#email.textbox {
 table#edit-donations {
     width: 60%;
 }
+
+/* --- EVENTS LISTING --- */

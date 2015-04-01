@@ -14,6 +14,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         eventsListingClass objEvents = new eventsListingClass();
 
         //General list of events
+        public ActionResult Manage()
+        {
+            var list = objEvents.getEvents();
+            return View(list);
+        }
+
+        //General list of events
         public ActionResult cmsEventsListing()
         {
             var list = objEvents.getEvents();
@@ -36,6 +43,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        eventsListingViewModel objEventVM = new eventsListingViewModel();
+
+        public ActionResult EventsViewModel()
+        {
+            return View(objEventVM);
+        }
+
+
         // --- INSERT ACTION --- //
         public ActionResult Insert()
         {
@@ -51,7 +66,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 try
                 {
                     objEvents.insertEvent(events);
-                    return RedirectToAction("cmsEventsListing"); //On sucessful insert, return to Events Listing page
+                    return RedirectToAction("Manage"); //On sucessful insert, return to Events Listing page
                 }
                 catch
                 {
