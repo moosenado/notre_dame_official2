@@ -306,7 +306,7 @@
       <Column Name="end_time" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="description" Type="System.String" DbType="VarChar(650)" CanBeNull="true" />
       <Column Name="venue" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="true" />
       <Column Name="cost" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="contact_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="contact_phone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />

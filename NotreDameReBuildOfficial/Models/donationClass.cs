@@ -42,19 +42,19 @@ namespace NotreDameReBuildOfficial.Models
         {
             using (objLinq)
             {
-                var objUpDelete = objLinq.Donations.Single(x => x.donation_id == donation.donation_id);
-                objUpDelete.in_memory = donation.in_memory;
-                objUpDelete.type = donation.type;
-                objUpDelete.first_name = donation.first_name;
-                objUpDelete.last_name = donation.last_name;
-                objUpDelete.organization = donation.organization;
-                objUpDelete.address = donation.address;
-                objUpDelete.city = donation.city;
-                objUpDelete.province = donation.province;
-                objUpDelete.country = donation.country;
-                objUpDelete.postal = donation.postal;
-                objUpDelete.phone = donation.phone;
-                objUpDelete.email = donation.email;
+                var objUpdate = objLinq.Donations.Single(x => x.donation_id == donation.donation_id);
+                objUpdate.in_memory = donation.in_memory;
+                objUpdate.type = donation.type;
+                objUpdate.first_name = donation.first_name;
+                objUpdate.last_name = donation.last_name;
+                objUpdate.organization = donation.organization;
+                objUpdate.address = donation.address;
+                objUpdate.city = donation.city;
+                objUpdate.province = donation.province;
+                objUpdate.country = donation.country;
+                objUpdate.postal = donation.postal;
+                objUpdate.phone = donation.phone;
+                objUpdate.email = donation.email;
                 objLinq.SubmitChanges();
                 return true;
             }
