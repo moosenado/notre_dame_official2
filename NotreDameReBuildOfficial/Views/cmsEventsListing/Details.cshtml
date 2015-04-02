@@ -1,0 +1,131 @@
+﻿@model NotreDameReBuildOfficial.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>@Html.DisplayFor(model => model.name)</h1>
+
+<table class="plain">
+    <tr>
+        @* EVENT NAME *@
+        <td>@Html.LabelFor(model => model.name)</td>
+        <td>@Html.DisplayFor(model => model.name)</td>
+    </tr>
+    <tr>
+        @* START DATE *@
+        <td>@Html.LabelFor(model => model.start_date)</td>
+        <td>@Html.DisplayFor(model => model.start_date)</td>
+    </tr>
+    <tr>
+        @* START TIME *@
+        <td>@Html.LabelFor(model => model.start_time)</td>
+        <td>@Html.DisplayFor(model => model.start_time)</td>
+    </tr>
+
+    @* Display if end date is not the same as the start date *@
+    @if (@Model.end_date != @Model.start_date)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.end_date)</td>
+        <td>@Html.DisplayFor(model => model.end_date)</td>
+    </tr>
+    }
+
+    @* Display if there is an end time *@
+    @if (@Model.end_time != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.end_time)</td>
+        <td>@Html.DisplayFor(model => model.end_time)</td>
+    </tr>
+    }
+    <tr>
+        @* EVENT DESCRIPTION *@
+        <td>@Html.LabelFor(model => model.description)</td>
+        <td>@Html.DisplayFor(model => model.description)</td>
+    </tr>
+
+    @* Display if there is a venue *@
+    @if (@Model.venue != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.venue)</td>
+        <td>@Html.DisplayFor(model => model.venue)</td>
+    </tr>
+    }
+
+    @* Display if there is an address *@
+    @if (@Model.address != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.address)</td>
+        <td>@Html.DisplayFor(model => model.address)</td>
+    </tr>
+    }
+
+    @* Display if there is a cost *@
+    @if (@Model.cost != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.cost)</td>
+        <td>@Html.DisplayFor(model => model.cost)</td>
+    </tr>
+    }
+
+    <tr>
+        @* CONTACT NAME *@
+        <td>@Html.LabelFor(model => model.contact_name)</td>
+        <td>@Html.DisplayFor(model => model.contact_name)</td>
+    </tr>
+    <tr>
+        @* CONTACT EMAIL *@
+        <td>@Html.LabelFor(model => model.contact_email)</td>
+        <td>@Html.DisplayFor(model => model.contact_email)</td>
+    </tr>
+
+    @* Display is there is a contact phone number *@
+    @if (@Model.contact_phone != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.contact_phone)</td>
+        <td>@Html.DisplayFor(model => model.contact_phone)</td>
+    </tr>
+    }
+
+    @* Display if there is a URL *@
+    @if (@Model.url != null)
+    {
+    <tr>
+        <td>@Html.LabelFor(model => model.url)</td>
+        <td>@Html.DisplayFor(model => model.url)</td>
+    </tr>
+    }
+
+    @* Is the event being displayed on the homepage? *@
+    <tr>
+        <td>@Html.LabelFor(model => model.display)</td>
+        <td>
+            @if (@Model.display == 1)
+            {
+                @Html.Label("Yes");
+            }
+            else if (@Model.display == 0)
+            {
+                @Html.Label("No");
+            }
+        </td>
+    </tr>
+</table>
+
+<a href='@Url.Action("Update", "cmsEventsListing", new { event_id = Model.event_id })'>
+    <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
+</a>
+<a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = Model.event_id })'>
+    <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
+</a>
+<a href='@Url.Action("Manage", "cmsEventsListing")'>
+    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+</a>

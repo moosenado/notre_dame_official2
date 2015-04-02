@@ -800,6 +800,7 @@
     <Content Include="Views\cmsEventsListing\NotFound.cshtml" />
     <Content Include="Views\cmsEventsListing\Update.cshtml" />
     <Content Include="Views\cmsEventsListing\Delete.cshtml" />
+    <Content Include="Views\cmsEventsListing\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

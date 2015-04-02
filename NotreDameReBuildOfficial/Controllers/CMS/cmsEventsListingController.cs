@@ -28,7 +28,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             if (events == null)
             {
                 return View("NotFound");
-                //same as saying return NotFound();
+       
             }
             else
             {
