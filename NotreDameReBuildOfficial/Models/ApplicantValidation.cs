@@ -11,16 +11,17 @@ using System.Web.Mvc;
 namespace NotreDameReBuildOfficial.Models
 {
     [MetadataType(typeof(ApplicantValidation))]
-
-    public partial class Applicants
+    public partial class Applicant
     {
+       
     }
+
     [Bind(Exclude = "id")]
     public partial class ApplicantValidation
     {
         [DisplayName("First Name:")]
         [Required(ErrorMessage = "Please Enter your First Name")]
-        public string fisrt_name { get; set; }
+        public string first_name { get; set; }
 
         [DisplayName("Last Name:")]
         [Required(ErrorMessage = "Please Enter your Last Name")]
@@ -49,12 +50,10 @@ namespace NotreDameReBuildOfficial.Models
         public string postal_code { get; set; }
 
         [DisplayName("Resume:")]
-        //[Required(ErrorMessage = "Please Upload you resume")]
-        public string resume { get; set; }
+        [Required(ErrorMessage = "Please upload you resume")]
+        HttpPostedFileBase resume { get; set; }
 
-        [DisplayName("Cover letter:")]
-        //[Required(ErrorMessage = "Please Upload you Cover letter")]
-        public string cover_letter { get; set; }
+       
 
         
     }

@@ -12,9 +12,8 @@ namespace NotreDameReBuildOfficial.Controllers
 {
     public class ApplicantController : Controller
     {
-        //
-        // GET: /Applicant/
-        JobApplicants AppObj = new JobApplicants(); // creating an instance of Applicant class
+        // creating an instance of Applicant class
+        JobApplicants AppObj = new JobApplicants(); 
      
         public ActionResult Index()
         {
@@ -28,29 +27,35 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(App);
         }
 
-        public ActionResult Insert_Applicant(int jobID)
+        public ActionResult Insert_Applicant(int id)
         {
-            ViewBag.JobPostingTitle = new jobPosting().getJobByID(jobID).title;
+            ViewBag.JobPosting = new jobPosting().getJobByID(id);
 
             return View();
         }
-        [HttpPost]// restirict an action method by only post requests 
-        public ActionResult Insert_Applicant(Applicant App, HttpPostedFileBase resume)
+
+        //Add Applicants to the database
+        [HttpPost] 
+        public ActionResult Insert_Applicant(int id, Applicant App, HttpPostedFileBase file1)
         {
-            ViewBag.JobPosting = new jobPosting().getJobs();
+            ViewBag.JobPosting = new jobPosting().getJobByID(id);
+
 
             if (ModelState.IsValid)
             {
-                try
+                if (file1 != null)
                 {
-                    AppObj.commitInsert(App); // if the state of the model is  valid the commitInsert function will be called and new value will be commited to database.
-                    return RedirectToAction("Success"); //after inserting values in database, page will show the success page
+                    //string fileName1 = file1 + japp.id.ToString();
+                    file1.SaveAs(HttpContext.Server.MapPath("~/Content/applicant/resume/") + file1.FileName);
+                    App.resmue = file1.FileName;                                    
+                   
                 }
-                catch
-                {
-                    return View(App);
-                }
+                App.job_posting_id = id;
+                AppObj.commitInsert(App);
+                return RedirectToAction("Success");
+                
             }
+
             return View(App);
         }
 

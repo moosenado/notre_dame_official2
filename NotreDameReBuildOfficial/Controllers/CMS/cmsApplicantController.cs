@@ -48,12 +48,27 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(App);
             }
         }
-
+        //Delet Applicant from database
         [HttpPost] // restirict an action method by only post requests
-        public ActionResult Delete_Applicant(int id, Applicant App)
+        public ActionResult Delete_Applicant(int id, string Resume, JobApplicants App)
         {
+
             try
             {
+                App.resmue = Resume;
+
+                var resumeName = Resume;
+                
+                string fullPath1 = Request.MapPath("~/Content/applicant/resume/"
+                + resumeName);
+
+
+                if (System.IO.File.Exists(fullPath1))
+                {
+                    System.IO.File.Delete(fullPath1);
+                    //Session["DeleteSuccess"] = "Yes";
+                }
+
                 AppObj.commitDelete(id);
                 return RedirectToAction("Applicants");
             }
@@ -61,10 +76,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 return View();
             }
-        }
-        public ActionResult NotFound()
-        {
-            return View();
+
         }
 
     }

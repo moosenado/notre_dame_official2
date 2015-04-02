@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using System.Web.Services;
 
 namespace notre_dame_rebuild.Controllers
 {
@@ -19,6 +20,7 @@ namespace notre_dame_rebuild.Controllers
         public ActionResult Index()
         {
             var articles = objNews.getTopArticles();
+            ViewBag.Poll = new poll().GetRandomQuestion();
             return View(articles);
         }
 
@@ -49,7 +51,22 @@ namespace notre_dame_rebuild.Controllers
             var all_articles = objNews.getArticles();
             return View(all_articles);
         }
-     
-    
+
+        [WebMethod]
+        public static string InsertVote(poll_vote param)
+        {
+            Vote vote = new Vote();
+            vote.poll_id = param.pollid;
+            vote.poll_options_id = param.optionid;
+            vote.Insert(vote);
+            return "success";
+        }
+    }
+
+    [Serializable]
+    public class poll_vote
+    {
+        public int pollid { get; set; }
+        public int optionid { get; set; }
     }
 }

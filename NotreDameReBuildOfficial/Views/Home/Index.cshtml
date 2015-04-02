@@ -59,6 +59,36 @@
 
     <h2>Weekly Poll</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
+    <div>
+        <span>@ViewBag.Poll.title</span>
+        <br />
+        <span>@ViewBag.Poll.question_text</span>
+        <br />
+        <input type="hidden" id="pollid" value="@ViewBag.Poll.id" />
+        @foreach (var option in ViewBag.Poll.options)
+        {
+            <input type="radio" class="poll-option" name="polloption" value="@option.id">@option.options
+            <br />
+        }
+        <button type="button" id="btnvote">Vote</button>
+    </div>
 
 </div>
+<script>
+    $(function () {
+        $("#btnvote").click(function () {
+            var pollid = $("#pollid").val();
+            var optionid = $(".poll-option:checked").val();
+            if (pollid != null && optionid != null){
+                $.ajax({
+                    method: "POST",
+                    url: "/Home/Index/InsertVote",
+                    data: { pollid: pollid, optionid: optionid },
+                    success: function (res) {
+
+                    }
+                })
+            }
+        });
+    });
+</script>

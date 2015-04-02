@@ -221,6 +221,8 @@
     </Compile>
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
+    <Compile Include="Models\poll.cs" />
+    <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -789,8 +791,10 @@
     <Content Include="Views\cmsApplicant\Applicants.cshtml" />
     <Content Include="Views\cmsApplicant\Applicant_Details.cshtml" />
     <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
+    <Content Include="Views\Applicant\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\applicant\resume\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

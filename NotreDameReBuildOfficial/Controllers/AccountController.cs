@@ -79,8 +79,8 @@ namespace NotreDameReBuildOfficial.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.user_name, model.password);
+                    WebSecurity.Login(model.user_name, model.password);
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

@@ -6,13 +6,13 @@
 
 <h2>Job Application</h2>
 
-@using (Html.BeginForm("Insert_Applicant", "Applicant", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Insert_Applicant","Applicant", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    
+    // @Html.ValidationSummary()
     
     @Html.HiddenFor(x => x.id)
     <div class="job-app">
-        <span>@ViewBag.JobPostingTitle</span>
+        <span>@ViewBag.JobPosting.title</span>
     </div>
 
         <div class="details_lbl">
@@ -85,23 +85,26 @@
             @Html.ValidationMessageFor(model => model.postal_code)
         </div>
 
-        <div class="details_lbl">
-            @Html.LabelFor(model => model.resmue)
-        </div>
-        <div>
-            <input type="file" id="file" name="upload" />
-        </div>
-        <div>
-            @Html.ValidationMessageFor(model => model.resmue)
-        </div>
+        <fieldset>
+            <legend></legend>
+            <div>
+                @Html.LabelFor(model => model.resmue)
+            </div>
+            <div>
+                <input type="file" name="file1" id="resume" />
+            </div>
+        </fieldset>
+       
 
-        
-         <div class="hidden">
-        @Html.HiddenFor(model => model.job_posting_id)
-         </div>
+
+
+        <div class="hidden">
+            @Html.Hidden("job_posting_id", (int)ViewBag.JobPosting.id)
+            @*@Html.HiddenFor(model => model.job_posting_id)*@
+        </div>
 
         <div>
             <input id="btnAdd" type="submit" value="Apply" class="btn-add" />
-            @Html.ActionLink("Cancel", "JobPosting", "JobPosting", null, new { @class = "btn_cancel" }) 
+            @Html.ActionLink("Cancel", "JobPosting", "JobPosting", null, new { @class = "btn_cancel" })
         </div>
-}
+        }
