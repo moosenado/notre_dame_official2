@@ -16,8 +16,25 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         //General list of events
         public ActionResult Manage()
         {
-            var list = objEvents.getEvents();
-            return View(list);
+            return View();
+        }
+
+        public ActionResult currentEventsPartial()
+        {
+
+            //Current Events
+            var current = objEvents.getEventsByStatus(1);
+
+            return PartialView(current);
+        }
+
+        public ActionResult pastEventsPartial()
+        {
+
+            //Current Events
+            var past = objEvents.getEventsByStatus(0);
+
+            return PartialView(past);
         }
 
         //When admin wants to see the event details

@@ -9,27 +9,16 @@
 <h1>Manage Events</h1>
 
 <h3>Current Events</h3>
-
-@foreach (var e in Model)
-{
-    <div class="event">
-
-        @e.name
-        <div class="clear"></div>
-        @e.start_date.ToString("MM/dd/yyyy")
-        <div class="clear"></div>
-        @Html.ActionLink("View", "Details", new { event_id = e.event_id })
-        |
-        @Html.ActionLink("Edit", "Update", new { event_id = e.event_id })
-        |
-        @Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })
-        <br /><br />
-
-    </div>
-
+@{
+    Html.RenderAction("currentEventsPartial", "cmsEventsListing");
 }
 
 <h3>Previous Events</h3>
+@{
+    Html.RenderAction("pastEventsPartial", "cmsEventsListing"); 
+}
+
+<div class="clear"></div>
 
 <a href='@Url.Action("Insert", "cmsEventsListing")'>
     <span class="buttonstyle"><i class="fa fa-plus"></i>New Event</span>

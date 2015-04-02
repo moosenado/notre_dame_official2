@@ -27,12 +27,32 @@ namespace NotreDameReBuildOfficial.Models
             return getAllEvents;
         }
 
+        // --- GET EVENTS BY STATUS --- //
+        public IQueryable<Event> getEventsByStatus(int status)
+        {
+            var eventsByStatus = from a in objLinq.Events
+                                 where a.display == status
+                                 orderby a.start_date ascending
+                                 select a; 
+
+            //objLinq.Events.Where(x => x.display == 1).OrderBy(x => x.start_date);
+
+            return eventsByStatus;
+        }
+
         // --- INSERT LOGIC --- //
         public bool insertEvent(Event events)
         {
             //Ensures all data will be disposed of when finished
             using (objLinq)
             {
+                //if the end date is submitted as null, assign it the value of start date
+                if(events.end_date == null){
+
+                    events.end_date = events.start_date;
+
+                }
+
                 objLinq.Events.InsertOnSubmit(events);
                 objLinq.SubmitChanges();
                 return true;
