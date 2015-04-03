@@ -50,7 +50,10 @@
 
     <h2>Upcoming Events</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
+    @{
+        Html.RenderAction("EventsPartial", "Home");
+    }
+
 
 </div>
 

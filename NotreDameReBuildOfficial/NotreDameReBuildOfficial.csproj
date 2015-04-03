@@ -196,7 +196,6 @@
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
     <Compile Include="Controllers\CMS\cmsStaffController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
-    <Compile Include="Controllers\EventsLisingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -211,7 +210,6 @@
     <Compile Include="Models\erwaitClass.cs" />
     <Compile Include="Models\eventsListingClass.cs" />
     <Compile Include="Models\eventsListingValidation.cs" />
-    <Compile Include="Models\eventsListingViewModel.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
@@ -767,6 +765,7 @@
     <Content Include="Views\cmsDonation\Delete.cshtml" />
     <Content Include="Views\cmsDonation\Update.cshtml" />
     <Content Include="Views\cmsDonation\Details.cshtml" />
+    <Content Include="Views\Donation\DonateAction.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
     <Content Include="Views\ApptSched\ApptSched.cshtml" />
@@ -794,7 +793,6 @@
     <Content Include="Views\cmsStaff\deleteStaff.cshtml" />
     <Content Include="Views\cmsStaff\updateStaff.cshtml" />
     <Content Include="Views\cmsEventsListing\Insert.cshtml" />
-    <Content Include="Views\EventsLising\Events.cshtml" />
     <Content Include="Views\cmsEventsListing\Manage.cshtml" />
     <Content Include="Views\cmsEventsListing\NotFound.cshtml" />
     <Content Include="Views\cmsEventsListing\Update.cshtml" />

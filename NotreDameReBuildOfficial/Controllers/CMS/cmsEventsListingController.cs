@@ -22,10 +22,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         public ActionResult currentEventsPartial()
         {
 
-            //Current Events
-            var current = objEvents.getEventsByStatus(1);
+            var upcoming = objEvents.getActiveEvents();
 
-            return PartialView(current);
+            return PartialView(upcoming);
+
+            //Current Events
+            //var current = objEvents.getEventsByStatus(1);
+
+            //return PartialView(current);
         }
 
         public ActionResult pastEventsPartial()
@@ -52,14 +56,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(events);
             }
         }
-
-        eventsListingViewModel objEventVM = new eventsListingViewModel();
-
-        public ActionResult EventsViewModel()
-        {
-            return View(objEventVM);
-        }
-
 
         // --- INSERT ACTION --- //
         public ActionResult Insert()

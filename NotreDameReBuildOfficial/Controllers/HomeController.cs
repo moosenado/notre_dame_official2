@@ -17,6 +17,8 @@ namespace notre_dame_rebuild.Controllers
 
         newsfeedClass objNews = new newsfeedClass();
         erwaitClass objER = new erwaitClass();
+
+
         public ActionResult Index()
         {
             ViewBag.erTime = objER.getWaitTime();
@@ -51,7 +53,52 @@ namespace notre_dame_rebuild.Controllers
             var all_articles = objNews.getArticles();
             return View(all_articles);
         }
-     
+
+
+        // -------------------------------- //
+        // ----- EVENTS LISTING by GEN ----- //
+        // -------------------------------- //
+
+        eventsListingClass objEvents = new eventsListingClass();
+
+        public ActionResult EventsPartial(Event events)
+        {
+            //Current Events
+            var current = objEvents.getEventsByStatus(1);
+
+            //if the event date has passed, do not display/send to archive
+            if (events.start_date > DateTime.Now)
+            {
+                events.display = 0;
+            }
+
+            return PartialView(current);
+        }
+
+        public ActionResult AllEvents()
+        {
+
+            //Current Events
+            var current = objEvents.getEventsByStatus(1);
+
+            return View(current);
+        }
+
+        //When admin wants to see the event details
+        public ActionResult EventDetails(int event_id)
+        {
+            var events = objEvents.getEventByID(event_id);
+
+            if (events == null)
+            {
+                return View("NotFound");
+
+            }
+            else
+            {
+                return View(events);
+            }
+        }
     
     }
 }

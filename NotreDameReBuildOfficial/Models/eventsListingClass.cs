@@ -11,14 +11,6 @@ namespace NotreDameReBuildOfficial.Models
         //Creating an object of the linq database class
         ndLinqClassDataContext objLinq = new ndLinqClassDataContext();
 
-        // ---  GET ALL EVENTS --- //
-        //Executes SELECT query against the db, gets all events and puts them in a list
-        public IQueryable<Event> getEvents()
-        {
-            var allEvents = objLinq.Events.Select(x => x);
-            return allEvents;
-        }
-
         // --- GET EVENT BY ID --- //
         public Event getEventByID(int _event_id)
         {
@@ -27,13 +19,27 @@ namespace NotreDameReBuildOfficial.Models
             return getAllEvents;
         }
 
+        // --- GET ACTIVE EVENTS  --- //
+        public IQueryable<Event> getActiveEvents()
+        {
+            var today = DateTime.Now;
+            var eventsByDate = from a in objLinq.Events
+                               where a.start_date > today
+                               orderby a.start_date ascending
+                               select a;
+
+            return eventsByDate;
+        }
+
         // --- GET EVENTS BY STATUS --- //
         public IQueryable<Event> getEventsByStatus(int status)
         {
+     
             var eventsByStatus = from a in objLinq.Events
                                  where a.display == status
                                  orderby a.start_date ascending
                                  select a; 
+            
 
             //objLinq.Events.Where(x => x.display == 1).OrderBy(x => x.start_date);
 
