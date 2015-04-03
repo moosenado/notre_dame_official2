@@ -7,15 +7,18 @@
 
         @e.name
         <div class="clear"></div>
-        @e.start_date.ToString("MM/dd/yyyy")
+        @e.start_date.ToString("ddd MMM d, yyyy")
         <div class="clear"></div>
-        @Html.ActionLink("View", "Details", new { event_id = e.event_id })
+        <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id, @class = "viewIcon" })'>
+            <span><i class="fa fa-eye"></i>View</span>
+        </a>
         |
         @Html.ActionLink("Edit", "Update", new { event_id = e.event_id })
         |
         @Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })
-        <br /><br />
 
     </div>
 
 }
+
+<div class="clear"></div>

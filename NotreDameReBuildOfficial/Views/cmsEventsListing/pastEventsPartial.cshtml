@@ -1,21 +1,26 @@
 ﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
 
+<table>
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
 
-@foreach (var e in Model)
-{
-    <div class="event">
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.name</td>
+            <td>@e.start_date.ToString("ddd MMM d, yyyy")</td>
+            <td>@Html.ActionLink("View", "Details", new { event_id = e.event_id })</td>
+            <td>@Html.ActionLink("Edit", "Update", new { event_id = e.event_id })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })</td>
+        </tr>
 
-        @e.name
-        <div class="clear"></div>
-        @e.start_date.ToString("MM/dd/yyyy")
-        <div class="clear"></div>
-        @Html.ActionLink("View", "Details", new { event_id = e.event_id })
-        |
-        @Html.ActionLink("Edit", "Update", new { event_id = e.event_id })
-        |
-        @Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })
-        <br /><br />
+    }
 
-    </div>
-
-}
+</table>

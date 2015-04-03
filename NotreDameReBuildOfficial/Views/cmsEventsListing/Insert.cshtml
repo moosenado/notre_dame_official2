@@ -4,8 +4,14 @@
     ViewBag.Title = "Insert Event";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
-    
+    @Scripts.Render("~/bundles/jqueryui");
 }
+
+<script>
+    $(function () {
+        $(".datefield").datepicker();
+    });
+</script>
 
 <h1>Insert New Event</h1>
 

@@ -207,7 +207,7 @@ table {
 th {
 	padding: 12px 15px;
     font-weight: bold;
-    color: #808080;
+    color: #666;
 }
 
 td {
@@ -1118,7 +1118,8 @@ table tr:nth-child(odd) td {
 .fa-times,
 .fa-trash-o,
 .fa-check,
-.fa-list-ul {
+.fa-list-ul ,
+.fa-eye  {
 	padding-right: 5px;
 }
 
@@ -1331,3 +1332,42 @@ table#edit-donations {
 }
 
 /* --- EVENTS LISTING --- */
+
+.event {
+    background: #eee;
+    min-height: 8em;
+    max-width: 10em;
+    padding: 10px;
+    margin-right: 20px;
+    float: left;
+    display: inline;
+}
+
+/* --- JQUERY DATEPICKER --- */
+
+#ui-datepicker-div {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+.ui-datepicker-prev.ui-corner-all,
+.ui-datepicker-next.ui-corner-all {
+    float: left;
+    cursor: pointer;
+    padding: 0px 10px;
+    margin: 10px 0px;
+}
+
+.ui-datepicker-next.ui-corner-all {
+    border-left: 1px solid #444;
+}
+
+.ui-datepicker-title {
+    padding: 10px 20px;
+    float: right;
+    font-weight: 700;
+}
+
+table.ui-datepicker-calendar {
+    margin-bottom: 0px;
+}

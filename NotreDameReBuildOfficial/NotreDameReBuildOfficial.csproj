@@ -767,7 +767,6 @@
     <Content Include="Views\cmsDonation\Delete.cshtml" />
     <Content Include="Views\cmsDonation\Update.cshtml" />
     <Content Include="Views\cmsDonation\Details.cshtml" />
-    <Content Include="Views\Donation\DonateAction.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
     <Content Include="Views\ApptSched\ApptSched.cshtml" />
