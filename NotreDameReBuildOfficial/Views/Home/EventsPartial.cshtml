@@ -1,0 +1,25 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
+
+
+@foreach (var e in Model)
+{
+    <div class="hmpg-event">
+  
+        @e.start_date.ToString("ddd MMM d, yyyy")
+
+        <div class="clear"></div>
+
+        <a href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
+
+    </div>
+
+}
+
+<div class="clear"></div>
+
+<div class="mobile-btn">
+    @Html.ActionLink("See All Events", "SeeAllEvents")
+</div>|
+<div class="mobile-btn">
+    @Html.ActionLink("Add Your Event", "AddEvent")
+</div>

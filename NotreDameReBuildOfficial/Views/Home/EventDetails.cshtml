@@ -1,0 +1,97 @@
+﻿@model NotreDameReBuildOfficial.Models.Event
+    
+@{
+    ViewBag.Title = "EventDetails";
+}
+
+<h1>@Html.DisplayFor(model => model.name)</h1>
+
+@* EVENT NAME *@
+@Html.DisplayFor(model => model.name)</td>
+
+<div class="clear"></div>
+   
+@* START DATE *@
+@Html.DisplayFor(model => model.start_date)
+
+<div class="clear"></div>
+   
+@* START TIME *@
+@Html.DisplayFor(model => model.start_time)
+    
+<div class="clear"></div>
+
+@* Display if end date is not the same as the start date *@
+@if (@Model.end_date != @Model.start_date)
+{
+    @Html.DisplayFor(model => model.end_date)
+}
+    
+<div class="clear"></div>
+
+@* Display if there is an end time *@
+@if (@Model.end_time != null)
+{
+    @Html.DisplayFor(model => model.end_time)
+}
+    
+<div class="clear"></div>
+   
+@* EVENT DESCRIPTION *@
+@Html.DisplayFor(model => model.description)
+
+<div class="clear"></div>
+
+@* Display if there is a venue *@
+@if (@Model.venue != null)
+{
+    @Html.DisplayFor(model => model.venue)
+}
+
+<div class="clear"></div>
+    
+@* Display if there is an address *@
+@if (@Model.address != null)
+{
+    @Html.DisplayFor(model => model.address)
+}
+    
+<div class="clear"></div>
+
+@* Display if there is a cost *@
+@if (@Model.cost != null)
+{
+    @Html.DisplayFor(model => model.cost)
+}
+    
+<div class="clear"></div>
+
+@* CONTACT NAME *@
+@Html.DisplayFor(model => model.contact_name)
+
+<div class="clear"></div>
+    
+@* CONTACT EMAIL *@
+@Html.DisplayFor(model => model.contact_email)
+
+<div class="clear"></div>
+
+@* Display is there is a contact phone number *@
+@if (@Model.contact_phone != null)
+{
+    @Html.DisplayFor(model => model.contact_phone)
+}
+
+<div class="clear"></div>
+    
+@* Display if there is a URL *@
+@if (@Model.url != null)
+{
+    @Html.DisplayFor(model => model.url)
+}
+
+<div class="clear"></div>
+
+<a href='@Url.Action("Index", "Home")'>
+    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
+</a>
