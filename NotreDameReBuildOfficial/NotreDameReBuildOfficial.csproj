@@ -192,10 +192,12 @@
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsEventsListingController.cs" />
+    <Compile Include="Controllers\CMS\cmsGiftShopController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
     <Compile Include="Controllers\CMS\cmsStaffController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
+    <Compile Include="Controllers\GiftShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -210,6 +212,7 @@
     <Compile Include="Models\erwaitClass.cs" />
     <Compile Include="Models\eventsListingClass.cs" />
     <Compile Include="Models\eventsListingValidation.cs" />
+    <Compile Include="Models\giftShopClass.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
@@ -803,6 +806,9 @@
     <Content Include="Views\Home\AllEvents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
     <Content Include="Views\Home\EventsPartial.cshtml" />
+    <Content Include="Views\GiftShop\giftshop.cshtml" />
+    <Content Include="Views\cmsGiftShop\products.cshtml" />
+    <Content Include="Views\cmsGiftShop\insert_product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
