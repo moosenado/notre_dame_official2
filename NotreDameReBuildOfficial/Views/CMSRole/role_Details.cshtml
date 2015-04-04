@@ -1,0 +1,21 @@
+﻿@model NotreDameReBuildOfficial.Models.role
+@{
+    ViewBag.Title = "role_Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2>Manage User Roles</h2>
+
+<p><em>@Html.DisplayFor(x => x.title)</em></p>
+
+<p>
+    @Html.ActionLink("Back", "Roles") |
+    @Html.ActionLink("Update", "Update_role", new { id = Model.id }) |
+    @Html.ActionLink("Delete", "Delete_role", new { id = Model.id })
+</p>
+
+

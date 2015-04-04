@@ -41,9 +41,9 @@
 <br/>
 <br/>
     <p>
-        @Html.ActionLink("Back", "JobPosting") |
-        @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }) |
-        @Html.ActionLink("Delete", "Delete_JobPosting" ,new { id = Model.id })
+        @Html.ActionLink("Back", "JobPosting", null, new { @class = "buttonstyle" }) 
+        @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
+        @Html.ActionLink("Delete", "Delete_JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
     </p>
 
 

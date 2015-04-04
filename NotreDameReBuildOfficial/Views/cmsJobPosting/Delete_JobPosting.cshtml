@@ -8,12 +8,11 @@
 <br />
 <br />
 
-<h2>Are you sure you want to delete @Model.title?</h2>
+<h2>Are you to Delete @Model.title?</h2>
 @using (Html.BeginForm())
 {
     <div>
-        <input type="submit" value="Delete" />
-        <br /><br />
-        @Html.ActionLink("back", "JobPosting", new { id = Model.id })
+        <input type="submit" value="Delete" class="buttonstyle" />
+        @Html.ActionLink("back", "JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
     </div>
 }

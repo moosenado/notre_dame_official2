@@ -195,9 +195,12 @@
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\CMSRoleController.cs" />
+    <Compile Include="Controllers\CMS\CMSUserController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +225,9 @@
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
     <Compile Include="Models\poll.cs" />
+    <Compile Include="Models\roleValidationClass.cs" />
+    <Compile Include="Models\rollClass.cs" />
+    <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -792,6 +798,11 @@
     <Content Include="Views\cmsApplicant\Applicant_Details.cshtml" />
     <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
     <Content Include="Views\Applicant\Success.cshtml" />
+    <Content Include="Views\CMSRole\role_Details.cshtml" />
+    <Content Include="Views\CMSRole\Roles.cshtml" />
+    <Content Include="Views\CMSRole\Insert_Roll.cshtml" />
+    <Content Include="Views\CMSRole\Update_role.cshtml" />
+    <Content Include="Views\CMSRole\Delete_role.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\applicant\resume\" />

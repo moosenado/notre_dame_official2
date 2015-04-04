@@ -6,12 +6,14 @@
 }
 
 <h2>List Of Careers</h2>
+<br/><br/>
 <div>
-    @Html.ActionLink("Add New Job", "Insert_JobPosting", null, new { @class = "btn" })
-    @Html.ActionLink("Job Categories", "JobCategory", "cmsJobCategory", null, new { @class = "btn" })
+    @Html.ActionLink("Add New Job", "Insert_JobPosting", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("Job Categories", "JobCategory", "cmsJobCategory", null, new { @class = "buttonstyle" })
 </div>
+<br /><br />
 <div @*style="height:50px;"*@>
-    <table id="careers">
+    <table>
         <thead>
             <tr>
                 <th>Title</th>

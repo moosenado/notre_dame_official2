@@ -7,18 +7,35 @@
 
 
 <h2>Job Category</h2>
+<br/><br/>
+<p>
+    @Html.ActionLink("Insert New category", "Insert_JobCategory", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("List Of Careers", "JobPosting", "cmsJobPosting", null, new { @class = "buttonstyle" })
+</p>
+<br /><br />
 
-<br />
-<br />
-<div class="list-links">
-    <ul>
+<table>
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach (var x in Model)
         {
-            <li>@Html.ActionLink(x.title, "JobCategory_Details", new { id = x.id })</li>
+            <tr>
+                <td>@x.title</td>
+                <td>
+                    @Html.ActionLink("Update", "Update_JobCategory", new { id = x.id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete_JobCategory", new { id = x.id })
+                </td>
+            </tr>
         }
-    </ul>
-</div>
-<p>
-    @Html.ActionLink("Insert New category", "Insert_JobCategory", null, new { @class = "btn" })
-    @Html.ActionLink("List Of Careers", "JobPosting", "cmsJobPosting", null, new { @class = "btn" })
-</p>
+    </tbody>
+</table>
+
+

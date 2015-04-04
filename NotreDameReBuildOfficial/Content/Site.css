@@ -1119,7 +1119,7 @@ table tr:nth-child(odd) td {
 /*********** FEATURES ***********/
 /********************************/
 
-/* --- Job Opprtunity --- */
+/* --- minaCssFile --- */
 
 .btn{
     border:1px solid #333;
@@ -1132,6 +1132,21 @@ table tr:nth-child(odd) td {
     border-radius: 5px;
     float:left;
     width:150px;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.btn_role{
+    border:1px solid #333;
+    padding:5px;
+    /*text-decoration:none;*/
+    background-color:#34b6cf;
+    margin-top:40px;
+    margin-bottom:40px;
+    margin-left:10px;
+    border-radius: 5px;
+    float:left;
+    width:100px;
     padding-left: 5em;
     padding-right: 5em;
 }
@@ -1215,7 +1230,7 @@ table tr:nth-child(odd) td {
   padding: 5px;
   /* text-decoration: none; */
   background-color: #ddd;
-  margin-top: 40px;
+  margin-top: 18px;
   margin-bottom: 40px;
   margin-left: 10px;
   border-radius: 5px;
@@ -1224,6 +1239,24 @@ table tr:nth-child(odd) td {
   padding-left: 5em;
   padding-right: 5em;
 }
+
+.role_back{
+  border: 1px solid #333;
+  padding: 5px;
+  /* text-decoration: none; */
+  background-color: #ddd;
+  margin-top: 18px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
+  float: left;
+  width: 50px;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+
+
 
 .btn_cancel{
   border: 1px solid #333;
@@ -1278,7 +1311,7 @@ table tr:nth-child(odd) td {
     border: 1px solid #d8d8d8;
     border-radius: 0.3em;
     padding: 0.4em 0.7em 0.4em ;
-    width: 100%;
+    width: 50%;
 
 }
 
@@ -1287,6 +1320,14 @@ table tr:nth-child(odd) td {
     border-radius: 0.3em;
     padding: 0.4em 0.7em 0.4em ;
     width: 50em;
+
+}
+
+.frm_ddl{
+    border: 1px solid #d8d8d8;
+    border-radius: 0.3em;
+    padding: 0.4em 0.7em 0.4em ;
+    width: 30em;
 
 }
 

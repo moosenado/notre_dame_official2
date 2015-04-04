@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.role>
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h2>Roles</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>User Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.title</td>
+                <td>
+                    @Html.ActionLink("Update", "Update_role", new { id = x.id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete_role", new { id = x.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("Insert Role", "Insert_Roll", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("List Of Users", "allUsers", "CMSUserController", null, new { @class = "buttonstyle" })
+</p>

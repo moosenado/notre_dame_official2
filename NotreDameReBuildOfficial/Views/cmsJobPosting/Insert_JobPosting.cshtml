@@ -12,7 +12,7 @@
 @using (Html.BeginForm())
 {
     <div class="job-cat">
-        <select id="ddl-cat" class="frm_insert">
+        <select id="ddl-cat" class="dropdown-list">
             <option data-id="0">-- Select --</option>
             @foreach (var x in ViewBag.Categories)
             {
@@ -79,10 +79,11 @@
         @Html.HiddenFor(model => model.category_id)
     </div>
     <div>
-        <input id="btnAdd" type="submit" value="Add" class="btn-add" />
+        <input id="btnAdd" type="submit" value="Add" class="buttonstyle" />
+        @Html.ActionLink("Back", "JobPosting", null, new { @class = "buttonstyle" })
     </div>
 }
-<p>@Html.ActionLink("Back", "JobPosting")</p>
+
 <script>
     $(function () {
 

@@ -13,7 +13,7 @@
 {
     @Html.HiddenFor(x => x.id)
     <div class="ddl-update">
-        <select id="ddl-cat">
+        <select id="ddl-cat" class="dropdown-list">
             @foreach (var x in ViewBag.Categories)
             {
                 if (x.id == Model.category_id)
@@ -77,15 +77,13 @@
     @Html.ValidationMessageFor(x => x.description)
 
     <div>
-        <input type="submit" value="Update" class="btn-add" />
+        <input type="submit" value="Update" class="buttonstyle" />
+        @Html.ActionLink("Back", "JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
     </div>
     
     @Html.HiddenFor(x => x.category_id)
 }
-<!--Return an anchor element-->
-<p>
-    @Html.ActionLink("Back", "JobPosting", new { id = Model.id })
-</p>
+
 <script>
     $(function () {
         $("#ddl-cat").change(function () {

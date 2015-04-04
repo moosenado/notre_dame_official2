@@ -8,14 +8,14 @@
 <br />
 <br />
 
-<h2 class="Title">Add New category </h2>
+<h1 class="Title">Add New category </h1>
 
 
 @using (Html.BeginForm())
 {
-    <div class="details_lbl">
+    <h2>
         @Html.LabelFor(model => model.title)
-    </div>
+    </h2>
     <br/>
     <div>
         @Html.TextBoxFor(model => model.title, new { @class = "frm_insert" })
@@ -25,9 +25,10 @@
     </div>
     
     <div>
-        <input id="btnAdd" type="submit" value="Add" class="btn-add" />
+        <input id="btnAdd" type="submit" value="Add" class="buttonstyle" />
+        @Html.ActionLink("Back", "JobCategory", null, new { @class = "buttonstyle" })
     </div>
 }
-<p>@Html.ActionLink("Back", "JobCategory")</p>
+
 
 
