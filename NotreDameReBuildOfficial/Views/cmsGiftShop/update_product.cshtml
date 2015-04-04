@@ -29,7 +29,7 @@
 
     @Html.LabelFor(model => model.description)
     <br />
-    @Html.TextBoxFor(model => model.description)
+    @Html.TextAreaFor(model => model.description, new { @class = "textarea" })
     @Html.ValidationMessageFor(model => model.description, "*")
 
     <br /><br />

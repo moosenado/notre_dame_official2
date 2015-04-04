@@ -37,7 +37,7 @@
     <br />
     @Html.LabelFor(model => model.er_reason)
     <br />
-    @Html.TextBoxFor(model => model.er_reason)
+    @Html.TextAreaFor(model => model.er_reason, new { @class = "textarea" })
     <br />
     @Html.HiddenFor(model => model.arrivaltime)
     <br />

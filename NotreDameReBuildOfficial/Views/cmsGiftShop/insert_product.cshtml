@@ -19,8 +19,9 @@
     <br />
     @Html.LabelFor(model => model.description)
     <br />
-    @Html.TextBoxFor(model => model.description)
+    @Html.TextBoxFor(model => model.description, new { @class = "textarea" })
     <br />
+    @Html.LabelFor(model => model.image)
     <br />
     <input type="file" name="file" id="file" />
     <br />

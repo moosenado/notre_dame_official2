@@ -44,7 +44,7 @@
 
     @Html.LabelFor(model => model.article)
     <br />
-    @Html.TextBoxFor(model => model.article)
+    @Html.TextAreaFor(model => model.article, new { @class = "textarea" })
     @Html.ValidationMessageFor(model => model.article, "*")
 
     <br /><br />

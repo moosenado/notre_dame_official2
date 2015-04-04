@@ -23,8 +23,9 @@
     <br />
     @Html.LabelFor(model => model.article)
     <br />
-    @Html.TextAreaFor(model => model.article)
-    <br />   
+    @Html.TextAreaFor(model => model.article, new { @class = "textarea" })
+    <br />
+    @Html.LabelFor(model => model.image)
     <br />
     <input type="file" name="file" id="file" />
     <br />
