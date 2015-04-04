@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -36,15 +37,18 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
         [HttpPost]
-        public ActionResult createPdf(PDF_Filter pdf)
+        public ActionResult createPdf(HttpPostedFileBase file, PDF_Filter pdf)
         {
 
-            if (ModelState.IsValid)
+            if ((ModelState.IsValid) && (file != null) && (file.ContentLength > 0))
             {
 
-
                 try
-                {
+                {   //uploads file to Content/uploads
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/uploads"), fileName);
+                    file.SaveAs(path);
+
                     pdf.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                     objPdf.insertPdf(pdf);
                     return RedirectToAction("Pdf");

@@ -15,41 +15,41 @@ namespace NotreDameReBuildOfficial.Models
         
     }
     [Bind(Exclude="id")]
-    public class PdfFilterValidation
+    public class PdfFilterValidation 
     {
         [DisplayName("Title*")]
-        [Required(ErrorMessage = "Please enter your first name")]
+        [Required(ErrorMessage = "Please enter the PDF title")]
         [StringLength(100)]
-        public string PdfTitle { get; set; }
-
+        public string PdfTitle { get; set; } //auto properties
+        
         [DisplayName("Url*")]
-        [Required(ErrorMessage = "Please enter your last name")]
-        [StringLength(100)]
+        [Required(ErrorMessage = "Please enter path to file")]
         public string PdfUrl { get; set; }
 
         [DisplayName("Category*")]
-        [Required(ErrorMessage = "Please enter a phone number")]
-        //[RegularExpression("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-][A-Za-z]{2,4}", ErrorMessage = "Please enter a valid email")]
+        [Required(ErrorMessage = "Please enter a category")]
         public string Category { get; set; }
 
         [DisplayName("Image*")]
-        //[Required(ErrorMessage = "Please enter a valid email")]
-        //[RegularExpression("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-][A-Za-z]{2,4}", ErrorMessage = "Please enter a valid email")]
         public string Image { get; set; }
 
         [DisplayName("Description*")]
-        [Required(ErrorMessage = "Please enter your health card number")]
-        [StringLength(12)]
+        [Required(ErrorMessage = "Please enter a description")]
+        [StringLength(200)]
         public string Descr { get; set; }
 
         [DisplayName("Language*")]
-        [Required(ErrorMessage = "Please choose an date")]
+        [Required(ErrorMessage = "Please choose an language")]
         public string Lang { get; set; }
 
         [DisplayName("Department*")]
-        [Required(ErrorMessage = "Please choose a time")]
+        [Required(ErrorMessage = "Please choose a department")]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")] 
         public string Department { get; set; }
+
+        
+        //[Required(ErrorMessage = "Please choose a file")]
+        //public HttpPostedFileBase File { get; set; }
 
     } 
 }

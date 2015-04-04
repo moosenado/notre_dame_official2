@@ -6,4 +6,13 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Pdf</h2>
+@*renders links to methods located on ApptSchedController*@
+<p>@Html.ActionLink("Insert New Record and PDF", "createPdf", "cmsPdfFilter")</p>
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.PdfTitle, "Details", new { id = x.id })</li> 
+    }
+</ul>
+

@@ -1,4 +1,5 @@
-﻿@model NotreDameReBuildOfficial.Models.PDF_Filter
+﻿@using System.Web.Http.OData.Builder
+@model NotreDameReBuildOfficial.Models.PDF_Filter
 
 @{
     ViewBag.Title = "createPdf";
@@ -7,3 +8,66 @@
 }
 
 <h2>createPdf</h2>
+
+@using (Html.BeginForm ("createPdf", "cmsPdfFilter", FormMethod.Post, new { enctype = "multipart/form-data"}))
+{
+    @Html.ValidationSummary()
+
+    @Html.LabelFor(model => model.PdfTitle, new { @class = "label" })
+    @Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })
+    @Html.ValidationMessageFor(model => model.PdfTitle, "*")
+
+    @Html.LabelFor(model => model.PdfUrl, new { @class = "label" })
+    @Html.TextBoxFor(model => model.PdfUrl, new { @class = "textbox" })
+    @Html.ValidationMessageFor(model => model.PdfUrl, "*")
+    
+         @Html.LabelFor(model => model.Category, new {@class = "label"})<br>
+         @Html.DropDownListFor(model => model.Category, new[]
+         {
+             new SelectListItem() {Text = ""},
+             new SelectListItem() {Text = "Medicine"},
+             new SelectListItem() {Text = "Legal"},
+             new SelectListItem() {Text = "Accessibilty"},
+             new SelectListItem() {Text = "Reports"},
+             new SelectListItem() {Text = "Legal"},
+             new SelectListItem() {Text = "Expenses"},
+             new SelectListItem() {Text = "Forms"},
+             new SelectListItem() {Text = "Media"},
+             new SelectListItem() {Text = "Other"},
+         }, new {@class = "dropdown-list"})
+
+    @Html.LabelFor(model => model.Image, new { @class = "label" })
+    @Html.TextBoxFor(model => model.Image, new { @class = "textbox" })
+    @Html.ValidationMessageFor(model => model.Image, "*")
+
+    @Html.LabelFor(model => model.Descr, new { @class = "label" })
+    @Html.TextBoxFor(model => model.Descr, new { @class = "textbox" })
+    @Html.ValidationMessageFor(model => model.Descr, "*")
+
+    @Html.LabelFor(model => model.Lang, new { @class = "label" })<br>
+    @Html.DropDownListFor(model => model.Lang, new[] {
+        new SelectListItem() {Text = ""},
+        new SelectListItem() {Text = "English"},
+        new SelectListItem() {Text = "French"},
+        new SelectListItem() {Text = "Other"},
+        new SelectListItem() {Text = "unknown"},}, new { @class = "dropdown-list" })
+
+    @Html.LabelFor(model => model.Department, new { @class = "label" })<br>
+    @Html.DropDownListFor(model => model.Department, new[] {
+        new SelectListItem() {Text = ""},
+        new SelectListItem() {Text = "n/a"},
+        new SelectListItem() {Text = "Emergency"},
+        new SelectListItem() {Text = "Communication"},
+        new SelectListItem() {Text = "Patient Services"},
+        new SelectListItem() {Text = "HR"},
+        new SelectListItem() {Text = "Finance"},
+        new SelectListItem() {Text = "Privacy"},
+        new SelectListItem() {Text = "Accessibilty"},
+        new SelectListItem() {Text = "Other"},}, new { @class = "dropdown-list" })
+
+    <label for="file" class="label">Upload PDF</label>
+    <input type="file" name="file" class="textbox" id="file"/>
+    <br />
+    <input type="submit" value="Insert" class="buttonstyle"/>
+}
+

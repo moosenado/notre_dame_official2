@@ -199,6 +199,7 @@
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
+    <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -794,17 +795,20 @@
     <Content Include="Views\cmsStaff\deleteStaff.cshtml" />
     <Content Include="Views\cmsStaff\updateStaff.cshtml" />
     <Content Include="Views\ApptSchedPublic\createAppt.cshtml" />
-    <Content Include="Views\cmsPdfFilter\Pdf.cshtml" />
     <Content Include="Views\cmsPdfFilter\Details.cshtml" />
     <Content Include="Views\cmsPdfFilter\createPdf.cshtml" />
     <Content Include="Views\cmsPdfFilter\Update.cshtml" />
     <Content Include="Views\cmsPdfFilter\Delete.cshtml" />
     <Content Include="Views\cmsPdfFilter\NotFound.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Pdf.cshtml" />
+    <Content Include="Views\PdfFilter\Details.cshtml" />
+    <Content Include="Views\PdfFilter\Pdf.cshtml" />
+    <Content Include="Views\PdfFilter\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\uploads\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

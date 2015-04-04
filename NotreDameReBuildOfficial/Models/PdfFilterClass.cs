@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
+
+//using System.Web.Mvc.SelectList;
+
 namespace NotreDameReBuildOfficial.Models
 {
     public class PdfFilterClass
@@ -10,7 +14,7 @@ namespace NotreDameReBuildOfficial.Models
         //create instance of ndLinqClass object
         ndLinqClassDataContext objPdf = new ndLinqClassDataContext();
 
-        public IQueryable<PDF_Filter> getPdfs()
+        public IQueryable<PDF_Filter> getPdfs() 
         {
             var allPdfs = objPdf.PDF_Filters.Select(x => x);
             return allPdfs;
@@ -20,6 +24,31 @@ namespace NotreDameReBuildOfficial.Models
             var allPdf = objPdf.PDF_Filters.SingleOrDefault(x => x.id == _id); //gets all pdfs and stores it in allPdf variable
             return allPdf; //returns the result set and allows it to be displayed
         }
+
+        /////////////////////******Public Methods*******///////////////////////////////////////
+
+        public IQueryable<PDF_Filter> getPdfsByCategory()
+        {
+            //var s = (from p in PDF_Filter
+            //         select p.PDF_Filter).Distinct();
+            //return s;
+
+            var allPdfs = objPdf.PDF_Filters.Select(x => x.Category).Distinct();
+            return allPdfs;
+
+            //var allPdfs = objPdf.PDF_Filters.GroupBy(x => x.Category).Select(x => x.FirstOrDefault());
+            //return allPdfs;
+
+        }
+
+        public IQueryable<PDF_Filter> getPdfsBySelectedCategory(string _Category)
+        {
+            var allPdf = objPdf.PDF_Filters.OrderByDescending(x => x.Category == _Category).Take(10); //
+            return allPdf; //returns the result set and allows it to be displayed
+        }
+
+        //// ***********Public Methods END*********** ///////////////////////////////////////////
+     
 
         public bool insertPdf(PDF_Filter pdf) //created instance of PDF_Filter table 
         {
