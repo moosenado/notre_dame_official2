@@ -188,6 +188,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApptSchedController.cs" />
+    <Compile Include="Controllers\ApptSchedPublicController.cs" />
     <Compile Include="Controllers\CMSHomeController.cs" />
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
@@ -809,6 +810,7 @@
     <Content Include="Views\GiftShop\giftshop.cshtml" />
     <Content Include="Views\cmsGiftShop\products.cshtml" />
     <Content Include="Views\cmsGiftShop\insert_product.cshtml" />
+    <Content Include="Views\ApptSchedPublic\createAppt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
