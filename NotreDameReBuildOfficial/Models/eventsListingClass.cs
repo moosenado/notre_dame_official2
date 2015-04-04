@@ -16,7 +16,7 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var homepageEvents = (from a in objLinq.Events
-                                 where a.start_date > today
+                                 where a.start_date > today && a.display == 1
                                  || a.start_date <= today && a.end_date > today
                                  orderby a.start_date ascending
                                  select a).Take(3);
@@ -52,8 +52,8 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var upcomingEvents = from a in objLinq.Events
-                              where a.start_date > today
-                              || a.start_date <= today && a.end_date > today
+                              where a.start_date > today && a.display == 1
+                              || a.start_date <= today && a.end_date > today && a.display == 1
                               orderby a.start_date ascending
                               select a;
 
@@ -66,7 +66,7 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var archivedEvents = from a in objLinq.Events
-                                 where a.start_date < today && a.end_date < today
+                                 where a.start_date < today && a.end_date < today && a.display == 0 || a.display == 0
                                  orderby a.start_date descending
                                  select a;
 

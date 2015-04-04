@@ -138,7 +138,7 @@ input[type=radio] {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     padding: 5px;
-    height: 1.5em;
+    height: 1.25em;
     margin-bottom: 5px;
 }
 
@@ -288,15 +288,16 @@ table tr:nth-child(odd) td {
     border-radius: 3px;
     text-decoration: none;
     float: right;
-    margin-left: 5px;
+    margin-left: 10px;
     width: 20%;
-    font-size: 1em;
-   
+}
+
+.donate {
+    background: #accf13;
 }
 
 .homepage-btns:hover {
     color: #fff;
-    background: #accf13;
 }
 
 #headersearch{
@@ -308,7 +309,7 @@ table tr:nth-child(odd) td {
     color: #fff;
     background-color: #ccc;
     cursor: pointer;
-    padding: 6px 10px;
+    padding: 5px 10px;
     font-family: 'Roboto', sans-serif;
     -webkit-transition: 0.5s ease-out;
     -moz-transition: 0.5s ease-out;
@@ -317,25 +318,26 @@ table tr:nth-child(odd) td {
     border-radius: 3px;
     text-decoration: none;
     float: right;
-    margin: 0px 5px;
+    margin-left: 5px;
     transition: 0.5s ease-out;
 }
 
 #magnifylogo:hover {
-    background: #accf13;
+    
 }
 
 #erwait{
-    color: #fff;
+    color: #f67000;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding: 10px 25px;
+    padding: 10px;
     text-align: center;
     line-height: 1;
-    background: #f67000;
     border-radius: 3px;
     width: auto;
     float: right;
+    font-size: 1.25em;
+    font-weight: 700;
 }
 
 /* --- PUBLIC MAIN NAVIGATION --- */
