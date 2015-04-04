@@ -383,6 +383,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Products\armenia_secret_2-wallpaper-2880x900.jpg" />
+    <Content Include="Images\Products\IMG_0441.JPG" />
+    <Content Include="Images\Products\IMG_0444.JPG" />
+    <Content Include="Images\Products\wood-floor-photography-hd-wallpaper-1920x1080-7814.jpg" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csprojResolveAssemblyReference.cache" />
     <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.eot" />
@@ -813,10 +817,10 @@
     <Content Include="Views\ApptSchedPublic\createAppt.cshtml" />
     <Content Include="Views\cmsGiftShop\update_product.cshtml" />
     <Content Include="Views\cmsGiftShop\delete_product.cshtml" />
+    <Content Include="Views\GiftShop\product_details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
-    <Folder Include="Images\Products\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
