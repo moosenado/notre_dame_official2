@@ -1,0 +1,18 @@
+﻿@model NotreDameReBuildOfficial.Models.product
+@{
+    ViewBag.Title = "delete_product";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>Delete Product</h2>
+
+@using (Html.BeginForm())
+{
+    <h2>Are you sure you want to delete the product:<strong> @Html.DisplayFor(x => x.name)?</strong></h2>
+
+    <input type="submit" value="Delete" class="buttonstyle" />
+
+    <p>@Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })</p>
+
+}

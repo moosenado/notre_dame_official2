@@ -514,9 +514,8 @@ table tr:nth-child(odd) td {
 
 /*Online service buttons in left 3 columns on homepage*/
 .service-btn {
-    width: 100%;
+    
     color: #fff;
-    margin-top: 3%;
 }
 
 .icon {
@@ -535,7 +534,6 @@ table tr:nth-child(odd) td {
     text-align: center;
     margin-bottom: 5%;
     border-radius: 0px 5px 5px 0px;
-    /*background-color: #fe890a;*/
 }
 
 /* First Button */
@@ -555,6 +553,18 @@ table tr:nth-child(odd) td {
     background-color: #f67000; }
 .btn-text3 { 
     background-color: #fe890a; }
+
+/* Fourth Button */
+.icon4 { 
+    background-color: #d85050; }
+.btn-text4 { 
+    background-color: #e66b6b; }
+
+/* Fifth Button */
+.icon5 { 
+    background-color: #94b113; }
+.btn-text5 { 
+    background-color: #accf13; }
 
 .service-desc {
     font-size: 0.875em;
@@ -707,25 +717,13 @@ table tr:nth-child(odd) td {
     display: none;
 }
 
-a.service-btn.news-btn {
+#news-btn {
     display: none;
 }
 
-a.service-btn.donate-btn {
+#donate-btn {
     display: none;
 }
-
-/* Fourth Button */
-.icon4 { 
-    background-color: #d85050; }
-.btn-text4 { 
-    background-color: #e66b6b; }
-
-/* Fifth Button */
-.icon5 { 
-    background-color: #94b113; }
-.btn-text5 { 
-    background-color: #accf13; }
 
 /* --- MOBILE QUERIES --- */
 
@@ -913,7 +911,6 @@ a.service-btn.donate-btn {
     #erwait {
         color: #f67000;
         margin: 0;
-       
         border-radius: 0px;
         border-top: 1px solid #fff;
     }
@@ -926,9 +923,7 @@ a.service-btn.donate-btn {
         font-size: 1em;
     }
 
-    .service-btn {
-        width: 92%;
-    }
+    
 
     #partners {
         width: 40%;
@@ -963,8 +958,12 @@ a.service-btn.donate-btn {
         display: none;
     }
 
-    .service-btn {
+    #service-btns {
         width: 80%;
+        margin: 30px auto;
+    }
+
+    service-btn {
         font-size: 1.25em;
         margin: 0 auto;
     }
@@ -972,11 +971,11 @@ a.service-btn.donate-btn {
     .btn-text {
     }
 
-    a.service-btn.news-btn {
+    #news-btn {
         display: block;
     }
 
-    a.service-btn.donate-btn {
+    #donate-btn {
         display: block;
     }
 

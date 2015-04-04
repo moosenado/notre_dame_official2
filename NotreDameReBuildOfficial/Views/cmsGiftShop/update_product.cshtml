@@ -1,0 +1,52 @@
+﻿@model NotreDameReBuildOfficial.Models.product
+@{
+    ViewBag.Title = "update_product";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<h2>Edit Product</h2>
+
+@using (Html.BeginForm("update_product", "cmsGiftShop", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+    @ViewBag.Message
+
+    @Html.LabelFor(model => model.name)
+    <br />
+    @Html.TextBoxFor(model => model.name)
+    @Html.ValidationMessageFor(model => model.name, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.price)
+    <br />
+    @Html.TextBoxFor(model => model.price)
+    @Html.ValidationMessageFor(model => model.price, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.description)
+    <br />
+    @Html.TextBoxFor(model => model.description)
+    @Html.ValidationMessageFor(model => model.description, "*")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.image)
+    <br />
+    @Html.HiddenFor(model => model.image)
+    <img src="~/Images/Products/@Html.DisplayFor(x => x.image)" alt="@Model.image" />
+    <br />
+    <input type="file" name="file_update" id="file_update" />
+    <br />
+    <br />
+
+    <input type="submit" value="Finish" class="buttonstyle" />
+    <br />
+    <br />
+    
+}
+
+<p>@Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })</p>
