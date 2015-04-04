@@ -1,0 +1,103 @@
+﻿@model NotreDameReBuildOfficial.Models.User
+@{
+    ViewBag.Title = "Update_User";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h2>Update @Model.first_name @Model.last_name</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.id)
+    <div class="ddl-update">
+        <select id="ddl-cat">
+            @foreach (var x in ViewBag.rolls)
+            {
+                if (x.id == Model.role_id)
+                {
+                    <option data-id="@x.id" selected>@x.title</option>
+                }
+                else
+                {
+                    <option data-id="@x.id">@x.title</option>
+                }
+            }
+        </select>
+
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.first_name)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.first_name, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.first_name)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.last_name)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.last_name, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.last_name)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.email)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.email, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.email)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.DOB)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.DOB, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.DOB)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.phone)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.phone, new { @class = "frm" })
+    </div>
+        @Html.ValidationMessageFor(x => x.phone)
+    
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.city)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.city, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.city)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.postal_code)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.postal_code, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.postal_code)
+
+
+
+    @Html.HiddenFor(x => x.role_id)
+    <div>
+       <input type="submit" value="Update" class="buttonstyle" />
+          @Html.ActionLink("Back", "User_Details", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+    
+          
+}
+
+<script>
+    $(function () {
+        $("#ddl-cat").change(function () {
+            var item = $("#ddl-cat option:selected");
+            $("#role_id").val(item.data("id"));
+        });
+    });
+</script>

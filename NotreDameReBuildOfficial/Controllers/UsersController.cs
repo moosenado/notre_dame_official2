@@ -20,12 +20,7 @@ namespace NotreDameReBuildOfficial.Controllers
         }
         userClass objUser = new userClass(); // creating an instance of UserClass 
 
-        //Get all Users
-        public ActionResult allUsers()
-        {
-            var users = objUser.getAllUsers();
-            return View(users);
-        }
+      
 
         //Get Job by id
         public ActionResult User_Details(int id)

@@ -90,7 +90,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 {
                     // get the new values and passed them to fields by these parameter
                     objUser.commitUpdateByAdmin(id, users.first_name, users.last_name, users.email, users.phone, users.city, users.province, users.postal_code, users.DOB, users.role_id);
-                    return RedirectToAction("role_Details/" + id);// the page will redirect to the users details
+                    return RedirectToAction("allUsers/" + id);// the page will redirect to the users details
                 }
                 catch
                 {

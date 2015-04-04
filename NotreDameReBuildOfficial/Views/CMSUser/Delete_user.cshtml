@@ -1,0 +1,18 @@
+﻿@model NotreDameReBuildOfficial.Models.User
+@{
+    ViewBag.Title = "Delete_User";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+<h2>Are you to Delete @Model.first_name @Model.last_name?</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="buttonstyle" />
+        @Html.ActionLink("back", "allUsers", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+}

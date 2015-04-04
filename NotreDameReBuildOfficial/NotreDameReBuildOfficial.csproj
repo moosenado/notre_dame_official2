@@ -228,6 +228,7 @@
     <Compile Include="Models\roleValidationClass.cs" />
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />
+    <Compile Include="Models\userValidationClass.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -803,6 +804,13 @@
     <Content Include="Views\CMSRole\Insert_Roll.cshtml" />
     <Content Include="Views\CMSRole\Update_role.cshtml" />
     <Content Include="Views\CMSRole\Delete_role.cshtml" />
+    <Content Include="Views\CMSUser\allUsers.cshtml" />
+    <Content Include="Views\Users\Insert_User.cshtml" />
+    <Content Include="Views\Users\Update_Users.cshtml" />
+    <Content Include="Views\CMSUser\User_Details.cshtml" />
+    <Content Include="Views\CMSUser\Insert_User.cshtml" />
+    <Content Include="Views\CMSUser\Update_Users.cshtml" />
+    <Content Include="Views\CMSUser\Delete_user.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\applicant\resume\" />

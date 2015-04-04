@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.userClass>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>List Of Users</h2>
+<br /><br />
+<div>
+    @Html.ActionLink("Add User", "Insert_User", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("User Roles", "Role", "CMSRole", null, new { @class = "buttonstyle" })
+</div>
+<br /><br />
+<div @*style="height:50px;"*@>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(x.first_name+ " " + x.last_name, "User_Details", new { id = x.id })</td>
+                    <td>@x.roleTitle</td>
+                    <td>@x.email</td>
+                    <td>@x.phone</td>
+                    <td>@x.city</td>
+                    <td>@Html.ActionLink("Update", "Update_Users", new { id = x.id })</td>
+                    <td>@Html.ActionLink("Delete", "Delete_user", new { id = x.id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

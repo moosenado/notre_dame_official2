@@ -13,7 +13,7 @@
 {
     @Html.HiddenFor(x => x.id)
     <div class="ddl-update">
-        <select id="ddl-cat" class="dropdown-list">
+        <select id="ddl-cat">
             @foreach (var x in ViewBag.Categories)
             {
                 if (x.id == Model.category_id)
@@ -78,7 +78,7 @@
 
     <div>
         <input type="submit" value="Update" class="buttonstyle" />
-        @Html.ActionLink("Back", "JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
+        @Html.ActionLink("Back", "JobPosting_Details", new { id = Model.id }, new { @class = "buttonstyle" })
     </div>
     
     @Html.HiddenFor(x => x.category_id)
