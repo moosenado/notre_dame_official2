@@ -5,11 +5,14 @@
 {
     <div class="hmpg-event">
   
-        @e.start_date.ToString("ddd MMM d, yyyy")
+        <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
 
         <div class="clear"></div>
 
-        <a href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
+        @e.start_date.ToString("MMMM d")  @@ @e.start_time 
+        @if (e.end_time != null){ 
+            @:- @e.end_time
+        }
 
     </div>
 
@@ -17,9 +20,7 @@
 
 <div class="clear"></div>
 
-<div class="mobile-btn">
-    @Html.ActionLink("See All Events", "SeeAllEvents")
-</div>|
-<div class="mobile-btn">
-    @Html.ActionLink("Add Your Event", "AddEvent")
-</div>
+@if (@ViewBag.Total > 3)
+{
+    <a class="link" href='@Url.Action("AllEvents", "Home")'>See All Events</a> 
+}

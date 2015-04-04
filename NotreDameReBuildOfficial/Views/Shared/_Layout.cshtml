@@ -37,25 +37,33 @@
             @* ----- end -----*@
 
             <div id="searchfield">
+
+                @* LOGIN AND DONATE BUTTONS *@
                 <form id="headerbuttons">
-                    <input type="button" name="login" value="Login" class="homepage-btns"/>
                     <a href='@Url.Action("Donate", "Donation")'>
                         <input type='button' value="Donate" class="homepage-btns" />
                     </a>
+                    <input type="button" name="login" value="Login" class="homepage-btns" />
                 </form>
-                <div id="magnifylogo"><i class="fa fa-search"></i></div>
+
+                @* SEARCH BAR *@
                 <form id="headersearch">
-                    <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
+                    <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="100" size="15" value="search">
+                    <div id="magnifylogo"><i class="fa fa-search"></i></div>
                 </form>
-                <div id="erwait">ER Wait: @if (ViewBag.erTime != null)
-                {
-                    @ViewBag.erTime
-                }
-                else
-                {
-                    <p>Wait Time Updating</p>
-                }
+
+                @* ER WAIT TIME *@
+                <div id="erwait">
+                    ER Wait: @if (ViewBag.erTime != null)
+                    {
+                        @ViewBag.erTime
+                    }
+                    else
+                    {
+                    <span>Updating...</span>
+                    }
                 </div>
+
             </div>
 
         </header>
@@ -180,8 +188,8 @@
             <div id="footer_links">
 
                 <ul>
-                    <li><a href="#">Accessibility</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#" class="link">Accessibility</a></li>
+                    <li><a href="#" class="link">Privacy Policy</a></li>
                 </ul>
 
                 <ul id="footer_social">

@@ -21,6 +21,7 @@ namespace NotreDameReBuildOfficial.Models
         public string name { get; set; }
 
         [DisplayName("Start Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dddd MMMM d, yyyy}")]
         [Required(ErrorMessage = "Select start date")]
         public DateTime start_date { get; set; }
 
@@ -29,6 +30,7 @@ namespace NotreDameReBuildOfficial.Models
         public string start_time { get; set; }
 
         [DisplayName("End Date (if applicable)")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dddd MMMM d, yyyy}")]
         public DateTime end_date { get; set; }
 
         [DisplayName("End Time (if applicable, e.g. 4:00 pm)")]
@@ -45,7 +47,7 @@ namespace NotreDameReBuildOfficial.Models
         public string address { get; set; }
 
         [DisplayName("Cost (e.g. 5.00)")]
-        [RegularExpression(@"^\$?(\d{1,3}(\,\d{3})*|(\d+))(\.\d{0,2})?$", ErrorMessage = "Invalid email address")]
+        [RegularExpression(@"^\$?(\d{1,3}(\,\d{3})*|(\d+))(\.\d{0,2})?$", ErrorMessage = "Invalid cost")]
         public string cost { get; set; }
 
         [DisplayName("Contact Name")]
@@ -57,7 +59,7 @@ namespace NotreDameReBuildOfficial.Models
         [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Invalid email address")]
         public string contact_email { get; set; }
 
-        [DisplayName("Contact Phone (e.g. 212-666-1234)")]
+        [DisplayName("Contact Phone (e.g. 2126661234)")]
         [RegularExpression(@"^([0-9]*)$", ErrorMessage = "Invalid phone number")]
         public string contact_phone { get; set; }
 

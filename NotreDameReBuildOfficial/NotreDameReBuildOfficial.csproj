@@ -798,11 +798,11 @@
     <Content Include="Views\cmsEventsListing\Update.cshtml" />
     <Content Include="Views\cmsEventsListing\Delete.cshtml" />
     <Content Include="Views\cmsEventsListing\Details.cshtml" />
-    <Content Include="Views\cmsEventsListing\currentEventsPartial.cshtml" />
-    <Content Include="Views\cmsEventsListing\pastEventsPartial.cshtml" />
     <Content Include="Views\Home\AllEvents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
     <Content Include="Views\Home\EventsPartial.cshtml" />
+    <Content Include="Views\cmsEventsListing\_PastEventsPartial.cshtml" />
+    <Content Include="Views\cmsEventsListing\_UpcomingEventsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

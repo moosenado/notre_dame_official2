@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
 
-<table>
+<table class="tbl-width">
     <thead>
         <tr>
             <th>Event Name</th>
@@ -15,7 +15,7 @@
     {
         <tr>
             <td>@e.name</td>
-            <td>@e.start_date.ToString("ddd MMM d, yyyy")</td>
+            <td>@e.start_date.ToString("MMMM d")</td>
             <td>@Html.ActionLink("View", "Details", new { event_id = e.event_id })</td>
             <td>@Html.ActionLink("Edit", "Update", new { event_id = e.event_id })</td>
             <td>@Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })</td>

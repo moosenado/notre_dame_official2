@@ -6,8 +6,15 @@
     <div class="event">
 
         @e.name
+
         <div class="clear"></div>
-        @e.start_date.ToString("ddd MMM d, yyyy")
+
+        @e.start_date.ToString("MMMM d")  @@ @e.start_time
+        @if (e.end_time != null)
+        {
+            @:- @e.end_time
+        }
+
         <div class="clear"></div>
         <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id, @class = "viewIcon" })'>
             <span><i class="fa fa-eye"></i>View</span>
