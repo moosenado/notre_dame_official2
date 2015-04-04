@@ -81,7 +81,12 @@
             <i class="fa fa-map-marker"></i>
         </div>
 
+        <a href='@Url.Action("Donate", "Donation")'>
+            <input type='button' value="Donate" class="homepage-btns donate" />
+        </a>
+
         <div id="mobilesearch">
+            @*<div id="magnifylogo"><i class="fa fa-search"></i></div>*@
             <input name="q" class="textbox" onfocus="if (this.value=='search') this.value = ''" type="text" maxlength="80" size="28" value="search">
         </div>
 
@@ -135,6 +140,26 @@
             </li>
         </ul>
     </nav>
+
+
+@* ----- ER wait time for tablets and phones -----*@
+
+    <div id="mobile-er">
+
+        @* ER WAIT TIME *@
+        <div id="erwait">
+            ER Wait: @if (ViewBag.erTime != null)
+            {
+                @ViewBag.erTime
+            }
+            else
+            {
+                <span>Updating...</span>
+            }
+        </div>
+
+    </div>
+
 
 @* ----- BODY -----*@
 
