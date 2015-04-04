@@ -801,11 +801,11 @@
     <Content Include="Views\cmsEventsListing\Update.cshtml" />
     <Content Include="Views\cmsEventsListing\Delete.cshtml" />
     <Content Include="Views\cmsEventsListing\Details.cshtml" />
-    <Content Include="Views\cmsEventsListing\currentEventsPartial.cshtml" />
-    <Content Include="Views\cmsEventsListing\pastEventsPartial.cshtml" />
     <Content Include="Views\Home\AllEvents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
     <Content Include="Views\Home\EventsPartial.cshtml" />
+    <Content Include="Views\cmsEventsListing\_PastEventsPartial.cshtml" />
+    <Content Include="Views\cmsEventsListing\_UpcomingEventsPartial.cshtml" />
     <Content Include="Views\GiftShop\giftshop.cshtml" />
     <Content Include="Views\cmsGiftShop\products.cshtml" />
     <Content Include="Views\cmsGiftShop\insert_product.cshtml" />

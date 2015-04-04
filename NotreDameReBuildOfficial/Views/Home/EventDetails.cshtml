@@ -7,7 +7,7 @@
 <h1>@Html.DisplayFor(model => model.name)</h1>
 
 @* EVENT NAME *@
-@Html.DisplayFor(model => model.name)</td>
+@Html.DisplayFor(model => model.name)
 
 <div class="clear"></div>
    
@@ -16,11 +16,6 @@
 
 <div class="clear"></div>
    
-@* START TIME *@
-@Html.DisplayFor(model => model.start_time)
-    
-<div class="clear"></div>
-
 @* Display if end date is not the same as the start date *@
 @if (@Model.end_date != @Model.start_date)
 {
@@ -28,6 +23,12 @@
 }
     
 <div class="clear"></div>
+
+@* START TIME *@
+@Html.DisplayFor(model => model.start_time)
+
+<div class="clear"></div>
+
 
 @* Display if there is an end time *@
 @if (@Model.end_time != null)

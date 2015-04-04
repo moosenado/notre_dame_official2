@@ -19,11 +19,6 @@
         <td>@Html.LabelFor(model => model.start_date)</td>
         <td>@Html.DisplayFor(model => model.start_date)</td>
     </tr>
-    <tr>
-        @* START TIME *@
-        <td>@Html.LabelFor(model => model.start_time)</td>
-        <td>@Html.DisplayFor(model => model.start_time)</td>
-    </tr>
 
     @* Display if end date is not the same as the start date *@
     @if (@Model.end_date != @Model.start_date)
@@ -33,6 +28,12 @@
         <td>@Html.DisplayFor(model => model.end_date)</td>
     </tr>
     }
+    
+    <tr>
+        @* START TIME *@
+        <td>@Html.LabelFor(model => model.start_time)</td>
+        <td>@Html.DisplayFor(model => model.start_time)</td>
+    </tr>
 
     @* Display if there is an end time *@
     @if (@Model.end_time != null)

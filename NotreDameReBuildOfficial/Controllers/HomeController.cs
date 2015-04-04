@@ -63,25 +63,23 @@ namespace notre_dame_rebuild.Controllers
 
         public ActionResult EventsPartial(Event events)
         {
-            //Current Events
-            var current = objEvents.getEventsByStatus(1);
+            //Passing count of total upcoming events through the ViewBag so it's accessible in the view
+            ViewBag.Total = objEvents.getTotalEvents();
 
-            //if the event date has passed, do not display/send to archive
-            if (events.start_date > DateTime.Now)
-            {
-                events.display = 0;
-            }
+            //Upcoming Events
+            var upcoming = objEvents.getHomepageEvents();
 
-            return PartialView(current);
+            return PartialView(upcoming);
+
         }
 
         public ActionResult AllEvents()
         {
 
-            //Current Events
-            var current = objEvents.getEventsByStatus(1);
+            //Upcoming Events
+            var upcoming = objEvents.getUpcomingEvents();
 
-            return View(current);
+            return View(upcoming);
         }
 
         //When admin wants to see the event details

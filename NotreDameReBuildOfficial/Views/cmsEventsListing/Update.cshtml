@@ -4,8 +4,15 @@
     ViewBag.Title = "Update Event";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryui");
 
 }
+
+<script>
+    $(function () {
+        $(".datefield").datepicker();
+    });
+</script>
 
 <h1>Update @Html.DisplayFor(x => x.name)</h1>
 

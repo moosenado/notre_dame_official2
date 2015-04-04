@@ -19,24 +19,20 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
-        public ActionResult currentEventsPartial()
+        public ActionResult _UpcomingEventsPartial()
         {
-
-            var upcoming = objEvents.getActiveEvents();
+            //Upcoming Events
+            var upcoming = objEvents.getUpcomingEvents();
 
             return PartialView(upcoming);
 
-            //Current Events
-            //var current = objEvents.getEventsByStatus(1);
-
-            //return PartialView(current);
         }
 
-        public ActionResult pastEventsPartial()
+        public ActionResult _PastEventsPartial()
         {
 
-            //Current Events
-            var past = objEvents.getEventsByStatus(0);
+            //Archived Events
+            var past = objEvents.getArchivedEvents();
 
             return PartialView(past);
         }

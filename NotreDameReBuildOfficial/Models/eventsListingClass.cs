@@ -11,6 +11,32 @@ namespace NotreDameReBuildOfficial.Models
         //Creating an object of the linq database class
         ndLinqClassDataContext objLinq = new ndLinqClassDataContext();
 
+        // --- GET FIRST 4 UPCOMING EVENTS --- //
+        public IQueryable<Event> getHomepageEvents()
+        {
+            var today = DateTime.Now;
+            var homepageEvents = (from a in objLinq.Events
+                                 where a.start_date > today
+                                 || a.start_date <= today && a.end_date > today
+                                 orderby a.start_date ascending
+                                 select a).Take(3);
+
+            return homepageEvents;
+        }
+
+        // --- GET TOTAL UPCOMING EVENTS --- //
+        public int getTotalEvents()
+        {
+            var today = DateTime.Now;
+            var totalEvents = (from a in objLinq.Events
+                               where a.start_date > today
+                               || a.start_date <= today && a.end_date > today
+                               orderby a.start_date ascending
+                               select a).Count();
+
+            return totalEvents;
+        }
+
         // --- GET EVENT BY ID --- //
         public Event getEventByID(int _event_id)
         {
@@ -19,31 +45,32 @@ namespace NotreDameReBuildOfficial.Models
             return getAllEvents;
         }
 
-        // --- GET ACTIVE EVENTS  --- //
-        public IQueryable<Event> getActiveEvents()
+        // --- GET UPCOMING EVENTS --- //
+        // select events with future start dates
+        // select events with start date from the past or that are today AND has an end date in the future
+        public IQueryable<Event> getUpcomingEvents()
         {
             var today = DateTime.Now;
-            var eventsByDate = from a in objLinq.Events
-                               where a.start_date > today
-                               orderby a.start_date ascending
-                               select a;
+            var upcomingEvents = from a in objLinq.Events
+                              where a.start_date > today
+                              || a.start_date <= today && a.end_date > today
+                              orderby a.start_date ascending
+                              select a;
 
-            return eventsByDate;
+            return upcomingEvents;
         }
 
-        // --- GET EVENTS BY STATUS --- //
-        public IQueryable<Event> getEventsByStatus(int status)
+        // --- GET ARCHIVED EVENTS --- //
+        // select events with a start date and end date less than today
+        public IQueryable<Event> getArchivedEvents()
         {
-     
-            var eventsByStatus = from a in objLinq.Events
-                                 where a.display == status
-                                 orderby a.start_date ascending
-                                 select a; 
-            
+            var today = DateTime.Now;
+            var archivedEvents = from a in objLinq.Events
+                                 where a.start_date < today && a.end_date < today
+                                 orderby a.start_date descending
+                                 select a;
 
-            //objLinq.Events.Where(x => x.display == 1).OrderBy(x => x.start_date);
-
-            return eventsByStatus;
+            return archivedEvents;
         }
 
         // --- INSERT LOGIC --- //
