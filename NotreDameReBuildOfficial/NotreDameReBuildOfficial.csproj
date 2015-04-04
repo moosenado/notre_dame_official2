@@ -809,9 +809,12 @@
     <Content Include="Views\GiftShop\giftshop.cshtml" />
     <Content Include="Views\cmsGiftShop\products.cshtml" />
     <Content Include="Views\cmsGiftShop\insert_product.cshtml" />
+    <Content Include="Views\cmsGiftShop\update_product.cshtml" />
+    <Content Include="Views\cmsGiftShop\delete_product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
+    <Folder Include="Images\Products\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
