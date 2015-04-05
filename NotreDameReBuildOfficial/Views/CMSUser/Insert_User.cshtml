@@ -1,0 +1,109 @@
+﻿@model NotreDameReBuildOfficial.Models.User
+@{
+    ViewBag.Title = "Insert_User";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h2 class="Title">Add New User </h2>
+
+@using (Html.BeginForm())
+{
+    <div class="user_role">
+        <select id="ddl-cat" class="dropdown-list">
+            <option data-id="0">-- Select --</option>
+            @foreach (var x in ViewBag.Rolls)
+            {
+                <option data-id="@x.id">@x.title</option>
+            }
+        </select>
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.first_name)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.first_name, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.first_name)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.last_name)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.last_name, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.last_name)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.email)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.email, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.email)
+
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.DOB)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.DOB, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.DOB)
+    <div>
+
+        <div class="details_lbl">
+            @Html.LabelFor(x => x.phone)
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.phone, new { @class = "frm" })
+        </div>
+        @Html.ValidationMessageFor(x => x.phone)
+
+        <div class="details_lbl">
+            @Html.LabelFor(x => x.city)
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.city, new { @class = "frm" })
+        </div>
+        @Html.ValidationMessageFor(x => x.city)
+
+        <div class="details_lbl">
+            @Html.LabelFor(x => x.province)
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.province, new { @class = "frm" })
+        </div>
+        @Html.ValidationMessageFor(x => x.province)
+
+
+        <input type="submit" value="Add" class="buttonstyle" />
+        @Html.ActionLink("Back", "allUsers", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+
+    <div class="hidden">
+        @Html.HiddenFor(x => x.role_id)
+    </div>
+    
+}
+
+<script>
+    $(function () {
+
+        $("#ddl-cat").change(function () {
+            var item = $("#ddl-cat option:selected");
+            $("#category_id").val(item.data("id"));
+        });
+
+        $("#btnAdd").click(function (e) {
+            var catid = $("#category_id").val();
+            if (catid == null || catid < 1) {
+                $("#ddl-cat").addClass("input-validation-error");
+                return;
+            }
+
+        });
+    });
+
+   CKEDITOR.replace('description');
+</script>

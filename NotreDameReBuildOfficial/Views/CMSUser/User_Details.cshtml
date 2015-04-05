@@ -1,12 +1,12 @@
-﻿@model NotreDameReBuildOfficial.Models.Applicant
+﻿@model NotreDameReBuildOfficial.Models.userClass
 @{
-    ViewBag.Title = "Applicant_Details";
+    ViewBag.Title = "User_Details";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <div>
-    <h2 class="details">Manage Applicants</h2>
+    <h2 class="details">Manage Users</h2>
     <div class="details_Op">
         @Html.LabelFor(model => model.first_name, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.first_name)
@@ -16,8 +16,16 @@
         @Html.DisplayFor(x => x.last_name)
     </div>
     <div class="details_Op">
+        @Html.LabelFor(model => model.roleTitle, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.roleTitle)
+    </div>
+    <div class="details_Op">
         @Html.LabelFor(model => model.email, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.email)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.DOB, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.DOB)
     </div>
     <div class="details_Op">
         @Html.LabelFor(model => model.phone, new { @class = "lbl" }):
@@ -35,23 +43,17 @@
     <div class="details_Op">
         @Html.LabelFor(model => model.postal_code, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.postal_code)
-    </div>
 
-    <div class="details_Op">
-        @Html.LabelFor(model => model.resmue, new { @class = "lbl" }):
-        @if(Model.resmue != null && Model.resmue.Trim() != "")
-        { 
-            <a href="~/Content/applicant/resume/@Model.resmue">Download Resume</a>
-        }
     </div>
-
+    
 </div>
-<br />
-<br />
-<br />
+
+<br/><br/><br/>
+
 <p>
-    @Html.ActionLink("Back","Applicants") |
-    @Html.ActionLink("Delete","Delete_Applicant", new { id = Model.id })
+    @Html.ActionLink("Back", "allUsers", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("Update", "Update_Users", new { id = Model.id }, new { @class = "buttonstyle" })
+    @Html.ActionLink("Delete", "Delete_user", new { id = Model.id }, new { @class = "buttonstyle" })
 </p>
 
 

@@ -25,11 +25,14 @@ namespace NotreDameReBuildOfficial.Models
                 .Take(1)
                 .SingleOrDefault();
 
+            //res = db.polls.SingleOrDefault(x => x.isActive == true);
+
             res.options = new List<Poll_option>();
             res.options = db.Poll_options
                 .Where(x => x.poll_id == res.id)
                 .ToList();
 
+            
             return res;
         }
     }

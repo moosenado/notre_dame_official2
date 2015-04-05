@@ -52,21 +52,41 @@ namespace notre_dame_rebuild.Controllers
             return View(all_articles);
         }
 
-        [WebMethod]
-        public static string InsertVote(poll_vote param)
+        public JsonResult InsertVote(int pollid, int optionid)
         {
             Vote vote = new Vote();
-            vote.poll_id = param.pollid;
-            vote.poll_options_id = param.optionid;
+            vote.poll_id = pollid;
+            vote.poll_options_id = optionid;
+            vote.IP_address = "0.0.0.0";
             vote.Insert(vote);
-            return "success";
+
+            List<PollOptionResult> Options = vote.GetPollOptionResult(pollid);
+
+            List<pieChartValue> res = new List<pieChartValue>();
+
+            int i = 0;
+            foreach(PollOptionResult option in Options)
+            {
+                pieChartValue obj = new pieChartValue();
+                obj.value = option.OptionCount;
+                obj.label = option.Option.options;
+                obj.color = pieChartValue.colors[i];
+                obj.highlight = pieChartValue.highlights[i];
+                res.Add(obj);
+                i++;
+            }
+            return Json(new { result = res });
         }
     }
 
-    [Serializable]
-    public class poll_vote
+    public class pieChartValue
     {
-        public int pollid { get; set; }
-        public int optionid { get; set; }
+        public static string[] colors = { "#F7464A", "#46BFBD", "#FDB45C" };
+        public static string[] highlights = { "#FF5A5E", "#5AD3D1", "#FFC870" };
+
+        public int value { get; set; }
+        public string color { get; set; }
+        public string highlight { get; set; }
+        public string label { get; set; }
     }
 }

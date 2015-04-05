@@ -425,6 +425,23 @@
       <LastGenOutput>ndLinqClass.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Scripts\Chart\Chart.js" />
+    <Content Include="Scripts\Chart\Chart.min.js" />
+    <Content Include="Scripts\Chart\gulpfile.js" />
+    <Content Include="Scripts\Chart\samples\bar.html" />
+    <Content Include="Scripts\Chart\samples\doughnut.html" />
+    <Content Include="Scripts\Chart\samples\line-customTooltips.html" />
+    <Content Include="Scripts\Chart\samples\line.html" />
+    <Content Include="Scripts\Chart\samples\pie-customTooltips.html" />
+    <Content Include="Scripts\Chart\samples\pie.html" />
+    <Content Include="Scripts\Chart\samples\polar-area.html" />
+    <Content Include="Scripts\Chart\samples\radar.html" />
+    <Content Include="Scripts\Chart\src\Chart.Bar.js" />
+    <Content Include="Scripts\Chart\src\Chart.Core.js" />
+    <Content Include="Scripts\Chart\src\Chart.Doughnut.js" />
+    <Content Include="Scripts\Chart\src\Chart.Line.js" />
+    <Content Include="Scripts\Chart\src\Chart.PolarArea.js" />
+    <Content Include="Scripts\Chart\src\Chart.Radar.js" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
@@ -436,6 +453,21 @@
     <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
     <Content Include="Scripts\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
+    <Content Include="Scripts\Chart\.gitignore" />
+    <Content Include="Scripts\Chart\.travis.yml" />
+    <Content Include="Scripts\Chart\bower.json" />
+    <Content Include="Scripts\Chart\CONTRIBUTING.md" />
+    <Content Include="Scripts\Chart\docs\00-Getting-Started.md" />
+    <Content Include="Scripts\Chart\docs\01-Line-Chart.md" />
+    <Content Include="Scripts\Chart\docs\02-Bar-Chart.md" />
+    <Content Include="Scripts\Chart\docs\03-Radar-Chart.md" />
+    <Content Include="Scripts\Chart\docs\04-Polar-Area-Chart.md" />
+    <Content Include="Scripts\Chart\docs\05-Pie-Doughnut-Chart.md" />
+    <Content Include="Scripts\Chart\docs\06-Advanced.md" />
+    <Content Include="Scripts\Chart\docs\07-Notes.md" />
+    <Content Include="Scripts\Chart\LICENSE.md" />
+    <Content Include="Scripts\Chart\package.json" />
+    <Content Include="Scripts\Chart\README.md" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.dll" />

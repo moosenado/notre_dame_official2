@@ -50,23 +50,24 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
         //Delet Applicant from database
         [HttpPost] // restirict an action method by only post requests
-        public ActionResult Delete_Applicant(int id, string Resume, JobApplicants App)
+        public ActionResult Delete_Applicant(int id, Applicant App)
         {
-
+            Applicant obj = new JobApplicants().getApplicantByID(id);
+            if (obj == null)
+                return View();
+            
             try
             {
-                App.resmue = Resume;
-
-                var resumeName = Resume;
-                
-                string fullPath1 = Request.MapPath("~/Content/applicant/resume/"
-                + resumeName);
-
-
-                if (System.IO.File.Exists(fullPath1))
+                if (obj.resmue != null && obj.resmue.Trim() != "")
                 {
-                    System.IO.File.Delete(fullPath1);
-                    //Session["DeleteSuccess"] = "Yes";
+
+                    string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume"), obj.resmue);
+
+                    if (System.IO.File.Exists(fullPath1))
+                    {
+                        System.IO.File.Delete(fullPath1);
+                        //Session["DeleteSuccess"] = "Yes";
+                    }
                 }
 
                 AppObj.commitDelete(id);

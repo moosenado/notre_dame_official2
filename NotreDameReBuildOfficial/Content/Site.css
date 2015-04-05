@@ -1120,6 +1120,13 @@ table tr:nth-child(odd) td {
 /********************************/
 
 /* --- minaCssFile --- */
+#poll-container{
+   
+}
+
+#chart-container {
+    
+}
 
 .btn{
     border:1px solid #333;
@@ -1132,6 +1139,7 @@ table tr:nth-child(odd) td {
     border-radius: 5px;
     float:left;
     width:150px;
+
     padding-left: 5em;
     padding-right: 5em;
 }

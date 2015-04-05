@@ -59,36 +59,65 @@
 
     <h2>Weekly Poll</h2>
 
-    <div>
+    <div id="poll-container">
         <span>@ViewBag.Poll.title</span>
         <br />
         <span>@ViewBag.Poll.question_text</span>
         <br />
-        <input type="hidden" id="pollid" value="@ViewBag.Poll.id" />
-        @foreach (var option in ViewBag.Poll.options)
-        {
-            <input type="radio" class="poll-option" name="polloption" value="@option.id">@option.options
-            <br />
-        }
-        <button type="button" id="btnvote">Vote</button>
+        <div id="options-container">
+            <input type="hidden" id="pollid" value="@ViewBag.Poll.id" />
+            @foreach (var option in ViewBag.Poll.options)
+            {
+                <input type="radio" class="poll-option" name="polloption" value="@option.id">@option.options
+                <br />
+            }
+            <button type="button" id="btnvote">Vote</button>
+        </div>
+    </div>
+    <div id="chart-container">
+        <canvas id="myChart" width="200" height="200"></canvas>
     </div>
 
 </div>
 <script>
     $(function () {
         $("#btnvote").click(function () {
+            $(this).attr('disabled', 'disabled');
             var pollid = $("#pollid").val();
             var optionid = $(".poll-option:checked").val();
-            if (pollid != null && optionid != null){
-                $.ajax({
-                    method: "POST",
-                    url: "/Home/Index/InsertVote",
-                    data: { pollid: pollid, optionid: optionid },
-                    success: function (res) {
 
+            var obj = new Object();
+            var murl = '@Url.Action("InsertVote")';
+            obj.pollid = pollid;
+            obj.optionid = optionid;
+
+            if (pollid != null && optionid != null) {
+                $.ajax({
+                    type: 'POST',
+                    url: murl,
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function (data) {
+                        //alert(data.result);
+                        showChart(data.result);
+                        $("#options-container").hide();
+                        //$("#chart-container").show();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert(errorThrown);
                     }
-                })
-            }
+                });
+            } 
         });
     });
+
+    function showChart(data) {
+        //Get context with jQuery - using jQuery's .get() method.
+        var ctx = $("#myChart").get(0).getContext("2d");
+
+        var options = { animateRotate: true, segmentShowStroke: true, segmentStrokeColor: "#fff" };
+        //This will get the first returned node in the jQuery collection.
+        var myNewChart = new Chart(ctx).Pie(data, options);
+    }
 </script>

@@ -53,7 +53,8 @@ namespace NotreDameReBuildOfficial.Models
                                city = ap.city,
                                province = ap.province,
                                postal_code = ap.postal_code,
-                               jobTitle = jp.title
+                               jobTitle = jp.title,
+                               resmue = ap.resmue
                            }).SingleOrDefault();
 
             //return IQueryable Applicants for data bound control to bind
