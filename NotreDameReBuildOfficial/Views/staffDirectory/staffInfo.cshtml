@@ -1,0 +1,16 @@
+﻿@model NotreDameReBuildOfficial.Models.staff_info
+@{
+    ViewBag.Title = "staffInfo";
+}
+
+<h1>staff Information</h1>
+
+@Html.DisplayFor(x => x.staff_id)<br />
+@Html.DisplayFor(x => x.firstname)<br />
+@Html.DisplayFor(x => x.lastname)<br />
+@Html.DisplayFor(x => x.department)<br />
+@Html.DisplayFor(x => x.role)<br />
+@Html.DisplayFor(x => x.city)<br />
+@Html.DisplayFor(x => x.province)<br />
+@Html.DisplayFor(x => x.zip_code)<br />
+@Html.ActionLink("Back", "staffList")

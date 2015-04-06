@@ -197,6 +197,7 @@
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
+    <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -789,6 +790,8 @@
     <Content Include="Views\cmsStaff\staffInfo.cshtml" />
     <Content Include="Views\cmsStaff\deleteStaff.cshtml" />
     <Content Include="Views\cmsStaff\updateStaff.cshtml" />
+    <Content Include="Views\staffDirectory\staffList.cshtml" />
+    <Content Include="Views\staffDirectory\staffInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
