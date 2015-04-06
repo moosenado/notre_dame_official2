@@ -196,11 +196,13 @@
     <Compile Include="Controllers\CMS\cmsGiftShopController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\cmsPdfFilterController.cs" />
     <Compile Include="Controllers\CMS\cmsStaffController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
+    <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,6 +227,8 @@
     </Compile>
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
+    <Compile Include="Models\PdfFilterClass.cs" />
+    <Compile Include="Models\PdfFilterValidation.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -811,8 +815,18 @@
     <Content Include="Views\cmsGiftShop\products.cshtml" />
     <Content Include="Views\cmsGiftShop\insert_product.cshtml" />
     <Content Include="Views\ApptSchedPublic\createAppt.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Pdf.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Details.cshtml" />
+    <Content Include="Views\cmsPdfFilter\createPdf.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Update.cshtml" />
+    <Content Include="Views\cmsPdfFilter\Delete.cshtml" />
+    <Content Include="Views\cmsPdfFilter\NotFound.cshtml" />
+    <Content Include="Views\PdfFilter\Pdf.cshtml" />
+    <Content Include="Views\PdfFilter\Details.cshtml" />
+    <Content Include="Views\PdfFilter\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\uploads\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

@@ -1,0 +1,25 @@
+﻿@using WebGrease.Css
+@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
+
+@{
+    ViewBag.Title = "Pdf";
+}
+
+<h2>Browse Pdf's</h2>
+
+<p>
+
+@*<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
+        <li>@Html.ActionLink(x.Descr, x.PdfUrl, "Details", new {Category = x.Category})</li>
+    }
+</ul>*@
+    @foreach (var x in Model)
+    {
+        <table>
+            <tr>
+            <td>@Html.ActionLink(x.Category, "Details", new { Category = x.Category })</td>
+        </table>
+    }

@@ -48,6 +48,7 @@ namespace NotreDameReBuildOfficial.Models
                 apptUpd.Tstamp = _Tstamp;
                 apptUpd.Speciality = _Speciality;
                 apptUpd.Phone = _Phone;
+                objApptSched.SubmitChanges(); //saves changes to db
                 return true;
             }
         }
