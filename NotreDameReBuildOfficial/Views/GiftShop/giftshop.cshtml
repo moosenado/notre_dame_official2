@@ -3,3 +3,10 @@
 }
 
 <h2>Gift Shop</h2>
+
+@model IEnumerable<NotreDameReBuildOfficial.Models.product>
+@foreach (var product in Model)
+{
+        <a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@product.name" /></a>
+        <a href="@Url.Action("product_details", new { id = product.Id })"><span class="news_image_header">@product.name</span></a>
+}

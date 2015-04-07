@@ -1,5 +1,34 @@
-﻿@{
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.product>
+@{
     ViewBag.Title = "products";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    <script src="~/Scripts/cms-menu.js"></script>
+    @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
 }
 
 <h2>Gift Shop Products</h2>
+
+<br />
+<p>
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model.OrderByDescending(x => x.Id))
+    {
+        <tr>
+            <td>@(product.name)</td>
+            <td>@Html.ActionLink(" ", "update_product", new { id = product.Id }, new { @class = "fa fa-pencil" })</td>
+            <td>@Html.ActionLink(" ", "delete_product", new { id = product.Id }, new { @class = "fa fa-trash-o" })</td>
+        </tr>
+    }
+    </tbody>
+</table>

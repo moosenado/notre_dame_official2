@@ -9,7 +9,7 @@
 
 @using (Html.BeginForm())
 {
-    <h2>Are you sure you want to delete @Html.DisplayFor(x => x.title)?</h2>
+    <p>Are you sure you want to delete <strong>@Html.DisplayFor(x => x.title)?</strong></p>
 
     <input type="submit" value="Delete" class="buttonstyle" />
 

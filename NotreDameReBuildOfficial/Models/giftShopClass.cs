@@ -7,7 +7,55 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class giftShopClass
     {
-        ndLinqClassDataContext objGS = new ndLinqClassDataContext(); 
+        public string file { get; set; }
+
+        public string file_update { get; set; }
+
+        ndLinqClassDataContext objGS = new ndLinqClassDataContext();
+
+        public IQueryable<product> getProducts()
+        {
+            var allProducts = objGS.products.Select(x => x);
+            return allProducts;
+        }
+        public product getProductByID(int _id)
+        {
+            var all_product_id = objGS.products.SingleOrDefault(x => x.Id == _id);
+            return all_product_id;
+        }
+
+        public bool insertProduct(product product_table)
+        {
+            using (objGS)
+            {
+                objGS.products.InsertOnSubmit(product_table);
+                objGS.SubmitChanges();
+                return true;
+            }
+        }
+        public bool productUpdate(int _id, string _name, decimal _price, string _description, string _image)
+        {
+            using (objGS)
+            {
+                var update = objGS.products.Single(x => x.Id == _id); //SELECT where chosen ID matches ID in the table
+                update.name = _name;
+                update.price = _price;
+                update.description = _description;
+                update.image = _image;
+                objGS.SubmitChanges(); // Update database
+                return true;
+            }
+        }
+        public bool productDelete(int _id)
+        {
+            using (objGS)
+            {
+                var delete = objGS.products.Single(x => x.Id == _id);
+                objGS.products.DeleteOnSubmit(delete); //delete user on submission
+                objGS.SubmitChanges(); //commit deletetion change to the database
+                return true;
+            }
+        }
 
     }
 }
