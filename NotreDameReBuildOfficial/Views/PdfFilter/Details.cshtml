@@ -27,5 +27,28 @@
 }
 
 @*<h3>@Html.DisplayFor(modelx => x.PdfTitle)</h3>*@
+@*@foreach (var x in Model)
+{
+
+    {
+        string link = x.PdfTitle;
+        string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
+        string tag = "<a href=" + path + ">" + link + "</a>";
+        @Html.Raw(tag)
+    }
+
+}*@
+
+<ul>
+    @foreach (var file in Model)
+    {
+        var name = file.PdfTitle;
+        var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
+
+        <li>
+            <a href="@link">@name</a>
+        </li>
+    }
+</ul>
 
 

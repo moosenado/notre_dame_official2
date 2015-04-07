@@ -13,9 +13,9 @@
 {
     @Html.ValidationSummary()
 
-    @Html.LabelFor(model => model.PdfTitle, new { @class = "label" })
-    @Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.PdfTitle, "*")
+    @Html.DisplayFor(model => model.PdfTitle, new { @class = "label" })
+    @*@Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })
+    @Html.ValidationMessageFor(model => model.PdfTitle, "*")*@
 
     @Html.LabelFor(model => model.PdfUrl, new { @class = "label" })
     @Html.TextBoxFor(model => model.PdfUrl, new { @class = "textbox" })

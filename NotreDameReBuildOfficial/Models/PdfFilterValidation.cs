@@ -17,13 +17,13 @@ namespace NotreDameReBuildOfficial.Models
     [Bind(Exclude = "id")]
     public class PdfFilterValidation
     {
-        [DisplayName("Title*")]
-        [Required(ErrorMessage = "Please enter the PDF title")]
+        //[DisplayName("Title*")]
+        //[Required(ErrorMessage = "Please enter the PDF title")]
         [StringLength(100)]
         public string PdfTitle { get; set; } //auto properties
 
         [DisplayName("Url*")]
-        [Required(ErrorMessage = "Please enter path to file")]
+        //[Required(ErrorMessage = "Please enter path to file")]
         public string PdfUrl { get; set; }
 
         [DisplayName("Category*")]

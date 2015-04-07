@@ -41,7 +41,7 @@ namespace NotreDameReBuildOfficial.Models
             return q;
         }
 
-        //// ***********Public Methods for categories end END*********** ///////////////////////////////////////////
+        //// ***********Public Methods for categories END*********** ///////////////////////////////////////////
 
 
         public bool insertPdf(PDF_Filter pdf) //created instance of PDF_Filter table 
