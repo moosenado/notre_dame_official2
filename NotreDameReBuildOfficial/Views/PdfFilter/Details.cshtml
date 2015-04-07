@@ -1,0 +1,54 @@
+﻿@*@model NotreDameReBuildOfficial.Models.PDF_Filter*@
+@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@*<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
+        <li>@Html.ActionLink(x.Descr, x.PdfUrl, "Details", new {Category = x.Category})</li>
+    }
+</ul>*@
+@foreach (var x in Model)
+{
+    <table>
+        <tr>
+            <td>@Html.ActionLink(x.PdfTitle, "Details", new { Category = x.Category })</td>
+            <td>@Html.DisplayFor(modelx => x.PdfUrl)</td>
+            <td>@Html.DisplayFor(modelx => x.Descr)</td>
+            <td>@Html.DisplayFor(modelx => x.Category)</td>
+        </tr>
+    </table>
+}
+
+@*<h3>@Html.DisplayFor(modelx => x.PdfTitle)</h3>*@
+@*@foreach (var x in Model)
+{
+
+    {
+        string link = x.PdfTitle;
+        string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
+        string tag = "<a href=" + path + ">" + link + "</a>";
+        @Html.Raw(tag)
+    }
+
+}*@
+
+<ul>
+    @foreach (var file in Model)
+    {
+        var name = file.PdfTitle;
+        var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
+
+        <li>
+            <a href="@link">@name</a>
+        </li>
+    }
+</ul>
+
+

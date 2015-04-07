@@ -1,0 +1,20 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
+
+@{
+    ViewBag.Title = "Pdf";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+@*renders links to methods located on ApptSchedController*@
+<p>@Html.ActionLink("Insert New Record and PDF", "createPdf", "cmsPdfFilter")</p>
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.PdfTitle, "Details", new {id = x.id})</li>
+    }
+</ul>
+
+
+
