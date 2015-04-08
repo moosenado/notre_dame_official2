@@ -6488,7 +6488,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private bool _anonymous;
 		
-		private int _approved;
+		private System.Nullable<int> _approved;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6508,7 +6508,7 @@ namespace NotreDameReBuildOfficial.Models
     partial void OncommentsChanged();
     partial void OnanonymousChanging(bool value);
     partial void OnanonymousChanged();
-    partial void OnapprovedChanging(int value);
+    partial void OnapprovedChanging(System.Nullable<int> value);
     partial void OnapprovedChanged();
     #endregion
 		
@@ -6657,8 +6657,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int NOT NULL")]
-		public int approved
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int")]
+		public System.Nullable<int> approved
 		{
 			get
 			{

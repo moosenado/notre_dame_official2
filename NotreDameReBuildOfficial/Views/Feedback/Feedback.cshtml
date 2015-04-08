@@ -2,34 +2,63 @@
 
 @{
     ViewBag.Title = "Feedback";
+    @Scripts.Render("~/bundles/jquery")
 }
+
+
+@* Script toggles required fields for anonymous submission *@
+<script>
+    $(document).ready(function () {
+
+        $('input[type=checkbox]').on('change', function() {
+
+            $(".fbname").toggle();
+            $(".fbemail").toggle();
+
+        });
+    });
+</script>
 
 <h1>Send Us Your Feedback</h1>
 
-@using (Html.BeginForm())
-{
+<div id="feedback-form">
 
-    @Html.HiddenFor(model => model.date)
-    
-    @Html.LabelFor(model => model.anonymous)
-    @Html.CheckBoxFor(model => model.anonymous)
+    @using (Html.BeginForm())
+    {
 
-    <div class="clear"></div>
-    
-    
-        
-        @Html.LabelFor(model => model.name)
-        @Html.TextBoxFor(model => model.name)
-    
-    
-    
-    
-    
+        @Html.HiddenFor(model => model.date)
+        @Html.HiddenFor(model => model.approved)
 
-  
+        @Html.LabelFor(model => model.anonymous)
+        @Html.CheckBoxFor(model => model.anonymous)
 
-}
+        <div class="clear"></div>
 
+        @Html.LabelFor(model => model.name, new { @class = "fbname label" })
+        @Html.TextBoxFor(model => model.name, new { @class = "fbname textbox" })
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.email, new { @class = "fbemail label" })
+        @Html.TextBoxFor(model => model.email, new { @class = "fbemail textbox" })
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.subject, new { @class = "label" })
+        @Html.TextBoxFor(model => model.subject, new { @class = "textbox" })
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.comments, new { @class = "label" })
+        @Html.TextAreaFor(model => model.comments, new { @class = "textarea" })
+
+        <div class="clear"></div>
+
+        <input type="submit" name="submit" value="Send" class="buttonstyle">
+
+    }
+
+</div>
 
 @section Scripts {
 
