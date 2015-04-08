@@ -1,0 +1,38 @@
+﻿@model NotreDameReBuildOfficial.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback";
+}
+
+<h1>Send Us Your Feedback</h1>
+
+@using (Html.BeginForm())
+{
+
+    @Html.HiddenFor(model => model.date)
+    
+    @Html.LabelFor(model => model.anonymous)
+    @Html.CheckBoxFor(model => model.anonymous)
+
+    <div class="clear"></div>
+    
+    if(){
+        
+        @Html.LabelFor(model => model.name)
+        @Html.TextBoxFor(model => model.name)
+    
+    }
+    
+    
+    
+
+  
+
+}
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
