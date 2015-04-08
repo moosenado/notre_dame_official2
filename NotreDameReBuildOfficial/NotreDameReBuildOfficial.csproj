@@ -195,6 +195,7 @@
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsEventsListingController.cs" />
+    <Compile Include="Controllers\CMS\cmsFeedbackController.cs" />
     <Compile Include="Controllers\CMS\cmsGiftShopController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
@@ -226,6 +228,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\eventsListingValidation.cs" />
+    <Compile Include="Models\feedbackClass.cs" />
+    <Compile Include="Models\feedbackValidation.cs" />
     <Compile Include="Models\giftShopClass.cs" />
     <Compile Include="Models\JobApplicants.cs" />
     <Compile Include="Models\jobCategory.cs" />
@@ -837,7 +841,6 @@
     <Content Include="Views\cmsDonation\Delete.cshtml" />
     <Content Include="Views\cmsDonation\Update.cshtml" />
     <Content Include="Views\cmsDonation\Details.cshtml" />
-    <Content Include="Views\Donation\DonateAction.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
     <Content Include="Views\ApptSched\ApptSched.cshtml" />
@@ -915,6 +918,7 @@
     <Content Include="Views\CMSPoll\Insert_poll.cshtml" />
     <Content Include="Views\CMSPoll\Update_poll.cshtml" />
     <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
+    <Content Include="Views\Feedback\Feedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
