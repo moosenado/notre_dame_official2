@@ -28,9 +28,11 @@ namespace NotreDameReBuildOfficial.Models
         // --- INSERT LOGIC --- //
         public bool insertFeedback(Feedback feedback)
         {
+
             //Ensures all data will be disposed of when finished
             using (objLinq)
             {
+
                 objLinq.Feedbacks.InsertOnSubmit(feedback);
                 objLinq.SubmitChanges();
                 return true;

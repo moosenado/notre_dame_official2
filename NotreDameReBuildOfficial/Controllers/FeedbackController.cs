@@ -24,7 +24,6 @@ namespace NotreDameReBuildOfficial.Controllers
         [HttpPost]
         public ActionResult Feedback(Feedback feedback)
         {
-
             //if the form is submitted and the date is null, get the date as its value
             if (feedback.date == null)
             {
@@ -60,7 +59,27 @@ namespace NotreDameReBuildOfficial.Controllers
 
         public ActionResult Thanks()
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                return View("Feedback");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Thanks(feedbackValidation valid)//passes form
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", valid);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
