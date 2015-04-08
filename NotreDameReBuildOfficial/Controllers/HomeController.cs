@@ -52,6 +52,11 @@ namespace notre_dame_rebuild.Controllers
             return View(all_articles);
         }
 
+        // ------------------------------------- //
+        // ------- ARTICLE LIST by Mina ------ //
+        // ------------------------------------- //
+
+
         public JsonResult InsertVote(int pollid, int optionid)
         {
             Vote vote = new Vote();
