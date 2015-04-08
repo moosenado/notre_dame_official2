@@ -11,51 +11,76 @@
 
 <h1>Edit Record No. @Html.DisplayFor(x => x.id)</h1>
 
-@using(Html.BeginForm())
+@using (Html.BeginForm())
 {
-    @Html.HiddenFor(x => x.id)
+    <table>
+        @Html.HiddenFor(x => x.id)
 
-    @Html.LabelFor(x => x.staff_id)
-    @Html.TextBoxFor(x => x.staff_id)
-    <div class="clear"></div>
+        <tr>
+            <td>@Html.LabelFor(x => x.staff_id)</td>
+            <td>@Html.TextBoxFor(x => x.staff_id)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.firstname)</td>
+            <td>@Html.TextBoxFor(x => x.firstname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.lastname)</td>
+            <td>@Html.TextBoxFor(x => x.lastname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.gender)</td> 
+            <td>
+                @Html.RadioButtonFor(x => x.gender, 0) Male
+                @Html.RadioButtonFor(x => x.gender, 1) Female
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.department)</td>
+            <td>@Html.TextBoxFor(x => x.department)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.role)</td>
+            <td>@Html.TextBoxFor(x => x.role)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.city)</td>
+            <td>@Html.TextBoxFor(x => x.city)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.province)</td>
+            <td>
+                @Html.DropDownListFor(x => x.province, new[] {
+                        new SelectListItem() {Text = "ON"},
+                        new SelectListItem() {Text = "AB"},
+                        new SelectListItem() {Text = "BC"},
+                        new SelectListItem() {Text = "MB"},
+                        new SelectListItem() {Text = "NB"},
+                        new SelectListItem() {Text = "NL"},
+                        new SelectListItem() {Text = "NS"},
+                        new SelectListItem() {Text = "NT"},
+                        new SelectListItem() {Text = "NU"},
+                        new SelectListItem() {Text = "PE"},
+                        new SelectListItem() {Text = "QC"},
+                        new SelectListItem() {Text = "SK"},
+                        new SelectListItem() {Text = "YT"}
+                    }, "--", new { @class = "dropdown-list" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.zip_code)</td>
+            <td>@Html.TextBoxFor(x => x.zip_code)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" value="Update" class="buttonstyle" />
 
-    @Html.LabelFor(x => x.firstname)
-    @Html.TextBoxFor(x => x.firstname)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.lastname)
-    @Html.TextBoxFor(x => x.lastname)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.gender)
-    @Html.TextBoxFor(x => x.gender)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.department)
-    @Html.TextBoxFor(x => x.department)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.role)
-    @Html.TextBoxFor(x => x.role)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.city)
-    @Html.TextBoxFor(x => x.city)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.province)
-    @Html.TextBoxFor(x => x.province)
-    <div class="clear"></div>
-
-    @Html.LabelFor(x => x.zip_code)
-    @Html.TextBoxFor(x => x.zip_code)
-    <div class="clear"></div>
-
-    <input type="submit" name="submit" value="Update" class="buttonstyle" />
-
-    <a href='@Url.Action("staffList", "cmsStaff", new { staffid = Model.id })'>
-        <span class="buttonstyle">Cancel</span>
-    </a>
+                <a href='@Url.Action("staffList", "cmsStaff", new { staffid = Model.id })'>
+                    <span class="buttonstyle">Cancel</span>
+                </a>
+            </td>
+        </tr>
+    </table>
 
 }
 
