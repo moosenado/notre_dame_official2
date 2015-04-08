@@ -20,7 +20,47 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-  
+        //Inserts feedback into db
+        [HttpPost]
+        public ActionResult Feedback(Feedback feedback)
+        {
 
+            //if the form is submitted and the date is null, get the date as its value
+            if (feedback.date == null)
+            {
+                feedback.date = DateTime.Now;
+            }
+
+            //if approval is submitted as null, value is 0
+            if (feedback.approved == null)
+            {
+                feedback.approved = 0;
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    objFeedback.insertFeedback(feedback);
+                    return RedirectToAction("Thanks"); //On sucessful insert, show thank you page
+                }
+                catch
+                {
+
+                    //Error handling, return to feedback view if something goes wrong
+                    return View();
+
+                }
+            }
+
+            return View();
+
+        }
+
+        public ActionResult Thanks()
+        {
+            return View();
+        }
     }
 }
