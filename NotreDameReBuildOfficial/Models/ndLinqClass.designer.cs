@@ -6484,6 +6484,8 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private string _subject;
 		
+		private string _category;
+		
 		private string _comments;
 		
 		private bool _anonymous;
@@ -6504,6 +6506,8 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnemailChanged();
     partial void OnsubjectChanging(string value);
     partial void OnsubjectChanged();
+    partial void OncategoryChanging(string value);
+    partial void OncategoryChanged();
     partial void OncommentsChanging(string value);
     partial void OncommentsChanged();
     partial void OnanonymousChanging(bool value);
@@ -6613,6 +6617,26 @@ namespace NotreDameReBuildOfficial.Models
 					this._subject = value;
 					this.SendPropertyChanged("subject");
 					this.OnsubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category", DbType="VarChar(50)")]
+		public string category
+		{
+			get
+			{
+				return this._category;
+			}
+			set
+			{
+				if ((this._category != value))
+				{
+					this.OncategoryChanging(value);
+					this.SendPropertyChanging();
+					this._category = value;
+					this.SendPropertyChanged("category");
+					this.OncategoryChanged();
 				}
 			}
 		}
