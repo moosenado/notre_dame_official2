@@ -342,7 +342,7 @@
       <Column Name="subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="comments" Type="System.String" DbType="VarChar(650) NOT NULL" CanBeNull="false" />
       <Column Name="anonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="approved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="approved" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
