@@ -133,6 +133,10 @@ input[type=radio] {
     width: 15px;
 }
 
+input[type=checkbox] {
+    margin-left: 10px;
+}
+
 .textbox {
     border: 1px solid #d7d7d7;
     -webkit-appearance: none;
@@ -153,6 +157,7 @@ input[type=radio] {
     height: 90px;
     padding: 8px;
     line-height: 130%;
+    vertical-align: top;
 
 }
 

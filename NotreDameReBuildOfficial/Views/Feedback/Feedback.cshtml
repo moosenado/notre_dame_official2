@@ -18,8 +18,7 @@
         });
     });
 </script>
-
-<h1>Send Us Your Feedback</h1>
+<h1>We value your feedback!</h1>
 
 <div id="feedback-form">
 
@@ -31,8 +30,8 @@
 
         @Html.LabelFor(model => model.anonymous)
         @Html.CheckBoxFor(model => model.anonymous)
-
-        <div class="clear"></div>
+        
+        <br /><br />
 
         @Html.LabelFor(model => model.name, new { @class = "fbname label" })
         @Html.TextBoxFor(model => model.name, new { @class = "fbname textbox" })
@@ -46,11 +45,15 @@
 
         @Html.LabelFor(model => model.subject, new { @class = "label" })
         @Html.TextBoxFor(model => model.subject, new { @class = "textbox" })
+        <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.subject)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.comments, new { @class = "label" })
         @Html.TextAreaFor(model => model.comments, new { @class = "textarea" })
+        <span class="required" style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.comments)
 
         <div class="clear"></div>
 
