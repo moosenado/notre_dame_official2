@@ -66,7 +66,7 @@ namespace notre_dame_rebuild.Controllers
             //Passing count of total upcoming events through the ViewBag so it's accessible in the view
             ViewBag.Total = objEvents.getTotalEvents();
 
-            //Upcoming Events
+            //Get upcoming events for homepage
             var upcoming = objEvents.getHomepageEvents();
 
             return PartialView(upcoming);
