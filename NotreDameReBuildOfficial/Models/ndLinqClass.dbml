@@ -336,7 +336,7 @@
   <Table Name="gen.Feedback" Member="Feedbacks">
     <Type Name="Feedback">
       <Column Name="feedback_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />

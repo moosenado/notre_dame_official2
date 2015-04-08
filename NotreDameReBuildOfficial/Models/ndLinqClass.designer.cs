@@ -6476,7 +6476,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private int _feedback_id;
 		
-		private System.DateTime _date;
+		private System.Nullable<System.DateTime> _date;
 		
 		private string _name;
 		
@@ -6496,7 +6496,7 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnCreated();
     partial void Onfeedback_idChanging(int value);
     partial void Onfeedback_idChanged();
-    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
     partial void OndateChanged();
     partial void OnnameChanging(string value);
     partial void OnnameChanged();
@@ -6537,8 +6537,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date NOT NULL")]
-		public System.DateTime date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+		public System.Nullable<System.DateTime> date
 		{
 			get
 			{

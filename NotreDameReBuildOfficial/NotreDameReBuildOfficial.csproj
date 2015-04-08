@@ -919,6 +919,7 @@
     <Content Include="Views\CMSPoll\Update_poll.cshtml" />
     <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
     <Content Include="Views\Feedback\Feedback.cshtml" />
+    <Content Include="Views\Feedback\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
