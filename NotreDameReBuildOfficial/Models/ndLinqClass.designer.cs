@@ -6486,11 +6486,9 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private string _comments;
 		
-		private System.Nullable<int> _anonymous;
+		private bool _anonymous;
 		
-		private int _pending;
-		
-		private System.Nullable<int> _approved;
+		private int _approved;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6508,11 +6506,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnsubjectChanged();
     partial void OncommentsChanging(string value);
     partial void OncommentsChanged();
-    partial void OnanonymousChanging(System.Nullable<int> value);
+    partial void OnanonymousChanging(bool value);
     partial void OnanonymousChanged();
-    partial void OnpendingChanging(int value);
-    partial void OnpendingChanged();
-    partial void OnapprovedChanging(System.Nullable<int> value);
+    partial void OnapprovedChanging(int value);
     partial void OnapprovedChanged();
     #endregion
 		
@@ -6641,8 +6637,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anonymous", DbType="Int")]
-		public System.Nullable<int> anonymous
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_anonymous", DbType="Bit NOT NULL")]
+		public bool anonymous
 		{
 			get
 			{
@@ -6661,28 +6657,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pending", DbType="Int NOT NULL")]
-		public int pending
-		{
-			get
-			{
-				return this._pending;
-			}
-			set
-			{
-				if ((this._pending != value))
-				{
-					this.OnpendingChanging(value);
-					this.SendPropertyChanging();
-					this._pending = value;
-					this.SendPropertyChanged("pending");
-					this.OnpendingChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int")]
-		public System.Nullable<int> approved
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int NOT NULL")]
+		public int approved
 		{
 			get
 			{
