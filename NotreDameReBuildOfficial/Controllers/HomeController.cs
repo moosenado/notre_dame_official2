@@ -74,7 +74,7 @@ namespace notre_dame_rebuild.Controllers
             List<pieChartValue> res = new List<pieChartValue>();
 
             int i = 0;
-            foreach(PollOptionResult option in Options)
+            foreach (PollOptionResult option in Options)
             {
                 pieChartValue obj = new pieChartValue();
                 obj.value = option.OptionCount;
@@ -86,8 +86,8 @@ namespace notre_dame_rebuild.Controllers
             }
             return Json(new { result = res });
         }
-    }
-     
+
+
 
         // -------------------------------- //
         // ----- EVENTS LISTING by GEN ----- //
@@ -131,14 +131,15 @@ namespace notre_dame_rebuild.Controllers
                 return View(events);
             }
         }
-    public class pieChartValue
-    {
-        public static string[] colors = { "#F7464A", "#46BFBD", "#FDB45C" };
-        public static string[] highlights = { "#FF5A5E", "#5AD3D1", "#FFC870" };
-    
-        public int value { get; set; }
-        public string color { get; set; }
-        public string highlight { get; set; }
-        public string label { get; set; }
+        public class pieChartValue
+        {
+            public static string[] colors = { "#F7464A", "#46BFBD", "#FDB45C" };
+            public static string[] highlights = { "#FF5A5E", "#5AD3D1", "#FFC870" };
+
+            public int value { get; set; }
+            public string color { get; set; }
+            public string highlight { get; set; }
+            public string label { get; set; }
+        }
     }
 }

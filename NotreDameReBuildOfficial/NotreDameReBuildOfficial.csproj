@@ -222,7 +222,9 @@
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
-    <Compile Include="Models\eventsListingClass.cs" />
+    <Compile Include="Models\eventsListingClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\eventsListingValidation.cs" />
     <Compile Include="Models\giftShopClass.cs" />
     <Compile Include="Models\JobApplicants.cs" />
