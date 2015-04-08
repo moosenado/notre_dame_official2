@@ -50,8 +50,8 @@
 <br />
 <br />
 <p>
-    @Html.ActionLink("Back","Applicants") |
-    @Html.ActionLink("Delete","Delete_Applicant", new { id = Model.id })
+    @Html.ActionLink("Back", "Applicants",null, new { @class = "buttonstyle" }) 
+    @Html.ActionLink("Delete", "Delete_Applicant", new { id = Model.id }, new { @class = "buttonstyle" })
 </p>
 
 

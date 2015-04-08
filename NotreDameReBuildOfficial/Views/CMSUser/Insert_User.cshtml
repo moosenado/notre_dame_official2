@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     <div class="user_role">
-        <select id="ddl-cat" class="dropdown-list">
+        <select id="ddl-role" class="dropdown-list">
             <option data-id="0">-- Select --</option>
             @foreach (var x in ViewBag.Rolls)
             {
@@ -50,60 +50,81 @@
         @Html.TextBoxFor(x => x.DOB, new { @class = "frm" })
     </div>
     @Html.ValidationMessageFor(x => x.DOB)
+  
+    <div class="details_lbl">
+         @Html.LabelFor(x => x.phone)
+    </div>
     <div>
-
-        <div class="details_lbl">
-            @Html.LabelFor(x => x.phone)
-        </div>
-        <div>
-            @Html.TextBoxFor(x => x.phone, new { @class = "frm" })
-        </div>
+          @Html.TextBoxFor(x => x.phone, new { @class = "frm" })
+    </div>
         @Html.ValidationMessageFor(x => x.phone)
 
-        <div class="details_lbl">
-            @Html.LabelFor(x => x.city)
-        </div>
-        <div>
-            @Html.TextBoxFor(x => x.city, new { @class = "frm" })
-        </div>
-        @Html.ValidationMessageFor(x => x.city)
+    <div class="details_lbl">
+         @Html.LabelFor(x => x.city)
+     </div>
+     <div>
+          @Html.TextBoxFor(x => x.city, new { @class = "frm" })
+     </div>
+          @Html.ValidationMessageFor(x => x.city)
 
-        <div class="details_lbl">
-            @Html.LabelFor(x => x.province)
-        </div>
-        <div>
-            @Html.TextBoxFor(x => x.province, new { @class = "frm" })
-        </div>
-        @Html.ValidationMessageFor(x => x.province)
+     <div class="details_lbl">
+          @Html.LabelFor(x => x.province)
+     </div>
+     <div>
+          @Html.TextBoxFor(x => x.province, new { @class = "frm" })
+     </div>
+          @Html.ValidationMessageFor(x => x.province)
 
-
-        <input type="submit" value="Add" class="buttonstyle" />
-        @Html.ActionLink("Back", "allUsers", new { id = Model.id }, new { @class = "buttonstyle" })
+    <div class="details_lbl">
+        @Html.LabelFor(x => x.postal_code)
     </div>
-
-    <div class="hidden">
-        @Html.HiddenFor(x => x.role_id)
+    <div>
+        @Html.TextBoxFor(x => x.postal_code, new { @class = "frm" })
     </div>
+    @Html.ValidationMessageFor(x => x.postal_code)
     
+
+     <div class="details_lbl">
+         @Html.LabelFor(x => x.user_name)
+     </div>
+     <div>
+         @Html.TextBoxFor(x => x.user_name, new { @class = "frm" })
+     </div>
+         @Html.ValidationMessageFor(x => x.user_name)
+
+      <div class="details_lbl">
+         @Html.LabelFor(x => x.password)
+      </div>
+      <div>
+         @Html.TextBoxFor(x => x.password, new { @class = "frm" })
+      </div>
+         @Html.ValidationMessageFor(x => x.password)
+
+      <div class="hidden">
+         @Html.HiddenFor(x => x.role_id)
+      </div>
+    <div>
+        <input type="submit" value="Add" class="btn-add" />
+    </div>
 }
+
+@Html.ActionLink("Back", "allUsers",null, new { @class = "role_back" })
 
 <script>
     $(function () {
 
-        $("#ddl-cat").change(function () {
-            var item = $("#ddl-cat option:selected");
-            $("#category_id").val(item.data("id"));
+        $("#ddl-role").change(function () {
+            var item = $("#ddl-role option:selected");
+            $("#role_id").val(item.data("id"));
         });
 
         $("#btnAdd").click(function (e) {
-            var catid = $("#category_id").val();
-            if (catid == null || catid < 1) {
-                $("#ddl-cat").addClass("input-validation-error");
+            var roleid = $("#role_id").val();
+            if (roleid == null || roleid < 1) {
+                $("#ddl-role").addClass("input-validation-error");
                 return;
             }
 
         });
     });
-
-   CKEDITOR.replace('description');
 </script>

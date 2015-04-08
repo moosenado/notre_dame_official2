@@ -84,7 +84,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 try
                 {
                     objRoll.commitUpdate(id, roles.title); // get the new values and passed them to fields by these parameter
-                    return RedirectToAction("role_Details/" + id);// the page will redirect to the role Information
+                    return RedirectToAction("Roles/" + id);// the page will redirect to the role Information
                 }
                 catch
                 {

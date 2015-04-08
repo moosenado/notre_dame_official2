@@ -225,6 +225,8 @@
     <Compile Include="Models\newsfeedClass.cs" />
     <Compile Include="Models\newsfeedValidation.cs" />
     <Compile Include="Models\poll.cs" />
+    <Compile Include="Models\pollOptionsClass.cs" />
+    <Compile Include="Models\pollValidationClass.cs" />
     <Compile Include="Models\roleValidationClass.cs" />
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />

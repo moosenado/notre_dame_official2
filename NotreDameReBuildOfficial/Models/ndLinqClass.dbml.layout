@@ -128,12 +128,6 @@
         <elementListCompartment Id="729e33a0-287f-4d26-9897-93b4af02e161" absoluteBounds="3.015, 11.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f8eda09e-89b8-4932-bd58-1bef25797f5a" absoluteBounds="3, 6.125, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/ndLinqClassDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="528a3057-4e13-4761-aacc-96ed65fd7c86" absoluteBounds="3.015, 6.585, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="803b3271-8134-49d2-b3da-cac3d451c6af" absoluteBounds="0.5, 7.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ndLinqClassDataContext/Poll_option" />
       <nestedChildShapes>
@@ -144,6 +138,12 @@
       <DataClassMoniker Name="/ndLinqClassDataContext/poll" />
       <nestedChildShapes>
         <elementListCompartment Id="dbddd042-7a5f-4bc2-b1fb-b06dd3846818" absoluteBounds="0.515, 6.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb10bafd-37d4-4db7-978c-567832436662" absoluteBounds="3.625, 6.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/ndLinqClassDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0f4e2ce-5fc7-43a1-a57a-e944c4728551" absoluteBounds="3.64, 6.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

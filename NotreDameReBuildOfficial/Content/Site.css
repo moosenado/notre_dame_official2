@@ -1,4 +1,4 @@
-﻿/*****************************/
+﻿x/*****************************/
 /*********** RESET ***********/
 /*****************************/
 
@@ -1120,13 +1120,12 @@ table tr:nth-child(odd) td {
 /********************************/
 
 /* --- minaCssFile --- */
-#poll-container{
-   
-}
+/*#poll{
+    border: 1px solid #019ab8;
+    border-radius:3em;
+    background-color:rgba(124, 188, 230, 0.26);
+}*/
 
-#chart-container {
-    
-}
 
 .btn{
     border:1px solid #333;
@@ -1214,9 +1213,9 @@ table tr:nth-child(odd) td {
 }
 
 #careers th {
-    border: 1px solid #34b6cf;
-    padding: 3px 7px 2px 7px;
-   background-color:rgba(255,175,77,1);
+    border: 1px solid rgba(255,175,77,1);
+    padding: 10px;
+    background-color:rgba(255,175,77,1);
 }
 
 .btn_apply{

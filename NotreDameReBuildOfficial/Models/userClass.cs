@@ -46,8 +46,12 @@ namespace NotreDameReBuildOfficial.Models
                                email = us.email,
                                phone = us.phone,
                                city = us.city,
+                               DOB = us.DOB,
                                province = us.province,
                                postal_code = us.postal_code,
+                               user_name = us.user_name,
+                               password = us.password,
+                               role_id = us.role_id,
                                roleTitle = ro.title
                            }).SingleOrDefault();
 
@@ -56,7 +60,7 @@ namespace NotreDameReBuildOfficial.Models
 
            
         }
-
+        //Insert
         public bool commitInsert(User Users)
         {
             using (objUser)
@@ -66,18 +70,22 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-
-        public bool commitUpdateByAdmin(int _id, string _firstName, string _lastName, string _email, string _phone, string _city, string _province, string _posatlCode, DateTime _DOB, int _rollID)
+        //Update
+        public bool commitUpdateByAdmin(int _id, string _firstName, string _lastName, string _email, string _phone, string _city, string _province, string _posatlCode, DateTime _DOB, int _rollID, string _userName, string _password)
         {
             using (objUser)
             {
                 var ObjUpUser = objUser.Users.Single(x => x.id == _id);
                 ObjUpUser.first_name = _firstName; //setting table columns to new values being passed
                 ObjUpUser.last_name = _lastName;
+                ObjUpUser.email = _email;
                 ObjUpUser.phone = _phone;
                 ObjUpUser.city = _city;
                 ObjUpUser.province = _province;
                 ObjUpUser.postal_code = _posatlCode;
+                ObjUpUser.DOB = _DOB;
+                ObjUpUser.user_name = _userName;
+                ObjUpUser.password = _password;
                 ObjUpUser.role_id = _rollID;
 
                 objUser.SubmitChanges();  //commit update to database

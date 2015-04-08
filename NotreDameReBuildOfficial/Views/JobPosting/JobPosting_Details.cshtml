@@ -35,11 +35,11 @@
         @Html.LabelFor(model => model.description, new { @class = "lbl" }):
         @Html.DisplayFor(x => x.description)
     </div>
+    <br/>
    
     <div>
-        @Html.ActionLink("Apply", "Insert_Applicant", "Applicant", new { id = Model.id }, new { @class = "btn_apply" })
-  
-        @Html.ActionLink("Back", "JobPosting", null, new {@class = "btn_back"})
+        @Html.ActionLink("Apply", "Insert_Applicant", "Applicant", new { id = Model.id }, new { @class = "buttonstyle" })
+        @Html.ActionLink("Back", "JobPosting", null, new { @class = "buttonstyle" })
     </div>
 
 </div>

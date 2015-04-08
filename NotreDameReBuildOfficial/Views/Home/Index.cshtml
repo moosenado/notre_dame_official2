@@ -56,28 +56,28 @@
 
 @* WEEKLY POLL *@
 <div id="right-col">
+    
+        <h2>Weekly Poll</h2>
 
-    <h2>Weekly Poll</h2>
-
-    <div id="poll-container">
-        <span>@ViewBag.Poll.title</span>
-        <br />
-        <span>@ViewBag.Poll.question_text</span>
-        <br />
-        <div id="options-container">
-            <input type="hidden" id="pollid" value="@ViewBag.Poll.id" />
-            @foreach (var option in ViewBag.Poll.options)
-            {
-                <input type="radio" class="poll-option" name="polloption" value="@option.id">@option.options
-                <br />
-            }
-            <button type="button" id="btnvote">Vote</button>
+        <div id="poll-container">
+            @*<h3>@ViewBag.Poll.title</h3>*@
+            <br />
+            <span>@ViewBag.Poll.question_text</span>
+            <br /><br />
+            <div id="options-container">
+                <input type="hidden" id="pollid" value="@ViewBag.Poll.id" />
+                @foreach (var option in ViewBag.Poll.options)
+                {
+                    <input type="radio" class="poll-option" name="polloption" value="@option.id">@option.options
+                    <br /><br />
+                }
+                <button type="button" id="btnvote" class="homepage-btns">Vote</button>
+            </div>
         </div>
-    </div>
-    <div id="chart-container">
-        <canvas id="myChart" width="200" height="200"></canvas>
-    </div>
-
+        <div id="chart-container">
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
+  
 </div>
 <script>
     $(function () {

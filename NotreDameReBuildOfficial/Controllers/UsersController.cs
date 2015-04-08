@@ -86,7 +86,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 try
                 {
                     // get the new values and passed them to fields by these parameter
-                    objUser.commitUpdateByAdmin(id, users.first_name, users.last_name,users.email,users.phone, users.city, users.province, users.postal_code, users.DOB, users.role_id);
+                    objUser.commitUpdateByAdmin(id, users.first_name, users.last_name,users.email,users.phone, users.city, users.province, users.postal_code, users.DOB, users.role_id, users.user_name, users.password);
                     return RedirectToAction("User_Details/" + id);// the page will redirect to the users details
                 }
                 catch

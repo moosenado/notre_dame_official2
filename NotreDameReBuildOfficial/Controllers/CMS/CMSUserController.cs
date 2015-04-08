@@ -48,7 +48,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost]// restirict an action method by only post requests 
         public ActionResult Insert_User(User users)
         {
-            ViewBag.rolls = new rollClass().getRolls();
+            ViewBag.Rolls = new rollClass().getRolls();
 
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         public ActionResult Update_Users(int id)
         {
-            ViewBag.rolls = new rollClass().getRolls();
+            ViewBag.Rolls = new rollClass().getRolls();
             var user = objUser.getUserByID(id);
             if (user == null)
             {
@@ -83,14 +83,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost]// restirict an action method by only post requests
         public ActionResult Update_Users(int id, User users)
         {
-            ViewBag.rolls = new rollClass().getRolls();
+            ViewBag.Rolls = new rollClass().getRolls();
             if (ModelState.IsValid)
             {
                 try
                 {
                     // get the new values and passed them to fields by these parameter
-                    objUser.commitUpdateByAdmin(id, users.first_name, users.last_name, users.email, users.phone, users.city, users.province, users.postal_code, users.DOB, users.role_id);
-                    return RedirectToAction("allUsers/" + id);// the page will redirect to the users details
+                    objUser.commitUpdateByAdmin(id, users.first_name, users.last_name, users.email, users.phone, users.city, users.province, users.postal_code, users.DOB, users.role_id, users.user_name, users.password);
+                    return RedirectToAction("User_Details/" + id);// the page will redirect to the users details
                 }
                 catch
                 {

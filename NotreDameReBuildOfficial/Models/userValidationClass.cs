@@ -29,37 +29,41 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Email")]
         [Required]
+        [RegularExpression("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", ErrorMessage = "Please enter a valid email.")]
         public string email { get; set; }
 
         [Required]
-        [Display(Name = "Phone")]
+        [DisplayName("Phone")]
         //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Please enter a valid phone number.")]
         public string phone { get; set; }
 
         [DisplayName("city")]
         [Required]
-        public decimal city { get; set; }
+        public string city { get; set; }
 
-        [Display(Name = "Postal")]
-        [RegularExpression(@"^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$", ErrorMessage = "Please enter a valid postal code.")]
+        [DisplayName("province")]
+        [Required]
+        public string province { get; set; }
+
+        [DisplayName("Postal Code")]
+        //[RegularExpression(@"^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$", ErrorMessage = "Please enter a valid postal code.")]
         public string postal_code { get; set; }
 
         [Required]
-        [Display(Name = "Date of birth (mm/dd/yyyy)")]
+        [DisplayName("Date of birth (mm/dd/yyyy)")]
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DOB { get; set; }
 
-        //[Required]
-        //[Display(Name = "User name")]
-        //public string UserName { get; set; }
+        [Required]
+        [DisplayName("User name")]
+        public string user_name { get; set; }
 
-        //[Required]
-        //[DataType(DataType.Password)]
-        //[Display(Name = "Password")]
-        //public string Password { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [DisplayName("Password")]
+        public string password { get; set; }
 
-        //[Display(Name = "Remember me?")]
-        //public bool RememberMe { get; set; }
+       
 
 
 

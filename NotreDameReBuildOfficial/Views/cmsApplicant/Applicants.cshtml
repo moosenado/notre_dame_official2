@@ -15,6 +15,7 @@
             <th>Applicant Name</th>
             <th>Email</th>
             <th>Job Title</th>
+            <th>Option</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
                 <td>@Html.ActionLink(x.first_name +" "+x.last_name, "Applicant_Details", new { id = x.id })</td>
                 <td>@x.email</td>
                 <td>@x.jobTitle</td>
+                <td>@Html.ActionLink("Delete", "Delete_Applicant", new { id = x.id })</td>
             </tr>
         }
     </tbody>
