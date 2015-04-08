@@ -1,0 +1,39 @@
+﻿@model NotreDameReBuildOfficial.Models.poll
+@{
+    ViewBag.Title = "Poll_Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<div>
+    <h2 class="details">Manage Poll Questions</h2>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.title, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.title)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.question_text, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.question_text)
+    </div>
+
+    <div class="details_Op">
+        @Html.LabelFor(model => model.options, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.options)
+    </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.date, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.date)
+    </div>
+  
+    
+</div>
+<br />
+<br />
+<br />
+<p>
+    @Html.ActionLink("Back", "polls", null, new { @class = "buttonstyle" })
+    @Html.ActionLink("Update", "Update_poll", new { id = Model.id }, new { @class = "buttonstyle" })
+    @Html.ActionLink("Delete", "Delete_poll", new { id = Model.id }, new { @class = "buttonstyle" })
+</p>
+
+

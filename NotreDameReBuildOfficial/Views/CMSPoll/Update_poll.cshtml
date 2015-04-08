@@ -1,0 +1,51 @@
+﻿@model NotreDameReBuildOfficial.Models.poll
+@{
+    ViewBag.Title = "Update_poll";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h1>Edit: @Model.title</h1>
+
+@using (Html.BeginForm()) // create a form by HtmlHelper
+{
+    @Html.HiddenFor(x => x.id)
+    // create Labels and textboxs to insert a new value for each fields
+     <div>
+        @Html.LabelFor(x => x.title)
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.title, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.title) // create validation message for all textBoxes
+    
+    <div>
+        @Html.LabelFor(x => x.date)
+    </div>
+    <div>
+        @Html.TextAreaFor(x => x.date, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.date) // create validation message for all textBoxes
+                                                                          
+    <div>
+        @Html.LabelFor(x => x.question_text)
+    </div>
+    <div>
+        @Html.TextAreaFor(x => x.question_text, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.question_text) // create validation message for all textBoxes
+    
+     <div>
+        @Html.LabelFor(x => x.options)
+    </div>
+    <div>
+        @Html.TextAreaFor(x => x.options, new { @class = "frm" })
+    </div>
+    @Html.ValidationMessageFor(x => x.options) // create validation message for all textBoxes
+                                                
+     <div>
+      <input type="submit" value="Update" class="buttonstyle" />
+     @Html.ActionLink("Back", "polls", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+}

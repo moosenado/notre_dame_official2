@@ -1,0 +1,21 @@
+﻿@model NotreDameReBuildOfficial.Models.poll
+@{
+    ViewBag.Title = "Delete_poll";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+
+<h2>Are you sure to Delete the question?</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="buttonstyle" />
+
+        @Html.ActionLink("back", "polls", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+}

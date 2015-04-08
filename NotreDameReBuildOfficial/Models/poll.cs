@@ -63,12 +63,14 @@ namespace NotreDameReBuildOfficial.Models
 
 
         //update
-        public bool commitUpdate(int _id, string _questionText )
+        public bool commitUpdate(int _id,string _title, DateTime date, string _questionText )
         {
             using (db)
             {
                 var objUpdatePoll = db.polls.Single(x => x.id == _id);
-                // objUpdatePoll._question_text = _questionText; //setting table columns to new values being passed
+                objUpdatePoll.title = _title;
+                objUpdatePoll.date = _date;
+                objUpdatePoll._question_text = _questionText; //setting table columns to new values being passed
 
                 db.SubmitChanges();  //commit update to database
                 return true;

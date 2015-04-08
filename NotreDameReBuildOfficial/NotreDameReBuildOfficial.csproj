@@ -195,6 +195,7 @@
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
+    <Compile Include="Controllers\CMS\CMSPollController.cs" />
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
@@ -845,6 +846,11 @@
     <Content Include="Views\CMSUser\Insert_User.cshtml" />
     <Content Include="Views\CMSUser\Update_Users.cshtml" />
     <Content Include="Views\CMSUser\Delete_user.cshtml" />
+    <Content Include="Views\CMSPoll\polls.cshtml" />
+    <Content Include="Views\CMSPoll\Poll_Details.cshtml" />
+    <Content Include="Views\CMSPoll\Insert_poll.cshtml" />
+    <Content Include="Views\CMSPoll\Update_poll.cshtml" />
+    <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\applicant\resume\" />
