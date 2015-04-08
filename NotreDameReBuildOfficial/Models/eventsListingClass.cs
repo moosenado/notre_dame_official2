@@ -11,16 +11,15 @@ namespace NotreDameReBuildOfficial.Models
         //Creating an object of the linq database class
         ndLinqClassDataContext objLinq = new ndLinqClassDataContext();
 
-        // --- GET FIRST 4 UPCOMING EVENTS --- //
+        // --- GET FIRST 3 UPCOMING EVENTS --- //
         public IQueryable<Event> getHomepageEvents()
         {
             var today = DateTime.Now;
             var homepageEvents = (from a in objLinq.Events
                                  where a.start_date > today && a.display == 1
-                                 || a.start_date <= today && a.end_date > today
+                                 || a.start_date <= today && a.end_date > today && a.display == 1
                                  orderby a.start_date ascending
                                  select a).Take(3);
-
             return homepageEvents;
         }
 
@@ -29,11 +28,10 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var totalEvents = (from a in objLinq.Events
-                               where a.start_date > today
-                               || a.start_date <= today && a.end_date > today
+                               where a.start_date > today && a.display == 1
+                               || a.start_date <= today && a.end_date > today && a.display == 1
                                orderby a.start_date ascending
                                select a).Count();
-
             return totalEvents;
         }
 
@@ -47,7 +45,7 @@ namespace NotreDameReBuildOfficial.Models
 
         // --- GET UPCOMING EVENTS --- //
         // select events with future start dates
-        // select events with start date from the past or that are today AND has an end date in the future
+        // select events with future end dates
         public IQueryable<Event> getUpcomingEvents()
         {
             var today = DateTime.Now;
