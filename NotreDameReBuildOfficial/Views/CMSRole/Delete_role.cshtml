@@ -1,0 +1,21 @@
+﻿@model NotreDameReBuildOfficial.Models.role
+@{
+    ViewBag.Title = "Delete_role";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+<br />
+<br />
+<br />
+
+
+<h2>Are you sure to Delete @Model.title?</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" class="buttonstyle" />
+        
+        @Html.ActionLink("back", "Role", new { id = Model.id }, new { @class = "buttonstyle" })
+    </div>
+}

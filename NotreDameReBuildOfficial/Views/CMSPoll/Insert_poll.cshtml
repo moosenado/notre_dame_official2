@@ -1,0 +1,61 @@
+﻿@model NotreDameReBuildOfficial.Models.poll
+@{
+    ViewBag.Title = "Insert_Poll";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h2 class="Title">Add New Question </h2>
+
+@using (Html.BeginForm())
+
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.date)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.date, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.date)
+    </div>
+{
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.title)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.title, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.title)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.question_text)
+    </div>
+    <div>
+        @Html.TextAreaFor(model => model.question_text, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.question_text)
+    </div>
+    <div class="details_lbl">
+        @Html.LabelFor(model => model.options)
+    </div>
+    <div>
+        @Html.TextAreaFor(model => model.options, new { @class = "frm_insert" })
+    </div>
+    <div>
+        @Html.ValidationMessageFor(model => model.options)
+    </div>
+
+    
+
+    <div>
+        <input id="btnAdd" type="submit" value="Add" class="buttonstyle" />
+        @Html.ActionLink("Back", "polls", null, new { @class = "buttonstyle" })
+    </div>
+}
+
+<script>
+  //CKEDITOR.replace('question_text');
+</script>

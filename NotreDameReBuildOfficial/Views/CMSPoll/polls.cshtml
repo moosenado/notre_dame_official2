@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.poll>
+@{
+    ViewBag.Title = "poll";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+
+<h2>Poll</h2>
+<br/>
+<p>
+    @Html.ActionLink("Insert New Question", "Insert_poll", null, new { @class = "buttonstyle" })
+</p>
+<br />
+
+<table id="careers">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Question</th>
+            <th>Date</th>
+            <th>option</th>
+            <th>option</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(x.question_text, "Poll_Details", new { id = x.id })</td>
+                <td>@x.title</td>
+                <td>@x.date</td>
+                <td>
+                    @Html.ActionLink("Update", "Update_poll", new { id = x.id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete_poll", new { id = x.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
