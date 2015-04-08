@@ -28,8 +28,8 @@
         <tr>
             <td>@Html.LabelFor(Model => Model.gender)</td>
             <td>
-                @Html.RadioButtonFor(Model => Model.gender, 0) Male
-                @Html.RadioButtonFor(Model => Model.gender, 1) Female
+                @Html.RadioButtonFor(Model => Model.gender, "0") Male
+                @Html.RadioButtonFor(Model => Model.gender, "1") Female
                 <span style="color:red">*</span>
             </td>
         </tr>
@@ -68,20 +68,17 @@
         </tr>
         <tr>
             <td>@Html.LabelFor(Model => Model.zip_code)</td>
-            <td>@Html.TextBoxFor(Model => Model.zip_code)
-                <span style="color:red">*</span>
-            </td>
-        </tr>
-        <tr>
             <td>
+                @Html.TextBoxFor(Model => Model.zip_code)
+            <span style="color:red">*</span>
+        </td>
+    </tr>
+</table>
                 <input type="submit" value="Add Staff" class="buttonstyle" />
                 <a href='@Url.Action("staffList", "cmsStaff")'>
                     <span class="buttonstyle">Cancel</span>
                 </a>
-            </td>
-        </tr>
 
-    </table>
 }
 
 @section Scripts

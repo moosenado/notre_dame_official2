@@ -1,7 +1,58 @@
-﻿@{
+﻿@model NotreDameReBuildOfficial.Models.staff_info
+
+@{
     ViewBag.Title = "staffInfo";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>staffInfo</h2>
+<h1>staff Information</h1>
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.staff_id)</td>
+        <td>@Html.DisplayFor(x => x.staff_id)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.firstname)</td>
+        <td>@Html.DisplayFor(x => x.firstname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.lastname)</td>
+        <td>
+            @Html.DisplayFor(x => x.lastname)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.department)</td>
+        <td>
+            @Html.DisplayFor(x => x.department)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.role)</td>
+        <td>
+            @Html.DisplayFor(x => x.role)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.city)</td>
+        <td>
+            @Html.DisplayFor(x => x.city)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.province)</td>
+        <td>
+            @Html.DisplayFor(x => x.province)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.zip_code)</td>
+        <td>
+            @Html.DisplayFor(x => x.zip_code)
+        </td>
+    </tr>
+</table>
+            <a href='@Url.Action("staffList", "cmsStaff")'>
+                <span class="buttonstyle">Back to list</span>
+            </a>

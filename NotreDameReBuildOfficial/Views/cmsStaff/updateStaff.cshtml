@@ -29,10 +29,10 @@
             <td>@Html.TextBoxFor(x => x.lastname)</td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(x => x.gender)</td> 
+            <td>@Html.LabelFor(x => x.gender)</td>
             <td>
-                @Html.RadioButtonFor(x => x.gender, 0) Male
-                @Html.RadioButtonFor(x => x.gender, 1) Female
+                @Html.RadioButtonFor(x => x.gender, "0") Male
+                @Html.RadioButtonFor(x => x.gender, "1") Female
             </td>
         </tr>
         <tr>
@@ -71,17 +71,12 @@
             <td>@Html.LabelFor(x => x.zip_code)</td>
             <td>@Html.TextBoxFor(x => x.zip_code)</td>
         </tr>
-        <tr>
-            <td>
+    </table>
                 <input type="submit" name="submit" value="Update" class="buttonstyle" />
 
                 <a href='@Url.Action("staffList", "cmsStaff", new { staffid = Model.id })'>
                     <span class="buttonstyle">Cancel</span>
                 </a>
-            </td>
-        </tr>
-    </table>
-
 }
 
 
