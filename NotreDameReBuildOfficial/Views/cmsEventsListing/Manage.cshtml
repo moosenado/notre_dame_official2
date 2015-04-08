@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
+
+@{
+    ViewBag.Title = "cmsEventsListing";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Manage Events</h1>
+
+<h3>Upcoming Events</h3>
+@{
+    Html.RenderAction("_UpcomingEventsPartial", "cmsEventsListing");
+
+}
+
+
+<h3>Archived Events</h3>
+@{
+    Html.RenderAction("_PastEventsPartial", "cmsEventsListing"); 
+}
+
+<div class="clear"></div>
+
+<a href='@Url.Action("Insert", "cmsEventsListing")'>
+    <span class="buttonstyle"><i class="fa fa-plus"></i>New Event</span>
+</a>

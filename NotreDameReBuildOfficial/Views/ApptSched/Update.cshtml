@@ -3,12 +3,15 @@
 
 @{
     ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h2>Update</h2>
 
 @using (Html.BeginForm())
-{
+{   
+    @Html.ValidationSummary()
     @Html.HiddenFor(x => x.id)
     
     @Html.LabelFor(x => x.Fname)

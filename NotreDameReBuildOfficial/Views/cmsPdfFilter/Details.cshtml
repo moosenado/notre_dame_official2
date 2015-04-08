@@ -1,0 +1,53 @@
+﻿@model NotreDameReBuildOfficial.Models.PDF_Filter
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>Details</h2>
+
+<h3>@Html.DisplayFor(x => x.PdfTitle)</h3>
+
+<table>
+    <tr>
+        <td>@Html.LabelFor(model => model.PdfTitle, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.PdfTitle)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.PdfUrl, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.PdfUrl)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Category, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Category)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Image, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Image)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Tstamp, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Tstamp)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Descr, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Descr)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Lang, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Lang)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Department, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Department)</td>
+    </tr>
+</table>
+
+<p>
+    @*renders links to methods located on ApptSchedController*@
+    @Html.ActionLink("Back", "Pdf") |
+    @Html.ActionLink("Update", "Update", new { id = Model.id }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.id })
+</p>

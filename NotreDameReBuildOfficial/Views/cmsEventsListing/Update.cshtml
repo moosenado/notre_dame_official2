@@ -1,0 +1,109 @@
+﻿@model NotreDameReBuildOfficial.Models.Event
+
+@{
+    ViewBag.Title = "Update Event";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryui");
+
+}
+
+<script>
+    $(function () {
+        $(".datefield").datepicker();
+    });
+</script>
+
+<h1>Update @Html.DisplayFor(x => x.name)</h1>
+
+@using (Html.BeginForm())
+{
+    
+    @Html.HiddenFor(model => model.approved, new { Value = 1 })
+    
+    <table class="plain">
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.name)</td>
+            <td>@Html.TextBoxFor(model => model.name, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.name)</td>
+        </tr>
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.start_date)</td>
+            <td>@Html.TextBoxFor(model => model.start_date, new { @class = "textbox datefield" })
+                @Html.ValidationMessageFor(model => model.start_date)</td>
+        </tr>
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.start_time)</td>
+            <td>@Html.TextBoxFor(model => model.start_time, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.start_time)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.end_date)</td>
+            <td>@Html.TextBoxFor(model => model.end_date, new { @class = "textbox datefield" })
+                @Html.ValidationMessageFor(model => model.end_date)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.end_time)</td>
+            <td>@Html.TextBoxFor(model => model.end_time, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.end_time)</td>
+        </tr>
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.description)</td>
+            <td>@Html.TextAreaFor(model => model.description, new { @class = "textarea"})
+                @Html.ValidationMessageFor(model => model.description)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.venue)</td>
+            <td>@Html.TextBoxFor(model => model.venue, new { @class = "textbox" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.address)</td>
+            <td>@Html.TextBoxFor(model => model.address, new { @class = "textbox" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.cost)</td>
+            <td>$@Html.TextBoxFor(model => model.cost, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.cost)</td>
+        </tr>
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.contact_name)</td>
+            <td>@Html.TextBoxFor(model => model.contact_name, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.contact_name)</td>
+        </tr>
+        <tr>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.contact_email)</td>
+            <td>@Html.TextBoxFor(model => model.contact_email, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.contact_email)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.contact_phone)</td>
+            <td>@Html.TextBoxFor(model => model.contact_phone, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.contact_phone)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.url)</td>
+            <td>@Html.TextBoxFor(model => model.url, new { @class = "textbox" })
+                @Html.ValidationMessageFor(model => model.url)</td>
+        </tr>
+        <tr>
+            <td><strong>@Html.LabelFor(model => model.display)</strong></td>
+            <td>@Html.RadioButtonFor(model => model.display, 1, new { @checked = true }) Yes
+                @Html.RadioButtonFor(model => model.display, 0) No</td>
+        </tr>
+    </table>
+
+    <input type="submit" name="submit" value="Update" class="buttonstyle" />
+
+    <a href='@Url.Action("Manage", "cmsEventsListing", new { event_id = Model.event_id })'><span class="buttonstyle">Cancel</span>
+    </a>
+    <a href='@Url.Action("Manage", "cmsEventsListing")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

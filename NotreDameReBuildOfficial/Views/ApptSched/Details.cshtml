@@ -2,20 +2,22 @@
 
 @{
     ViewBag.Title = "Appointment Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h2>Details</h2>
 
-<h3>@Html.DisplayFor(x => x.Fname)</h3>
-<p>@Html.DisplayFor(x => x.Lname)</p>
-<p>@Html.DisplayFor(x => x.Email)</p>
-<p>@Html.DisplayFor(x => x.HealthNum)</p>
-<p>@Html.DisplayFor(x => x.BookDate)</p>
-<p>@Html.DisplayFor(x => x.BookTime)</p>
-<p>@Html.DisplayFor(x => x.AdditionalInfo)</p>
-<p>@Html.DisplayFor(x => x.Tstamp)</p>
-<p>@Html.DisplayFor(x => x.Speciality)</p>
-<p>@Html.DisplayFor(x => x.Phone)</p>
+<h3>@Html.DisplayFor(x => x.Fname) @Html.DisplayFor(x => x.Lname)</h3>
+@Html.LabelFor(model => model.Email, new { @class = "label" })
+@Html.DisplayFor(x => x.Email)
+@Html.DisplayFor(x => x.HealthNum)
+@Html.DisplayFor(x => x.BookDate)
+@Html.DisplayFor(x => x.BookTime)
+@Html.DisplayFor(x => x.AdditionalInfo)
+@Html.DisplayFor(x => x.Tstamp)
+@Html.DisplayFor(x => x.Speciality)
+@Html.DisplayFor(x => x.Phone)
 
 <p> @*renders links to methods located on ApptSchedController*@
     @Html.ActionLink("Back", "ApptSched") |

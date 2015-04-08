@@ -28,19 +28,39 @@
 
     <h2 id="online-services">Online Services</h2>
 
-    <div class="service-btn">
-        <div class="icon icon1"><i class="fa fa-shopping-cart"></i></div>
-        <div class="btn-text btn-text1">Gift Shop</div>
-    </div>
+    <div id="service-btns">
+        <a class="service-btn" id="donate-btn" href="#">
+            <span class="icon icon5"><i class="fa fa-heart fa-lg"></i></span>
+            <span class="btn-text btn-text5">Make a Donate</span>
+        </a>
 
-    <div class="service-btn">
-        <div class="icon icon2"><i class="fa fa-user-md"></i></div>
-        <div class="btn-text btn-text2">Book an Appointment</div>
-    </div>
+        <div class="clear"></div>
 
-    <div class="service-btn">
-        <div class="icon icon3"><i class="fa fa-comment"></i></div>
-        <div class="btn-text btn-text3">Send Feedback</div>
+        <a class="service-btn" id="news-btn" href="#">
+            <span class="icon icon4"><i class="fa fa-newspaper-o"></i></span>
+            <span class="btn-text btn-text4">What's New</span>
+        </a>
+
+        <div class="clear"></div>
+
+        <a class="service-btn" href="#">
+            <span class="icon icon1"><i class="fa fa-shopping-cart fa-lg"></i></span>
+            <span class="btn-text btn-text1">Gift Shop</span>
+        </a>
+
+        <div class="clear"></div>
+
+        <a class="service-btn" href="#">
+            <span class="icon icon2"><i class="fa fa-calendar fa-lg"></i></span>
+            <span class="btn-text btn-text2">Book an Appointment</span>
+        </a>
+
+        <div class="clear"></div>
+
+        <a class="service-btn" href="#">
+            <span class="icon icon3"><i class="fa fa-comment fa-lg"></i></span>
+            <span class="btn-text btn-text3">Send Feedback</span>
+        </a>
     </div>
 
 </div>
@@ -50,7 +70,10 @@
 
     <h2>Upcoming Events</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum commodo mi, ac rutrum massa interdum quis. Phasellus suscipit lacus eget mattis rhoncus. Praesent aliquet mattis diam sed iaculis. Integer justo metus, tincidunt auctor augue sit amet, maximus semper augue.</p>
+    @{
+        Html.RenderAction("EventsPartial", "Home");
+    }
+
 
 </div>
 

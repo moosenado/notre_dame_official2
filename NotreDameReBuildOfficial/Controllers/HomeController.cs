@@ -17,8 +17,12 @@ namespace notre_dame_rebuild.Controllers
         // ------------------------------------- //
 
         newsfeedClass objNews = new newsfeedClass();
+        erwaitClass objER = new erwaitClass();
+
+
         public ActionResult Index()
         {
+            ViewBag.erTime = objER.getWaitTime();
             var articles = objNews.getTopArticles();
             ViewBag.Poll = new poll().GetRandomQuestion();
             return View(articles);
@@ -83,12 +87,55 @@ namespace notre_dame_rebuild.Controllers
             return Json(new { result = res });
         }
     }
+     
 
+        // -------------------------------- //
+        // ----- EVENTS LISTING by GEN ----- //
+        // -------------------------------- //
+
+        eventsListingClass objEvents = new eventsListingClass();
+
+        public ActionResult EventsPartial(Event events)
+        {
+            //Passing count of total upcoming events through the ViewBag so it's accessible in the view
+            ViewBag.Total = objEvents.getTotalEvents();
+
+            //Get upcoming events for homepage
+            var upcoming = objEvents.getHomepageEvents();
+
+            return PartialView(upcoming);
+
+        }
+
+        public ActionResult AllEvents()
+        {
+
+            //Upcoming Events
+            var upcoming = objEvents.getUpcomingEvents();
+
+            return View(upcoming);
+        }
+
+        //When admin wants to see the event details
+        public ActionResult EventDetails(int event_id)
+        {
+            var events = objEvents.getEventByID(event_id);
+
+            if (events == null)
+            {
+                return View("NotFound");
+
+            }
+            else
+            {
+                return View(events);
+            }
+        }
     public class pieChartValue
     {
         public static string[] colors = { "#F7464A", "#46BFBD", "#FDB45C" };
         public static string[] highlights = { "#FF5A5E", "#5AD3D1", "#FFC870" };
-
+    
         public int value { get; set; }
         public string color { get; set; }
         public string highlight { get; set; }

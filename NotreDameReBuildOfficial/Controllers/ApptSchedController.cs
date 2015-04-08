@@ -39,10 +39,14 @@ namespace NotreDameReBuildOfficial.Controllers
         [HttpPost]
         public ActionResult createAppt(Appt_Book appt)
             {
-                if (ModelState.IsValid)
-                {
+           
+            if (ModelState.IsValid)
+            {
+                
+
                     try
                     {
+                        appt.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                         objApptSched.insertAppt(appt);
                         return RedirectToAction("ApptSched");
                     }
@@ -69,11 +73,14 @@ namespace NotreDameReBuildOfficial.Controllers
         public ActionResult Update(int id, Appt_Book appt)
             {
                 if (ModelState.IsValid)
-                {
+                { 
+                    
                     try
                     {
+                        
+                        appt.Tstamp = DateTime.Now;
                         objApptSched.updateAppt(id, appt.Fname, appt.Lname, appt.Email, appt.HealthNum, appt.BookDate,
-                            appt.BookTime, appt.AdditionalInfo, appt.Tstamp, appt.Speciality, appt.Phone);
+                            appt.BookTime, appt.AdditionalInfo, appt.Speciality, appt.Phone, appt.Tstamp);
                         return RedirectToAction("Details/" + id);
                     }
                     catch

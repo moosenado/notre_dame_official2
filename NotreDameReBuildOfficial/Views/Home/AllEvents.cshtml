@@ -1,0 +1,31 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
+
+@{
+    ViewBag.Title = "AllEvents";
+}
+
+<h2>All Events</h2>
+
+@foreach (var e in Model)
+{
+    <div class="hmpg-event">
+
+        <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
+
+        <div class="clear"></div>
+
+        @e.start_date.ToString("MMMM d")  @@ @e.start_time
+        @if (e.end_time != null)
+        {
+            @:- @e.end_time
+        }
+
+    </div>
+
+}
+
+<div class="clear"></div>
+
+<a href='@Url.Action("Index", "Home")'>
+    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
+</a>

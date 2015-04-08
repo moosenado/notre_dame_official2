@@ -64,12 +64,18 @@ p {
 }
 
 a {
-	color: #1b5998;
+	color: #019ab8;
     text-decoration: none;
 }
 
-a:hover {
+a.link {
 	color: #019ab8;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a.link:hover {
+	border-bottom: 1px dotted #019ab8;
 }
 
 h1 {
@@ -101,34 +107,12 @@ h3 {
     clear: both;
 }
 
-.homepage-btns {
-    border: 2px solid #fff;
-    color: #fff;
-    background-color: #fd8411;
-    cursor: pointer;
-    padding: 5px 10px;
-    font-family: 'Roboto', sans-serif;
-    -webkit-transition: 0.5s ease-out;
-    -moz-transition: 0.5s ease-out;
-    -o-transition: 0.5s ease-out;
-    transition: 0.5s ease-out;
-    border-radius: 5px;
-    text-decoration: none;
-    width: 30%;
-   
-}
-
-.homepage-btns:hover {
-    border: 2px solid #fd8411;
-    color: #fff;
-}
-
 .buttonstyle {
     border: 0px;
     color: #fff;
     background-color: #fd8411;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 7px 20px;
     font-family: 'Roboto', sans-serif;
     border-radius: 5px;
     text-decoration: none;
@@ -140,6 +124,10 @@ h3 {
     text-decoration: none;
 }
 
+.see-more {
+    border-bottom: 1px dotted #019ab8;
+}
+
 input[type=radio] {
     height: 15px;
     width: 15px;
@@ -149,14 +137,27 @@ input[type=radio] {
     border: 1px solid #d7d7d7;
     -webkit-appearance: none;
     -webkit-border-radius: 0;
-    color: #808080;
     padding: 5px;
-    height: 1em;
+    height: 1.25em;
     margin-bottom: 5px;
 }
 
+.textarea {
+    border: 1px solid #d7d7d7;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    display: block;
+    width: 400px;
+    height: 90px;
+    padding: 8px;
+    line-height: 130%;
+
+}
+
 input[type=submit] {
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
 label.label {
@@ -193,19 +194,25 @@ table {
 th {
 	padding: 12px 15px;
     font-weight: bold;
-    color: #808080;
-}
-
-tr {
-
+    color: #666;
 }
 
 td {
     padding: 10px 15px;
+    vertical-align: top;
+    text-align: left;
 }
 
 table tr:nth-child(odd) td {
     background: #f5f5f5;
+}
+
+.plain td {
+    padding: 5px;
+}
+
+.plain tr:nth-child(odd) td {
+    background: #fff;
 }
 
 
@@ -255,6 +262,7 @@ table tr:nth-child(odd) td {
     float: right;
     margin-top: 15px;
     margin-right: 15px;
+    width: auto;
 }
 
 #logo {
@@ -264,7 +272,32 @@ table tr:nth-child(odd) td {
 
 #headerbuttons {
     text-align: right;
-    padding-bottom: 10px;
+}
+
+.homepage-btns {
+    border: 0px;
+    color: #fff;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 7px 10px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: 0.5s ease-out;
+    -moz-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+    border-radius: 3px;
+    text-decoration: none;
+    float: right;
+    margin-left: 10px;
+    width: 20%;
+}
+
+.donate {
+    background: #accf13;
+}
+
+.homepage-btns:hover {
+    color: #fff;
 }
 
 #headersearch{
@@ -272,14 +305,39 @@ table tr:nth-child(odd) td {
 }
 
 #magnifylogo{
-    float:left;
-    color: #b6b6b6;
-    padding: 4px;
+    float: right;
+    color: #fff;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: 0.5s ease-out;
+    -moz-transition: 0.5s ease-out;
+    -o-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+    border-radius: 3px;
+    text-decoration: none;
+    float: right;
+    margin-left: 5px;
+    transition: 0.5s ease-out;
+}
+
+#magnifylogo:hover {
+    
 }
 
 #erwait{
-    text-align: right;
-    padding-top: 35px;
+    color: #f67000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-align: center;
+    line-height: 1;
+    border-radius: 3px;
+    width: auto;
+    float: right;
+    font-size: 1.25em;
+    font-weight: 700;
 }
 
 /* --- PUBLIC MAIN NAVIGATION --- */
@@ -407,8 +465,7 @@ table tr:nth-child(odd) td {
 
 #news {
     width: 96%;
-    margin: 0% 2%;
-    padding: 1%;
+    margin: 0% 1%;
 }
 
 .news_image{
@@ -457,9 +514,8 @@ table tr:nth-child(odd) td {
 
 /*Online service buttons in left 3 columns on homepage*/
 .service-btn {
-    width: 100%;
+    
     color: #fff;
-    margin-top: 3%;
 }
 
 .icon {
@@ -478,7 +534,6 @@ table tr:nth-child(odd) td {
     text-align: center;
     margin-bottom: 5%;
     border-radius: 0px 5px 5px 0px;
-    /*background-color: #fe890a;*/
 }
 
 /* First Button */
@@ -498,6 +553,18 @@ table tr:nth-child(odd) td {
     background-color: #f67000; }
 .btn-text3 { 
     background-color: #fe890a; }
+
+/* Fourth Button */
+.icon4 { 
+    background-color: #d85050; }
+.btn-text4 { 
+    background-color: #e66b6b; }
+
+/* Fifth Button */
+.icon5 { 
+    background-color: #94b113; }
+.btn-text5 { 
+    background-color: #accf13; }
 
 .service-desc {
     font-size: 0.875em;
@@ -577,10 +644,6 @@ table tr:nth-child(odd) td {
   	transition:.5s;
 }
 
-#footer_links ul li a:hover {
-    color: #f7900f;
-}
-
 #footer_social li{
     display: inline;
     z-index: 2;
@@ -598,6 +661,7 @@ table tr:nth-child(odd) td {
 
 #footer_social li:hover{
     opacity: .7;
+    border-bottom: 0px;
 }
 
 #partners {
@@ -635,9 +699,9 @@ table tr:nth-child(odd) td {
 }
 
 
-/*********************************/
+/**********************************/
 /*********** RESPONSIVE ***********/
-/*********************************/
+/**********************************/
 
 /* --- MOBILE NAVIGATION --- */
 
@@ -646,6 +710,18 @@ table tr:nth-child(odd) td {
 }
 
 #hamburger{
+    display: none;
+}
+
+#mobile-er {
+    display: none;
+}
+
+#news-btn {
+    display: none;
+}
+
+#donate-btn {
     display: none;
 }
 
@@ -694,6 +770,17 @@ table tr:nth-child(odd) td {
     #mobilesearch {
         float: right;
         margin: 12px 20px 0px 0px;
+    }
+
+    #mobilesearch input[type=text] {
+        border: 0px;
+        width: auto;
+    }
+
+    #magnifylogo {
+        padding: 5px 10px;
+        font-size: 1.5em;
+        background: none;
     }
 
     #phoneicon {
@@ -752,19 +839,15 @@ table tr:nth-child(odd) td {
     #hamburger{
         display: block;
         float: right;
-        margin: 42px 42px 0px 0px;
-        font-size: 25px;
-        color: #f7900f;
+        margin: 30px 42px 0px 0px;
+        font-size: 2em;
+        color: #019ab8;
         cursor: pointer;
         -o-transition:.5s;
   	    -ms-transition:.5s;
   	    -moz-transition:.5s;
   	    -webkit-transition:.5s;
   	    transition:.5s;
-    }
-
-    #hamburger:hover{
-        color: #333;
     }
 
     #navigation ul {
@@ -820,9 +903,27 @@ table tr:nth-child(odd) td {
   	    visibility: visible;
     }
 
-    .service-btn {
-        width: 92%;
+    #mobile-er {
+        display: block;
+        margin-bottom: 20px;
     }
+
+    #erwait {
+        color: #f67000;
+        margin: 0;
+        border-radius: 0px;
+        border-top: 1px solid #fff;
+    }
+
+    .donate {
+        border-left: 1px solid #fff;
+        border-radius: 0px;
+        width: 14%;
+        line-height: 51px;
+        font-size: 1em;
+    }
+
+    
 
     #partners {
         width: 40%;
@@ -845,14 +946,54 @@ table tr:nth-child(odd) td {
 
 @media only screen and (max-width: 640px) {
      
-    .service-btn {
-        width: 100%;
+    #news {
+        display: none;
+    }
+
+    .donate {
+        display: none;
+    }
+
+    #online-services {
+        display: none;
+    }
+
+    #service-btns {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    service-btn {
+        font-size: 1.25em;
+        margin: 0 auto;
+    }
+
+    .btn-text {
+    }
+
+    #news-btn {
+        display: block;
+    }
+
+    #donate-btn {
+        display: block;
     }
 
     #left-col,
     #center-col,
     #right-col {
-        width: 96%
+        width: 96%;
+        font-size: 1.25em;
+    }
+
+    #center-col,
+    #right-col {
+        text-align: center;
+    }
+
+    #mobilesearch input[type=text] {
+        width: 50%;
+        float: right;
     }
 
     #footer {
@@ -904,10 +1045,6 @@ table tr:nth-child(odd) td {
 
     .textbox{
         width: 100%;
-    }
-
-    #online-services {
-        display: none;
     }
 
     #partners {
@@ -975,25 +1112,12 @@ table tr:nth-child(odd) td {
     float: left;
 }
 
-/*#cms-date {
-	color: #444;
-	margin: 0px 20px;
-	font-size: 0.875em;
-    width: 250px;
-    padding-top: 20px;
-    text-align: center;
-}*/
-
 #cms-top-nav a {
 	float: left;
 	display: inline;
 	padding: 16px 0px 0px 20px;
 	text-decoration: none;
 	color: #fff;
-}
-
-#cms-top-nav a:hover {
-
 }
 
 #user {
@@ -1056,10 +1180,16 @@ table tr:nth-child(odd) td {
 }
 
 .left-mnu-itm {
+    color: #666;
 	display: block;
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
 	text-decoration: none;
+}
+
+.left-mnu-itm:hover {
+    border-bottom: 0px;
+    color: #019ab8;
 }
 
 .left-mnu-itm:last-child {
@@ -1067,6 +1197,7 @@ table tr:nth-child(odd) td {
 }
 
 .secondary a {
+    color: #666;
     display: block;
 	padding: 10px 20px;
 	font-size: 0.85em;
@@ -1076,6 +1207,11 @@ table tr:nth-child(odd) td {
 
 .secondary a:last-child {
     padding-bottom: 20px;
+}
+
+.secondary a:hover {
+    border-bottom: 0px;
+    color: #019ab8;
 }
 
 .fa {
@@ -1096,8 +1232,12 @@ table tr:nth-child(odd) td {
 .fa-times,
 .fa-trash-o,
 .fa-check,
-.fa-list-ul {
-	padding-right: 5px;
+.fa-list-ul ,
+.fa-eye,
+.fa-calendar,
+.fa-heart,
+.fa-newspaper-o  {
+	padding-right: 0px;
 }
 
 /* --- CMS FOOTER --- */
@@ -1366,11 +1506,60 @@ input#in_memory.textbox,
 input#first_name.textbox,
 input#last_name.textbox,
 input#organization.textbox,
-input#address.textbox,
 input#email.textbox {
     width: 50%;
 }
 
 table#edit-donations {
     width: 60%;
+}
+
+/* --- EVENTS LISTING --- */
+
+.event {
+    background: #eee;
+    min-height: 8em;
+    max-width: 10em;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+    display: inline;
+}
+
+.hmpg-event {
+    margin: 20px 0px;
+}
+
+.tbl-width {
+    width: 90%;
+}
+
+/* --- JQUERY DATEPICKER --- */
+
+#ui-datepicker-div {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+.ui-datepicker-prev.ui-corner-all,
+.ui-datepicker-next.ui-corner-all {
+    float: left;
+    cursor: pointer;
+    padding: 0px 10px;
+    margin: 10px 0px;
+}
+
+.ui-datepicker-next.ui-corner-all {
+    border-left: 1px solid #444;
+}
+
+.ui-datepicker-title {
+    padding: 10px 20px;
+    float: right;
+    font-weight: 700;
+}
+
+table.ui-datepicker-calendar {
+    margin-bottom: 0px;
 }

@@ -2,9 +2,13 @@
 
 @{
     ViewBag.Title = "Delete Appointment";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h2>Delete</h2>
+
+<h2>Are you sure you want to delete this appointment? <em>@Model.Fname Lname?</em></h2>
 
 @using (Html.BeginForm())
 {

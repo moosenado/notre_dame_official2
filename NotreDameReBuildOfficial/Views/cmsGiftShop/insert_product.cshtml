@@ -1,0 +1,36 @@
+﻿@model NotreDameReBuildOfficial.Models.product
+@{
+    ViewBag.Title = "insert_product";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    <script src="~/Scripts/cms-menu.js"></script>
+}
+
+<h2>Insert Product</h2>
+
+@using (Html.BeginForm("insert_product", "cmsGiftShop", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.LabelFor(model => model.name)
+    <br />
+    @Html.TextBoxFor(model => model.name)
+    <br />
+    @Html.LabelFor(model => model.price)
+    <br />
+    @Html.TextBoxFor(model => model.price)
+    <br />
+    @Html.LabelFor(model => model.description)
+    <br />
+    @Html.TextBoxFor(model => model.description, new { @class = "textarea" })
+    <br />
+    @Html.LabelFor(model => model.image)
+    <br />
+    <input type="file" name="file" id="file" />
+    <br />
+    <input type="submit" value="Add Product" class="buttonstyle" />
+    <br />
+    <br />
+    @ViewBag.Message
+}
+
+<div>
+    @Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })
+</div>

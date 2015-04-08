@@ -28,10 +28,11 @@ namespace NotreDameReBuildOfficial.Models
                 objApptSched.Appt_Books.InsertOnSubmit(appt);
                 objApptSched.SubmitChanges();
                 return true;
+                
             }
         }
 
-        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _BookTime, string _AdditionalInfo, DateTime _Tstamp, string _Speciality, string _Phone)
+        public bool updateAppt(int _id, string _Fname, string _Lname, string _Email, string _HealthNum, DateTime _BookDate, DateTime _BookTime, string _AdditionalInfo, string _Speciality, string _Phone, DateTime _Tstamp)
         {
             using (objApptSched)
             {
@@ -47,6 +48,7 @@ namespace NotreDameReBuildOfficial.Models
                 apptUpd.Tstamp = _Tstamp;
                 apptUpd.Speciality = _Speciality;
                 apptUpd.Phone = _Phone;
+                objApptSched.SubmitChanges(); //saves changes to db
                 return true;
             }
         }

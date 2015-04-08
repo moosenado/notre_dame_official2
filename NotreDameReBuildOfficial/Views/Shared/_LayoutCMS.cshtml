@@ -4,9 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")  
+    @Scripts.Render("~/bundles/jquery")
+      
     @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
 
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
@@ -25,11 +27,9 @@
             <div id="nd">Notre-Dame</div>
         </div>
 
-        <div id="cms-top-nav">
-            @*<a href=""><i class="fa fa-home"></i>Home</a>*@
-            <a href=""><i class="fa fa-external-link"></i>Visit Site</a>
-            @*<li><a href=""><i class="fa fa-plus"></i>New</a></li>*@
-        </div>
+        @*<div id="cms-top-nav">
+            <a href='@Url.Action("Index", "Home")'><i class="fa fa-external-link"></i>Back to Site</a>
+        </div>*@
 
 
         <div id="sign-out">
@@ -79,6 +79,7 @@
                     <a class="secondary-pages" href="">Parking & Directions</a>
                     <a class="secondary-pages" href="">Patient Information</a>
                     <a class="secondary-pages" href="">Schedule an Appointment</a>
+                    <a class="secondary-pages" href="/cmsGiftShop/products">Gift Shop</a>
                 </div>
             </div>
 
@@ -129,7 +130,7 @@
            </a>
 
            @* News *@
-           <a class="left-mnu-itm" href="">
+           <a class="left-mnu-itm" href="/CMSHome/News">
                <i class="fa fa-newspaper-o fa-lg"></i>News
            </a>
 
@@ -144,7 +145,7 @@
            </a>
 
            @* ER Wait Time *@
-           <a class="left-mnu-itm" href="">
+           <a class="left-mnu-itm" href="/cmsERwait/ERwait_Patients">
                <i class="fa fa-heartbeat fa-lg"></i>ER Wait Time
            </a>
 
@@ -165,9 +166,9 @@
         @* ----- BODY -----*@
 
         <div id="cms-main">
-            @RenderBody()
-            @Scripts.Render("~/bundles/jquery")
             @RenderSection("scripts", required: false)
+            @Scripts.Render("~/bundles/jquery")
+            @RenderBody()
         </div>
 
         @* ----- FOOTER -----*@

@@ -1,0 +1,39 @@
+﻿@using NotreDameReBuildOfficial.Models
+@using WebGrease.Css
+@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
+
+@{
+    ViewBag.Title = "Pdf";
+}
+
+<h2>Browse Pdf's</h2>
+
+<p>
+
+@*<ul>
+            @foreach (var x in Model)
+            {
+                <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
+                <li>@Html.ActionLink(x.Descr, x.PdfUrl, "Details", new {Category = x.Category})</li>
+            }
+        </ul>*@
+<ul>
+    @foreach (var x in Model)
+    {
+        <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
+    }
+</ul>
+@*<img src='@Url.Content("~/Content/images/facebook.png")'/>*@
+@*<a href="~/Content/uploads/french.pdf">File1</a>
+    @foreach (var x in Model)
+    {
+
+        {
+            string link = x.PdfTitle;
+            string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
+            string tag = "<a href=" + path + ">" + link + "</a>";
+            @Html.Raw(tag)
+        }
+    }*@
+        
+    
