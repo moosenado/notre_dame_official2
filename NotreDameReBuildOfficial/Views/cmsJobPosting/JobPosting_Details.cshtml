@@ -11,6 +11,10 @@
             @Html.LabelFor(model => model.title, new { @class = "lbl" }):
             @Html.DisplayFor(x => x.title)
         </div>
+    <div class="details_Op">
+        @Html.LabelFor(model => model.catTitle, new { @class = "lbl" }):
+        @Html.DisplayFor(x => x.catTitle)
+    </div>
         <div class="details_Op">
             @Html.LabelFor(model => model.type, new { @class = "lbl" }):
             @Html.DisplayFor(x => x.type)
@@ -20,7 +24,7 @@
             @Html.DisplayFor(x => x.department)
         </div>
         <div class="details_Op">
-            @Html.LabelFor(model => model.salary, new { @class = "lbl" }):
+            @Html.LabelFor(model => model.salary, "Salary ($)", new { @class = "lbl" }):
             @Html.DisplayFor(x => x.salary)
         </div>
         <div class="details_Op">
@@ -29,21 +33,18 @@
         </div>
         <div class="details_Op">
             @Html.LabelFor(model => model.description, new { @class = "lbl" }):
-            @Html.DisplayFor(x => x.description)
+            @Html.Raw(Model.description)
             
         </div>
-        <div class="details_Op">
-            @Html.LabelFor(model => model.catTitle, new { @class = "lbl" }):
-            @Html.DisplayFor(x => x.catTitle)
-        </div>
+      
 </div>
 <br/>
-<br/>
-<br/>
+
     <p>
         @Html.ActionLink("Back", "JobPosting", null, new { @class = "buttonstyle" }) 
         @Html.ActionLink("Update", "Update_JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
         @Html.ActionLink("Delete", "Delete_JobPosting", new { id = Model.id }, new { @class = "buttonstyle" })
     </p>
+<br/>
 
 
