@@ -134,7 +134,7 @@ namespace notre_dame_rebuild.Controllers
         public class pieChartValue
         {
             public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };
-            public static string[] highlights = { "#FF5A5E", "#5AD3D1", "#FFC870" };
+            public static string[] highlights = { "#FEB10A", "#BDE21B", "#14B7D7" };
 
             public int value { get; set; }
             public string color { get; set; }
