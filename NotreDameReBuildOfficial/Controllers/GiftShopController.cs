@@ -14,6 +14,8 @@ namespace NotreDameReBuildOfficial.Controllers
         giftShopClass objGS = new giftShopClass();
         public ActionResult giftshop()
         {
+            string strSession = System.Web.HttpContext.Current.Session.SessionID.ToString();
+            ViewBag.session = strSession;
             var all_products = objGS.getProducts();
             return View(all_products);
         }
