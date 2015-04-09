@@ -6476,7 +6476,7 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private int _feedback_id;
 		
-		private System.DateTime _date;
+		private System.Nullable<System.DateTime> _date;
 		
 		private string _name;
 		
@@ -6484,11 +6484,13 @@ namespace NotreDameReBuildOfficial.Models
 		
 		private string _subject;
 		
+		private string _category;
+		
 		private string _comments;
 		
 		private bool _anonymous;
 		
-		private int _approved;
+		private System.Nullable<int> _approved;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6496,7 +6498,7 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnCreated();
     partial void Onfeedback_idChanging(int value);
     partial void Onfeedback_idChanged();
-    partial void OndateChanging(System.DateTime value);
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
     partial void OndateChanged();
     partial void OnnameChanging(string value);
     partial void OnnameChanged();
@@ -6504,11 +6506,13 @@ namespace NotreDameReBuildOfficial.Models
     partial void OnemailChanged();
     partial void OnsubjectChanging(string value);
     partial void OnsubjectChanged();
+    partial void OncategoryChanging(string value);
+    partial void OncategoryChanged();
     partial void OncommentsChanging(string value);
     partial void OncommentsChanged();
     partial void OnanonymousChanging(bool value);
     partial void OnanonymousChanged();
-    partial void OnapprovedChanging(int value);
+    partial void OnapprovedChanging(System.Nullable<int> value);
     partial void OnapprovedChanged();
     #endregion
 		
@@ -6537,8 +6541,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date NOT NULL")]
-		public System.DateTime date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+		public System.Nullable<System.DateTime> date
 		{
 			get
 			{
@@ -6617,6 +6621,26 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category", DbType="VarChar(50)")]
+		public string category
+		{
+			get
+			{
+				return this._category;
+			}
+			set
+			{
+				if ((this._category != value))
+				{
+					this.OncategoryChanging(value);
+					this.SendPropertyChanging();
+					this._category = value;
+					this.SendPropertyChanged("category");
+					this.OncategoryChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_comments", DbType="VarChar(650) NOT NULL", CanBeNull=false)]
 		public string comments
 		{
@@ -6657,8 +6681,8 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int NOT NULL")]
-		public int approved
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_approved", DbType="Int")]
+		public System.Nullable<int> approved
 		{
 			get
 			{

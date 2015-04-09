@@ -170,10 +170,10 @@
         <elementListCompartment Id="d93abd19-d2c1-4be2-a132-657890d4920c" absoluteBounds="0.515, 17.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3e9a3899-d0bd-4a76-ac49-587b76db912e" absoluteBounds="11.25, 12.75, 2, 2.3478011067708335">
+    <classShape Id="b64d1e2d-a15c-4613-9b69-94d0c632da74" absoluteBounds="9.75, 13.5, 2, 2.5401025390625">
       <DataClassMoniker Name="/ndLinqClassDataContext/Feedback" />
       <nestedChildShapes>
-        <elementListCompartment Id="ad297f02-babe-421a-88a0-246ffdca5deb" absoluteBounds="11.265, 13.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a0afb21d-0dda-42a5-9fb4-d7c7b29eff17" absoluteBounds="9.765, 13.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

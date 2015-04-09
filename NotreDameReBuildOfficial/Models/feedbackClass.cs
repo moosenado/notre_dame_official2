@@ -25,18 +25,57 @@ namespace NotreDameReBuildOfficial.Models
             return getAllFeedback;
         }
 
+        // --- GET FEEDBACK BY APPROVAL STATUS --- //
+        public IQueryable<Feedback> getFeedbackByStatus(int status)
+        {
+            var getFeedback = (from a in objLinq.Feedbacks
+                               where a.approved == status
+                               orderby a.date ascending
+                               select a);
+            return getFeedback;
+        }
+
         // --- INSERT LOGIC --- //
         public bool insertFeedback(Feedback feedback)
         {
+
             //Ensures all data will be disposed of when finished
             using (objLinq)
             {
+
                 objLinq.Feedbacks.InsertOnSubmit(feedback);
                 objLinq.SubmitChanges();
                 return true;
             }
         }
 
+        // --- UPDATE LOGIC --- //
+        public bool updateFeedback(Feedback feedback)
+        {
+            using (objLinq)
+            {
+                var objUpdate = objLinq.Feedbacks.Single(x => x.feedback_id == feedback.feedback_id);
+                objUpdate.name = feedback.name;
+                objUpdate.email = feedback.email;
+                objUpdate.subject = feedback.subject;
+                objUpdate.category = feedback.category;
+                objUpdate.comments = feedback.comments;
+                objUpdate.approved = feedback.approved;
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
 
+        // --- DELETE LOGIC --- //
+        public bool deleteFeedback(int feedback_id)
+        {
+            using (objLinq)
+            {
+                var objDelete = objLinq.Feedbacks.Single(x => x.feedback_id == feedback_id); //Delete table row where id of object equals id in database
+                objLinq.Feedbacks.DeleteOnSubmit(objDelete);
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
     }
 }

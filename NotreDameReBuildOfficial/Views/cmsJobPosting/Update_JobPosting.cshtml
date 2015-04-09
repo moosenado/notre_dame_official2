@@ -4,11 +4,9 @@
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
-<br />
-<br />
-<br />
 
-<h2>Update @Model.title</h2>
+
+<h1>Update @Model.title</h1>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(x => x.id)
@@ -91,4 +89,6 @@
             $("#category_id").val(item.data("id"));
         });
     });
+
+    CKEDITOR.replace('description');
 </script>

@@ -919,6 +919,14 @@
     <Content Include="Views\CMSPoll\Update_poll.cshtml" />
     <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
     <Content Include="Views\Feedback\Feedback.cshtml" />
+    <Content Include="Views\Feedback\Thanks.cshtml" />
+    <Content Include="Views\cmsFeedback\_UnapprovedPartial.cshtml" />
+    <Content Include="Views\cmsFeedback\_ApprovedPartial.cshtml" />
+    <Content Include="Views\cmsFeedback\Details.cshtml" />
+    <Content Include="Views\cmsFeedback\Update.cshtml" />
+    <Content Include="Views\cmsFeedback\Delete.cshtml" />
+    <Content Include="Views\cmsFeedback\NotFound.cshtml" />
+    <Content Include="Views\cmsFeedback\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

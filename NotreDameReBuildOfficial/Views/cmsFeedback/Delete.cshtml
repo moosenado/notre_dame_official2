@@ -1,14 +1,14 @@
-﻿@model NotreDameReBuildOfficial.Models.Event
+﻿@model NotreDameReBuildOfficial.Models.Feedback
 
 @{
-    ViewBag.Title = "Delete Event";
+    ViewBag.Title = "Delete Feedback";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <div class="yes-no">
 
-    <h2>Are you sure you want to delete the event, <em>@Model.name</em>?</h2>
+    <h2>Are you sure you want to delete feedback record no. <em>@Model.feedback_id</em>?</h2>
 
     @using (Html.BeginForm())
     {

@@ -148,6 +148,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        //Error handling page
         public ActionResult NotFound()
         {
             return View();

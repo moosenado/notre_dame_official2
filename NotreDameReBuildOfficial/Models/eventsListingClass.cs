@@ -117,11 +117,11 @@ namespace NotreDameReBuildOfficial.Models
         }
 
         // --- DELETE LOGIC --- //
-        public bool deleteEvent(int _event_id)
+        public bool deleteEvent(int event_id)
         {
             using (objLinq)
             {
-                var objDelete = objLinq.Events.Single(x => x.event_id == _event_id); //Delete table row where id of object equals id in database
+                var objDelete = objLinq.Events.Single(x => x.event_id == event_id); //Delete table row where id of object equals id in database
                 objLinq.Events.DeleteOnSubmit(objDelete);
                 objLinq.SubmitChanges();
                 return true;

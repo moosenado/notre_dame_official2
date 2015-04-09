@@ -336,13 +336,14 @@
   <Table Name="gen.Feedback" Member="Feedbacks">
     <Type Name="Feedback">
       <Column Name="feedback_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="name" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="comments" Type="System.String" DbType="VarChar(650) NOT NULL" CanBeNull="false" />
       <Column Name="anonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="approved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="approved" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
