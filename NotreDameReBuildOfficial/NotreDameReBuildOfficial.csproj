@@ -838,7 +838,6 @@
     <Content Include="Views\CMSHome\News_Delete.cshtml" />
     <Content Include="Views\Home\Article_List.cshtml" />
     <Content Include="Views\Donation\Donate.cshtml" />
-    <Content Include="Views\cmsDonation\cmsDonationList.cshtml" />
     <Content Include="Views\cmsDonation\Insert.cshtml" />
     <Content Include="Views\cmsDonation\Delete.cshtml" />
     <Content Include="Views\cmsDonation\Update.cshtml" />
@@ -935,6 +934,7 @@
     <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
+    <Content Include="Views\cmsDonation\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

@@ -15,7 +15,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         donationClass objDonation = new donationClass();
 
         //General list of donations
-        public ActionResult cmsDonationList()
+        public ActionResult Manage()
         {
             var list = objDonation.getDonations();
             return View(list);
