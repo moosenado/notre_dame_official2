@@ -187,6 +187,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountNotreDameController.cs" />
     <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\ApptSchedPublicController.cs" />
@@ -214,6 +215,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Util.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
@@ -915,6 +918,8 @@
     <Content Include="Views\CMSPoll\Insert_poll.cshtml" />
     <Content Include="Views\CMSPoll\Update_poll.cshtml" />
     <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
+    <Content Include="Views\AccountNotreDame\Login.cshtml" />
+    <Content Include="Views\AccountNotreDame\LogOff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

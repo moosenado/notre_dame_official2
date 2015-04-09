@@ -7,35 +7,38 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class authorizationClass
     {
-        public List<User> Users { get; set; }
+        ndLinqClassDataContext objUser = new ndLinqClassDataContext();
 
-        //public authorizationClass()
-        //{
-        //    InitData();
-        //}
+        public List<userClass> Users { get; set; }
 
-        //private void InitData()
-        //{
-        //    Users = new List<User>();
 
-        //    User u;
-        //    u = new User()
-        //    {
-        //        id = u.id,
-        //        user_name = u.user_name,
-        //        password = u.password,
-        //        role_id = 3
-        //    };
-        //    Users.Add(u);
+        public authorizationClass()
+        {
+            InitData();
+        }
 
-        //    u = new User()
-        //    {
-        //        //ID = 1,
-        //        //UserName = "Mina",
-        //        //Password = "111",
-        //        //Role = "Staff"
-        //    };
-        //    Users.Add(u);
-        //}
+        private void InitData()
+        {
+            Users = new List<userClass>();
+
+            userClass u;
+            u = new userClass()
+            {
+                id = 1,
+                user_name = "Kiyan",
+                password = "123",
+                roleTitle = "Admin"
+            };
+            Users.Add(u);
+
+            u = new userClass()
+            {
+                id = 1,
+                user_name = "Mina",
+                password = "111",
+                roleTitle = "Staff"
+            };
+            Users.Add(u);
+        }
     }
 }

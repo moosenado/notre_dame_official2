@@ -1,0 +1,26 @@
+﻿@model NotreDameReBuildOfficial.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+<h2>
+    Login
+</h2>
+@using (Html.BeginForm())
+{
+    if (ViewBag.Message != null && ViewBag.Message != "")
+    {
+        <div>@ViewBag.Message</div>
+    }
+    <div>
+        <span>User Name</span>
+        @Html.TextBoxFor(x => x.user_name)
+    </div>
+    <div>
+        <span>Password</span>
+        @Html.PasswordFor(x => x.password)
+    </div>
+    <input type="submit" value="Sign In" />
+}
+@*<div>
+    @Html.ActionLink("Back", "Index", "Home")
+</div>*@
