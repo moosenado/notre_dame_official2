@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Donation>
 
 @{
-    ViewBag.Title = "cmsDonationList";
+    ViewBag.Title = "Manage";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
@@ -25,8 +25,8 @@
             <td>@donor.last_name, @donor.first_name</td>
             <td>@donor.date.Value.ToString("MM/dd/yyyy")</td>
             <td>@donor.amount</td>
-            <td>@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id }) / @Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id }) / @Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })</td>           
-       </tr>
+            <td>@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id }) / @Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id }) / @Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })</td>
+        </tr>
     }
 
 </table>
@@ -34,7 +34,8 @@
 <a href='@Url.Action("Insert", "cmsDonation")'>
     <span class="buttonstyle"><i class="fa fa-plus"></i>New Donation</span>
 </a>
-<a href='https://www.sandbox.paypal.com/ca/webapps/mpp/merchant' target="_blank" class="buttonstyle"><i class="fa fa-external-link"></i>Manage PayPal Account
+<a href='https://www.sandbox.paypal.com/ca/webapps/mpp/merchant' target="_blank" class="buttonstyle">
+    <i class="fa fa-external-link"></i>Manage PayPal Account
 </a>
 
 
