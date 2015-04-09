@@ -24,5 +24,10 @@ namespace NotreDameReBuildOfficial
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Session_Start()
+        {
+            
+        }
     }
 }

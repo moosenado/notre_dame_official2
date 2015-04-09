@@ -934,6 +934,7 @@
     <Content Include="Views\cmsVolunteer\InsertJob.cshtml" />
     <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

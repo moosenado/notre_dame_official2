@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.ER_patient_info>
+@{
+    ViewBag.Title = "ERwait_PatientHistory";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>ER Wait Time</h2>
+
+<br />
+
+<div id="erlinks">
+    <ul>
+        <li>@Html.ActionLink("Waiting Patients", "ERwait_Patients", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Add Patient", "ERwait_AddPatient", "cmsERwait", new { @class = "buttonstyle" })</li>
+        <li>@Html.ActionLink("Patient History Data", "ERwait_PatientHistory", "cmsERwait", new { @class = "buttonstyle" })</li>
+    </ul>
+</div>
+
+<br />
+
+<h3>Waiting Patients in ER</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Patient Name</th>
+            <th>Arrival Time</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+            
+            int counter = ViewBag.patientCount; }
+        @foreach (var patient in Model.OrderByDescending(x => x.Id))
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@Html.Raw(patient.fname) @Html.Raw(patient.lname)</td>
+                <td>@Html.Raw(patient.arrivaltime)</td>
+            </tr>
+                counter--;
+        }
+    </tbody>
+</table>

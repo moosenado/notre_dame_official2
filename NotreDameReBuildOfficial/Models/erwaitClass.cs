@@ -20,11 +20,23 @@ namespace NotreDameReBuildOfficial.Models
         //instance of Data Context
         ndLinqClassDataContext objER = new ndLinqClassDataContext(); 
 
-        //get all patient info
+        //get all waiting patient info
         public IQueryable<ER_wait_list> getWaitingPatientInfo() 
         {
             var waitingPatients = objER.ER_wait_lists.Select(x => x); 
             return waitingPatients;
+        }
+        //get all patient info
+        public IQueryable<ER_patient_info> getPatientInfo()
+        {
+            var infoPatients = objER.ER_patient_infos.Select(x => x);
+            return infoPatients;
+        }
+        //get patient info count
+        public int getPatientCount()
+        {
+            var count = objER.ER_patient_infos.Select(x => x).Count();
+            return count;
         }
 
         //get specific patient info by ID
