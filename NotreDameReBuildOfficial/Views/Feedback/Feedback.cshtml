@@ -43,15 +43,16 @@
 
         <div class="clear"></div>
         
-      @*@Html.LabelFor(model => model.category, new { @class = "label" })
+        @Html.LabelFor(model => model.category, new { @class = "label" })
         @Html.DropDownListFor(model => model.category, new[] {
                 new SelectListItem() {Text = "Compliment"},
                 new SelectListItem() {Text = "Suggestion"},
                 new SelectListItem() {Text = "Concern"},
             }, "- Select One -", new { @class = "dropdown-list" })
+        <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.category)
 
-        <div class="clear"></div>*@
+        <div class="clear"></div>
 
         @Html.LabelFor(model => model.subject, new { @class = "label" })
         @Html.TextBoxFor(model => model.subject, new { @class = "textbox" })

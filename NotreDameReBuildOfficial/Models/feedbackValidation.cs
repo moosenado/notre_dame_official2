@@ -16,21 +16,25 @@ namespace NotreDameReBuildOfficial.Models
     public class feedbackValidation
     {
 
-        [DisplayName("Remain Anonymous?")]
+        [DisplayName("I would like to remain anonymous")]
         public bool anonymous { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dddd MMMM d, yyyy}")]
         public DateTime date { get; set; }
 
-        [DisplayName("Your Name")]
+        [DisplayName("Name")]
         public string name { get; set; }
 
-        [DisplayName("Your Email")]
+        [DisplayName("Email")]
         public string email { get; set; }
 
-        [DisplayName("Subject of Feedback (e.g. website)")]
+        [DisplayName("What is the subject of your feedback? (e.g. website)")]
         [Required(ErrorMessage = "Enter subject")]
         public string subject { get; set; }
+
+        [DisplayName("Category")]
+        [Required(ErrorMessage = "Select a category")]
+        public string category { get; set; }
 
         [DisplayName("Your Comments")]
         [Required(ErrorMessage = "Enter feedback comments")]
