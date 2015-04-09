@@ -204,6 +204,7 @@
     <Compile Include="Controllers\CMS\CMSPollController.cs" />
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
+    <Compile Include="Controllers\CMS\cmsVolunteerController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\userValidationClass.cs" />
+    <Compile Include="Models\volunteerJobs.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -927,6 +929,11 @@
     <Content Include="Views\cmsFeedback\Delete.cshtml" />
     <Content Include="Views\cmsFeedback\NotFound.cshtml" />
     <Content Include="Views\cmsFeedback\Manage.cshtml" />
+    <Content Include="Views\cmsVolunteer\jobList.cshtml" />
+    <Content Include="Views\cmsVolunteer\jobInfo.cshtml" />
+    <Content Include="Views\cmsVolunteer\InsertJob.cshtml" />
+    <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
+    <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

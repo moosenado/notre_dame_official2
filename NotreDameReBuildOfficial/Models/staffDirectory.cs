@@ -31,7 +31,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
-        public bool updateStaff(int _id, int _staffID, string fname, string lname, string department, string role, string gender, string city, string province, string zip)
+        public bool updateStaff(int _id, int _staffID, string fname, string lname, string gender, string department, string role, string city, string province, string zip)
         {
             using (objLinq)
             { 
@@ -39,9 +39,9 @@ namespace NotreDameReBuildOfficial.Models
                 upStaff.staff_id = _staffID;
                 upStaff.firstname = fname;
                 upStaff.lastname = lname;
+                upStaff.gender = gender;
                 upStaff.department = department;
                 upStaff.role = role;
-                upStaff.gender = gender;
                 upStaff.city = city;
                 upStaff.province = province;
                 upStaff.zip_code = zip;
