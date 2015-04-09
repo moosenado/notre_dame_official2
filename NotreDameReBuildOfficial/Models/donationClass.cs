@@ -38,7 +38,7 @@ namespace NotreDameReBuildOfficial.Models
         }
 
         // --- UPDATE LOGIC --- //
-        public bool updateDonation(Donation donation)
+        public bool updateDonation(int _id, Donation donation)
         {
             using (objLinq)
             {

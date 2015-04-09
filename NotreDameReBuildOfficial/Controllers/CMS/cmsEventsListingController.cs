@@ -110,11 +110,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 catch
                 {
                     //Error handling, return Update view if something goes wrong
-                    return View();
+                    return View(events);
                 }
             }
 
-            return View();
+            return View(events);
         }
 
         // --- DELETE ACTION --- //

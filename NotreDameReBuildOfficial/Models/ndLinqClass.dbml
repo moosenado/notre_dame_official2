@@ -81,25 +81,6 @@
       <Column Name="initiative3" Type="System.String" DbType="VarChar(650)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="gen.Donations" Member="Donations">
-    <Type Name="Donation">
-      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,0) NULL" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="in_memory" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="first_name" Type="System.String" DbType="VarChar(50) NULL" CanBeNull="true" />
-      <Column Name="last_name" Type="System.String" DbType="VarChar(50) NULL" CanBeNull="true" />
-      <Column Name="organization" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="true" />
-      <Column Name="city" Type="System.String" DbType="VarChar(50)NULL" CanBeNull="true" />
-      <Column Name="province" Type="System.String" DbType="VarChar(2)NULL" CanBeNull="true" />
-      <Column Name="country" Type="System.String" DbType="VarChar(50) NULL" CanBeNull="true" />
-      <Column Name="postal" Type="System.String" DbType="VarChar(6) NULL" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="VarChar(11) NULL" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(320)NULL" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="mina.Staff_volunteer" Member="Staff_volunteers">
     <Type Name="Staff_volunteer">
       <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -344,6 +325,25 @@
       <Column Name="comments" Type="System.String" DbType="VarChar(650) NOT NULL" CanBeNull="false" />
       <Column Name="anonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="approved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="gen.Donations" Member="Donations">
+    <Type Name="Donation">
+      <Column Name="donation_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="in_memory" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="first_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="organization" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="postal" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(320)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

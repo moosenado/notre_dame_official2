@@ -13,13 +13,13 @@ namespace NotreDameReBuildOfficial.Models
     [MetadataType(typeof(donationValidation))]
     public partial class Donation { }
 
+    //[Bind(Exclude= "donation_id")]
     public class donationValidation
     {
 
         [DisplayName("Amount: (e.g. 50.00):")]
         [RegularExpression(@"^[\d]{1,}?\.[\d]{2}$", ErrorMessage = "Invalid amount")]
         [Required(ErrorMessage = "Please enter an amount")]
-
         public decimal amount { get; set; }
 
         [DisplayName("In Memory of:")]
@@ -27,7 +27,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Where would you like to direct your donation?: ")]
         [Required(ErrorMessage = "Select one")]
-        public int type { get; set; }
+        public int? type { get; set; }
 
         [DisplayName("Date of Donation:")]
         public DateTime date { get; set; }

@@ -34,11 +34,11 @@ namespace NotreDameReBuildOfficial.Controllers
                         donation.date = DateTime.Now;
                     }
 
-                    //these strings make up t
+                    //these strings make up the url to redirect to PayPal
                     string url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
                     string cmd = "?cmd=";
                     string value = "_donations";
-                    string business = "&business=admin@notredame.com";
+                    string business = "&business=admin@notredame.ca";
                     string itm = "&item_name=Donation";
                     string currency = "&currency_code=CAD";
                     string amt = "&amount=" + donation.amount.Value.ToString();
