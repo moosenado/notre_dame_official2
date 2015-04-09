@@ -14,7 +14,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         feedbackClass objFeedback = new feedbackClass();
 
         //Feedback Form Page Method
-        public ActionResult cmsFeedback()
+        public ActionResult Manage()
         {
             return View();
         }
@@ -78,7 +78,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 try
                 {
                     objFeedback.updateFeedback(feedback);
-                    return RedirectToAction("Feedback", new { feedback_id = feedback.feedback_id }); //After successful update, return to main feedback management page
+                    return RedirectToAction("Manage", new { feedback_id = feedback.feedback_id }); //After successful update, return to main feedback management page
                 }
                 catch
                 {
@@ -113,7 +113,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             try
             {
                 objFeedback.deleteFeedback(feedback_id);
-                return RedirectToAction("Feedback"); //On successful delete, return to main feedback management page
+                return RedirectToAction("Manage"); //On successful delete, return to main feedback management page
             }
             catch
             {

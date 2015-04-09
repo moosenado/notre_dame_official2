@@ -1,1 +1,30 @@
-﻿
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Feedback>
+
+<table class="tbl-width">
+    <thead>
+        <tr>
+            <th>Record No.</th>
+            <th>Date Submitted</th>
+            <th>Subject</th>
+            <th>Category</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.feedback_id</td>
+            <td>@e.date.Value.ToString("MMMM d")</td>
+            <td>@e.subject</td>
+            <td>@e.category</td>
+            <td>@Html.ActionLink("View", "Details", new { feedback_id = e.feedback_id })</td>
+            <td>@Html.ActionLink("Edit", "Update", new { feedback_id = e.feedback_id })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { feedback_id= e.feedback_id })</td>
+        </tr>
+
+    }
+
+</table>

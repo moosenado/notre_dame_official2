@@ -1,5 +1,22 @@
-﻿@{
-    ViewBag.Title = "Delete";
+﻿@model NotreDameReBuildOfficial.Models.Feedback
+
+@{
+    ViewBag.Title = "Delete Feedback";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Delete</h2>
+<div class="yes-no">
+
+    <h2>Are you sure you want to delete feedback record no. <em>@Model.feedback_id</em>?</h2>
+
+    @using (Html.BeginForm())
+    {
+        //"Yes" button that will trigger delete ActionResult
+        <input type="submit" value="Yes" class="buttonstyle" />
+
+        //"No" button that will return users to Index page
+        @Html.ActionLink("No", "Manage", new { @class = "buttonstyle" })
+    }
+
+</div>

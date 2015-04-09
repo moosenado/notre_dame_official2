@@ -1,0 +1,20 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Feedback>
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Manage Feedback</h1>
+
+<h3>Pending Feedback</h3>
+@{
+    Html.RenderAction("_UnapprovedPartial", "cmsFeedback");
+
+}
+
+
+<h3>Archived Feedback</h3>
+@{
+    Html.RenderAction("_ApprovedPartial", "cmsFeedback");
+}

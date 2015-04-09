@@ -19,8 +19,9 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("I would like to remain anonymous")]
         public bool anonymous { get; set; }
 
+        [DisplayName("Date Created")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dddd MMMM d, yyyy}")]
-        public DateTime date { get; set; }
+        public DateTime? date { get; set; }
 
         [DisplayName("Name")]
         public string name { get; set; }
@@ -36,7 +37,7 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Select a category")]
         public string category { get; set; }
 
-        [DisplayName("Your Comments")]
+        [DisplayName("Comments")]
         [Required(ErrorMessage = "Enter feedback comments")]
         public string comments { get; set; }
 
