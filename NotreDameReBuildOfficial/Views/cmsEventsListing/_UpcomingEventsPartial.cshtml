@@ -1,31 +1,39 @@
 ﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
 
+<table>
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
 
-@foreach (var e in Model)
-{
-    <div class="event">
+    @foreach (var e in Model)
+    {
+     
+        <tr>
+            <td>@e.name</td>
+            <td>@e.start_date.ToString("MMMM d")  @@ @e.start_time
+                @if (e.end_time != null){
+                    @:- @e.end_time
+                }
+            </td>
+            <td class="iup-icons">
+                <a class="link" href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'>View</a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-pencil fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-trash-o fa-lg"></i></a>
+            </td>
+        </tr>
+           
 
-        @e.name
-
-        <div class="clear"></div>
-
-        @e.start_date.ToString("MMMM d")  @@ @e.start_time
-        @if (e.end_time != null)
-        {
-            @:- @e.end_time
-        }
-
-        <div class="clear"></div>
-        <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id, @class = "viewIcon" })'>
-            <span><i class="fa fa-eye"></i>View</span>
-        </a>
-        |
-        @Html.ActionLink("Edit", "Update", new { event_id = e.event_id })
-        |
-        @Html.ActionLink("Delete", "Delete", new { event_id = e.event_id })
-
-    </div>
-
-}
+    }
+</table>
 
 <div class="clear"></div>

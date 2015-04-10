@@ -88,6 +88,10 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
+h1.no-border {
+    border-bottom: 0px;
+}
+
 h2 {
     font-family: 'Lora', serif;
     font-weight: 700;
@@ -128,6 +132,10 @@ h3 {
 
 .see-more {
     border-bottom: 1px dotted #019ab8;
+}
+
+.iup-icons {
+    
 }
 
 input[type=radio] {
@@ -197,6 +205,7 @@ table {
 	text-align: left;
 	border-collapse: collapse;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 th {
@@ -463,7 +472,7 @@ table tr:nth-child(odd) td {
 /*For Sticky Footer*/
 
 #main {
-    width: 1024px;
+    width: 1000px;
     min-height: 100%;
 	height: auto !important;
 	height: 100%;
@@ -1158,7 +1167,7 @@ table tr:nth-child(odd) td {
     float: left;
     margin-left:20px;
     margin-top: 20px;
-    width: 800px;
+    width: 850px;
 }
 
 .link{
@@ -1255,7 +1264,8 @@ table tr:nth-child(odd) td {
 .fa-eye,
 .fa-calendar,
 .fa-heart,
-.fa-newspaper-o  {
+.fa-newspaper-o,
+.fa-external-link-square  {
 	padding-right: 0px;
 }
 
@@ -1483,10 +1493,6 @@ table#edit-donations {
 
 .hmpg-event {
     margin: 20px 0px;
-}
-
-.tbl-width {
-    width: 90%;
 }
 
 /* --- JQUERY DATEPICKER --- */

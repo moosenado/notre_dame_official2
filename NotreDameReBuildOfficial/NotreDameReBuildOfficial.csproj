@@ -876,7 +876,6 @@
     <Content Include="Views\cmsEventsListing\Details.cshtml" />
     <Content Include="Views\Home\AllEvents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
-    <Content Include="Views\Home\EventsPartial.cshtml" />
     <Content Include="Views\cmsEventsListing\_PastEventsPartial.cshtml" />
     <Content Include="Views\cmsEventsListing\_UpcomingEventsPartial.cshtml" />
     <Content Include="Views\GiftShop\giftshop.cshtml" />
@@ -934,6 +933,10 @@
     <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
+    <Content Include="Views\Home\AddEvent.cshtml" />
+    <Content Include="Views\Home\_EventsPartial.cshtml" />
+    <Content Include="Views\Home\SubmitEvent.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
