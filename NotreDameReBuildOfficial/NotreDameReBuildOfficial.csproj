@@ -937,6 +937,8 @@
     <Content Include="Views\Home\_EventsPartial.cshtml" />
     <Content Include="Views\Home\SubmitEvent.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\cmsEventsListing\Submitted.cshtml" />
+    <Content Include="Views\cmsEventsListing\_TotalSubmittedEventsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

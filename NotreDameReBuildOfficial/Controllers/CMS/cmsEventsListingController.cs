@@ -53,6 +53,27 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        //List of submitted events
+        public ActionResult Submitted()
+        {
+
+            var submitted = objEvents.getSumbittedEvents();
+
+            return View(submitted);
+
+        }
+
+        public ActionResult _TotalSubmittedEventsPartial()
+        {
+
+            ViewBag.TotalEvents = objEvents.getTotalSumbittedEvents();
+
+            //Total Events
+            var total = objEvents.getTotalSumbittedEvents();
+
+            return PartialView(total);
+        }
+
         // --- INSERT ACTION --- //
         public ActionResult Insert()
         {

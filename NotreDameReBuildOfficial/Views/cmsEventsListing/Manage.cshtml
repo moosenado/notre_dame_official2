@@ -8,11 +8,24 @@
 
 <h1>Manage Events</h1>
 
+<div id="total-submitted-events">
+
+    @{
+        Html.RenderAction("_TotalSubmittedEventsPartial", "cmsEventsListing");
+    }
+
+</div>
+
 <div class="head-btns">
+
     <a href='@Url.Action("Insert", "cmsEventsListing")'>
         <span class="buttonstyle"><i class="fa fa-plus"></i>New Event</span>
     </a>
+
 </div>
+
+
+
 
 <div class="clear"></div>
 

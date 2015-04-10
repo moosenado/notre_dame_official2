@@ -1157,6 +1157,7 @@ table tr:nth-child(odd) td {
 
 .head-btns {
     text-align: right;
+    float: right;
 }
 
 /* --- CMS MAIN BODY --- */
@@ -1493,6 +1494,12 @@ table#edit-donations {
 
 .hmpg-event {
     margin: 20px 0px;
+}
+
+#total-submitted-events {
+    padding: 20px;
+    background: red;
+    float: right;
 }
 
 /* --- JQUERY DATEPICKER --- */
