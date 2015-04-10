@@ -24,9 +24,12 @@ namespace NotreDameReBuildOfficial.Models
         public DateTime? date { get; set; }
 
         [DisplayName("Name")]
+        [Required(ErrorMessage = "Please enter name")]
         public string name { get; set; }
 
         [DisplayName("Email")]
+        [Required(ErrorMessage = "Please enter your email")]
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Invalid email address")]
         public string email { get; set; }
 
         [DisplayName("What is the subject of your feedback? (e.g. website)")]
