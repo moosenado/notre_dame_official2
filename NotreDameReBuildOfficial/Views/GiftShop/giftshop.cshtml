@@ -5,11 +5,12 @@
 <h2>Gift Shop</h2>
 <h1>@ViewBag.strSession</h1>
 
+<span>@ViewBag.Message</span>
+
 @model IEnumerable<NotreDameReBuildOfficial.Models.product>
-@foreach (var product in Model)
+@foreach (var product in Model.OrderByDescending(x => x.Id))
 {
-        <a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@product.name" /></a>
-        <a href="@Url.Action("product_details", new { id = product.Id })"><span class="news_image_header">@product.name</span></a>
-        @*@using (Html.BeginForm(FormMethod.Post)){<input type="submit" value="Add To Cart" class="buttonstyle" name="add_command"/><input type="hidden" value="@Html.Raw(product.name)" name="product_name" /><input type="hidden" value="@Viewbag.strSession" name="session_id" />}*@
-        <input type="button" value="Add To Cart" name="addtocart" />
+        <a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@Html.Raw(product.name)" /></a><br />
+        <a href="@Url.Action("product_details", new { id = product.Id })"><span>@Html.Raw(product.name)</span></a>
+        using (Html.BeginForm(FormMethod.Post)){<input type="number" name="product_quantity" min="1" max="100" value="1"/><input type="hidden" value="@Html.Raw(product.name)" name="product_name" /><input type="submit" value="Add To Cart" class="buttonstyle" name="add_command"/>}
 }
