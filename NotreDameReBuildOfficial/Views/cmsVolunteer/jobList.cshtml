@@ -1,5 +1,37 @@
-﻿@{
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.volunteerJob>
+@{
     ViewBag.Title = "jobList";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>jobList</h2>
+<h2>Opportunities List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+
+    @foreach (var job in Model)
+    {
+        <tr>
+            <td>@job.jobTitle</td>
+            <td>@job.jobDescription</td>
+            <td>@job.dateStart</td>
+            <td>@job.dateEnd</td>
+            <td>@Html.ActionLink("View", "jobInfo", new { id = job.id }) /@Html.ActionLink("Update", "updateJob", new { id = job.id }) / @Html.ActionLink("Delete", "deleteJob", new { id = job.id })</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<br />
+<a href='@Url.Action("InsertJob", "cmsVolunteer")'>
+    <span class="buttonstyle">+ Add Volunteer</span>
+</a>
+
