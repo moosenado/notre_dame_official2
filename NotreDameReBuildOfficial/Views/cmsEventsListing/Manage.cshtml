@@ -8,6 +8,14 @@
 
 <h1>Manage Events</h1>
 
+<div class="head-btns">
+    <a href='@Url.Action("Insert", "cmsEventsListing")'>
+        <span class="buttonstyle"><i class="fa fa-plus"></i>New Event</span>
+    </a>
+</div>
+
+<div class="clear"></div>
+
 <h3>Upcoming Events</h3>
 @{
     Html.RenderAction("_UpcomingEventsPartial", "cmsEventsListing");
@@ -19,9 +27,3 @@
 @{
     Html.RenderAction("_PastEventsPartial", "cmsEventsListing"); 
 }
-
-<div class="clear"></div>
-
-<a href='@Url.Action("Insert", "cmsEventsListing")'>
-    <span class="buttonstyle"><i class="fa fa-plus"></i>New Event</span>
-</a>

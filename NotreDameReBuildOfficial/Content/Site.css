@@ -83,7 +83,9 @@ h1 {
     font-weight: 700;
     color: #f7900f;
     font-size: 1.5em;
-    margin: 20px 0px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 h2 {
@@ -1144,15 +1146,19 @@ table tr:nth-child(odd) td {
 	text-decoration: none;
 }
 
+.head-btns {
+    text-align: right;
+}
+
 /* --- CMS MAIN BODY --- */
 
 #cms-main {
     min-height: 100%;
     position: relative;
     float: left;
-    margin-left:40px;
+    margin-left:20px;
     margin-top: 20px;
-    width: 70%;
+    width: 800px;
 }
 
 .link{
@@ -1225,9 +1231,16 @@ table tr:nth-child(odd) td {
 	padding-right: 20px;
 }
 
-.fa-plus,
 .fa-external-link,
-.fa-home,
+.fa-plus {
+    padding-right: 5px;
+}
+
+.fa-newspaper-o.cms,
+.fa-calendar.cms {
+    padding-right: 20px;
+}
+
 #magnifylogo .fa-search, /*targets magnifing glass on public layout*/
 .fa-bars,
 .fa-shopping-cart,
