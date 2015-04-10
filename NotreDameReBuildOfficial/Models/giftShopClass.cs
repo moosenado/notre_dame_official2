@@ -62,6 +62,15 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
+        public bool insertCart(cart cart_table)
+        {
+            using (objGS)
+            {
+                objGS.carts.InsertOnSubmit(cart_table);
+                objGS.SubmitChanges();
+                return true;
+            }
+        }
 
     }
 }
