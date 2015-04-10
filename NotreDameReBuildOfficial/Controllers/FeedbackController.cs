@@ -60,7 +60,7 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Feedback");
+                return View("Thank You");
             }
             else
             {

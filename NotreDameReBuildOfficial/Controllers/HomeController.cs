@@ -94,7 +94,7 @@ namespace notre_dame_rebuild.Controllers
 
         eventsListingClass objEvents = new eventsListingClass();
 
-        public ActionResult EventsPartial(Event events)
+        public ActionResult _EventsPartial(Event events)
         {
             //Passing count of total upcoming events through the ViewBag so it's accessible in the view
             ViewBag.Total = objEvents.getTotalEvents();
@@ -130,6 +130,59 @@ namespace notre_dame_rebuild.Controllers
                 return View(events);
             }
         }
+
+        // ----- INSERT/SUBMIT YOUR EVENT ----- //
+        public ActionResult SubmitEvent()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SubmitEvent(Event events)
+        {
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objEvents.insertEvent(events);
+                    return RedirectToAction("Thanks"); //On sucessful insert, return to Events Listing page
+                }
+                catch
+                {
+                    //Error handling, return to Events Listing view if something goes wrong
+                    return View();
+                }
+            }
+
+            return View();
+        }
+
+        //Add an event
+        public ActionResult Thanks()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Thanks(eventsListingValidation valid)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", valid);
+            }
+            else 
+            {
+                return View();
+            }
+        }
+
+
+        // ------------------------------- //
+        // ----- WEEKLY POLL by MINA ----- //
+        // ------------------------------- //
+
         public class pieChartValue
         {
             public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };

@@ -22,14 +22,14 @@
 
     <div id="cms-head-container">
 
-        <div id="ndh-title">
+        <a id="ndh-title" href="~/CMSHome/Index">
             <img id="cross" src="~/Content/images/ndh-cross.png" />
             <div id="nd">Notre-Dame</div>
-        </div>
+        </a>
 
-        @*<div id="cms-top-nav">
-            <a href='@Url.Action("Index", "Home")'><i class="fa fa-external-link"></i>Back to Site</a>
-        </div>*@
+        <div id="cms-top-nav">
+            <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
+        </div>
 
 
         <div id="sign-out">
@@ -131,12 +131,12 @@
 
            @* News *@
            <a class="left-mnu-itm" href="/CMSHome/News">
-               <i class="fa fa-newspaper-o fa-lg"></i>News
+               <i class="fa fa-newspaper-o cms fa-lg"></i>News
            </a>
 
            @* Events *@
            <a class="left-mnu-itm" href="">
-               <i class="fa fa-calendar fa-lg"></i>Events
+               <i class="fa fa-calendar cms fa-lg"></i>Events
            </a>
 
            @* Donations *@

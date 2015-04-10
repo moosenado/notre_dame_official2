@@ -150,10 +150,9 @@
 
     <section id="main">
 
-        @RenderBody()
-
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
+        @RenderBody()
 
         <div class="push">
             @*For Sticky Footer*@

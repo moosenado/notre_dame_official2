@@ -83,7 +83,13 @@ h1 {
     font-weight: 700;
     color: #f7900f;
     font-size: 1.5em;
-    margin: 20px 0px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1.no-border {
+    border-bottom: 0px;
 }
 
 h2 {
@@ -126,6 +132,10 @@ h3 {
 
 .see-more {
     border-bottom: 1px dotted #019ab8;
+}
+
+.iup-icons {
+    
 }
 
 input[type=radio] {
@@ -195,6 +205,7 @@ table {
 	text-align: left;
 	border-collapse: collapse;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 th {
@@ -461,7 +472,7 @@ table tr:nth-child(odd) td {
 /*For Sticky Footer*/
 
 #main {
-    width: 1024px;
+    width: 1000px;
     min-height: 100%;
 	height: auto !important;
 	height: 100%;
@@ -1144,15 +1155,19 @@ table tr:nth-child(odd) td {
 	text-decoration: none;
 }
 
+.head-btns {
+    text-align: right;
+}
+
 /* --- CMS MAIN BODY --- */
 
 #cms-main {
     min-height: 100%;
     position: relative;
     float: left;
-    margin-left:40px;
+    margin-left:20px;
     margin-top: 20px;
-    width: 70%;
+    width: 850px;
 }
 
 .link{
@@ -1225,9 +1240,16 @@ table tr:nth-child(odd) td {
 	padding-right: 20px;
 }
 
-.fa-plus,
 .fa-external-link,
-.fa-home,
+.fa-plus {
+    padding-right: 5px;
+}
+
+.fa-newspaper-o.cms,
+.fa-calendar.cms {
+    padding-right: 20px;
+}
+
 #magnifylogo .fa-search, /*targets magnifing glass on public layout*/
 .fa-bars,
 .fa-shopping-cart,
@@ -1242,7 +1264,8 @@ table tr:nth-child(odd) td {
 .fa-eye,
 .fa-calendar,
 .fa-heart,
-.fa-newspaper-o  {
+.fa-newspaper-o,
+.fa-external-link-square  {
 	padding-right: 0px;
 }
 
@@ -1470,10 +1493,6 @@ table#edit-donations {
 
 .hmpg-event {
     margin: 20px 0px;
-}
-
-.tbl-width {
-    width: 90%;
 }
 
 /* --- JQUERY DATEPICKER --- */
