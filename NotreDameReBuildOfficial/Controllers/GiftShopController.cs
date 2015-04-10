@@ -12,7 +12,7 @@ namespace NotreDameReBuildOfficial.Controllers
     public class GiftShopController : Controller
     {
         giftShopClass objGS = new giftShopClass();
-        public ActionResult giftshop(string add_command, giftShopClass gsclass, string product_name, cart cart, int product_quantity)
+        public ActionResult giftshop(string add_command, giftShopClass gsclass, string product_name, cart cart, string product_quantity)
         {
             if (add_command == "Add To Cart")
             {
@@ -20,7 +20,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 {
                     cart.session_id = Session["name"].ToString();
                     cart.name = gsclass.product_name;
-                    cart.prod_quantity = product_quantity;
+                    cart.prod_quantity = gsclass.product_quantity;
 
                     //add one to cart counter
                 }
