@@ -12,8 +12,12 @@
 
         $('input[type=checkbox]').on('change', function() {
 
-            $(".fbname").toggle();
-            $(".fbemail").toggle();
+            $("#anonomyous-block").toggle();
+
+            if ($('input[type=checkbox]').is(':checked')) {
+                $("#fbname").attr("value", "Anonymous");
+                $("#fbemail").attr("value", "anonymous@ndh.on.ca");
+            }
 
         });
     });
@@ -33,13 +37,21 @@
         
         <br /><br />
 
-        @Html.LabelFor(model => model.name, new { @class = "fbname label" })
-        @Html.TextBoxFor(model => model.name, new { @class = "fbname textbox" })
+        <div id="anonomyous-block">
 
-        <div class="clear"></div>
+            @Html.LabelFor(model => model.name, new { @class = "label" })
+            @Html.TextBoxFor(model => model.name, new { @class = "textbox", @id = "fbname" })
+            <span style="color:red">*</span>
+            @Html.ValidationMessageFor(model => model.name)
 
-        @Html.LabelFor(model => model.email, new { @class = "fbemail label" })
-        @Html.TextBoxFor(model => model.email, new { @class = "fbemail textbox" })
+            <div class="clear"></div>
+
+            @Html.LabelFor(model => model.email, new { @class = "label" })
+            @Html.TextBoxFor(model => model.email, new { @class = "textbox", @id = "fbemail" })
+            <span style="color:red">*</span>
+            @Html.ValidationMessageFor(model => model.email)
+
+        </div>
 
         <div class="clear"></div>
         
