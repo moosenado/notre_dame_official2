@@ -55,7 +55,7 @@
         </tr>
         <tr>
             <td>@Html.Label("Date :")</td>
-            <td>@Html.Label("DateTime.Now")<span style="color:red">*</span></td>
+            <td>@Html.Label(DateTime.Now.ToString())<span style="color:red">*</span></td>
         </tr>
         <tr>
             <td>@Html.LabelFor(Model => Model.dateStart)</td>
