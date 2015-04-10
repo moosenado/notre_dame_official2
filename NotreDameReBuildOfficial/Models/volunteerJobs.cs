@@ -37,6 +37,8 @@ namespace NotreDameReBuildOfficial.Models
             {
                 var upJob = objLinq.volunteerJobs.Single(x => x.id == _id);
 
+                _date = DateTime.Now;
+
                 upJob.jobTitle = _jobTitle;
                 upJob.jobDescription = _jobDescription;
                 upJob.street = _street;

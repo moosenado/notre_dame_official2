@@ -256,6 +256,7 @@
     <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\userValidationClass.cs" />
     <Compile Include="Models\volunteerJobs.cs" />
+    <Compile Include="Models\volunteerValidate.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
