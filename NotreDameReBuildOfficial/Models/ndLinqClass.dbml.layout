@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 22.25" name="ndLinqClass">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 19.875" name="ndLinqClass">
   <DataContextMoniker Name="/ndLinqClassDataContext" />
   <nestedChildShapes>
     <classShape Id="f4127cc5-baba-4aea-b109-d2be656e6a11" absoluteBounds="0.5, 0.5, 2, 1.4248478190104168">
@@ -170,10 +170,10 @@
         <elementListCompartment Id="0c21713e-a5a2-428b-8595-1bab2319a905" absoluteBounds="9.64, 6.71, 1.9700000000000002, 2.67266845703125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a89923aa-ff11-458b-a26c-1ff7b393ac31" absoluteBounds="5.875, 19.625, 2, 2.4109318033854166">
+    <classShape Id="237567b9-725a-4261-80c9-eb78e6dc40d3" absoluteBounds="5.875, 17, 2, 2.4109318033854166">
       <DataClassMoniker Name="/ndLinqClassDataContext/volunteerJob" />
       <nestedChildShapes>
-        <elementListCompartment Id="3431511c-077b-4985-8010-a830af7daa44" absoluteBounds="5.89, 20.085, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e6ef0e0b-1a61-442d-8fb6-f3d8bea7e317" absoluteBounds="5.89, 17.46, 1.9700000000000002, 1.8509318033854165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

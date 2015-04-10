@@ -1,4 +1,4 @@
-﻿@model NotreDameReBuildOfficial.Models.volunteerJob
+﻿@model NotreDameReBuildOfficial.Models.volunteerValidate
 @{
     ViewBag.Title = "InsertJob";
 
@@ -13,23 +13,23 @@
 { 
     <table>
         <tr>
-            <td>@Html.LabelFor(model => model.jobTitle)</td>
-            <td>@Html.TextBoxFor(model => model.jobTitle)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.jobTitle)</td>
+            <td>@Html.TextBoxFor(Model => Model.jobTitle)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.jobDescription)</td>
-            <td>@Html.TextBoxFor(model => model.jobDescription)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.jobDescription)</td>
+            <td>@Html.TextBoxFor(Model => Model.jobDescription)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.street)</td>
-            <td>@Html.TextBoxFor(model => Model.street)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.street)</td>
+            <td>@Html.TextBoxFor(Model => Model.street)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.city)</td>
-            <td>@Html.TextBoxFor(model => model.city)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.city)</td>
+            <td>@Html.TextBoxFor(Model => Model.city)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => Model.province)</td>
+            <td>@Html.LabelFor(Model => Model.province)</td>
             <td>
                 @Html.DropDownListFor(model => model.province, new[] {
                     new SelectListItem() {Text = "ON"},
@@ -50,20 +50,20 @@
             </td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.zip_code)</td>
-            <td>@Html.TextBoxFor(model => model.zip_code)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.zip_code)</td>
+            <td>@Html.TextBoxFor(Model => Model.zip_code)<span style="color:red">*</span></td>
         </tr>
         <tr>
             <td>@Html.Label("Date :")</td>
-            <td>@Html.LabelFor(Model => Model.date)<span style="color:red">*</span></td>
+            <td>@Html.Label("DateTime.Now")<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.dateStart)</td>
-            <td>@Html.TextBoxFor(model => model.dateStart)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.dateStart)</td>
+            <td>@Html.TextBoxFor(Model => Model.dateStart)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.dateEnd)</td>
-            <td>@Html.TextBoxFor(model => model.dateEnd)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.dateEnd)</td>
+            <td>@Html.TextBoxFor(Model => Model.dateEnd)<span style="color:red">*</span></td>
         </tr>
     </table>
 
