@@ -19,6 +19,8 @@ namespace NotreDameReBuildOfficial.Models
     [Bind(Exclude = "id")] // Binde exclude, used to exclude ID from displaying
     public partial class volunteerValidate
     {
+        public IEnumerable<NotreDameReBuildOfficial.Models.volunteerJob> allJobs { get; set; }
+
         [DisplayName("Opportunity:")] // Display name for Job Title for Volunteer Oportunites
         [Required]
         public string jobTitle { get; set; }
@@ -54,6 +56,4 @@ namespace NotreDameReBuildOfficial.Models
         [Required]
         public DateTime dateEnd { get; set; }
     }
-
-
 }

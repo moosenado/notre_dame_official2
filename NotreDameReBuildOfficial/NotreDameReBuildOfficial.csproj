@@ -213,6 +213,7 @@
     <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\volunteerController.cs" />
     <Compile Include="Controllers\WaitTimeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -256,6 +257,8 @@
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\userValidationClass.cs" />
+    <Compile Include="Models\volunteerInfo.cs" />
+    <Compile Include="Models\volunteerInfoValidate.cs" />
     <Compile Include="Models\volunteerJobs.cs" />
     <Compile Include="Models\volunteerValidate.cs" />
     <Compile Include="Models\Vote.cs" />
@@ -941,6 +944,8 @@
     <Content Include="Views\Home\SubmitEvent.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\WaitTime\erwait.cshtml" />
+    <Content Include="Views\volunteer\Opportunities.cshtml" />
+    <Content Include="Views\volunteer\oppInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
