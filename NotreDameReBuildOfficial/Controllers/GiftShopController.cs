@@ -18,9 +18,18 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 try
                 {
-                    cart.session_id = Session["name"].ToString();
+                    var session_id = Session["name"].ToString();
+                    cart.session_id = session_id;
                     cart.name = gsclass.product_name;
                     cart.prod_quantity = gsclass.product_quantity;
+
+                    using (ndLinqClassDataContext objCartInsert = new ndLinqClassDataContext())
+                    {
+                        objCartInsert.carts.InsertOnSubmit(cart);
+                        objCartInsert.SubmitChanges();
+                    }
+
+                    ViewBag.Message = "Product Added To Cart";
 
                     //add one to cart counter
                 }
