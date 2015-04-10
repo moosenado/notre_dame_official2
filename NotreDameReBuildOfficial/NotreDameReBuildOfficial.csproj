@@ -416,8 +416,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Products\armenia_secret_2-wallpaper-2880x900.jpg" />
+    <Content Include="Images\Products\facebook.png" />
     <Content Include="Images\Products\IMG_0441.JPG" />
     <Content Include="Images\Products\IMG_0444.JPG" />
+    <Content Include="Images\Products\twitter.png" />
     <Content Include="Images\Products\wood-floor-photography-hd-wallpaper-1920x1080-7814.jpg" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csprojResolveAssemblyReference.cache" />
