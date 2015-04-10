@@ -64,11 +64,40 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var archivedEvents = from a in objLinq.Events
-                                 where a.start_date < today && a.end_date < today && a.display == 0 || a.display == 0
+                                 where a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 1
+                                 || a.start_date < today && a.end_date < today && a.display == 1 && a.approved == 1
                                  orderby a.start_date descending
                                  select a;
 
             return archivedEvents;
+        }
+
+        // --- GET TOTAL SUBMITTED EVENTS --- //
+        public int getTotalSumbittedEvents()
+        {
+            var today = DateTime.Now;
+            var totalSubmitted = (from a in objLinq.Events
+                                  where a.start_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 0
+                                  orderby a.start_date descending
+                                  select a).Count();
+
+            return totalSubmitted;
+        }
+
+        // --- GET SUBMITTED EVENTS --- //
+        public IQueryable<Event> getSumbittedEvents()
+        {
+            var today = DateTime.Now;
+            var submitted = from a in objLinq.Events
+                                 where a.start_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 0
+                                 orderby a.start_date descending
+                                 select a;
+
+            return submitted;
         }
 
         // --- INSERT LOGIC --- //

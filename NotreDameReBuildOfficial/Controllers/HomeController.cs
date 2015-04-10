@@ -159,7 +159,6 @@ namespace notre_dame_rebuild.Controllers
             return View();
         }
 
-        //Add an event
         public ActionResult Thanks()
         {
             return View();

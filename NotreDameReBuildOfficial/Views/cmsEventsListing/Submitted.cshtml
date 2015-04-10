@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Event>
+    
+@{
+    ViewBag.Title = "Submitted";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.name</td>
+            <td>
+                @e.start_date.ToString("MMMM d")  @@ @e.start_time
+                @if (e.end_time != null)
+                {
+                    @:- @e.end_time
+                }
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-pencil fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-trash-o fa-lg"></i></a>
+            </td>
+        </tr>
+
+    }
+
+</table>

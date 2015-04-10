@@ -945,6 +945,8 @@
     <Content Include="Views\Home\_EventsPartial.cshtml" />
     <Content Include="Views\Home\SubmitEvent.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\cmsEventsListing\Submitted.cshtml" />
+    <Content Include="Views\cmsEventsListing\_TotalSubmittedEventsPartial.cshtml" />
     <Content Include="Views\WaitTime\erwait.cshtml" />
     <Content Include="Views\volunteer\Opportunities.cshtml" />
     <Content Include="Views\volunteer\oppInfo.cshtml" />
