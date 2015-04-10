@@ -213,6 +213,7 @@
     <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WaitTimeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -936,6 +937,7 @@
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
+    <Content Include="Views\WaitTime\erwait.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
