@@ -1,5 +1,82 @@
-﻿@{
+﻿@model NotreDameReBuildOfficial.Models.volunteerJob
+
+@{
     ViewBag.Title = "updateJob";
+
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+
 }
 
-<h2>updateJob</h2>
+<h1>Volunteer Opportunites</h1>
+<h2>Volunteer Oportunity Update</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        @Html.HiddenFor(x => x.id)
+        <tr>
+            <td>@Html.LabelFor(x => x.jobTitle)</td>
+            <td>@Html.TextBoxFor(x => x.jobTitle)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.jobDescription)</td>
+            <td>@Html.TextBoxFor(x => x.jobDescription)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.street)</td>
+            <td>@Html.TextBoxFor(model => Model.street)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.city)</td>
+            <td>@Html.TextBoxFor(x => x.city)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.province)</td>
+            <td>
+                @Html.DropDownListFor(x => x.province, new[] {
+                    new SelectListItem() {Text = "ON"},
+                    new SelectListItem() {Text = "AB"},
+                    new SelectListItem() {Text = "BC"},
+                    new SelectListItem() {Text = "MB"},
+                    new SelectListItem() {Text = "NB"},
+                    new SelectListItem() {Text = "NL"},
+                    new SelectListItem() {Text = "NS"},
+                    new SelectListItem() {Text = "NT"},
+                    new SelectListItem() {Text = "NU"},
+                    new SelectListItem() {Text = "PE"},
+                    new SelectListItem() {Text = "QC"},
+                    new SelectListItem() {Text = "SK"},
+                    new SelectListItem() {Text = "YT"}
+                }, "--", new { @class = "dropdown-list" })
+                <span style="color:red">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.zip_code)</td>
+            <td>@Html.TextBoxFor(x => x.zip_code)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Date :")</td>
+            <td>@Html.LabelFor(x => x.date)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.dateStart)</td>
+            <td>@Html.TextBoxFor(x => x.dateStart)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.dateEnd)</td>
+            <td>@Html.TextBoxFor(x => x.dateEnd)<span style="color:red">*</span></td>
+        </tr>
+    </table>
+
+    <input type="submit" name="submit" value="Update" class="buttonstyle" />
+
+    <a href='@Url.Action("jobList", "cmsVolunteer", new { jobId = Model.id })'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

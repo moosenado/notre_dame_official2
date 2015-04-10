@@ -1,4 +1,4 @@
-﻿@model NotreDameReBuildOfficial.Models.volunteerValidate
+﻿@model NotreDameReBuildOfficial.Models.volunteerJob
 @{
     ViewBag.Title = "InsertJob";
 
@@ -68,7 +68,7 @@
     </table>
 
     <input type="submit" value="Add Opportunity" class="buttonstyle" />
-    <a href='@Url.Action("jobList", "cmsStaff")'>
+    <a href='@Url.Action("jobList", "cmsVolunteer")'>
         <span class="buttonstyle">Cancel</span>
     </a>
 }

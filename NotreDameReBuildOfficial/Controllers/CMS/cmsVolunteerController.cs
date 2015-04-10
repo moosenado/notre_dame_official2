@@ -45,7 +45,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             if(ModelState.IsValid)
             {
                 volunteerValidate model = new volunteerValidate();
-                model.date = DateTime.Now;
+                model.date = System.DateTime.Today;
 
                 objVol.InsertJob(jobs);
                 return RedirectToAction("JobList");
