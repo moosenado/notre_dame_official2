@@ -6,14 +6,15 @@
         @Scripts.Render("~/Scripts/cms-menu.js");    
 }
 
-<h2>ApptSched @DateTime.Now</h2>
-
-@*renders links to methods located on ApptSchedController*@
-<p>@Html.ActionLink("Insert New Record", "createAppt", "ApptSched")</p> 
+<h2>Apptointments</h2>
 
 <ul>
     @foreach (var x in Model)
     {
-        <li>@Html.ActionLink(x.Fname, "Details", new { id = x.id })</li> //test
+        <li>@Html.ActionLink(x.Fname + " " + x.Lname, "Details", new {id = x.id})</li>
+    
     }
 </ul>
+<br/>
+@*renders links to methods located on ApptSchedController*@
+<p>@Html.ActionLink("Insert New Record", "createAppt", "ApptSched")</p> 

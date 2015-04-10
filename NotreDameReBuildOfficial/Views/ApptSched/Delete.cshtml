@@ -6,13 +6,11 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Delete</h2>
-
-<h2>Are you sure you want to delete this appointment? <em>@Model.Fname Lname?</em></h2>
+<h2>Are you sure you want to delete <em>@Model.Fname @Model.Lname</em> appointment?  </h2>
 
 @using (Html.BeginForm())
 {
-   <input type="submit" value="Delete"/>
-    
+    <input type="submit" value="Delete" class="buttonstyle" />
+
     @Html.ActionLink("Back", "Details", new { id = Model.id }) 
 }

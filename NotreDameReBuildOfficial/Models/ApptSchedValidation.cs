@@ -29,7 +29,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Phone*")]
         [Required(ErrorMessage = "Please enter a phone number")]
-        //[RegularExpression("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-][A-Za-z]{2,4}", ErrorMessage = "Please enter a valid email")]
+        //[RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Please enter a valid email")]
         public string Phone { get; set; }
 
         [DisplayName("Email*")]

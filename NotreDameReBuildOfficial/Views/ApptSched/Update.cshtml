@@ -7,51 +7,72 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Update</h2>
+<h2>Update Appointment</h2>
 
 @using (Html.BeginForm())
-{   
+{
     @Html.ValidationSummary()
     @Html.HiddenFor(x => x.id)
-    
-    @Html.LabelFor(x => x.Fname)
-    @Html.TextBoxFor(x => x.Fname)
-    @Html.ValidationMessageFor(x => x.Fname)
 
-    @Html.LabelFor(x => x.Lname)
-    @Html.TextBoxFor(x => x.Lname)
-    @Html.ValidationMessageFor(x => x.Lname)
+    <table>
+        <tr>
+            <td>@Html.LabelFor(x => x.Fname)</td>
+            <td>@Html.TextBoxFor(x => x.Fname)</td>
+            <td>@Html.ValidationMessageFor(x => x.Fname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Lname)</td>
+            <td>@Html.TextBoxFor(x => x.Lname)</td>
+            <td> @Html.ValidationMessageFor(x => x.Lname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Email)</td>
+            <td>@Html.TextBoxFor(x => x.Email)</td>
+            <td>@Html.ValidationMessageFor(x => x.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.HealthNum)</td>
+            <td>@Html.TextBoxFor(x => x.HealthNum)</td>
+            <td>@Html.ValidationMessageFor(x => x.HealthNum)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.BookDate)</td>
+            <td>@Html.TextBoxFor(x => x.BookDate)</td>
+            <td>@Html.ValidationMessageFor(x => x.BookDate)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.BookTime)</td>
+            <td>@Html.TextBoxFor(x => x.BookTime)</td>
+            <td>@Html.ValidationMessageFor(x => x.BookTime)</td>
+        </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.AdditionalInfo)</td>
+        <td>@Html.TextAreaFor(x => x.AdditionalInfo)</td>
+        <td>@Html.ValidationMessageFor(x => x.AdditionalInfo)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Speciality)</td>
+        <td>@Html.DropDownListFor(model => model.Speciality, new[] {
+        new SelectListItem() {Text = ""},
+        new SelectListItem() {Text = "Diagnostic Imaging"},
+        new SelectListItem() {Text = "Allergy"},
+        new SelectListItem() {Text = "Cardiology"},
+        new SelectListItem() {Text = "Physiotherapy"},
+        new SelectListItem() {Text = "ENT"},
+        new SelectListItem() {Text = "Gynecology"},
+        new SelectListItem() {Text = "Neurology"},
+        new SelectListItem() {Text = "Oncology"},
+        new SelectListItem() {Text = "Orthopedy"},}, new { @class = "dropdown-list" })</td>
+        <td>@Html.ValidationMessageFor(x => x.Speciality)</td>
+    </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Phone)</td>
+            <td>@Html.TextBoxFor(x => x.Phone)</td>
+            <td>@Html.ValidationMessageFor(x => x.Phone)</td>
+        </tr>
+</table>
 
-    @Html.LabelFor(x => x.Email)
-    @Html.TextBoxFor(x => x.Email)
-    @Html.ValidationMessageFor(x => x.Email)
-    
-    @Html.LabelFor(x => x.HealthNum)
-    @Html.TextBoxFor(x => x.HealthNum)
-    @Html.ValidationMessageFor(x => x.HealthNum)
-    
-    @Html.LabelFor(x => x.BookDate)
-    @Html.TextBoxFor(x => x.BookDate)
-    @Html.ValidationMessageFor(x => x.BookDate)
-    
-    @Html.LabelFor(x => x.BookTime)
-    @Html.TextBoxFor(x => x.BookTime)
-    @Html.ValidationMessageFor(x => x.BookTime)
-    
-    @Html.LabelFor(x => x.AdditionalInfo)
-    @Html.TextAreaFor(x => x.AdditionalInfo)
-    @Html.ValidationMessageFor(x => x.AdditionalInfo)
-    
-    @Html.LabelFor(x => x.Speciality)
-    @Html.TextBoxFor(x => x.Speciality)
-    @Html.ValidationMessageFor(x => x.Speciality)
-    
-    @Html.LabelFor(x => x.Phone)
-    @Html.TextBoxFor(x => x.Phone)
-    @Html.ValidationMessageFor(x => x.Phone)
-
-
-    <input type="submit" value="Update" />
+    <input type="submit" value="Update" class="buttonstyle" />
 }
 
 <p>@Html.ActionLink("Back", "Details", new { id = Model.id })</p>

@@ -6,18 +6,30 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Details</h2>
+<h2>Appointment Details For:</h2>
 
 <h3>@Html.DisplayFor(x => x.Fname) @Html.DisplayFor(x => x.Lname)</h3>
-@Html.LabelFor(model => model.Email, new { @class = "label" })
-@Html.DisplayFor(x => x.Email)
-@Html.DisplayFor(x => x.HealthNum)
-@Html.DisplayFor(x => x.BookDate)
-@Html.DisplayFor(x => x.BookTime)
-@Html.DisplayFor(x => x.AdditionalInfo)
-@Html.DisplayFor(x => x.Tstamp)
-@Html.DisplayFor(x => x.Speciality)
-@Html.DisplayFor(x => x.Phone)
+<div class="clear"></div>
+
+<table>
+    <thead align="right">
+    <tr><th>@Html.LabelFor(model => model.Email)</th><td>@Html.DisplayFor(x => x.Email)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.HealthNum)</th><td>@Html.DisplayFor(x => x.HealthNum)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.BookDate)</th><td>@Html.DisplayFor(x => x.BookDate)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.BookTime)</th><td>@Html.DisplayFor(x => x.BookTime)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.AdditionalInfo)</th><td>@Html.DisplayFor(x => x.AdditionalInfo)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.Tstamp)</th><td>@Html.DisplayFor(x => x.Tstamp)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.Speciality)</th><td>@Html.DisplayFor(x => x.Speciality)</td></tr>
+
+    <tr><th>@Html.LabelFor(model => model.Phone)</th><td>@Html.DisplayFor(x => x.Phone)</td></tr>   
+    </thead>
+</table>
 
 <p> @*renders links to methods located on ApptSchedController*@
     @Html.ActionLink("Back", "ApptSched") |
