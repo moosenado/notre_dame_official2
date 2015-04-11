@@ -120,11 +120,32 @@ namespace NotreDameReBuildOfficial.Controllers
            
         }
 
-        public ActionResult cart()
+        public ActionResult cart(string product_id, giftShopClass gsclass, cart cart, string delete_command)
         {
+            if (delete_command == "Delete")
+            {
+                try
+                {
+                    int id = int.Parse(product_id);
+                    using (ndLinqClassDataContext objCartDelete = new ndLinqClassDataContext())
+                    {
+                        var delete = objCartDelete.carts.Single(x => x.Id == id);
+                        objCartDelete.carts.DeleteOnSubmit(delete);
+                        objCartDelete.SubmitChanges();
+                    }
+
+                    ViewBag.Message = "Product Deleted";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "Error:" + ex.Message.ToString();
+                }
+            }
+
             //session id
             var session = Session["name"].ToString();
 
+            //add items from cart
             var cartProducts = objGS.getCart(session);
             return View(cartProducts);
         }

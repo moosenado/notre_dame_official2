@@ -5,6 +5,8 @@
 
 <h2>Cart</h2>
 
+<p>@ViewBag.Message</p>
+
 <table>
     <thead>
         <tr>
@@ -22,7 +24,12 @@
             <td>@Html.Raw(cart.name)</td>
             <td><input type="number" name="product_quantity" min="1" max="100" value="@Html.Raw(cart.prod_quantity)" /></td>
             <td>$@Html.Raw(cart.price)</td>
-            <td>@Html.ActionLink(" ", "cart", new { id = cart.Id }, new { @class = "fa fa-trash-o" })</td>
+            <td>@using (Html.BeginForm(FormMethod.Post))
+            {
+                <input type="hidden" value="@Html.Raw(cart.Id)" name="product_id" />
+                <input type="submit" value="Delete" class="buttonstyle" name="delete_command" />
+            }
+            </td>
         </tr>
     }
 
