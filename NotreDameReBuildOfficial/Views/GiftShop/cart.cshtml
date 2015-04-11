@@ -16,22 +16,51 @@
             <th>Delete</th>
         </tr>
     </thead>
-    <tbody>
-
-    @foreach (var cart in Model)
-    {
-        <tr>
-            <td>@Html.Raw(cart.name)</td>
-            <td><input type="number" name="product_quantity" min="1" max="100" value="@Html.Raw(cart.prod_quantity)" /></td>
-            <td>$@Html.Raw(cart.price)</td>
-            <td>@using (Html.BeginForm(FormMethod.Post))
-            {
-                <input type="hidden" value="@Html.Raw(cart.Id)" name="product_id" />
-                <input type="submit" value="Delete" class="buttonstyle" name="delete_command" />
-            }
+    <tbody id="carttable">
+        @foreach (var cart in Model)
+        {
+            <tr>
+                <td>@Html.Raw(cart.name)</td>
+                <td>@Html.Raw(cart.prod_quantity)</td>
+                <td id="prices">@Html.Raw(cart.price)</td>
+                <td>
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <input type="hidden" value="@Html.Raw(cart.Id)" name="product_id" />
+                        <input type="submit" value="Delete" class="buttonstyle" name="delete_command" />
+                    }
             </td>
         </tr>
+        }
+    </tbody>
+        <tr>
+            <td></td>
+            <td>Total:</td>
+            <td id="total"></td>
+            <td></td>
+        </tr>
+    
+</table>
+
+@*Count Total Amount*@
+
+<script type="text/javascript">
+
+    var tableRows = document.getElementById("carttable").rows.length;
+
+    sum = 0;
+
+    for (var i = 0; i < tableRows; i++) {
+        var tdID = document.getElementById("prices");
+        var value = tdID.innerHTML;
+        if (value === null) {
+            value = '0';
+        }
+        var valueInt = parseInt(value);
+        sum = sum + valueInt;
     }
 
-    </tbody>
-</table>
+    var totalValue = document.getElementById("total");
+    totalValue.innerHTML = sum;
+
+</script>
