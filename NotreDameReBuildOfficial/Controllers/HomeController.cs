@@ -56,7 +56,7 @@ namespace notre_dame_rebuild.Controllers
         }
 
         // ------------------------------------- //
-        // ------- ARTICLE LIST by Mina ------ //
+        // ------- WEEKLY POLL by MINA ------ //
         // ------------------------------------- //
 
 
@@ -86,7 +86,16 @@ namespace notre_dame_rebuild.Controllers
             return Json(new { result = res });
         }
 
+        public class pieChartValue
+        {
+            public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };
+            public static string[] highlights = { "#FEB10A", "#BDE21B", "#14B7D7" };
 
+            public int value { get; set; }
+            public string color { get; set; }
+            public string highlight { get; set; }
+            public string label { get; set; }
+        }
 
         // -------------------------------- //
         // ----- EVENTS LISTING by GEN ----- //
@@ -175,22 +184,6 @@ namespace notre_dame_rebuild.Controllers
             {
                 return View();
             }
-        }
-
-
-        // ------------------------------- //
-        // ----- WEEKLY POLL by MINA ----- //
-        // ------------------------------- //
-
-        public class pieChartValue
-        {
-            public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };
-            public static string[] highlights = { "#FEB10A", "#BDE21B", "#14B7D7" };
-
-            public int value { get; set; }
-            public string color { get; set; }
-            public string highlight { get; set; }
-            public string label { get; set; }
         }
     }
 }

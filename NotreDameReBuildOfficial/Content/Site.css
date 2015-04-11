@@ -1497,9 +1497,31 @@ table#edit-donations {
 }
 
 #total-submitted-events {
-    padding: 20px;
-    background: red;
     float: right;
+}
+
+#no-events {
+    border: 0px;
+    color: #fff;
+    background-color: #ccc;
+    cursor: pointer;
+    padding: 7px 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#new-events {
+    border: 0px;
+    color: #fff;
+    background-color: #accf13;
+    cursor: pointer;
+    padding: 7px 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 /* --- JQUERY DATEPICKER --- */
