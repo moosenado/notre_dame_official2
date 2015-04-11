@@ -950,6 +950,7 @@
     <Content Include="Views\WaitTime\erwait.cshtml" />
     <Content Include="Views\volunteer\Opportunities.cshtml" />
     <Content Include="Views\volunteer\oppInfo.cshtml" />
+    <Content Include="Views\volunteer\apply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

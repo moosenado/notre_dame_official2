@@ -15,6 +15,8 @@ namespace NotreDameReBuildOfficial.Controllers
 
         volunteerJobs objVol = new volunteerJobs();
 
+        volunteerInfo objInfo = new volunteerInfo();
+
         public ActionResult Opportunities()
         {
             var job = objVol.getJobs();
@@ -34,6 +36,25 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        public ActionResult applyVol()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult apply(volunteer_info vol, int id)
+        {
+            var job = objInfo.getJobByID(id);
+  
+            if (ModelState.IsValid)
+            {
+
+                vol.dateApplied = DateTime.Now;
+                objInfo.InsertVol(vol);
+                return RedirectToAction("opportunities");
+            }
+            return View(job);
+        }
 
     }
 }

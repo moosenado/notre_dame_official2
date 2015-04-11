@@ -21,22 +21,28 @@ namespace NotreDameReBuildOfficial.Models
             return allVol;
         }
 
-        public bool InsertVol(volunteer_info job)
+        public volunteerJob getJobByID(int _id)
+        {
+            var selectJob = objLinq.volunteerJobs.SingleOrDefault(x => x.id == _id);
+            return selectJob;
+        }
+
+
+        public bool InsertVol(volunteer_info vol)
         {
             using(objLinq)
             {
-                objLinq.volunteer_infos.InsertOnSubmit(job);
+                objLinq.volunteer_infos.InsertOnSubmit(vol);
                 objLinq.SubmitChanges();
                 return true;
             }
         }
 
-/*
-        public bool updateVol(int _id, string _firstname, string _lastname, string gender, string _email, string _mobile, string _street, string _city, string _province, string _zip_code, int jobID, DateTime _dateApplied)
+/*        public bool InsertVol(int _id, string _firstname, string _lastname, string gender, string _email, string _mobile, string _street, string _city, string _province, string _zip_code, string _jobID, DateTime _dateApplied)
         {
             using(objLinq)
             {
-                var upJob = objLinq.volunteerJobs.Single(x => x.id == _id);
+                var upVol = objLinq.volunteer_infos.Single(x => x.JobID = _jobID);
 
                 _date = DateTime.Now;
 

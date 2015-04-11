@@ -1,6 +1,8 @@
 ﻿@model NotreDameReBuildOfficial.Models.volunteerJob
 @{
     ViewBag.Title = "jobInfo";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h1>Opportunities</h1>
@@ -59,6 +61,6 @@
     </tr>
 </table>
 
-<a href='@Url.Action("opportunities", "volunteer")'>
+<a href='@Url.Action("joblist", "cmsVolunteer")'>
     <span class="buttonstyle">Back to list</span>
 </a>
