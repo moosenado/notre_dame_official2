@@ -42,6 +42,12 @@
     
 </table>
 
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <input type="hidden" id="totalValue" value="" name="product_id" />
+    <input type="submit" value="Checkout" class="buttonstyle" name="checkout_command" />
+}
+
 @*Count Total Amount*@
 
 <script type="text/javascript">
@@ -62,5 +68,7 @@
 
     var totalValue = document.getElementById("total");
     totalValue.innerHTML = sum;
+
+    document.getElementById('totalValue').value = sum;
 
 </script>

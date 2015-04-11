@@ -8,23 +8,6 @@
       <Column Name="featured" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.checkout" Member="checkouts">
-    <Type Name="checkout">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="session_id" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="cardname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="cardtype" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="cardnumber" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
-      <Column Name="expirydate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="securitycode" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
-      <Column Name="deliv_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="patientname" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="orderdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ER_patient_info" Member="ER_patient_infos">
     <Type Name="ER_patient_info">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -344,6 +327,24 @@
       <Column Name="prod_quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="session_id" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="price" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.checkout" Member="checkouts">
+    <Type Name="checkout">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="session_id" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="cardname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cardtype" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cardnumber" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="expirydate" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="securitycode" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="deliv_status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="patientname" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="orderdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="totalpaid" Type="System.String" DbType="VarChar(320)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

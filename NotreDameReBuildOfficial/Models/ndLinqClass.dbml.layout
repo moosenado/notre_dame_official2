@@ -8,12 +8,6 @@
         <elementListCompartment Id="c2ac7431-bca2-4d41-a237-fee8754eadb8" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a2390528-3ee5-4f3c-9ab8-89b03be1a669" absoluteBounds="3.25, 2.375, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/ndLinqClassDataContext/checkout" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9855db22-5c8c-46ff-823a-944a67452e91" absoluteBounds="3.265, 2.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f265ab9c-f243-485c-ab84-4ea1c69fa9de" absoluteBounds="6.75, 0.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/ndLinqClassDataContext/ER_patient_info" />
       <nestedChildShapes>
@@ -174,6 +168,12 @@
       <DataClassMoniker Name="/ndLinqClassDataContext/cart" />
       <nestedChildShapes>
         <elementListCompartment Id="92c74464-c2cc-49ff-a182-5986e071c4a3" absoluteBounds="6.765, 9.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb2e6170-4d44-464a-bd4e-54ac30741c04" absoluteBounds="3.625, 2.25, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/ndLinqClassDataContext/checkout" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3c0830b-c274-4ccb-8edd-c64cb84c5cd9" absoluteBounds="3.64, 2.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

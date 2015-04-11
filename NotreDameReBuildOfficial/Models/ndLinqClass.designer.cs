@@ -33,9 +33,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void Insertalert(alert instance);
     partial void Updatealert(alert instance);
     partial void Deletealert(alert instance);
-    partial void Insertcheckout(checkout instance);
-    partial void Updatecheckout(checkout instance);
-    partial void Deletecheckout(checkout instance);
     partial void InsertER_patient_info(ER_patient_info instance);
     partial void UpdateER_patient_info(ER_patient_info instance);
     partial void DeleteER_patient_info(ER_patient_info instance);
@@ -108,6 +105,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void Insertcart(cart instance);
     partial void Updatecart(cart instance);
     partial void Deletecart(cart instance);
+    partial void Insertcheckout(checkout instance);
+    partial void Updatecheckout(checkout instance);
+    partial void Deletecheckout(checkout instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -145,14 +145,6 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<alert>();
-			}
-		}
-		
-		public System.Data.Linq.Table<checkout> checkouts
-		{
-			get
-			{
-				return this.GetTable<checkout>();
 			}
 		}
 		
@@ -371,6 +363,14 @@ namespace NotreDameReBuildOfficial.Models
 				return this.GetTable<cart>();
 			}
 		}
+		
+		public System.Data.Linq.Table<checkout> checkouts
+		{
+			get
+			{
+				return this.GetTable<checkout>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.alert")]
@@ -482,356 +482,6 @@ namespace NotreDameReBuildOfficial.Models
 					this._featured = value;
 					this.SendPropertyChanged("featured");
 					this.OnfeaturedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.checkout")]
-	public partial class checkout : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _firstname;
-		
-		private string _lastname;
-		
-		private string _message;
-		
-		private string _session_id;
-		
-		private string _cardname;
-		
-		private string _cardtype;
-		
-		private string _cardnumber;
-		
-		private string _expirydate;
-		
-		private string _securitycode;
-		
-		private string _deliv_status;
-		
-		private string _patientname;
-		
-		private System.Nullable<System.DateTime> _orderdate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnfirstnameChanging(string value);
-    partial void OnfirstnameChanged();
-    partial void OnlastnameChanging(string value);
-    partial void OnlastnameChanged();
-    partial void OnmessageChanging(string value);
-    partial void OnmessageChanged();
-    partial void Onsession_idChanging(string value);
-    partial void Onsession_idChanged();
-    partial void OncardnameChanging(string value);
-    partial void OncardnameChanged();
-    partial void OncardtypeChanging(string value);
-    partial void OncardtypeChanged();
-    partial void OncardnumberChanging(string value);
-    partial void OncardnumberChanged();
-    partial void OnexpirydateChanging(string value);
-    partial void OnexpirydateChanged();
-    partial void OnsecuritycodeChanging(string value);
-    partial void OnsecuritycodeChanged();
-    partial void Ondeliv_statusChanging(string value);
-    partial void Ondeliv_statusChanged();
-    partial void OnpatientnameChanging(string value);
-    partial void OnpatientnameChanged();
-    partial void OnorderdateChanging(System.Nullable<System.DateTime> value);
-    partial void OnorderdateChanged();
-    #endregion
-		
-		public checkout()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string firstname
-		{
-			get
-			{
-				return this._firstname;
-			}
-			set
-			{
-				if ((this._firstname != value))
-				{
-					this.OnfirstnameChanging(value);
-					this.SendPropertyChanging();
-					this._firstname = value;
-					this.SendPropertyChanged("firstname");
-					this.OnfirstnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string lastname
-		{
-			get
-			{
-				return this._lastname;
-			}
-			set
-			{
-				if ((this._lastname != value))
-				{
-					this.OnlastnameChanging(value);
-					this.SendPropertyChanging();
-					this._lastname = value;
-					this.SendPropertyChanged("lastname");
-					this.OnlastnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_message", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string message
-		{
-			get
-			{
-				return this._message;
-			}
-			set
-			{
-				if ((this._message != value))
-				{
-					this.OnmessageChanging(value);
-					this.SendPropertyChanging();
-					this._message = value;
-					this.SendPropertyChanged("message");
-					this.OnmessageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_session_id", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string session_id
-		{
-			get
-			{
-				return this._session_id;
-			}
-			set
-			{
-				if ((this._session_id != value))
-				{
-					this.Onsession_idChanging(value);
-					this.SendPropertyChanging();
-					this._session_id = value;
-					this.SendPropertyChanged("session_id");
-					this.Onsession_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string cardname
-		{
-			get
-			{
-				return this._cardname;
-			}
-			set
-			{
-				if ((this._cardname != value))
-				{
-					this.OncardnameChanging(value);
-					this.SendPropertyChanging();
-					this._cardname = value;
-					this.SendPropertyChanged("cardname");
-					this.OncardnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardtype", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string cardtype
-		{
-			get
-			{
-				return this._cardtype;
-			}
-			set
-			{
-				if ((this._cardtype != value))
-				{
-					this.OncardtypeChanging(value);
-					this.SendPropertyChanging();
-					this._cardtype = value;
-					this.SendPropertyChanged("cardtype");
-					this.OncardtypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardnumber", DbType="VarChar(16) NOT NULL", CanBeNull=false)]
-		public string cardnumber
-		{
-			get
-			{
-				return this._cardnumber;
-			}
-			set
-			{
-				if ((this._cardnumber != value))
-				{
-					this.OncardnumberChanging(value);
-					this.SendPropertyChanging();
-					this._cardnumber = value;
-					this.SendPropertyChanged("cardnumber");
-					this.OncardnumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expirydate", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string expirydate
-		{
-			get
-			{
-				return this._expirydate;
-			}
-			set
-			{
-				if ((this._expirydate != value))
-				{
-					this.OnexpirydateChanging(value);
-					this.SendPropertyChanging();
-					this._expirydate = value;
-					this.SendPropertyChanged("expirydate");
-					this.OnexpirydateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_securitycode", DbType="Char(3) NOT NULL", CanBeNull=false)]
-		public string securitycode
-		{
-			get
-			{
-				return this._securitycode;
-			}
-			set
-			{
-				if ((this._securitycode != value))
-				{
-					this.OnsecuritycodeChanging(value);
-					this.SendPropertyChanging();
-					this._securitycode = value;
-					this.SendPropertyChanged("securitycode");
-					this.OnsecuritycodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deliv_status", DbType="VarChar(50)")]
-		public string deliv_status
-		{
-			get
-			{
-				return this._deliv_status;
-			}
-			set
-			{
-				if ((this._deliv_status != value))
-				{
-					this.Ondeliv_statusChanging(value);
-					this.SendPropertyChanging();
-					this._deliv_status = value;
-					this.SendPropertyChanged("deliv_status");
-					this.Ondeliv_statusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientname", DbType="VarChar(100)")]
-		public string patientname
-		{
-			get
-			{
-				return this._patientname;
-			}
-			set
-			{
-				if ((this._patientname != value))
-				{
-					this.OnpatientnameChanging(value);
-					this.SendPropertyChanging();
-					this._patientname = value;
-					this.SendPropertyChanged("patientname");
-					this.OnpatientnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orderdate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> orderdate
-		{
-			get
-			{
-				return this._orderdate;
-			}
-			set
-			{
-				if ((this._orderdate != value))
-				{
-					this.OnorderdateChanging(value);
-					this.SendPropertyChanging();
-					this._orderdate = value;
-					this.SendPropertyChanged("orderdate");
-					this.OnorderdateChanged();
 				}
 			}
 		}
@@ -6697,6 +6347,380 @@ namespace NotreDameReBuildOfficial.Models
 					this._price = value;
 					this.SendPropertyChanged("price");
 					this.OnpriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.checkout")]
+	public partial class checkout : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _firstname;
+		
+		private string _lastname;
+		
+		private string _message;
+		
+		private string _session_id;
+		
+		private string _cardname;
+		
+		private string _cardtype;
+		
+		private string _cardnumber;
+		
+		private string _expirydate;
+		
+		private string _securitycode;
+		
+		private string _deliv_status;
+		
+		private string _patientname;
+		
+		private System.Nullable<System.DateTime> _orderdate;
+		
+		private string _totalpaid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnfirstnameChanging(string value);
+    partial void OnfirstnameChanged();
+    partial void OnlastnameChanging(string value);
+    partial void OnlastnameChanged();
+    partial void OnmessageChanging(string value);
+    partial void OnmessageChanged();
+    partial void Onsession_idChanging(string value);
+    partial void Onsession_idChanged();
+    partial void OncardnameChanging(string value);
+    partial void OncardnameChanged();
+    partial void OncardtypeChanging(string value);
+    partial void OncardtypeChanged();
+    partial void OncardnumberChanging(string value);
+    partial void OncardnumberChanged();
+    partial void OnexpirydateChanging(string value);
+    partial void OnexpirydateChanged();
+    partial void OnsecuritycodeChanging(string value);
+    partial void OnsecuritycodeChanged();
+    partial void Ondeliv_statusChanging(string value);
+    partial void Ondeliv_statusChanged();
+    partial void OnpatientnameChanging(string value);
+    partial void OnpatientnameChanged();
+    partial void OnorderdateChanging(System.Nullable<System.DateTime> value);
+    partial void OnorderdateChanged();
+    partial void OntotalpaidChanging(string value);
+    partial void OntotalpaidChanged();
+    #endregion
+		
+		public checkout()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string firstname
+		{
+			get
+			{
+				return this._firstname;
+			}
+			set
+			{
+				if ((this._firstname != value))
+				{
+					this.OnfirstnameChanging(value);
+					this.SendPropertyChanging();
+					this._firstname = value;
+					this.SendPropertyChanged("firstname");
+					this.OnfirstnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string lastname
+		{
+			get
+			{
+				return this._lastname;
+			}
+			set
+			{
+				if ((this._lastname != value))
+				{
+					this.OnlastnameChanging(value);
+					this.SendPropertyChanging();
+					this._lastname = value;
+					this.SendPropertyChanged("lastname");
+					this.OnlastnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_message", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string message
+		{
+			get
+			{
+				return this._message;
+			}
+			set
+			{
+				if ((this._message != value))
+				{
+					this.OnmessageChanging(value);
+					this.SendPropertyChanging();
+					this._message = value;
+					this.SendPropertyChanged("message");
+					this.OnmessageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_session_id", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string session_id
+		{
+			get
+			{
+				return this._session_id;
+			}
+			set
+			{
+				if ((this._session_id != value))
+				{
+					this.Onsession_idChanging(value);
+					this.SendPropertyChanging();
+					this._session_id = value;
+					this.SendPropertyChanged("session_id");
+					this.Onsession_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string cardname
+		{
+			get
+			{
+				return this._cardname;
+			}
+			set
+			{
+				if ((this._cardname != value))
+				{
+					this.OncardnameChanging(value);
+					this.SendPropertyChanging();
+					this._cardname = value;
+					this.SendPropertyChanged("cardname");
+					this.OncardnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardtype", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string cardtype
+		{
+			get
+			{
+				return this._cardtype;
+			}
+			set
+			{
+				if ((this._cardtype != value))
+				{
+					this.OncardtypeChanging(value);
+					this.SendPropertyChanging();
+					this._cardtype = value;
+					this.SendPropertyChanged("cardtype");
+					this.OncardtypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cardnumber", DbType="VarChar(16) NOT NULL", CanBeNull=false)]
+		public string cardnumber
+		{
+			get
+			{
+				return this._cardnumber;
+			}
+			set
+			{
+				if ((this._cardnumber != value))
+				{
+					this.OncardnumberChanging(value);
+					this.SendPropertyChanging();
+					this._cardnumber = value;
+					this.SendPropertyChanged("cardnumber");
+					this.OncardnumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expirydate", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string expirydate
+		{
+			get
+			{
+				return this._expirydate;
+			}
+			set
+			{
+				if ((this._expirydate != value))
+				{
+					this.OnexpirydateChanging(value);
+					this.SendPropertyChanging();
+					this._expirydate = value;
+					this.SendPropertyChanged("expirydate");
+					this.OnexpirydateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_securitycode", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string securitycode
+		{
+			get
+			{
+				return this._securitycode;
+			}
+			set
+			{
+				if ((this._securitycode != value))
+				{
+					this.OnsecuritycodeChanging(value);
+					this.SendPropertyChanging();
+					this._securitycode = value;
+					this.SendPropertyChanged("securitycode");
+					this.OnsecuritycodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deliv_status", DbType="VarChar(50)")]
+		public string deliv_status
+		{
+			get
+			{
+				return this._deliv_status;
+			}
+			set
+			{
+				if ((this._deliv_status != value))
+				{
+					this.Ondeliv_statusChanging(value);
+					this.SendPropertyChanging();
+					this._deliv_status = value;
+					this.SendPropertyChanged("deliv_status");
+					this.Ondeliv_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientname", DbType="VarChar(100)")]
+		public string patientname
+		{
+			get
+			{
+				return this._patientname;
+			}
+			set
+			{
+				if ((this._patientname != value))
+				{
+					this.OnpatientnameChanging(value);
+					this.SendPropertyChanging();
+					this._patientname = value;
+					this.SendPropertyChanged("patientname");
+					this.OnpatientnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orderdate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> orderdate
+		{
+			get
+			{
+				return this._orderdate;
+			}
+			set
+			{
+				if ((this._orderdate != value))
+				{
+					this.OnorderdateChanging(value);
+					this.SendPropertyChanging();
+					this._orderdate = value;
+					this.SendPropertyChanged("orderdate");
+					this.OnorderdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_totalpaid", DbType="VarChar(320)")]
+		public string totalpaid
+		{
+			get
+			{
+				return this._totalpaid;
+			}
+			set
+			{
+				if ((this._totalpaid != value))
+				{
+					this.OntotalpaidChanging(value);
+					this.SendPropertyChanging();
+					this._totalpaid = value;
+					this.SendPropertyChanged("totalpaid");
+					this.OntotalpaidChanged();
 				}
 			}
 		}
