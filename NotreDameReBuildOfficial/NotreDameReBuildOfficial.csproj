@@ -213,6 +213,8 @@
     <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\volunteerController.cs" />
+    <Compile Include="Controllers\WaitTimeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -255,7 +257,10 @@
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\userValidationClass.cs" />
+    <Compile Include="Models\volunteerInfo.cs" />
+    <Compile Include="Models\volunteerInfoValidate.cs" />
     <Compile Include="Models\volunteerJobs.cs" />
+    <Compile Include="Models\volunteerValidate.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -414,8 +419,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Products\armenia_secret_2-wallpaper-2880x900.jpg" />
+    <Content Include="Images\Products\facebook.png" />
     <Content Include="Images\Products\IMG_0441.JPG" />
     <Content Include="Images\Products\IMG_0444.JPG" />
+    <Content Include="Images\Products\twitter.png" />
     <Content Include="Images\Products\wood-floor-photography-hd-wallpaper-1920x1080-7814.jpg" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csprojResolveAssemblyReference.cache" />
@@ -932,6 +939,7 @@
     <Content Include="Views\cmsVolunteer\InsertJob.cshtml" />
     <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
     <Content Include="Views\Home\AddEvent.cshtml" />
     <Content Include="Views\Home\_EventsPartial.cshtml" />
@@ -939,6 +947,9 @@
     <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\cmsEventsListing\Submitted.cshtml" />
     <Content Include="Views\cmsEventsListing\_TotalSubmittedEventsPartial.cshtml" />
+    <Content Include="Views\WaitTime\erwait.cshtml" />
+    <Content Include="Views\volunteer\Opportunities.cshtml" />
+    <Content Include="Views\volunteer\oppInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

@@ -22,7 +22,6 @@ namespace notre_dame_rebuild.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.erTime = objER.getWaitTime();
             var articles = objNews.getTopArticles();
             ViewBag.Poll = new poll().GetRandomQuestion();
             return View(articles);

@@ -123,5 +123,12 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View();
         }
+
+        public ActionResult ERwait_PatientHistory()
+        {
+            ViewBag.patientCount = objER.getPatientCount();
+            var info = objER.getPatientInfo();
+            return View(info);
+        }
     }
 }

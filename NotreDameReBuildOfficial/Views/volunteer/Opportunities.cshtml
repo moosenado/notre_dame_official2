@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.volunteerJob>
+@{
+    ViewBag.Title = "Opportunities";
+}
+
+<h1>Opportunities</h1>
+<h2>List of Opportunities</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Opportunity</th>
+            <th>Date Updated</th>
+        </tr>
+    </thead>
+
+    @foreach (var job in Model)
+    {
+        <tr>
+            <td>@job.jobTitle</td>
+            <td>@job.date</td>
+            <td>@Html.ActionLink("View", "oppInfo", new { id = job.id }) /@Html.ActionLink("Apply", "applyVolunteer", new { id = job.id })</td>
+        </tr>
+    }
+
+</table>
+

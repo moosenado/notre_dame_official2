@@ -5,33 +5,34 @@ using System.Web;
 
 namespace NotreDameReBuildOfficial.Models
 {
-    public class volunteerJobs
+    public class volunteerInfo
     {
         ndLinqClassDataContext objLinq = new ndLinqClassDataContext();
 
-        public IQueryable<volunteerJob>getJobs()
+        public IQueryable<volunteer_info>getVolunteers()
         {
-            var allJobs = objLinq.volunteerJobs.Select(x => x);
-            return allJobs;
+            var allVol = objLinq.volunteer_infos.Select(x => x);
+            return allVol;
         }
 
-        public volunteerJob getJobByID(int _id)
+        public volunteer_info getVolByID(int _id)
         {
-            var selectJob = objLinq.volunteerJobs.SingleOrDefault(x => x.id == _id);
-            return selectJob;
+            var allVol = objLinq.volunteer_infos.SingleOrDefault(x => x.id == _id);
+            return allVol;
         }
 
-        public bool InsertJob(volunteerJob job)
+        public bool InsertVol(volunteer_info job)
         {
             using(objLinq)
             {
-                objLinq.volunteerJobs.InsertOnSubmit(job);
+                objLinq.volunteer_infos.InsertOnSubmit(job);
                 objLinq.SubmitChanges();
                 return true;
             }
         }
 
-        public bool updateJob(int _id, string _jobTitle, string _jobDescription, string _street, string _city, string _province, string _zip, DateTime _date, DateTime _startDate, DateTime _endDate)
+/*
+        public bool updateVol(int _id, string _firstname, string _lastname, string gender, string _email, string _mobile, string _street, string _city, string _province, string _zip_code, int jobID, DateTime _dateApplied)
         {
             using(objLinq)
             {
@@ -64,5 +65,6 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
+        */
     }
 }

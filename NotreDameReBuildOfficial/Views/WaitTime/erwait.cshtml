@@ -1,0 +1,12 @@
+﻿<div id="erwait">
+    @model NotreDameReBuildOfficial.Models.erwaitClass
+
+    ER Wait: @if (Model.getWaitTime() != null)
+    {
+        @Model.getWaitTime()
+    }
+    else
+    {
+        <span>Updating...</span>
+    }
+</div>

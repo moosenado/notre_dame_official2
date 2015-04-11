@@ -1,6 +1,6 @@
 ﻿@model NotreDameReBuildOfficial.Models.volunteerJob
 @{
-    ViewBag.Title = "jobInfo";
+    ViewBag.Title = "oppInfo";
 }
 
 <h1>Opportunities</h1>
@@ -8,51 +8,51 @@
 
 <table>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.jobTitle)</td>
+        <td>@Html.Label("Opportunity:")</td>
         <td>@Html.DisplayFor(x => x.jobTitle)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.jobDescription)</td>
+        <td>@Html.Label("Description:")</td>
         <td>@Html.DisplayFor(x => x.jobDescription)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.street)</td>
+        <td>@Html.Label("Street:")</td>
         <td>
             @Html.DisplayFor(x => x.street)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.city)</td>
+        <td>@Html.Label("City:")</td>
         <td>
             @Html.DisplayFor(x => x.city)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.province)</td>
+        <td>@Html.Label("Province:")</td>
         <td>
             @Html.DisplayFor(x => x.province)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.zip_code)</td>
+        <td>@Html.Label("Zip Code:")</td>
         <td>
             @Html.DisplayFor(x => x.zip_code)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.date)</td>
+        <td>@Html.Label("Date Updated:")</td>
         <td>
             @Html.DisplayFor(x => x.date)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.dateStart)</td>
+        <td>@Html.Label("Date Start:")</td>
         <td>
             @Html.DisplayFor(x => x.dateStart)
         </td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(x => x.dateEnd)</td>
+        <td>@Html.Label("Date End:")</td>
         <td>
             @Html.DisplayFor(x => x.dateEnd)
         </td>

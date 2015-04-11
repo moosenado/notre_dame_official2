@@ -44,6 +44,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         {
             if(ModelState.IsValid)
             {
+                
+                jobs.date = DateTime.Now;
                 objVol.InsertJob(jobs);
                 return RedirectToAction("JobList");
             }

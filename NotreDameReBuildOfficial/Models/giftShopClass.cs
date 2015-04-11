@@ -11,6 +11,12 @@ namespace NotreDameReBuildOfficial.Models
 
         public string file_update { get; set; }
 
+        public string product_name { get; set; }
+
+        public string add_command { get; set; }
+
+        public int product_quantity { get; set; }
+
         ndLinqClassDataContext objGS = new ndLinqClassDataContext();
 
         public IQueryable<product> getProducts()
@@ -53,6 +59,15 @@ namespace NotreDameReBuildOfficial.Models
                 var delete = objGS.products.Single(x => x.Id == _id);
                 objGS.products.DeleteOnSubmit(delete); //delete user on submission
                 objGS.SubmitChanges(); //commit deletetion change to the database
+                return true;
+            }
+        }
+        public bool insertCart(cart cart_table)
+        {
+            using (objGS)
+            {
+                objGS.carts.InsertOnSubmit(cart_table);
+                objGS.SubmitChanges();
                 return true;
             }
         }
