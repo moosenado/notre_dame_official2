@@ -7,7 +7,7 @@
 
 @ViewBag.checkoutNum
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(FormMethod.Post))
 {
 
 <h2>Personal Information:</h2>
@@ -68,5 +68,18 @@
 
 @Html.LabelFor(model => model.securitycode, "Security Code", new { @class = "label" })
 @Html.TextBoxFor(model => model.securitycode, new { @class = "textbox" })
+
+<br />
+
+    <input type="hidden" value="@ViewBag.checkoutNum" name="totalAmount" />
+    <input type="submit" value="Purchase" class="buttonstyle" name="purchase_command" />
+
+}
+
+<p>@ViewBag.Message</p>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
 
 }

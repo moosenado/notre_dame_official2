@@ -161,18 +161,49 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(cartProducts);
         }
 
-        public ActionResult checkout(string checkoutTotal, giftShopClass gsclass)
+        public ActionResult checkout(string checkoutTotal, giftShopClass gsclass, string purchase_command, string totalAmount, checkout checkout)
         {
-            if (gsclass.checkoutTotal == null)
-            {
-                return RedirectToAction("giftshop");
-            }
-            else
-            {
-                ViewBag.checkoutNum = gsclass.checkoutTotal;
-                return View();
-            }
+            //if (gsclass.checkoutTotal == null)
+            //{
+            //    if (gsclass.totalAmount != null)
+            //    {
+            //        return View();
+            //    }
 
+            //    return RedirectToAction("giftshop");
+            //}
+
+            if (ModelState.IsValid)
+            {
+
+                if (purchase_command == "Purchase")
+                {
+                    try
+                    {
+                        //session id
+                        var session = Session["name"].ToString();
+
+                        checkout.totalpaid = gsclass.totalAmount;
+                        checkout.orderdate = DateTime.Now;
+                        checkout.session_id = session;
+
+                        objGS.insertPurchase(checkout);
+                        ViewBag.Message = "Thank you for your purchase";
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "Error:" + ex.Message.ToString();
+                    }             
+                } 
+            }
+            ViewBag.checkoutNum = gsclass.checkoutTotal;
+            return View();
+        }
+        
+        public ActionResult thankyou()
+        {
+            return View();
         }
 
     }

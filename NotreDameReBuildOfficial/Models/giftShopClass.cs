@@ -27,6 +27,8 @@ namespace NotreDameReBuildOfficial.Models
 
         public string checkout_command { get; set; }
 
+        public string totalAmount { get; set; }
+
         ndLinqClassDataContext objGS = new ndLinqClassDataContext();
 
         public IQueryable<product> getProducts()
@@ -52,6 +54,15 @@ namespace NotreDameReBuildOfficial.Models
             using (objGS)
             {
                 objGS.products.InsertOnSubmit(product_table);
+                objGS.SubmitChanges();
+                return true;
+            }
+        }
+        public bool insertPurchase(checkout checkout)
+        {
+            using (objGS)
+            {
+                objGS.checkouts.InsertOnSubmit(checkout);
                 objGS.SubmitChanges();
                 return true;
             }
