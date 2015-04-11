@@ -1,0 +1,30 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.cart>
+@{
+    ViewBag.Title = "cart";
+}
+
+<h2>Cart</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var cart in Model)
+    {
+        <tr>
+            <td>@Html.Raw(cart.name)</td>
+            <td><input type="number" name="product_quantity" min="1" max="100" value="@Html.Raw(cart.prod_quantity)" /></td>
+            <td>$@Html.Raw(cart.price)</td>
+            <td>@Html.ActionLink(" ", "cart", new { id = cart.Id }, new { @class = "fa fa-trash-o" })</td>
+        </tr>
+    }
+
+    </tbody>
+</table>

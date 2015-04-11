@@ -1,5 +1,46 @@
-﻿@{
+﻿@model NotreDameReBuildOfficial.Models.product
+@{
     ViewBag.Title = "product_details";
 }
 
-<h2>product_details</h2>
+<h2>Product Details</h2>
+
+<a href="~/GiftShop/cart">Cart (@ViewBag.cartCount)</a>
+
+<div id="articlebody">
+
+    <div id="article_image">
+
+        <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.name" /></a>
+
+    </div>
+
+    @using (Html.BeginForm(FormMethod.Post)){
+        
+
+    <div id="article_info">
+
+        <h2>@Html.DisplayFor(x => x.name)</h2>
+
+        <p>@Html.DisplayFor(x => x.price)</p>
+
+        <p>Quantity:</p>
+        <input type="number" name="product_quantity" min="1" max="100" value="1" />
+
+        <br />
+
+        <p>@Html.DisplayFor(x => x.description)</p>
+
+        <input type="hidden" value="@Html.DisplayFor(x => x.name)" name="product_name" />
+        <input type="hidden" value="@Html.DisplayFor(x => x.price)" name="product_price" />
+        <input type="submit" value="Add To Cart" class="buttonstyle" name="add_command" />
+
+        <p>@ViewBag.Message</p>
+
+    </div>
+        
+    }
+
+</div>
+
+<div class="clear"></div>

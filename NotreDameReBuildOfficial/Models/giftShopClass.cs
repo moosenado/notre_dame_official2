@@ -13,6 +13,8 @@ namespace NotreDameReBuildOfficial.Models
 
         public string product_name { get; set; }
 
+        public string product_price { get; set; }
+
         public string add_command { get; set; }
 
         public int product_quantity { get; set; }
@@ -23,6 +25,13 @@ namespace NotreDameReBuildOfficial.Models
         {
             var allProducts = objGS.products.Select(x => x);
             return allProducts;
+        }
+        public IQueryable<cart> getCart(string session)
+        {
+            var allCartProducts = (from x in objGS.carts
+                                   where x.session_id == session
+                                   select x);
+            return allCartProducts;
         }
         public product getProductByID(int _id)
         {
@@ -62,15 +71,13 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        //increment cart counter
-        //public int cartCounter(int value)
-        //{
-        //    int currentAmount = 
-        //}
-        //see how many session entries exist in the cart
+        
+        //see how many session entries exist in the cart (cart count)
         public int getCartCount(string session)
         {
-            int cartCount = objGS.carts.Where(x => x.name == session).Count();
+            int cartCount = (from x in objGS.carts
+                             where x.session_id == session
+                             select x).Count();
             return cartCount;
         }
 
