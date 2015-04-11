@@ -17,12 +17,13 @@
         </tr>
     </thead>
     <tbody id="carttable">
+        @{var counter = 1;}
         @foreach (var cart in Model)
         {
             <tr>
                 <td>@Html.Raw(cart.name)</td>
                 <td>@Html.Raw(cart.prod_quantity)</td>
-                <td id="prices">@Html.Raw(cart.price)</td>
+                <td id="prices[@counter]">@Html.Raw(cart.price)</td>
                 <td>
                     @using (Html.BeginForm(FormMethod.Post))
                     {
@@ -31,6 +32,7 @@
                     }
             </td>
         </tr>
+            counter++;
         }
     </tbody>
         <tr>
@@ -53,7 +55,7 @@
 <script type="text/javascript">
 
     //get table rows
-    var tableRows = document.getElementById("carttable").rows.length;
+    var tableRows = document.getElementById("carttable").rows.length + 1;
 
     //check if no products are in cart, if so, get rid of checkout button
     if (tableRows == 0) {
@@ -61,12 +63,11 @@
         checkout.style.display = "none";
     }
 
-
     //get sum of product prices
     sum = 0;
 
-    for (var i = 0; i < tableRows; i++) {
-        var tdID = document.getElementById("prices");
+    for (var i = 1; i < tableRows; i++) {
+        var tdID = document.getElementById("prices[" + i + "]");
         var value = tdID.innerHTML;
         if (value === null) {
             value = '0';
@@ -77,7 +78,7 @@
 
     //set total value to table cell
     var totalValue = document.getElementById("total");
-    totalValue.innerHTML = sum;
+    totalValue.innerHTML = sum.toFixed(2);
 
     //set total value to hidden field
     document.getElementById('totalValue').value = sum;
