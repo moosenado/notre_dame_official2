@@ -19,14 +19,26 @@ Password : ndh24681
 ------------------------------------------------------------------*@
 
 <h1>Manage Donations</h1>
-<table id="donation-list">
+
+<div class="head-btns">
+    <a href='@Url.Action("Insert", "cmsDonation")'>
+        <span class="buttonstyle"><i class="fa fa-plus"></i>New Donation</span>
+    </a>
+    <a href='https://www.sandbox.paypal.com/ca/webapps/mpp/merchant' target="_blank" class="buttonstyle">
+        <i class="fa fa-external-link"></i>Manage PayPal Account
+    </a>
+</div>
+
+<table>
     <thead>
         <tr>
             <th>Record No.</th>
             <th>Donor Name</th>
             <th>Date</th>
-            <th>Amount</th>
-            <th>&nbsp;</th>
+            <th>Amount ($)</th>
+            <th class="iup-icons">View</th>
+            <th class="iup-icons">Edit</th>
+            <th class="iup-icons">Delete</th>
         </tr>
     </thead>
 
@@ -37,17 +49,16 @@ Password : ndh24681
             <td>@donor.last_name, @donor.first_name</td>
             <td>@donor.date.Value.ToString("MM/dd/yyyy")</td>
             <td>@donor.amount</td>
-            <td>@Html.ActionLink("View", "Details", new { donation_id = donor.donation_id }) / @Html.ActionLink("Edit", "Update", new { donation_id = donor.donation_id }) / @Html.ActionLink("Delete", "Delete", new { donation_id = donor.donation_id })</td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Details", "cmsDonation", new { donation_id = donor.donation_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Update", "cmsDonation", new { donation_id = donor.donation_id })'><i class="fa fa-pencil fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Delete", "cmsDonation", new { donation_id = donor.donation_id })'><i class="fa fa-trash-o fa-lg"></i></a>
+            </td>
         </tr>
     }
 
 </table>
-
-<a href='@Url.Action("Insert", "cmsDonation")'>
-    <span class="buttonstyle"><i class="fa fa-plus"></i>New Donation</span>
-</a>
-<a href='https://www.sandbox.paypal.com/ca/webapps/mpp/merchant' target="_blank" class="buttonstyle">
-    <i class="fa fa-external-link"></i>Manage PayPal Account
-</a>
-
-
