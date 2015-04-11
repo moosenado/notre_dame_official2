@@ -42,9 +42,9 @@
     
 </table>
 
-@using (Html.BeginForm(FormMethod.Post))
+@using (Html.BeginForm("checkout", "GiftShop", FormMethod.Post))
 {
-    <input type="hidden" id="totalValue" value="" name="product_id" />
+    <input type="hidden" id="totalValue" value="" name="checkoutTotal" />
     <input type="submit" value="Checkout" class="buttonstyle" name="checkout_command" />
 }
 

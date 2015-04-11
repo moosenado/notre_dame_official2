@@ -161,5 +161,11 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(cartProducts);
         }
 
+        public ActionResult checkout(string checkoutTotal, giftShopClass gsclass)
+        {
+            ViewBag.checkoutNum = gsclass.checkoutTotal;
+            return View();
+        }
+
     }
 }

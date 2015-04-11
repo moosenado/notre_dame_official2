@@ -23,6 +23,10 @@ namespace NotreDameReBuildOfficial.Models
 
         public string product_id { get; set; }
 
+        public string checkoutTotal { get; set; }
+
+        public string checkout_command { get; set; }
+
         ndLinqClassDataContext objGS = new ndLinqClassDataContext();
 
         public IQueryable<product> getProducts()

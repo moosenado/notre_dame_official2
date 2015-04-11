@@ -952,6 +952,7 @@
     <Content Include="Views\volunteer\oppInfo.cshtml" />
     <Content Include="Views\volunteer\apply.cshtml" />
     <Content Include="Views\GiftShop\cart.cshtml" />
+    <Content Include="Views\GiftShop\checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
