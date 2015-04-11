@@ -113,7 +113,9 @@ h3 {
     clear: both;
 }
 
-.buttonstyle {
+.buttonstyle,
+.buttonstyle2,
+.buttonstyle3 {
     border: 0px;
     color: #fff;
     background-color: #fd8411;
@@ -125,7 +127,17 @@ h3 {
     font-size: 1em;
 }
 
-.buttonstyle:hover {
+.buttonstyle2 {
+    background: #ccc;
+}
+
+.buttonstyle3 {
+    background: #accf13;
+}
+
+.buttonstyle:hover,
+.buttonstyle2:hover,
+.buttonstyle3:hover {
     color: #fff;
     text-decoration: none;
 }
@@ -1170,7 +1182,7 @@ table tr:nth-child(odd) td {
     margin-left:20px;
     margin-top: 20px;
     margin-bottom: 50px;
-    width: 850px;
+    width: 800px;
 }
 
 .link{
@@ -1548,4 +1560,12 @@ table#edit-donations {
 
 table.ui-datepicker-calendar {
     margin-bottom: 0px;
+}
+
+.ui-datepicker-today {
+    background: #accf13;
+}
+
+.ui-datepicker-today a {
+    color: #fff;
 }

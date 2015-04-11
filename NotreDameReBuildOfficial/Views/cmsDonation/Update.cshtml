@@ -9,6 +9,12 @@
 
 <h1>Edit Record No. @Html.DisplayFor(model => model.donation_id)</h1>
   
+<div class="head-btns">
+    <a href='@Url.Action("Manage", "cmsDonation")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+</div>
+
 @* DONATION AMOUNT *@
 <p>@Html.LabelFor(model => model.amount, new { @class = "label amount" }) $@Html.DisplayFor(model => model.amount)</p>
 
@@ -19,7 +25,7 @@
     
 @using (Html.BeginForm())
 {
-    <table id="edit-donations" class="plain">
+    <table class="plain">
         <tr>
 
             @Html.HiddenFor(model => model.donation_id)
@@ -145,10 +151,6 @@
     
     <a href='@Url.Action("Details", "cmsDonation", new { donation_id = Model.donation_id })'>
     <span class="buttonstyle">Cancel</span>
-    </a>
-    
-    <a href='@Url.Action("Manage", "cmsDonation")'>
-        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
     </a>
     
 }

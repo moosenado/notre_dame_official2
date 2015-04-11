@@ -8,7 +8,19 @@
 
 <h1>Donation Record No. @Html.DisplayFor(x => x.donation_id)</h1>
 
-<table class="plain">
+<div class="head-btns">
+    <a href='@Url.Action("Update", "cmsDonation", new { donation_id = Model.donation_id })'>
+        <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
+    </a>
+    <a href='@Url.Action("Delete", "cmsDonation", new { donation_id = Model.donation_id })'>
+        <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
+    </a>
+    <a href='@Url.Action("Manage", "cmsDonation")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+</div>
+
+<table>
     <tr>
         @* DONATION AMOUNT *@
         <td>@Html.LabelFor(model => model.amount, new { @class = "label" })</td>
@@ -84,13 +96,3 @@
         <td>@Html.DisplayFor(x => x.email)</td>
     </tr>
 </table>
-
-<a href='@Url.Action("Update", "cmsDonation", new { donation_id = Model.donation_id })'>
-    <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
-</a>
-<a href='@Url.Action("Delete", "cmsDonation", new { donation_id = Model.donation_id })'>
-    <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
-</a>
-<a href='@Url.Action("Manage", "cmsDonation")'>
-    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
-</a>
