@@ -62,14 +62,16 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        public bool insertCart(cart cart_table)
+        //increment cart counter
+        //public int cartCounter(int value)
+        //{
+        //    int currentAmount = 
+        //}
+        //see how many session entries exist in the cart
+        public int getCartCount(string session)
         {
-            using (objGS)
-            {
-                objGS.carts.InsertOnSubmit(cart_table);
-                objGS.SubmitChanges();
-                return true;
-            }
+            int cartCount = objGS.carts.Where(x => x.name == session).Count();
+            return cartCount;
         }
 
     }

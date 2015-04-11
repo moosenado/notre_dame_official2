@@ -33,9 +33,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void Insertalert(alert instance);
     partial void Updatealert(alert instance);
     partial void Deletealert(alert instance);
-    partial void Insertcart(cart instance);
-    partial void Updatecart(cart instance);
-    partial void Deletecart(cart instance);
     partial void Insertcheckout(checkout instance);
     partial void Updatecheckout(checkout instance);
     partial void Deletecheckout(checkout instance);
@@ -108,6 +105,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertvolunteerJob(volunteerJob instance);
     partial void UpdatevolunteerJob(volunteerJob instance);
     partial void DeletevolunteerJob(volunteerJob instance);
+    partial void Insertcart(cart instance);
+    partial void Updatecart(cart instance);
+    partial void Deletecart(cart instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -145,14 +145,6 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<alert>();
-			}
-		}
-		
-		public System.Data.Linq.Table<cart> carts
-		{
-			get
-			{
-				return this.GetTable<cart>();
 			}
 		}
 		
@@ -371,6 +363,14 @@ namespace NotreDameReBuildOfficial.Models
 				return this.GetTable<volunteerJob>();
 			}
 		}
+		
+		public System.Data.Linq.Table<cart> carts
+		{
+			get
+			{
+				return this.GetTable<cart>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.alert")]
@@ -482,140 +482,6 @@ namespace NotreDameReBuildOfficial.Models
 					this._featured = value;
 					this.SendPropertyChanged("featured");
 					this.OnfeaturedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cart")]
-	public partial class cart : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _name;
-		
-		private int _prod_quantity;
-		
-		private string _session_id;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void Onprod_quantityChanging(int value);
-    partial void Onprod_quantityChanged();
-    partial void Onsession_idChanging(string value);
-    partial void Onsession_idChanged();
-    #endregion
-		
-		public cart()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prod_quantity", DbType="Int NOT NULL")]
-		public int prod_quantity
-		{
-			get
-			{
-				return this._prod_quantity;
-			}
-			set
-			{
-				if ((this._prod_quantity != value))
-				{
-					this.Onprod_quantityChanging(value);
-					this.SendPropertyChanging();
-					this._prod_quantity = value;
-					this.SendPropertyChanged("prod_quantity");
-					this.Onprod_quantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_session_id", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string session_id
-		{
-			get
-			{
-				return this._session_id;
-			}
-			set
-			{
-				if ((this._session_id != value))
-				{
-					this.Onsession_idChanging(value);
-					this.SendPropertyChanging();
-					this._session_id = value;
-					this.SendPropertyChanged("session_id");
-					this.Onsession_idChanged();
 				}
 			}
 		}
@@ -6673,6 +6539,164 @@ namespace NotreDameReBuildOfficial.Models
 					this._dateEnd = value;
 					this.SendPropertyChanged("dateEnd");
 					this.OndateEndChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cart")]
+	public partial class cart : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _name;
+		
+		private int _prod_quantity;
+		
+		private string _session_id;
+		
+		private System.Nullable<decimal> _price;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Onprod_quantityChanging(int value);
+    partial void Onprod_quantityChanged();
+    partial void Onsession_idChanging(string value);
+    partial void Onsession_idChanged();
+    partial void OnpriceChanging(System.Nullable<decimal> value);
+    partial void OnpriceChanged();
+    #endregion
+		
+		public cart()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prod_quantity", DbType="Int NOT NULL")]
+		public int prod_quantity
+		{
+			get
+			{
+				return this._prod_quantity;
+			}
+			set
+			{
+				if ((this._prod_quantity != value))
+				{
+					this.Onprod_quantityChanging(value);
+					this.SendPropertyChanging();
+					this._prod_quantity = value;
+					this.SendPropertyChanged("prod_quantity");
+					this.Onprod_quantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_session_id", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string session_id
+		{
+			get
+			{
+				return this._session_id;
+			}
+			set
+			{
+				if ((this._session_id != value))
+				{
+					this.Onsession_idChanging(value);
+					this.SendPropertyChanging();
+					this._session_id = value;
+					this.SendPropertyChanged("session_id");
+					this.Onsession_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Decimal(18,4)")]
+		public System.Nullable<decimal> price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this.OnpriceChanging(value);
+					this.SendPropertyChanging();
+					this._price = value;
+					this.SendPropertyChanged("price");
+					this.OnpriceChanged();
 				}
 			}
 		}

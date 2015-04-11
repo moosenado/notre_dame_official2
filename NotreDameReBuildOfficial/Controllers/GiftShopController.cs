@@ -29,9 +29,21 @@ namespace NotreDameReBuildOfficial.Controllers
                         objCartInsert.SubmitChanges();
                     }
 
+                    //add one to cart counter
+
+                    //int incCounter = 1;
+
+                    //ViewBag.cartCount = cartCount + 1;
+
+                    var cartCountInc = objGS.getCartCount(session_id);
+                    ViewBag.cartCount = cartCountInc;
+
+                    //objGS.cartCounter(incCounter);
+
+                    //view message
+
                     ViewBag.Message = "Product Added To Cart";
 
-                    //add one to cart counter
                 }
                 catch (Exception ex)
                 {
@@ -39,7 +51,12 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
             }
 
-            ViewBag.strSession = Session["name"];
+            var session = Session["name"].ToString();
+            ViewBag.strSession = session;
+
+            var cartCount = objGS.getCartCount(session);
+            ViewBag.cartCount = cartCount;
+
             var all_products = objGS.getProducts();
             return View(all_products);
         }
