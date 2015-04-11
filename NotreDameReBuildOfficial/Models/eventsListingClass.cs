@@ -50,8 +50,8 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var upcomingEvents = from a in objLinq.Events
-                              where a.start_date > today && a.display == 1
-                              || a.start_date <= today && a.end_date > today && a.display == 1
+                                 where a.start_date >= today && a.display == 1 && a.approved == 1
+                              || a.start_date <= today && a.end_date > today && a.display == 1 && a.approved == 1
                               orderby a.start_date ascending
                               select a;
 
@@ -64,8 +64,11 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var archivedEvents = from a in objLinq.Events
-                                 where a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 1
-                                 || a.start_date < today && a.end_date < today && a.display == 1 && a.approved == 1
+                                 where a.start_date >= today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date < today && a.display == 1 && a.approved == 1
                                  orderby a.start_date descending
                                  select a;
 
@@ -77,9 +80,9 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var totalSubmitted = (from a in objLinq.Events
-                                  where a.start_date > today && a.display == 0 && a.approved == 0
+                                  where a.start_date >= today && a.display == 0 && a.approved == 0
                                   || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
-                                  || a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 0
                                   orderby a.start_date descending
                                   select a).Count();
 
@@ -91,9 +94,9 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var submitted = from a in objLinq.Events
-                                 where a.start_date > today && a.display == 0 && a.approved == 0
+                                 where a.start_date >= today && a.display == 0 && a.approved == 0
                                   || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
-                                  || a.start_date < today && a.end_date < today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 0
                                  orderby a.start_date descending
                                  select a;
 
