@@ -5,9 +5,9 @@
         <tr>
             <th>Event Name</th>
             <th>Date</th>
-            <th>View</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th class="iup-icons">View</th>
+            <th class="iup-icons">Edit</th>
+            <th class="iup-icons">Delete</th>
         </tr>
     </thead>
 
@@ -22,7 +22,7 @@
                 }
             </td>
             <td class="iup-icons">
-                <a class="link" href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'>View</a>
+                <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
             </td>
             <td class="iup-icons">
                 <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-pencil fa-lg"></i></a>

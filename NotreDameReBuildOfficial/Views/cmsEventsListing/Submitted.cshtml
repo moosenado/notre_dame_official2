@@ -8,39 +8,53 @@
 
 <h1>Submitted Events</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Event Name</th>
-            <th>Date</th>
-            <th>View</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
+<div class="head-btns">
+    <a href='@Url.Action("Manage", "cmsEventsListing")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+</div>
 
-    @foreach (var e in Model)
-    {
-        <tr>
-            <td>@e.name</td>
-            <td>
-                @e.start_date.ToString("MMMM d")  @@ @e.start_time
-                @if (e.end_time != null)
-                {
-                    @:- @e.end_time
-                }
-            </td>
-            <td class="iup-icons">
-                <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
-            </td>
-            <td class="iup-icons">
-                <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-pencil fa-lg"></i></a>
-            </td>
-            <td class="iup-icons">
-                <a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-trash-o fa-lg"></i></a>
-            </td>
-        </tr>
+@if (@ViewBag.TotalEvents >= 1) {
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th class="iup-icons">View</th>
+                <th class="iup-icons">Edit</th>
+                <th class="iup-icons">Delete</th>
+            </tr>
+        </thead>
 
-    }
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.name</td>
+                <td>
+                    @e.start_date.ToString("MMMM d")  @@ @e.start_time
+                    @if (e.end_time != null)
+                    {
+                        @:- @e.end_time
+                    }
+                </td>
+                <td class="iup-icons">
+                    <a href='@Url.Action("Details", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
+                </td>
+                <td class="iup-icons">
+                    <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-pencil fa-lg"></i></a>
+                </td>
+                <td class="iup-icons">
+                    <a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = e.event_id })'><i class="fa fa-trash-o fa-lg"></i></a>
+                </td>
+            </tr>
 
-</table>
+        }
+
+    </table>
+    
+} else {
+    
+    <p>No new events have been submitted.</p>
+
+}

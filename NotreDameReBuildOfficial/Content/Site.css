@@ -135,7 +135,7 @@ h3 {
 }
 
 .iup-icons {
-    
+    text-align: center;
 }
 
 input[type=radio] {
@@ -1158,6 +1158,7 @@ table tr:nth-child(odd) td {
 .head-btns {
     text-align: right;
     float: right;
+    margin-bottom: 20px;
 }
 
 /* --- CMS MAIN BODY --- */
@@ -1168,6 +1169,7 @@ table tr:nth-child(odd) td {
     float: left;
     margin-left:20px;
     margin-top: 20px;
+    margin-bottom: 50px;
     width: 850px;
 }
 
@@ -1238,35 +1240,30 @@ table tr:nth-child(odd) td {
 
 .fa {
     z-index: 1;
-	padding-right: 20px;
 }
 
 .fa-external-link,
-.fa-plus {
+.fa-plus,
+.fa-list-ul,
+.fa-trash-o,
+.fa-pencil {
     padding-right: 5px;
 }
 
 .fa-newspaper-o.cms,
-.fa-calendar.cms {
+.fa-calendar.cms,
+.fa-users,
+.fa-bar-chart,
+.fa-money,
+.fa-heartbeat,
+.fa-search,
+.fa-comment-o,
+.fa-sort-desc {
     padding-right: 20px;
 }
 
-#magnifylogo .fa-search, /*targets magnifing glass on public layout*/
-.fa-bars,
-.fa-shopping-cart,
-.fa-user-md,
-.fa-comment,
-.fa-arrow-left,
-.fa-pencil,
-.fa-times,
-.fa-trash-o,
-.fa-check,
-.fa-list-ul ,
-.fa-eye,
-.fa-calendar,
-.fa-heart,
-.fa-newspaper-o,
-.fa-external-link-square  {
+/*targets magnifing glass on public layout*/ 
+#magnifylogo .fa-search {
 	padding-right: 0px;
 }
 

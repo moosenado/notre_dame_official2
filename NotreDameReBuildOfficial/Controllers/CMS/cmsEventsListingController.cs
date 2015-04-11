@@ -57,6 +57,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         public ActionResult Submitted()
         {
 
+            ViewBag.TotalEvents = objEvents.getTotalSumbittedEvents();
+
             var submitted = objEvents.getSumbittedEvents();
 
             return View(submitted);
