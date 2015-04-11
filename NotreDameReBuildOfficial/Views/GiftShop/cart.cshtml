@@ -45,15 +45,24 @@
 @using (Html.BeginForm("checkout", "GiftShop", FormMethod.Post))
 {
     <input type="hidden" id="totalValue" value="" name="checkoutTotal" />
-    <input type="submit" value="Checkout" class="buttonstyle" name="checkout_command" />
+    <input type="submit" value="Checkout" class="buttonstyle" name="checkout_command" id="checkoutbutton"/>
 }
 
 @*Count Total Amount*@
 
 <script type="text/javascript">
 
+    //get table rows
     var tableRows = document.getElementById("carttable").rows.length;
 
+    //check if no products are in cart, if so, get rid of checkout button
+    if (tableRows == 0) {
+        var checkout = document.getElementById("checkoutbutton");
+        checkout.style.display = "none";
+    }
+
+
+    //get sum of product prices
     sum = 0;
 
     for (var i = 0; i < tableRows; i++) {
@@ -66,9 +75,11 @@
         sum = sum + valueInt;
     }
 
+    //set total value to table cell
     var totalValue = document.getElementById("total");
     totalValue.innerHTML = sum;
 
+    //set total value to hidden field
     document.getElementById('totalValue').value = sum;
 
 </script>
