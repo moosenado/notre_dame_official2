@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.SessionState;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -197,6 +198,18 @@ namespace NotreDameReBuildOfficial.Controllers
                         checkout.session_id = session;
 
                         objGS.insertPurchase(checkout);
+
+                        //Clear the Cart/Session
+                        Session.Abandon();
+                        Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+
+                        //create new sessionID
+                        SessionIDManager manager = new SessionIDManager();
+                        manager.RemoveSessionID(System.Web.HttpContext.Current);
+                        var newId = manager.CreateSessionID(System.Web.HttpContext.Current);
+                        var isRedirected = true;
+                        var isAdded = true;
+                        manager.SaveSessionID(System.Web.HttpContext.Current, newId, out isRedirected, out isAdded);
 
                         return View("thankyou");
 
