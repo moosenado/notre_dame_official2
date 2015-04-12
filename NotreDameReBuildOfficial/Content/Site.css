@@ -369,13 +369,40 @@ table tr:nth-child(odd) td {
     font-weight: 700;
 }
 
+#giftshoplist{
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#giftshoplist ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    width: 200px;
+    float: left;
+}
+
 #giftshoplist ul li{
-    color: #fff;
+    display: block;
 }
 
 .cart{
     float: right;
-    border: 1px solid black;
+}
+
+.giftimage{
+    width: 140px;
+    height: 140px;
+}
+
+.proddetimage{
+    width: 250px;
+    height: 250px;
+}
+
+.product{
+    padding: 10px;
 }
 
 /* --- PUBLIC MAIN NAVIGATION --- */
