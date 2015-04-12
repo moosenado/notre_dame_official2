@@ -197,7 +197,8 @@ namespace NotreDameReBuildOfficial.Controllers
                         checkout.session_id = session;
 
                         objGS.insertPurchase(checkout);
-                        ViewBag.Message = "Thank you for your purchase";
+
+                        return View("thankyou");
 
                     }
                     catch (Exception ex)

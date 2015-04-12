@@ -36,6 +36,11 @@ namespace NotreDameReBuildOfficial.Models
             var allProducts = objGS.products.Select(x => x);
             return allProducts;
         }
+        public IQueryable<checkout> getPurchases()
+        {
+            var allPurchases = objGS.checkouts.Select(x => x);
+            return allPurchases;
+        }
         public IQueryable<cart> getCart(string session)
         {
             var allCartProducts = (from x in objGS.carts
