@@ -17,6 +17,8 @@ namespace NotreDameReBuildOfficial.Controllers
 
         volunteerInfo objInfo = new volunteerInfo();
 
+        volunteerInfoValidate objVolV = new volunteerInfoValidate();
+
         public ActionResult Opportunities()
         {
             var job = objVol.getJobs();
@@ -36,24 +38,25 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
-        public ActionResult applyVol()
+
+        public ActionResult apply()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult apply(volunteer_info vol, int id)
+        public ActionResult apply(volunteer_info info ,int id)
         {
-            var job = objInfo.getJobByID(id);
-  
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
+                info.dateApplied = DateTime.Now;
+                objVolV.jobID = id;
 
-                vol.dateApplied = DateTime.Now;
-                objInfo.InsertVol(vol);
+                objInfo.InsertVol(info);
                 return RedirectToAction("opportunities");
             }
-            return View(job);
+
+            return View();
         }
 
     }
