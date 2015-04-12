@@ -1,4 +1,4 @@
-﻿@model NotreDameReBuildOfficial.Models.volunteer_info
+﻿@model NotreDameReBuildOfficial.Models.volunteerInfoValidate
 @{
     ViewBag.Title = "apply";
 }
@@ -9,7 +9,7 @@
 {
     <table>
 
-        @Html.HiddenFor(x => x.JobID)
+        @Html.HiddenFor(x => x.id)
         <tr>
             <td>@Html.LabelFor(Model => Model.firstname)</td>
             <td>@Html.TextBoxFor(Model => Model.firstname)<span style="color:red">*</span></td>
@@ -30,8 +30,8 @@
             <td>@Html.TextBoxFor(Model => Model.email)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(Model => Model.moblie)</td>
-            <td>@Html.TextBoxFor(Model => Model.moblie)<span style="color:red">*</span></td>
+            <td>@Html.LabelFor(Model => Model.mobile)</td>
+            <td>@Html.TextBoxFor(Model => Model.mobile)<span style="color:red">*</span></td>
         </tr>
         <tr>
             <td>@Html.LabelFor(Model => Model.street)</td>
@@ -81,3 +81,4 @@
 @section Scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
+}

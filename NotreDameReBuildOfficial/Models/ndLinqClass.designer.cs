@@ -84,9 +84,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    partial void Insertvolunteer_info(volunteer_info instance);
-    partial void Updatevolunteer_info(volunteer_info instance);
-    partial void Deletevolunteer_info(volunteer_info instance);
     partial void InsertFeedback(Feedback instance);
     partial void UpdateFeedback(Feedback instance);
     partial void DeleteFeedback(Feedback instance);
@@ -108,6 +105,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void Insertproduct(product instance);
     partial void Updateproduct(product instance);
     partial void Deleteproduct(product instance);
+    partial void Insertvolunteer_info(volunteer_info instance);
+    partial void Updatevolunteer_info(volunteer_info instance);
+    partial void Deletevolunteer_info(volunteer_info instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -308,14 +308,6 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<volunteer_info> volunteer_infos
-		{
-			get
-			{
-				return this.GetTable<volunteer_info>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Feedback> Feedbacks
 		{
 			get
@@ -369,6 +361,14 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<product>();
+			}
+		}
+		
+		public System.Data.Linq.Table<volunteer_info> volunteer_infos
+		{
+			get
+			{
+				return this.GetTable<volunteer_info>();
 			}
 		}
 	}
@@ -4594,356 +4594,6 @@ namespace NotreDameReBuildOfficial.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.volunteer_info")]
-	public partial class volunteer_info : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _firstname;
-		
-		private string _lastname;
-		
-		private int _gender;
-		
-		private string _email;
-		
-		private string _moblie;
-		
-		private string _street;
-		
-		private string _city;
-		
-		private string _province;
-		
-		private string _zip_code;
-		
-		private string _JobID;
-		
-		private System.DateTime _dateApplied;
-		
-		private string _resume;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnfirstnameChanging(string value);
-    partial void OnfirstnameChanged();
-    partial void OnlastnameChanging(string value);
-    partial void OnlastnameChanged();
-    partial void OngenderChanging(int value);
-    partial void OngenderChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnmoblieChanging(string value);
-    partial void OnmoblieChanged();
-    partial void OnstreetChanging(string value);
-    partial void OnstreetChanged();
-    partial void OncityChanging(string value);
-    partial void OncityChanged();
-    partial void OnprovinceChanging(string value);
-    partial void OnprovinceChanged();
-    partial void Onzip_codeChanging(string value);
-    partial void Onzip_codeChanged();
-    partial void OnJobIDChanging(string value);
-    partial void OnJobIDChanged();
-    partial void OndateAppliedChanging(System.DateTime value);
-    partial void OndateAppliedChanged();
-    partial void OnresumeChanging(string value);
-    partial void OnresumeChanged();
-    #endregion
-		
-		public volunteer_info()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string firstname
-		{
-			get
-			{
-				return this._firstname;
-			}
-			set
-			{
-				if ((this._firstname != value))
-				{
-					this.OnfirstnameChanging(value);
-					this.SendPropertyChanging();
-					this._firstname = value;
-					this.SendPropertyChanged("firstname");
-					this.OnfirstnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string lastname
-		{
-			get
-			{
-				return this._lastname;
-			}
-			set
-			{
-				if ((this._lastname != value))
-				{
-					this.OnlastnameChanging(value);
-					this.SendPropertyChanging();
-					this._lastname = value;
-					this.SendPropertyChanged("lastname");
-					this.OnlastnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="Int NOT NULL")]
-		public int gender
-		{
-			get
-			{
-				return this._gender;
-			}
-			set
-			{
-				if ((this._gender != value))
-				{
-					this.OngenderChanging(value);
-					this.SendPropertyChanging();
-					this._gender = value;
-					this.SendPropertyChanged("gender");
-					this.OngenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_moblie", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string moblie
-		{
-			get
-			{
-				return this._moblie;
-			}
-			set
-			{
-				if ((this._moblie != value))
-				{
-					this.OnmoblieChanging(value);
-					this.SendPropertyChanging();
-					this._moblie = value;
-					this.SendPropertyChanged("moblie");
-					this.OnmoblieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_street", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string street
-		{
-			get
-			{
-				return this._street;
-			}
-			set
-			{
-				if ((this._street != value))
-				{
-					this.OnstreetChanging(value);
-					this.SendPropertyChanging();
-					this._street = value;
-					this.SendPropertyChanged("street");
-					this.OnstreetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string city
-		{
-			get
-			{
-				return this._city;
-			}
-			set
-			{
-				if ((this._city != value))
-				{
-					this.OncityChanging(value);
-					this.SendPropertyChanging();
-					this._city = value;
-					this.SendPropertyChanged("city");
-					this.OncityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string province
-		{
-			get
-			{
-				return this._province;
-			}
-			set
-			{
-				if ((this._province != value))
-				{
-					this.OnprovinceChanging(value);
-					this.SendPropertyChanging();
-					this._province = value;
-					this.SendPropertyChanged("province");
-					this.OnprovinceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zip_code", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string zip_code
-		{
-			get
-			{
-				return this._zip_code;
-			}
-			set
-			{
-				if ((this._zip_code != value))
-				{
-					this.Onzip_codeChanging(value);
-					this.SendPropertyChanging();
-					this._zip_code = value;
-					this.SendPropertyChanged("zip_code");
-					this.Onzip_codeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string JobID
-		{
-			get
-			{
-				return this._JobID;
-			}
-			set
-			{
-				if ((this._JobID != value))
-				{
-					this.OnJobIDChanging(value);
-					this.SendPropertyChanging();
-					this._JobID = value;
-					this.SendPropertyChanged("JobID");
-					this.OnJobIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateApplied", DbType="DateTime NOT NULL")]
-		public System.DateTime dateApplied
-		{
-			get
-			{
-				return this._dateApplied;
-			}
-			set
-			{
-				if ((this._dateApplied != value))
-				{
-					this.OndateAppliedChanging(value);
-					this.SendPropertyChanging();
-					this._dateApplied = value;
-					this.SendPropertyChanged("dateApplied");
-					this.OndateAppliedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resume", DbType="VarChar(50)")]
-		public string resume
-		{
-			get
-			{
-				return this._resume;
-			}
-			set
-			{
-				if ((this._resume != value))
-				{
-					this.OnresumeChanging(value);
-					this.SendPropertyChanging();
-					this._resume = value;
-					this.SendPropertyChanged("resume");
-					this.OnresumeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="gen.Feedback")]
 	public partial class Feedback : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6721,6 +6371,356 @@ namespace NotreDameReBuildOfficial.Models
 					this._image = value;
 					this.SendPropertyChanged("image");
 					this.OnimageChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.volunteer_info")]
+	public partial class volunteer_info : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _firstname;
+		
+		private string _lastname;
+		
+		private int _gender;
+		
+		private string _email;
+		
+		private string _mobile;
+		
+		private string _street;
+		
+		private string _city;
+		
+		private string _province;
+		
+		private string _zip_code;
+		
+		private int _jobID;
+		
+		private System.DateTime _dateApplied;
+		
+		private string _resume;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnfirstnameChanging(string value);
+    partial void OnfirstnameChanged();
+    partial void OnlastnameChanging(string value);
+    partial void OnlastnameChanged();
+    partial void OngenderChanging(int value);
+    partial void OngenderChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnmobileChanging(string value);
+    partial void OnmobileChanged();
+    partial void OnstreetChanging(string value);
+    partial void OnstreetChanged();
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void OnprovinceChanging(string value);
+    partial void OnprovinceChanged();
+    partial void Onzip_codeChanging(string value);
+    partial void Onzip_codeChanged();
+    partial void OnjobIDChanging(int value);
+    partial void OnjobIDChanged();
+    partial void OndateAppliedChanging(System.DateTime value);
+    partial void OndateAppliedChanged();
+    partial void OnresumeChanging(string value);
+    partial void OnresumeChanged();
+    #endregion
+		
+		public volunteer_info()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string firstname
+		{
+			get
+			{
+				return this._firstname;
+			}
+			set
+			{
+				if ((this._firstname != value))
+				{
+					this.OnfirstnameChanging(value);
+					this.SendPropertyChanging();
+					this._firstname = value;
+					this.SendPropertyChanged("firstname");
+					this.OnfirstnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string lastname
+		{
+			get
+			{
+				return this._lastname;
+			}
+			set
+			{
+				if ((this._lastname != value))
+				{
+					this.OnlastnameChanging(value);
+					this.SendPropertyChanging();
+					this._lastname = value;
+					this.SendPropertyChanged("lastname");
+					this.OnlastnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="Int NOT NULL")]
+		public int gender
+		{
+			get
+			{
+				return this._gender;
+			}
+			set
+			{
+				if ((this._gender != value))
+				{
+					this.OngenderChanging(value);
+					this.SendPropertyChanging();
+					this._gender = value;
+					this.SendPropertyChanged("gender");
+					this.OngenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mobile", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string mobile
+		{
+			get
+			{
+				return this._mobile;
+			}
+			set
+			{
+				if ((this._mobile != value))
+				{
+					this.OnmobileChanging(value);
+					this.SendPropertyChanging();
+					this._mobile = value;
+					this.SendPropertyChanged("mobile");
+					this.OnmobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_street", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string street
+		{
+			get
+			{
+				return this._street;
+			}
+			set
+			{
+				if ((this._street != value))
+				{
+					this.OnstreetChanging(value);
+					this.SendPropertyChanging();
+					this._street = value;
+					this.SendPropertyChanged("street");
+					this.OnstreetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string city
+		{
+			get
+			{
+				return this._city;
+			}
+			set
+			{
+				if ((this._city != value))
+				{
+					this.OncityChanging(value);
+					this.SendPropertyChanging();
+					this._city = value;
+					this.SendPropertyChanged("city");
+					this.OncityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string province
+		{
+			get
+			{
+				return this._province;
+			}
+			set
+			{
+				if ((this._province != value))
+				{
+					this.OnprovinceChanging(value);
+					this.SendPropertyChanging();
+					this._province = value;
+					this.SendPropertyChanged("province");
+					this.OnprovinceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_zip_code", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string zip_code
+		{
+			get
+			{
+				return this._zip_code;
+			}
+			set
+			{
+				if ((this._zip_code != value))
+				{
+					this.Onzip_codeChanging(value);
+					this.SendPropertyChanging();
+					this._zip_code = value;
+					this.SendPropertyChanged("zip_code");
+					this.Onzip_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobID", DbType="Int NOT NULL")]
+		public int jobID
+		{
+			get
+			{
+				return this._jobID;
+			}
+			set
+			{
+				if ((this._jobID != value))
+				{
+					this.OnjobIDChanging(value);
+					this.SendPropertyChanging();
+					this._jobID = value;
+					this.SendPropertyChanged("jobID");
+					this.OnjobIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateApplied", DbType="DateTime NOT NULL")]
+		public System.DateTime dateApplied
+		{
+			get
+			{
+				return this._dateApplied;
+			}
+			set
+			{
+				if ((this._dateApplied != value))
+				{
+					this.OndateAppliedChanging(value);
+					this.SendPropertyChanging();
+					this._dateApplied = value;
+					this.SendPropertyChanged("dateApplied");
+					this.OndateAppliedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resume", DbType="VarChar(50)")]
+		public string resume
+		{
+			get
+			{
+				return this._resume;
+			}
+			set
+			{
+				if ((this._resume != value))
+				{
+					this.OnresumeChanging(value);
+					this.SendPropertyChanging();
+					this._resume = value;
+					this.SendPropertyChanged("resume");
+					this.OnresumeChanged();
 				}
 			}
 		}

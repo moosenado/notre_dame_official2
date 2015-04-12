@@ -72,5 +72,7 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
         */
+        public string jobID { get; set; } // get set method for Role
     }
+
 }
