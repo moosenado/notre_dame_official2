@@ -234,6 +234,7 @@
     <Compile Include="Models\feedbackClass.cs" />
     <Compile Include="Models\feedbackValidation.cs" />
     <Compile Include="Models\giftShopClass.cs" />
+    <Compile Include="Models\giftShopValidation.cs" />
     <Compile Include="Models\JobApplicants.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />

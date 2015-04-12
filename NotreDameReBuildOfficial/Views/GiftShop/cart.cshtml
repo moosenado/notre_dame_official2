@@ -3,7 +3,7 @@
     ViewBag.Title = "cart";
 }
 
-<h2>Cart</h2>
+<h1>Gift Shop Cart</h1>
 
 <p>@ViewBag.Message</p>
 
@@ -23,7 +23,7 @@
             <tr>
                 <td>@Html.Raw(cart.name)</td>
                 <td>@Html.Raw(cart.prod_quantity)</td>
-                <td id="prices[@counter]">@Html.Raw(cart.price)</td>
+                <td>$<span id="prices[@counter]">@Html.Raw(cart.price)</span></td>
                 <td>
                     @using (Html.BeginForm(FormMethod.Post))
                     {
@@ -38,7 +38,7 @@
         <tr>
             <td></td>
             <td>Total:</td>
-            <td id="total"></td>
+            <td>$<span id="total"></span></td>
             <td></td>
         </tr>
     
@@ -58,7 +58,7 @@
     var tableRows = document.getElementById("carttable").rows.length + 1;
 
     //check if no products are in cart, if so, get rid of checkout button
-    if (tableRows == 0) {
+    if (tableRows == 1) {
         var checkout = document.getElementById("checkoutbutton");
         checkout.style.display = "none";
     }
