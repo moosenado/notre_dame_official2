@@ -87,7 +87,17 @@ namespace NotreDameReBuildOfficial.Controllers
                     cart.prod_quantity = gsclass.product_quantity;
 
                     decimal priceDec = decimal.Parse(gsclass.product_price);
-                    cart.price = priceDec;
+
+                    if (gsclass.product_quantity > 1)
+                    {
+                        int prodInt = Convert.ToInt32(gsclass.product_quantity);
+                        var officialPrice = prodInt * priceDec;
+                        cart.price = officialPrice;
+                    }
+                    else
+                    {
+                        cart.price = priceDec;
+                    }
 
                     //insert into table
                     using (ndLinqClassDataContext objCartInsert = new ndLinqClassDataContext())
@@ -175,7 +185,6 @@ namespace NotreDameReBuildOfficial.Controllers
 
             if (ModelState.IsValid)
             {
-
                 if (purchase_command == "Purchase")
                 {
                     try
@@ -198,6 +207,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 } 
             }
             ViewBag.checkoutNum = gsclass.checkoutTotal;
+            ModelState.Clear();
             return View();
         }
         

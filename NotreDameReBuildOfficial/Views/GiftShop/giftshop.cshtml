@@ -2,29 +2,33 @@
     ViewBag.Title = "giftshop";
 }
 
-<h2>Gift Shop</h2>
+<h1>Gift Shop</h1>
 
-<a href="cart">Cart (@ViewBag.cartCount)</a>
-
-<h1>@ViewBag.strSession</h1>
+<div class="cart"><a href="cart">Cart (@ViewBag.cartCount)</a></div>
 
 <p>@ViewBag.Message</p>
 
 @model IEnumerable<NotreDameReBuildOfficial.Models.product>
-@foreach (var product in Model.OrderByDescending(x => x.Id))
-{
-        <a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@Html.Raw(product.name)" /></a><br />
-    
-        <a href="@Url.Action("product_details", new { id = product.Id })"><span>@Html.Raw(product.name)</span></a>
-    
-        using (Html.BeginForm(FormMethod.Post)){
-            <span>Quantity:</span>
-            <input type="number" name="product_quantity" min="1" max="100" value="1"/>
+<div id="giftshoplist">
+<ul>
+    @foreach (var product in Model.OrderByDescending(x => x.Id))
+    {
+        <li><a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@Html.Raw(product.name)" /></a></li>
 
-            <span>Price:</span>
-            <span>$@Html.Raw(product.price)</span>
-            <input type="hidden" value="@Html.Raw(product.name)" name="product_name" />
-            <input type="hidden" value="@Html.Raw(product.price)" name="product_price" />
-            <input type="submit" value="Add To Cart" class="buttonstyle" name="add_command"/>
+        <li><a href="@Url.Action("product_details", new { id = product.Id })"><span>@Html.Raw(product.name)</span></a></li>
+
+        using (Html.BeginForm(FormMethod.Post))
+        {
+            <li><span>Quantity:</span></li>
+            <li><input type="number" name="product_quantity" min="1" max="100" value="1" /></li>
+
+            <li><span>Price:</span></li>
+            <li><span>$@Html.Raw(product.price)</span></li>
+            <li><input type="hidden" value="@Html.Raw(product.name)" name="product_name" /></li>
+            <li><input type="hidden" value="@Html.Raw(product.price)" name="product_price" /></li>
+            <li><input type="submit" value="Add To Cart" class="buttonstyle" name="add_command" /></li>
         }
-}
+
+    }
+</ul>
+</div>

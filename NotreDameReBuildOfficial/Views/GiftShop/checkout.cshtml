@@ -1,28 +1,31 @@
 ﻿@model NotreDameReBuildOfficial.Models.checkout
 @{
     ViewBag.Title = "checkout";
+    @Scripts.Render("~/bundles/jquery")
 }
 
-<h1>Checkout</h1>
+<h1>Gift Shop Checkout</h1>
 
-@ViewBag.checkoutNum
+<p>Your total amount is: <strong>$@ViewBag.checkoutNum</strong></p>
 
 @using (Html.BeginForm(FormMethod.Post))
 {
 
+@Html.ValidationSummary()
+
 <h2>Personal Information:</h2>
 
-@Html.LabelFor(model => model.firstname, "First Name", new { @class = "label" })
+@Html.LabelFor(model => model.firstname, new { @class = "label" })
 @Html.TextBoxFor(model => model.firstname, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.lastname, "Last Name", new { @class = "label" })
+@Html.LabelFor(model => model.lastname, new { @class = "label" })
 @Html.TextBoxFor(model => model.lastname, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.deliv_status, "Patient Delivery or Customer Pickup", new { @class = "label" })
+@Html.LabelFor(model => model.deliv_status, new { @class = "label" })
 @Html.DropDownListFor(model => model.deliv_status, new[] {
                 new SelectListItem() {Text = "Delivery"},
                 new SelectListItem() {Text = "Pickup"},
@@ -30,19 +33,19 @@
 
 <br />
 
-@Html.LabelFor(model => model.patientname, "Patient Name", new { @class = "label" })
+@Html.LabelFor(model => model.patientname, new { @class = "label" })
 @Html.TextBoxFor(model => model.patientname, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.message, "Message To Patient", new { @class = "label" })
+@Html.LabelFor(model => model.message, new { @class = "label" })
 @Html.TextAreaFor(model => model.message, new { @class = "textarea" })
 
 <br />
 
 <h2>Payment Information:</h2>
 
-@Html.LabelFor(model => model.cardtype, "Credit Card", new { @class = "label" })
+@Html.LabelFor(model => model.cardtype, new { @class = "label" })
 @Html.DropDownListFor(model => model.cardtype, new[] {
                 new SelectListItem() {Text = "Visa"},
                 new SelectListItem() {Text = "Mastercard"},
@@ -51,22 +54,22 @@
 
 <br />
 
-@Html.LabelFor(model => model.cardnumber, "Credit Card Number", new { @class = "label" })
+@Html.LabelFor(model => model.cardnumber, new { @class = "label" })
 @Html.TextBoxFor(model => model.cardnumber, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.cardname, "Name On Card", new { @class = "label" })
+@Html.LabelFor(model => model.cardname, new { @class = "label" })
 @Html.TextBoxFor(model => model.cardname, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.expirydate, "Expiry Date", new { @class = "label" })
+@Html.LabelFor(model => model.expirydate, new { @class = "label" })
 @Html.TextBoxFor(model => model.expirydate, new { @class = "textbox" })
 
 <br />
 
-@Html.LabelFor(model => model.securitycode, "Security Code", new { @class = "label" })
+@Html.LabelFor(model => model.securitycode, new { @class = "label" })
 @Html.TextBoxFor(model => model.securitycode, new { @class = "textbox" })
 
 <br />

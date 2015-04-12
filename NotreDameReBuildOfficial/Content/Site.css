@@ -369,6 +369,15 @@ table tr:nth-child(odd) td {
     font-weight: 700;
 }
 
+#giftshoplist ul li{
+    color: #fff;
+}
+
+.cart{
+    float: right;
+    border: 1px solid black;
+}
+
 /* --- PUBLIC MAIN NAVIGATION --- */
 
 #navigation {
