@@ -3,15 +3,17 @@
     ViewBag.Title = "product_details";
 }
 
-<h2>Product Details</h2>
+<h1>Product Details</h1>
 
-<a href="~/GiftShop/cart">Cart (@ViewBag.cartCount)</a>
+<div class="cart"><a href="~/GiftShop/cart"><i class="fa fa-shopping-cart"></i> Cart (@ViewBag.cartCount)</a></div>
+
+<div class="clear"></div>
 
 <div id="articlebody">
 
     <div id="article_image">
 
-        <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.name" /></a>
+        <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.name" class="proddetimage"/></a>
 
     </div>
 
@@ -22,14 +24,14 @@
 
         <h2>@Html.DisplayFor(x => x.name)</h2>
 
-        <p>@Html.DisplayFor(x => x.price)</p>
+        <p>$@Html.DisplayFor(x => x.price)</p>
 
         <p>Quantity:</p>
         <input type="number" name="product_quantity" min="1" max="100" value="1" />
 
         <br />
 
-        <p>@Html.DisplayFor(x => x.description)</p>
+        <p class="product">@Html.DisplayFor(x => x.description)</p>
 
         <input type="hidden" value="@Html.DisplayFor(x => x.name)" name="product_name" />
         <input type="hidden" value="@Html.DisplayFor(x => x.price)" name="product_price" />
