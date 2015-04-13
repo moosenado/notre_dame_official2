@@ -15,10 +15,35 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         volunteerJobs objVol = new volunteerJobs();
 
+        volunteerInfo objInfo = new volunteerInfo();
+
         public ActionResult jobList()
         {
             var job = objVol.getJobs();
             return View(job);
+        }
+
+        public ActionResult passID(int id)
+        {
+            var job = objVol.getJobByID(id);
+            if (job == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return RedirectToAction("volList");
+            }
+        }
+
+        public ActionResult volList()
+        {
+            var jobid = (int)TempData["id"];
+            //info.jobID = jobid;
+            var vol = objInfo.getVolByID(jobid);
+
+            return View(vol);
         }
 
         public ActionResult jobInfo(int id)
@@ -114,7 +139,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         }
 
-        public ActionResult NotFound() //Not dound Controller
+        public ActionResult NotFound() //Not found Controller
         {
             return View();
         }
