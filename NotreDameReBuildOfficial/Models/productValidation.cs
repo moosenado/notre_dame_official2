@@ -29,7 +29,6 @@ namespace NotreDameReBuildOfficial.Models
         public string description { get; set; }
 
         [DisplayName("Image")]
-        [Required(ErrorMessage = "Please select an image")]
         public string image { get; set; }
     }
 }
