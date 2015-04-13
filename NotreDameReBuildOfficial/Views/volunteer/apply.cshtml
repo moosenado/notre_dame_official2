@@ -1,4 +1,4 @@
-﻿@model NotreDameReBuildOfficial.Models.volunteerInfoValidate
+﻿@model NotreDameReBuildOfficial.Models.volunteer_info
 @{
     ViewBag.Title = "apply";
 }
@@ -9,7 +9,6 @@
 {
     <table>
 
-        @Html.HiddenFor(x => x.id)
         <tr>
             <td>@Html.LabelFor(Model => Model.firstname)</td>
             <td>@Html.TextBoxFor(Model => Model.firstname)<span style="color:red">*</span></td>
