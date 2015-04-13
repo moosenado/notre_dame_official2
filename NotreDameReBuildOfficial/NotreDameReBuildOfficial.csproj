@@ -957,6 +957,7 @@
     <Content Include="Views\GiftShop\checkout.cshtml" />
     <Content Include="Views\GiftShop\thankyou.cshtml" />
     <Content Include="Views\cmsGiftShop\purchase_records.cshtml" />
+    <Content Include="Views\cmsVolunteer\volList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
