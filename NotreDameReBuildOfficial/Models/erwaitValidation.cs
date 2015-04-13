@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace NotreDameReBuildOfficial.Models
 {
     [MetadataType(typeof(erwaitValidation))]
-    public partial class ERwait_AddPatient { }
+    public partial class ER_patient_info { }
     public class erwaitValidation
     {
 
