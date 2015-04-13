@@ -39,19 +39,34 @@ namespace NotreDameReBuildOfficial.Controllers
         }
 
 
+        public ActionResult volInfo(int id)
+        {
+            var job = objVol.getJobByID(id);
+            if (job == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return RedirectToAction("apply");
+            }
+        }
+
+
         public ActionResult apply()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult apply(volunteer_info info ,int id)
+        public ActionResult apply(volunteer_info info)
         {
             if(ModelState.IsValid)
             {
+                var jobid = (int)TempData["id"];
                 info.dateApplied = DateTime.Now;
-                objVolV.jobID = id;
-
+                info.jobID = jobid;
                 objInfo.InsertVol(info);
                 return RedirectToAction("opportunities");
             }
