@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO; //for uploading file path
+using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -22,13 +23,16 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         jobPosting JobPosObj = new jobPosting(); // creating an instance of jobPosting class
 
         //Get all Jobs
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult JobPosting()
         {
             var JobPost = JobPosObj.getJobs();
             return View(JobPost);
         }
 
+
         //Get Job by id
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult JobPosting_Details(int id)
         {
             var JobPost = JobPosObj.getJobByID(id);
@@ -41,7 +45,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(JobPost);
             }
         }
-
+        [CustomAuthorize("Admin")]
         public ActionResult Insert_JobPosting()
         {
             ViewBag.Categories = new jobCategory().getJobCategory();
@@ -67,7 +71,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(jobPost);
         }
-
+        [CustomAuthorize("Admin")]
         public ActionResult Update_JobPosting(int id)
         {
             ViewBag.Categories = new jobCategory().getJobCategory();
@@ -102,7 +106,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(JobPost);
         }
-
+        [CustomAuthorize("Admin")]
         public ActionResult Delete_JobPosting(int id)
         {
             var JobPost = JobPosObj.getJobByID(id);

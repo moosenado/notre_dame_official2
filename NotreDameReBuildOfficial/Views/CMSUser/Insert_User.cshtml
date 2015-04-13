@@ -104,11 +104,12 @@
          @Html.HiddenFor(x => x.role_id)
       </div>
     <div>
-        <input type="submit" value="Add" class="btn-add" />
+        <input type="submit" value="Add" class="buttonstyle" />
+        @Html.ActionLink("Back", "allUsers", null, new { @class = "buttonstyle" })
     </div>
 }
 
-@Html.ActionLink("Back", "allUsers",null, new { @class = "role_back" })
+
 
 <script>
     $(function () {
