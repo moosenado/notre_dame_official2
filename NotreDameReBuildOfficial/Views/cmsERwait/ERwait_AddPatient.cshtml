@@ -3,6 +3,7 @@
     ViewBag.Title = "ERwait_AddPatient";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jquery")
 }
 
 <h2>ER Wait Time</h2>
@@ -20,6 +21,8 @@
 <br />
 
 <h3>Add Patient</h3>
+
+@Html.ValidationSummary()
 
 @using (Html.BeginForm("ERwait_AddPatient", "cmsERwait", FormMethod.Post, new { id = "submitPatient" }))
 {
@@ -46,4 +49,10 @@
     <br />
     <br />
     @ViewBag.Message
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
 }

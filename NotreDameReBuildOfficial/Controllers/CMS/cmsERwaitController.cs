@@ -121,6 +121,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             {
                 return View();
             }
+            ModelState.Clear();
             return View();
         }
 
