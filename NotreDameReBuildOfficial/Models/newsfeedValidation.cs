@@ -37,5 +37,6 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("Article")]
         [Required(ErrorMessage = "Please Enter An Article")]
         public string article { get; set; }
+
     }
 }

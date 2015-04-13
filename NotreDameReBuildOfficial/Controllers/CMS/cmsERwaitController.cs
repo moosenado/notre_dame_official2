@@ -118,10 +118,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     }
                 }
                
-
             ModelState.Clear();
-            return View();
-            
+            return View();         
         }
 
         public ActionResult ERwait_PatientHistory()

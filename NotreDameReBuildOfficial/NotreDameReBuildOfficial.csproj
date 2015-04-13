@@ -253,6 +253,7 @@
     <Compile Include="Models\newsfeedValidation.cs" />
     <Compile Include="Models\PdfFilterClass.cs" />
     <Compile Include="Models\PdfFilterValidation.cs" />
+    <Compile Include="Models\productValidation.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Models\poll.cs" />
