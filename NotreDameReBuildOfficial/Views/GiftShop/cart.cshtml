@@ -38,7 +38,7 @@
         <tr>
             <td></td>
             <td>Total:</td>
-            <td>$<span id="total"></span></td>
+            <td>$<span id="total"></span> ($<span id="hst"></span> w/ HST)</td>
             <td></td>
         </tr>
     
@@ -76,11 +76,17 @@
         sum = sum + valueInt;
     }
 
+    hst = (sum * 1.13).toFixed(2);
+
     //set total value to table cell
     var totalValue = document.getElementById("total");
     totalValue.innerHTML = sum.toFixed(2);
 
+    //set hst value to table cell
+    var totalHst = document.getElementById("hst");
+    totalHst.innerHTML = hst
+
     //set total value to hidden field
-    document.getElementById('totalValue').value = sum;
+    document.getElementById('totalValue').value = hst;
 
 </script>
