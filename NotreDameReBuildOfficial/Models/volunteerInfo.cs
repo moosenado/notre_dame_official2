@@ -15,12 +15,6 @@ namespace NotreDameReBuildOfficial.Models
             return allVol;
         }
 
-        //public volunteer_info getVolByID(int _id)
-        //{
-        //    var allVol = objLinq.volunteer_infos.SingleOrDefault(x => x.jobID == _id);
-        //    return allVol;
-        //}
-
         public IQueryable<volunteer_info> getVolByID(int id)
         {
             var allCartProducts = (from x in objLinq.volunteer_infos
