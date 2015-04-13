@@ -1,0 +1,36 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Feedback>
+
+<table class="tbl-width">
+    <thead>
+        <tr>
+            <th>Record No.</th>
+            <th>Date Submitted</th>
+            <th>Subject</th>
+            <th>Category</th>
+            <th class="iup-icons">View</th>
+            <th class="iup-icons">Edit</th>
+            <th class="iup-icons">Delete</th>
+        </tr>
+    </thead>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.feedback_id</td>
+            <td>@e.date.Value.ToString("MMMM d, yyyy")</td>
+            <td>@e.subject</td>
+            <td>@e.category</td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Details", "cmsFeedback", new { feedback_id = e.feedback_id })'><i class="fa fa-external-link-square fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Update", "cmsFeedback", new { feedback_id = e.feedback_id })'><i class="fa fa-pencil fa-lg"></i></a>
+            </td>
+            <td class="iup-icons">
+                <a href='@Url.Action("Delete", "cmsFeedback", new { feedback_id = e.feedback_id })'><i class="fa fa-trash-o fa-lg"></i></a>
+            </td>
+        </tr>
+
+    }
+
+</table>

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.cart>
+@{
+    ViewBag.Title = "cart";
+}
+
+<h1>Gift Shop Cart <i class="fa fa-shopping-cart"></i></h1>
+
+<p>@ViewBag.Message</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody id="carttable">
+        @{var counter = 1;}
+        @foreach (var cart in Model)
+        {
+            <tr>
+                <td>@Html.Raw(cart.name)</td>
+                <td>@Html.Raw(cart.prod_quantity)</td>
+                <td>$<span id="prices[@counter]">@Html.Raw(cart.price)</span></td>
+                <td>
+                    @using (Html.BeginForm(FormMethod.Post))
+                    {
+                        <input type="hidden" value="@Html.Raw(cart.Id)" name="product_id" />
+                        <input type="submit" value="Delete" class="buttonstyle" name="delete_command" />
+                    }
+            </td>
+        </tr>
+            counter++;
+        }
+    </tbody>
+        <tr>
+            <td></td>
+            <td>Total:</td>
+            <td>$<span id="total"></span></td>
+            <td></td>
+        </tr>
+    
+</table>
+
+@using (Html.BeginForm("checkout", "GiftShop", FormMethod.Post))
+{
+    <input type="hidden" id="totalValue" value="" name="checkoutTotal" />
+    <input type="submit" value="Checkout" class="buttonstyle" name="checkout_command" id="checkoutbutton"/>
+}
+
+@*Count Total Amount*@
+
+<script type="text/javascript">
+
+    //get table rows
+    var tableRows = document.getElementById("carttable").rows.length + 1;
+
+    //check if no products are in cart, if so, get rid of checkout button
+    if (tableRows == 1) {
+        var checkout = document.getElementById("checkoutbutton");
+        checkout.style.display = "none";
+    }
+
+    //get sum of product prices
+    sum = 0;
+
+    for (var i = 1; i < tableRows; i++) {
+        var tdID = document.getElementById("prices[" + i + "]");
+        var value = tdID.innerHTML;
+        if (value === null) {
+            value = '0';
+        }
+        var valueInt = parseInt(value);
+        sum = sum + valueInt;
+    }
+
+    //set total value to table cell
+    var totalValue = document.getElementById("total");
+    totalValue.innerHTML = sum.toFixed(2);
+
+    //set total value to hidden field
+    document.getElementById('totalValue').value = sum;
+
+</script>

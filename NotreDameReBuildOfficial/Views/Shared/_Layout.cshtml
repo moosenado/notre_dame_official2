@@ -56,16 +56,9 @@
                 </form>
 
                 @* ER WAIT TIME *@
-                <div id="erwait">
-                    ER Wait: @if (ViewBag.erTime != null)
-                    {
-                        @ViewBag.erTime
-                    }
-                    else
-                    {
-                    <span>Updating...</span>
-                    }
-                </div>
+                
+                    @Html.Action("erwait", "WaitTime")
+                
 
             </div>
 
@@ -150,16 +143,7 @@
     <div id="mobile-er">
 
         @* ER WAIT TIME *@
-        <div id="erwait">
-            ER Wait: @if (ViewBag.erTime != null)
-            {
-                @ViewBag.erTime
-            }
-            else
-            {
-                <span>Updating...</span>
-            }
-        </div>
+        @Html.Action("erwait", "WaitTime")
 
     </div>
 
@@ -168,10 +152,9 @@
 
     <section id="main">
 
-        @RenderBody()
-
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
+        @RenderBody()
 
         <div class="push">
             @*For Sticky Footer*@

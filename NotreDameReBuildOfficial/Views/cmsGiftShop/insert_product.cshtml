@@ -5,7 +5,17 @@
     <script src="~/Scripts/cms-menu.js"></script>
 }
 
-<h2>Insert Product</h2>
+<h2>Add New Product</h2>
+
+<br />
+
+<p>
+    @Html.ActionLink("Gift Shop Products", "products", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Customer Purchase Records", "purchase_records", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+
+<br />
 
 @using (Html.BeginForm("insert_product", "cmsGiftShop", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -30,6 +40,8 @@
     <br />
     @ViewBag.Message
 }
+
+<br />
 
 <div>
     @Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })

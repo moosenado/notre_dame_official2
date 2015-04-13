@@ -1,0 +1,64 @@
+﻿@model NotreDameReBuildOfficial.Models.volunteerJob
+@{
+    ViewBag.Title = "oppInfo";
+}
+
+<h1>Opportunities</h1>
+<h2>Details of Opportunity</h2>
+
+<table>
+    <tr>
+        <td>@Html.Label("Opportunity:")</td>
+        <td>@Html.DisplayFor(x => x.jobTitle)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Description:")</td>
+        <td>@Html.DisplayFor(x => x.jobDescription)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Street:")</td>
+        <td>
+            @Html.DisplayFor(x => x.street)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("City:")</td>
+        <td>
+            @Html.DisplayFor(x => x.city)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Province:")</td>
+        <td>
+            @Html.DisplayFor(x => x.province)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Zip Code:")</td>
+        <td>
+            @Html.DisplayFor(x => x.zip_code)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Date Updated:")</td>
+        <td>
+            @Html.DisplayFor(x => x.date)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Date Start:")</td>
+        <td>
+            @Html.DisplayFor(x => x.dateStart)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Date End:")</td>
+        <td>
+            @Html.DisplayFor(x => x.dateEnd)
+        </td>
+    </tr>
+</table>
+
+<a href='@Url.Action("opportunities", "volunteer")'>
+    <span class="buttonstyle">Back to list</span>
+</a>

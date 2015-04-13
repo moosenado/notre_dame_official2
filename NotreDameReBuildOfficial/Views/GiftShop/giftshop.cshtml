@@ -2,11 +2,38 @@
     ViewBag.Title = "giftshop";
 }
 
-<h2>Gift Shop</h2>
+<h1>Gift Shop</h1>
+
+<div class="cart"><a href="cart"><i class="fa fa-shopping-cart"></i> Cart (@ViewBag.cartCount)</a></div>
+
+<div class="clear"></div>
+
+<p>@ViewBag.Message</p>
 
 @model IEnumerable<NotreDameReBuildOfficial.Models.product>
-@foreach (var product in Model)
-{
-        <a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@product.name" /></a>
-        <a href="@Url.Action("product_details", new { id = product.Id })"><span class="news_image_header">@product.name</span></a>
-}
+<div id="giftshoplist">
+
+    @foreach (var product in Model.OrderByDescending(x => x.Id))
+    {
+        using (Html.BeginForm(FormMethod.Post))
+        {
+        <ul>
+            <li><a href="@Url.Action("product_details", new { id = product.Id })"><img src="~/Images/Products/@Url.Content(product.image)" alt="@Html.Raw(product.name)" class="giftimage" /></a></li>
+
+            <li><a href="@Url.Action("product_details", new { id = product.Id })"><div class="product">@Html.Raw(product.name)</div></a></li>
+    
+            
+            <li><span>Quantity:</span></li>
+            <li><input type="number" name="product_quantity" min="1" max="100" value="1" /></li>
+
+            <li><span>Price:</span></li>
+            <li><span>$@Html.Raw(product.price)</span></li>
+            <li><input type="hidden" value="@Html.Raw(product.name)" name="product_name" /></li>
+            <li><input type="hidden" value="@Html.Raw(product.price)" name="product_price" /></li>
+            <li><input type="submit" value="Add To Cart" class="buttonstyle" name="add_command" /></li>
+            </ul>
+            }
+
+            }
+        
+</div>

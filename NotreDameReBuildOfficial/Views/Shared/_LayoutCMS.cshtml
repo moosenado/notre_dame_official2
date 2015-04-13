@@ -22,14 +22,14 @@
 
     <div id="cms-head-container">
 
-        <div id="ndh-title">
+        <a id="ndh-title" href="~/CMSHome/Index">
             <img id="cross" src="~/Content/images/ndh-cross.png" />
             <div id="nd">Notre-Dame</div>
-        </div>
+        </a>
 
-        @*<div id="cms-top-nav">
-            <a href='@Url.Action("Index", "Home")'><i class="fa fa-external-link"></i>Back to Site</a>
-        </div>*@
+        <div id="cms-top-nav">
+            <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
+        </div>
 
 
         <div id="sign-out">
@@ -44,16 +44,7 @@
 
     @* ----- LEFT MENU -----*@
 
-    @*<div id="cms-date">
-        @DateTime.Now.DayOfWeek.ToString(),
-        @DateTime.Now.ToString("MMMM dd, yyyy")
-    </div>*@
-
     <div class="left-menu">
-
-        @*<div id="cms-logo">
-            <img src="~/Content/images/logo.png" title="Notre Dame" alt="Notre Dame Logo" />
-        </div>*@
 
         <div id="cms-left-nav">
 
@@ -131,18 +122,18 @@
 
            @* News *@
            <a class="left-mnu-itm" href="/CMSHome/News">
-               <i class="fa fa-newspaper-o fa-lg"></i>News
+               <i class="fa fa-newspaper-o cms fa-lg"></i>News
            </a>
 
            @* Events *@
-           <a class="left-mnu-itm" href="">
-               <i class="fa fa-calendar fa-lg"></i>Events
+           <a class="left-mnu-itm" href="~/cmsEventsListing/Manage">
+               <i class="fa fa-calendar cms fa-lg"></i>Events
            </a>
 
            @* Donations *@
-           <a class="left-mnu-itm" href="">
-               <i class="fa fa-money fa-lg"></i>Donations
-           </a>
+            <a class="left-mnu-itm" href="~/cmsDonation/Manage">
+                <i class="fa fa-money fa-lg"></i>Donations
+            </a>
 
            @* ER Wait Time *@
            <a class="left-mnu-itm" href="/cmsERwait/ERwait_Patients">
@@ -155,9 +146,9 @@
            </a>
 
            @* Feedback *@
-           <a class="left-mnu-itm" href="">
-               <i class="fa fa-comment-o fa-lg"></i>Feedback
-           </a>
+            <a class="left-mnu-itm" href="~/cmsFeedback/Manage">
+                <i class="fa fa-comment-o fa-lg"></i>Feedback
+            </a>
             
         </div>@* -- end cms-left-mnu  *@
 

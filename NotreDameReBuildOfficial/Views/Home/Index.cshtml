@@ -29,35 +29,35 @@
     <h2 id="online-services">Online Services</h2>
 
     <div id="service-btns">
-        <a class="service-btn" id="donate-btn" href="#">
+        <a class="service-btn" id="donate-btn" href="~/Donation/Donate">
             <span class="icon icon5"><i class="fa fa-heart fa-lg"></i></span>
             <span class="btn-text btn-text5">Make a Donate</span>
         </a>
 
         <div class="clear"></div>
 
-        <a class="service-btn" id="news-btn" href="#">
+        <a class="service-btn" id="news-btn" href="~/Home/Article_List">
             <span class="icon icon4"><i class="fa fa-newspaper-o"></i></span>
             <span class="btn-text btn-text4">What's New</span>
         </a>
 
         <div class="clear"></div>
 
-        <a class="service-btn" href="#">
+        <a class="service-btn" href="~/GiftShop/giftshop">
             <span class="icon icon1"><i class="fa fa-shopping-cart fa-lg"></i></span>
             <span class="btn-text btn-text1">Gift Shop</span>
         </a>
 
         <div class="clear"></div>
 
-        <a class="service-btn" href="#">
+        <a class="service-btn" href="~/ApptSchedPublic/createAppt">
             <span class="icon icon2"><i class="fa fa-calendar fa-lg"></i></span>
             <span class="btn-text btn-text2">Book an Appointment</span>
         </a>
 
         <div class="clear"></div>
 
-        <a class="service-btn" href="#">
+        <a class="service-btn" href="~/Feedback/Feedback">
             <span class="icon icon3"><i class="fa fa-comment fa-lg"></i></span>
             <span class="btn-text btn-text3">Send Feedback</span>
         </a>
@@ -71,7 +71,7 @@
     <h2>Upcoming Events</h2>
 
     @{
-        Html.RenderAction("EventsPartial", "Home");
+        Html.RenderAction("_EventsPartial", "Home");
     }
 
 

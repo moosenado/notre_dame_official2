@@ -196,6 +196,7 @@
     <Compile Include="Controllers\CMS\cmsDonationController.cs" />
     <Compile Include="Controllers\CMS\cmsERwaitController.cs" />
     <Compile Include="Controllers\CMS\cmsEventsListingController.cs" />
+    <Compile Include="Controllers\CMS\cmsFeedbackController.cs" />
     <Compile Include="Controllers\CMS\cmsGiftShopController.cs" />
     <Compile Include="Controllers\CMS\cmsJobCategoryController.cs" />
     <Compile Include="Controllers\CMS\cmsJobPostingController.cs" />
@@ -204,13 +205,17 @@
     <Compile Include="Controllers\CMS\CMSPollController.cs" />
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
+    <Compile Include="Controllers\CMS\cmsVolunteerController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
     <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\volunteerController.cs" />
+    <Compile Include="Controllers\WaitTimeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,11 +230,15 @@
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
+    <Compile Include="Models\erwaitValidation.cs" />
     <Compile Include="Models\eventsListingClass.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\eventsListingValidation.cs" />
+    <Compile Include="Models\feedbackClass.cs" />
+    <Compile Include="Models\feedbackValidation.cs" />
     <Compile Include="Models\giftShopClass.cs" />
+    <Compile Include="Models\giftShopValidation.cs" />
     <Compile Include="Models\JobApplicants.cs" />
     <Compile Include="Models\jobCategory.cs" />
     <Compile Include="Models\jobCategoryValidation.cs" />
@@ -253,6 +262,10 @@
     <Compile Include="Models\rollClass.cs" />
     <Compile Include="Models\userClass.cs" />
     <Compile Include="Models\userValidationClass.cs" />
+    <Compile Include="Models\volunteerInfo.cs" />
+    <Compile Include="Models\volunteerInfoValidate.cs" />
+    <Compile Include="Models\volunteerJobs.cs" />
+    <Compile Include="Models\volunteerValidate.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -411,8 +424,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Products\armenia_secret_2-wallpaper-2880x900.jpg" />
+    <Content Include="Images\Products\facebook.png" />
     <Content Include="Images\Products\IMG_0441.JPG" />
     <Content Include="Images\Products\IMG_0444.JPG" />
+    <Content Include="Images\Products\twitter.png" />
     <Content Include="Images\Products\wood-floor-photography-hd-wallpaper-1920x1080-7814.jpg" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csprojResolveAssemblyReference.cache" />
@@ -835,12 +850,10 @@
     <Content Include="Views\CMSHome\News_Delete.cshtml" />
     <Content Include="Views\Home\Article_List.cshtml" />
     <Content Include="Views\Donation\Donate.cshtml" />
-    <Content Include="Views\cmsDonation\cmsDonationList.cshtml" />
     <Content Include="Views\cmsDonation\Insert.cshtml" />
     <Content Include="Views\cmsDonation\Delete.cshtml" />
     <Content Include="Views\cmsDonation\Update.cshtml" />
     <Content Include="Views\cmsDonation\Details.cshtml" />
-    <Content Include="Views\Donation\DonateAction.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_Patients.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_AddPatient.cshtml" />
     <Content Include="Views\ApptSched\ApptSched.cshtml" />
@@ -875,7 +888,6 @@
     <Content Include="Views\cmsEventsListing\Details.cshtml" />
     <Content Include="Views\Home\AllEvents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
-    <Content Include="Views\Home\EventsPartial.cshtml" />
     <Content Include="Views\cmsEventsListing\_PastEventsPartial.cshtml" />
     <Content Include="Views\cmsEventsListing\_UpcomingEventsPartial.cshtml" />
     <Content Include="Views\GiftShop\giftshop.cshtml" />
@@ -918,6 +930,37 @@
     <Content Include="Views\CMSPoll\Insert_poll.cshtml" />
     <Content Include="Views\CMSPoll\Update_poll.cshtml" />
     <Content Include="Views\CMSPoll\Delete_poll.cshtml" />
+    <Content Include="Views\Feedback\Feedback.cshtml" />
+    <Content Include="Views\Feedback\Thanks.cshtml" />
+    <Content Include="Views\cmsFeedback\_UnapprovedPartial.cshtml" />
+    <Content Include="Views\cmsFeedback\_ApprovedPartial.cshtml" />
+    <Content Include="Views\cmsFeedback\Details.cshtml" />
+    <Content Include="Views\cmsFeedback\Update.cshtml" />
+    <Content Include="Views\cmsFeedback\Delete.cshtml" />
+    <Content Include="Views\cmsFeedback\NotFound.cshtml" />
+    <Content Include="Views\cmsFeedback\Manage.cshtml" />
+    <Content Include="Views\cmsVolunteer\jobList.cshtml" />
+    <Content Include="Views\cmsVolunteer\jobInfo.cshtml" />
+    <Content Include="Views\cmsVolunteer\InsertJob.cshtml" />
+    <Content Include="Views\cmsVolunteer\deleteJob.cshtml" />
+    <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
+    <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
+    <Content Include="Views\cmsDonation\Manage.cshtml" />
+    <Content Include="Views\Home\AddEvent.cshtml" />
+    <Content Include="Views\Home\_EventsPartial.cshtml" />
+    <Content Include="Views\Home\SubmitEvent.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\cmsEventsListing\Submitted.cshtml" />
+    <Content Include="Views\cmsEventsListing\_TotalSubmittedEventsPartial.cshtml" />
+    <Content Include="Views\WaitTime\erwait.cshtml" />
+    <Content Include="Views\volunteer\Opportunities.cshtml" />
+    <Content Include="Views\volunteer\oppInfo.cshtml" />
+    <Content Include="Views\volunteer\apply.cshtml" />
+    <Content Include="Views\GiftShop\cart.cshtml" />
+    <Content Include="Views\GiftShop\checkout.cshtml" />
+    <Content Include="Views\GiftShop\thankyou.cshtml" />
+    <Content Include="Views\cmsGiftShop\purchase_records.cshtml" />
+    <Content Include="Views\cmsVolunteer\volList.cshtml" />
     <Content Include="Views\AccountNotreDame\Login.cshtml" />
     <Content Include="Views\AccountNotreDame\LogOff.cshtml" />
   </ItemGroup>

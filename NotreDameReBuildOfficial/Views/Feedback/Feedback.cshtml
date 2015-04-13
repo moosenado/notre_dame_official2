@@ -1,0 +1,93 @@
+﻿@model NotreDameReBuildOfficial.Models.Feedback
+
+@{
+    ViewBag.Title = "Feedback";
+    @Scripts.Render("~/bundles/jquery")
+}
+
+
+@* Script toggles required fields for anonymous submission *@
+<script>
+    $(document).ready(function () {
+
+        $('input[type=checkbox]').on('change', function() {
+
+            $("#anonomyous-block").toggle();
+
+            if ($('input[type=checkbox]').is(':checked')) {
+                $("#fbname").attr("value", "Anonymous");
+                $("#fbemail").attr("value", "anonymous@ndh.on.ca");
+            }
+
+        });
+    });
+</script>
+<h1>We value your feedback!</h1>
+
+<div id="feedback-form">
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.HiddenFor(model => model.date)
+        @Html.HiddenFor(model => model.approved)
+
+        @Html.LabelFor(model => model.anonymous)
+        @Html.CheckBoxFor(model => model.anonymous)
+        
+        <br /><br />
+
+        <div id="anonomyous-block">
+
+            @Html.LabelFor(model => model.name, new { @class = "label" })
+            @Html.TextBoxFor(model => model.name, new { @class = "textbox", @id = "fbname" })
+            <span style="color:red">*</span>
+            @Html.ValidationMessageFor(model => model.name)
+
+            <div class="clear"></div>
+
+            @Html.LabelFor(model => model.email, new { @class = "label" })
+            @Html.TextBoxFor(model => model.email, new { @class = "textbox", @id = "fbemail" })
+            <span style="color:red">*</span>
+            @Html.ValidationMessageFor(model => model.email)
+
+        </div>
+
+        <div class="clear"></div>
+        
+        @Html.LabelFor(model => model.category, new { @class = "label" })
+        @Html.DropDownListFor(model => model.category, new[] {
+                new SelectListItem() {Text = "Compliment"},
+                new SelectListItem() {Text = "Suggestion"},
+                new SelectListItem() {Text = "Concern"},
+            }, "- Select One -", new { @class = "dropdown-list" })
+        <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.category)
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.subject, new { @class = "label" })
+        @Html.TextBoxFor(model => model.subject, new { @class = "textbox" })
+        <span style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.subject)
+
+        <div class="clear"></div>
+
+        @Html.LabelFor(model => model.comments, new { @class = "label" })
+        @Html.TextAreaFor(model => model.comments, new { @class = "textarea" })
+        <span class="required" style="color:red">*</span>
+        @Html.ValidationMessageFor(model => model.comments)
+
+        <div class="clear"></div>
+
+        <input type="submit" name="submit" value="Send" class="buttonstyle">
+
+    }
+
+</div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

@@ -67,6 +67,7 @@ namespace NotreDameReBuildOfficial.Models
         [RegularExpression(@"^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$", ErrorMessage = "Invalid URL")]
         public string url { get; set; }
 
+        [DisplayName("Approve Event?")]
         public int approved { get; set; }
 
         [DisplayName("Display on Homepage?")]

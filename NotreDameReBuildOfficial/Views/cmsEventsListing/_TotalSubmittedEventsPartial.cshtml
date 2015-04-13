@@ -1,0 +1,16 @@
+﻿@if (@ViewBag.TotalEvents >= 1)
+{
+    <a href='@Url.Action("Submitted", "cmsEventsListing")'>
+        <span id="new-events">
+            Submitted Events (@Html.Raw(ViewBag.TotalEvents))
+        </span>
+    </a>
+}
+else
+{
+    <a href='@Url.Action("Submitted", "cmsEventsListing")'>
+        <span id="no-events">
+            Submitted Events (0)
+        </span>
+    </a>
+}

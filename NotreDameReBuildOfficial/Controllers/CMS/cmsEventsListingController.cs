@@ -53,6 +53,29 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        //List of submitted events
+        public ActionResult Submitted()
+        {
+
+            ViewBag.TotalEvents = objEvents.getTotalSumbittedEvents();
+
+            var submitted = objEvents.getSumbittedEvents();
+
+            return View(submitted);
+
+        }
+
+        public ActionResult _TotalSubmittedEventsPartial()
+        {
+
+            ViewBag.TotalEvents = objEvents.getTotalSumbittedEvents();
+
+            //Total Events
+            var total = objEvents.getTotalSumbittedEvents();
+
+            return PartialView(total);
+        }
+
         // --- INSERT ACTION --- //
         public ActionResult Insert()
         {
@@ -110,11 +133,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 catch
                 {
                     //Error handling, return Update view if something goes wrong
-                    return View();
+                    return View(events);
                 }
             }
 
-            return View();
+            return View(events);
         }
 
         // --- DELETE ACTION --- //
@@ -148,6 +171,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        //Error handling page
         public ActionResult NotFound()
         {
             return View();

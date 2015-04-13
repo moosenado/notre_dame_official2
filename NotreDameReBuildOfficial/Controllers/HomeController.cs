@@ -22,7 +22,6 @@ namespace notre_dame_rebuild.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.erTime = objER.getWaitTime();
             var articles = objNews.getTopArticles();
             ViewBag.Poll = new poll().GetRandomQuestion();
             return View(articles);
@@ -57,7 +56,7 @@ namespace notre_dame_rebuild.Controllers
         }
 
         // ------------------------------------- //
-        // ------- ARTICLE LIST by Mina ------ //
+        // ------- WEEKLY POLL by MINA ------ //
         // ------------------------------------- //
 
 
@@ -87,7 +86,16 @@ namespace notre_dame_rebuild.Controllers
             return Json(new { result = res });
         }
 
+        public class pieChartValue
+        {
+            public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };
+            public static string[] highlights = { "#FEB10A", "#BDE21B", "#14B7D7" };
 
+            public int value { get; set; }
+            public string color { get; set; }
+            public string highlight { get; set; }
+            public string label { get; set; }
+        }
 
         // -------------------------------- //
         // ----- EVENTS LISTING by GEN ----- //
@@ -95,7 +103,7 @@ namespace notre_dame_rebuild.Controllers
 
         eventsListingClass objEvents = new eventsListingClass();
 
-        public ActionResult EventsPartial(Event events)
+        public ActionResult _EventsPartial(Event events)
         {
             //Passing count of total upcoming events through the ViewBag so it's accessible in the view
             ViewBag.Total = objEvents.getTotalEvents();
@@ -131,15 +139,51 @@ namespace notre_dame_rebuild.Controllers
                 return View(events);
             }
         }
-        public class pieChartValue
-        {
-            public static string[] colors = { "#fe890a", "#accf13", "#019ab8" };
-            public static string[] highlights = { "#FEB10A", "#BDE21B", "#14B7D7" };
 
-            public int value { get; set; }
-            public string color { get; set; }
-            public string highlight { get; set; }
-            public string label { get; set; }
+        // ----- INSERT/SUBMIT YOUR EVENT ----- //
+        public ActionResult SubmitEvent()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SubmitEvent(Event events)
+        {
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objEvents.insertEvent(events);
+                    return RedirectToAction("Thanks"); //On sucessful insert, return to Events Listing page
+                }
+                catch
+                {
+                    //Error handling, return to Events Listing view if something goes wrong
+                    return View();
+                }
+            }
+
+            return View();
+        }
+
+        public ActionResult Thanks()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Thanks(eventsListingValidation valid)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", valid);
+            }
+            else 
+            {
+                return View();
+            }
         }
     }
 }

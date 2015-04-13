@@ -1,0 +1,21 @@
+﻿@model NotreDameReBuildOfficial.Models.volunteerJob
+@{
+    ViewBag.Title = "deleteJob";
+}
+
+
+<h1>Delete Opportunity</h1>
+
+<h2>Are you sure want to delete @Model.jobTitle ?</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" /> <!-- Delete button -->
+        <br />
+        <br />
+        @Html.ActionLink("Back", "jobList", new { id = Model.id })
+        <!-- back button for user agin to go for employee details
+        page -->
+    </div>
+}

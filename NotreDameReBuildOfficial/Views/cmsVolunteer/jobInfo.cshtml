@@ -1,0 +1,66 @@
+﻿@model NotreDameReBuildOfficial.Models.volunteerJob
+@{
+    ViewBag.Title = "jobInfo";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Opportunities</h1>
+<h2>Details of Opportunity</h2>
+
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.jobTitle)</td>
+        <td>@Html.DisplayFor(x => x.jobTitle)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.jobDescription)</td>
+        <td>@Html.DisplayFor(x => x.jobDescription)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.street)</td>
+        <td>
+            @Html.DisplayFor(x => x.street)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.city)</td>
+        <td>
+            @Html.DisplayFor(x => x.city)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.province)</td>
+        <td>
+            @Html.DisplayFor(x => x.province)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.zip_code)</td>
+        <td>
+            @Html.DisplayFor(x => x.zip_code)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.date)</td>
+        <td>
+            @Html.DisplayFor(x => x.date)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.dateStart)</td>
+        <td>
+            @Html.DisplayFor(x => x.dateStart)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.dateEnd)</td>
+        <td>
+            @Html.DisplayFor(x => x.dateEnd)
+        </td>
+    </tr>
+</table>
+
+<a href='@Url.Action("joblist", "cmsVolunteer")'>
+    <span class="buttonstyle">Back to list</span>
+</a>

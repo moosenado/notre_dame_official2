@@ -7,22 +7,31 @@
     
 }
 
-<h1>Edit Record No. @Html.DisplayFor(x => x.donation_id)</h1>
+<h1>Edit Record No. @Html.DisplayFor(model => model.donation_id)</h1>
   
+<div class="head-btns">
+    <a href='@Url.Action("Manage", "cmsDonation")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+</div>
+
 @* DONATION AMOUNT *@
-<p>@Html.LabelFor(model => model.amount, new { @class = "label amount" }) $@Html.DisplayFor(x => x.amount)</p>
+<p>@Html.LabelFor(model => model.amount, new { @class = "label amount" }) $@Html.DisplayFor(model => model.amount)</p>
 
 @* DATE OF DONATION *@
-<p>Date of Donation: @Html.DisplayFor(x => x.date)</p>
+<p>Date of Donation: @Html.DisplayFor(model => model.date)</p>
 
 <br />
     
 @using (Html.BeginForm())
 {
-    <table id="edit-donations">
+    <table class="plain">
         <tr>
+
             @Html.HiddenFor(model => model.donation_id)
             @Html.HiddenFor(model => model.amount)
+            @Html.HiddenFor(model => model.date)
+
 
             @* IN MEMORY OF *@
             <td>@Html.LabelFor(model => model.in_memory, new { @class = "label" })</td>
@@ -32,8 +41,8 @@
             @* TYPE OF DONATION *@
             <td>@Html.LabelFor(model => model.type, new { @class = "label donation-type" })</td>
             <td>
-                @Html.RadioButtonFor(x => x.type, 0) Immediate Needs
-                @Html.RadioButtonFor(x => x.type, 1) The Foundation
+                @Html.RadioButtonFor(model => model.type, 0) Immediate Needs
+                @Html.RadioButtonFor(model => model.type, 1) The Foundation
                 <span style="color:red">*</span>
                 @Html.ValidationMessageFor(model => model.type)
             </td>
@@ -139,12 +148,9 @@
     </table>
 
     <input type="submit" name="submit" value="Update" class="buttonstyle" />
-
+    
     <a href='@Url.Action("Details", "cmsDonation", new { donation_id = Model.donation_id })'>
-        <span class="buttonstyle">Cancel</span>
-    </a>
-    <a href='@Url.Action("cmsDonationList", "cmsDonation")'>
-        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    <span class="buttonstyle">Cancel</span>
     </a>
     
 }

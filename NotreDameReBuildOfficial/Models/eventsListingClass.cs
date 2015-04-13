@@ -50,8 +50,8 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var upcomingEvents = from a in objLinq.Events
-                              where a.start_date > today && a.display == 1
-                              || a.start_date <= today && a.end_date > today && a.display == 1
+                                 where a.start_date >= today && a.display == 1 && a.approved == 1
+                              || a.start_date <= today && a.end_date > today && a.display == 1 && a.approved == 1
                               orderby a.start_date ascending
                               select a;
 
@@ -64,11 +64,43 @@ namespace NotreDameReBuildOfficial.Models
         {
             var today = DateTime.Now;
             var archivedEvents = from a in objLinq.Events
-                                 where a.start_date < today && a.end_date < today && a.display == 0 || a.display == 0
+                                 where a.start_date >= today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 1
+                                 || a.start_date <= today && a.end_date < today && a.display == 1 && a.approved == 1
                                  orderby a.start_date descending
                                  select a;
 
             return archivedEvents;
+        }
+
+        // --- GET TOTAL SUBMITTED EVENTS --- //
+        public int getTotalSumbittedEvents()
+        {
+            var today = DateTime.Now;
+            var totalSubmitted = (from a in objLinq.Events
+                                  where a.start_date >= today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 0
+                                  orderby a.start_date descending
+                                  select a).Count();
+
+            return totalSubmitted;
+        }
+
+        // --- GET SUBMITTED EVENTS --- //
+        public IQueryable<Event> getSumbittedEvents()
+        {
+            var today = DateTime.Now;
+            var submitted = from a in objLinq.Events
+                                 where a.start_date >= today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date > today && a.display == 0 && a.approved == 0
+                                  || a.start_date <= today && a.end_date < today && a.display == 0 && a.approved == 0
+                                 orderby a.start_date descending
+                                 select a;
+
+            return submitted;
         }
 
         // --- INSERT LOGIC --- //
@@ -117,11 +149,11 @@ namespace NotreDameReBuildOfficial.Models
         }
 
         // --- DELETE LOGIC --- //
-        public bool deleteEvent(int _event_id)
+        public bool deleteEvent(int event_id)
         {
             using (objLinq)
             {
-                var objDelete = objLinq.Events.Single(x => x.event_id == _event_id); //Delete table row where id of object equals id in database
+                var objDelete = objLinq.Events.Single(x => x.event_id == event_id); //Delete table row where id of object equals id in database
                 objLinq.Events.DeleteOnSubmit(objDelete);
                 objLinq.SubmitChanges();
                 return true;

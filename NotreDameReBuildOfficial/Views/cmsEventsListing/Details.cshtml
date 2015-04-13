@@ -8,7 +8,21 @@
 
 <h1>@Html.DisplayFor(model => model.name)</h1>
 
-<table class="plain">
+<div class="head-btns">
+    <a href='@Url.Action("Update", "cmsEventsListing", new { event_id = Model.event_id })'>
+        <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
+    </a>
+    <a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = Model.event_id })'>
+        <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
+    </a>
+    <a href='@Url.Action("Manage", "cmsEventsListing")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
+    </a>
+</div>
+
+<div class="clear"></div>
+
+<table>
     <tr>
         @* EVENT NAME *@
         <td>@Html.LabelFor(model => model.name)</td>
@@ -45,7 +59,7 @@
     }
     <tr>
         @* EVENT DESCRIPTION *@
-        <td>@Html.LabelFor(model => model.description)</td>
+        <td width="50%">@Html.LabelFor(model => model.description)</td>
         <td>@Html.DisplayFor(model => model.description)</td>
     </tr>
 
@@ -120,13 +134,3 @@
         </td>
     </tr>
 </table>
-
-<a href='@Url.Action("Update", "cmsEventsListing", new { event_id = Model.event_id })'>
-    <span class="buttonstyle"><i class="fa fa-pencil"></i>Edit</span>
-</a>
-<a href='@Url.Action("Delete", "cmsEventsListing", new { event_id = Model.event_id })'>
-    <span class="buttonstyle"><i class="fa fa-trash-o"></i>Delete</span>
-</a>
-<a href='@Url.Action("Manage", "cmsEventsListing")'>
-    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back to List</span>
-</a>

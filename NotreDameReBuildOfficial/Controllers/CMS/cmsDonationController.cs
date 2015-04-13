@@ -15,7 +15,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         donationClass objDonation = new donationClass();
 
         //General list of donations
-        public ActionResult cmsDonationList()
+        public ActionResult Manage()
         {
             var list = objDonation.getDonations();
             return View(list);
@@ -86,24 +86,24 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         //Executes the update when submit button is clicked
         [HttpPost]
-        public ActionResult Update(Donation donation)
+        public ActionResult Update(int donation_id, Donation donation)
         {
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    objDonation.updateDonation(donation);
-                    return RedirectToAction("Details", new { donation_id = donation.donation_id }); //After successful update, return to index
+                    objDonation.updateDonation(donation_id, donation);
+                    return RedirectToAction("Details", new { donation_id = donation_id }); //After successful update, return to index
                 }
                 catch
                 {
                     //Error handling, return Update view if something goes wrong
-                    return View();
+                    return View(donation);
                 }
-            }
+           }
 
-            return View();
+            return View(donation);
         }
 
         // --- DELETE ACTION --- //
