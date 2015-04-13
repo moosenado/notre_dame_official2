@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO; //for uploading file path
+using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
-    public class cmsApplicantController : Controller
+    public class cmsApplicantController : BaseController
     {
         JobApplicants AppObj = new JobApplicants(); // creating an instance of Applicant class
         public ActionResult Index()
@@ -36,6 +37,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult Delete_Applicant(int id)
         {
             var App = AppObj.getApplicantByID(id);

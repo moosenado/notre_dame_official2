@@ -8,7 +8,7 @@
 
 <h2 class="Title">Add New Question </h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) { 
 
     <div class="details_lbl">
         @Html.LabelFor(model => model.date)
@@ -19,7 +19,7 @@
     <div>
         @Html.ValidationMessageFor(model => model.date)
     </div>
-{
+
     <div class="details_lbl">
         @Html.LabelFor(model => model.title)
     </div>
@@ -48,7 +48,6 @@
         @Html.ValidationMessageFor(model => model.options)
     </div>
 
-    
 
     <div>
         <input id="btnAdd" type="submit" value="Add" class="buttonstyle" />

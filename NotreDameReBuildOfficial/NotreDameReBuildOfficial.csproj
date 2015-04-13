@@ -215,13 +215,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Infrastructure\Util.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
-    <Compile Include="Models\authorizationClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
