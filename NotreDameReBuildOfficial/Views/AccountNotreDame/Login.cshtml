@@ -2,9 +2,9 @@
 @{
     ViewBag.Title = "Login";
 }
-<h2>
+<h1>
     Login
-</h2>
+</h1>
 @using (Html.BeginForm())
 {
     if (ViewBag.Message != null && ViewBag.Message != "")
@@ -13,13 +13,17 @@
     }
     <div>
         <span>User Name</span>
-        @Html.TextBoxFor(x => x.user_name)
+        </div>
+    <div>
+        @Html.TextBoxFor(x => x.user_name, new { @class = "textbox" })
     </div>
     <div>
         <span>Password</span>
-        @Html.PasswordFor(x => x.password)
+        </div>
+    <div>
+        @Html.PasswordFor(x => x.password, new { @class = "textbox" })
     </div>
-    <input type="submit" value="Sign In" />
+    <input type="submit" value="Sign In" class="buttonstyle" />
 }
 <div>
     @Html.ActionLink("Back", "Index", "Home")
