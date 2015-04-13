@@ -964,6 +964,7 @@
     <Content Include="Views\cmsVolunteer\volList.cshtml" />
     <Content Include="Views\AccountNotreDame\Login.cshtml" />
     <Content Include="Views\AccountNotreDame\LogOff.cshtml" />
+    <Content Include="Views\cmsVolunteer\volInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

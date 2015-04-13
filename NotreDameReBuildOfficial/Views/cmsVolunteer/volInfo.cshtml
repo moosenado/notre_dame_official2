@@ -1,0 +1,65 @@
+﻿@model NotreDameReBuildOfficial.Models.volunteer_info
+@{
+    ViewBag.Title = "volInfo";
+
+}
+
+<h1>Volunteer</h1>
+<h2>Details of Volunteer</h2>
+
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.firstname)</td>
+        <td>@Html.DisplayFor(x => x.firstname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.lastname)</td>
+        <td>@Html.DisplayFor(x => x.lastname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.email)</td>
+        <td>
+            @Html.DisplayFor(x => x.email)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.mobile)</td>
+        <td>
+            @Html.DisplayFor(x => x.mobile)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.street)</td>
+        <td>
+            @Html.DisplayFor(x => x.street)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.city)</td>
+        <td>
+            @Html.DisplayFor(x => x.city)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.province)</td>
+        <td>
+            @Html.DisplayFor(x => x.province)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.zip_code)</td>
+        <td>
+            @Html.DisplayFor(x => x.zip_code)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(x => x.dateApplied)</td>
+        <td>
+            @Html.DisplayFor(x => x.dateApplied)
+        </td>
+    </tr>
+</table>
+
+<a href='@Url.Action("joblist", "cmsVolunteer")'>
+    <span class="buttonstyle">Back to list</span>
+</a>
