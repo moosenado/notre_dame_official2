@@ -89,18 +89,11 @@
             <td>@Html.TextBoxFor(model => model.url, new { @class = "textbox" })
                 @Html.ValidationMessageFor(model => model.url)</td>
         </tr>
-
-        @if(Model.approved == 1){
         <tr>
             <td><strong>@Html.LabelFor(model => model.display)</strong></td>
             <td>@Html.RadioButtonFor(model => model.display, 1, new { @checked = true }) Yes
                 @Html.RadioButtonFor(model => model.display, 0) No</td>
         </tr>
-        }
-        else
-        {
-            @Html.HiddenFor(model => model.display, new { Value = 1 })
-        }
         
         @if (Model.approved == 0)
         {
