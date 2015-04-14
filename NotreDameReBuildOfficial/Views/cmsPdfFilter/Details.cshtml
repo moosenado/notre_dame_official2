@@ -6,27 +6,15 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Details</h2>
+<h2>PDF Details</h2>
 
 <h3>@Html.DisplayFor(x => x.PdfTitle)</h3>
 
 <table>
     <tr>
-        <td>@Html.LabelFor(model => model.PdfTitle, new {@class = "label"})</td>
-        <td><a href="~/Content/uploads/@Model.PdfTitle" target="_Blank">Download Pdf</a></td>
-    </tr>
-    @*<tr>
-        <td>@Html.LabelFor(model => model.PdfUrl, new {@class = "label"})</td>
-        <td>@Html.DisplayFor(x => x.PdfUrl)</td>
-    </tr>*@
-    <tr>
         <td>@Html.LabelFor(model => model.Category, new {@class = "label"})</td>
-        <td>x.Category</td>
+        <td>@Html.DisplayFor(x => x.Category)</td>
     </tr>
-    @*<tr>
-        <td>@Html.LabelFor(model => model.Image, new {@class = "label"})</td>
-        <td>@Html.DisplayFor(x => x.Image)</td>
-    </tr>*@
     <tr>
         <td>@Html.LabelFor(model => model.Descr, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.Descr)</td>
@@ -44,6 +32,10 @@
         <td>@Html.DisplayFor(x => x.Tstamp)</td>
     </tr>
 </table>
+<p>View Pdf:<a href="~/Content/uploads/@Model.PdfTitle" target="_Blank" title="Click to View PDF">
+    <div style="font-size: 80px;"><i class="fa fa-file-pdf-o" alt="test"></i></div>
+</a>
+</p>
 
 <p>
     @*renders links to methods located on ApptSchedController*@

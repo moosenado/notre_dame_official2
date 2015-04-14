@@ -19,7 +19,7 @@ namespace NotreDameReBuildOfficial.Models
     {
         //[DisplayName("Title*")]
         //[Required(ErrorMessage = "Please enter the PDF title")]
-        [StringLength(100)]
+        [StringLength(300)]
         public string PdfTitle { get; set; } //auto properties
 
         //[DisplayName("Url*")]
