@@ -43,9 +43,12 @@
             var name = file.PdfTitle;
             var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
 
-                <li>
-                    <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
-                </li>
+            <li>
+                <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
+            </li>
+            <li>
+                @file.Descr
+            </li>
         }
         </ul>
 

@@ -44,12 +44,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Department*")]
         [Required(ErrorMessage = "Please choose a department")]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")] 
         public string Department { get; set; }
-
-
-        //[Required(ErrorMessage = "Please choose a file")]
-        //public HttpPostedFileBase File { get; set; }
 
     }
 }
