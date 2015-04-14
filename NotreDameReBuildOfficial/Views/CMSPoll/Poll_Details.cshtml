@@ -18,7 +18,13 @@
 
     <div class="details_Op">
         @Html.LabelFor(model => model.options, new { @class = "lbl" }):
-        @Html.DisplayFor(x => x.options)
+        <br />
+         @foreach (NotreDameReBuildOfficial.Models.Poll_option item in Model.options)
+        {
+            @Html.DisplayFor(x=>item.options) 
+            <br/>
+        }
+        
     </div>
     <div class="details_Op">
         @Html.LabelFor(model => model.date, new { @class = "lbl" }):

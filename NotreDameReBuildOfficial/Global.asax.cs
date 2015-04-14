@@ -27,7 +27,14 @@ namespace NotreDameReBuildOfficial
 
         protected void Session_Start()
         {
+            Session["name"] = Session.SessionID.ToString();     
+        }
+
+        protected void Session_End()
+        {
             
         }
+
+
     }
 }

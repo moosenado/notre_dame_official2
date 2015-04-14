@@ -105,6 +105,31 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        public userClass login(string username, string password)
+        {
+            userClass user = (from us in objUser.Users
+                              join ro in objUser.roles on us.role_id equals ro.id
+                              where us.user_name == username && us.password == password
+                              select new userClass()
+                              {
+                                  id = us.id,
+                                  first_name = us.first_name,
+                                  last_name = us.last_name,
+                                  email = us.email,
+                                  phone = us.phone,
+                                  city = us.city,
+                                  DOB = us.DOB,
+                                  province = us.province,
+                                  postal_code = us.postal_code,
+                                  user_name = us.user_name,
+                                  password = us.password,
+                                  role_id = us.role_id,
+                                  roleTitle = ro.title
+                              }).SingleOrDefault();
+
+            return user;
+        }
+
         
     }
 }

@@ -7,10 +7,11 @@ using System.IO; //for uploading file path
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace notre_dame_rebuild.Controllers
 {
-    public class CMSHomeController : Controller
+    public class CMSHomeController : BaseController
     {
         public ActionResult Index()
         {

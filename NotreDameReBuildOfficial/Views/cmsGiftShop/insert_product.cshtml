@@ -3,12 +3,25 @@
     ViewBag.Title = "insert_product";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     <script src="~/Scripts/cms-menu.js"></script>
+    @Scripts.Render("~/bundles/jquery")
 }
 
-<h2>Insert Product</h2>
+<h2>Add New Product</h2>
+
+<br />
+
+<p>
+    @Html.ActionLink("Gift Shop Products", "products", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Customer Purchase Records", "purchase_records", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+
+<br />
 
 @using (Html.BeginForm("insert_product", "cmsGiftShop", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.ValidationSummary()
+
     @Html.LabelFor(model => model.name)
     <br />
     @Html.TextBoxFor(model => model.name)
@@ -16,6 +29,7 @@
     @Html.LabelFor(model => model.price)
     <br />
     @Html.TextBoxFor(model => model.price)
+    @Html.ValidationMessageFor(model => model.price)
     <br />
     @Html.LabelFor(model => model.description)
     <br />
@@ -31,6 +45,14 @@
     @ViewBag.Message
 }
 
+<br />
+
 <div>
     @Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })
 </div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

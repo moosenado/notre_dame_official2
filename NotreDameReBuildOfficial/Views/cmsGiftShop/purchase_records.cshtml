@@ -1,0 +1,54 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.checkout>
+@{
+    ViewBag.Title = "purchase_records";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    <script src="~/Scripts/cms-menu.js"></script>
+    @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
+}
+
+<h2>Customer Purchase Records</h2>
+
+<br />
+<p>
+    @Html.ActionLink("Gift Shop Products", "products", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Customer Purchase Records", "purchase_records", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Total Amount</th>
+            <th>Purchase Status</th>
+            <th>Patient Name</th>
+            <th>Name on Card</th>
+            <th>Card Type</th>
+            <th>Card Number</th>
+            <th>Expiry</th>
+            <th>Security Code</th>
+        </tr>
+    </thead>
+</table>
+        @foreach (var purchase in Model.OrderByDescending(x => x.Id))
+        {
+        <h2>@purchase.orderdate</h2>    
+        <table>
+            <tbody>
+                <tr>
+                    <td>@purchase.firstname @purchase.lastname</td>
+                    <td>$@purchase.totalpaid</td>
+                    <td>@purchase.deliv_status</td>
+                    <td>@purchase.patientname</td>
+                    <td>@purchase.cardname</td>
+                    <td>@purchase.cardtype</td>
+                    <td>@purchase.cardnumber</td>
+                    <td>@purchase.expirydate</td>
+                    <td>@purchase.securitycode</td>
+                </tr>
+            </tbody>
+        </table>   
+            <p>Message to Patient:</p>
+            <p>@purchase.message</p>
+        }
+

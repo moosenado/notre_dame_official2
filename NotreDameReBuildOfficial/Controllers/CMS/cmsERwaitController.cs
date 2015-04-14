@@ -66,62 +66,60 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         
         //add patient straight to ER or to the wait room
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
-        {
-            if (form_command == "waitlist_add")
-            {
-                try
+        {       
+                if (form_command == "waitlist_add")
                 {
-                    //grab current time
-                    DateTime time_now = DateTime.Now;
-                    patientinfo.arrivaltime = time_now;
-
-                    var wait_patientid = patientinfo.Id;
-                    var wait_fname = patientinfo.fname;
-                    var wait_lname = patientinfo.lname;
-
-                    waitlist.patientid = wait_patientid;
-                    waitlist.arrivaltime = time_now;
-                    waitlist.fname = wait_fname;
-                    waitlist.lname = wait_lname;
-
-                    //add form data to both patient info and wait list tables
-                    using (ndLinqClassDataContext objER = new ndLinqClassDataContext())
+                    try
                     {
-                        objER.ER_patient_infos.InsertOnSubmit(patientinfo);
-                        objER.ER_wait_lists.InsertOnSubmit(waitlist);
-                        objER.SubmitChanges();
+                        //grab current time
+                        DateTime time_now = DateTime.Now;
+                        patientinfo.arrivaltime = time_now;
+
+                        var wait_patientid = patientinfo.Id;
+                        var wait_fname = patientinfo.fname;
+                        var wait_lname = patientinfo.lname;
+
+                        waitlist.patientid = wait_patientid;
+                        waitlist.arrivaltime = time_now;
+                        waitlist.fname = wait_fname;
+                        waitlist.lname = wait_lname;
+
+                        //add form data to both patient info and wait list tables
+                        using (ndLinqClassDataContext objER = new ndLinqClassDataContext())
+                        {
+                            objER.ER_patient_infos.InsertOnSubmit(patientinfo);
+                            objER.ER_wait_lists.InsertOnSubmit(waitlist);
+                            objER.SubmitChanges();
+                        }
+
+                        ViewBag.Message = "Patient Added to ER Wait Room";
                     }
-
-                    ViewBag.Message = "Patient Added to ER Wait Room";
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "Error:" + ex.Message.ToString();
+                    }
                 }
-                catch (Exception ex)
+                if(form_command == "patient_add")
                 {
-                    ViewBag.Message = "Error:" + ex.Message.ToString();
-                }
-            }
-            else if (form_command == "patient_add")
-            {
-                try
-                {
-                    //grab current time
-                    DateTime time_now = DateTime.Now;
-                    patientinfo.arrivaltime = time_now;
+                    try
+                    {
+                        //grab current time
+                        DateTime time_now = DateTime.Now;
+                        patientinfo.arrivaltime = time_now;
 
-                    //insert data into patientinfo table only
-                    objER.insertPatient(patientinfo);
+                        //insert data into patientinfo table only
+                        objER.insertPatient(patientinfo);
 
-                    ViewBag.Message = "Patient Added To ER";
+                        ViewBag.Message = "Patient Added To ER";
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "Error:" + ex.Message.ToString();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    ViewBag.Message = "Error:" + ex.Message.ToString();
-                }
-            }
-            else
-            {
-                return View();
-            }
-            return View();
+               
+            ModelState.Clear();
+            return View();         
         }
 
         public ActionResult ERwait_PatientHistory()

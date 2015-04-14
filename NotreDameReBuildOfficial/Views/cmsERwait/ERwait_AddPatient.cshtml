@@ -3,6 +3,7 @@
     ViewBag.Title = "ERwait_AddPatient";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jquery")
 }
 
 <h2>ER Wait Time</h2>
@@ -23,6 +24,8 @@
 
 @using (Html.BeginForm("ERwait_AddPatient", "cmsERwait", FormMethod.Post, new { id = "submitPatient" }))
 {
+    @Html.ValidationSummary()
+
     @Html.LabelFor(model => model.fname)
     <br />
     @Html.TextBoxFor(model => model.fname)
@@ -34,6 +37,7 @@
     @Html.LabelFor(model => model.date)
     <br />
     @Html.TextBoxFor(model => model.date)
+    @Html.ValidationMessageFor(model => model.date)
     <br />
     @Html.LabelFor(model => model.er_reason)
     <br />
@@ -48,14 +52,8 @@
     @ViewBag.Message
 }
 
-@*TIME FUNCTIONS*@
+@section Scripts {
 
-@*@{
-    DateTime endTime = new DateTime(2015, 3, 21, 13, 40, 52);
-    DateTime startTime = new DateTime(2015, 3, 21, 12, 38, 52);
-    TimeSpan span = endTime.Subtract(startTime);
-    Response.Write("Time Difference (seconds): " + span.Seconds);
-    Response.Write("Time Difference (minutes): " + span.Minutes);
-    Response.Write("Time Difference (hours): " + span.Hours);
-    Response.Write("Time Difference (days): " + span.Days);   
-}*@
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

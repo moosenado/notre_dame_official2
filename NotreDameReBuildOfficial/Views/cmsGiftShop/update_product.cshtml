@@ -7,6 +7,15 @@
 }
 
 <h2>Edit Product</h2>
+<br />
+
+<p>
+    @Html.ActionLink("Gift Shop Products", "products", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Customer Purchase Records", "purchase_records", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+
+<br />
 
 @using (Html.BeginForm("update_product", "cmsGiftShop", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -16,21 +25,19 @@
     @Html.LabelFor(model => model.name)
     <br />
     @Html.TextBoxFor(model => model.name)
-    @Html.ValidationMessageFor(model => model.name, "*")
 
     <br /><br />
 
     @Html.LabelFor(model => model.price)
     <br />
     @Html.TextBoxFor(model => model.price)
-    @Html.ValidationMessageFor(model => model.price, "*")
+    @Html.ValidationMessageFor(model => model.price)
 
     <br /><br />
 
     @Html.LabelFor(model => model.description)
     <br />
     @Html.TextAreaFor(model => model.description, new { @class = "textarea" })
-    @Html.ValidationMessageFor(model => model.description, "*")
 
     <br /><br />
 
@@ -50,3 +57,9 @@
 }
 
 <p>@Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })</p>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

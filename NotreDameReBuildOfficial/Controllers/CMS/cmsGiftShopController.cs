@@ -131,5 +131,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        public ActionResult purchase_records()
+        {
+            var allpurchases = objGS.getPurchases();
+            return View(allpurchases);
+        }
+
     }
 }

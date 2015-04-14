@@ -1,0 +1,28 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.volunteer_info>
+@{
+    ViewBag.Title = "volList";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+
+}
+
+<h2>volunteers Applied</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>VOlunteers Applied</th>
+        </tr>
+    </thead>
+
+    @foreach (var vol in Model)
+    {
+        <tr>
+            <td>@vol.firstname</td>
+            <td>@vol.lastname</td>
+            <td>@Html.ActionLink("View", "volInfo", new { id = vol.id }) / @Html.ActionLink("Delete", "deleteJob", new { id = vol.id })</td>
+        </tr>
+    }
+
+</table>
+

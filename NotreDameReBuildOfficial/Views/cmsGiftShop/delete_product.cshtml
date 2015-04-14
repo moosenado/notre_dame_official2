@@ -7,6 +7,16 @@
 
 <h2>Delete Product</h2>
 
+<br />
+
+<p>
+    @Html.ActionLink("Gift Shop Products", "products", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Add New Product", "insert_product", "cmsGiftShop", new { @class = "buttonstyle" })
+    @Html.ActionLink("Customer Purchase Records", "purchase_records", "cmsGiftShop", new { @class = "buttonstyle" })
+</p>
+
+<br />
+
 @using (Html.BeginForm())
 {
     <p>Are you sure you want to delete the product:<strong> @Html.DisplayFor(x => x.name)?</strong></p>

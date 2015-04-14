@@ -50,7 +50,7 @@ namespace NotreDameReBuildOfficial.Models
         public string postal_code { get; set; }
 
         [Required]
-        [DisplayName("Date of birth (mm/dd/yyyy)")]
+        [DisplayName("Date of birth (yyyy/mm/dd)")]
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DOB { get; set; }
 

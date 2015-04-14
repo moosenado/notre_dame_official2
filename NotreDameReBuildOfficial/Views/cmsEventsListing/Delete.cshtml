@@ -16,7 +16,7 @@
         <input type="submit" value="Yes" class="buttonstyle" />
 
         //"No" button that will return users to Index page
-        @Html.ActionLink("No", "Manage", new { @class = "buttonstyle" })
+        <a href='@Url.Action("Manage", "cmsEventsListing")'><span class="buttonstyle">No</span></a>
     }
 
 </div>

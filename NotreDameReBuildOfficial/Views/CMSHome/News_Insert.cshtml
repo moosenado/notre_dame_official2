@@ -3,12 +3,15 @@
     ViewBag.Title = "News_Insert";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
+    @Scripts.Render("~/bundles/jqueryval")
 }
 
 <h2>Add News Article</h2>
 
 @using (Html.BeginForm("News_Insert", "CMSHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.ValidationSummary()
+    
     @Html.LabelFor(model => model.title)
     <br />
     @Html.TextBoxFor(model => model.title)
@@ -16,6 +19,7 @@
     @Html.LabelFor(model => model.date)
     <br />
     @Html.TextBoxFor(model => model.date)
+    @Html.ValidationMessageFor(model => model.date)
     <br />
     @Html.LabelFor(model => model.author)
     <br />
@@ -38,3 +42,9 @@
 <div>
     @Html.ActionLink("Back", "News", "CMSHome", new { @class = "link" })
 </div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

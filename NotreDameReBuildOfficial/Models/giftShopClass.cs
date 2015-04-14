@@ -11,12 +11,42 @@ namespace NotreDameReBuildOfficial.Models
 
         public string file_update { get; set; }
 
+        public string product_name { get; set; }
+
+        public string product_price { get; set; }
+
+        public string add_command { get; set; }
+
+        public string delete_command { get; set; }
+
+        public int product_quantity { get; set; }
+
+        public string product_id { get; set; }
+
+        public string checkoutTotal { get; set; }
+
+        public string checkout_command { get; set; }
+
+        public string totalAmount { get; set; }
+
         ndLinqClassDataContext objGS = new ndLinqClassDataContext();
 
         public IQueryable<product> getProducts()
         {
             var allProducts = objGS.products.Select(x => x);
             return allProducts;
+        }
+        public IQueryable<checkout> getPurchases()
+        {
+            var allPurchases = objGS.checkouts.Select(x => x);
+            return allPurchases;
+        }
+        public IQueryable<cart> getCart(string session)
+        {
+            var allCartProducts = (from x in objGS.carts
+                                   where x.session_id == session
+                                   select x);
+            return allCartProducts;
         }
         public product getProductByID(int _id)
         {
@@ -29,6 +59,15 @@ namespace NotreDameReBuildOfficial.Models
             using (objGS)
             {
                 objGS.products.InsertOnSubmit(product_table);
+                objGS.SubmitChanges();
+                return true;
+            }
+        }
+        public bool insertPurchase(checkout checkout)
+        {
+            using (objGS)
+            {
+                objGS.checkouts.InsertOnSubmit(checkout);
                 objGS.SubmitChanges();
                 return true;
             }
@@ -55,6 +94,25 @@ namespace NotreDameReBuildOfficial.Models
                 objGS.SubmitChanges(); //commit deletetion change to the database
                 return true;
             }
+        }
+        public bool cartproductDelete(int _id)
+        {
+            using (objGS)
+            {
+                var delete = objGS.carts.Single(x => x.Id == _id);
+                objGS.carts.DeleteOnSubmit(delete); //delete user on submission
+                objGS.SubmitChanges(); //commit deletetion change to the database
+                return true;
+            }
+        }
+        
+        //see how many session entries exist in the cart (cart count)
+        public int getCartCount(string session)
+        {
+            int cartCount = (from x in objGS.carts
+                             where x.session_id == session
+                             select x).Count();
+            return cartCount;
         }
 
     }
