@@ -23,6 +23,33 @@ namespace NotreDameReBuildOfficial.Models
             return allvol;
         }
 
+        public List<populateNav> getAdminNav()
+        {
+            
+
+            var allvol = (from x in objLinq.admin_navigations
+                          join y in objLinq.admin_subNavigations
+                          on x.id equals y.navID into fullNav
+                          from subY in fullNav.DefaultIfEmpty()
+                          select new {x.id, x.title, x.icon, subNav = (subY == null ? null : subY)});
+
+            List<populateNav> listobj = new List<populateNav>();
+
+            foreach(var rec in allvol)
+            {
+                populateNav obj = new populateNav();
+
+                obj.id = rec.id;
+                obj.title = rec.title;
+                obj.icon = rec.icon;
+                obj.subNav = rec.subNav;
+
+                listobj.Add(obj);
+
+            }
+
+            return listobj;
+        }
 
         public bool InsertNav(admin_navigation nav)
         {

@@ -15,6 +15,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         adminNavigationClass objNav = new adminNavigationClass();
 
+
         public ActionResult navList()
         {
             var nav = objNav.getallNav();
@@ -70,6 +71,24 @@ namespace NotreDameReBuildOfficial.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult popNav()
+        {
+            //List<admin_navigation> nav =(List<admin_navigation>)objNav.getallNav();
+
+            //ViewBag.
+
+            //foreach(var x in nav)
+            //{
+            //    var SubNav = objNav.getallNavByID(x.id);
+
+            //}
+
+            var nav = objNav.getAdminNav();
+
+
+            return PartialView(nav);
         }
 
     }

@@ -258,6 +258,7 @@
     <Compile Include="Models\newsfeedValidation.cs" />
     <Compile Include="Models\PdfFilterClass.cs" />
     <Compile Include="Models\PdfFilterValidation.cs" />
+    <Compile Include="Models\populateNav.cs" />
     <Compile Include="Models\productValidation.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
@@ -978,6 +979,7 @@
     <Content Include="Views\adminNav\navInfo.cshtml" />
     <Content Include="Views\adminNav\insertNav.cshtml" />
     <Content Include="Views\adminNav\insertsubNav.cshtml" />
+    <Content Include="Views\adminNav\popNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

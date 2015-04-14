@@ -31,6 +31,9 @@ namespace NotreDameReBuildOfficial.Models
         [Required] // required Specified 
         public string pageView { get; set; } // get set method for Last Name
 
+        [DisplayName("Icon:")] // Display name for employee Last Name
+        [Required] // required Specified 
+        public string icon { get; set; } // get set method for Last Name
 
     }
 }

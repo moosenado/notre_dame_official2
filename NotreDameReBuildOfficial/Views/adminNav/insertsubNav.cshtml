@@ -2,12 +2,12 @@
 
 @{
     ViewBag.Title = "insertsubNav";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>insertsubNav</h2>
-
 <h1>Admin Navigation</h1>
-<h2>Create a Navigation</h2>
+<h2>Create a Sub Navigation</h2>
 
 @using (@Html.BeginForm())
 {

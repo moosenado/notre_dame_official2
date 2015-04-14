@@ -1259,13 +1259,14 @@ table tr:nth-child(odd) td {
 	text-decoration: none;
 }
 
+#cms-left-nav:last-of-type {
+	border-bottom: 1px solid #ddd;
+}
+
+
 .left-mnu-itm:hover {
     border-bottom: 0px;
     color: #019ab8;
-}
-
-.left-mnu-itm:last-child {
-	border-bottom: 1px solid #ddd;
 }
 
 .secondary a {

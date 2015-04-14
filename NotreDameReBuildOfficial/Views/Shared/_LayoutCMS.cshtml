@@ -48,111 +48,11 @@
 
         <div id="cms-left-nav">
 
-            @* About NDH *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>About Notre-Dame
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Mission, Vision, Values</a>
-                    <a class="secondary-pages" href="">History</a>
-                    <a class="secondary-pages" href="">News</a>
-                </div>
-            </div>
+            @{Html.RenderAction("popNav", "adminNav");}
 
-            @* Patients & Visitors *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Patients & Visitors
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Visiting Hours</a>
-                    <a class="secondary-pages" href="">Parking & Directions</a>
-                    <a class="secondary-pages" href="">Patient Information</a>
-                    <a class="secondary-pages" href="">Schedule an Appointment</a>
-                    <a class="secondary-pages" href="/cmsGiftShop/products">Gift Shop</a>
-                </div>
-            </div>
+        </div>
 
-            @* Departments & Services *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Departments & Services
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Emergency Department</a>
-                    <a class="secondary-pages" href="">Pharmacy & Lab</a>
-                    <a class="secondary-pages" href="">Nutrition & Food</a>
-                    <a class="secondary-pages" href="">Long Term Care</a>
-                    <a class="secondary-pages" href="">Acute Care</a>
-                </div>
-            </div>
-
-            @* Join Our Team *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Join Our Team
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="/cmsJobPosting/JobPosting">Job Opportunities</a>
-                    <a class="secondary-pages" href="">Volunteer Opportunites</a>
-                    <a class="secondary-pages" href="">Internships & Placements</a>
-                </div>
-            </div>
-
-            @* Contact *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Contact
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Staff Directory</a>
-                </div>
-           </div>
-
-           @* Users *@
-           <a class="left-mnu-itm" href="/CMSUser/allUsers">
-           <i class="fa fa-users fa-lg"></i>Users
-           </a>
-
-           @* Weekly Poll *@
-           <a class="left-mnu-itm" href="/CMSPoll/polls">
-               <i class="fa fa-bar-chart fa-lg"></i>Weekly Poll
-           </a>
-
-           @* News *@
-           <a class="left-mnu-itm" href="/CMSHome/News">
-               <i class="fa fa-newspaper-o cms fa-lg"></i>News
-           </a>
-
-           @* Events *@
-           <a class="left-mnu-itm" href="~/cmsEventsListing/Manage">
-               <i class="fa fa-calendar cms fa-lg"></i>Events
-           </a>
-
-           @* Donations *@
-            <a class="left-mnu-itm" href="~/cmsDonation/Manage">
-                <i class="fa fa-money fa-lg"></i>Donations
-            </a>
-
-           @* ER Wait Time *@
-           <a class="left-mnu-itm" href="/cmsERwait/ERwait_Patients">
-               <i class="fa fa-heartbeat fa-lg"></i>ER Wait Time
-           </a>
-
-           @* Search *@
-           <a class="left-mnu-itm" href="">
-               <i class="fa fa-search fa-lg"></i>Search
-           </a>
-
-           @* Feedback *@
-            <a class="left-mnu-itm" href="~/cmsFeedback/Manage">
-                <i class="fa fa-comment-o fa-lg"></i>Feedback
-            </a>
-            
-        </div>@* -- end cms-left-mnu  *@
-
-    </div>@* -- end left-nav -- *@
+    </div>
 
         @* ----- BODY -----*@
 
