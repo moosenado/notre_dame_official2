@@ -1,5 +1,43 @@
-﻿@{
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.populatePublicNav>
+
+@{
     ViewBag.Title = "popNav";
 }
 
-<h2>popNav</h2>
+@{
+    List<string> main = new List<string>();
+
+    foreach (var x in Model)
+    {
+        main.Add(x.title);
+    }
+
+    IEnumerable<string> mainNav = main.Select(m => m).Distinct();
+
+
+}
+
+@foreach (var n in mainNav)
+{
+    string title = @n.ToString();
+    
+    <li>
+        <a href="">@title.ToString()</a>
+        <ul>
+            @foreach (var x in Model)
+            {
+
+                if (@x.title.Equals(title.ToString()))
+                {
+                    if (@x.subNav == null)
+                    { continue; }
+
+                    <li><a href="/@x.subNav.controller/@x.subNav.pageView">@x.subNav.title.ToString()</a></li>
+
+
+                }
+            }
+        </ul>
+    </li>
+    
+}

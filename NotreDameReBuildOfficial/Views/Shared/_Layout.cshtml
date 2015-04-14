@@ -90,53 +90,11 @@
 
 @* ----- NAVIGATION -----*@
 
-    <nav id="navigation">
-        <ul>
-            <li>
-                <a href="#">About Notre-Dame</a>
-                <ul>
-                    <li><a href="#">Mission, Vision, Values</a></li>
-                    <li><a href="#">History</a></li>
-                    <li><a href="#">News and Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Patients and Visitors</a>
-                <ul>
-                    <li><a href="#">Visiting Hours</a></li>
-                    <li><a href="#">Parking and Directions</a></li>
-                    <li><a href="#">Patient Information</a></li>
-                    <li><a href="#">Schedule Appointment</a></li>
-                    <li><a href="#">Gift Shop</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Departments and Services</a>
-                <ul>
-                    <li><a href="#">Emergency Department</a></li>
-                    <li><a href="#">Pharmacy and Laboratory</a></li>
-                    <li><a href="#">Nutrition and Food</a></li>
-                    <li><a href="#">Long Term Care</a></li>
-                    <li><a href="#">Acute Care</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/JobPosting/JobPosting">Join Our Team</a>
-                <ul>
-                    <li><a href="/JobPosting/JobPosting">Job Opportunities</a></li>
-                    <li><a href="#">Volunteer Opportunities</a></li>
-                    <li><a href="#">Internships and Placements</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-                <ul>
-                    <li><a href="#">Staff Directory</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
+        <nav id="navigation">
+            <ul>
+                @{Html.RenderAction("popNav", "nav");}
+            </ul>
+        </nav>
 
 @* ----- ER wait time for tablets and phones -----*@
 
