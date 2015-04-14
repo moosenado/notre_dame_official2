@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 22.625" name="ndLinqClass">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 25.25" name="ndLinqClass">
   <DataContextMoniker Name="/ndLinqClassDataContext" />
   <nestedChildShapes>
     <classShape Id="f4127cc5-baba-4aea-b109-d2be656e6a11" absoluteBounds="0.5, 0.5, 2, 1.4248478190104168">
@@ -186,6 +186,18 @@
       <DataClassMoniker Name="/ndLinqClassDataContext/subNavigation" />
       <nestedChildShapes>
         <elementListCompartment Id="d2f7369e-1b8d-4a90-8b29-96c280da310e" absoluteBounds="3.39, 21.21, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="376f7e6b-bb6b-401d-8c95-0642490d63e6" absoluteBounds="0.875, 23, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/ndLinqClassDataContext/admin_navigation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25f0f4a3-742d-41e3-afef-fd4ecedcfaa6" absoluteBounds="0.89, 23.46, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ead739c5-74eb-4e19-a57f-57e7dfeb7acf" absoluteBounds="3.5, 23.375, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/ndLinqClassDataContext/admin_subNavigation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ba7c1d8-096b-4633-9e4c-2191aea2b769" absoluteBounds="3.515, 23.835, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
