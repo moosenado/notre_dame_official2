@@ -504,6 +504,23 @@
     <Content Include="Content\applicant\resume\resume2.pdf" />
     <Content Include="Content\applicant\resume\resume3.pdf" />
     <Content Include="Content\applicant\resume\resume4.pdf" />
+    <Content Include="Content\uploads\Accessibility Plan 2009-2010-e.pdf" />
+    <Content Include="Content\uploads\Accessibility.pdf" />
+    <Content Include="Content\uploads\Carte stratégique 2011-2017 -%28indicateurs-%29 2012-f.pdf" />
+    <Content Include="Content\uploads\Carte stratégique 2011-2017.pdf" />
+    <Content Include="Content\uploads\Communication.pdf" />
+    <Content Include="Content\uploads\Document.pdf" />
+    <Content Include="Content\uploads\Emergnecy.pdf" />
+    <Content Include="Content\uploads\Finance.pdf" />
+    <Content Include="Content\uploads\french.pdf" />
+    <Content Include="Content\uploads\HR.pdf" />
+    <Content Include="Content\uploads\Medical.pdf" />
+    <Content Include="Content\uploads\NDH 2012-13 QIP Progress Report.pdf" />
+    <Content Include="Content\uploads\Posting of Expenses 2012.PDF" />
+    <Content Include="Content\uploads\Posting of Expenses 2013.pdf" />
+    <Content Include="Content\uploads\Privacy.pdf" />
+    <Content Include="Content\uploads\Request for Access to Information and Correction.pdf" />
+    <Content Include="Content\uploads\Revue du rseau dimagerie diagnostique de lHTD 2013.pdf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.dll" />
@@ -935,7 +952,6 @@
     <Content Include="Views\ApptSchedPublic\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\uploads\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
