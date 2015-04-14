@@ -211,6 +211,7 @@
     <Compile Include="Controllers\GiftShopController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobPostingController.cs" />
+    <Compile Include="Controllers\navController.cs" />
     <Compile Include="Controllers\PdfFilterController.cs" />
     <Compile Include="Controllers\staffDirectoryController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -244,6 +245,8 @@
     <Compile Include="Models\jobCategoryValidation.cs" />
     <Compile Include="Models\jobPosting.cs" />
     <Compile Include="Models\jobPostingValidation.cs" />
+    <Compile Include="Models\navigationClass.cs" />
+    <Compile Include="Models\navValidate.cs" />
     <Compile Include="Models\ndLinqClass.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -965,6 +968,10 @@
     <Content Include="Views\AccountNotreDame\Login.cshtml" />
     <Content Include="Views\AccountNotreDame\LogOff.cshtml" />
     <Content Include="Views\cmsVolunteer\volInfo.cshtml" />
+    <Content Include="Views\nav\insertNav.cshtml" />
+    <Content Include="Views\nav\navList.cshtml" />
+    <Content Include="Views\nav\navInfo.cshtml" />
+    <Content Include="Views\nav\insertsubNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

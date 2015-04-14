@@ -17,10 +17,10 @@ namespace NotreDameReBuildOfficial.Models
 
         public IQueryable<volunteer_info> getVolByID(int id)
         {
-            var allCartProducts = (from x in objLinq.volunteer_infos
+            var allvol = (from x in objLinq.volunteer_infos
                                    where x.jobID == id
                                    select x);
-            return allCartProducts;
+            return allvol;
         }
 
         public volunteer_info getVolInfoByID(int _id)
