@@ -188,6 +188,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountNotreDameController.cs" />
+    <Compile Include="Controllers\adminNavController.cs" />
     <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\ApptSchedController.cs" />
     <Compile Include="Controllers\ApptSchedPublicController.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Infrastructure\CustomAuthorizeAttribute.cs" />
     <Compile Include="Infrastructure\Util.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\adminNavigationClass.cs" />
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
@@ -972,6 +974,10 @@
     <Content Include="Views\nav\navList.cshtml" />
     <Content Include="Views\nav\navInfo.cshtml" />
     <Content Include="Views\nav\insertsubNav.cshtml" />
+    <Content Include="Views\adminNav\navList.cshtml" />
+    <Content Include="Views\adminNav\navInfo.cshtml" />
+    <Content Include="Views\adminNav\insertNav.cshtml" />
+    <Content Include="Views\adminNav\insertsubNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
