@@ -119,6 +119,7 @@
     </tr>
     }
 
+    @if (@Model.approved == 1) { 
     @* Is the event being displayed on the homepage? *@
     <tr>
         <td>@Html.LabelFor(model => model.display)</td>
@@ -133,4 +134,5 @@
             }
         </td>
     </tr>
+    }
 </table>
