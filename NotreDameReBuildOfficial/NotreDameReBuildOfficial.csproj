@@ -207,6 +207,7 @@
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
     <Compile Include="Controllers\CMS\cmsVolunteerController.cs" />
+    <Compile Include="Controllers\createPageController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
@@ -230,6 +231,7 @@
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\createPageClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
@@ -997,6 +999,9 @@
     <Content Include="Views\adminNav\popNav.cshtml" />
     <Content Include="Views\ApptSchedPublic\Thanks.cshtml" />
     <Content Include="Views\nav\popNav.cshtml" />
+    <Content Include="Views\createPage\pageList.cshtml" />
+    <Content Include="Views\createPage\pageInfo.cshtml" />
+    <Content Include="Views\createPage\insertsubPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

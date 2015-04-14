@@ -1,0 +1,24 @@
+﻿@model NotreDameReBuildOfficial.Models.navValidate
+
+@{
+    ViewBag.Title = "insertsubPage";
+
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Create Page</h1>
+<h2>Insert a subPage</h2>
+
+@using (@Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.title)</td>
+            <td>@Html.TextBoxFor(Model => Model.title)<span style="color:red">*</span></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Add Sub Page" class="buttonstyle" />
+
+}
