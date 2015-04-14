@@ -23,7 +23,7 @@
 
     <tr><th>@Html.LabelFor(model => model.AdditionalInfo)</th><td>@Html.DisplayFor(x => x.AdditionalInfo)</td></tr>
 
-    <tr><th>@Html.LabelFor(model => model.Tstamp)</th><td>@Html.DisplayFor(x => x.Tstamp)</td></tr>
+    <tr><th>Date Booked</th><td>model.BookTime</td></tr>
 
     <tr><th>@Html.LabelFor(model => model.Speciality)</th><td>@Html.DisplayFor(x => x.Speciality)</td></tr>
 
@@ -32,7 +32,7 @@
 </table>
 
 <p> @*renders links to methods located on ApptSchedController*@
-    @Html.ActionLink("Back", "ApptSched") |
-    @Html.ActionLink("Update", "Update", new { id = Model.id }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.id })
+    @Html.ActionLink("Back", "ApptSched", null, new { @class = "buttonstyle" }) 
+    @Html.ActionLink("Update", "Update", new { id = Model.id }, new { @class = "buttonstyle" }) 
+    @Html.ActionLink("Delete", "Delete", new { id = Model.id }, new { @class = "buttonstyle" })
 </p>

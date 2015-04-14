@@ -6,7 +6,8 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Create a Appointment</h2>
+<h2>Create Appointment</h2>
+<br/>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary()
@@ -57,6 +58,14 @@
     @Html.ValidationMessageFor(model => model.AdditionalInfo)
     
     <br/>
-    <input type="submit" value="Insert" class="buttonstyle" />
+    <input type="submit" value="Submit" class="buttonstyle"/>
+
+    <a href='@Url.Action("ApptSched", "ApptSched")'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
 
 }
+
+
+
+
