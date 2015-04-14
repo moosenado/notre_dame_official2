@@ -504,9 +504,6 @@
     <Content Include="Content\applicant\resume\resume2.pdf" />
     <Content Include="Content\applicant\resume\resume3.pdf" />
     <Content Include="Content\applicant\resume\resume4.pdf" />
-    <Content Include="Content\uploads\french.pdf" />
-    <Content Include="Content\uploads\Posting of Expenses 2012.PDF" />
-    <Content Include="Content\uploads\TADH Diagnostic Imaging Review 2013.pdf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\NotreDameReBuildOfficial.dll" />
@@ -935,8 +932,10 @@
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
+    <Content Include="Views\ApptSchedPublic\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\uploads\" />
     <Folder Include="Images\News_Feed\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

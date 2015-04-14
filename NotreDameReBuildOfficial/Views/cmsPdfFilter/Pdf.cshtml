@@ -7,14 +7,64 @@
 }
 
 @*renders links to methods located on ApptSchedController*@
-<p>@Html.ActionLink("Insert New Record and PDF", "createPdf", "cmsPdfFilter")</p>
+<p>@Html.ActionLink("Add PDF", "createPdf", "cmsPdfFilter")</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>PDF Title</th>
+            <th>Category</th>
+            <th>Date Added</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(x.PdfTitle, "Details", new { id = x.id })</td>
+                <td>@x.Category</td>
+                <td>@x.Tstamp</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = x.id }, new { @class = "buttonstyle" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@foreach (var x in Model)
+{   
+        string link = x.PdfUrl;
+        string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20");
+        string tag = "<a href=" + path + ">" + link + "</a>";
+        @Html.Raw(tag)   
+}
 
 <ul>
     @foreach (var x in Model)
     {
-        <li>@Html.ActionLink(x.PdfTitle, "Details", new {id = x.id})</li>
+        var name = x.PdfUrl;
+        var link = @Url.Content("~/Content//") + name.Replace(" ", "%20");
+
+        <li>
+            <a href="@link">@name</a>
+        </li>
     }
 </ul>
+<table>
+    <tr><td>
+    @foreach (var x in Model)
+    {
+        var name = x.PdfUrl;
+        var link = @Url.Content("~/Content//");
+        <a href="@link">@name</a>
+
+    }
+</td>
+
+    </tr>
+</table>
+
+
 
 
 

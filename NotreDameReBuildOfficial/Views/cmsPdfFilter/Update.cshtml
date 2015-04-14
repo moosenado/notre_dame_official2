@@ -42,10 +42,7 @@
         <td>@Html.LabelFor(model => model.Image, new { @class = "label" })</td>
         <td>@Html.TextBoxFor(model => model.Image, new { @class = "textbox" })</td>
     </tr>
-    <tr>
-        <td>@Html.LabelFor(model => model.Tstamp, new { @class = "label" })</td>
-        <td>@Html.TextBoxFor(model => model.Tstamp, new { @class = "textbox" })</td>
-    </tr>
+    
     <tr>
         <td>@Html.LabelFor(model => model.Descr, new { @class = "label" })</td>
         <td>@Html.TextBoxFor(model => model.Descr, new { @class = "textbox" })</td>
@@ -61,22 +58,28 @@
         new SelectListItem() {Text = "unknown"},}, new { @class = "dropdown-list" })
     </td>
 </tr>
-<tr>
-    <td>@Html.LabelFor(model => model.Department, new { @class = "label" })</td>
-    <td>
-        @Html.DropDownListFor(model => model.Department, new[] {
-        new SelectListItem() {Text = ""},
-        new SelectListItem() {Text = "n/a"},
-        new SelectListItem() {Text = "Emergency"},
-        new SelectListItem() {Text = "Communication"},
-        new SelectListItem() {Text = "Patient Services"},
-        new SelectListItem() {Text = "HR"},
-        new SelectListItem() {Text = "Finance"},
-        new SelectListItem() {Text = "Privacy"},
-        new SelectListItem() {Text = "Accessibilty"},
-        new SelectListItem() {Text = "Other"},}, new { @class = "dropdown-list" })
-</td>
-</tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Department, new {@class = "label"})</td>
+            <td>
+                @Html.DropDownListFor(model => model.Department, new[]
+                {
+                    new SelectListItem() {Text = ""},
+                    new SelectListItem() {Text = "n/a"},
+                    new SelectListItem() {Text = "Emergency"},
+                    new SelectListItem() {Text = "Communication"},
+                    new SelectListItem() {Text = "Patient Services"},
+                    new SelectListItem() {Text = "HR"},
+                    new SelectListItem() {Text = "Finance"},
+                    new SelectListItem() {Text = "Privacy"},
+                    new SelectListItem() {Text = "Accessibilty"},
+                    new SelectListItem() {Text = "Other"},
+                }, new {@class = "dropdown-list"})
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Tstamp, new { @class = "label" })</td>
+            <td>@Html.TextBoxFor(model => model.Tstamp, new { @class = "textbox" })</td>
+        </tr>
 </table>
 
     <input type="submit" value="Update" />

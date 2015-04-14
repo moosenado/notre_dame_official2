@@ -12,36 +12,36 @@
 
 <table>
     <tr>
-        <td>@Html.LabelFor(model => model.PdfTitle, new { @class = "label" })</td>
-        <td>@Html.DisplayFor(x => x.PdfTitle)</td>
+        <td>@Html.LabelFor(model => model.PdfTitle, new {@class = "label"})</td>
+        <td><a href="~/Content/uploads/@Model.PdfTitle" target="_Blank">Download Pdf</a></td>
     </tr>
-    <tr>
-        <td>@Html.LabelFor(model => model.PdfUrl, new { @class = "label" })</td>
+    @*<tr>
+        <td>@Html.LabelFor(model => model.PdfUrl, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.PdfUrl)</td>
-    </tr>
+    </tr>*@
     <tr>
-        <td>@Html.LabelFor(model => model.Category, new { @class = "label" })</td>
-        <td>@Html.DisplayFor(x => x.Category)</td>
+        <td>@Html.LabelFor(model => model.Category, new {@class = "label"})</td>
+        <td>x.Category</td>
     </tr>
-    <tr>
-        <td>@Html.LabelFor(model => model.Image, new { @class = "label" })</td>
+    @*<tr>
+        <td>@Html.LabelFor(model => model.Image, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.Image)</td>
-    </tr>
+    </tr>*@
     <tr>
-        <td>@Html.LabelFor(model => model.Tstamp, new { @class = "label" })</td>
-        <td>@Html.DisplayFor(x => x.Tstamp)</td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(model => model.Descr, new { @class = "label" })</td>
+        <td>@Html.LabelFor(model => model.Descr, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.Descr)</td>
     </tr>
     <tr>
-        <td>@Html.LabelFor(model => model.Lang, new { @class = "label" })</td>
+        <td>@Html.LabelFor(model => model.Lang, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.Lang)</td>
     </tr>
     <tr>
-        <td>@Html.LabelFor(model => model.Department, new { @class = "label" })</td>
+        <td>@Html.LabelFor(model => model.Department, new {@class = "label"})</td>
         <td>@Html.DisplayFor(x => x.Department)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Tstamp, new {@class = "label"})</td>
+        <td>@Html.DisplayFor(x => x.Tstamp)</td>
     </tr>
 </table>
 

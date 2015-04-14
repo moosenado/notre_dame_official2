@@ -39,9 +39,10 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Health Card#*")]
         [Required(ErrorMessage = "Please enter your health card number")]
+        [RegularExpression(@"\d\d\d\d\d\d\d\d\d\d\w\w", ErrorMessage = "Please enter a valid email")]
         [StringLength(12)]
         public string HealthNum { get; set; }
-
+        
         [DisplayName("Preferred Appointment Date*")]
         [Required(ErrorMessage = "Please choose an date")]
         [DataType(DataType.Date)]
@@ -62,10 +63,5 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("Additional Information*")]
         [StringLength(300)]
         public string AdditionalInfo { get; set; }
-
-        //[DisplayName("TSTAMP*")]
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
-        //public DateTime Tstamp { get; set; }
     } 
 }

@@ -28,6 +28,7 @@
                     <td>@x.HealthNum</td>
                     <td>@x.BookDate</td>
                     <td>@x.BookTime</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = x.id }, new { @class = "buttonstyle" })</td>
                 </tr>
             }
         </tbody>
