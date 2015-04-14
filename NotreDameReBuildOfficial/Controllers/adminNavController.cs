@@ -75,15 +75,6 @@ namespace NotreDameReBuildOfficial.Controllers
 
         public ActionResult popNav()
         {
-            //List<admin_navigation> nav =(List<admin_navigation>)objNav.getallNav();
-
-            //ViewBag.
-
-            //foreach(var x in nav)
-            //{
-            //    var SubNav = objNav.getallNavByID(x.id);
-
-            //}
 
             var nav = objNav.getAdminNav();
 

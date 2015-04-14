@@ -76,6 +76,16 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
+        public ActionResult popNav()
+        {
+
+            var nav = objNav.getpublicNav();
+
+
+            return PartialView(nav);
+        }
+
+
 
     }
 }
