@@ -114,12 +114,12 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertsubNavigation(subNavigation instance);
     partial void UpdatesubNavigation(subNavigation instance);
     partial void DeletesubNavigation(subNavigation instance);
-    partial void Insertadmin_navigation(admin_navigation instance);
-    partial void Updateadmin_navigation(admin_navigation instance);
-    partial void Deleteadmin_navigation(admin_navigation instance);
     partial void Insertadmin_subNavigation(admin_subNavigation instance);
     partial void Updateadmin_subNavigation(admin_subNavigation instance);
     partial void Deleteadmin_subNavigation(admin_subNavigation instance);
+    partial void Insertadmin_navigation(admin_navigation instance);
+    partial void Updateadmin_navigation(admin_navigation instance);
+    partial void Deleteadmin_navigation(admin_navigation instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -400,19 +400,19 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<admin_navigation> admin_navigations
-		{
-			get
-			{
-				return this.GetTable<admin_navigation>();
-			}
-		}
-		
 		public System.Data.Linq.Table<admin_subNavigation> admin_subNavigations
 		{
 			get
 			{
 				return this.GetTable<admin_subNavigation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<admin_navigation> admin_navigations
+		{
+			get
+			{
+				return this.GetTable<admin_navigation>();
 			}
 		}
 	}
@@ -7082,140 +7082,6 @@ namespace NotreDameReBuildOfficial.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.admin_navigation")]
-	public partial class admin_navigation : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _title;
-		
-		private string _controller;
-		
-		private string _pageView;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OntitleChanging(string value);
-    partial void OntitleChanged();
-    partial void OncontrollerChanging(string value);
-    partial void OncontrollerChanged();
-    partial void OnpageViewChanging(string value);
-    partial void OnpageViewChanged();
-    #endregion
-		
-		public admin_navigation()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string title
-		{
-			get
-			{
-				return this._title;
-			}
-			set
-			{
-				if ((this._title != value))
-				{
-					this.OntitleChanging(value);
-					this.SendPropertyChanging();
-					this._title = value;
-					this.SendPropertyChanged("title");
-					this.OntitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_controller", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string controller
-		{
-			get
-			{
-				return this._controller;
-			}
-			set
-			{
-				if ((this._controller != value))
-				{
-					this.OncontrollerChanging(value);
-					this.SendPropertyChanging();
-					this._controller = value;
-					this.SendPropertyChanged("controller");
-					this.OncontrollerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pageView", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string pageView
-		{
-			get
-			{
-				return this._pageView;
-			}
-			set
-			{
-				if ((this._pageView != value))
-				{
-					this.OnpageViewChanging(value);
-					this.SendPropertyChanging();
-					this._pageView = value;
-					this.SendPropertyChanged("pageView");
-					this.OnpageViewChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.admin_subNavigation")]
 	public partial class admin_subNavigation : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -7349,6 +7215,164 @@ namespace NotreDameReBuildOfficial.Models
 					this._pageView = value;
 					this.SendPropertyChanged("pageView");
 					this.OnpageViewChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.admin_navigation")]
+	public partial class admin_navigation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _title;
+		
+		private string _controller;
+		
+		private string _pageView;
+		
+		private string _icon;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
+    partial void OncontrollerChanging(string value);
+    partial void OncontrollerChanged();
+    partial void OnpageViewChanging(string value);
+    partial void OnpageViewChanged();
+    partial void OniconChanging(string value);
+    partial void OniconChanged();
+    #endregion
+		
+		public admin_navigation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_title", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string title
+		{
+			get
+			{
+				return this._title;
+			}
+			set
+			{
+				if ((this._title != value))
+				{
+					this.OntitleChanging(value);
+					this.SendPropertyChanging();
+					this._title = value;
+					this.SendPropertyChanged("title");
+					this.OntitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_controller", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string controller
+		{
+			get
+			{
+				return this._controller;
+			}
+			set
+			{
+				if ((this._controller != value))
+				{
+					this.OncontrollerChanging(value);
+					this.SendPropertyChanging();
+					this._controller = value;
+					this.SendPropertyChanged("controller");
+					this.OncontrollerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pageView", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string pageView
+		{
+			get
+			{
+				return this._pageView;
+			}
+			set
+			{
+				if ((this._pageView != value))
+				{
+					this.OnpageViewChanging(value);
+					this.SendPropertyChanging();
+					this._pageView = value;
+					this.SendPropertyChanged("pageView");
+					this.OnpageViewChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_icon", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string icon
+		{
+			get
+			{
+				return this._icon;
+			}
+			set
+			{
+				if ((this._icon != value))
+				{
+					this.OniconChanging(value);
+					this.SendPropertyChanging();
+					this._icon = value;
+					this.SendPropertyChanged("icon");
+					this.OniconChanged();
 				}
 			}
 		}
