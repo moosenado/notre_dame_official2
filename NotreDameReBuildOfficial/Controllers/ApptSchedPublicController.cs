@@ -19,17 +19,14 @@ namespace NotreDameReBuildOfficial.Controllers
         [HttpPost]
         public ActionResult createAppt(Appt_Book appt)
         {
-
             if (ModelState.IsValid)
             {
-
-
                 try
                 {
                     appt.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                     objApptSched.insertAppt(appt);
                     //return RedirectToRoute("Home");
-                    return RedirectToAction("createAppt");
+                    return RedirectToAction("Thanks");
                 }
                 catch
                 {
@@ -37,6 +34,43 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
             }
             return View();
+        }
+
+        //public ActionResult Thanks()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View();
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //}
+
+        public ActionResult Thanks()
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("createAppt");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Thanks(ApptSchedValidation valid)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", valid);
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }

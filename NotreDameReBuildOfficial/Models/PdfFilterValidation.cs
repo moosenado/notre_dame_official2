@@ -19,10 +19,10 @@ namespace NotreDameReBuildOfficial.Models
     {
         //[DisplayName("Title*")]
         //[Required(ErrorMessage = "Please enter the PDF title")]
-        [StringLength(100)]
+        [StringLength(300)]
         public string PdfTitle { get; set; } //auto properties
 
-        [DisplayName("Url*")]
+        //[DisplayName("Url*")]
         //[Required(ErrorMessage = "Please enter path to file")]
         public string PdfUrl { get; set; }
 
@@ -30,7 +30,7 @@ namespace NotreDameReBuildOfficial.Models
         [Required(ErrorMessage = "Please enter a category")]
         public string Category { get; set; }
 
-        [DisplayName("Image*")]
+        //[DisplayName("Image*")]
         public string Image { get; set; }
 
         [DisplayName("Description*")]

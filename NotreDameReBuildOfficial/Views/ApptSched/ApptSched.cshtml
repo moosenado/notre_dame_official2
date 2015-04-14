@@ -6,14 +6,30 @@
         @Scripts.Render("~/Scripts/cms-menu.js");    
 }
 
-<h2>ApptSched @DateTime.Now</h2>
-
-@*renders links to methods located on ApptSchedController*@
-<p>@Html.ActionLink("Insert New Record", "createAppt", "ApptSched")</p> 
-
-<ul>
-    @foreach (var x in Model)
-    {
-        <li>@Html.ActionLink(x.Fname, "Details", new { id = x.id })</li> //test
-    }
-</ul>
+    <h2>Apptointments</h2>
+<br/>
+    @*renders links to methods located on ApptSchedController*@
+    <p>@Html.ActionLink("New Appointment", "createAppt", "ApptSched", new { @class = "buttonstyle" })</p>
+<br/>
+    <table>
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Health Number</th>
+                <th>Book Date</th>
+                <th>Book Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(x.Fname + " " + x.Lname, "Details", new { id = x.id, @class = "link" })</td>
+                    <td>@x.HealthNum</td>
+                    <td>@x.BookDate</td>
+                    <td>@x.BookTime</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = x.id }, new { @class = "buttonstyle" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
