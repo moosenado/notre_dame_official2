@@ -446,7 +446,7 @@ table tr:nth-child(odd) td {
 
 #navigation ul li ul {
    	position: absolute;
-  	top: 62px;
+  	top: 60px;
   	left: 0;
   	width: 200px;
   	display: none;
@@ -456,9 +456,6 @@ table tr:nth-child(odd) td {
 	background: #f9f9f9;
     text-align: left;
     border-bottom: 2px solid #f7900f;
-    -webkit-box-shadow: 10px 10px 36px -12px rgba(0,0,0,0.44);
-    -moz-box-shadow: 10px 10px 36px -12px rgba(0,0,0,0.44);
-    box-shadow: 10px 10px 36px -12px rgba(0,0,0,0.44);
 }
 
 #navigation ul li ul li {
