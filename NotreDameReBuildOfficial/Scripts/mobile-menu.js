@@ -25,7 +25,7 @@
         if ($("#navigation ul li").css("position") === "relative") {
             return false;
         }
-        $("#navigation ul li").next('ul').slideToggle();
+        $("#navigation ul li a").next('ul').slideToggle();
     });
 
 });
