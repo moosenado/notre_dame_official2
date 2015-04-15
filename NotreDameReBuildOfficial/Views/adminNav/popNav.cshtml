@@ -1,0 +1,60 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.populateNav>
+
+@{
+    ViewBag.Title = "popNav";
+}
+
+@{
+    List<string> main = new List<string>();
+    
+    foreach (var x in Model)
+    {
+        main.Add(x.title);   
+    }
+
+    IEnumerable<string> mainNav = main.Select(m => m).Distinct();
+    
+   
+}
+
+@foreach (var n in mainNav)
+{
+    string title = @n.ToString();
+
+
+    <div class="dropdown">
+        <a class="left-mnu-itm" href="">
+            <i class="fa fa-sort-desc fa-lg"></i>@title.ToString()
+        </a>
+        
+
+
+        <div class="secondary">
+
+            @foreach (var x in Model)
+            {
+
+                if (@x.title.Equals(title.ToString()))
+                {
+                    if (@x.subNav == null)
+                    { continue; }
+
+                    <a class="secondary-pages" href="/@x.subNav.controller/@x.subNav.pageView">@x.subNav.title.ToString()</a>
+
+
+                }
+            }
+        </div>
+    </div>
+}
+
+@*<div class="dropdown">
+    <a class="left-mnu-itm" href="">
+        <i class="fa fa-sort-desc fa-lg"></i>About Notre-Dame
+    </a>
+    <div class="secondary">
+        <a class="secondary-pages" href="">Mission, Vision, Values</a>
+        <a class="secondary-pages" href="">History</a>
+        <a class="secondary-pages" href="">News</a>
+    </div>
+</div>*@

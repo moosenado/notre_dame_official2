@@ -1,54 +1,57 @@
-﻿@*@model NotreDameReBuildOfficial.Models.PDF_Filter*@
-@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.PDF_Filter>
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Details ";
 }
 
-<h2>Details</h2>
 
-@*<ul>
-    @foreach (var x in Model)
-    {
-        <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
-        <li>@Html.ActionLink(x.Descr, x.PdfUrl, "Details", new {Category = x.Category})</li>
-    }
-</ul>*@
-@foreach (var x in Model)
+@if (Model.Any())
 {
-    <table>
-        <tr>
-            <td>@Html.ActionLink(x.PdfTitle, "Details", new { Category = x.Category })</td>
-            <td>@Html.DisplayFor(modelx => x.PdfUrl)</td>
-            <td>@Html.DisplayFor(modelx => x.Descr)</td>
-            <td>@Html.DisplayFor(modelx => x.Category)</td>
-        </tr>
-    </table>
+    <h1>@Model.ToList()[0].Category</h1>
 }
 
-@*<h3>@Html.DisplayFor(modelx => x.PdfTitle)</h3>*@
-@*@foreach (var x in Model)
-{
 
+
+        @*@foreach (var x in Model)
     {
-        string link = x.PdfTitle;
-        string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
-        string tag = "<a href=" + path + ">" + link + "</a>";
-        @Html.Raw(tag)
-    }
+            <table>
+                <tr>
+                    <td>@Html.ActionLink(x.PdfTitle, "Details", new { Category = x.Category })</td>
+                    <td>@Html.DisplayFor(modelx => x.PdfUrl)</td>
+                    <td>@Html.DisplayFor(modelx => x.Descr)</td>
+                    <td>@Html.DisplayFor(modelx => x.Category)</td>
+                </tr>
+            </table>
+    }*@
 
-}*@
+        @*<h3>@Html.DisplayFor(modelx => x.PdfTitle)</h3>*@
+        @*@foreach (var x in Model)
+            {
 
-<ul>
-    @foreach (var file in Model)
-    {
-        var name = file.PdfTitle;
-        var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
+                {
+                    string link = x.PdfTitle;
+                    string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
+                    string tag = "<a href=" + path + ">" + link + "</a>";
+                    @Html.Raw(tag)
+                }
 
-        <li>
-            <a href="@link">@name</a>
-        </li>
-    }
-</ul>
+            }*@
+
+        <ul>
+            @foreach (var file in Model)
+        {
+            var name = file.PdfTitle;
+            var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
+
+                <li>
+                    <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
+                </li>
+        }
+        </ul>
+
+        @*<p>
+            View Pdf:<a href="~/Content/uploads/@Model.PdfTitle" target="_Blank">
+                <div style="font-size: 80px;"><i class="fa fa-file-pdf-o"></i></div>
+            </a>*@
 
 

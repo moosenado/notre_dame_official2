@@ -17,6 +17,9 @@
             if ($('input[type=checkbox]').is(':checked')) {
                 $("#fbname").attr("value", "Anonymous");
                 $("#fbemail").attr("value", "anonymous@ndh.on.ca");
+            } else {
+                $("#fbname").attr("value", "");
+                $("#fbemail").attr("value", "");
             }
 
         });

@@ -15,21 +15,19 @@
     @Html.LabelFor(model => model.title)
     <br />
     @Html.TextBoxFor(model => model.title)
-    @Html.ValidationMessageFor(model => model.title, "*")
 
     <br /><br />
 
     @Html.LabelFor(model => model.date)
     <br />
     @Html.TextBoxFor(model => model.date)
-    @Html.ValidationMessageFor(model => model.date, "*")
+    @Html.ValidationMessageFor(model => model.date)
 
     <br /><br />
 
     @Html.LabelFor(model => model.author)
     <br />
     @Html.TextBoxFor(model => model.author)
-    @Html.ValidationMessageFor(model => model.author, "*")
 
     <br /><br />
 
@@ -45,7 +43,6 @@
     @Html.LabelFor(model => model.article)
     <br />
     @Html.TextAreaFor(model => model.article, new { @class = "textarea" })
-    @Html.ValidationMessageFor(model => model.article, "*")
 
     <br /><br />
 
@@ -53,3 +50,9 @@
 }
 
 <p>@Html.ActionLink("Back", "News_Details/" + Model.Id, "CMSHome", new { @class = "link" })</p>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

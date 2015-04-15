@@ -1,0 +1,32 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.admin_subNavigation>
+@{
+    ViewBag.Title = "navInfo";
+
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Admin Navigation</h1>
+<h2>Sub Pages</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Pages</th>
+        </tr>
+    </thead>
+
+    @foreach (var snav in Model)
+    {
+        <tr>
+            <td>@snav.title</td>
+            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "adminSubNavUpdate", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "updateJob", new { id = snav.id })}</td>
+        </tr>
+    }
+
+</table>
+
+
+<a href='@Url.Action("insertSubNav", "adminNav")'>
+    <span class="buttonstyle">+ Add Sub Navigation</span>
+</a>

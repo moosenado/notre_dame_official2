@@ -59,6 +59,19 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        public ActionResult volInfo(int id)
+        {
+            var job = objInfo.getVolInfoByID(id);
+            if (job == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(job);
+            }
+        }
+
         public ActionResult InsertJob()
         {
             return View();

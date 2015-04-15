@@ -7,7 +7,7 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>createPdf</h2>
+<h2>Add a new PDF</h2>
 
 @using (Html.BeginForm("createPdf", "cmsPdfFilter", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -66,7 +66,7 @@
         new SelectListItem() {Text = "Other"},}, new { @class = "dropdown-list" })
 
     <label for="file" class="label">Upload PDF</label>
-    <input type="file" name="file" class="textbox" id="file" />
+    <input type="file" name="file" class="textbox" id="file" required="true" />
     <br />
     <input type="submit" value="Insert" class="buttonstyle" />
 }

@@ -1,0 +1,31 @@
+﻿@model NotreDameReBuildOfficial.Models.navValidate
+
+@{
+    ViewBag.Title = "insertsubNav";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Navigation</h1>
+<h2>Create a Sub Navigation</h2>
+
+@using (@Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.title)</td>
+            <td>@Html.TextBoxFor(Model => Model.title)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.controller)</td>
+            <td>@Html.TextBoxFor(Model => Model.controller)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.pageView)</td>
+            <td>@Html.TextBoxFor(Model => Model.pageView)<span style="color:red">*</span></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Add Navigation" class="buttonstyle" />
+
+}

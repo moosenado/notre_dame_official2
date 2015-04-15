@@ -22,10 +22,10 @@
 
 <h3>Add Patient</h3>
 
-@Html.ValidationSummary()
-
 @using (Html.BeginForm("ERwait_AddPatient", "cmsERwait", FormMethod.Post, new { id = "submitPatient" }))
 {
+    @Html.ValidationSummary()
+
     @Html.LabelFor(model => model.fname)
     <br />
     @Html.TextBoxFor(model => model.fname)
@@ -37,6 +37,7 @@
     @Html.LabelFor(model => model.date)
     <br />
     @Html.TextBoxFor(model => model.date)
+    @Html.ValidationMessageFor(model => model.date)
     <br />
     @Html.LabelFor(model => model.er_reason)
     <br />

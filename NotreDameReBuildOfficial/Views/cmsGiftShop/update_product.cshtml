@@ -25,21 +25,19 @@
     @Html.LabelFor(model => model.name)
     <br />
     @Html.TextBoxFor(model => model.name)
-    @Html.ValidationMessageFor(model => model.name, "*")
 
     <br /><br />
 
     @Html.LabelFor(model => model.price)
     <br />
     @Html.TextBoxFor(model => model.price)
-    @Html.ValidationMessageFor(model => model.price, "*")
+    @Html.ValidationMessageFor(model => model.price)
 
     <br /><br />
 
     @Html.LabelFor(model => model.description)
     <br />
     @Html.TextAreaFor(model => model.description, new { @class = "textarea" })
-    @Html.ValidationMessageFor(model => model.description, "*")
 
     <br /><br />
 
@@ -59,3 +57,9 @@
 }
 
 <p>@Html.ActionLink("Back", "products", "cmsGiftShop", new { @class = "link" })</p>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

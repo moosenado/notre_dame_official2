@@ -1,0 +1,41 @@
+﻿@model NotreDameReBuildOfficial.Models.admin_navigation
+
+@{
+    ViewBag.Title = "adminNavUpdate";
+
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Admin Navigation</h1>
+<h2>Update Admin Navigation</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        @Html.HiddenFor(x => x.id)
+        <tr>
+            <td>@Html.LabelFor(x => x.title)</td>
+            <td>@Html.TextBoxFor(x => x.title)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.controller)</td>
+            <td>@Html.TextBoxFor(x => x.controller)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.pageView)</td>
+            <td>@Html.TextBoxFor(model => Model.pageView)<span style="color:red">*</span></td>
+        </tr>
+     </table>
+
+    <input type="submit" name="submit" value="Update" class="buttonstyle" />
+
+    <a href='@Url.Action("navList", "adminNav", new { jobId = Model.id })'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

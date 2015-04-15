@@ -15,19 +15,20 @@ namespace NotreDameReBuildOfficial.Models
             return allVol;
         }
 
-        //public volunteer_info getVolByID(int _id)
-        //{
-        //    var allVol = objLinq.volunteer_infos.SingleOrDefault(x => x.jobID == _id);
-        //    return allVol;
-        //}
-
         public IQueryable<volunteer_info> getVolByID(int id)
         {
-            var allCartProducts = (from x in objLinq.volunteer_infos
+            var allvol = (from x in objLinq.volunteer_infos
                                    where x.jobID == id
                                    select x);
-            return allCartProducts;
+            return allvol;
         }
+
+        public volunteer_info getVolInfoByID(int _id)
+        {
+            var selectVol = objLinq.volunteer_infos.SingleOrDefault(x => x.id == _id);
+            return selectVol;
+        }
+
 
         public volunteerJob getJobByID(int _id)
         {

@@ -18,141 +18,43 @@
 </head>
 <body>
 
-    @* ----- HEADER ----- *@
+    <div id="container">
 
-    <div id="cms-head-container">
+        @* ----- HEADER ----- *@
 
-        <a id="ndh-title" href="~/CMSHome/Index">
-            <img id="cross" src="~/Content/images/ndh-cross.png" />
-            <div id="nd">Notre-Dame</div>
-        </a>
+        <div id="cms-head-container">
 
-        <div id="cms-top-nav">
-            <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
-        </div>
-
-
-        <div id="sign-out">
-            <a href="/AccountNotreDame/logOff">Sign Out</a>
-        </div>
-
-        <div id="user">
-            <p>Welcome, Jane Doe</p>
-        </div>
-
-    </div>
-
-    @* ----- LEFT MENU -----*@
-
-    <div class="left-menu">
-
-        <div id="cms-left-nav">
-
-            @* About NDH *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>About Notre-Dame
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Mission, Vision, Values</a>
-                    <a class="secondary-pages" href="">History</a>
-                    <a class="secondary-pages" href="">News</a>
-                </div>
-            </div>
-
-            @* Patients & Visitors *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Patients & Visitors
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Visiting Hours</a>
-                    <a class="secondary-pages" href="">Parking & Directions</a>
-                    <a class="secondary-pages" href="">Patient Information</a>
-                    <a class="secondary-pages" href="">Schedule an Appointment</a>
-                    <a class="secondary-pages" href="/cmsGiftShop/products">Gift Shop</a>
-                </div>
-            </div>
-
-            @* Departments & Services *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Departments & Services
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Emergency Department</a>
-                    <a class="secondary-pages" href="">Pharmacy & Lab</a>
-                    <a class="secondary-pages" href="">Nutrition & Food</a>
-                    <a class="secondary-pages" href="">Long Term Care</a>
-                    <a class="secondary-pages" href="">Acute Care</a>
-                </div>
-            </div>
-
-            @* Join Our Team *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Join Our Team
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="/cmsJobPosting/JobPosting">Job Opportunities</a>
-                    <a class="secondary-pages" href="">Volunteer Opportunites</a>
-                    <a class="secondary-pages" href="">Internships & Placements</a>
-                </div>
-            </div>
-
-            @* Contact *@
-            <div class="dropdown">
-                <a class="left-mnu-itm" href="">
-                    <i class="fa fa-sort-desc fa-lg"></i>Contact
-                </a>
-                <div class="secondary">
-                    <a class="secondary-pages" href="">Staff Directory</a>
-                </div>
-           </div>
-
-           @* Users *@
-           <a class="left-mnu-itm" href="/CMSUser/allUsers">
-           <i class="fa fa-users fa-lg"></i>Users
-           </a>
-
-           @* Weekly Poll *@
-           <a class="left-mnu-itm" href="/CMSPoll/polls">
-               <i class="fa fa-bar-chart fa-lg"></i>Weekly Poll
-           </a>
-
-           @* News *@
-           <a class="left-mnu-itm" href="/CMSHome/News">
-               <i class="fa fa-newspaper-o cms fa-lg"></i>News
-           </a>
-
-           @* Events *@
-           <a class="left-mnu-itm" href="~/cmsEventsListing/Manage">
-               <i class="fa fa-calendar cms fa-lg"></i>Events
-           </a>
-
-           @* Donations *@
-            <a class="left-mnu-itm" href="~/cmsDonation/Manage">
-                <i class="fa fa-money fa-lg"></i>Donations
+            <a id="ndh-title" href="~/CMSHome/Index">
+                <img id="cross" src="~/Content/images/ndh-cross.png" />
+                <div id="nd">Notre-Dame</div>
             </a>
 
-           @* ER Wait Time *@
-           <a class="left-mnu-itm" href="/cmsERwait/ERwait_Patients">
-               <i class="fa fa-heartbeat fa-lg"></i>ER Wait Time
-           </a>
+            <div id="cms-top-nav">
+                <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
+            </div>
 
-           @* Search *@
-           <a class="left-mnu-itm" href="">
-               <i class="fa fa-search fa-lg"></i>Search
-           </a>
 
-           @* Feedback *@
-            <a class="left-mnu-itm" href="~/cmsFeedback/Manage">
-                <i class="fa fa-comment-o fa-lg"></i>Feedback
-            </a>
-            
-        </div>@* -- end cms-left-mnu  *@
+            <div id="sign-out">
+                <a href="/AccountNotreDame/logOff">Sign Out</a>
+            </div>
 
-    </div>@* -- end left-nav -- *@
+            <div id="user">
+                <p>Welcome, Jane Doe</p>
+            </div>
+
+        </div>
+
+        @* ----- LEFT MENU -----*@
+
+        <div class="left-menu">
+
+            <div id="cms-left-nav">
+
+                @{Html.RenderAction("popNav", "adminNav");}
+
+            </div>
+
+        </div>
 
         @* ----- BODY -----*@
 
@@ -164,9 +66,68 @@
 
         @* ----- FOOTER -----*@
 
-        <div id="cms-footer">
+         @*<div id="cms-footer">
             <p id="cms-copyright">&copy; 2015 Notre-Dame Hospital</p>
+            </div>*@
+        <div id="footer_container">
+
+            <footer id="footer">
+
+                <div id="building"><img src="~/Content/images/hospitalimgnew.png" title="Notre-Dame Hospital" alt="Notre-Dame Hospital Image" id="footerbg" /></div>
+
+                <div id="partners">
+
+                    @* Town of Hearst *@
+                    <div class="partner">
+                        <a href="http://www.hearst.ca/en/index.aspx" target="_blank"><img src="~/Content/images/town-of-hearst.png" title="Town of Hearst" alt="Town of Hearst Logo" /></a>
+                    </div>
+
+                    @* College Boreal *@
+                    <div class="partner">
+                        <a href="http://www.collegeboreal.ca/accueil" target="_blank"><img src="~/Content/images/college-boreal.png" title="Colleg Boreal" alt="College Boreal Logo" /></a>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    @* Northern Ontario Schoo of Medicine *@
+                    <div class="partner">
+                        <a href="http://www.nosm.ca/" target="_blank"><img src="~/Content/images/nosm.png" title="Northern Ontario School of Medicine" alt="Northern Ontario School of Medicine Logo" /></a>
+                    </div>
+
+                    @* University of Hearst *@
+                    <div class="partner">
+                        <a href="http://www.uhearst.ca/english" target="_blank"><img src="~/Content/images/uhearst.png" title="University of Hearst" alt="University of Hearst Logo" /></a>
+                    </div>
+
+                </div>
+
+                <div id="footer_links">
+
+                    <ul>
+                        <li><a href="#" class="link">Accessibility</a></li>
+                        <li><a href="#" class="link">Privacy Policy</a></li>
+                    </ul>
+
+                    <ul id="footer_social">
+                        <li><a href="#"><img src="~/Content/images/facebook.png" title="Facebook" alt="Facebook link" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/twitter.png" title="Twitter" alt="Twitter Link" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/youtube.png" title="Youtube" alt="Youtube Link" /></a></li>
+                    </ul>
+
+
+                    <p>1405 Edward Street, Hearst, Ontario</p>
+                    <p>Ph: (705) 362-4291</p>
+
+                    <div id="copyright"><p>&copy2015 Notre Dame Hospital</p></div>
+
+
+                </div>
+
+            </footer>
+
         </div>
 
+
+    </div>
 </body>
 </html>

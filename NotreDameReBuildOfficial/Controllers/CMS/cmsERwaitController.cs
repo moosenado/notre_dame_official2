@@ -66,9 +66,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         
         //add patient straight to ER or to the wait room
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
-        {
-            if (ModelState.IsValid)
-            {
+        {       
                 if (form_command == "waitlist_add")
                 {
                     try
@@ -101,7 +99,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         ViewBag.Message = "Error:" + ex.Message.ToString();
                     }
                 }
-                else if (form_command == "patient_add")
+                if(form_command == "patient_add")
                 {
                     try
                     {
@@ -119,18 +117,9 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                         ViewBag.Message = "Error:" + ex.Message.ToString();
                     }
                 }
-                else
-                {
-                   
-                    return View();
-                }
-                
-                
-              
-            }
+               
             ModelState.Clear();
-            return View();
-            
+            return View();         
         }
 
         public ActionResult ERwait_PatientHistory()

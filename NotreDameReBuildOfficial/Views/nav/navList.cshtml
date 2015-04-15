@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.navigation>
+@{
+    ViewBag.Title = "navList";
+
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h1>Public Navigation</h1>
+<h2>Created Navigation List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Pages</th>
+        </tr>
+    </thead>
+
+    @foreach (var nav in Model)
+    {
+        <tr>
+            <td>@nav.title</td>
+            <td>@Html.ActionLink("View", "navInfo", new { id = nav.id }) /@Html.ActionLink("Update", "updateJob", new { id = nav.id })</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<br />
+<a href='@Url.Action("insertNav", "nav")'>
+    <span class="buttonstyle">+ Add Navigation</span>
+</a>
