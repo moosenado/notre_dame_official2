@@ -347,12 +347,20 @@
       <Column Name="resume" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="akshay.createPage" Member="createPages">
+    <Type Name="createPage">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subPageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pageContent" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="akshay.navigation" Member="navigations">
     <Type Name="navigation">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="pageView" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deletable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="akshay.subNavigation" Member="subNavigations">
@@ -362,15 +370,7 @@
       <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="pageView" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="akshay.admin_subNavigation" Member="admin_subNavigations">
-    <Type Name="admin_subNavigation">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="navID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="pageView" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deletable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="akshay.admin_navigation" Member="admin_navigations">
@@ -380,13 +380,17 @@
       <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="pageView" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="icon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deletable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="akshay.createPage" Member="createPages">
-    <Type Name="createPage">
+  <Table Name="akshay.admin_subNavigation" Member="admin_subNavigations">
+    <Type Name="admin_subNavigation">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="subPageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="pageContent" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="navID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pageView" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deletable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

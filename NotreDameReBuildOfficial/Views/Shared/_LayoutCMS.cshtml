@@ -18,41 +18,43 @@
 </head>
 <body>
 
-    @* ----- HEADER ----- *@
+    <div id="container">
 
-    <div id="cms-head-container">
+        @* ----- HEADER ----- *@
 
-        <a id="ndh-title" href="~/CMSHome/Index">
-            <img id="cross" src="~/Content/images/ndh-cross.png" />
-            <div id="nd">Notre-Dame</div>
-        </a>
+        <div id="cms-head-container">
 
-        <div id="cms-top-nav">
-            <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
-        </div>
+            <a id="ndh-title" href="~/CMSHome/Index">
+                <img id="cross" src="~/Content/images/ndh-cross.png" />
+                <div id="nd">Notre-Dame</div>
+            </a>
+
+            <div id="cms-top-nav">
+                <a href='@Url.Action("Index", "Home")' target='_blank'><i class="fa fa-external-link"></i>Visit Site</a>
+            </div>
 
 
-        <div id="sign-out">
-            <a href="/AccountNotreDame/logOff">Sign Out</a>
-        </div>
+            <div id="sign-out">
+                <a href="/AccountNotreDame/logOff">Sign Out</a>
+            </div>
 
-        <div id="user">
-            <p>Welcome, Jane Doe</p>
-        </div>
-
-    </div>
-
-    @* ----- LEFT MENU -----*@
-
-    <div class="left-menu">
-
-        <div id="cms-left-nav">
-
-            @{Html.RenderAction("popNav", "adminNav");}
+            <div id="user">
+                <p>Welcome, Jane Doe</p>
+            </div>
 
         </div>
 
-    </div>
+        @* ----- LEFT MENU -----*@
+
+        <div class="left-menu">
+
+            <div id="cms-left-nav">
+
+                @{Html.RenderAction("popNav", "adminNav");}
+
+            </div>
+
+        </div>
 
         @* ----- BODY -----*@
 
@@ -64,9 +66,68 @@
 
         @* ----- FOOTER -----*@
 
-        <div id="cms-footer">
+         @*<div id="cms-footer">
             <p id="cms-copyright">&copy; 2015 Notre-Dame Hospital</p>
+            </div>*@
+        <div id="footer_container">
+
+            <footer id="footer">
+
+                <div id="building"><img src="~/Content/images/hospitalimgnew.png" title="Notre-Dame Hospital" alt="Notre-Dame Hospital Image" id="footerbg" /></div>
+
+                <div id="partners">
+
+                    @* Town of Hearst *@
+                    <div class="partner">
+                        <a href="http://www.hearst.ca/en/index.aspx" target="_blank"><img src="~/Content/images/town-of-hearst.png" title="Town of Hearst" alt="Town of Hearst Logo" /></a>
+                    </div>
+
+                    @* College Boreal *@
+                    <div class="partner">
+                        <a href="http://www.collegeboreal.ca/accueil" target="_blank"><img src="~/Content/images/college-boreal.png" title="Colleg Boreal" alt="College Boreal Logo" /></a>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    @* Northern Ontario Schoo of Medicine *@
+                    <div class="partner">
+                        <a href="http://www.nosm.ca/" target="_blank"><img src="~/Content/images/nosm.png" title="Northern Ontario School of Medicine" alt="Northern Ontario School of Medicine Logo" /></a>
+                    </div>
+
+                    @* University of Hearst *@
+                    <div class="partner">
+                        <a href="http://www.uhearst.ca/english" target="_blank"><img src="~/Content/images/uhearst.png" title="University of Hearst" alt="University of Hearst Logo" /></a>
+                    </div>
+
+                </div>
+
+                <div id="footer_links">
+
+                    <ul>
+                        <li><a href="#" class="link">Accessibility</a></li>
+                        <li><a href="#" class="link">Privacy Policy</a></li>
+                    </ul>
+
+                    <ul id="footer_social">
+                        <li><a href="#"><img src="~/Content/images/facebook.png" title="Facebook" alt="Facebook link" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/twitter.png" title="Twitter" alt="Twitter Link" /></a></li>
+                        <li><a href="#"><img src="~/Content/images/youtube.png" title="Youtube" alt="Youtube Link" /></a></li>
+                    </ul>
+
+
+                    <p>1405 Edward Street, Hearst, Ontario</p>
+                    <p>Ph: (705) 362-4291</p>
+
+                    <div id="copyright"><p>&copy2015 Notre Dame Hospital</p></div>
+
+
+                </div>
+
+            </footer>
+
         </div>
 
+
+    </div>
 </body>
 </html>
