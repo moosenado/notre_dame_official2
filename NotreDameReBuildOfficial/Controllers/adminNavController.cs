@@ -84,5 +84,83 @@ namespace NotreDameReBuildOfficial.Controllers
             return PartialView(nav);
         }
 
+        public ActionResult adminNavUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getadminNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminNavUpdate(int id, admin_navigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.adminNavUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        public ActionResult adminSubNavUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getadminSubNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminSubNavUpdate(int id, admin_subNavigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.adminSubNavUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+
+        public ActionResult NotFound() //Not found Controller
+        {
+            return View();
+        }
+
+
     }
 }
