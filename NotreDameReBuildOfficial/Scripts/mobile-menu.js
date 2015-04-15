@@ -21,11 +21,17 @@
 
     //open secondary links on mobile - if ul li position is relative (on desktop) do not run this function
     //if ul li position is any other (mobile(initial)) allow accordion function to occur
-    jQuery("#navigation ul li a").first().on("click", function (e) {
-        if ($("#navigation ul li").css("position") === "relative") {
+ 
+    if ($("#navigation ul li").css("position") === "relative") {
+        $("#navigation ul li a").first().on("click", function (e) {
             return false;
         }
-        $("#navigation ul li a").next('ul').slideToggle();
+    )
+    };
+
+        jQuery("#navigation ul li a").on("click", function (e) {
+            $(this).next('ul').slideToggle();
+        
     });
 
 });
