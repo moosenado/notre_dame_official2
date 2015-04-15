@@ -61,5 +61,10 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
+        public ActionResult page()
+        {
+            return View();
+        }
+
     }
 }

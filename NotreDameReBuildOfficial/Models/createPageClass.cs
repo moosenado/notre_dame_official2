@@ -33,6 +33,11 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        public subNavigation getpageByID(int _id)
+        {
+            var selectVol = objLinq.subNavigations.SingleOrDefault(x => x.id == _id);
+            return selectVol;
+        }
 
     }
 }

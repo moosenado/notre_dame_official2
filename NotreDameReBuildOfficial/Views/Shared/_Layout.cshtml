@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    @*@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")*@
     @Scripts.Render("~/Scripts/jquery.validate.min.js")
     @Scripts.Render("~/bundles/chart")
     @Styles.Render("~/Content/font-awesome-4.3.0/css/font-awesome.css")
@@ -90,7 +90,7 @@
 @* ----- NAVIGATION -----*@
 
         <nav id="navigation">
-            <ul>
+            <ul>    
                 @{Html.RenderAction("popNav", "nav");}
             </ul>
         </nav>

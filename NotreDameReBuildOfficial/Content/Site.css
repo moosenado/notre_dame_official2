@@ -414,6 +414,7 @@ table tr:nth-child(odd) td {
     margin: 0 auto;
     max-width: 100%;
     clear: both;
+    z-index: 999;
 }
 
 #navigation ul {
@@ -451,7 +452,7 @@ table tr:nth-child(odd) td {
   	display: none;
   	opacity: 0;
   	visibility: hidden;
-  	z-index: 101;
+  	z-index: 999;
 	background: #f9f9f9;
     text-align: left;
     border-bottom: 2px solid #f7900f;

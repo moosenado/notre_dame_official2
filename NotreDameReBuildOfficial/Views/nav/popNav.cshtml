@@ -16,28 +16,29 @@
 
 
 }
+<ul>
 
-@foreach (var n in mainNav)
-{
-    string title = @n.ToString();
-    
-    <li>
-        <a href="">@title.ToString()</a>
-        <ul>
-            @foreach (var x in Model)
-            {
+    @foreach (var n in mainNav)
+    {
+        string title = @n.ToString();
 
-                if (@x.title.Equals(title.ToString()))
+        <li>
+            <a href="#">@title.ToString()</a>
+            <ul>
+                @foreach (var x in Model)
                 {
-                    if (@x.subNav == null)
-                    { continue; }
 
-                    <li><a href="/@x.subNav.controller/@x.subNav.pageView">@x.subNav.title.ToString()</a></li>
+                    if (@x.title.Equals(title.ToString()))
+                    {
+                        if (@x.subNav == null)
+                        { continue; }
 
+                        //<li><a href="/@x.subNav.controller/@x.subNav.pageView">@x.subNav.title.ToString()</a></li>
+                        <li>@Html.ActionLink(@x.subNav.title.ToString(), @x.subNav.pageView, @x.subNav.controller, new { id = @x.subNav.id }, null)</li>
 
+                    }
                 }
-            }
-        </ul>
-    </li>
-    
-}
+            </ul>
+        </li>
+    }
+</ul>

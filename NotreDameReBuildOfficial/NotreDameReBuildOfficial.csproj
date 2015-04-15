@@ -1002,6 +1002,7 @@
     <Content Include="Views\createPage\pageList.cshtml" />
     <Content Include="Views\createPage\pageInfo.cshtml" />
     <Content Include="Views\createPage\insertsubPage.cshtml" />
+    <Content Include="Views\createPage\page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

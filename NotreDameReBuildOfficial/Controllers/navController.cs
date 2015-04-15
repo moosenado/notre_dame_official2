@@ -80,12 +80,8 @@ namespace NotreDameReBuildOfficial.Controllers
         {
 
             var nav = objNav.getpublicNav();
-
-
             return PartialView(nav);
         }
-
-
 
     }
 }
