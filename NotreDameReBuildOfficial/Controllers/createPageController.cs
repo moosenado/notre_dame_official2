@@ -61,10 +61,64 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        public ActionResult page()
+
+        public ActionResult passID(int id)
+        {
+            var nav = objPage.getallNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return RedirectToAction("pageData");
+            }
+        }
+
+        public ActionResult pageData()
         {
             return View();
         }
 
+        [HttpPost]
+        public ActionResult pageData(createPage page) 
+        {
+            if (ModelState.IsValid)
+            {
+                var pid = (int)TempData["id"];
+                page.subPageID = pid;
+                objPage.InsertData(page);
+                return RedirectToAction("pageList");
+            }
+
+            return View();
+
+        }
+
+        public ActionResult contentInfo(int id)
+        {
+
+            var nav = objPage.getallNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return RedirectToAction("page");
+            }
+
+        }
+
+        public ActionResult page()
+        {
+            var pageid = (int)TempData["id"];
+            //info.jobID = jobid;
+            var vol = objPage.getDataByID(pageid);
+
+            return View(vol);
+        }
     }
 }

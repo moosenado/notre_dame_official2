@@ -1,0 +1,27 @@
+﻿@model NotreDameReBuildOfficial.Models.createPage
+@{
+    ViewBag.Title = "pageData";
+}
+
+<h2>pageData</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+
+        <tr>
+            <td>@Html.LabelFor(Model => Model.pageContent)</td>
+            <td>@Html.TextAreaFor(Model => Model.pageContent)<span style="color:red">*</span></td>
+        </tr>
+</table>
+
+    <input type="submit" value="Add Page Data" class="buttonstyle" />
+    <a href='@Url.Action("pageList", "page")'>
+        <span class="buttonstyle">Cancel</span>
+    </a>
+}
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

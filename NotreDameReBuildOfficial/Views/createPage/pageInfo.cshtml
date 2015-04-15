@@ -7,8 +7,6 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>pageInfo</h2>
-
 <h1>Create Page</h1>
 <h2>Sub Page Information</h2>
 
@@ -23,7 +21,7 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("View", "pageInfo", new { id = snav.id }) /@Html.ActionLink("Update", "updateJob", new { id = snav.id })</td>
+            <td>@Html.ActionLink("Add Content", "passID", new { id = snav.id }) /@Html.ActionLink("Update", "updateJob", new { id = snav.id })</td>
         </tr>
     }
 
@@ -31,4 +29,4 @@
 
 
 <a href='@Url.Action("insertSubPage", "createPage")'>
-    <span class="buttonstyle">+ Add Sub Page</span>
+    <span class="buttonstyle">+ Add Sub Page</span></a>

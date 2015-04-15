@@ -120,6 +120,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void Insertadmin_navigation(admin_navigation instance);
     partial void Updateadmin_navigation(admin_navigation instance);
     partial void Deleteadmin_navigation(admin_navigation instance);
+    partial void InsertcreatePage(createPage instance);
+    partial void UpdatecreatePage(createPage instance);
+    partial void DeletecreatePage(createPage instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -413,6 +416,14 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<admin_navigation>();
+			}
+		}
+		
+		public System.Data.Linq.Table<createPage> createPages
+		{
+			get
+			{
+				return this.GetTable<createPage>();
 			}
 		}
 	}
@@ -7373,6 +7384,116 @@ namespace NotreDameReBuildOfficial.Models
 					this._icon = value;
 					this.SendPropertyChanged("icon");
 					this.OniconChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="akshay.createPage")]
+	public partial class createPage : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _subPageID;
+		
+		private string _pageContent;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnsubPageIDChanging(int value);
+    partial void OnsubPageIDChanged();
+    partial void OnpageContentChanging(string value);
+    partial void OnpageContentChanged();
+    #endregion
+		
+		public createPage()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_subPageID", DbType="Int NOT NULL")]
+		public int subPageID
+		{
+			get
+			{
+				return this._subPageID;
+			}
+			set
+			{
+				if ((this._subPageID != value))
+				{
+					this.OnsubPageIDChanging(value);
+					this.SendPropertyChanging();
+					this._subPageID = value;
+					this.SendPropertyChanged("subPageID");
+					this.OnsubPageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pageContent", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string pageContent
+		{
+			get
+			{
+				return this._pageContent;
+			}
+			set
+			{
+				if ((this._pageContent != value))
+				{
+					this.OnpageContentChanging(value);
+					this.SendPropertyChanging();
+					this._pageContent = value;
+					this.SendPropertyChanged("pageContent");
+					this.OnpageContentChanged();
 				}
 			}
 		}

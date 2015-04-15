@@ -382,4 +382,11 @@
       <Column Name="icon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="akshay.createPage" Member="createPages">
+    <Type Name="createPage">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subPageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pageContent" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>
