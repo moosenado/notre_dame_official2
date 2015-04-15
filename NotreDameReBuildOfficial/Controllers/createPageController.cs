@@ -53,7 +53,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 var navid = (int)TempData["id"];
                 snav.NavID = navid;
                 snav.controller = "createPage";
-                snav.pageView = "page";
+                snav.pageView = "contentInfo";
                 objPage.InsertPage(snav);
                 return RedirectToAction("pageList");
             }
