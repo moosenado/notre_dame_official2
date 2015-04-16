@@ -116,6 +116,28 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
+        public bool adminNavDelete(int _id)
+        {
+            using (objLinq)
+            {
+                var delJob = objLinq.admin_navigations.Single(x => x.id == _id);
 
+                objLinq.admin_navigations.DeleteOnSubmit(delJob);
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
+
+        public bool adminsubNavDelete(int _id)
+        {
+            using (objLinq)
+            {
+                var delJob = objLinq.admin_subNavigations.Single(x => x.id == _id);
+
+                objLinq.admin_subNavigations.DeleteOnSubmit(delJob);
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
     }
 }

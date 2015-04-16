@@ -1,0 +1,23 @@
+﻿@model NotreDameReBuildOfficial.Models.subNavigation
+
+@{
+    ViewBag.Title = "pageDelete";
+}
+
+<h1>Sub Navigation</h1>
+
+<h2>Delete Public Sub Navigation</h2>
+
+<h2>Are you sure want to delete @Model.title ?</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <input type="submit" value="Delete" /> <!-- Delete button -->
+        <br />
+        <br />
+        @Html.ActionLink("Back", "pageInfo", new { id = Model.NavID })
+        <!-- back button for user again to go for subnav details
+        page -->
+    </div>
+}

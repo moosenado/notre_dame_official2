@@ -6,7 +6,7 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h1>Navigation</h1>
+<h1>Public Navigation</h1>
 <h2>Sub Page Information</h2>
 
 <table>
@@ -20,7 +20,7 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "updateJob", new { id = snav.id })</td>
+            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "subNavUpdate", new { id = snav.id }) / @if (snav.deletable == 1) { @Html.ActionLink("Delete", "subNavDelete", new { id = snav.id })}</td>
         </tr>
     }
 

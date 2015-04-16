@@ -1006,6 +1006,16 @@
     <Content Include="Views\createPage\pageData.cshtml" />
     <Content Include="Views\adminNav\adminNavUpdate.cshtml" />
     <Content Include="Views\adminNav\adminSubNavUpdate.cshtml" />
+    <Content Include="Views\nav\navUpdate.cshtml" />
+    <Content Include="Views\nav\subNavUpdate.cshtml" />
+    <Content Include="Views\nav\NotFound.cshtml" />
+    <Content Include="Views\nav\subNavDelete.cshtml" />
+    <Content Include="Views\nav\navDelete.cshtml" />
+    <Content Include="Views\adminNav\NotFound.cshtml" />
+    <Content Include="Views\adminNav\adminNavDelete.cshtml" />
+    <Content Include="Views\adminNav\adminSubNavDelete.cshtml" />
+    <Content Include="Views\createPage\NotFound.cshtml" />
+    <Content Include="Views\createPage\pageDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

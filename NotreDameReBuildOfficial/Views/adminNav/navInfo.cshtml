@@ -20,7 +20,7 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "adminSubNavUpdate", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "updateJob", new { id = snav.id })}</td>
+            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "adminSubNavUpdate", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "adminSubNavDelete", new { id = snav.id })}</td>
         </tr>
     }
 

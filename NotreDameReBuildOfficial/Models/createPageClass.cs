@@ -56,5 +56,30 @@ namespace NotreDameReBuildOfficial.Models
             return selectData;
         }
 
+        public bool PageUpdate(int _id, string _Title, string _Controller, string _PageView)
+        {
+            using (objLinq)
+            {
+                var upNav = objLinq.admin_subNavigations.Single(x => x.id == _id);
+
+
+                upNav.title = _Title;
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
+
+        public bool pageDelete(int _id)
+        {
+            using (objLinq)
+            {
+                var delJob = objLinq.subNavigations.Single(x => x.id == _id);
+
+                objLinq.subNavigations.DeleteOnSubmit(delJob);
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
+
     }
 }

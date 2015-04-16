@@ -85,5 +85,136 @@ namespace NotreDameReBuildOfficial.Controllers
             return PartialView(nav);
         }
 
+        public ActionResult navUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult navUpdate(int id, navigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.navUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        public ActionResult subNavUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getSubNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult subNavUpdate(int id, subNavigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.subNavUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+        public ActionResult navDelete(int id)
+        {
+            var nav = objNav.getNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult navDelete(int id, navigation nav)
+        {
+            try
+            {
+                objNav.navDelete(id);
+                return RedirectToAction("navList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult subNavDelete(int id)
+        {
+            var nav = objNav.getSubNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult subNavDelete(int id, subNavigation nav)
+        {
+            try
+            {
+                objNav.subNavDelete(id);
+                return RedirectToAction("navList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        public ActionResult NotFound() //Not found Controller
+        {
+            return View();
+        }
+
     }
 }
