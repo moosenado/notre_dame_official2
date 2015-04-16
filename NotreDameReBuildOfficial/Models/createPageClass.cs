@@ -56,6 +56,12 @@ namespace NotreDameReBuildOfficial.Models
             return selectData;
         }
 
+        public createPage getdataPageByID(int _id)
+        {
+            var selectData = objLinq.createPages.SingleOrDefault(x => x.id == _id);
+            return selectData;
+        }
+
         public bool PageUpdate(int _id, string _Title, string _Controller, string _PageView)
         {
             using (objLinq)
@@ -80,6 +86,20 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
+
+        public bool pageDataUpdate(int _id, string _pageContent)
+        {
+            using (objLinq)
+            {
+                var upPage = objLinq.createPages.Single(x => x.subPageID == _id);
+
+
+                upPage.pageContent = _pageContent;
+                objLinq.SubmitChanges();
+                return true;
+            }
+        }
+
 
     }
 }

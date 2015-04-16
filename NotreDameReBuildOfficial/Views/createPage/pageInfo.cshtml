@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>Pages</th>
+            <th>Add Content</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
 
@@ -21,7 +24,10 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("Add Content", "passID", new { id = snav.id }) /@Html.ActionLink("Update", "pageUpdate", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "pageDelete", new { id = snav.id })}</td>
+            <td>@if (snav.deletable == 1){@Html.ActionLink("Add Content", "passID", new { id = snav.id })}</td>
+            <td><a href='@Url.Action("passpageID", "createPage", new { id = snav.id })'><i class="fa fa-pencil fa-lg"></i></a></td>
+            <td>@if (snav.deletable == 1)
+            { <a href='@Url.Action("pageDelete", "createPage", new { id = snav.id })'><i class="fa fa-trash-o fa-lg"></i></a>}</td>
         </tr>
     }
 
