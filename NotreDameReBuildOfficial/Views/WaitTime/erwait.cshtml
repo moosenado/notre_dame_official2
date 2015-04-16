@@ -4,9 +4,11 @@
     ER Wait: @if (Model.getWaitTime() != null)
     {
         @Model.getWaitTime()
+        
     }
     else
     {
         <span>Updating...</span>
     }
+    and @Model.waitListCount() people waiting
 </div>
