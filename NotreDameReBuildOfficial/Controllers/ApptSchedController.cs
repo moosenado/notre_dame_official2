@@ -21,8 +21,8 @@ namespace NotreDameReBuildOfficial.Controllers
 
         public ActionResult Details(int id)
         {
-            var appt = objApptSched.getApptBookByID(id);
-            if (appt == null)
+            var appt = objApptSched.getApptBookByID(id); //calls method getApptBookByID basied on specific id
+            if (appt == null) //if nto appts found return page notFound
             {
                 return View("NotFound");
             }
@@ -40,11 +40,11 @@ namespace NotreDameReBuildOfficial.Controllers
         public ActionResult createAppt(Appt_Book appt)
             {
            
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //if no erros
             {
                 
 
-                    try
+                    try //runs these methods(located in model class) and then return to the main view
                     {
                         appt.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                         objApptSched.insertAppt(appt);
@@ -57,7 +57,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 return View();
             }
-        public ActionResult Update(int id)
+        public ActionResult Update(int id) //update method
             {
                 var appt = objApptSched.getApptBookByID(id);
                 if (appt == null)
@@ -69,7 +69,7 @@ namespace NotreDameReBuildOfficial.Controllers
                     return View(appt);
                 }
             }
-        [HttpPost]
+        [HttpPost] //post updated user input to server
         public ActionResult Update(int id, Appt_Book appt)
             {
                 if (ModelState.IsValid)
@@ -78,9 +78,9 @@ namespace NotreDameReBuildOfficial.Controllers
                     try
                     {
                         
-                        appt.Tstamp = DateTime.Now;
+                        appt.Tstamp = DateTime.Now; //auto insert date
                         objApptSched.updateAppt(id, appt.Fname, appt.Lname, appt.Email, appt.HealthNum, appt.BookDate,
-                            appt.BookTime, appt.AdditionalInfo, appt.Speciality, appt.Phone, appt.Tstamp);
+                            appt.BookTime, appt.AdditionalInfo, appt.Speciality, appt.Phone, appt.Tstamp); 
                         return RedirectToAction("Details/" + id);
                     }
                     catch

@@ -18,24 +18,26 @@
     <input type="submit" value="Search" class="buttonstyle" />
 }
 
-@* displays job count, if any *@
-@if (Model.Job_postings.Any())
-{
-    <h3> @Model.Job_postings.Count() Jobs Found </h3>
+        @* displays job count, if any *@
+        @if (Model.Job_postings.Any())
+        {
+            <h3> @Model.Job_postings.Count() Jobs Found </h3>
     
-}
+        }
 
-@* displays event count, if any *@
-@if (Model.Events.Any())
-{
-    <h3>@Model.Events.Count() Events Found</h3>
-}
+        @* displays event count, if any *@
+        @if (Model.Events.Any())
+        {
+            <h3>@Model.Events.Count() Events Found</h3>
+        }
 
-@* if no listings are found, display "No results Found" *@
-@if (Model.Job_postings.Count() == 0 && Model.Events.Count() == 0)
-{
-    <h3>No Results Found</h3>
-}
+        @* if no listings are found, display "No results Found" *@
+        @if (Model.Job_postings.Count() == 0 && Model.Events.Count() == 0)
+        {
+            <h3>No Results Found</h3>
+        }
+        
+        
 @* iterates through job posting results and creates link *@
 <div id="searchBorder">
     @foreach (var item in Model.Job_postings)

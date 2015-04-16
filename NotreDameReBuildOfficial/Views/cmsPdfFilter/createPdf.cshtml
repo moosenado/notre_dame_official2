@@ -7,7 +7,8 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Add a new PDF</h2>
+@* main list view for admin *@
+<h2>Add a new PDF</h2> 
 
 @using (Html.BeginForm("createPdf", "cmsPdfFilter", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

@@ -5,44 +5,46 @@
     ViewBag.Title = "Details ";
 }
 
+        @* Displays choosen category *@
+        @if (Model.Any())
+        {
+            <h1>@Model.ToList()[0].Category</h1>
+        }
 
-@if (Model.Any())
-{
-    <h1>@Model.ToList()[0].Category</h1>
-}
-
-@if (Model.Any())
-{
-    <h2> @Model.Count() results found</h2>
-}
+        @* Counts results *@
+        @if (Model.Any())
+        {
+            <h2> @Model.Count() results found</h2>
+        }
 <br/>
 
         @*@foreach (var x in Model)
             {
-
                 {
                     string link = x.PdfTitle;
                     string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";
                     string tag = "<a href=" + path + ">" + link + "</a>";
                     @Html.Raw(tag)
                 }
-
             }*@
 
         <ul>
             @foreach (var file in Model)
-        {
-            var name = file.PdfTitle;
-            var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
+            {
+                var name = file.PdfTitle; //gets name of pdf file
+                
+                //adds the pdf name to uplaods dir and replaces any spaces with %20
+                var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20"); 
 
-            <li>
-                <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
-            </li>
-            <li>
-                @file.Descr
-            </li>
-            <br/>
-        }
+                //creates links for each pdf
+                    <li>
+                    <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
+                    </li>
+                        <li>
+                         @file.Descr
+                        </li>
+                <br/>
+            }
         </ul>
 
         @*<p>
