@@ -16,7 +16,7 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost] //Public Appointment form
         public ActionResult createAppt(Appt_Book appt)
         {
             if (ModelState.IsValid)
@@ -36,19 +36,19 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        public ActionResult Thanks()
+        public ActionResult Thanks() //thank you page after user submits
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) //if no errors then goto thank you page
             {
                 return View();
             }
             else
             {
-                return RedirectToAction("createAppt");
+                return RedirectToAction("createAppt"); //if errors then go back to appointment form
             }
         }
 
-        [HttpPost]
+        [HttpPost]  //carries over user input and displays a summary
         public ActionResult Thanks(ApptSchedValidation valid)
         {
             if (ModelState.IsValid)

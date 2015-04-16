@@ -4,7 +4,8 @@
     ViewBag.Title = "createAppt";
 }
 
-<h1>Make an appointment</h1>
+<h1>Make an appointment</h1> @*Public form for booking an appointment*@
+
 @using (Html.BeginForm("Thanks", "ApptSchedPublic", FormMethod.Post))
 {
     @Html.ValidationSummary()

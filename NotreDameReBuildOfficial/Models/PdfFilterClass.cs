@@ -11,50 +11,50 @@ namespace NotreDameReBuildOfficial.Models
 {
     public class PdfFilterClass
     {
-        //create instance of ndLinqClass object
-        ndLinqClassDataContext objPdf = new ndLinqClassDataContext();
+        //create instance of data context class 
+        ndLinqClassDataContext objPdf = new ndLinqClassDataContext();//new LINQ object created
 
-        public IQueryable<PDF_Filter> getPdfs()
+        public IQueryable<PDF_Filter> getPdfs() //get all pdf info
         {
             var allPdfs = objPdf.PDF_Filters.Select(x => x);
             return allPdfs;
         }
-        public PDF_Filter getPdfByID(int _id)
+        public PDF_Filter getPdfByID(int _id) //get single pdf by specific id
         {
             var allPdf = objPdf.PDF_Filters.SingleOrDefault(x => x.id == _id); //gets all pdfs and stores it in allPdf variable
             return allPdf; //returns the result set and allows it to be displayed
         }
 
-        /////////////////////******Public Methods for categories*******///////////////////////////////////////
+        /////////////////////******Public side Methods for categories*******///////////////////////////////////////
 
-        public IQueryable<PDF_Filter> getPdfsByCategory(string Category)
+        public IQueryable<PDF_Filter> getPdfsByCategory(string Category) //gets all pdfs by category
         {
 
-            var q = objPdf.PDF_Filters.GroupBy(x => x.Category).Select(x => x.FirstOrDefault()); //good one
-            return q;
+            var q = objPdf.PDF_Filters.GroupBy(x => x.Category).Select(x => x.FirstOrDefault()); //groups all pdfs into catgeories
+            return q; //result store in q variable
 
         }
 
-       public IQueryable<PDF_Filter> getPdfsBySelectedCategory(string Category)
+       public IQueryable<PDF_Filter> getPdfsBySelectedCategory(string Category) //gets all pdfs by selected category
         {           
-            var q = objPdf.PDF_Filters.Where(x => x.Category == Category).OrderBy(x => x.Category);
+            var q = objPdf.PDF_Filters.Where(x => x.Category == Category).OrderBy(x => x.Category); //selects all pdfs for specified category
             return q;
         }
 
-        //// ***********Public Methods for categories END*********** ///////////////////////////////////////////
+        //// ***********Public side Methods for categories END*********** ///////////////////////////////////////////
 
 
         public bool insertPdf(PDF_Filter pdf) //created instance of PDF_Filter table 
         {
-            using (objPdf) //using makes sure data disposed after its used
+            using (objPdf) //using makes sure data is disposed after its used
             {
-                objPdf.PDF_Filters.InsertOnSubmit(pdf);
-                objPdf.SubmitChanges();
+                objPdf.PDF_Filters.InsertOnSubmit(pdf); //inserts data into db
+                objPdf.SubmitChanges(); //saves changes to db
                 return true;
 
             }
         }
-
+        //performs update
         public bool updatePdf(int _id, string _PdfTitle, string _Category, DateTime _Tstamp, string _Descr, string _Lang, string _Department)
         {
             using (objPdf)
@@ -71,11 +71,11 @@ namespace NotreDameReBuildOfficial.Models
                 return true;
             }
         }
-        public bool DeletePdf(int _id)
+        public bool DeletePdf(int _id) //deletes specfic pdf record based on argument (id)
         {
             using (objPdf)
             {
-                var pdfDel = objPdf.PDF_Filters.Single(x => x.id == _id);
+                var pdfDel = objPdf.PDF_Filters.Single(x => x.id == _id); 
                 objPdf.PDF_Filters.DeleteOnSubmit(pdfDel);
                 objPdf.SubmitChanges();
                 return true;

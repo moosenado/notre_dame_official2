@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NotreDameReBuildOfficial.Models.Search>
+﻿@*@model IEnumerable<NotreDameReBuildOfficial.Models.Search>
 @{
     ViewBag.Title = "Search";
 }
@@ -12,7 +12,7 @@
 
 <h2>Search Keywords</h2>
 <br />
-@*renders links to methods located on Controller*@
+
 <p>@Html.ActionLink("New Appointment", "createSearch", "cmsSearch", new { @class = "buttonstyle" })</p>
 <br />
 <table>
@@ -28,11 +28,11 @@
             <tr>
                 <td>@Html.ActionLink(x.Keyword, "Details", new { id = x.id, @class = "link" })</td>
                 <td>@x.Tstamp</td>
-                @*<td>@Html.ActionLink("Delete", "Delete", new { id = x.id }, new { @class = "buttonstyle" })</td>*@
+               
             </tr>
         }
     </tbody>
-</table>
+</table>*@
 
 
 

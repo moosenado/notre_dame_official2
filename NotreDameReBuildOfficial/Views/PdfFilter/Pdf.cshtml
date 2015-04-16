@@ -8,26 +8,20 @@
 
 <h2>Browse PDF's</h2>
 
-<p>
 
-@*<ul>
-            @foreach (var x in Model)
-            {
-                <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
-                <li>@Html.ActionLink(x.Descr, x.PdfUrl, "Details", new {Category = x.Category})</li>
-            }
-        </ul>*@
 <ul>
-    @foreach (var x in Model)
+    @foreach (var x in Model) //creates links for all of the categories and when clicked takes you to related pdfs
     {
-        <li id="">@Html.ActionLink(x.Category, "Details", new { Category = x.Category }, new { @class = "pdfCat" })</li>
+        <li id="">@Html.ActionLink(x.Category, "Details", new {Category = x.Category}, new {@class = "pdfCat"})</li>
     }
 </ul>
+
+
+
 @*<img src='@Url.Content("~/Content/images/facebook.png")'/>*@
 @*<a href="~/Content/uploads/french.pdf">File1</a>
     @foreach (var x in Model)
     {
-
         {
             string link = x.PdfTitle;
             string path = Url.Content("~/Content/uploads/") + link.Replace(" ", "%20") + ".pdf";

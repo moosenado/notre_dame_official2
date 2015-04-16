@@ -16,23 +16,16 @@ namespace NotreDameReBuildOfficial.Models
 
     }
     [Bind(Exclude = "id")]
-    public class PdfFilterValidation
+    public class PdfFilterValidation //Pdf Validation class for admin and public side
     {
         //[DisplayName("Title*")]
         //[Required(ErrorMessage = "Please enter the PDF title")]
         [StringLength(300)]
         public string PdfTitle { get; set; } //auto properties
 
-        //[DisplayName("Url*")]
-        //[Required(ErrorMessage = "Please enter path to file")]
-        //public string PdfUrl { get; set; }
-
         [DisplayName("Category*")]
         [Required(ErrorMessage = "Please enter a category")]
         public string Category { get; set; }
-
-        //[DisplayName("Image*")]
-        //public string Image { get; set; }
 
         [DisplayName("Description*")]
         [Required(ErrorMessage = "Please enter a description")]

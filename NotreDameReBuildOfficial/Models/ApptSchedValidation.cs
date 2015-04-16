@@ -15,7 +15,7 @@ namespace NotreDameReBuildOfficial.Models
         
     }
     [Bind(Exclude="id")]
-    public class ApptSchedValidation
+    public class ApptSchedValidation //validation class for public and admin side
     {
         [DisplayName("First Name*")]
         [Required(ErrorMessage = "Please enter your first name")]
