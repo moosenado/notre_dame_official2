@@ -1,0 +1,30 @@
+﻿@model NotreDameReBuildOfficial.Models.Search
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<h2>Search Details</h2>
+
+<h3>@Html.DisplayFor(x => x.Keyword)</h3>
+<div class="clear"></div>
+
+<table>
+    <thead align="right">
+        <tr><th>@Html.LabelFor(model => model.Keyword)</th><td>@Html.DisplayFor(x => x.Keyword)</td></tr>
+
+        <tr><th>@Html.LabelFor(model => model.Tstamp)</th><td>@Html.DisplayFor(x => x.Tstamp)</td></tr>
+
+    </thead>
+</table>
+
+<p>
+    @*renders links to methods located on ApptSchedController*@
+    @Html.ActionLink("Back", "Search", null, new { @class = "buttonstyle" })
+    @*@Html.ActionLink("Delete", "Delete", new { id = Model.id }, new { @class = "buttonstyle" })*@
+</p>
+
+
+

@@ -63,9 +63,6 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertAppt_Book(Appt_Book instance);
     partial void UpdateAppt_Book(Appt_Book instance);
     partial void DeleteAppt_Book(Appt_Book instance);
-    partial void InsertPDF_Filter(PDF_Filter instance);
-    partial void UpdatePDF_Filter(PDF_Filter instance);
-    partial void DeletePDF_Filter(PDF_Filter instance);
     partial void InsertER_wait_time(ER_wait_time instance);
     partial void UpdateER_wait_time(ER_wait_time instance);
     partial void DeleteER_wait_time(ER_wait_time instance);
@@ -123,6 +120,9 @@ namespace NotreDameReBuildOfficial.Models
     partial void InsertSearch(Search instance);
     partial void UpdateSearch(Search instance);
     partial void DeleteSearch(Search instance);
+    partial void InsertPDF_Filter(PDF_Filter instance);
+    partial void UpdatePDF_Filter(PDF_Filter instance);
+    partial void DeletePDF_Filter(PDF_Filter instance);
     #endregion
 		
 		public ndLinqClassDataContext() : 
@@ -248,14 +248,6 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<Appt_Book>();
-			}
-		}
-		
-		public System.Data.Linq.Table<PDF_Filter> PDF_Filters
-		{
-			get
-			{
-				return this.GetTable<PDF_Filter>();
 			}
 		}
 		
@@ -424,6 +416,14 @@ namespace NotreDameReBuildOfficial.Models
 			get
 			{
 				return this.GetTable<Search>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PDF_Filter> PDF_Filters
+		{
+			get
+			{
+				return this.GetTable<PDF_Filter>();
 			}
 		}
 	}
@@ -2678,260 +2678,6 @@ namespace NotreDameReBuildOfficial.Models
 					this._Phone = value;
 					this.SendPropertyChanged("Phone");
 					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="lukasz.PDF_Filter")]
-	public partial class PDF_Filter : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _PdfTitle;
-		
-		private string _PdfUrl;
-		
-		private string _Category;
-		
-		private string _Image;
-		
-		private System.DateTime _Tstamp;
-		
-		private string _Descr;
-		
-		private string _Lang;
-		
-		private string _Department;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnPdfTitleChanging(string value);
-    partial void OnPdfTitleChanged();
-    partial void OnPdfUrlChanging(string value);
-    partial void OnPdfUrlChanged();
-    partial void OnCategoryChanging(string value);
-    partial void OnCategoryChanged();
-    partial void OnImageChanging(string value);
-    partial void OnImageChanged();
-    partial void OnTstampChanging(System.DateTime value);
-    partial void OnTstampChanged();
-    partial void OnDescrChanging(string value);
-    partial void OnDescrChanged();
-    partial void OnLangChanging(string value);
-    partial void OnLangChanged();
-    partial void OnDepartmentChanging(string value);
-    partial void OnDepartmentChanged();
-    #endregion
-		
-		public PDF_Filter()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PdfTitle", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PdfTitle
-		{
-			get
-			{
-				return this._PdfTitle;
-			}
-			set
-			{
-				if ((this._PdfTitle != value))
-				{
-					this.OnPdfTitleChanging(value);
-					this.SendPropertyChanging();
-					this._PdfTitle = value;
-					this.SendPropertyChanged("PdfTitle");
-					this.OnPdfTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PdfUrl", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string PdfUrl
-		{
-			get
-			{
-				return this._PdfUrl;
-			}
-			set
-			{
-				if ((this._PdfUrl != value))
-				{
-					this.OnPdfUrlChanging(value);
-					this.SendPropertyChanging();
-					this._PdfUrl = value;
-					this.SendPropertyChanged("PdfUrl");
-					this.OnPdfUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Category
-		{
-			get
-			{
-				return this._Category;
-			}
-			set
-			{
-				if ((this._Category != value))
-				{
-					this.OnCategoryChanging(value);
-					this.SendPropertyChanging();
-					this._Category = value;
-					this.SendPropertyChanged("Category");
-					this.OnCategoryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Image
-		{
-			get
-			{
-				return this._Image;
-			}
-			set
-			{
-				if ((this._Image != value))
-				{
-					this.OnImageChanging(value);
-					this.SendPropertyChanging();
-					this._Image = value;
-					this.SendPropertyChanged("Image");
-					this.OnImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tstamp", DbType="DateTime NOT NULL")]
-		public System.DateTime Tstamp
-		{
-			get
-			{
-				return this._Tstamp;
-			}
-			set
-			{
-				if ((this._Tstamp != value))
-				{
-					this.OnTstampChanging(value);
-					this.SendPropertyChanging();
-					this._Tstamp = value;
-					this.SendPropertyChanged("Tstamp");
-					this.OnTstampChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descr", DbType="VarChar(200)")]
-		public string Descr
-		{
-			get
-			{
-				return this._Descr;
-			}
-			set
-			{
-				if ((this._Descr != value))
-				{
-					this.OnDescrChanging(value);
-					this.SendPropertyChanging();
-					this._Descr = value;
-					this.SendPropertyChanged("Descr");
-					this.OnDescrChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lang", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Lang
-		{
-			get
-			{
-				return this._Lang;
-			}
-			set
-			{
-				if ((this._Lang != value))
-				{
-					this.OnLangChanging(value);
-					this.SendPropertyChanging();
-					this._Lang = value;
-					this.SendPropertyChanged("Lang");
-					this.OnLangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Department", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Department
-		{
-			get
-			{
-				return this._Department;
-			}
-			set
-			{
-				if ((this._Department != value))
-				{
-					this.OnDepartmentChanging(value);
-					this.SendPropertyChanging();
-					this._Department = value;
-					this.SendPropertyChanged("Department");
-					this.OnDepartmentChanged();
 				}
 			}
 		}
@@ -7518,6 +7264,212 @@ namespace NotreDameReBuildOfficial.Models
 					this._Tstamp = value;
 					this.SendPropertyChanged("Tstamp");
 					this.OnTstampChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="lukasz.PDF_Filter")]
+	public partial class PDF_Filter : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _PdfTitle;
+		
+		private string _Category;
+		
+		private System.DateTime _Tstamp;
+		
+		private string _Descr;
+		
+		private string _Lang;
+		
+		private string _Department;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnPdfTitleChanging(string value);
+    partial void OnPdfTitleChanged();
+    partial void OnCategoryChanging(string value);
+    partial void OnCategoryChanged();
+    partial void OnTstampChanging(System.DateTime value);
+    partial void OnTstampChanged();
+    partial void OnDescrChanging(string value);
+    partial void OnDescrChanged();
+    partial void OnLangChanging(string value);
+    partial void OnLangChanged();
+    partial void OnDepartmentChanging(string value);
+    partial void OnDepartmentChanged();
+    #endregion
+		
+		public PDF_Filter()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PdfTitle", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PdfTitle
+		{
+			get
+			{
+				return this._PdfTitle;
+			}
+			set
+			{
+				if ((this._PdfTitle != value))
+				{
+					this.OnPdfTitleChanging(value);
+					this.SendPropertyChanging();
+					this._PdfTitle = value;
+					this.SendPropertyChanged("PdfTitle");
+					this.OnPdfTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tstamp", DbType="DateTime NOT NULL")]
+		public System.DateTime Tstamp
+		{
+			get
+			{
+				return this._Tstamp;
+			}
+			set
+			{
+				if ((this._Tstamp != value))
+				{
+					this.OnTstampChanging(value);
+					this.SendPropertyChanging();
+					this._Tstamp = value;
+					this.SendPropertyChanged("Tstamp");
+					this.OnTstampChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descr", DbType="VarChar(200)")]
+		public string Descr
+		{
+			get
+			{
+				return this._Descr;
+			}
+			set
+			{
+				if ((this._Descr != value))
+				{
+					this.OnDescrChanging(value);
+					this.SendPropertyChanging();
+					this._Descr = value;
+					this.SendPropertyChanged("Descr");
+					this.OnDescrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lang", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Lang
+		{
+			get
+			{
+				return this._Lang;
+			}
+			set
+			{
+				if ((this._Lang != value))
+				{
+					this.OnLangChanging(value);
+					this.SendPropertyChanging();
+					this._Lang = value;
+					this.SendPropertyChanged("Lang");
+					this.OnLangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Department", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Department
+		{
+			get
+			{
+				return this._Department;
+			}
+			set
+			{
+				if ((this._Department != value))
+				{
+					this.OnDepartmentChanging(value);
+					this.SendPropertyChanging();
+					this._Department = value;
+					this.SendPropertyChanged("Department");
+					this.OnDepartmentChanged();
 				}
 			}
 		}

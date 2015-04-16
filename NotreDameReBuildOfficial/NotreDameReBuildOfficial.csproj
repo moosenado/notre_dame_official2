@@ -263,7 +263,8 @@
     <Compile Include="Models\populateNav.cs" />
     <Compile Include="Models\populatePublicNav.cs" />
     <Compile Include="Models\productValidation.cs" />
-    <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\SearchClass.cs" />
+    <Compile Include="Models\SearchValidation.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Models\poll.cs" />
@@ -1009,6 +1010,9 @@
     <Content Include="Views\adminNav\adminNavUpdate.cshtml" />
     <Content Include="Views\adminNav\adminSubNavUpdate.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\cmsSearch\Search.cshtml" />
+    <Content Include="Views\cmsSearch\Details.cshtml" />
+    <Content Include="Views\cmsSearch\createSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

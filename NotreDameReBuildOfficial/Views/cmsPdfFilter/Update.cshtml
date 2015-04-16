@@ -19,10 +19,6 @@
             <td>@Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })</td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.PdfUrl, new { @class = "label" })</td>
-            <td>@Html.TextBoxFor(model => model.PdfUrl, new { @class = "textbox" })</td>
-        </tr>
-        <tr>
             <td>@Html.LabelFor(model => model.Category, new { @class = "label" })</td>
             <td>
                 @Html.DropDownListFor(model => model.Category, new[] {
@@ -38,11 +34,6 @@
         new SelectListItem() {Text = "Other"},}, new { @class = "dropdown-list" })
         </td>
     </tr>
-    <tr>
-        <td>@Html.LabelFor(model => model.Image, new { @class = "label" })</td>
-        <td>@Html.TextBoxFor(model => model.Image, new { @class = "textbox" })</td>
-    </tr>
-    
     <tr>
         <td>@Html.LabelFor(model => model.Descr, new { @class = "label" })</td>
         <td>@Html.TextBoxFor(model => model.Descr, new { @class = "textbox" })</td>

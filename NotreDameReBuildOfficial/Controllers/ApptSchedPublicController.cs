@@ -36,18 +36,6 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        //public ActionResult Thanks()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View();
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
-
         public ActionResult Thanks()
         {
             if (!ModelState.IsValid)

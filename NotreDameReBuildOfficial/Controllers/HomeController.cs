@@ -220,11 +220,17 @@ namespace notre_dame_rebuild.Controllers
                     model.Job_postings = jobObj.Job_postings.Select(x => x).ToList();
                     break;
             }
-                       
+
             return View(model);
             //var query = objLinq.Events.Where(x => x.name.Contains(q)).Take(10);
             //return View(query);
-        }        
+        }
+
+       
+
+       
+        }
+
 
     }
-}
+

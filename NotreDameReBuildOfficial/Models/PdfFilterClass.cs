@@ -55,16 +55,14 @@ namespace NotreDameReBuildOfficial.Models
             }
         }
 
-        public bool updatePdf(int _id, string _PdfTitle, string _PdfUrl, string _Category, string _Image, DateTime _Tstamp, string _Descr, string _Lang, string _Department)
+        public bool updatePdf(int _id, string _PdfTitle, string _Category, DateTime _Tstamp, string _Descr, string _Lang, string _Department)
         {
             using (objPdf)
             {
                 var pdfUpd = objPdf.PDF_Filters.Single(x => x.id == _id);
                 //passing new values into each table column
                 pdfUpd.PdfTitle = _PdfTitle;
-                pdfUpd.PdfUrl = _PdfUrl;
                 pdfUpd.Category = _Category;
-                pdfUpd.Image = _Image;
                 pdfUpd.Tstamp = _Tstamp;
                 pdfUpd.Descr = _Descr;
                 pdfUpd.Lang = _Lang;

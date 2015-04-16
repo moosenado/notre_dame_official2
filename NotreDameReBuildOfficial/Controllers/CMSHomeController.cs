@@ -376,6 +376,56 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
+        // ------------------------------------- //
+        // ----- Search ADMIN by Lukasz ----- //
+        // ------------------------------------- //
+
+        //SearchClass objSearch = new SearchClass(); //created instance
+
+        //public ActionResult Search() //method gets all search terms using model and displays it on Search view  
+        //{
+        //    var search = objSearch.getSearchs(); //calls method getAppts from model
+        //    return View(search);
+        //}
+
+        //public ActionResult Details(int id)
+        //{
+        //    var appt = objSearch.getSearchByID(id);
+        //    if (appt == null)
+        //    {
+        //        return View("NotFound");
+        //    }
+        //    else
+        //    {
+        //        return View(); ///////Add search
+        //    }
+        //}
+
+        //public ActionResult createSearch()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult createSearch(Search search)
+        //{
+
+        //    if (ModelState.IsValid)
+        //    {
+
+
+        //        try
+        //        {
+        //            search.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
+        //            objSearch.insertSearch(search);
+        //            return RedirectToAction("Search");
+        //        }
+        //        catch
+        //        {
+        //            return View();
+        //        }
+        //    }
+        //    return View();
+        //}
 
     }
 }

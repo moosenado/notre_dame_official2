@@ -74,12 +74,6 @@
         <elementListCompartment Id="567529d8-6dd9-4440-b7d3-256d64264b6d" absoluteBounds="12.265, 1.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="53d9471a-8adc-4ab4-a4cc-53c452c2f310" absoluteBounds="12.125, 7, 2, 2.5401025390625005">
-      <DataClassMoniker Name="/ndLinqClassDataContext/PDF_Filter" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6bae83d1-61d1-4f95-ae38-bc864caebf86" absoluteBounds="12.14, 7.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f7f833c1-18f6-4f63-8135-e62451c77973" absoluteBounds="18.125, 0.625, 2, 2.3478011067708335">
       <DataClassMoniker Name="/ndLinqClassDataContext/a_Event" />
       <nestedChildShapes>
@@ -204,6 +198,12 @@
       <DataClassMoniker Name="/ndLinqClassDataContext/Search" />
       <nestedChildShapes>
         <elementListCompartment Id="55c48d79-151c-4bf5-957b-a015b2e8fb7e" absoluteBounds="12.515, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68353fbf-ee07-43e5-a9e3-844ce2c465ce" absoluteBounds="12.25, 7.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ndLinqClassDataContext/PDF_Filter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b219d2e3-88ee-4173-afec-a502adcb28ef" absoluteBounds="12.265, 7.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

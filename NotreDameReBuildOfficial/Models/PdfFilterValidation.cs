@@ -25,14 +25,14 @@ namespace NotreDameReBuildOfficial.Models
 
         //[DisplayName("Url*")]
         //[Required(ErrorMessage = "Please enter path to file")]
-        public string PdfUrl { get; set; }
+        //public string PdfUrl { get; set; }
 
         [DisplayName("Category*")]
         [Required(ErrorMessage = "Please enter a category")]
         public string Category { get; set; }
 
         //[DisplayName("Image*")]
-        public string Image { get; set; }
+        //public string Image { get; set; }
 
         [DisplayName("Description*")]
         [Required(ErrorMessage = "Please enter a description")]

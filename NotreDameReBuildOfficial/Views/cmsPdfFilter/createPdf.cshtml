@@ -17,10 +17,6 @@
     @*@Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })
     @Html.ValidationMessageFor(model => model.PdfTitle, "*")*@
 
-    @Html.LabelFor(model => model.PdfUrl, new { @class = "label" })
-    @Html.TextBoxFor(model => model.PdfUrl, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.PdfUrl, "*")
-
     @Html.LabelFor(model => model.Category, new { @class = "label" })<br>
     @Html.DropDownListFor(model => model.Category, new[]
          {
@@ -35,10 +31,6 @@
              new SelectListItem() {Text = "Media"},
              new SelectListItem() {Text = "Other"},
          }, new { @class = "dropdown-list" })
-
-    @Html.LabelFor(model => model.Image, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Image, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.Image, "*")
 
     @Html.LabelFor(model => model.Descr, new { @class = "label" })
     @Html.TextBoxFor(model => model.Descr, new { @class = "textbox" })

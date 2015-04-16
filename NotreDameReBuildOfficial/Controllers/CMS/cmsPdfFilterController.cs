@@ -66,7 +66,6 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     var path = Path.Combine(Server.MapPath("~/Content/uploads"), fileName);
                     file.SaveAs(path);
                     pdf.PdfTitle = fileName; //automatically inserts the name of the uploaded file 
-                    pdf.PdfUrl = fileName; 
                     pdf.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                     objPdf.insertPdf(pdf);
                     return RedirectToAction("Pdf");
@@ -102,7 +101,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 {
 
                     pdf.Tstamp = DateTime.Now; //updates date and time whenever record is updated
-                    objPdf.updatePdf(id, pdf.PdfTitle, pdf.PdfUrl, pdf.Category, pdf.Image, pdf.Tstamp, pdf.Descr, pdf.Lang, pdf.Department);
+                    objPdf.updatePdf(id, pdf.PdfTitle, pdf.Category, pdf.Tstamp, pdf.Descr, pdf.Lang, pdf.Department);
                     return RedirectToAction("Details/" + id);
                 }
                 catch
