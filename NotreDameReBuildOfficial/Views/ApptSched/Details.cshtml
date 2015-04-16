@@ -12,23 +12,38 @@
 <div class="clear"></div>
 
 <table>
-    <thead align="right">
-    <tr><th>@Html.LabelFor(model => model.Email)</th><td>@Html.DisplayFor(x => x.Email)</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.HealthNum)</th><td>@Html.DisplayFor(x => x.HealthNum)</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.BookDate)</th><td>@Html.DisplayFor(x => x.BookDate)</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.BookTime)</th><td>@Html.DisplayFor(x => x.BookTime)</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.AdditionalInfo)</th><td>@Html.DisplayFor(x => x.AdditionalInfo)</td></tr>
-
-    <tr><th>Date Booked</th><td>model.BookTime</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.Speciality)</th><td>@Html.DisplayFor(x => x.Speciality)</td></tr>
-
-    <tr><th>@Html.LabelFor(model => model.Phone)</th><td>@Html.DisplayFor(x => x.Phone)</td></tr>   
-    </thead>
+    <tr>
+        <td>@Html.LabelFor(model => model.Email, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Email)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.HealthNum, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.HealthNum)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.BookDate, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.BookDate)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.BookTime, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.BookTime)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.AdditionalInfo, new {@class = "label"})</td>
+        <td>@Html.DisplayFor(x => x.AdditionalInfo)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Speciality, new {@class = "label"})</td>
+        <td>@Html.DisplayFor(x => x.Speciality)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Phone, new {@class = "label"})</td>
+        <td>@Html.DisplayFor(x => x.Phone)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Tstamp, new { @class = "label" })</td>
+        <td>@Html.DisplayFor(x => x.Tstamp)</td>
+    </tr>
 </table>
 
 <p> @*renders links to methods located on ApptSchedController*@

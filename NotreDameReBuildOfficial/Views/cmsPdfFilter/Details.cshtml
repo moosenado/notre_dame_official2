@@ -28,7 +28,7 @@
         <td>@Html.DisplayFor(x => x.Department)</td>
     </tr>
     <tr>
-        <td>@Html.LabelFor(model => model.Tstamp, new {@class = "label"})</td>
+        <td>Date Stamp</td>
         <td>@Html.DisplayFor(x => x.Tstamp)</td>
     </tr>
 </table>
@@ -40,7 +40,7 @@
 
 <p>
     @*renders links to methods located on ApptSchedController*@
-    @Html.ActionLink("Back", "Pdf") |
-    @Html.ActionLink("Update", "Update", new { id = Model.id }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.id })
+    @Html.ActionLink("Back", "Pdf", null, new { @class = "buttonstyle" }) 
+    @Html.ActionLink("Update", "Update", new { id = Model.id }, new { @class = "buttonstyle" }) 
+    @Html.ActionLink("Delete", "Delete", new { id = Model.id }, new { @class = "buttonstyle" })
 </p>

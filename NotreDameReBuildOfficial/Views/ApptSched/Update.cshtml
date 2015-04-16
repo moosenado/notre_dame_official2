@@ -76,12 +76,15 @@
     
 </table>
 
-    <p><input type="submit" value="Update" class="buttonstyle" /></p>
+    <p>
+        <input type="submit" value="Update" class="buttonstyle"/>
+    </p>
+    @Html.ActionLink("Back", "ApptSched", null, new { @class = "buttonstyle" })
 }
 
-@section Scripts
+@*@section Scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
-}
+}*@
 
 

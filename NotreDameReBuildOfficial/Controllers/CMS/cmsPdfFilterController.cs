@@ -19,16 +19,16 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View(pdf);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int id) //getPdfById method
         {
             var pdf = objPdf.getPdfByID(id);
-            if (pdf == null)
+            if (pdf == null) //if nothing found go to not found page
             {
                 return View("NotFound");
             }
             else
             {
-                return View(pdf);
+                return View(pdf); //if found go to details page
             }
         }
 
@@ -36,7 +36,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost] //uploads file along with information related to the pdf file
         public ActionResult createPdf(HttpPostedFileBase file, PDF_Filter pdf)
         {
             //file upload verificaiton
@@ -62,12 +62,16 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
                 try
                 {   //if all okay then uploads file to Content/uploads
-                    var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/uploads"), fileName);
+                    var fileName = Path.GetFileName(file.FileName); //gets name of file
+
+                    var path = Path.Combine(Server.MapPath("~/Content/uploads"), fileName); //appends the filename to the upload dir
                     file.SaveAs(path);
+
                     pdf.PdfTitle = fileName; //automatically inserts the name of the uploaded file 
+
                     pdf.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
-                    objPdf.insertPdf(pdf);
+
+                    objPdf.insertPdf(pdf); 
                     return RedirectToAction("Pdf");
                     
                 }
@@ -79,9 +83,9 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View();
         }
-        public ActionResult Update(int id)
+        public ActionResult Update(int id) //gets all of the pdf info
         {
-            var pdf = objPdf.getPdfByID(id);
+            var pdf = objPdf.getPdfByID(id); //uses this method to get info
             if (pdf == null)
             {
                 return View("NotFound");
@@ -91,7 +95,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(pdf);
             }
         }
-        [HttpPost]
+        [HttpPost] //used t 
         public ActionResult Update(int id, PDF_Filter pdf)
         {
             if (ModelState.IsValid)
