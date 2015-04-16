@@ -7,6 +7,7 @@ using System.Web.Mvc;
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
 using System.Web.Services;
+using NotreDameReBuildOfficial.ViewModels;
 
 namespace notre_dame_rebuild.Controllers
 {
@@ -185,5 +186,45 @@ namespace notre_dame_rebuild.Controllers
                 return View();
             }
         }
+        // ------------------------------------- //
+        // ------- Search by Lukasz ------ //
+        // ------------------------------------- //
+
+        //*****ability to search jobs and events***///
+        ndLinqClassDataContext objLinq = new ndLinqClassDataContext();
+        ndLinqClassDataContext jobObj = new ndLinqClassDataContext();
+
+        public ActionResult Search(string q)
+        {
+            var model = new SearchModel();
+
+            //searches job postings by title based on search string
+            model.Job_postings = jobObj.Job_postings.Where(x => x.title.Contains(q)).Take(10).ToList();
+
+            //searches events by name based on search string
+            model.Events = objLinq.Events.Where(x => x.name.Contains(q)).Take(10).ToList();
+
+            //switch statement used to display all jobs
+            switch (q)
+            {
+                case "job":
+                case "jobs":
+                case "Jobs":
+                case "Job":
+                case "Job's":
+                case "Career":
+                case "careers":
+                case "career":
+                case "career's":
+
+                    model.Job_postings = jobObj.Job_postings.Select(x => x).ToList();
+                    break;
+            }
+                       
+            return View(model);
+            //var query = objLinq.Events.Where(x => x.name.Contains(q)).Take(10);
+            //return View(query);
+        }        
+
     }
 }

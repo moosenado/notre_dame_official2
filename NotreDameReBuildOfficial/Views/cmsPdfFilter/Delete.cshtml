@@ -6,9 +6,9 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h2>Delete</h2>
+<h1>Warning! You are about to permanently delete @Model.PdfTitle</h1>
 
-<h2>Are you sure you want to delete this appointment? <em>@Model.PdfTitle from @Model.PdfUrl?</em></h2>
+<h2>Are you sure you want to delete <em>@Model.PdfTitle </em>record from the database?</h2>
 
 @using (Html.BeginForm())
 {

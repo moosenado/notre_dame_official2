@@ -1,0 +1,62 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using NotreDameReBuildOfficial.Models
+@*@model IEnumerable<NotreDameReBuildOfficial.Models.Job_posting>*@
+
+@*namesapce for SearchModel class located in ViewModels, allows to use multiple models in view*@
+@model NotreDameReBuildOfficial.ViewModels.SearchModel
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h1>Search Results</h1>
+
+@*Search form that appears in body*@
+@using (Html.BeginForm("Search", "Home", FormMethod.Get, new { id = "" }))
+{
+    <input name="q" class="bodysearch" id="" onfocus=" if (this.value == 'search') this.value = '' " type="text" maxlength="100" size="15" value="search">
+    <input type="submit" value="Search" class="buttonstyle" />
+}
+
+@* displays job count, if any *@
+@if (Model.Job_postings.Any())
+{
+    <h3> @Model.Job_postings.Count() Jobs Found </h3>
+    
+}
+
+@* displays event count, if any *@
+@if (Model.Events.Any())
+{
+    <h3>@Model.Events.Count() Events Found</h3>
+}
+
+@* if no listings are found, display "No results Found" *@
+@if (Model.Job_postings.Count() == 0 && Model.Events.Count() == 0)
+{
+    <h3>No Results Found</h3>
+}
+@* iterates through job posting results and creates link *@
+<div id="searchBorder">
+    @foreach (var item in Model.Job_postings)
+    {
+        @Html.RouteLink(item.title, new {action = "JobPosting_Details", controller = "JobPosting", item.id}, new {@id = "SearchLink"})
+
+        <div id="overflow">
+            @item.description
+        </div>
+        <br/><br/>
+
+    }
+
+    @* iterates through event results and creates link *@
+    @foreach (var item in Model.Events)
+        {
+           @Html.RouteLink(item.name, new { action = "EventDetails", controller = "Home", item.event_id }, new { @id = "SearchLink" })
+            <br/>
+        
+            @item.description
+            <br/><br/>
+        }
+</div>
+<br/>

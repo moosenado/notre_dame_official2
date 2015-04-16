@@ -20,7 +20,7 @@
 <ul>
     @foreach (var x in Model)
     {
-        <li>@Html.ActionLink(x.Category, "Details", new {Category = x.Category})</li>
+        <li id="">@Html.ActionLink(x.Category, "Details", new { Category = x.Category }, new { @class = "pdfCat" })</li>
     }
 </ul>
 @*<img src='@Url.Content("~/Content/images/facebook.png")'/>*@

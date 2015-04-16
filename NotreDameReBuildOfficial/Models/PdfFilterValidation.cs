@@ -5,6 +5,7 @@ using System.Web;
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Web.Mvc;
 
 namespace NotreDameReBuildOfficial.Models
@@ -45,6 +46,5 @@ namespace NotreDameReBuildOfficial.Models
         [DisplayName("Department*")]
         [Required(ErrorMessage = "Please choose a department")]
         public string Department { get; set; }
-
     }
 }

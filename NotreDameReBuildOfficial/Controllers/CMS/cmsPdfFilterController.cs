@@ -39,12 +39,29 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost]
         public ActionResult createPdf(HttpPostedFileBase file, PDF_Filter pdf)
         {
-
+            //file upload verificaiton
             if ((ModelState.IsValid) && (file != null) && (file.ContentLength > 0))
             {
 
+                var fileType = new[] { "pdf", "PDF", "Pdf" };
+                var fileExt = System.IO.Path.GetExtension(file.FileName).Substring(1);
+
+
+                    if (!fileType.Contains(fileExt))
+                        {
+                            ModelState.AddModelError("file", "Invalid file type. Please choose file with .pdf extension only");
+                            return View();
+                        }
+
+
+                        if (file.ContentLength > 4000000)
+                            {
+                                ModelState.AddModelError("photo", "The file size should not exceed 4MB");
+                                return View();
+                            }
+
                 try
-                {   //uploads file to Content/uploads
+                {   //if all okay then uploads file to Content/uploads
                     var fileName = Path.GetFileName(file.FileName);
                     var path = Path.Combine(Server.MapPath("~/Content/uploads"), fileName);
                     file.SaveAs(path);
@@ -53,9 +70,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     pdf.Tstamp = DateTime.Now; //automatically inserts datetime when form submitted 
                     objPdf.insertPdf(pdf);
                     return RedirectToAction("Pdf");
+                    
                 }
                 catch
                 {
+                   
                     return View();
                 }
             }
@@ -109,6 +128,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost]
         public ActionResult Delete(int id, PDF_Filter pdf)
         {
+
             try
             {
                 objPdf.DeletePdf(id); //access pdf class model method DeletePdf

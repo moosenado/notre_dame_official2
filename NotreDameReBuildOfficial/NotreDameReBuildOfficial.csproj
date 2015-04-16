@@ -259,6 +259,7 @@
     <Compile Include="Models\PdfFilterClass.cs" />
     <Compile Include="Models\PdfFilterValidation.cs" />
     <Compile Include="Models\productValidation.cs" />
+    <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\staffDirectory.cs" />
     <Compile Include="Models\staffValidate.cs" />
     <Compile Include="Models\poll.cs" />
@@ -274,6 +275,7 @@
     <Compile Include="Models\volunteerValidate.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SearchModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-NotreDameReBuildOfficial-20150306083225.mdf" />
@@ -993,6 +995,7 @@
     <Content Include="Views\adminNav\insertNav.cshtml" />
     <Content Include="Views\adminNav\insertsubNav.cshtml" />
     <Content Include="Views\ApptSchedPublic\Thanks.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

@@ -1605,3 +1605,46 @@ table.ui-datepicker-calendar {
 .ui-datepicker-today a {
     color: #fff;
 }
+
+/* --- Body Search and Pdf --- */
+
+.bodysearch {
+    width: 40em;
+    height: 2em;
+    font-size: 1em;
+}
+#overflow {
+    text-overflow: ellipsis;
+    width: 60em;
+    white-space: nowrap;
+    overflow: hidden;     
+}
+
+.pdfCat {
+    border: 0px;
+    color: #fff;
+    background-color: #fd8411;
+    cursor: pointer;
+    padding: 7px 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    line-height: 2.5em;
+}
+
+
+.pdfCat:hover {
+    background-color: #FFFFFF;
+    color: #fd8411;
+    
+}
+
+#SearchLink {
+    font-size: 1.2em;
+}
+
+#searchBorder {
+ 
+    border:1px solid #ddd;
+}
