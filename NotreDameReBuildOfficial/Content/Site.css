@@ -523,7 +523,9 @@ table tr:nth-child(odd) td {
 #main {
     width: 1000px;
 	height: auto !important;
-	margin: 0 auto /*-265px*/;
+    min-height: 100%;
+    height: 100%;
+	margin: 0 auto -265px;
     padding-top: 20px;
 }
 
@@ -661,7 +663,7 @@ table tr:nth-child(odd) td {
 /* --- PUBLIC FOOTER --- */
 
 .push {
-    /* height: 265px; For Sticky Footer*/
+    height: 265px;
 }
 
 #footer_container {
