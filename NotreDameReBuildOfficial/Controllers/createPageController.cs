@@ -82,7 +82,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult pageData(createPage page) 
         {
             if (ModelState.IsValid)
