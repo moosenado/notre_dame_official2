@@ -154,6 +154,59 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        public ActionResult adminNavDelete(int id)
+        {
+            var nav = objNav.getadminNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminNavDelete(int id, admin_navigation nav)
+        {
+            try
+            {
+                objNav.adminNavDelete(id);
+                return RedirectToAction("navList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult adminSubNavDelete(int id)
+        {
+            var nav = objNav.getadminSubNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminsubNavDelete(int id, admin_subNavigation nav)
+        {
+            try
+            {
+                objNav.adminsubNavDelete(id);
+                return RedirectToAction("navList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
 
         public ActionResult NotFound() //Not found Controller

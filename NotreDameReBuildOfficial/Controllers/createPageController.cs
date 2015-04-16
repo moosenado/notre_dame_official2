@@ -54,6 +54,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 snav.NavID = navid;
                 snav.controller = "createPage";
                 snav.pageView = "contentInfo";
+                snav.deletable = 1;
                 objPage.InsertPage(snav);
                 return RedirectToAction("pageList");
             }
@@ -81,7 +82,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult pageData(createPage page) 
         {
             if (ModelState.IsValid)
@@ -120,5 +121,38 @@ namespace NotreDameReBuildOfficial.Controllers
 
             return View(vol);
         }
+
+        public ActionResult pageDelete(int id)
+        {
+            var nav = objPage.getpageByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult pageDelete(int id, subNavigation nav)
+        {
+            try
+            {
+                objPage.pageDelete(id);
+                return RedirectToAction("pageList");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult NotFound() //Not found Controller
+        {
+            return View();
+        }
+
     }
 }

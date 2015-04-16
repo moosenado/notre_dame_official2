@@ -1,4 +1,5 @@
 ﻿@model NotreDameReBuildOfficial.Models.createPage
+
 @{
     ViewBag.Title = "pageData";
 }
@@ -11,7 +12,10 @@
 
         <tr>
             <td>@Html.LabelFor(Model => Model.pageContent)</td>
-            <td>@Html.TextAreaFor(Model => Model.pageContent)<span style="color:red">*</span></td>
+            @*<td>@Html.TextAreaFor(Model => Model.pageContent)<span style="color:red">*</span></td>*@
+            <td>
+                @Html.TextAreaFor(Model => Model.pageContent, new { @id = "pageEditor" })
+            </td>
         </tr>
 </table>
 
@@ -20,8 +24,9 @@
         <span class="buttonstyle">Cancel</span>
     </a>
 }
-
+<script type="text/javascript">CKEDITOR.replace('pageEditor')</script>
 @section Scripts
 {
+    @Scripts.Render("~/Scripts/ckeditor/ckeditor.js")
     @Scripts.Render("~/bundles/jqueryval")
 }

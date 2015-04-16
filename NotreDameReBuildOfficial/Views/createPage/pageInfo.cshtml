@@ -21,7 +21,7 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("Add Content", "passID", new { id = snav.id }) /@Html.ActionLink("Update", "updateJob", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "updateJob", new { id = snav.id })}</td>
+            <td>@Html.ActionLink("Add Content", "passID", new { id = snav.id }) /@Html.ActionLink("Update", "pageUpdate", new { id = snav.id }) / @if (snav.deletable == 1){ @Html.ActionLink("Delete", "pageDelete", new { id = snav.id })}</td>
         </tr>
     }
 

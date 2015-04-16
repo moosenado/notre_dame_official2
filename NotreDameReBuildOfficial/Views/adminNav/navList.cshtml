@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>Admin Pages</th>
+            <th>Sub Pages</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
 
@@ -20,7 +23,9 @@
     {
         <tr>
             <td>@nav.title</td>
-            <td>@Html.ActionLink("View", "navInfo", new { id = nav.id }) /@Html.ActionLink("Update", "adminNavUpdate", new { id = nav.id }) / @if(nav.deletable == 1) { @Html.ActionLink("Delete", "updateJob", new { id = nav.id })}</td>
+            <td><a href='@Url.Action("navInfo", "adminNav", new { id = nav.id })'><i class="fa fa-external-link-square fa-lg"></i></a></td>
+            <td><a href='@Url.Action("adminNavUpdate", "adminNav", new { id = nav.id })'><i class="fa fa-pencil fa-lg"></i></a></td>
+            <td>@if(nav.deletable == 1) { <a href='@Url.Action("adminNavDelete", "adminNav", new { id = nav.id })'><i class="fa fa-trash-o fa-lg"></i></a>}</td>
         </tr>
     }
 
