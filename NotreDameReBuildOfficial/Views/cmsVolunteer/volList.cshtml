@@ -11,7 +11,8 @@
 <table>
     <thead>
         <tr>
-            <th>VOlunteers Applied</th>
+            <th>Volunteers Applied</th>
+            <th>Details</th>
         </tr>
     </thead>
 
@@ -20,7 +21,7 @@
         <tr>
             <td>@vol.firstname</td>
             <td>@vol.lastname</td>
-            <td>@Html.ActionLink("View", "volInfo", new { id = vol.id }) / @Html.ActionLink("Delete", "deleteJob", new { id = vol.id })</td>
+            <td><a href='@Url.Action("volInfo", "cmsVolunteer", new { id = vol.id })'><i class="fa fa-external-link-square fa-lg"></i></a></td>
         </tr>
     }
 

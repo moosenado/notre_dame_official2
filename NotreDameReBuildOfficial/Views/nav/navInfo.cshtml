@@ -6,7 +6,7 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h1>Navigation</h1>
+<h1>Public Navigation</h1>
 <h2>Sub Page Information</h2>
 
 <table>
@@ -20,7 +20,11 @@
     {
         <tr>
             <td>@snav.title</td>
-            <td>@Html.ActionLink("View", "navInfo", new { id = snav.id }) /@Html.ActionLink("Update", "updateJob", new { id = snav.id })</td>
+            <td><a href='@Url.Action("subNavUpdate", "nav", new { id = snav.id })'><i class="fa fa-pencil fa-lg"></i></a></td>
+            <td>
+                @if (snav.deletable == 1)
+                { <a href='@Url.Action("subNavUpdate", "nav", new { id = snav.id })'><i class="fa fa-trash-o fa-lg"></i></a>}
+        </td>
         </tr>
     }
 
@@ -29,4 +33,8 @@
 
 <a href='@Url.Action("insertSubNav", "nav")'>
     <span class="buttonstyle">+ Add Sub Navigation</span>
+</a>
+
+<a href='@Url.Action("navList", "nav")'>
+    <span class="buttonstyle">Back to Navigation</span>
 </a>
