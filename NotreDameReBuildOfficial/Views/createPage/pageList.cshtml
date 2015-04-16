@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<NotreDameReBuildOfficial.Models.navigation>
+
 @{
-    ViewBag.Title = "navList";
+    ViewBag.Title = "pageList";
 
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
-<h1>Public Navigation</h1>
-<h2>Created Navigation List</h2>
+<h1>Create Page</h1>
+<h2>Created public Navigation List</h2>
 
 <table>
     <thead>
@@ -20,7 +21,7 @@
     {
         <tr>
             <td>@nav.title</td>
-            <td>@Html.ActionLink("View", "navInfo", new { id = nav.id }) /@Html.ActionLink("Update", "updateJob", new { id = nav.id })</td>
+            <td>@Html.ActionLink("Create Sub Page", "pageInfo", new { id = nav.id }) /@Html.ActionLink("Update", "updateJob", new { id = nav.id }) / @if (nav.deletable == 1){ @Html.ActionLink("Delete", "updateJob", new { id = nav.id })}</td>
         </tr>
     }
 

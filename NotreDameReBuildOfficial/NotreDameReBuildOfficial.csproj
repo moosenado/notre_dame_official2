@@ -207,6 +207,7 @@
     <Compile Include="Controllers\CMS\CMSRoleController.cs" />
     <Compile Include="Controllers\CMS\CMSUserController.cs" />
     <Compile Include="Controllers\CMS\cmsVolunteerController.cs" />
+    <Compile Include="Controllers\createPageController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GiftShopController.cs" />
@@ -230,6 +231,7 @@
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\createPageClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
     <Compile Include="Models\erwaitClass.cs" />
@@ -258,6 +260,8 @@
     <Compile Include="Models\newsfeedValidation.cs" />
     <Compile Include="Models\PdfFilterClass.cs" />
     <Compile Include="Models\PdfFilterValidation.cs" />
+    <Compile Include="Models\populateNav.cs" />
+    <Compile Include="Models\populatePublicNav.cs" />
     <Compile Include="Models\productValidation.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\staffDirectory.cs" />
@@ -994,7 +998,16 @@
     <Content Include="Views\adminNav\navInfo.cshtml" />
     <Content Include="Views\adminNav\insertNav.cshtml" />
     <Content Include="Views\adminNav\insertsubNav.cshtml" />
+    <Content Include="Views\adminNav\popNav.cshtml" />
     <Content Include="Views\ApptSchedPublic\Thanks.cshtml" />
+    <Content Include="Views\nav\popNav.cshtml" />
+    <Content Include="Views\createPage\pageList.cshtml" />
+    <Content Include="Views\createPage\pageInfo.cshtml" />
+    <Content Include="Views\createPage\insertsubPage.cshtml" />
+    <Content Include="Views\createPage\page.cshtml" />
+    <Content Include="Views\createPage\pageData.cshtml" />
+    <Content Include="Views\adminNav\adminNavUpdate.cshtml" />
+    <Content Include="Views\adminNav\adminSubNavUpdate.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>

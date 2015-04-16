@@ -1,6 +1,8 @@
 ﻿@model NotreDameReBuildOfficial.Models.navValidate
 @{
     ViewBag.Title = "insertNav";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
 <h1>Admin Navigation</h1>
@@ -20,6 +22,10 @@
         <tr>
             <td>@Html.LabelFor(Model => Model.pageView)</td>
             <td>@Html.TextBoxFor(Model => Model.pageView)<span style="color:red">*</span></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.icon)</td>
+            <td>@Html.TextBoxFor(Model => Model.icon)<span style="color:red">*</span></td>
         </tr>
     </table>
 

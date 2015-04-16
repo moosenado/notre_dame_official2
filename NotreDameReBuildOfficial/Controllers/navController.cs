@@ -49,7 +49,8 @@ namespace NotreDameReBuildOfficial.Controllers
         public ActionResult insertNav(navigation nav)
         {
             if(ModelState.IsValid)
-            { 
+            {
+                nav.deletable = 1;
                 objNav.InsertNav(nav);
                 return RedirectToAction("navList");
             }
@@ -69,6 +70,7 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 var navid = (int)TempData["id"];
                 snav.NavID = navid;
+                snav.deletable = 1;
                 objNav.InsertsubNav(snav);
                 return RedirectToAction("navList");
             }
@@ -76,6 +78,12 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
+        public ActionResult popNav()
+        {
+
+            var nav = objNav.getpublicNav();
+            return PartialView(nav);
+        }
 
     }
 }

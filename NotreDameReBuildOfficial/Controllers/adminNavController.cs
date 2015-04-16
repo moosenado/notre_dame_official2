@@ -15,6 +15,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         adminNavigationClass objNav = new adminNavigationClass();
 
+
         public ActionResult navList()
         {
             var nav = objNav.getallNav();
@@ -46,6 +47,7 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             if (ModelState.IsValid)
             {
+                nav.deletable = 1;
                 objNav.InsertNav(nav);
                 return RedirectToAction("navList");
             }
@@ -65,12 +67,100 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 var navid = (int)TempData["id"];
                 snav.navID = navid;
+                snav.deletable = 1;
                 objNav.InsertsubNav(snav);
                 return RedirectToAction("navList");
             }
 
             return View();
         }
+
+        public ActionResult popNav()
+        {
+
+            var nav = objNav.getAdminNav();
+
+
+            return PartialView(nav);
+        }
+
+        public ActionResult adminNavUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getadminNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminNavUpdate(int id, admin_navigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.adminNavUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        public ActionResult adminSubNavUpdate(int id) //Update Controller
+        {
+            var nav = objNav.getadminSubNavByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                return View(nav);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult adminSubNavUpdate(int id, admin_subNavigation nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    objNav.adminSubNavUpdate(id, nav.title, nav.controller, nav.pageView);
+                    return RedirectToAction("navList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+
+        public ActionResult NotFound() //Not found Controller
+        {
+            return View();
+        }
+
 
     }
 }
