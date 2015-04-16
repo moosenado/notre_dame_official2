@@ -5,12 +5,17 @@
     @Scripts.Render("~/Scripts/cms-menu.js");
 }
 
+<h1>Opportunities</h1>
 <h2>Opportunities List</h2>
 
 <table>
     <thead>
         <tr>
             <th>Opportunity</th>
+            <th>Applications</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
 
@@ -18,7 +23,10 @@
     {
         <tr>
             <td>@job.jobTitle</td>
-            <td>@Html.ActionLink("Applications", "passID", new { id = job.id }) / @Html.ActionLink("View", "jobInfo", new { id = job.id }) /@Html.ActionLink("Update", "updateJob", new { id = job.id }) / @Html.ActionLink("Delete", "deleteJob", new { id = job.id })</td>
+            <td>@Html.ActionLink("Applications", "passID", new { id = job.id })</td>
+            <td><a href='@Url.Action("jobInfo", "cmsVolunteer", new { id = job.id })'><i class="fa fa-external-link-square fa-lg"></i></a></td>
+            <td><a href='@Url.Action("updateJob", "cmsVolunteer", new { id = job.id })'><i class="fa fa-pencil fa-lg"></i></a></td>
+            <td><a href='@Url.Action("deleteJob", "cmsVolunteer", new { id = job.id })'><i class="fa fa-trash-o fa-lg"></i></a></td>
         </tr>
     }
 
