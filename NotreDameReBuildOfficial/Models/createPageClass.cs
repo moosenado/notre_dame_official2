@@ -91,7 +91,7 @@ namespace NotreDameReBuildOfficial.Models
         {
             using (objLinq)
             {
-                var upPage = objLinq.createPages.Single(x => x.subPageID == _id);
+                var upPage = objLinq.createPages.Single(x => x.id == _id);
 
 
                 upPage.pageContent = _pageContent;
