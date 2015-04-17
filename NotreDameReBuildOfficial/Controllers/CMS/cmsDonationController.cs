@@ -129,12 +129,17 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             try
             {
                 objDonation.deleteDonation(donation_id);
-                return RedirectToAction("cmsDonationList"); //On successful delete, return to donation list page
+                return RedirectToAction("Manage"); //On successful delete, return to donation list page
             }
             catch
             {
                 return View();
             }
+        }
+
+        public ActionResult NotFound()
+        {
+            return View();
         }
     }
 }
