@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
@@ -14,11 +15,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         eventsListingClass objEvents = new eventsListingClass();
 
         //General list of events
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Manage()
         {
             return View();
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult _UpcomingEventsPartial()
         {
             //Upcoming Events
@@ -28,6 +31,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult _PastEventsPartial()
         {
 
@@ -38,6 +42,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //When admin wants to see the event details
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Details(int event_id)
         {
             var events = objEvents.getEventByID(event_id);
@@ -54,6 +59,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //List of submitted events
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Submitted()
         {
 
@@ -65,6 +71,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult _TotalSubmittedEventsPartial()
         {
 
@@ -77,6 +84,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         // --- INSERT ACTION --- //
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Insert()
         {
             return View();
@@ -105,6 +113,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- UPDATE ACTION --- //
         //Reads the request to update
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update(int event_id)
         {
             var events = objEvents.getEventByID(event_id);
@@ -142,6 +151,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- DELETE ACTION --- //
         //Reads the request to delete
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete(int event_id)
         {
             var events = objEvents.getEventByID(event_id);
