@@ -15,15 +15,15 @@
     <table>
         @Html.HiddenFor(x => x.id)
         <tr>
-            <td>@Html.LabelFor(x => x.title)</td>
+            <td>@Html.Label("Title:")</td>
             <td>@Html.TextBoxFor(x => x.title)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(x => x.controller)</td>
+            <td>@Html.Label("Folder:")</td>
             <td>@Html.TextBoxFor(x => x.controller)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.pageView)</td>
+            <td>@Html.Label("Page:")</td>
             <td>@Html.TextBoxFor(model => Model.pageView)<span style="color:red">*</span></td>
         </tr>
     </table>

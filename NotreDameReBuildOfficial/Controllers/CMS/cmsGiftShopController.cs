@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -14,12 +15,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
     {
         giftShopClass objGS = new giftShopClass();
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult products()
         {
             var allproducts = objGS.getProducts();
             return View(allproducts);
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult insert_product()
         {
             return View();
@@ -57,6 +60,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult update_product(int id)
         {
             var product_id = objGS.getProductByID(id);
@@ -101,7 +105,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult delete_product(int id)
         {
             // Check to see if user id exists and handle it
@@ -131,6 +135,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult purchase_records()
         {
             var allpurchases = objGS.getPurchases();

@@ -341,7 +341,7 @@ table tr:nth-child(odd) td {
     color: #fff;
     background-color: #ccc;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 7px 10px;
     font-family: 'Roboto', sans-serif;
     -webkit-transition: 0.5s ease-out;
     -moz-transition: 0.5s ease-out;
@@ -352,6 +352,7 @@ table tr:nth-child(odd) td {
     float: right;
     margin-left: 5px;
     transition: 0.5s ease-out;
+    border: none;
 }
 
 #magnifylogo:hover {
@@ -379,6 +380,7 @@ table tr:nth-child(odd) td {
 #giftshoplist{
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 #giftshoplist ul{
@@ -388,6 +390,7 @@ table tr:nth-child(odd) td {
     text-align: center;
     width: 200px;
     float: left;
+    list-style-position: inside;
 }
 
 #giftshoplist ul li{
@@ -396,6 +399,8 @@ table tr:nth-child(odd) td {
 
 .cart{
     float: right;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .giftimage{
@@ -437,7 +442,7 @@ table tr:nth-child(odd) td {
     border-right: 1px solid #fff;
 }
 
-#navigation ul li:nth-child(2) {
+#navigation > ul > li:nth-child(2) {
     border-left: 1px solid #fff;
 }
 
@@ -802,6 +807,25 @@ table tr:nth-child(odd) td {
    #navigation ul li a {
         padding: 2.5%;
     }
+
+   #articlebody{
+        width: 50%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+   #article_image{
+        float: none;
+    }
+
+   #article_image img{
+        max-width: 100%;
+    }
+
+    #article_info{
+        float: none;
+    }
   
 }
 
@@ -820,7 +844,8 @@ table tr:nth-child(odd) td {
 
     #navigation ul li:last-child {
         border-right: 0px;
-}
+    }
+
 }
 
 @media only screen and (max-width: 919px) {
@@ -1016,6 +1041,13 @@ table tr:nth-child(odd) td {
     #building {
         display: none;
     }
+
+    #giftshoplist ul{
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+        padding: 20px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1112,6 +1144,17 @@ table tr:nth-child(odd) td {
     .textbox {
         width: 100%;
     }
+
+    .textbox.donate-txtbox,
+    .textbox.add-event,
+    .textbox.datefield.donate-txtbox,
+    .textarea.add-event {
+        width: 94%;
+    }
+
+    .proddetimage{
+        height: 100%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -1129,7 +1172,6 @@ table tr:nth-child(odd) td {
         width: 45%;
     }
 
-   
 
     #partners {
         width: 80%;
@@ -1140,6 +1182,13 @@ table tr:nth-child(odd) td {
     .partner {
         width: 40%;
         float: right;
+    }
+
+     .textbox.donate-txtbox,
+     .textbox.add-event,
+     .textbox.datefield.donate-txtbox,
+     .textarea.add-event {
+        width: 90%;
     }
 }
 
@@ -1519,6 +1568,11 @@ table tr:nth-child(odd) td {
     padding: 0px 20px 40px 20px;
 }
 
+.donate-txtbox,
+.textbox.datefield.donate-txtbox {
+    width: 60%;
+}
+
 label.amount {
     display: inline-block;
 }
@@ -1538,6 +1592,8 @@ table#edit-donations {
 /* --- EVENTS LISTING --- */
 
 #addeventform {
+    margin-left: 20px;
+    margin-right: 20px;
     padding-bottom: 30px;
 }
 

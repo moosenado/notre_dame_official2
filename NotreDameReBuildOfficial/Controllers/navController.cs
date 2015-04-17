@@ -18,7 +18,6 @@ namespace NotreDameReBuildOfficial.Controllers
         //{
         //    return View();
         //}
-
         public ActionResult navList()
         {
             var nav = objNav.getallNav();
@@ -83,7 +82,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
             var nav = objNav.getpublicNav();
             return PartialView(nav);
-            if(nav==null)
+            if(nav == null)
             {
                 return View("NotFound");
             }

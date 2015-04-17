@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using NotreDameReBuildOfficial.Infrastructure;
+
 using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
@@ -17,12 +19,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         volunteerInfo objInfo = new volunteerInfo();
 
+        [CustomAuthorize("admin")]
         public ActionResult jobList()
         {
             var job = objVol.getJobs();
             return View(job);
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult passID(int id)
         {
             var job = objVol.getJobByID(id);
@@ -37,6 +41,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult volList()
         {
             var jobid = (int)TempData["id"];
@@ -46,6 +51,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View(vol);
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult jobInfo(int id)
         {
             var job = objVol.getJobByID(id);
@@ -59,6 +65,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult volInfo(int id)
         {
             var job = objInfo.getVolInfoByID(id);
@@ -72,11 +79,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult InsertJob()
         {
             return View();
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult insertJob(volunteerJob jobs)
         {
@@ -90,6 +99,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult deleteJob(int id)
         {
             var job = objVol.getJobByID(id); 
@@ -103,6 +113,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult deleteJob(int id, volunteerJob job)
         {
@@ -117,6 +128,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult updateJob(int id) //Update Controller
         {
             var job = objVol.getJobByID(id);
@@ -130,6 +142,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult updateJob(int id, volunteerJob job)
         {

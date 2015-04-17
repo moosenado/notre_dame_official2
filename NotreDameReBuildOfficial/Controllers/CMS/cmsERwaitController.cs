@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Linq;
+using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -14,6 +15,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
     {
         erwaitClass objER = new erwaitClass();
 
+        [CustomAuthorize("Admin", "Staff")]
         //Remove patient from waitlist and average wait time algorithm
         public ActionResult ERwait_Patients(erwaitClass waitclass, string remove_command, string wait_patient_id, ER_wait_list waitlist, ER_wait_time waittime, string current_time)
         {
@@ -63,7 +65,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             var patients = objER.getWaitingPatientInfo();
             return View(patients);
         }
-        
+
+        [CustomAuthorize("Admin", "Staff")]
         //add patient straight to ER or to the wait room
         public ActionResult ERwait_AddPatient(string form_command, ER_patient_info patientinfo, ER_wait_list waitlist)
         {       
@@ -121,7 +124,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             ModelState.Clear();
             return View();         
         }
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult ERwait_PatientHistory()
         {
             ViewBag.patientCount = objER.getPatientCount();

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
@@ -15,6 +16,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         donationClass objDonation = new donationClass();
 
         //General list of donations
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Manage()
         {
             var list = objDonation.getDonations();
@@ -22,6 +24,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //Details view when admin wants to see the entire donation record
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Details(int donation_id)
         {
             var donate = objDonation.getDonationByID(donation_id);
@@ -37,6 +40,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         // --- INSERT ACTION --- //
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Insert()
         {
             return View();
@@ -57,7 +61,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                     }
 
                     objDonation.insertDonation(donation);
-                    return RedirectToAction("cmsDonationList"); //On sucessful insert, return to Donate page
+                    return RedirectToAction("Manage"); //On sucessful insert, return to Donate page
                 }
                 catch
                 {
@@ -71,6 +75,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- UPDATE ACTION --- //
         //Reads the request to update
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update(int donation_id)
         {
             var donate = objDonation.getDonationByID(donation_id);
@@ -108,6 +113,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- DELETE ACTION --- //
         //Reads the request to delete
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete(int donation_id)
         {
             var donate = objDonation.getDonationByID(donation_id);

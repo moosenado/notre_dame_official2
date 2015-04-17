@@ -20,7 +20,7 @@
 <img src="~/Images/News_Feed/@Html.DisplayFor(x => x.image)" alt="@Model.title" />
 
 <h3>@Html.Label("Article")</h3>
-<p>@Html.DisplayFor(x => x.article)</p>
+<p>@Html.Raw(Model.article)</p>
 <br />
 <p>
     @Html.ActionLink("Update", "News_Update", new { id = Model.Id }, new { @class = "buttonstyle" })

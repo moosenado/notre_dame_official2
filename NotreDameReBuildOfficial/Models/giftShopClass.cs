@@ -36,10 +36,42 @@ namespace NotreDameReBuildOfficial.Models
             var allProducts = objGS.products.Select(x => x);
             return allProducts;
         }
-        public IQueryable<checkout> getPurchases()
+        public List<checkoutcart> getPurchases()
         {
-            var allPurchases = objGS.checkouts.Select(x => x);
-            return allPurchases;
+            var allItems = (from x in objGS.checkouts
+                          join y in objGS.carts
+                          on x.session_id equals y.session_id 
+                          select new { y.name, y.prod_quantity, y.session_id, y.price, x.firstname, x.lastname, x.message, x.cardname, x.cardtype, x.expirydate, x.securitycode, x.deliv_status, x.patientname, x.orderdate, x.totalpaid, x.Id });
+
+            List<checkoutcart> objCheckoutCart = new List<checkoutcart>();
+
+            foreach (var purchase in allItems.OrderByDescending(x => x.Id))
+            {
+                checkoutcart obj = new checkoutcart();
+
+                obj.name = purchase.name;
+                obj.prod_quantity = purchase.prod_quantity;
+                obj.session_id = purchase.session_id;
+                obj.price = purchase.price;
+                obj.firstname = purchase.firstname;
+                obj.lastname = purchase.lastname;
+                obj.message = purchase.message;
+                obj.cardname = purchase.cardname;
+                obj.cardtype = purchase.cardtype;
+                obj.expirydate = purchase.expirydate;
+                obj.securitycode = purchase.securitycode;
+                obj.deliv_status = purchase.deliv_status;
+                obj.patientname = purchase.patientname;
+                obj.orderdate = purchase.orderdate.ToString();
+                obj.totalpaid = purchase.totalpaid;
+                obj.id = purchase.Id;
+                   
+
+                objCheckoutCart.Add(obj);
+
+            }
+
+            return objCheckoutCart;
         }
         public IQueryable<cart> getCart(string session)
         {

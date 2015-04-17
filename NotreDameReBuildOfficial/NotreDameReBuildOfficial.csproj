@@ -232,6 +232,7 @@
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\checkoutcart.cs" />
     <Compile Include="Models\createPageClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
@@ -532,7 +533,6 @@
     <Content Include="Content\applicant\resume\resume1.pdf" />
     <Content Include="Content\applicant\resume\resume2.pdf" />
     <Content Include="Content\applicant\resume\resume3.pdf" />
-    <Content Include="Content\applicant\resume\resume4.pdf" />
     <Content Include="Content\uploads\Accessibility Plan 2009-2010-e.pdf" />
     <Content Include="Content\uploads\Accessibility.pdf" />
     <Content Include="Content\uploads\Carte stratégique 2011-2017 -%28indicateurs-%29 2012-f.pdf" />
@@ -943,7 +943,6 @@
     <Content Include="Views\Applicant\Insert_Applicant.cshtml" />
     <Content Include="Views\cmsApplicant\Applicants.cshtml" />
     <Content Include="Views\cmsApplicant\Applicant_Details.cshtml" />
-    <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
     <Content Include="Views\Applicant\Success.cshtml" />
     <Content Include="Views\CMSRole\role_Details.cshtml" />
     <Content Include="Views\CMSRole\Roles.cshtml" />
@@ -978,7 +977,6 @@
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
-    <Content Include="Views\Home\AddEvent.cshtml" />
     <Content Include="Views\Home\_EventsPartial.cshtml" />
     <Content Include="Views\Home\SubmitEvent.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
@@ -1032,6 +1030,7 @@
     <Content Include="Views\ApptSched\Mail.cshtml" />
     <Content Include="Views\createPage\pageUpdate.cshtml" />
     <Content Include="Views\cmsDonation\NotFound.cshtml" />
+    <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
     <Content Include="Views\SendMailer\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>

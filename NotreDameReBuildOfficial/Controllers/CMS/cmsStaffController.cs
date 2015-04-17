@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using NotreDameReBuildOfficial.Infrastructure
+
 using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
@@ -15,12 +17,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         // GET: /cmsStaff/
         staffDirectory objStaff = new staffDirectory();
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult staffList()
         {
             var staff = objStaff.getStaff();
             return View(staff);
         }
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult staffInfo(int id)
         {
             var staff = objStaff.getStaffByID(id);
@@ -34,11 +38,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult InsertStaff()
         {
             return View();
         }
 
+        [CustomAuthorize("admin","staff")]
         [HttpPost]
         public ActionResult InsertStaff(staff_info staff)
         {
@@ -50,6 +56,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             return View();
         }
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult deleteStaff(int id)
         {
             var staff = objStaff.getStaffByID(id);
@@ -63,6 +70,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin","staff")]
         [HttpPost]
         public ActionResult deleteStaff(int id, staff_info staff)
         {
@@ -77,6 +85,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult updateStaff(int id) //Update Controller
         {
             var staff = objStaff.getStaffByID(id);
@@ -90,6 +99,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("admin","staff")]
         [HttpPost]
         public ActionResult updateStaff(int id, staff_info staff)
         {
