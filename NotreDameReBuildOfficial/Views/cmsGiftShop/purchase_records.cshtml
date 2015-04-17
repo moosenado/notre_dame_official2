@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NotreDameReBuildOfficial.Models.checkout>
+﻿@model IEnumerable<NotreDameReBuildOfficial.Models.checkoutcart>
 @{
     ViewBag.Title = "purchase_records";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
@@ -30,7 +30,7 @@
         </tr>
     </thead>
 </table>
-        @foreach (var purchase in Model.OrderByDescending(x => x.Id))
+        @foreach (var purchase in Model)
         {
         <h2>@purchase.orderdate</h2>    
         <table>
@@ -48,7 +48,12 @@
                 </tr>
             </tbody>
         </table>   
-            <p>Message to Patient:</p>
+            
+            <p><strong>Customer Purchase:</strong></p>
+            <p>Product: @purchase.name</p>
+            <p>Quantity: @purchase.prod_quantity</p>
+
+            <p><strong>Message to Patient:</strong></p>
             <p>@purchase.message</p>
         }
 
