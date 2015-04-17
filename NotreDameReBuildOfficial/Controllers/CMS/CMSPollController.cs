@@ -7,6 +7,7 @@ using System.IO; //for uploading file path
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
@@ -25,6 +26,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         poll objPoll = new poll(); 
 
         //Get all pollQuestions
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult polls()
         {
             var poll = objPoll.getPoll();
@@ -32,6 +34,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //Get Job by id
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Poll_Details(int id)
         {
             var poll = objPoll.getPollByID(id);
@@ -46,6 +49,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //Insert new  pollQuestion
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Insert_poll()
         {
             return View();
@@ -68,7 +72,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(polls);
         }
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update_poll(int id)
         {
             
@@ -102,7 +106,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(polls);
         }
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete_poll(int id)
         {
             var poll = objPoll.getPollByID(id);

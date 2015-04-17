@@ -13,10 +13,5 @@
 <h3>An email will be sent shortly to you confirming your appointment.</h3>
 <br/>
 
-<form>
-    First name:<br>
-    <input type="text" name="firstname" value="@Model.BookDate">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname">
-</form>
+@Html.ActionLink("Make another appoinment", "createAppt", "ApptSchedPublic", null, new { @class = "buttonstyle" })
+@Html.ActionLink("Back to Home Page", "Index", "Home", null, new { @class = "buttonstyle2" })

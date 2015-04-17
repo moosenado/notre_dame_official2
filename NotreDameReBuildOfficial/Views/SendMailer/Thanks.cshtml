@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Thanks";
+    Layout = "~/Views/Shared/_LayoutCMS.cshtml";
+    @Scripts.Render("~/Scripts/cms-menu.js");
+}
+
+<br/><br/>
+<h2>Confirmation email has been successfully sent</h2>
+
+<br/>
+@Html.ActionLink("Back to list", "ApptSched", "ApptSched")

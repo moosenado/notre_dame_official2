@@ -7,6 +7,7 @@ using System.IO; //for uploading file path
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
@@ -19,6 +20,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         userClass objUser = new userClass(); // creating an instance of UserClass 
 
         //Get all Users
+        [CustomAuthorize("Admin")]
         public ActionResult allUsers()
         {
             var users = objUser.getAllUsers();
@@ -26,6 +28,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //Get Job by id
+         [CustomAuthorize("Admin")]
         public ActionResult User_Details(int id)
         {
             var User = objUser.getUserByID(id);
@@ -38,7 +41,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(User);
             }
         }
-
+         [CustomAuthorize("Admin")]
         public ActionResult Insert_User()
         {
             ViewBag.Rolls = new rollClass().getRolls();
@@ -64,7 +67,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(users);
         }
-
+         [CustomAuthorize("Admin")]
         public ActionResult Update_Users(int id)
         {
             ViewBag.Rolls = new rollClass().getRolls();
@@ -99,7 +102,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View(users);
         }
-
+         [CustomAuthorize("Admin")]
         public ActionResult Delete_user(int id)
         {
             var user = objUser.getUserByID(id);

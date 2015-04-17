@@ -124,12 +124,12 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             var pageid = (int)TempData["id"];
             //info.jobID = jobid;
-            var vol = objPage.getDataByID(pageid);
+            var vol = objPage.getDataByID(pageid); // get data of the page
 
             return View(vol);
         }
 
-        [CustomAuthorize("admin")]
+        [CustomAuthorize("admin")] // authorization 
         public ActionResult pageDelete(int id)
         {
             var nav = objPage.getpageByID(id);
@@ -149,7 +149,7 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             try
             {
-                objPage.pageDelete(id);
+                objPage.pageDelete(id); // delete the page
                 return RedirectToAction("pageList");
             }
             catch
@@ -161,7 +161,7 @@ namespace NotreDameReBuildOfficial.Controllers
         [CustomAuthorize("admin")]
         public ActionResult passpageID(subNavigation snav, int id)
         {
-            var nav = objPage.getpageByID(id);
+            var nav = objPage.getpageByID(id); //pass page ID
             if (nav == null)
             {
                 return View("NotFound");
@@ -199,7 +199,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 try
                 {
                     nav.id = (int)TempData["id"];
-                    objPage.pageDataUpdate(nav.id, nav.pageContent);
+                    objPage.pageDataUpdate(nav.id, nav.pageContent); //page COntent changes from here
                     return RedirectToAction("pageList");
                 }
                 catch
