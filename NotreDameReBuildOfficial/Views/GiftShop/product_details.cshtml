@@ -31,7 +31,7 @@
 
         <br />
 
-        <p class="product">@Html.DisplayFor(x => x.description)</p>
+        <p class="product">@Html.Raw(Model.description)</p>
 
         <input type="hidden" value="@Html.DisplayFor(x => x.name)" name="product_name" />
         <input type="hidden" value="@Html.DisplayFor(x => x.price)" name="product_price" />
