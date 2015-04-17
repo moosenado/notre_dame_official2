@@ -56,58 +56,58 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost]
         public ActionResult Delete_Applicant(int id, Applicant App)
         {
-            
+            var obj = AppObj.getApplicantByID(id);
             ////Applicant obj = new JobApplicants().getApplicantByID(id);
-            //if (obj == null)
-            //    return View();
+            if (obj == null)
+                return View();
 
-            //try
-            //{
-            //    if (obj.resmue != null && obj.resmue.Trim() != "")
-            //    {
-            //         //Path.Combine
-
-            //        string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume/"), obj.resmue);
-
-            //        if (System.IO.File.Exists(fullPath1))
-            //        {
-            //            System.IO.File.Delete(fullPath1);
-            //            //Session["DeleteSuccess"] = "Yes";
-            //        }
-            //    }
-
-            //    AppObj.commitDelete(id);
-            //    return RedirectToAction("Applicants");
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
-              var obj = AppObj.getApplicantByID(id);
             try
             {
-
-                var resumeName = obj.resmue;
-
-
-                string fullPath1 = Server.MapPath("~/Content/applicant/resume"
-                + resumeName);
-
-
-                if (System.IO.File.Exists(fullPath1))
+                if (obj.resmue != null && obj.resmue.Trim() != "")
                 {
-                    System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume"
-                + resumeName));
+                     //Path.Combine
+
+                    string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume/"), obj.resmue);
+
+                    if (System.IO.File.Exists(fullPath1))
+                    {
+                        System.IO.File.Delete(fullPath1);
+                        //Session["DeleteSuccess"] = "Yes";
+                    }
                 }
 
                 AppObj.commitDelete(id);
                 return RedirectToAction("Applicants");
             }
-            catch (Exception e)
+            catch
             {
-                var message = e.Message;
-                return View(App);
+                return View();
             }
+              
+            //try
+            //{
+
+            //    var resumeName = obj.resmue;
+
+
+            //    string fullPath1 = Server.MapPath("~/Content/applicant/resume"
+            //    + resumeName);
+
+
+            //    if (System.IO.File.Exists(fullPath1))
+            //    {
+            //        System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume"
+            //    + resumeName));
+            //    }
+
+            //    AppObj.commitDelete(id);
+            //    return RedirectToAction("Applicants");
+            
+            //catch (Exception e)
+            //{
+            //    var message = e.Message;
+            //    return View(App);
+            //}
 
         }
 
