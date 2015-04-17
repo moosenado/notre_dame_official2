@@ -79,7 +79,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
-        [CustomAuthorize("Admin", "Staff")]
+        [CustomAuthorize("Admin","Staff")]
         public ActionResult popNav() //actionresult used to populate the navigation from database
         {
 
