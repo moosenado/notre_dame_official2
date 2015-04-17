@@ -2320,7 +2320,7 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resmue", DbType="NVarChar(MAX) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resmue", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string resmue
 		{
 			get
@@ -2340,7 +2340,7 @@ namespace NotreDameReBuildOfficial.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cover_letter", DbType="NVarChar(MAX) NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cover_letter", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string cover_letter
 		{
 			get
