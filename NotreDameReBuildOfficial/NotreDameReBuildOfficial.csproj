@@ -370,6 +370,7 @@
     <Content Include="bin\zh-Hant\Microsoft.Data.Edm.resources.dll" />
     <Content Include="bin\zh-Hant\Microsoft.Data.OData.resources.dll" />
     <Content Include="bin\zh-Hant\System.Spatial.resources.dll" />
+    <Content Include="Content\datetimepicker.css" />
     <Content Include="Content\font-awesome-4.3.0\css\font-awesome.css" />
     <Content Include="Content\font-awesome-4.3.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.3.0\fonts\fontawesome-webfont.svg" />
@@ -818,6 +819,7 @@
     <Content Include="Scripts\ckeditor\skins\moono\images\refresh.png" />
     <Content Include="Scripts\ckeditor\styles.js" />
     <Content Include="Scripts\cms-menu.js" />
+    <Content Include="Scripts\datetimepicker.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1028,6 +1030,8 @@
     <Content Include="Views\createPage\pageDelete.cshtml" />
     <Content Include="Views\SendMailer\Mail.cshtml" />
     <Content Include="Views\ApptSched\Mail.cshtml" />
+    <Content Include="Views\createPage\pageUpdate.cshtml" />
+    <Content Include="Views\cmsDonation\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

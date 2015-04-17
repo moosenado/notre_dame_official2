@@ -1,12 +1,14 @@
 ﻿<div id="erwait">
     @model NotreDameReBuildOfficial.Models.erwaitClass
 
-    ER Wait: @if (Model.getWaitTime() != null)
+    ER Wait: @if (Model.waitListCount() == 1){ @Model.waitListCount() <span>Person</span>}else{ @Model.waitListCount() <span>People</span>} | @if (Model.getWaitTime() != null)
     {
         @Model.getWaitTime()
+
     }
     else
     {
         <span>Updating...</span>
     }
+    
 </div>

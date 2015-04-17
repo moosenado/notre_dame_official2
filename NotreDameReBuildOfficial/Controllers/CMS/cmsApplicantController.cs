@@ -37,7 +37,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
-        [CustomAuthorize("admin")]
+        //[CustomAuthorize("admin")]
         public ActionResult Delete_Applicant(int id)
         {
             var App = AppObj.getApplicantByID(id);
@@ -54,7 +54,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         [HttpPost] // restirict an action method by only post requests
         public ActionResult Delete_Applicant(int id, Applicant App)
         {
-            Applicant obj = new JobApplicants().getApplicantByID(id);
+            var obj = AppObj.getApplicantByID(id);
+            //Applicant obj = new JobApplicants().getApplicantByID(id);
             if (obj == null)
                 return View();
             

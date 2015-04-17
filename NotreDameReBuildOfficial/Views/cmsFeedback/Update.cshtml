@@ -17,19 +17,15 @@
         <tr>
             <td>@Html.LabelFor(model => model.date)</td>
             <td>@Html.DisplayFor(model => model.date)</td>
-        </tr>
-
-        @if(@Model.name != null && @Model.email != null){
+        </tr>  
         <tr>
-            <td>@Html.LabelFor(model => model.name)</td>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.name)</td>
             <td>@Html.TextBoxFor(model => model.name, new { @class = "fbname textbox" })</td>
         </tr>
             <tr>
-            <td>@Html.LabelFor(model => model.email)</td>
+            <td><span style="color:red">*</span>@Html.LabelFor(model => model.email)</td>
             <td>@Html.TextBoxFor(model => model.email, new { @class = "fbname textbox" })</td>
         </tr>
-        }
-
         <tr>
             <td><span style="color:red">*</span>
                 @Html.LabelFor(model => model.category)</td>

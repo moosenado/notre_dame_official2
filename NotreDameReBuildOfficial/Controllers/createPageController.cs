@@ -149,6 +149,60 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        public ActionResult passpageID(subNavigation snav, int id)
+        {
+            var nav = objPage.getpageByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return RedirectToAction("pageUpdate");
+            }
+        }
+
+
+        public ActionResult pageUpdate() //Update Controller
+        {
+            int id = (int)TempData["id"]; 
+            var nav = objPage.getDataByID(id);
+            if (nav == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = nav.id;
+                return View(nav);
+            }
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public ActionResult pageUpdate(createPage nav)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    nav.id = (int)TempData["id"];
+                    objPage.pageDataUpdate(nav.id, nav.pageContent);
+                    return RedirectToAction("pageList");
+                }
+                catch
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
         public ActionResult NotFound() //Not found Controller
         {
             return View();

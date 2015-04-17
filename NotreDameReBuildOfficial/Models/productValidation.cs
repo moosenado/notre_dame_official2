@@ -26,6 +26,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("Description")]
         [Required(ErrorMessage = "Please enter a description")]
+        [AllowHtml]
         public string description { get; set; }
 
         [DisplayName("Image")]

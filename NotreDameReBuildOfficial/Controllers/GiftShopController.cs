@@ -51,9 +51,6 @@ namespace NotreDameReBuildOfficial.Controllers
                     var cartCountInc = objGS.getCartCount(session_id);
                     ViewBag.cartCount = cartCountInc;
 
-                    //view message
-
-                    ViewBag.Message = "Product Added To Cart";
 
                 }
                 catch (Exception ex)
@@ -112,9 +109,7 @@ namespace NotreDameReBuildOfficial.Controllers
                     var cartCountInc = objGS.getCartCount(session_id);
                     ViewBag.cartCount = cartCountInc;
 
-                    //view message
 
-                    ViewBag.Message = "Product Added To Cart";
 
                 }
                 catch (Exception ex)
@@ -156,7 +151,7 @@ namespace NotreDameReBuildOfficial.Controllers
                         objCartDelete.SubmitChanges();
                     }
 
-                    ViewBag.Message = "Product Deleted";
+                    
                 }
                 catch (Exception ex)
                 {

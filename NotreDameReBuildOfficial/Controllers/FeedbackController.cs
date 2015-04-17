@@ -35,6 +35,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 feedback.approved = 0;
             }
 
+            //If the form is valid, insert fields into the db
             if (ModelState.IsValid)
             {
                 try
@@ -56,11 +57,12 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        //Thank you page
         public ActionResult Thanks()
         {
             if (ModelState.IsValid)
             {
-                return View("Thank You");
+                return View("Thanks");
             }
             else
             {
@@ -69,7 +71,7 @@ namespace NotreDameReBuildOfficial.Controllers
         }
 
         [HttpPost]
-        public ActionResult Thanks(feedbackValidation valid)//passes form
+        public ActionResult Thanks(feedbackValidation valid)
         {
             if (ModelState.IsValid)
             {
