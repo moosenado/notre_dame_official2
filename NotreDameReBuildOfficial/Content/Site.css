@@ -372,6 +372,10 @@ table tr:nth-child(odd) td {
     font-weight: 700;
 }
 
+#loginresp{
+    display: none !important;
+}
+
 #giftshoplist{
     margin: 0 auto;
     margin-top: 10px;
@@ -433,7 +437,7 @@ table tr:nth-child(odd) td {
     border-right: 1px solid #fff;
 }
 
-#navigation ul li:first-child {
+#navigation ul li:nth-child(2) {
     border-left: 1px solid #fff;
 }
 
@@ -810,6 +814,10 @@ table tr:nth-child(odd) td {
         border-left: 0px;
     }
 
+     #navigation ul li:nth-child(2) {
+        border-left: 0px;
+    }
+
     #navigation ul li:last-child {
         border-right: 0px;
 }
@@ -831,6 +839,10 @@ table tr:nth-child(odd) td {
         background-color: #019ab8;
         margin: 0 auto;
         clear:both;
+    }
+
+    #loginresp{
+        display: block !important;
     }
 
     #mobilesearch {
