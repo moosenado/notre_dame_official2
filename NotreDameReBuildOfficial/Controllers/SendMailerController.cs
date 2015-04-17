@@ -36,7 +36,7 @@ namespace Mail.Controllers
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
                 //return View("Mail", _objModelMail);
-                return View("Thanks");
+                return View("Thanks"); //goes to confirmation page after email is sent
             }
             else
             {
