@@ -37,9 +37,11 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
-        //[CustomAuthorize("admin")]
+        [CustomAuthorize("admin")]
         public ActionResult Delete_Applicant(int id)
         {
+
+
             var App = AppObj.getApplicantByID(id);
             if (App == null)
             {
@@ -50,29 +52,58 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(App);
             }
         }
+
+
         //Delet Applicant from database
         [HttpPost] // restirict an action method by only post requests
         public ActionResult Delete_Applicant(int id, Applicant App)
         {
             var obj = AppObj.getApplicantByID(id);
-            //Applicant obj = new JobApplicants().getApplicantByID(id);
-            if (obj == null)
-                return View();
+            ////Applicant obj = new JobApplicants().getApplicantByID(id);
+            //if (obj == null)
+            //    return View();
             
+            //try
+            //{
+            //    if (obj.resmue != null && obj.resmue.Trim() != "")
+            //    {
+            //         //Path.Combine
+
+            //        string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume/"), obj.resmue);
+
+            //        if (System.IO.File.Exists(fullPath1))
+            //        {
+            //            System.IO.File.Delete(fullPath1);
+            //            //Session["DeleteSuccess"] = "Yes";
+            //        }
+            //    }
+
+            //    AppObj.commitDelete(id);
+            //    return RedirectToAction("Applicants");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+
             try
             {
-                if (obj.resmue != null && obj.resmue.Trim() != "")
+
+                 var resumeName = obj.resmue;
+               
+
+                string fullPath1 = Server.MapPath("~/Content/applicant/resume/"
+                + resumeName);
+
+
+                if (System.IO.File.Exists(fullPath1))
                 {
-
-                    string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume"), obj.resmue);
-
-                    if (System.IO.File.Exists(fullPath1))
-                    {
-                        System.IO.File.Delete(fullPath1);
-                        //Session["DeleteSuccess"] = "Yes";
-                    }
+                    System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume/"
+                + resumeName));
                 }
+             
 
+                // delete the information of applicant from table
                 AppObj.commitDelete(id);
                 return RedirectToAction("Applicants");
             }
