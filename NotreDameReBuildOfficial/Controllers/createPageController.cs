@@ -158,7 +158,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
             else
             {
-                TempData["id"] = snav.id;
+                TempData["id"] = id;
                 return RedirectToAction("pageUpdate");
             }
         }
@@ -174,6 +174,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
             else
             {
+                TempData["id"] = nav.id;
                 return View(nav);
             }
         }
@@ -185,8 +186,8 @@ namespace NotreDameReBuildOfficial.Controllers
             {
                 try
                 {
-                    nav.subPageID = (int)TempData["id"];
-                    objPage.pageDataUpdate(nav.subPageID, nav.pageContent);
+                    nav.id = (int)TempData["id"];
+                    objPage.pageDataUpdate(nav.id, nav.pageContent);
                     return RedirectToAction("pageList");
                 }
                 catch
