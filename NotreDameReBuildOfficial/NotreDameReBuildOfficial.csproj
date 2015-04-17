@@ -232,6 +232,7 @@
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\checkoutcart.cs" />
     <Compile Include="Models\createPageClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
@@ -976,7 +977,6 @@
     <Content Include="Views\cmsVolunteer\updateJob.cshtml" />
     <Content Include="Views\cmsERwait\ERwait_PatientHistory.cshtml" />
     <Content Include="Views\cmsDonation\Manage.cshtml" />
-    <Content Include="Views\Home\AddEvent.cshtml" />
     <Content Include="Views\Home\_EventsPartial.cshtml" />
     <Content Include="Views\Home\SubmitEvent.cshtml" />
     <Content Include="Views\Home\Thanks.cshtml" />
