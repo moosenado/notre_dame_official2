@@ -109,8 +109,8 @@
       <Column Name="city" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="province" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="postal_code" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="resmue" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="cover_letter" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="resmue" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="true" />
+      <Column Name="cover_letter" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="true" />
       <Column Name="job_posting_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
