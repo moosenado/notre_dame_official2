@@ -37,10 +37,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
-        [CustomAuthorize("admin")]
         public ActionResult Delete_Applicant(int id)
         {
-
 
             var App = AppObj.getApplicantByID(id);
             if (App == null)
@@ -49,20 +47,19 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             else
             {
+                TempData["id"] = id;
                 return View(App);
             }
         }
 
-
-        //Delet Applicant from database
-        [HttpPost] // restirict an action method by only post requests
+        [HttpPost]
         public ActionResult Delete_Applicant(int id, Applicant App)
         {
-            var obj = AppObj.getApplicantByID(id);
+            
             ////Applicant obj = new JobApplicants().getApplicantByID(id);
             //if (obj == null)
             //    return View();
-            
+
             //try
             //{
             //    if (obj.resmue != null && obj.resmue.Trim() != "")
@@ -85,34 +82,36 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             //{
             //    return View();
             //}
-
+              var obj = AppObj.getApplicantByID(id);
             try
             {
 
-                 var resumeName = obj.resmue;
-               
+                var resumeName = obj.resmue;
 
-                string fullPath1 = Server.MapPath("~/Content/applicant/resume/"
+
+                string fullPath1 = Server.MapPath("~/Content/applicant/resume"
                 + resumeName);
 
 
                 if (System.IO.File.Exists(fullPath1))
                 {
-                    System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume/"
+                    System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume"
                 + resumeName));
                 }
-             
 
-                // delete the information of applicant from table
                 AppObj.commitDelete(id);
                 return RedirectToAction("Applicants");
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                var message = e.Message;
+                return View(App);
             }
 
         }
+
+
+        
 
     }
 }
