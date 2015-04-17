@@ -1032,6 +1032,7 @@
     <Content Include="Views\ApptSched\Mail.cshtml" />
     <Content Include="Views\createPage\pageUpdate.cshtml" />
     <Content Include="Views\cmsDonation\NotFound.cshtml" />
+    <Content Include="Views\SendMailer\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />

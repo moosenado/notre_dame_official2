@@ -35,7 +35,8 @@ namespace Mail.Controllers
                 ("notredamehospital@outlook.com", "NotreDame1415"); // Username/Password credentials 
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
-                return View("Mail", _objModelMail);
+                //return View("Mail", _objModelMail);
+                return View("Thanks");
             }
             else
             {
@@ -43,5 +44,6 @@ namespace Mail.Controllers
             }
         }
     }
+
 }
 //Source: http://www.c-sharpcorner.com/UploadFile/sourabh_mishra1/sending-an-e-mail-using-Asp-Net-mvc/
