@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
+using NotreDameReBuildOfficial.Infrastructure;
 
 using NotreDameReBuildOfficial.Models;
 
@@ -14,12 +15,14 @@ namespace NotreDameReBuildOfficial.Controllers
     {
         ApptSchedClass objApptSched = new ApptSchedClass(); //created instance
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult ApptSched() //method gets all apointments using model and displays it on ApptSched view  
         {
             var appt = objApptSched.getAppts(); //calls method getAppts from model
             return View(appt);
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Details(int id)
         {
             var appt = objApptSched.getApptBookByID(id); //calls method getApptBookByID basied on specific id
@@ -47,7 +50,8 @@ namespace NotreDameReBuildOfficial.Controllers
         //}
 
         //********Mail form END********//
-
+            
+            [CustomAuthorize("Admin", "Staff")]
             public ActionResult createAppt()
             {
                 return View();
@@ -73,6 +77,8 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 return View();
             }
+
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update(int id) //update method
             {
                 var appt = objApptSched.getApptBookByID(id);
@@ -106,6 +112,8 @@ namespace NotreDameReBuildOfficial.Controllers
                 }
                 return View();
             }
+
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete(int id)
             {
             var appt = objApptSched.getApptBookByID(id);

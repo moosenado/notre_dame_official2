@@ -27,7 +27,7 @@
     <label class="label">Body:</label>
     @Html.TextAreaFor(m => m.Body, new { @class = "textarea", Value = "" })
     @Html.ValidationMessageFor(m => m.Body, "*")
-
+    <br/>
     <input type="submit" value="Send" class="buttonstyle"/>
     @Html.RouteLink("Back", new { action = "ApptSched", controller = "ApptSched" }, new { @class = "buttonstyle2" })
 }
