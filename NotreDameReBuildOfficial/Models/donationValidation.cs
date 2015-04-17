@@ -63,7 +63,7 @@ namespace NotreDameReBuildOfficial.Models
         [StringLength(6, ErrorMessage = "Invalid postal code")]
         public string postal { get; set; }
 
-        [DisplayName("Phone Number (e.g. 212-666-1234):")]
+        [DisplayName("Phone Number (e.g. 2126661234):")]
         [Required(ErrorMessage = "Please enter your phone number")]
         [RegularExpression("^([0-9]*)$", ErrorMessage = "Invalid phone number")]
         public string phone { get; set; }

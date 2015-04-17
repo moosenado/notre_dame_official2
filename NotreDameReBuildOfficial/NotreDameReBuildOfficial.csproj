@@ -1026,6 +1026,7 @@
     <Content Include="Views\createPage\NotFound.cshtml" />
     <Content Include="Views\createPage\pageDelete.cshtml" />
     <Content Include="Views\createPage\pageUpdate.cshtml" />
+    <Content Include="Views\cmsDonation\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
