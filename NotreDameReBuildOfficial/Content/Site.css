@@ -341,7 +341,7 @@ table tr:nth-child(odd) td {
     color: #fff;
     background-color: #ccc;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 7px 10px;
     font-family: 'Roboto', sans-serif;
     -webkit-transition: 0.5s ease-out;
     -moz-transition: 0.5s ease-out;
@@ -352,6 +352,7 @@ table tr:nth-child(odd) td {
     float: right;
     margin-left: 5px;
     transition: 0.5s ease-out;
+    border: none;
 }
 
 #magnifylogo:hover {
@@ -441,7 +442,7 @@ table tr:nth-child(odd) td {
     border-right: 1px solid #fff;
 }
 
-#navigation ul li:nth-child(2) {
+#navigation > ul > li:nth-child(2) {
     border-left: 1px solid #fff;
 }
 
