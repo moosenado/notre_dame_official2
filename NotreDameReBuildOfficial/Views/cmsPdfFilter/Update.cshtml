@@ -12,42 +12,50 @@
 
 @using (Html.BeginForm())
 {
-
+    @Html.ValidationSummary()
     <table>
-        <tr>
+        @*<tr>
             <td>@Html.LabelFor(model => model.PdfTitle, new { @class = "label" })</td>
-            <td>@Html.TextBoxFor(model => model.PdfTitle, new { @class = "textbox" })</td>
-        </tr>
+            <td>@Html.TextBoxFor(model => model.PdfTitle, new {@class = "textbox"})</td>
+            <td>@Html.ValidationMessageFor(model => model.PdfTitle)</td>
+        </tr>*@
         <tr>
             <td>@Html.LabelFor(model => model.Category, new { @class = "label" })</td>
             <td>
-                @Html.DropDownListFor(model => model.Category, new[] {
-        new SelectListItem() {Text = ""},
-        new SelectListItem() {Text = "Medicine"},
-        new SelectListItem() {Text = "Legal"},
-        new SelectListItem() {Text = "Accessibilty"},
-        new SelectListItem() {Text = "Reports"},
-        new SelectListItem() {Text = "Legal"},
-        new SelectListItem() {Text = "Expenses"},
-        new SelectListItem() {Text = "Forms"},
-        new SelectListItem() {Text = "Media"},
-        new SelectListItem() {Text = "Other"},}, new { @class = "dropdown-list" })
-        </td>
+                @Html.DropDownListFor(model => model.Category, new[]
+                {
+                    new SelectListItem() {Text = ""},
+                    new SelectListItem() {Text = "Medicine"},
+                    new SelectListItem() {Text = "Legal"},
+                    new SelectListItem() {Text = "Accessibilty"},
+                    new SelectListItem() {Text = "Reports"},
+                    new SelectListItem() {Text = "Legal"},
+                    new SelectListItem() {Text = "Expenses"},
+                    new SelectListItem() {Text = "Forms"},
+                    new SelectListItem() {Text = "Media"},
+                    new SelectListItem() {Text = "Other"},
+                }, new {@class = "dropdown-list"})
+            </td>
+            <td>@Html.ValidationMessageFor(model => model.Category, "*")</td>
     </tr>
     <tr>
         <td>@Html.LabelFor(model => model.Descr, new { @class = "label" })</td>
-        <td>@Html.TextBoxFor(model => model.Descr, new { @class = "textbox" })</td>
+        <td>@Html.TextBoxFor(model => model.Descr, new {@class = "textbox"})</td>
+        <td>@Html.ValidationMessageFor(model => model.Descr, "*")</td>
     </tr>
     <tr>
         <td>@Html.LabelFor(model => model.Lang, new { @class = "label" })</td>
         <td>
-            @Html.DropDownListFor(model => model.Lang, new[] {
-        new SelectListItem() {Text = ""},
-        new SelectListItem() {Text = "English"},
-        new SelectListItem() {Text = "French"},
-        new SelectListItem() {Text = "Other"},
-        new SelectListItem() {Text = "unknown"},}, new { @class = "dropdown-list" })
-    </td>
+            @Html.DropDownListFor(model => model.Lang, new[]
+            {
+                new SelectListItem() {Text = ""},
+                new SelectListItem() {Text = "English"},
+                new SelectListItem() {Text = "French"},
+                new SelectListItem() {Text = "Other"},
+                new SelectListItem() {Text = "unknown"},
+            }, new {@class = "dropdown-list"})
+        </td>
+        <td>@Html.ValidationMessageFor(model => model.Lang, "*")</td>
 </tr>
         <tr>
             <td>@Html.LabelFor(model => model.Department, new {@class = "label"})</td>
@@ -66,10 +74,12 @@
                     new SelectListItem() {Text = "Other"},
                 }, new {@class = "dropdown-list"})
             </td>
+            <td>@Html.ValidationMessageFor(model => model.Department, "*")</td>
         </tr>
 </table>
 
-    <input type="submit" value="Update" />
+    <input type="submit" value="Update" class="buttonstyle"/>
+    
 }
 
 @*<p>@Html.ActionLink("Back", "Details", new { id = Model.id })</p>*@
