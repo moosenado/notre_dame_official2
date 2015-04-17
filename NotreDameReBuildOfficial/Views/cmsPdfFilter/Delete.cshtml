@@ -12,7 +12,7 @@
 
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" />
+    <input type="submit" value="Delete" class="buttonstyle2" />
 
-    @Html.ActionLink("Back", "Details", new { id = Model.id })
+    @Html.ActionLink("Back", "Details", new { id = Model.id }, new { @class = "buttonstyle" })
 }

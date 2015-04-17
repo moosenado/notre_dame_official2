@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using NotreDameReBuildOfficial.Infrastructure;
 using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
@@ -13,12 +13,14 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
     {
         PdfFilterClass objPdf = new PdfFilterClass(); //created instance of PdfFilterClass 
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Pdf() //method gets all pdf's using model and displays it on pdf view  
         {
             var pdf = objPdf.getPdfs(); //calls method getPdfs from model
             return View(pdf);
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Details(int id) //getPdfById method
         {
             var pdf = objPdf.getPdfByID(id);
@@ -32,6 +34,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult createPdf()
         {
             return View();
@@ -83,6 +86,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View();
         }
+
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update(int id) //gets all of the pdf info
         {
             var pdf = objPdf.getPdfByID(id); //uses this method to get info
@@ -115,6 +120,8 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
             return View();
         }
+
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete(int id)
         {
             var pdf = objPdf.getPdfByID(id);

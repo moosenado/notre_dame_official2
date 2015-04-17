@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using NotreDameReBuildOfficial.Infrastructure
+using NotreDameReBuildOfficial.Infrastructure;
 
 using NotreDameReBuildOfficial.Models;
 

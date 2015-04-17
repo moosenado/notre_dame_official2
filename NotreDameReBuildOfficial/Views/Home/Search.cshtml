@@ -45,7 +45,7 @@
         @Html.RouteLink(item.title, new {action = "JobPosting_Details", controller = "JobPosting", item.id}, new {@id = "SearchLink"})
 
         <div id="overflow">
-            @item.description
+            @Html.Raw(item.description)
         </div>
         <br/><br/>
 
@@ -57,7 +57,7 @@
            @Html.RouteLink(item.name, new { action = "EventDetails", controller = "Home", item.event_id }, new { @id = "SearchLink" })
             <br/>
         
-            @item.description
+            @Html.Raw(item.description)
             <br/><br/>
         }
 </div>

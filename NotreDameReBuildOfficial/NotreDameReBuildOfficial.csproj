@@ -1031,6 +1031,7 @@
     <Content Include="Views\createPage\pageUpdate.cshtml" />
     <Content Include="Views\cmsDonation\NotFound.cshtml" />
     <Content Include="Views\cmsApplicant\Delete_Applicant.cshtml" />
+    <Content Include="Views\SendMailer\Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\News_Feed\" />
