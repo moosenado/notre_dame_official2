@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NotreDameReBuildOfficial.Infrastructure;
 
 using NotreDameReBuildOfficial.Models;
 
@@ -22,6 +23,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(nav);
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult navInfo(int id) // actionresut navInfo is to show subPags 
         {
             var nav = objNav.getallNavByID(id); //gettiing subpages accoeding to bav ID
@@ -36,12 +38,13 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
-
+        [CustomAuthorize("admin")]
         public ActionResult insertNav() // Actionresult for creating a new main navigation
         {
             return View();
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult insertNav(admin_navigation nav) // httpost actionresult for inserting a new navigation in main menu
         {
@@ -54,12 +57,13 @@ namespace NotreDameReBuildOfficial.Controllers
 
             return View();
         }
-
+        [CustomAuthorize("admin")]
         public ActionResult insertsubNav() //actionresult for inserting subnav
         {
             return View(); //returning view, form for insrrting value
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost] // http post method used to get the form value
         public ActionResult insertsubNav(admin_subNavigation snav) //actionresult for the subnavigation
         {
@@ -75,6 +79,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View();
         }
 
+        [CustomAuthorize("admin","staff")]
         public ActionResult popNav() //actionresult used to populate the navigation from database
         {
 
@@ -84,6 +89,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return PartialView(nav); // returning partial view which is used in _layout of CMS
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult adminNavUpdate(int id) //Update Controller // update actionresult
         {
             var nav = objNav.getadminNavByID(id); //getiing nav by id to updated specific field
@@ -97,6 +103,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost] //post method to get the values
         public ActionResult adminNavUpdate(int id, admin_navigation nav) // admon nav update actionresult
         {
@@ -119,6 +126,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult adminSubNavUpdate(int id) //sub nav Update actionresult
         {
             var nav = objNav.getadminSubNavByID(id); //get admin sub navigation ID to update it
@@ -132,6 +140,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost] // HTTPPOST method used to get value
         public ActionResult adminSubNavUpdate(int id, admin_subNavigation nav)
         {
@@ -154,6 +163,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult adminNavDelete(int id) //admin nav delete
         {
             var nav = objNav.getadminNavByID(id); //get admin navigation ID
@@ -167,6 +177,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult adminNavDelete(int id, admin_navigation nav)
         {
@@ -181,6 +192,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult adminSubNavDelete(int id) //sub navigation delete action reslut
         {
             var nav = objNav.getadminSubNavByID(id); //get sub navigation by ID
@@ -194,6 +206,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult adminsubNavDelete(int id, admin_subNavigation nav) // HTTPOST admin sub nav delete actionresult
         { 

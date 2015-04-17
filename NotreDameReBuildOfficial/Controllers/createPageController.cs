@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NotreDameReBuildOfficial.Infrastructure;
 
 using NotreDameReBuildOfficial.Models;
 
@@ -17,12 +18,14 @@ namespace NotreDameReBuildOfficial.Controllers
 
         createPageClass objPage = new createPageClass();
 
+        [CustomAuthorize("admin")]
         public ActionResult pageList() // pageList actionresult for dispalying the list of pages created
         {
             var nav = objPage.getallNav(); // gets all the crated navigation links
             return View(nav);
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult pageInfo(int id) // page info returns list of sub navigations
         {
             var nav = objPage.getallNavByID(id); // getting nav ID 
@@ -37,11 +40,13 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult insertsubPage() // create a new page
         {
             return View();
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult insertsubPage(subNavigation snav) // Post method used to get the values and inserting the page
         {
@@ -60,6 +65,7 @@ namespace NotreDameReBuildOfficial.Controllers
         }
 
 
+        [CustomAuthorize("admin")]
         public ActionResult passID(int id) // passID actionresult
         {
             var nav = objPage.getallNavByID(id); // getting nav by id
@@ -74,11 +80,13 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult pageData() // page Data action result for inserting content in new pages 
         {
             return View();
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost, ValidateInput(false)] // validation false because trying to insert HTML tags
         public ActionResult pageData(createPage page) 
         {
@@ -94,6 +102,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult contentInfo(int id) // content info gives ID of the created page
         {
 
@@ -110,6 +119,7 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult page() // page Actionresult 
         {
             var pageid = (int)TempData["id"];
@@ -119,6 +129,7 @@ namespace NotreDameReBuildOfficial.Controllers
             return View(vol);
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult pageDelete(int id)
         {
             var nav = objPage.getpageByID(id);
@@ -132,6 +143,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost]
         public ActionResult pageDelete(int id, subNavigation nav)
         {
@@ -146,6 +158,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         public ActionResult passpageID(subNavigation snav, int id)
         {
             var nav = objPage.getpageByID(id);
@@ -161,6 +174,7 @@ namespace NotreDameReBuildOfficial.Controllers
         }
 
 
+        [CustomAuthorize("admin")]
         public ActionResult pageUpdate() //Update Controller
         {
             int id = (int)TempData["id"]; 
@@ -176,6 +190,7 @@ namespace NotreDameReBuildOfficial.Controllers
             }
         }
 
+        [CustomAuthorize("admin")]
         [HttpPost, ValidateInput(false)]
         public ActionResult pageUpdate(createPage nav)
         {

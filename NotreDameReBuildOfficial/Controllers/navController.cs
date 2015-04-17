@@ -18,7 +18,6 @@ namespace NotreDameReBuildOfficial.Controllers
         //{
         //    return View();
         //}
-
         public ActionResult navList()
         {
             var nav = objNav.getallNav();

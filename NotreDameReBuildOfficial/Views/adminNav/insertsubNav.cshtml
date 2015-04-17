@@ -13,16 +13,16 @@
 {
     <table>
         <tr>
-            <td>@Html.LabelFor(Model => Model.title)</td>
-            <td>@Html.TextBoxFor(Model => Model.title)<span style="color:red">*</span></td>
+            <td>@Html.Label("Title:")</td>
+            <td>@Html.TextBoxFor(x => x.title)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(Model => Model.controller)</td>
-            <td>@Html.TextBoxFor(Model => Model.controller)<span style="color:red">*</span></td>
+            <td>@Html.Label("Folder:")</td>
+            <td>@Html.TextBoxFor(x => x.controller)<span style="color:red">*</span></td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(Model => Model.pageView)</td>
-            <td>@Html.TextBoxFor(Model => Model.pageView)<span style="color:red">*</span></td>
+            <td>@Html.Label("Page:")</td>
+            <td>@Html.TextBoxFor(model => Model.pageView)<span style="color:red">*</span></td>
         </tr>
     </table>
 
