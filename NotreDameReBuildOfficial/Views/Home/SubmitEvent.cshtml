@@ -11,9 +11,9 @@
     });
 </script>
 
-<h1 class="no-border">Submit Your Event</h1>
-
 <div id="addeventform">
+    
+    <h1 class="no-border">Submit Your Event</h1>
 
     @using (Html.BeginForm())
     {
@@ -24,85 +24,85 @@
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.name)</td>
                 <td class="event-field">
-                    @Html.TextBoxFor(model => model.name, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.name, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.name)
                 </td>
             </tr>
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.start_date)</td>
                 <td class="event-field">
-                    @Html.TextBoxFor(model => model.start_date, new { @class = "textbox datefield" })
+                    @Html.TextBoxFor(model => model.start_date, new { @class = "textbox datefield add-event" })
                     @Html.ValidationMessageFor(model => model.start_date)
                 </td>
             </tr>
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.start_time)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.start_time, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.start_time, new { @class = "textbox add-event " })
                     @Html.ValidationMessageFor(model => model.start_time)
                 </td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.end_date)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.end_date, new { @class = "textbox datefield" })
+                    @Html.TextBoxFor(model => model.end_date, new { @class = "textbox datefield add-event" })
                     @Html.ValidationMessageFor(model => model.end_date)
                 </td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.end_time)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.end_time, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.end_time, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.end_time)
                 </td>
             </tr>
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.description)</td>
                 <td>
-                    @Html.TextAreaFor(model => model.description, new { @class = "textarea" })
+                    @Html.TextAreaFor(model => model.description, new { @class = "textarea add-event" })
                     @Html.ValidationMessageFor(model => model.description)
                 </td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.venue)</td>
-                <td>@Html.TextBoxFor(model => model.venue, new { @class = "textbox" })</td>
+                <td>@Html.TextBoxFor(model => model.venue, new { @class = "textbox add-event" })</td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.address)</td>
-                <td>@Html.TextBoxFor(model => model.address, new { @class = "textbox" })</td>
+                <td>@Html.TextBoxFor(model => model.address, new { @class = "textbox add-event" })</td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.cost)</td>
                 <td>
-                    $@Html.TextBoxFor(model => model.cost, new { @class = "textbox" })
+                    $@Html.TextBoxFor(model => model.cost, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.cost)
                 </td>
             </tr>
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.contact_name)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.contact_name, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.contact_name, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.contact_name)
                 </td>
             </tr>
             <tr>
                 <td><span style="color:red">*</span>@Html.LabelFor(model => model.contact_email)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.contact_email, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.contact_email, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.contact_email)
                 </td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.contact_phone)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.contact_phone, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.contact_phone, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.contact_phone)
                 </td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.url)</td>
                 <td>
-                    @Html.TextBoxFor(model => model.url, new { @class = "textbox" })
+                    @Html.TextBoxFor(model => model.url, new { @class = "textbox add-event" })
                     @Html.ValidationMessageFor(model => model.url)
                 </td>
             </tr>

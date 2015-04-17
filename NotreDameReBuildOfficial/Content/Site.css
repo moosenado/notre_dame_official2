@@ -1144,6 +1144,13 @@ table tr:nth-child(odd) td {
         width: 100%;
     }
 
+    .textbox.donate-txtbox,
+    .textbox.add-event,
+    .textbox.datefield.donate-txtbox,
+    .textarea.add-event {
+        width: 94%;
+    }
+
     .proddetimage{
         height: 100%;
     }
@@ -1174,6 +1181,13 @@ table tr:nth-child(odd) td {
     .partner {
         width: 40%;
         float: right;
+    }
+
+     .textbox.donate-txtbox,
+     .textbox.add-event,
+     .textbox.datefield.donate-txtbox,
+     .textarea.add-event {
+        width: 90%;
     }
 }
 
@@ -1553,6 +1567,11 @@ table tr:nth-child(odd) td {
     padding: 0px 20px 40px 20px;
 }
 
+.donate-txtbox,
+.textbox.datefield.donate-txtbox {
+    width: 60%;
+}
+
 label.amount {
     display: inline-block;
 }
@@ -1572,6 +1591,8 @@ table#edit-donations {
 /* --- EVENTS LISTING --- */
 
 #addeventform {
+    margin-left: 20px;
+    margin-right: 20px;
     padding-bottom: 30px;
 }
 

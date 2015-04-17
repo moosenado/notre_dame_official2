@@ -17,12 +17,12 @@
         
         @Html.LabelFor(model => model.amount, new { @class = "label amount" })
         <span>$ </span>
-        @Html.TextBoxFor(model => model.amount, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.amount, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.amount)
 
         @Html.LabelFor(model => model.in_memory, new { @class = "label" })
-        @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.in_memory, new { @class = "textbox donate-txtbox" })
 
         <div class="clear"></div>
 
@@ -37,33 +37,33 @@
         <h3>Contact Information</h3>
 
         @Html.LabelFor(model => model.first_name, new { @class = "label" })
-        @Html.TextBoxFor(model => model.first_name, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.first_name, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.first_name)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.last_name, new { @class = "label" })
-        @Html.TextBoxFor(model => model.last_name, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.last_name, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.last_name)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.organization, new { @class = "label" })
-        @Html.TextBoxFor(model => model.organization, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.organization, new { @class = "textbox donate-txtbox" })
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.address, new { @class = "label" })
-        @Html.TextBoxFor(model => model.address, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.address, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.address)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.city, new { @class = "label" })
-        @Html.TextBoxFor(model => model.city, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.city, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.city)
 
@@ -89,28 +89,28 @@
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.country, new { @class = "label" })
-        @Html.TextBoxFor(model => model.country, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.country, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.country)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.postal, new { @class = "label" })
-        @Html.TextBoxFor(model => model.postal, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.postal, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.postal)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.phone, new { @class = "label" })
-        @Html.TextBoxFor(model => model.phone, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.phone, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.phone)
 
         <div class="clear"></div>
 
         @Html.LabelFor(model => model.email, new { @class = "label" })
-        @Html.TextBoxFor(model => model.email, new { @class = "textbox" })
+        @Html.TextBoxFor(model => model.email, new { @class = "textbox donate-txtbox" })
         <span style="color:red">*</span>
         @Html.ValidationMessageFor(model => model.email)
 
