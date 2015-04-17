@@ -61,11 +61,11 @@
         </tr>
         <tr>
             <td>@Html.LabelFor(x => x.dateStart)</td>
-            <td>@Html.TextBoxFor(x => x.dateStart)<span style="color:red">*</span></td>
+            <td>@Html.TextBoxFor(x => x.dateStart, new { @id = "dtpicker" })<span style="color:red">*</span></td>
         </tr>
         <tr>
             <td>@Html.LabelFor(x => x.dateEnd)</td>
-            <td>@Html.TextBoxFor(x => x.dateEnd)<span style="color:red">*</span></td>
+            <td>@Html.TextBoxFor(x => x.dateEnd, new { @id = "dtpicker2" })<span style="color:red">*</span></td>
         </tr>
     </table>
 
@@ -75,6 +75,22 @@
         <span class="buttonstyle">Cancel</span>
     </a>
 }
+
+<script>
+$( document ).ready(function() {
+    $("#dtpicker").datetimepicker({
+        controlType: 'select',
+        timeFormat: 'hh:mm tt'
+    });
+    $('#dtpicker2').datetimepicker({
+        controlType: 'select',
+        timeFormat: 'hh:mm tt'
+    });
+});
+</script>
+<script src="~/scripts/jquery-1.8.2.js"></script>
+<script src="~/scripts/jquery-ui-1.8.24.js"></script>
+<script src="~/scripts/datetimepicker.js"></script>
 
 @section Scripts
 {
