@@ -8,6 +8,7 @@ using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
@@ -18,12 +19,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         {
             return View();
         }
+         [CustomAuthorize("Admin", "Staff")]
         public ActionResult Applicants()
         {
             var App = AppObj.getApplicants();
             return View(App);
         }
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Applicant_Details(int id)
         {
             var App = AppObj.getApplicantByID(id);
@@ -36,7 +38,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 return View(App);
             }
         }
-
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete_Applicant(int id)
         {
 
