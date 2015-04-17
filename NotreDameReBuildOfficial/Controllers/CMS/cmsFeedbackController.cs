@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
+using NotreDameReBuildOfficial.Infrastructure;
 
 namespace NotreDameReBuildOfficial.Controllers.CMS
 {
@@ -14,11 +15,13 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         feedbackClass objFeedback = new feedbackClass();
 
         //Feedback Form Page Method
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Manage()
         {
             return View();
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult _UnapprovedPartial()
         {
             //Unapproved feedback
@@ -28,6 +31,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult _ApprovedPartial()
         {
             //Approved feedback
@@ -38,6 +42,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
         }
 
         //When admin wants to see the feedback details
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Details(int feedback_id)
         {
             var feedback = objFeedback.getFeedbackByID(feedback_id);
@@ -55,6 +60,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- UPDATE ACTION --- //
         //Reads the request to update
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Update(int feedback_id)
         {
             var feedback = objFeedback.getFeedbackByID(feedback_id);
@@ -92,6 +98,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
 
         // --- DELETE ACTION --- //
         //Reads the request to delete
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Delete(int feedback_id)
         {
             var feedback = objFeedback.getFeedbackByID(feedback_id);
