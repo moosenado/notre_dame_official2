@@ -82,10 +82,6 @@ namespace NotreDameReBuildOfficial.Controllers
 
             var nav = objNav.getpublicNav();
             return PartialView(nav);
-            if(nav == null)
-            {
-                return View("NotFound");
-            }
         }
 
         public ActionResult navUpdate(int id) //Update Controller

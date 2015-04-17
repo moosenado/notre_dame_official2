@@ -8,7 +8,6 @@ using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
-using NotreDameReBuildOfficial.Infrastructure;
 
 namespace notre_dame_rebuild.Controllers
 {

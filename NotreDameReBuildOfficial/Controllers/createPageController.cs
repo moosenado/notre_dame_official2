@@ -102,7 +102,6 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
-        [CustomAuthorize("Admin")]
         public ActionResult contentInfo(int id) // content info gives ID of the created page
         {
 
@@ -119,7 +118,6 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
-        [CustomAuthorize("Admin")]
         public ActionResult page() // page Actionresult 
         {
             var pageid = (int)TempData["id"];
