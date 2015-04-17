@@ -13,83 +13,80 @@ namespace NotreDameReBuildOfficial.Controllers
         //
         // GET: /createPage/
 
+        //createPageClass model obj created
+
         createPageClass objPage = new createPageClass();
 
-        public ActionResult Index()
+        public ActionResult pageList() // pageList actionresult for dispalying the list of pages created
         {
-            return View();
-        }
-
-        public ActionResult pageList()
-        {
-            var nav = objPage.getallNav();
+            var nav = objPage.getallNav(); // gets all the crated navigation links
             return View(nav);
         }
 
-        public ActionResult pageInfo(int id)
+        public ActionResult pageInfo(int id) // page info returns list of sub navigations
         {
-            var nav = objPage.getallNavByID(id);
+            var nav = objPage.getallNavByID(id); // getting nav ID 
             if (nav == null)
             {
                 return View("NotFound");
             }
             else
             {
-                TempData["id"] = id;
+                TempData["id"] = id; // temp ID saving the id of the subpage
                 return View(nav);
             }
         }
 
-        public ActionResult insertsubPage()
+        public ActionResult insertsubPage() // create a new page
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult insertsubPage(subNavigation snav)
+        public ActionResult insertsubPage(subNavigation snav) // Post method used to get the values and inserting the page
         {
             if (ModelState.IsValid)
             {
-                var navid = (int)TempData["id"];
+                var navid = (int)TempData["id"]; // setting the id of the navigation 
                 snav.NavID = navid;
-                snav.controller = "createPage";
-                snav.pageView = "contentInfo";
-                snav.deletable = 1;
+                snav.controller = "createPage"; // setting default values
+                snav.pageView = "contentInfo"; // setting default value
+                snav.deletable = 1; // setting default value
                 objPage.InsertPage(snav);
-                return RedirectToAction("pageList");
+                return RedirectToAction("pageList");  // redirect to page list
             }
 
             return View();
         }
 
 
-        public ActionResult passID(int id)
+        public ActionResult passID(int id) // passID actionresult
         {
-            var nav = objPage.getallNavByID(id);
+            var nav = objPage.getallNavByID(id); // getting nav by id
             if (nav == null)
             {
                 return View("NotFound");
             }
             else
             {
-                TempData["id"] = id;
+                TempData["id"] = id; // storing temp ID
                 return RedirectToAction("pageData");
             }
         }
 
-        public ActionResult pageData()
+        public ActionResult pageData() // page Data action result for inserting content in new pages 
         {
             return View();
         }
 
-        [HttpPost, ValidateInput(false)]
+        [HttpPost, ValidateInput(false)] // validation false because trying to insert HTML tags
         public ActionResult pageData(createPage page) 
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //checking validation
             {
-                var pid = (int)TempData["id"];
-                page.subPageID = pid;
-                objPage.InsertData(page);
+                var pid = (int)TempData["id"]; //retreiving ID
+                page.subPageID = pid; //setting temp ID to sub page ID
+                objPage.InsertData(page); //inserting data
                 return RedirectToAction("pageList");
             }
 
@@ -97,23 +94,23 @@ namespace NotreDameReBuildOfficial.Controllers
 
         }
 
-        public ActionResult contentInfo(int id)
+        public ActionResult contentInfo(int id) // content info gives ID of the created page
         {
 
-            var nav = objPage.getallNavByID(id);
+            var nav = objPage.getallNavByID(id); // get all nav by id
             if (nav == null)
             {
                 return View("NotFound");
             }
             else
             {
-                TempData["id"] = id;
+                TempData["id"] = id; // temp ID 
                 return RedirectToAction("page");
             }
 
         }
 
-        public ActionResult page()
+        public ActionResult page() // page Actionresult 
         {
             var pageid = (int)TempData["id"];
             //info.jobID = jobid;
