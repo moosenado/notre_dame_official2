@@ -46,10 +46,16 @@ namespace NotreDameReBuildOfficial.Controllers
                 if (file1 != null)
                 {
                     //string fileName1 = file1 + japp.id.ToString();
-                    file1.SaveAs(HttpContext.Server.MapPath("~/Content/applicant/resume/") + file1.FileName);
-                    App.resmue = file1.FileName;                                    
+                    var fileName = Path.GetFileName(file1.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/applicant/resume"), fileName);
+                   // file1.SaveAs(HttpContext.Server.MapPath("~/Content/applicant/resume") + file1.FileName);
+                    file1.SaveAs(path);
+                    App.resmue = fileName;
+                    //App.resmue = file1.FileName;                                    
                    
                 }
+             
+
                 App.job_posting_id = id;
                 AppObj.commitInsert(App);
                 return RedirectToAction("Success");
