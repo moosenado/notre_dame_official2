@@ -28,26 +28,29 @@
                 }
             }*@
 
-        <ul>
-            @foreach (var file in Model)
-            {
-                var name = file.PdfTitle; //gets name of pdf file
-                
-                //adds the pdf name to uplaods dir and replaces any spaces with %20
-                var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20"); 
+<ul>
+    @foreach (var file in Model)
+    {
+        var name = file.PdfTitle; //gets name of pdf file
 
-                //creates links for each pdf
-                    <li>
-                    <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
-                    </li>
-                        <li>
-                         @file.Descr
-                        </li>
-                <br/>
-            }
-        </ul>
+        //adds the pdf name to uplaods dir and replaces any spaces with %20
+        var link = @Url.Content("~/Content/uploads/") + name.Replace(" ", "%20");
 
-        @*<p>
+        //creates links for each pdf
+        <li>
+            <a href="@link">@name <i class="fa fa-file-pdf-o"></i></a>
+        </li>
+        <li>
+            @file.Descr
+        </li>
+        <br/>
+    }
+</ul>
+
+<br/>
+@Html.ActionLink("Back", "Pdf", "PdfFilter", new { @class = "buttonstyle" })
+<br/>
+@*<p>
             View Pdf:<a href="~/Content/uploads/@Model.PdfTitle" target="_Blank">
                 <div style="font-size: 80px;"><i class="fa fa-file-pdf-o"></i></div>
             </a>*@

@@ -28,8 +28,10 @@
     @Html.TextAreaFor(m => m.Body, new { @class = "textarea", Value = "" })
     @Html.ValidationMessageFor(m => m.Body, "*")
 
-    <input type="submit" value="Send" class="buttonstyle" />
+    <input type="submit" value="Send" class="buttonstyle"/>
+    @Html.RouteLink("Back", new { action = "ApptSched", controller = "ApptSched" }, new { @class = "buttonstyle2" })
 }
+
 <br/>
 
 @section Scripts
