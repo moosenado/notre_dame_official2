@@ -1,0 +1,36 @@
+﻿@model SendMail.Models.MailModel
+
+@{
+    ViewBag.Title = "Mail";
+}
+
+<h2>Send a confirmation email</h2>
+
+@using (Html.BeginForm()) //form for sending email confirmations 
+{   
+    @Html.ValidationSummary()
+
+    <label class="label">From:</label>
+    @Html.TextBoxFor(m => m.From, new { @class = "textbox", Value="notredamehospital@outlook.com"})
+    @Html.ValidationMessageFor(m => m.From, "*")
+    
+    <label class="label">To:</label>
+    @Html.TextBoxFor(m => m.To, new { @class = "textbox", Value = "" })
+    @Html.ValidationMessageFor(m => m.To, "*")
+    
+    <label class="label">Subject:</label>
+    @Html.TextBoxFor(m => m.Subject, new { @class = "textbox", Value="Appointment Confirmation"})
+    @Html.ValidationMessageFor(m => m.Subject, "*")
+    
+    <label class="label">Body:</label>
+    @Html.TextAreaFor(m => m.Body, new { @class = "textarea", Value = "" })
+    @Html.ValidationMessageFor(m => m.Body, "*")
+
+    <input type="submit" value="Send" class="buttonstyle" />
+}
+<br/>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

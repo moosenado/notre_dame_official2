@@ -1,5 +1,5 @@
 ﻿@model NotreDameReBuildOfficial.Models.Appt_Book
-
+@*@model NotreDameReBuildOfficial.ViewModels.MailApptModel*@
 @{
     ViewBag.Title = "Appointment Details";
     Layout = "~/Views/Shared/_LayoutCMS.cshtml";
@@ -47,7 +47,10 @@
 </table>
 
 <p> @*renders links to methods located on ApptSchedController*@
-    @Html.ActionLink("Back", "ApptSched", null, new { @class = "buttonstyle" }) 
-    @Html.ActionLink("Update", "Update", new { id = Model.id }, new { @class = "buttonstyle" }) 
-    @Html.ActionLink("Delete", "Delete", new { id = Model.id }, new { @class = "buttonstyle" })
+    @Html.ActionLink("Back", "ApptSched", null, new {@class = "buttonstyle"}) &nbsp;
+    @Html.ActionLink("Update", "Update", new {id = Model.id}, new {@class = "buttonstyle"})
+    @Html.ActionLink("Delete", "Delete", new {id = Model.id}, new {@class = "buttonstyle"})
+    @Html.ActionLink("Email", "Mail", "SendMailer", new { id = Model.id }, new { @class = "buttonstyle3" })
 </p>
+
+

@@ -18,17 +18,19 @@
                 <th>Health Number</th>
                 <th>Book Date</th>
                 <th>Book Time</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(x.Fname + " " + x.Lname, "Details", new { id = x.id, @class = "link" })</td>
+                    <td>@Html.ActionLink(x.Fname + " " + x.Lname, "Details", new { id = x.id}, new {@class = "link" })</td>
                     <td>@x.HealthNum</td>
                     <td>@x.BookDate</td>
                     <td>@x.BookTime</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { id = x.id }, new { @class = "buttonstyle" })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new {id = x.id}, new {@class = "buttonstyle"})</td>
+                    <td>@Html.ActionLink("Email", "Mail", "SendMailer", new { id = x.id}, new {@class = "buttonstyle3" })</td>
                 </tr>
             }
         </tbody>

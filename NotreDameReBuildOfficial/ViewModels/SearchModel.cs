@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using NotreDameReBuildOfficial.Models;
 
 namespace NotreDameReBuildOfficial.ViewModels
+
 //ViewModel created to combine 2 models: job postings and Events.
 //used for search function. allows multiple models to be displayed on view
 {
