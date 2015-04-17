@@ -46,7 +46,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 if (file1 != null)
                 {
                     //string fileName1 = file1 + japp.id.ToString();
-                    file1.SaveAs(HttpContext.Server.MapPath("~/Content/applicant/resume/") + file1.FileName);
+                    file1.SaveAs(HttpContext.Server.MapPath("~/Content/applicant/resume") + file1.FileName);
                     App.resmue = file1.FileName;                                    
                    
                 }
