@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO; //for uploading file path
+using NotreDameReBuildOfficial.Infrastructure;
 
 //Imported Namespaces
 using NotreDameReBuildOfficial.Models;
@@ -13,6 +14,7 @@ namespace notre_dame_rebuild.Controllers
 {
     public class CMSHomeController : BaseController
     {
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult Index()
         {
             return View();
@@ -24,12 +26,14 @@ namespace notre_dame_rebuild.Controllers
 
         newsfeedClass objNews = new newsfeedClass();
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult News()
         {
             var articles = objNews.getArticles();
             return View(articles);
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult News_Insert()
         {
             return View();
@@ -287,7 +291,7 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
-   
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult News_Details(int id)
         {
             var news_article_id = objNews.getArticlesByID(id);
@@ -302,6 +306,7 @@ namespace notre_dame_rebuild.Controllers
             }
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult News_Update(int id)
         {
             var news_article_id = objNews.getArticlesByID(id);
@@ -347,6 +352,7 @@ namespace notre_dame_rebuild.Controllers
             return View(); // return view if model is not valid
         }
 
+        [CustomAuthorize("Admin", "Staff")]
         public ActionResult News_Delete(int id)
         {
             // Check to see if user id exists and handle it
