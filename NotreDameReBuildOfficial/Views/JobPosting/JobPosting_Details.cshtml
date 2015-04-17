@@ -33,7 +33,7 @@
     </div>
     <div class="details_Op">
         @Html.LabelFor(model => model.description, new { @class = "lbl" }):
-        @Html.DisplayFor(x => x.description)
+        @Html.Raw(Model.description)
     </div>
     <br/>
    
@@ -41,5 +41,6 @@
         @Html.ActionLink("Apply", "Insert_Applicant", "Applicant", new { id = Model.id }, new { @class = "buttonstyle" })
         @Html.ActionLink("Back", "JobPosting", null, new { @class = "buttonstyle" })
     </div>
+    <br/><br/>
 
 </div>

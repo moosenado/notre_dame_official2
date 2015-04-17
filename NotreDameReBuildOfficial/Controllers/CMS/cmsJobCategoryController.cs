@@ -87,7 +87,7 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
                 try
                 {
                     JobCatObj.commitUpdate(id, JobCat.title); // get the new values and passed them to fields by these parameter
-                    return RedirectToAction("JobCategory_Details/" + id);// the page will redirect to the Job Category Information
+                    return RedirectToAction("JobCategory/" + id);// the page will redirect to the Job Category Information
                 }
                 catch
                 {
