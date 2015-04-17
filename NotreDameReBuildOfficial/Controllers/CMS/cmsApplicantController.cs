@@ -37,6 +37,80 @@ namespace NotreDameReBuildOfficial.Controllers.CMS
             }
         }
 
+        public ActionResult Delete_Applicant(int id)
+        {
+
+            var App = AppObj.getApplicantByID(id);
+            if (App == null)
+            {
+                return View("NotFound");
+            }
+            else
+            {
+                TempData["id"] = id;
+                return View(App);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Delete_Applicant(int id, Applicant App)
+        {
+            
+            ////Applicant obj = new JobApplicants().getApplicantByID(id);
+            //if (obj == null)
+            //    return View();
+
+            //try
+            //{
+            //    if (obj.resmue != null && obj.resmue.Trim() != "")
+            //    {
+            //         //Path.Combine
+
+            //        string fullPath1 = Path.Combine(Server.MapPath("~/Content/applicant/resume/"), obj.resmue);
+
+            //        if (System.IO.File.Exists(fullPath1))
+            //        {
+            //            System.IO.File.Delete(fullPath1);
+            //            //Session["DeleteSuccess"] = "Yes";
+            //        }
+            //    }
+
+            //    AppObj.commitDelete(id);
+            //    return RedirectToAction("Applicants");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+              var obj = AppObj.getApplicantByID(id);
+            try
+            {
+
+                var resumeName = obj.resmue;
+
+
+                string fullPath1 = Server.MapPath("~/Content/applicant/resume"
+                + resumeName);
+
+
+                if (System.IO.File.Exists(fullPath1))
+                {
+                    System.IO.File.Delete(Server.MapPath("~/Content/applicant/resume"
+                + resumeName));
+                }
+
+                AppObj.commitDelete(id);
+                return RedirectToAction("Applicants");
+            }
+            catch (Exception e)
+            {
+                var message = e.Message;
+                return View(App);
+            }
+
+        }
+
+
         
 
     }
