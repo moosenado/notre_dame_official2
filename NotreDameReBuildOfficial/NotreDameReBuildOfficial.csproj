@@ -232,6 +232,7 @@
     <Compile Include="Models\ApplicantValidation.cs" />
     <Compile Include="Models\ApptSchedClass.cs" />
     <Compile Include="Models\ApptSchedValidation.cs" />
+    <Compile Include="Models\checkoutcart.cs" />
     <Compile Include="Models\createPageClass.cs" />
     <Compile Include="Models\donationClass.cs" />
     <Compile Include="Models\donationValidation.cs" />
