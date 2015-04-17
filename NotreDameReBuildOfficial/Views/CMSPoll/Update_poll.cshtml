@@ -36,13 +36,13 @@
     </div>
     @Html.ValidationMessageFor(x => x.question_text) // create validation message for all textBoxes
     
-     <div>
+     @*<div>
         @Html.LabelFor(x => x.options)
     </div>
     <div>
         @Html.TextAreaFor(x => x.options, new { @class = "frm" })
     </div>
-    @Html.ValidationMessageFor(x => x.options) // create validation message for all textBoxes
+    @Html.ValidationMessageFor(x => x.options) // create validation message for all textBoxes*@
                                                 
      <div>
       <input type="submit" value="Update" class="buttonstyle" />
