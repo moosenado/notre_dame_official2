@@ -50,6 +50,13 @@ table {
 /*********** GENERAL STYLING ***********/
 /***************************************/
 
+#disclaimer {
+    background: red;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
 html, body{
     height: 100%; /*For Sticky Footer*/
     font-family: 'Roboto', sans-serif;
