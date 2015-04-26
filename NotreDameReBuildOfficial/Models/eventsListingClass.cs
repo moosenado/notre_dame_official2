@@ -110,10 +110,9 @@ namespace NotreDameReBuildOfficial.Models
             using (objLinq)
             {
                 //if the end date is submitted as null, assign it the value of start date
-                if(events.end_date == null){
-
+                if(events.end_date == null)
+                {
                     events.end_date = events.start_date;
-
                 }
 
                 objLinq.Events.InsertOnSubmit(events);

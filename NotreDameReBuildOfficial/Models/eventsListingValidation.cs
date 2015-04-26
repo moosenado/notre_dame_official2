@@ -31,7 +31,7 @@ namespace NotreDameReBuildOfficial.Models
 
         [DisplayName("End Date (if applicable)")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0: dddd MMMM d, yyyy}")]
-        public DateTime end_date { get; set; }
+        public DateTime? end_date { get; set; }
 
         [DisplayName("End Time (if applicable, e.g. 4:00 pm)")]
         public string end_time { get; set; }

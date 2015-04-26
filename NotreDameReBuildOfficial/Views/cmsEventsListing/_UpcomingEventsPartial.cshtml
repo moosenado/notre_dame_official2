@@ -16,9 +16,22 @@
      
         <tr>
             <td>@e.name</td>
-            <td>@e.start_date.ToString("MMMM d")  @@ @e.start_time
-                @if (e.end_time != null){
-                    @:- @e.end_time
+            <td>
+                @e.start_date.ToString("MMMM d") @@ @e.start_time
+
+                @if (e.end_time != null && e.end_date == e.start_date)
+                {
+                    @: - @e.end_time
+                }
+
+                @if (e.end_date != null && e.end_date != e.start_date)
+                {
+                    @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
+
+                    if (e.end_time != null)
+                    {
+                        @: @@ @e.end_time
+                    }
                 }
             </td>
             <td class="iup-icons">
