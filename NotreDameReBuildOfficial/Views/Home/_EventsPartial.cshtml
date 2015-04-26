@@ -9,10 +9,23 @@
 
         <div class="clear"></div>
 
-        @e.start_date.ToString("MMMM d")  @@ @e.start_time
-        @if (e.end_time != null)
+        @e.start_date.ToString("MMMM d") @@ @e.start_time
+
+        @if (e.end_time != null && e.end_date == e.start_date)
         {
-            @:- @e.end_time
+            @: - @e.end_time
+        }
+
+
+        @if (e.end_date != null && e.end_date != e.start_date)
+        {
+            @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
+
+
+            if (e.end_time != null)
+            {
+                @: @@ @e.end_time
+            }
         }
 
     </div>
@@ -26,7 +39,6 @@
 }
 else
 {
-
     <a class="link" href='@Url.Action("SubmitEvent", "Home")'>Add Your Event</a>
     <span>|</span>
     <a class="link" href='@Url.Action("AllEvents", "Home")'>See All Events</a>

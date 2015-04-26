@@ -1270,8 +1270,9 @@ table tr:nth-child(odd) td {
 #sign-out {
 	float: right;
 	background-color: #fff;
-	padding: 14px 20px;
+	padding: 0px 20px;
 	border: 1px solid #019ab8;
+    line-height: 47px;
 }
 
 #sign-out a {

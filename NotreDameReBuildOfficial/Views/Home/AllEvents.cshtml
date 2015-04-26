@@ -14,18 +14,30 @@
 
         <div class="clear"></div>
 
-        @e.start_date.ToString("MMMM d")  @@ @e.start_time
-        @if (e.end_time != null)
-        {
-            @:- @e.end_time
-        }
+        @e.start_date.ToString("MMMM d") @@ @e.start_time
 
+        @if (e.end_time != null && e.end_date == e.start_date)
+        {
+             @: - @e.end_time
+        }
+            
+
+        @if (e.end_date != null && e.end_date != e.start_date)
+        {
+            @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
+            
+            if (e.end_time != null)
+            {
+                @: @@ @e.end_time
+            }
+        }
+              
     </div>
 
 }
 
 <div class="clear"></div>
 
-<a href='@Url.Action("AllEvents", "Home")'>
+<a href='@Url.Action("Index", "Home")'>
     <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
 </a>
