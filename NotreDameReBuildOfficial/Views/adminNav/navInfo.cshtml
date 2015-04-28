@@ -24,7 +24,7 @@
             <td>@snav.title</td>
             <td><a href='@Url.Action("adminsubNavUpdate", "adminNav", new { id = snav.id })'><i class="fa fa-pencil fa-lg"></i></a></td>
             <td>@if (snav.deletable == 1)
-            { <a href='@Url.Action("adminsubNavUpdate", "adminNav", new { id = snav.id })'><i class="fa fa-trash-o fa-lg"></i></a>}</td>
+            { <a href='@Url.Action("adminsubNavDelete", "adminNav", new { id = snav.id })'><i class="fa fa-trash-o fa-lg"></i></a>}</td>
         </tr>
     }
 

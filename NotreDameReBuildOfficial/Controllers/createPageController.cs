@@ -58,7 +58,7 @@ namespace NotreDameReBuildOfficial.Controllers
                 snav.pageView = "contentInfo"; // setting default value
                 snav.deletable = 1; // setting default value
                 objPage.InsertPage(snav);
-                return RedirectToAction("pageList");  // redirect to page list
+                return RedirectToAction("pageInfo/"+navid);  // redirect to page list
             }
 
             return View();
@@ -147,8 +147,9 @@ namespace NotreDameReBuildOfficial.Controllers
         {
             try
             {
+                var navid = (int)TempData["id"];
                 objPage.pageDelete(id); // delete the page
-                return RedirectToAction("pageList");
+                return RedirectToAction("pageInfo/"+navid);
             }
             catch
             {
