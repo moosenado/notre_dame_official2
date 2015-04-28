@@ -3,96 +3,97 @@
 @{
     ViewBag.Title = "EventDetails";
 }
+<div class="maincontainer">
 
-<h1 class="no-border">@Html.DisplayFor(model => model.name)</h1>
+    <h1 class="no-border">@Html.DisplayFor(model => model.name)</h1>
 
-<div id="event-details">
+    <div id="event-details">
 
-    <h2>Event Details</h2>
+        <h2>Event Details</h2>
 
-    @* START DATE *@
-    @Html.DisplayFor(model => model.start_date)
+        @* START DATE *@
+        @Html.DisplayFor(model => model.start_date)
 
-    @* Display if there is an end date *@
-    @if (@Model.end_date != @Model.start_date)
-    {
-        <span> to </span>@Html.DisplayFor(model => model.end_date)
-    }
+        @* Display if there is an end date *@
+        @if (@Model.end_date != @Model.start_date)
+        {
+            <span> to </span>@Html.DisplayFor(model => model.end_date)
+        }
+
+        <div class="clear"></div>
+
+        @* START TIME *@
+        @Html.DisplayFor(model => model.start_time)
+
+        @* Display if there is an end time *@
+        @if (@Model.end_time != null)
+        {
+            <span> - </span>@Html.DisplayFor(model => model.end_time)
+        }
+
+        <div class="clear"></div>
+
+        @* EVENT DESCRIPTION *@
+        @Html.DisplayFor(model => model.description)
+
+        <div class="clear"></div>
+
+        @* Display if there is a venue *@
+        @if (@Model.venue != null)
+        {
+            @Html.DisplayFor(model => model.venue)
+            <div class="clear"></div>
+        }
+
+        @* Display if there is an address *@
+        @if (@Model.address != null)
+        {
+            @Html.DisplayFor(model => model.address)
+            <div class="clear"></div>
+        }
+
+        @* Display if there is a cost *@
+        @if (@Model.cost != null)
+        {
+            @Html.DisplayFor(model => model.cost)
+            <div class="clear"></div>
+        }
+
+    </div>
+
+    <div id="contact-info">
+
+        <h2>Contact Information</h2>
+
+        @* CONTACT NAME *@
+        @Html.DisplayFor(model => model.contact_name)
+
+        <div class="clear"></div>
+
+        @* CONTACT EMAIL *@
+        <a href="mailto:@Model.contact_email">@Html.DisplayFor(model => model.contact_email)</a>
+
+        <div class="clear"></div>
+
+        @* Display is there is a contact phone number *@
+        @if (@Model.contact_phone != null)
+        {
+            @Html.DisplayFor(model => model.contact_phone)
+            <div class="clear"></div>
+        }
+
+
+        @* Display if there is a URL *@
+        @if (@Model.url != null)
+        {
+            @Html.DisplayFor(model => model.url)
+        }
+
+    </div>
 
     <div class="clear"></div>
 
-    @* START TIME *@
-    @Html.DisplayFor(model => model.start_time)
-
-    @* Display if there is an end time *@
-    @if (@Model.end_time != null)
-    {
-        <span> - </span>@Html.DisplayFor(model => model.end_time)
-    }
-
-    <div class="clear"></div>
-
-    @* EVENT DESCRIPTION *@
-    @Html.DisplayFor(model => model.description)
-
-    <div class="clear"></div>
-
-    @* Display if there is a venue *@
-    @if (@Model.venue != null)
-    {
-        @Html.DisplayFor(model => model.venue)
-        <div class="clear"></div>
-    }
-
-    @* Display if there is an address *@
-    @if (@Model.address != null)
-    {
-        @Html.DisplayFor(model => model.address)
-        <div class="clear"></div>
-    }
-
-    @* Display if there is a cost *@
-    @if (@Model.cost != null)
-    {
-        @Html.DisplayFor(model => model.cost)
-        <div class="clear"></div>
-    }
-
+    <a href='@Url.Action("Index", "Home")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
+    </a>
 </div>
-
-<div id="contact-info">
-
-    <h2>Contact Information</h2>
-
-    @* CONTACT NAME *@
-    @Html.DisplayFor(model => model.contact_name)
-
-    <div class="clear"></div>
-
-    @* CONTACT EMAIL *@
-    <a href="mailto:@Model.contact_email">@Html.DisplayFor(model => model.contact_email)</a>
-
-    <div class="clear"></div>
-
-    @* Display is there is a contact phone number *@
-    @if (@Model.contact_phone != null)
-    {
-        @Html.DisplayFor(model => model.contact_phone)
-        <div class="clear"></div>
-    }
-
-
-    @* Display if there is a URL *@
-    @if (@Model.url != null)
-    {
-        @Html.DisplayFor(model => model.url)
-    }
-
-</div>
-
-
-<div class="clear"></div>
-
-<a href='@Url.Action("Index", "Home")'>
-    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
-</a>

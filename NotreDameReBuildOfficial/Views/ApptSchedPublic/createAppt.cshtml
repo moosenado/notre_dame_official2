@@ -4,34 +4,36 @@
     ViewBag.Title = "createAppt";
 }
 
-<h1>Make an appointment</h1> @*Public form for booking an appointment*@
+<div class="maincontainer">
 
-@using (Html.BeginForm("createAppt", "ApptSchedPublic", FormMethod.Post))
-{
-    @Html.ValidationSummary()
+    <h1>Make an appointment</h1> @*Public form for booking an appointment*@
 
-    @Html.LabelFor(model => model.Fname, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Fname, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.Fname, "*")
+    @using (Html.BeginForm("createAppt", "ApptSchedPublic", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
 
-    @Html.LabelFor(model => model.Lname, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Lname, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.Lname, "*")
+        @Html.LabelFor(model => model.Fname, new { @class = "label" })
+        @Html.TextBoxFor(model => model.Fname, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.Fname, "*")
 
-    @Html.LabelFor(model => model.Phone, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Phone, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.Phone, "*")
+        @Html.LabelFor(model => model.Lname, new { @class = "label" })
+        @Html.TextBoxFor(model => model.Lname, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.Lname, "*")
 
-    @Html.LabelFor(model => model.Email, new { @class = "label" })
-    @Html.TextBoxFor(model => model.Email, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.Email, "*")
+        @Html.LabelFor(model => model.Phone, new { @class = "label" })
+        @Html.TextBoxFor(model => model.Phone, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.Phone, "*")
 
-    @Html.LabelFor(model => model.HealthNum, new { @class = "label" })
-    @Html.TextBoxFor(model => model.HealthNum, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.HealthNum, "*")
-    
-    @Html.LabelFor(model => model.Speciality, new { @class = "label" })<br>
-    @Html.DropDownListFor(model => model.Speciality, new[] {
+        @Html.LabelFor(model => model.Email, new { @class = "label" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.Email, "*")
+
+        @Html.LabelFor(model => model.HealthNum, new { @class = "label" })
+        @Html.TextBoxFor(model => model.HealthNum, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.HealthNum, "*")
+
+        @Html.LabelFor(model => model.Speciality, new { @class = "label" })<br>
+        @Html.DropDownListFor(model => model.Speciality, new[] {
         new SelectListItem() {Text = ""},
         new SelectListItem() {Text = "Diagnostic Imaging"},
         new SelectListItem() {Text = "Allergy"},
@@ -43,22 +45,24 @@
         new SelectListItem() {Text = "Oncology"},
         new SelectListItem() {Text = "Orthopedy"},}, new { @class = "dropdown-list" })
 
-    @Html.LabelFor(model => model.BookDate, new { @class = "label" }) 
-    @Html.EditorFor(model => model.BookDate, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.BookDate, "*")
+        @Html.LabelFor(model => model.BookDate, new { @class = "label" })
+        @Html.EditorFor(model => model.BookDate, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.BookDate, "*")
 
-    @Html.LabelFor(model => model.BookTime, new { @class = "label" })
-    @Html.EditorFor(model => model.BookTime, new { @class = "textbox" })
-    @Html.ValidationMessageFor(model => model.BookTime, "*")
+        @Html.LabelFor(model => model.BookTime, new { @class = "label" })
+        @Html.EditorFor(model => model.BookTime, new { @class = "textbox" })
+        @Html.ValidationMessageFor(model => model.BookTime, "*")
 
-    @Html.LabelFor(model => model.AdditionalInfo, new { @class = "label" })
-    @Html.TextAreaFor(model => model.AdditionalInfo, new { @class = "description" })
-    @Html.ValidationMessageFor(model => model.AdditionalInfo)
+        @Html.LabelFor(model => model.AdditionalInfo, new { @class = "label" })
+        @Html.TextAreaFor(model => model.AdditionalInfo, new { @class = "description" })
+        @Html.ValidationMessageFor(model => model.AdditionalInfo)
 
 
-    <input type="submit" value="Send" class="buttonstyle" />
+        <input type="submit" value="Send" class="buttonstyle" />
 
-}
+    }
+
+</div>
 
 @section Scripts
 {
