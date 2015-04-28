@@ -38,14 +38,15 @@ namespace NotreDameReBuildOfficial.Controllers
 
         public ActionResult Thanks() //thank you page after user submits
         {
-            if (!ModelState.IsValid) //if no errors then goto thank you page
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("createAppt"); //if errors then go back to appointment form
-            }
+            //if (!ModelState.IsValid) //if no errors then goto thank you page
+            //{
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("createAppt"); //if errors then go back to appointment form
+            //}
+            return View();
         }
 
         [HttpPost]  //carries over user input and displays a summary

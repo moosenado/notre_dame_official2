@@ -6,7 +6,7 @@
 
 <h1>Make an appointment</h1> @*Public form for booking an appointment*@
 
-@using (Html.BeginForm("Thanks", "ApptSchedPublic", FormMethod.Post))
+@using (Html.BeginForm("createAppt", "ApptSchedPublic", FormMethod.Post))
 {
     @Html.ValidationSummary()
 
