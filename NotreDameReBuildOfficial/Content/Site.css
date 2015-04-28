@@ -1231,6 +1231,12 @@ table tr:nth-child(odd) td {
     }
 }
 
+@media only screen and (max-width: 355px) {
+    .icon.icon2 {
+        padding: 9.2% 4%;
+    }
+}
+
 /**********************************/
 /*********** CMS LAYOUT ***********/
 /**********************************/
