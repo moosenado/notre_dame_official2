@@ -133,6 +133,7 @@ h3 {
     border-radius: 5px;
     text-decoration: none;
     font-size: 1em;
+    -webkit-appearance: none;
 }
 
 .buttonstyle2 {
@@ -329,6 +330,8 @@ table tr:nth-child(odd) td {
     float: right;
     margin-left: 10px;
     width: 20%;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .donate {
@@ -1057,8 +1060,16 @@ table tr:nth-child(odd) td {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 725px) {
+    .icon.icon2 {
+        padding: 9% 4%;
+    }
+}
 
+@media only screen and (max-width: 768px) {
+    .maincontainer {
+        padding: 20px;
+    }
 }
 
 @media only screen and (max-width: 640px) {
@@ -1111,6 +1122,10 @@ table tr:nth-child(odd) td {
     #mobilesearch input[type=text] {
         width: 50%;
         float: right;
+    }
+
+    .icon.icon2 {
+        padding: 4%;
     }
 
     #footer {
@@ -1216,6 +1231,12 @@ table tr:nth-child(odd) td {
 
     #footer_links {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .icon.icon2 {
+        padding: 9.2% 4%;
     }
 }
 

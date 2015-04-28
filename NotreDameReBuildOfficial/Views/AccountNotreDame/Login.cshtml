@@ -2,29 +2,33 @@
 @{
     ViewBag.Title = "Login";
 }
-<h1>
-    Login
-</h1>
-@using (Html.BeginForm())
-{
-    if (ViewBag.Message != null && ViewBag.Message != "")
+
+<div class="maincontainer">
+
+    <h1>
+        Login
+    </h1>
+    @using (Html.BeginForm())
     {
-        <div>@ViewBag.Message</div>
+        if (ViewBag.Message != null && ViewBag.Message != "")
+        {
+            <div>@ViewBag.Message</div>
+        }
+        <div>
+            <span>User Name</span>
+        </div>
+        <div>
+            @Html.TextBoxFor(x => x.user_name, new { @class = "textbox" })
+        </div>
+        <div>
+            <span>Password</span>
+        </div>
+        <div>
+            @Html.PasswordFor(x => x.password, new { @class = "textbox" })
+        </div>
+        <input type="submit" value="Sign In" class="buttonstyle" />
     }
     <div>
-        <span>User Name</span>
-        </div>
-    <div>
-        @Html.TextBoxFor(x => x.user_name, new { @class = "textbox" })
+        @Html.ActionLink("Back", "Index", "Home")
     </div>
-    <div>
-        <span>Password</span>
-        </div>
-    <div>
-        @Html.PasswordFor(x => x.password, new { @class = "textbox" })
-    </div>
-    <input type="submit" value="Sign In" class="buttonstyle" />
-}
-<div>
-    @Html.ActionLink("Back", "Index", "Home")
 </div>
