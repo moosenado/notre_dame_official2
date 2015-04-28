@@ -1057,6 +1057,12 @@ table tr:nth-child(odd) td {
     }
 }
 
+@media only screen and (max-width: 725px) {
+    .icon.icon2 {
+        padding: 9% 4%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .maincontainer {
         padding: 20px;
@@ -1113,6 +1119,10 @@ table tr:nth-child(odd) td {
     #mobilesearch input[type=text] {
         width: 50%;
         float: right;
+    }
+
+    .icon.icon2 {
+        padding: 4%;
     }
 
     #footer {
