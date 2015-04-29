@@ -133,6 +133,7 @@ h3 {
     border-radius: 5px;
     text-decoration: none;
     font-size: 1em;
+    -webkit-appearance: none;
 }
 
 .buttonstyle2 {
@@ -329,10 +330,14 @@ table tr:nth-child(odd) td {
     float: right;
     margin-left: 10px;
     width: 20%;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .donate {
     background: #accf13;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .homepage-btns:hover {
