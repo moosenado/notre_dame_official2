@@ -8,41 +8,41 @@
 
     <h1>All Upcoming Events</h1>h1
 
-    @foreach (var e in Model)
-    {
-        <div class="hmpg-event">
+@foreach (var e in Model)
+{
+    <div class="hacg-event">
 
-            <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
+        <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
 
-            <div class="clear"></div>
+        <div class="clear"></div>
 
-            @e.start_date.ToString("MMMM d") @@ @e.start_time
+        @e.start_date.ToString("MMMM d") @@ @e.start_time
 
-            @if (e.end_time != null && e.end_date == e.start_date)
-            {
-                @: - @e.end_time
+        @if (e.end_time != null && e.end_date == e.start_date)
+        {
+             @: - @e.end_time
         }
+            
 
+        @if (e.end_date != null && e.end_date != e.start_date)
+        {
+            @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
+            
 
-            @if (e.end_date != null && e.end_date != e.start_date)
+            if (e.end_time != null)
             {
-                @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
-
-
-                if (e.end_time != null)
-                {
-                    @: @@ @e.end_time
+                @: @@ @e.end_time
             }
-            }
+        }
+              
+    </div>
 
-        </div>
+}
 
-    }
+<div class="clear"></div>
 
-    <div class="clear"></div>
-
-    <a href='@Url.Action("Index", "Home")'>
-        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
-    </a>
+<a href='@Url.Action("Index", "Home")'>
+    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
+</a>
 
 </div>
