@@ -336,6 +336,8 @@ table tr:nth-child(odd) td {
 
 .donate {
     background: #accf13;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .homepage-btns:hover {
