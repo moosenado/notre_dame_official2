@@ -338,7 +338,6 @@ table tr:nth-child(odd) td {
     background: #accf13;
     -webkit-appearance: none;
     border-radius: 0;
-    margin: 0px;
 }
 
 .homepage-btns:hover {
