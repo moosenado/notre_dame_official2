@@ -333,6 +333,7 @@ table tr:nth-child(odd) td {
 
 .donate {
     background: #accf13;
+    margin: 0px;
 }
 
 .homepage-btns:hover {
@@ -1088,6 +1089,10 @@ table tr:nth-child(odd) td {
         margin: 30px auto;
     }
 
+    #event-details {
+        width: 100%!important;
+    }
+
     service-btn {
         font-size: 1.25em;
         margin: 0 auto;
@@ -1235,6 +1240,17 @@ table tr:nth-child(odd) td {
     .icon.icon2 {
         padding: 9.2% 4%;
     }
+}
+
+/**
+ * This hack targets the Webkit browser engine
+ * which includes Safari and Chrome.
+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    donate {
+        line-height: 50px;
+    }
+    
 }
 
 /**********************************/

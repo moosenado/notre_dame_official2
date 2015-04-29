@@ -4,40 +4,45 @@
     ViewBag.Title = "AllEvents";
 }
 
-<h2>All Upcoming Events</h2>
+<div class="maincontainer">
 
-@foreach (var e in Model)
-{
-    <div class="hmpg-event">
+    <h1>All Upcoming Events</h1>
 
-        <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
+    @foreach (var e in Model)
+    {
+        <div class="hmpg-event">
 
-        <div class="clear"></div>
+            <a class="link" href='@Url.Action("EventDetails", "Home", new { event_id = e.event_id })'>@e.name</a>
 
-        @e.start_date.ToString("MMMM d") @@ @e.start_time
+            <div class="clear"></div>
 
-        @if (e.end_time != null && e.end_date == e.start_date)
-        {
-             @: - @e.end_time
-        }
-            
+            @e.start_date.ToString("MMMM d") @@ @e.start_time
 
-        @if (e.end_date != null && e.end_date != e.start_date)
-        {
-            @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
-            
-            if (e.end_time != null)
+            @if (e.end_time != null && e.end_date == e.start_date)
             {
-                @: @@ @e.end_time
-            }
+                @: - @e.end_time
         }
-              
-    </div>
 
-}
 
-<div class="clear"></div>
+            @if (e.end_date != null && e.end_date != e.start_date)
+            {
+                @: to @e.end_date.GetValueOrDefault().ToString("MMMM d")
 
-<a href='@Url.Action("Index", "Home")'>
-    <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
-</a>
+
+                if (e.end_time != null)
+                {
+                    @: @@ @e.end_time
+            }
+            }
+
+        </div>
+
+    }
+
+    <div class="clear"></div>
+
+    <a href='@Url.Action("Index", "Home")'>
+        <span class="buttonstyle"><i class="fa fa-list-ul"></i>Back</span>
+    </a>
+
+</div>
